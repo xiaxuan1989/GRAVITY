@@ -1,7 +1,7 @@
 # Introduction
 
-This is a textbook on (mainly classical) gravity, spacetime and geometry.
+This textbook primarily focuses on classical gravity, spacetime, quantum field, and the math that underpins these concepts. 
 
-Considering "general relativity" is NOT based on the real generally relative principle, our journey takes off from classical field theory, and then we would be introduced to some topics on quantum theories.
+Since so-called “general relativity” does not truly rest on a fully general principle of relativity, we will commence our exploration with classical field theory before delving into selected topics in quantum theory. 
 
-The book is written in Chinese so far.
+Please note that the book is currently written entirely in Chinese.
