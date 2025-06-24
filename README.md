@@ -19,7 +19,7 @@ Download the latest version in [GitHub Releases](https://github.com/xiaxuan1989/
 
 ### Compilation
 
-Simply compile `main.tex` in the project `src` directory.
+Simply use **XeLaTeX** to compile `main.tex` in the `src` directory.
 
 ### License
 
