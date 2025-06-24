@@ -23,5 +23,5 @@ Simply compile `main.tex` in the project `src` directory.
 
 ### License
 
-The program is distributed under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license.
+The entire program is distributed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
 
