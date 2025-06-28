@@ -7,7 +7,7 @@
 <!--[![Sponsorship](https://img.shields.io/badge/Sponsorship-:\)-946ce6?style=flat&labelColor=444444&logoSize=auto)]()-->
 
 
-This textbook primarily focuses on classical gravity, spacetime, quantum field, and the math that underpins these concepts. <br/>
+The book mainly focuses on classical gravity, spacetime, quantum field, and the math that underpins these concepts. <br/>
 Since so-called “general relativity” does not truly rest on a fully general principle of relativity, we will commence our exploration with classical field theory before delving into selected topics in quantum theory. <br/>
 Please note that the book is currently written entirely in Chinese. <br/>
 
