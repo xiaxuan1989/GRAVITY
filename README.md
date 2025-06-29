@@ -10,11 +10,11 @@ The book mainly focuses on classical gravity, spacetime, quantum field, and the 
 Since so-called “general relativity” does not truly rest on a fully general principle of relativity, we will commence our exploration with classical field theory before delving into selected topics in quantum theory. <br/>
 Please note that the book is currently written entirely in Chinese. <br/>
 
-One could read `preface.pdf` for more details.
+One could read `preface.pdf` in [GitHub Releases](https://github.com/xiaxuan1989/GRAVITY/releases) for more details.
 
 ### Download
 
-Download the latest version in [GitHub Releases](https://github.com/xiaxuan1989/GRAVITY/releases).
+Download the latest version in [GitHub Releases](https://github.com/xiaxuan1989/GRAVITY/releases). You can choose `main.pdf`, `Chapter 1.pdf`, etc.
 
 ### Compilation
 
