@@ -15,7 +15,7 @@
 # 忽略编辑器和系统文件
 *.swp
 *.swo
-.DS_Store
+*.DS_Store
 .vscode/
 
 ## Intermediate documents:
