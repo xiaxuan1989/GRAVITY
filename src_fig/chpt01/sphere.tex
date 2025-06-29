@@ -1,0 +1,170 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{mathrsfs}
+\usetikzlibrary{decorations.pathmorphing}
+    % this is for graphics. e.g. rectangle on title page
+\usetikzlibrary{3d}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees,mindmap}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc,math}
+
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+%\usepgfplotslibrary{colormaps}
+\usepgflibrary{shapes.geometric}
+
+\usepackage[edges]{forest}
+\usetikzlibrary{arrows.meta}
+\colorlet{linecol}{black!75}
+\usepackage{xkcdcolors} % xkcd colors
+
+\usetikzlibrary{patterns}
+\tikzset{>={Stealth[inset=0pt,angle=20:10pt]}}
+
+
+\tikzset{zigzag/.style={decorate,decoration=zigzag}}
+
+
+\newcommand\LongitudePlane[3][current plane]{
+  \tikzset{#1/.estyle={cm={cos(#3),sin(#3)*sin(#2),0,cos(#2),(0,0)}}}
+}
+\newcommand\DrawLongitude[3][\AngleGamma]{
+  \LongitudePlane{#1}{#3}
+  \tikzset{current plane/.prefix style={scale=#2}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#3)*cos(#1)/sin(#1))} %
+  \draw[current plane,thin,black] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[color=lightgray,current plane,thin,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+
+\newcommand\LatitudePlane[3][current plane]{
+  \pgfmathsetmacro\yshift{cos(#2)*sin(#3)}
+  % 下面 cm 的最后一个参数不能出现乘法，所以定义了 yshift
+  \tikzset{#1/.estyle={cm={cos(#3),0,0,cos(#3)*sin(#2),(0,\yshift)}}}
+}
+% 参数1：【可选】极点的倾斜角，默认 `\AngleGamma`
+% 参数2：地球半径
+% 参数3：维度（北正南负）
+\newcommand\DrawLatitude[3][\AngleGamma]{
+  \LatitudePlane{#1}{#3}
+  \tikzset{current plane/.prefix style={scale=#2}}
+  \pgfmathsetmacro\sinVis{sin(#3)/cos(#3)*sin(#1)/cos(#1)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[current plane,thin,black] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[color=lightgray,current plane,thin,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+%%%>
+%% 任意大圆
+
+% 参数1：【可选】变换的名字，默认 `current plane`
+% 参数2：极点的倾斜角
+% 参数3：左侧点的经度
+% 参数4：左侧点的纬度
+% 参数5：右侧点的经度
+% 参数6：右侧点的纬度
+\newcommand\ArcThreeDPlane[6][current plane]{
+    \pgfmathsetmacro\angleZeta{#2}
+    \pgfmathsetmacro\lambdaLhs{#3}
+    \pgfmathsetmacro\phiLhs{#4}
+    \pgfmathsetmacro\lambdaRhs{#5}
+    \pgfmathsetmacro\phiRhs{#6}
+    \pgfmathsetmacro\deltaLambda{#5-#3}
+    \pgfmathsetmacro\deltaPhi{#6-#4}
+    \pgfmathsetmacro\aVar{sin(\deltaPhi/2)*sin(\deltaPhi/2)+cos(\phiLhs)*cos(\phiRhs)*sin(\deltaLambda/2)*sin(\deltaLambda/2)}
+    \pgfmathsetmacro\cVar{2*atan2(sqrt(\aVar), sqrt(1-\aVar))}
+    \pgfmathsetmacro\yVar{sin(\deltaLambda)*cos(\phiRhs)}
+    \pgfmathsetmacro\xVar{cos(\phiLhs)*sin(\phiRhs)-sin(\phiLhs)*cos(\phiRhs)*cos(\deltaLambda)}
+    \pgfmathsetmacro\thetaVar{-atan2(\yVar, \xVar)}
+	\tikzset{#1/.estyle={cm={cos(\lambdaLhs)*cos(\phiLhs), cos(\angleZeta)*sin(\phiLhs)+sin(\angleZeta)*sin(\lambdaLhs)*cos(\phiLhs), -cos(\lambdaLhs)*sin(\phiLhs)*cos(\thetaVar)+sin(\lambdaLhs)*sin(\thetaVar), cos(\angleZeta)*cos(\phiLhs)*cos(\thetaVar)-sin(\angleZeta)*(sin(\lambdaLhs)*sin(\phiLhs)*cos(\thetaVar)+cos(\lambdaLhs)*sin(\thetaVar)), (0,0)}}}
+}
+% 参数1：【可选】极点的倾斜角，默认 `\AngleGamma`
+% 参数2：地球半径
+% 参数3：左侧点的经度
+% 参数4：左侧点的纬度
+% 参数5：右侧点的经度
+% 参数6：右侧点的纬度
+\newcommand\DrawArcThreeD[6][\AngleGamma]{
+    \pgfmathsetmacro\angleZeta{#1}
+    \pgfmathsetmacro\lambdaLhs{#3}
+    \pgfmathsetmacro\phiLhs{#4}
+    \pgfmathsetmacro\lambdaRhs{#5}
+    \pgfmathsetmacro\phiRhs{#6}
+    \pgfmathsetmacro\deltaLambda{#5-#3}
+    \pgfmathsetmacro\deltaPhi{#6-#4}
+    \pgfmathsetmacro\aVar{sin(\deltaPhi/2)*sin(\deltaPhi/2)+cos(\phiLhs)*cos(\phiRhs)*sin(\deltaLambda/2)*sin(\deltaLambda/2)}
+    \pgfmathsetmacro\cVar{2*atan2(sqrt(\aVar), sqrt(1-\aVar))}
+    \pgfmathsetmacro\yVar{sin(\deltaLambda)*cos(\phiRhs)}
+    \pgfmathsetmacro\xVar{cos(\phiLhs)*sin(\phiRhs)-sin(\phiLhs)*cos(\phiRhs)*cos(\deltaLambda)}
+    \pgfmathsetmacro\thetaVar{-atan2(\yVar, \xVar)}
+	\ArcThreeDPlane{#1}{#3}{#4}{#5}{#6}
+    \draw [current plane] (#2, 0) arc (0:\cVar:#2);
+}
+
+\newcommand\DrawArcLong[3][\AngleGamma]{
+  \LongitudePlane{#1}{#3}
+  \tikzset{current plane/.prefix style={scale=#2}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#3)*cos(#1)/sin(#1))} %
+  \draw[current plane,thin,black] (\angVis:1) arc (\angVis:90:1);
+  \draw[color=lightgray,current plane,thin,dashed] (\angVis:1) arc (\angVis
+  :-90:1);
+}
+
+\begin{document}
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=2pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}[scale=.7]
+
+\def\R{3.5} % 切面半径
+\def\AngleGamma{30} % 极点倾斜角 
+\pgfmathsetmacro\CosGamma{cos(\AngleGamma)} % pgfmathsetmacro 可以进行 cos 计算，def 不行
+
+\coordinate[mark coordinate] (N) at (0,\R*\CosGamma);
+\node[above=0.5pt] at (N) {\footnotesize$\mathbf{N}$};
+\coordinate[mark coordinate] (S) at (0,-\R*\CosGamma);
+\node[below=0.5pt] at (S) {\footnotesize$\mathbf{S}$};
+
+\coordinate[mark coordinate] (A) at (-2.05,2);
+\node[above=3pt] at (A) {$A$};
+
+\coordinate[mark coordinate] (a) at (-1,2.57);
+\node[below=1pt] at (a) {$a$};
+
+\coordinate[mark coordinate] (b) at (1,3.06);
+\node[below=1pt] at (b) {$b$};
+
+\coordinate[mark coordinate] (D) at (1.85,2.84);
+\node[below=1pt] at (D) {$D$};
+
+
+
+
+
+
+%\LongitudePlane{\AngleGamma}{45}
+%\draw[current plane] circle (\R);
+
+\DrawArcThreeD{\R}{0}{90}{20}{56}; 
+
+\DrawArcThreeD{\R}{210}{70}{20}{70}; 
+
+\DrawLongitude{\R}{200};
+
+\DrawArcLong{\R}{210};
+
+
+%\DrawLatitude{\R}{0};
+
+
+\draw[very thick] (0,0) circle (\R); % 3D 效果的球
+
+
+\end{tikzpicture}
+\end{document}

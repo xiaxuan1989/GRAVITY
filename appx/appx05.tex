@@ -1,0 +1,185 @@
+\chapter{仿射联络及曲率}\label{appx:curvature}
+\begin{definition}
+    置 $C^{h}$-流形 $M$。
+    \textbf{仿射联络}或\textbf{协变微分}是将 $(k,l)$ 型 $C^{r+1}$-张量场映为 $(k,l+1)$ 型 $C^{r}$-张量场（$h\geqslant r+2$）的线性算符 $\nabla$，满足：对张量积有 Leibniz 乘法法则；与缩并对易；对 $C^1$-函数 $f$ 有 $\nabla f=\d f$。分量记作 $\nabla_\mu T^{\cdots}_{\cdots}$，算符 $\nabla_\mu$ 称为\textbf{协变导数}。$\nabla_X:=\c^1_1(X\otimes\nabla)$ 称为沿矢量场 $X$ 的\textbf{方向导数}。$(M,\nabla)$ 构成\textbf{联络空间}。
+\end{definition}
+
+\begin{eg}
+    对标量场 $f$，$\nabla_X f=\langle\d f,X\rangle=X(f)$。
+\end{eg}
+
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$ 和矢量基场 $\{e_\mu\}$，\textbf{联络系数}为 $\Gamma^\lambda_{\mu\nu}:=\langle e^\lambda,\nabla_{e_\mu} e_\nu\rangle$。
+    $\Gamma^\lambda_\nu:=\Gamma^\lambda_{\mu\nu} e^\mu$ 称为\textbf{联络 1-形式}。
+\end{definition}
+
+\begin{remark}
+    一律建议将联络系数定义为分量形式，以避免讨论其张量性等无伤大雅的问题。
+\end{remark}
+
+\begin{theorem}
+    $\nabla e_\nu=\Gamma^\lambda_\nu\otimes e_\lambda.$
+\end{theorem}
+
+\begin{theorem}
+    置对矢量场 $Y$ 和坐标系 $\{x\}$。$\nabla Y$ 坐标分量为 $\nabla_\mu Y^\lambda=\del_\mu Y^\lambda+\Gamma^\lambda_{\mu\nu}Y^\nu$。
+\end{theorem}
+\begin{remark}
+    务必注意 $\Gamma^\lambda_{\mu\nu}Y^\nu$ 的缩并顺序。
+\end{remark}
+\begin{proof}置 $\{e_\mu\}$，则
+    \[\nabla(Y^\nu e_\nu)=\d Y^\nu\otimes e_\nu+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda=\del_\mu Y^\lambda\d x^\mu\otimes e_\lambda+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda,\]
+    取 $e_\mu=\del_\mu$ 即可。
+\end{proof}
+
+\begin{theorem}
+    设 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则
+    \begin{align*}
+        \Gamma'^{\gamma}_{\sigma\kappa}&=\langle e'^\gamma,\nabla_{e'_\sigma} e'_\kappa\rangle=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma\langle e^\lambda,\nabla_{e_\mu} (A^\nu{}_\kappa e_\nu)\rangle\\
+    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma(A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+e_\mu(A^\lambda{}_\kappa))\\
+    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+(A^{-1})^\gamma{}_\lambda e'_\sigma(A^\lambda{}_\kappa).
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}
+    流形必存在某个仿射联络，且数量无限多。
+\end{theorem}
+
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$ 中 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $H$ 是定义在 $\Im\gamma$ 的 $C^1$-张量场，则 $H$ 对 $\gamma$ 的\textbf{沿线协变导数}为
+\eq{
+\frac{D H}{\d\sigma}:=\nabla_{\dot\gamma} \bar H,
+}
+其中 $\bar H$ 是 $H$ 的任意延拓。若 $D H/\d\sigma=0$，则称 $H$ 沿线\textbf{平行移动}。
+\end{definition}
+
+\begin{eg}
+    对标量场 $f$，$D f/\d\sigma=\dv*{f}{\sigma}$。
+\end{eg}
+
+按理来说 $\nabla T$ 应取决于附近延拓的情况，因此要求曲线外应也有定义，但沿线协变导数事实上与延拓无关。为行文简洁，不妨设张量 $T$ 为一矢量 $v$。将沿线导数在曲线上一点 $p$ 处按坐标基展开为
+    \[
+    \dv{x^\nu}{t}\nabla_\nu \bar v^\mu|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t}\bar v^\sigma|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t} v^\sigma|_p,
+    \]
+    任意不同延拓 $\bar v,\bar v'$ 实际上给出了同一沿线导数，只需证明
+    \[
+    \dv{\bar v^\mu}{t}=\dv{\bar v'^\mu}{t}.
+    \]
+    上式显然成立，因为任意延拓的 $\bar v^\mu(t)$ 实为领域内的 $\bar v$ 同曲线映射复合的一元函数，该一元函数正是 $v^\mu(t)$。以后凡谈及只在曲线上定义的张量场时，不会讨论协变微分（因为没意义），但可求其沿线导数（沿线导数同延拓无关）。
+
+\begin{theorem}
+    置联络空间 $(M,\nabla)$ 和连接 $p,q\in M$ 的某条曲线 $\gamma$，则 $\gamma$上的平行移动构成 $T_p M$ 至 $T_q M$ 的一个同构。
+\end{theorem}
+
+\begin{definition}
+    置 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $\nabla_{\dot\gamma} \dot\gamma$ 平行于 $\dot\gamma$，则称 $\gamma$ 为\textbf{测地线}。总可取新参数 $\xi$ 使 $\nabla_{\dv{\xi}} \dv{\xi}=0$，称为\textbf{仿射参数}。
+\end{definition}
+\begin{remark}
+    容易验证仿射参数可确定到线性变换 $\xi'=a\xi +b$，$a,b\in\R$。此后谈及测地线均默认仿射参数化。
+\end{remark}
+ 
+
+\begin{theorem}
+    切矢平行移动直接给出仿射参数化的测地线。
+\end{theorem}
+\begin{proof}
+取 $\dot\gamma=\dv*{\xi}$，则 ${D \dot\gamma}/{\d \xi}=\nabla_{\dot\gamma} \bar{\dot\gamma}=\nabla_{\dot\gamma} {\dot\gamma}=0$。
+\end{proof}
+
+\begin{theorem}
+    一点及一矢量唯一决定仿射参数化的测地线。
+\end{theorem}
+\begin{proof}
+    仿射参数化的测地线方程在任意坐标系展开为 $U^\nu \nabla_\nu U^\mu=0$，这是二阶常微分方程，由分析学知结论成立。
+\end{proof}
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$，定义 $(1,2)$ 型 $C^{r-1}$-张量场 $T$ 为\textbf{挠率}，对 $C^r$-矢量场 $X,Y$ 有 $T(X,Y):=\nabla_XY-\nabla_YX-[X,Y].$
+\end{definition}
+
+\begin{theorem}
+    取坐标系 $\{x\}$，由 $[\partial_\mu,\partial_\nu]=0$ 可知 ${T^\mu}_{\lambda\nu}=2{\Gamma^\mu}_{[\lambda\nu]}$。
+\end{theorem}
+
+\begin{theorem}
+    无挠时，对易子可写作 $[X,Y]=\nabla_XY-\nabla_YX.$
+\end{theorem}
+
+\begin{theorem}
+    无挠性等价于对函数 $f$ 有 $[\nabla,\nabla]f=0$。
+\end{theorem}
+
+\begin{definition}
+    度规 $g$ 介入后，置 $(M,g,\nabla)$。
+    $\nabla g=0$ 称为\textbf{度规适配性}。
+    度规适配的无挠联络称为 \textbf{Levi-Civita 联络}。上式称为与度规 $g$ 的适配性或相容性。
+\end{definition}
+
+\begin{theorem}
+    Levi-Civita 联络存在且唯一。
+\end{theorem}
+\begin{proof}
+    这是因为，给定度规场 $g$，可以用任意微分算符 $\tilde\nabla$ 及差 $C^\lambda{}_{\mu\nu}$ 构造出 $\nabla$ 使得 $\nabla g=0$，利用无挠性可求解$C^\lambda{}_{\mu\nu}$的表达式。不妨用普通微分 $\d$，这样便有 $\Gamma^\lambda_{\mu\nu}$ 同 $g$ 的关系（我们已经学过），而该表达式存在且唯一。
+\end{proof}
+
+\begin{definition}
+    若第二可数 $T_2$ 光滑流形 $M$ 是仿紧且单连通的，度规场 $g$ 的号差为 $2$，$\nabla$ 为 Levi-Civita 联络，则称 $(M,g,\nabla)$ 为\textbf{Lorentz 流形}。
+\end{definition}
+
+\begin{remark}
+    时空的数学模型通常为 Lorentz 流形。
+\end{remark}
+
+\begin{definition}
+    \textbf{Lorentz 流形} 是一个 4 维光滑连通 $T_2$ 且第二可数流形 $M$、一个光滑 Lorentz 度规场 $g$ 和一个 Levi-Civita 联络 $\nabla$ 的卡氏积 $(M,g,\nabla)$。习惯于只简写为 $(M,g)$，甚至是 $M$（无歧义时）。
+\end{definition}
+
+\begin{theorem}
+    可证具有（至少）$C^1$ 仿射联络的（至少）$C^3$ 连通 $T_2$ 且第二可数流形一定仿紧。
+\end{theorem}
+\begin{proof}
+    略，涉及正则邻域（法邻域）的存在性。
+\end{proof}
+
+物理学将 Lorentz 流形\textbf{定义为/称为}时空连续统，又简称\textbf{时空}。这在数学上是定义或改称，在物理上是逻辑公理（认为时空的数学模型是流形）。也就是说，涉及物理概念的数学定义，在逻辑上相当于物理理论的“公理”（定律、原理）。$M$ 又称时空背景，其元素称为事件或时空点。而光滑性作为逻辑公理是值得我们期望的性质。
+
+
+
+
+需要注意，在高维空间中也总存在\textbf{测地系}\footnote{数学上，这说明 Gauss 假设总能导出高维几何的局部平直性。}使得 $g_{\mu\nu}=\eta_{\mu\nu}$ 且 $g_{\mu\nu,\lambda}=0$。注意这并不显然，我们在四维时空中是用等效原理理解它的。考虑 $x^\mu(x')$ 形式的光滑函数（而非反之）以迎合度规的协变变换。
+以某点 $p$ 为某系 $\{x\}$ 原点，并不妨设变换不改原点，则总能展为
+\eq{
+    x^\mu= \pdv{x^\mu}{x'^\alpha}x'^\alpha+ \frac 12 \pdv{x^\mu}{x'^\alpha}{x'^\beta} x'^\alpha x'^\beta + \frac 16 \frac{\del^3 x^\mu}{\del x'^\alpha \del x'^\beta \del x'^\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.
+}
+将偏导系数简记 $A^\mu_\alpha,B^\mu_{\alpha\beta},C^\mu_{\alpha\beta\gamma}$ 等。
+$A^\mu_\alpha$ 的独立分量数为 $n^2$，而 $g_{\mu\nu}$ 的独立分量数为 $\binom {n+1}{2}=\frac{n(n+1)}{2}$。由 $2n\geqslant n+1$，$A^\mu_\alpha$ 能自由调节所有的 $g_{\mu\nu}$ 至 $\eta_{\mu\nu}$。进而，为排除掉 $g_{\mu\nu}$ 的改变使 $g_{\mu\nu,\lambda}$ 改变的那部分干扰，要考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}$ 的坐标变换。只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 即可：
+\[x^\mu=x'^\mu+\frac 12 B^\mu_{\alpha\beta} x'^\alpha x'^\beta +\cdots.\]
+注意 $B^\mu_{\alpha\beta}=B^\mu_{(\alpha\beta)}$，则独立分量数为 $n\binom {n+1}{2}$，而 $g_{\mu\nu,\lambda}$ 的独立分量数为 $\binom {n+1}{2}n$，二者相等，则 $B^\mu_{\alpha\beta}$ 恰好能自由调节所有的 $g_{\mu\nu,\lambda}$ 至零。进而地，在某测地坐标 $\{\xi\}$ 基础上，总能找到无限多测地坐标，它们形如
+\eq{
+    \zeta=\xi^\mu_0+\Lambda^\mu{}_\alpha\xi^\alpha+\frac 16 C^\mu_{\alpha\beta\gamma}\xi^\alpha \xi^\beta \xi^\gamma+\cdots,
+}
+其中$\xi^\mu_0,\Lambda^\mu{}_\alpha$ 等无关于 $\xi^\alpha$，
+即只要求 $A^\mu_\alpha$ 是 Poincaré 变换且 $B^\mu_{\alpha\beta}=0$，从而保持测地系性质。
+
+情况在二阶时发生改变。为排除掉 $g_{\mu\nu},g_{\mu\nu,\lambda}$ 改变所带来的干扰，考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}, g'_{\mu\nu,\lambda}=g_{\mu\nu,\lambda}$ 的坐标变换，只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 且 $B^\mu_{\alpha\beta}=0$：
+\[x^\mu=x'^\mu + \frac 16 C^\mu_{\alpha\beta\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.\]
+而 $C^\mu_{\alpha\beta\gamma}=C^\mu_{(\alpha\beta\gamma)}$，独立分量数为 $n\binom {n+2}{3}$，而 $g_{\mu\nu,\lambda\kappa}=g_{(\mu\nu),(\lambda\kappa)}$，独立分量数为 ${\binom {n+1}{2}}^2$。可见，$C^\mu_{\alpha\beta\gamma}$ 最多只能自由调节 $n\binom {n+2}{3}$ 种 $g_{\mu\nu,\lambda\kappa}$，并剩下
+\eq{
+    {\binom {n+1}{2}}^2-n\binom {n+2}{3}=\frac{n^2(n^2-1)}{12}.
+}
+因此总存在 ${n^2(n^2-1)}/{12}$ 种不受 $C^\mu_{\alpha\beta\gamma}$ 选择的影响的 $g_{\mu\nu,\lambda\kappa}$（或线性组合）。
+若我们想构造基于 $g_{\mu\nu,\lambda\kappa}$ 的张量，我们只能使用这些进行线性组合，因为张量变换律只包括 $A^\mu_\alpha=\delta^\mu_\alpha$ 而不涉及 $C^\mu_{\alpha\beta\gamma}$。这样当所构造的张量非零时，不会消除掉所有的 $g_{\mu\nu,\lambda\kappa}$。
+
+
+假设时空维数是 $n$，显然至少要两个不同指标才有非零分量。给定 $a,b$，由反称性知只有 $R_{abab}$；给定 $a,b,c$，由反称性和对称性知有 $R_{abac},R_{abbc},R_{acbc}$ 三类；给定 $a,b,c,d$，前一对指标选完就确定了后一对，由对称性知选法有 $R_{abcd},R_{acbd},R_{adbc}$，但给定两个就能按非平凡 Ricci 恒等式确定第三者，故独立分量有两类。最后乘上各自组合数，则独立分量数共为
+\[
+    \binom n2+3\binom n3+2\binom n4=\frac{n^2(n^2-1)}{12}.
+\]
+可见它恰好具有 ${n^2(n^2-1)}/{12}$ 个独立分量，用完了所有可用的 $g_{\mu\nu,\lambda\kappa}$。故能线性构造出的张量有且仅有 Riemann 曲率。
+
+曲率张量不因真空方程而一定为零的部分，称为 Weyl 张量。这个张量量度了测地线组的“潮汐”扭曲。所以真空区域里的引力场的“局部强度”在 Newton 极限之下是与宏观的试验物质的潮汐力相关的，而不是与引力的范数相关的.
+
+曲率 2-形式
+
