@@ -26,8 +26,8 @@
 # *.ps
 # *.eps
 
-# 忽略生成的 PDF
-*.pdf
+# 忽略生成的
+main.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
