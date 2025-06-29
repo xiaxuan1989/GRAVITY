@@ -19,7 +19,7 @@ Download the latest version in [GitHub Releases](https://github.com/xiaxuan1989/
 
 ### Compilation
 
-Simply use **XeLaTeX** to compile `main.tex` in the `src` directory.
+Simply use **XeLaTeX & BibLaTeX** to compile `main.tex`. Check the `fig_src` directory for codes of figures.
 
 ### License
 
