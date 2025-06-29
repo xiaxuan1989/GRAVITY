@@ -6,7 +6,6 @@
 ![Downloads](https://img.shields.io/github/downloads/xiaxuan1989/GRAVITY/total?style=flat)
 <!--[![Sponsorship](https://img.shields.io/badge/Sponsorship-:\)-946ce6?style=flat&labelColor=444444&logoSize=auto)]()-->
 
-
 The book mainly focuses on classical gravity, spacetime, quantum field, and the math that underpins these concepts. <br/>
 Since so-called “general relativity” does not truly rest on a fully general principle of relativity, we will commence our exploration with classical field theory before delving into selected topics in quantum theory. <br/>
 Please note that the book is currently written entirely in Chinese. <br/>
@@ -19,9 +18,8 @@ Download the latest version in [GitHub Releases](https://github.com/xiaxuan1989/
 
 ### Compilation
 
-Simply use **XeLaTeX & BibLaTeX** to compile `main.tex`. Check the `fig_src` directory for codes of figures.
+Simply use **XeLaTeX**(and BibLaTeX) to compile `main.tex`. Check the `src_fig` directory for codes of figures.
 
 ### License
 
 The entire program is distributed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
-
