@@ -1,0 +1,56 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8
+
+% LaTeX source for book ``引力'' in Chinese
+% Copyright 2023-2025 夏草.
+% Permission is granted to copy, distribute and/or modify this
+% document under the terms of the Creative Commons
+% Attribution 4.0 International (CC BY 4.0)
+% http://creativecommons.org/licenses/by/4.0/
+
+
+\PassOptionsToPackage{quiet}{fontspec}  % 关闭 fontspec 警告
+\documentclass[draft]{book}             % book 类，draft 快速编译，默认 10.5pt
+\input{preamble.tex}                    % 宏包、定义
+
+% 测试编译
+\includeonly{chpt/chpt01.tex}
+
+\begin{document}
+    \frontmatter
+    \include{titlepage.tex}     % 封面
+    \include{preface.tex}       % 前言
+    \include{notation.tex}      % 记号及单位制
+
+    \setcounter{tocdepth}{3}   % 3-level 目录
+    \tableofcontents           % 目录
+
+    \mainmatter
+
+    %\part{经典理论}
+    \include{chpt/chpt01.tex}   % 广义相对论
+    \include{chpt/chpt02.tex}   % 黑洞物理
+    \include{chpt/chpt03.tex}   % 因果结构
+    \include{chpt/chpt04.tex}   % 实验验证
+    \include{chpt/chpt05.tex}   % 引力波
+    \include{chpt/chpt06.tex}   % 宇宙学
+    
+    %\part{附录}
+    \begin{appendices}
+        \include{appx/appx01.tex}   % 范畴学
+        \include{appx/appx02.tex}   % 点集拓扑
+        \include{appx/appx03.tex}   % 线性代数
+        \include{appx/appx04.tex}   % 流形
+        \include{appx/appx05.tex}   % 曲率
+        \include{appx/appx06.tex}   % 李导数
+        \include{appx/appx07.tex}   % 微分形式
+        \include{appx/appx08.tex}   % 李群
+        \include{appx/appx09.tex}   % 丛
+    \end{appendices}
+
+    \backmatter
+    \printbibliography[heading=bibintoc, title={参考文献}] % 参考文献
+
+    %\addcontentsline{toc}{part}{索引}
+    %\printindex
+\end{document}

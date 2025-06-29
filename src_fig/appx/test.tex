@@ -1,0 +1,36 @@
+\listfiles
+    \documentclass[pdf,dvipsnames,svgnames, x11names]{standalone}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{lmodern}
+    \usepackage{pst-solides3d}
+    \begin{document}
+    \pagestyle{empty}
+
+    \begin{pspicture}(-6,-2)(6,2)
+    \psset{unit=1.5}
+    %\psframe*[linecolor=DarkSeaGreen4!80](-4.2,-1.7)(5.1,3)
+    \psset[pst-solides3d]{viewpoint=20 10 5, Decran=40, lightsrc=20 10 10}
+    \psPoint(3.5,0,0){X}
+    \psPoint(0,2.8,0){Y}
+    \psPoint(0,0,1.5){Z}
+    \defFunction{mobius}(u,v)
+       {2 u v Cos mul add 2 v mul Cos mul}
+       {2 u v Cos mul add 2 v mul Sin mul}
+       {u v Sin mul}
+    \psSolid[object=surfaceparametree,linewidth=0.75\pslinewidth,
+       base=0.2 0.25 0 pi,linewidth=0.1,
+       function=mobius,
+       ngrid=.025]%
+    \psSolid[object=surfaceparametree,linewidth=0.75\pslinewidth,
+       base=-0.25 -0.2 0 pi,linewidth=0.1,
+       function=mobius,
+       ngrid=.025]%
+    \psSolid[object=surfaceparametree,linewidth=0.5\pslinewidth,
+       base=-0.25 0.25 0 pi,fillcolor=black!50,incolor=black!50,
+       function=mobius,
+       ngrid=.05]%
+    
+    \end{pspicture}
+
+    \end{document}

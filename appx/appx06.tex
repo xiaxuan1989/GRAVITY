@@ -1,0 +1,126 @@
+\chapter{Lie 导数与对称性}\label{appx:Lie-deri}
+
+一般的光滑映射 $\phi$ 仍可诱导其上张量场的变换。给定标量场 $f:N\to\R$，$p\in M$ 变到 $\phi(p)\in N$ 后标量场的值为 $f(\phi(p))$，而我们可将 $\phi(p)$ 处的 $f$ 值直接搬运回 $p$ 处，即定义新标量场 $\phi^* f:M\to\R$ 满足 $\phi^* f(p):=f(\phi(p))$。
+\begin{definition}
+    $\phi^*:C^\infty(M)\to C^\infty(N)$ 称为\textbf{拉回}(pull back)，使 $\phi^* f:=f\circ\phi$。
+\end{definition}
+
+\begin{theorem}
+    易知 $\phi^*$ 是线性映射，且 $\phi^*(fg)=(\phi^* f) (\phi^* g)$。
+\end{theorem}
+
+
+
+类似地，记 $\phi(p)=q$，若 $\phi$ 是同胚，则也可将 $p=\phi^{-1}(q)$ 处的 $f$ 值往前搬至 $q$ 处，即定义 $\phi_* f$ 使 $\phi_* f(q):=f(\phi^{-1}(q))$ 或者 $\phi_* f:=f\circ\phi^{-1}$，故
+\eq{
+    \phi_*=(\phi^{-1})^*\Longleftrightarrow \phi^*=(\phi^{-1})_*.
+}
+再研究切矢场 $v$。确定一个 $v$ 只需对其作用于任意 $f$ 的结果做出要求。将 $v$ 推前即 $\phi_* v(f):=v(\phi^* f)$。这里未出现 $\phi^{-1}$，可见对一般光滑映射，只能借助切矢场给出：
+\begin{definition}
+    $\phi_*:T_p M\to T_{\phi(p)}N$ 称为\textbf{推前}(push forward)，使 $\phi_* v:=v\circ \phi^*$。
+\end{definition}
+
+将 $A$ 拉回即 $\phi^* A(f):=A(\phi_* f)$，或直接用 $\phi^*=(\phi^{-1})_*$。对余切矢场 $\omega$ 只需考虑对切矢场 $A$ 作用，同理 $\phi^* \omega:=\omega\circ\phi_*,\phi_* \omega:=\omega\circ\phi^*$。一般地，对任意张量场，其拉回和推前即
+\eq{
+    \phi^* T=T(\phi_*(\oo),\cdots;\phi_*(\oo),\cdots),\quad \phi_* T=T(\phi^*(\oo),\cdots;\phi^*(\oo),\cdots).
+}
+
+
+
+进一步对微分同胚，则称\textbf{单参微分同胚群}。对 $\forall p\in M$，取不同参数 $t$ 的 $\phi_t$ 将其映射至不同点 $\phi_t(p)$，形成一条以 $\phi_0(p)=p$ 为参数零点的光滑曲线 $C_p:\R\to M$，这称为该单参微分同胚群过 $p$ 点的\textbf{轨道}(orbit)。
+
+由于同胚是双射，因此各轨道是不会相交的，因此只要给出各 $p$ 点在其对应轨道的切矢 $\dv*{t}$，就给出了 $M$ 上的光滑切矢场。
+
+因此 $M$ 上的单参微分同胚群给出其对应的光滑切矢场。
+
+反之是否成立？可以证明，
+给定一个光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
+\eq{
+    \dv{x^\mu}{\sigma}=V^\mu,
+}
+其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
+
+看来 $\forall \sigma\in\R$ 可借用 $V^\mu$ 的积分曲线定义微分同胚 $\phi_\sigma:M\to M$：设过 $p$ 的积分曲线为 $C_p$（且 $C_p(0)=p$），规定 $\phi_\sigma(p):=C_p(\sigma)$，于是似乎得到了单参微分同胚群。然而存在极端情形，某条积分曲线在参数取某些值时像点不存在，比如可人为挖去背景的某些区域，因此只能说 $V^\mu$ 局部地给出单参微分同胚群。准确地，只要 $p\in M$ 存在，总可找到其开邻域 $U\subset M$，使得 $U,\phi_t[U]$ 同胚且满足$\phi_t\phi_s=\phi_{t+s}$，其中参数范围为零的某开邻域 $I\subset\R$。这样我们就把 $\{\phi_t|t\in I\}$ 称为 $p$ 的\textbf{单参微分同胚局部群}。
+
+一般来说总考虑 $U=M$。
+
+\textbf{参考系}指时空上的一个光滑单位类时矢量场 $\bm Z$。
+
+数学上，如果一条曲线处处与该矢量场相切，就称为该矢量场的一条积分曲线。十分显然，因为一点只对应一条积分曲线，倘若对应多条，矢量场于该点的取值便出现多值。可见积分曲线不会相交。
+
+参考系的每一积分曲线 $\gamma(\tau)$ 都是类时世界线。
+
+所有微分同胚（包括那些不同单参变换的复合，它们不是单参变换）仍将构成群，称为 $M$ 的\textbf{微分同胚群}。一个集合可以是群，也可同时是一个背景，这种群称为 \textbf{Lie 群}。连续变换构成的群就可以用参数代表其坐标系，故实质上 Lie 群，其维数即参数种类，而一个切矢场又给出一种参数，可见微分同胚群是一种无穷维 Lie 群。一个光滑切矢场生成的是微分同胚群的一个\textbf{单参子群}，故又被称为微分同胚群的一个\textbf{无穷小生成元}或\textbf{生成元}。
+
+矢量场 $\xi$ 能局部地给出单参微分同胚群 $\{\phi_t\}$。由 $\phi_t$ 可诱导出一种导数，其目的是为了比较邻近的 $T,\phi_{t*} T$ 或等价的 $\phi_t^*T,T$。
+\begin{definition}
+    张量场沿切矢场 $\xi$ 的 \textbf{Lie 导数}为
+\eq{
+\mathscr L_\xi T:=\lim_{t\to 0}\frac{\phi_t^* T-T}{t}.
+}
+\end{definition}
+
+\begin{eg}
+    就标量场 $f$ 而言 $\mathscr L_\xi f=\xi(f)$。
+\end{eg}
+
+则 Killing 矢量场的各流线可视作第 $\hat x^1$ 坐标线，Killing 方程将化为
+\eq{
+    0=\delta^\lambda_1  \hat g_{\mu\nu,\lambda}+\hat g_{\rho \nu}\hat\del_\mu \delta^\rho
+_1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^1}.
+}
+
+故直观上，Killing 矢量场的流线表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。
+
+
+
+等度量变换所构成的集合称\textbf{等度规群}。
+
+显然 Killing 矢量场的常系数线性组合还是 Killing 矢量场，所以等度规群可对应于全体 Killing 矢量场所构成的线性空间。于是，我们只要找到一组基底即可，即最大的一组线性独立的 Killing 矢量场。可证 $n$ 维空间的独立 Killing 矢量场的总数最多为 $\binom{n+1}{2}=\frac{n(n+1)}2$，细节待。具有这一数目的空间称为\textbf{最大对称空间}。寻找 Killing 矢量场的一般方法是求 Killing 方程的通解，但对于最大对称空间可轻松找到例子，之后验证即可。
+
+除了用 Killing 方程作为 Killing 矢量场的判据，还可以用如下方法。
+
+
+
+假设存在一个坐标系 $\{\hat x\}$ 使处处有
+\eq{
+    \xi=\pdv{\hat x^1}\Longleftrightarrow \hat \xi^\mu=\delta^\mu_1,
+}
+
+
+
+实质上，只要找到某个坐标系 $\{\hat x\}$ 使得 $\hat g_{\mu\nu}$ 与某个坐标 $\hat x^1$ 无关，则 $\pdv*{\hat x^1}$ 就是一个 Killing 矢量场。
+
+
+有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\del_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。最简单的情况就是平移，即满足 $\del_\mu\xi_\nu=0$ 的常矢量。独立解只需取各轴的坐标基底场即可：
+\eq{
+    \xi_{1}=\pdv{x},\quad \xi_{2}=\pdv{y}.
+}
+其流线是各坐标轴的一系列平行线。
+凭借在对称性上的直觉，可知第三种将对应旋转，而切换到极坐标有 $\d \l^2=\d r^2+r^2\d\phi^2$，的确与 $\phi$ 无关，因此第三种是
+\eq{
+    \xi_3=\pdv{\phi}=-y\pdv{x}+x\pdv{y}.
+}
+读者亦可用 Killing 方程验证之。由于系数与坐标有关，因此 $\xi_3$ 独立于 $\xi_1,\xi_2$。
+可预料流线 $\gamma(\phi)$ 是原点的同心圆，但下面还是严格求解之：
+\[
+    \dv{x}{\phi}=-y,\quad \dv{y}{\phi}=x.
+\]
+最简单的方法是借助复数。令 $z=x+\i y$，则 $\dv*{z}{\phi}=-y+\i x=\i z$，通解为
+\[
+    z=A\e^{\i(\phi-\phi_0)}\To x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
+\]
+假设初值条件是 $p=\gamma(0)$，流线上点记 $q=\gamma(\alpha)$，则
+\[
+    x_q=x_p\cos\alpha-y_p\sin\alpha,\quad y_q=x_p\sin\alpha+y_p\cos\alpha.
+\]
+坐标观点将 $x_q^\mu$ 视作 $p$ 的新坐标 $x'^\mu_p$，因而将上式视为对任意同一点 $p$ 的新旧坐标 $\{x\},\{x'\}$ 之关系。
+
+对于 $\mathbb E^3$，很明显 6 种独立 Killing 矢量场对应3种平移、3种平面旋转。对于 $(\R^2,\eta)$，旋转变换改为伪转动变换，极坐标对应为
+\eq{x=r\cosh\theta,\quad t=r\sinh\theta,}
+这样闵氏度规表为 $\d s^2=-r^2\d\theta^2+\d r^2$，称为 \textbf{Rindler 坐标系}。$\theta$ 正是快度。$\pdv*{\theta}$ 的流线为双曲线族。对于 $\R^{1,3}$，10 种独立 Killing 矢量场对应 4 种平移和 6 种平面旋转，其中平面旋转分为3 种空间旋转、3 种时空伪旋转，进而复合出任意 Poincaré 变换。不过，为了将变换的参数和物理上的速率联系在一起，只需根据 3-速定义证明 $u=\tanh\theta$ 即可。
+
+
+
+定义流形间映射便可谈及微分同胚。微分同胚映射可自然诱导张量丛的映射，故可谈及张量变换的主动、被动观点。所有微分同胚构成微分同胚群。任意光滑矢量场是该群的生成元。显然微分同胚有无穷多生成元，故维数无穷。一个光滑矢量场在群中挑出一个单参子群，称为单参微分同胚局部群（无穷小微分同胚）。若光滑矢量场还有完备性，则给出一个单参微分同胚群。紧致流形上任意矢量场可延拓至完备的。保持度规分量不变的变换对应的微分同胚映射称为等度规映射。诱导此映射的矢量场称为 Killing 矢量。代数定义可从 Lie 导数出发，也可从 Killing 方程出发以跳过 Lie 导数。此定义便告知可用 Killing 矢量场讨论度规（时空）的对称性。
+
