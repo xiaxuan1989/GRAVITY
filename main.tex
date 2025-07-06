@@ -10,11 +10,11 @@
 
 
 \PassOptionsToPackage{quiet}{fontspec}  % 关闭 fontspec 警告
-\documentclass{book}             % book 类，draft 快速编译，默认 10.5pt
+\documentclass[draft]{book}             % book 类，draft 快速编译，默认 10.5pt
 \input{preamble.tex}                    % 宏包、定义
 
 % 测试编译
-%\includeonly{chpt/chpt01.tex}
+\includeonly{chpt/chpt01.tex}
 
 \begin{document}
     \frontmatter
@@ -22,8 +22,8 @@
     \include{preface.tex}       % 前言
     \include{notation.tex}      % 记号及单位制
 
-    \setcounter{tocdepth}{3}   % 3-level 目录
-    \tableofcontents           % 目录
+    %\setcounter{tocdepth}{3}   % 3-level 目录
+    %\tableofcontents           % 目录
 
     \mainmatter
 

@@ -23,20 +23,65 @@
 \usepackage{
     amsmath, % 使用 equations
     amsthm,
+    amsfonts,
     amssymb,
     slashed,
     url,
     graphicx
 }
+
+% 英文字体
+\usepackage[no-math]{fontspec}
+\setmainfont{TeXGyreTermesX}[
+    UprightFont = *-Regular ,
+    BoldFont = *-Bold ,
+    ItalicFont = *-Italic ,
+    BoldItalicFont = *-BoldItalic ,
+    Extension = .otf ,
+    Scale = 1.0]
+\setsansfont{texgyreheros}[
+    UprightFont = *-regular ,
+    BoldFont = *-bold ,
+    ItalicFont = *-italic ,
+    BoldItalicFont = *-bolditalic ,
+    Extension = .otf ,
+    Scale = 0.9]
+
+% 中文字体
 \usepackage{ctex}
+\xeCJKsetup{AutoFakeBold=true}      % 自动伪粗体
 \setCJKmainfont[
-    BoldFont = FandolSong-Bold,     % Fandol 宋体
-    ItalicFont = FandolKai-Regular, % Fandol 楷体
-    Mapping=fullwidth-stop          % 全角句点
+    BoldFont = FandolSong-Bold,     % 粗体
+    ItalicFont = FandolKai-Regular, % 斜体
+    Mapping = fullwidth-stop        % 全角句点
 ]{FandolSong-Regular}
+
+% 数学字体
 \usepackage{mathrsfs}               % 花体
-\setmainfont{Times New Roman}       % 英文字体
-\usepackage{newtxmath}              % 数学字体
+\usepackage{anyfontsize}            % 允许任意字体大小
+% 保存原字体设置
+\let\oldencodingdefault\encodingdefault
+\let\oldrmdefault\rmdefault
+\let\oldsfdefault\sfdefault
+\let\oldttdefault\ttdefault
+% 切换到 T1 编码并指定 newtx 的正文字体系列
+\def\encodingdefault{T1}
+\renewcommand{\rmdefault}{ntxtlf}
+\renewcommand{\sfdefault}{qhv}
+\renewcommand{\ttdefault}{ntxtt}
+\usepackage{newtxmath}              % newtx
+% 恢复原字体设置
+\let\encodingdefault\oldencodingdefault
+\let\rmdefault\oldrmdefault
+\let\sfdefault\oldsfdefault
+\let\ttdefault\oldttdefault
+\let\Bbbk\relax                     % 清除可能冲突的 \Bbbk
+\usepackage{esint}                  % 积分符号
+% 重定义大型 ∑ 和 ∏ 运算符
+\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}
+\let\sumop\relax \let\prodop\relax
+\DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
+\DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"51}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,7 +94,7 @@
     backref=true,       % 标注引用它的页面
     backrefstyle=three, % 显示为 “2, 5, 8”
 ]{biblatex}             % 也可用 style=authoryear 等
-\addbibresource{refs.bib} % bib 文件
+\addbibresource{refs.bib} % 参考文献
 \usepackage[
     hidelinks,          % 隐藏颜色
     bookmarksnumbered,  % PDF 书签显示章节编号
@@ -67,10 +112,9 @@
 \usepackage[svgnames,dvipsnames]{xcolor}  % 丰富的颜色名支持，自定义颜色
 
 %=================== 数学相关 ===================
-\usepackage{isomath}                       % ISO 规范的数学字体和符号
-\usepackage{physics}                       % 物理学常用符号和导数简写命令
+%\usepackage{isomath}                       % ISO 规范
+\usepackage{physics}                       % 物理
 \usepackage{mathtools,nccmath}             % amsmath的扩展和改进，增强数学排版能力
-\usepackage{mathtools}                     % 增强 amsmath 提供的数学排版能力
 
 %=================== 图形与绘图 ===================
 \usepackage{tikz}
