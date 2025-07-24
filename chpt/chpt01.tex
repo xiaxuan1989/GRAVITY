@@ -58,12 +58,12 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
 \begin{figure}[ht]
     \centering
     \subfloat[\centering 静系对钟]{
-    \includegraphics[width=.28\textwidth]{fig/chpt01/reflecting.pdf}
+    \includegraphics[height=.41\textwidth]{fig/chpt01/reflecting.pdf}
     }%
     \qquad
-    \subfloat[\centering 动系对钟]{\includegraphics[width=.4\textwidth]{fig/chpt01/reflec2.pdf}
+    \subfloat[\centering 动系对钟]{\includegraphics[height=.4\textwidth]{fig/chpt01/reflec2.pdf}
     }%
-    \caption{\small 若以 $G$ 为绘图基准，只需使反射光与 $G$ 夹角呈 $45^\circ$ 即可使 $BD,AC$ 正交，结果如(a)。以该系为基准，研究一个运动惯性观者的对钟情况，结果如(b)。从图上看，动系坐标轴不是欧氏正交，但被约定为时空上的正交。当然，并非所有参考系都能办到满足时空正交的对钟。}
+    \caption{\small 若以 $G$ 为绘图基准，只需使反射光与 $G$ 夹角呈 $45^\circ$ 即可使 $BD,AC$ 正交，结果如(a)。以该系为基准，研究一个运动惯性观者的对钟情况，结果如(b)。可见惯性系的坐标轴总关于 $45^\circ$ 斜线对称。虽然图中动系坐标轴不是欧氏正交，但被约定为时空上的正交。当然，并非所有参考系都能办到满足时空正交的对钟。}
     \label{fig:clock_syn}
 \end{figure}
 
@@ -77,7 +77,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 按此规定，惯性参考系的固有系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。
 最后注意，实验意义上，光速的确只能理解为双程平均光速，而非单程光速。迄今为止，单程光速从未被实验测量过；目前也不可能实验测量，除非找到非光对钟法。
 
-\begin{figure}[ht]
+\begin{figure}[t]
     \centering
     \subfloat[\centering  $A,B$ 在 $S$ 中同时]{
     \includegraphics[width=.35\textwidth]{fig/chpt01/SIMULTANEITY.pdf}
@@ -85,7 +85,8 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
     \quad
     \subfloat[\centering $A,B$ 在 $S'$ 中同时]{\includegraphics[width=.35\textwidth]{fig/chpt01/SIMU2.pdf}
     }
-    \caption{\small 作某事件的同时面可投影得其坐标时。设静系 $S$ 和动系 $S'$。如图，某事件的 $t$ 坐标可做 $S$系同时面截得，而 $t'$ 坐标可做$S'$系同时面截得。两个事件在一个惯性系同时，但在另一惯性系中不同时。无法区别出特定的同时面，此即\textbf{同时的相对性}的直观图像。}
+    \caption{\small 作某事件的同时面可投影得其坐标时。设静系 $S$ 和动系 $S'$。某事件的 $t$ 坐标可做 $S$系同时面截得，而 $t'$ 坐标可做$S'$系同时面截得。
+    两个超新星的爆发事件在某系同时，但一般在另一系不同时。无法区别出特定的同时面，此即\textbf{同时的相对性}。}
     \label{fig:simurela}
 \end{figure}
 
@@ -102,12 +103,23 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 而 Newton 理论则分开定义绝对时间长度和空间长度。
 $(\eta_{\mu\nu})$ 作为广义的单位阵，易证 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。
 定义\textbf{号差}(signature)为 $(\eta_{\mu\nu})$ 的迹，本书一般选择 $+2$，称为\textbf{东海岸}习惯\footnote{量子场论教材常选择 $(\eta_{\mu\nu})=\diag(1,-1,-1,-1)$，号差为 $-2$ 即\textbf{西海岸}习惯。更有甚者选择将时间分量排在最后作为第 4 分量，这样有 $\diag(1,1,1,-1)$ 但并不影响号差。也有一种可能有哲学区别的习惯，称\textbf{Wick 技巧}：令 $x^0=\i ct$ 则线元还原回勾股定理 $\d s^2= \delta_{\mu\nu}\d x^\mu\d x^\nu$，伪转动变换的确变为 $x$-$\i ct$ 平面的旋转变换。除讨论某些理论复结构方面的问题外不使用这种做法。}。
-该号差下，按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。间隔不变性对类时间隔成立（$\Delta\tau^2=-\Delta s^2$）。对类光间隔，注意光速不变与 $\Delta s^2=0$ 等价，仍成立。考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
+该号差下，按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。间隔不变性对类时间隔成立($\Delta\tau^2=-\Delta s^2$)。对类光间隔，注意光速不变与 $\Delta s^2=0$ 等价，仍成立。考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
 外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。这种现象称为\textbf{尺缩效应}或\textbf{长度收缩}。
-由于不同观者对同时性各抒己见，所以不必对此诧异。
+蟹状星云和半人马星座 $\alpha$ 星之间的距离是相对的，不必诧异。
 进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$，成立。
 
-考虑无穷小事件间隔或\textbf{时空线元}
+    \begin{figure}[t]
+        \centering
+        \subfloat[\centering 在 $S$ 中静止]{
+        \includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S.pdf}
+        }%
+        \qquad
+        \subfloat[\centering 在 $S'$ 中静止]{\includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S'.pdf}
+        }
+        \caption{钟慢效应}
+    \end{figure}
+
+考虑无穷小的事件间隔或\textbf{时空线元}
 \eq{
 \d s^2={\eta}_{\mu\nu}\d x^\mu\d x^\nu=-\d t^2+\d x^2+\d y^2+\d z^2.
 }
@@ -115,13 +127,25 @@ $(\eta_{\mu\nu})$ 作为广义的单位阵，易证 $(\eta_{\mu\nu})=(\eta^{\mu\
 \eq{
 \Delta\tau=\int_C \sqrt{-\eta_{\mu\nu}\d x^\mu\d x^\nu}=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}\dv{x^\mu}{\sigma}\dv{x^\nu}{\sigma}}\d\sigma=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}T^\mu T^\nu}\d\sigma,}
 $T^\mu:=\dv*{x^\mu}{\sigma}$ 为关于 $\sigma$ 的\textbf{切矢}(tangent vector)在该系的分量，$\eta_{\mu\nu}T^\mu T^\nu$ 即模方。
-固有时间 $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。线性函数 $a\tau+b=\lambda$ 统称\textbf{仿射参数}(affine parameter)。
+切矢按模方符号（进而相应曲线）可类似分为三类。
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=.35\textwidth]{fig/chpt01/order.pdf}
+    \caption{\small 若间隔类光或类时，则（由 $\Lambda^0{}_0>0$ 联系）各惯性系将一致认同两个事件的先后顺序。但对于类空间隔，其事件的坐标时差距可以在不同惯性系下取任意实数。不同观者对其先后次序各抒己见。
+    类空间隔的事件没有因果联系。}
+    \label{fig:spacelike}
+\end{figure}
+类时或类光线统称\textbf{因果线}(causal curve)，能用因果线连接的事件正是具有因果联系的事件。在 $\R^4$ 中这等价于用非类空间隔连接。
+类光矢量亦称\textbf{零模}(null)矢量，构成的集合 $C_N$ 称\textbf{光锥}(light cone)。
+$\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\lambda=a\tau+b$ 统称\textbf{仿射参数}(affine parameter)。
 光对其世界线上的事件标记为一致坐标时，即对光而言不能定义固有时。光不能充当观者。描述光线可用坐标时 $t$ 参数化。
 
-切矢按模方符号可类似分为三类。光线的切矢一定类光。类光矢量亦称\textbf{零模}(null)矢量。所有类光矢量之集 $C_N$ 称为\textbf{光锥}(light cone)。
-\begin{figure}[ht]
+设 $V^\mu$ 类时，$W^\nu$ 是非零类时或类光矢量，则由三维 Cauchy 不等式知 $V^\mu W_\mu<0\eqto V^{0} W^{0}>0$，即 $V^\mu,W^\nu$ 具有相同的\textbf{时间指向}。
+因此可在光锥及其内部定义等价关系。约定某一惯性系后，规定 $V^0>0$ 是\textbf{指向未来}(future directed)矢量，那 $V^0<0$ 是\textbf{指向过去}(past directed)矢量。光锥被分为了\textbf{未来光锥}和\textbf{过去光锥}。讨论时间的反演时可以考虑指向过去的惯性系。类空矢量无未来或过去之分。
+
+\begin{figure}[t]
     \centering
-    \subfloat[\centering \small 3 维时空的光锥]{
+    \subfloat[\centering 3 维时空的光锥]{
      \begin{tikzpicture}[scale=1.5]
     \draw (-1,-1)--(1,1);
     \draw (-1,1)--(1,-1) node[right]{$\scriptstyle C_N$};
@@ -135,11 +159,10 @@ $T^\mu:=\dv*{x^\mu}{\sigma}$ 为关于 $\sigma$ 的\textbf{切矢}(tangent vecto
     \end{tikzpicture}
     }%
     \quad
-    \subfloat[\centering\small 因果结构]{\includegraphics[width=.3\textwidth]{fig/chpt01/structure cone.pdf}
+    \subfloat[\centering 因果结构]{\includegraphics[width=.3\textwidth]{fig/chpt01/structure cone.pdf}
     }
     \caption{光锥}
 \end{figure}
-由三维 Cauchy-Schwartz 不等式，若 $V^\mu$ 类时，而 $W^\nu$ 是非零类时或类光矢量，则当且仅当在任意惯性系（变换满足 ${\Lambda^{0}}_{0} >0$）中满足 $V^{0} W^{0}>0$ 时有 $V^\mu W_\mu<0$。因此可在光锥及其内部定义等价关系，称 $V^\mu,W^\nu$ 具有相同的\textbf{时间指向}。容易发现存在两种等价方式。规定 $V^0>0$ 是\textbf{指向未来的}(future directed)矢量，那另一种方式指定的矢量就称为\textbf{指向过去的}(past directed)。忽略掉零矢量，光锥被分成了两部分，即\textbf{未来光锥}和\textbf{过去光锥}。一般而言，只在讨论某些反演对称性时才考虑指向过去的惯性系。类空矢量没有未来或过去的分类。
 
 惯性系 $\{x\},\{x'\}$ 间满足
 \eq{\eta_{\alpha\beta}\d x'^\alpha\d x'^\beta=\eta_{\gamma\sigma}\d x^\gamma\d x^\sigma\iff \eta_{\alpha\beta}\pdv{x'^\alpha}{x^\gamma}\pdv{x'^\beta}{x^\sigma}=\eta_{\gamma\sigma},}
@@ -148,28 +171,15 @@ $T^\mu:=\dv*{x^\mu}{\sigma}$ 为关于 $\sigma$ 的\textbf{切矢}(tangent vecto
 \pdv{x'^\alpha}{x^{\gamma}}{x^\epsilon}=0\iff  x'^\mu=x_0^\mu+ \Lambda^{\mu}{}_{\nu}x^\nu,\quad \text{$\Lambda^{\mu}{}_{\nu}$ 满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$}.
 }
 满足上式的变换称\textbf{Poincaré 变换}。
-置 $S,S'$ 的时空原点重合，则 $x^\mu_0=0$，变换仅线性。设空间轴初态重合，但 $S'$ 相对于 $S$ 沿共同 $x,x'$ 轴匀速运动，则 $y,z$ 坐标一致。设正方向速率 $u$，则 $x=ut$ 对应 $x'=0$，时空图形如 \ref{fig:clock_syn}(b)。    
+置 $S,S'$ 的时空原点重合，则 $x^\mu_0=0$，变换仅线性。设空间轴初态重合，但 $S'$ 相对于 $S$ 沿共同 $x,x'$ 轴匀速运动，则 $y,z$ 坐标一致。设正方向速率 $u$，则 $x=ut$ 对应 $x'=0$。    
 进而得到（或直接利用钟慢、尺缩）\textbf{二维 boost 变换}：
 \eq{
      t'=\gamma( t-u x),\quad x'=\gamma( x-u t).
 }
 普通教材称之 Lorentz 变换。Einstein 最初用同时性对钟定义、仿射性假设得到上式，而线元后来才由 Minkowski（参见 \cite{PrincipleR}）提出。
 由此发展出来的理论由 Lorentz 命名为\textbf{相对性理论}(the theory of relativity)，简称\textbf{相对论}。当下主流称呼是\textbf{狭义相对论}(special relativity)。boost 变换仅为特例，一般情形的推导见 \ref{sec:PoincareLorentz} 节。
-    
-上式在低速极限下退回经典力学的 Galileo 变换 $t'=t,x'=x-ut$。直观图像如下。
-$x'$ 轴直线 $t'=0$ 即 $t=u x$，同理 $t'$ 轴即 $t=(1 / u) x$，则动系坐标轴总关于 $45^\circ$ 斜线对称。速率 $u$ 代表动系时间轴斜率。以转动变换类比之，相应的三角函数应替换为双曲函数。$\theta:=\operatorname{artanh}u$不是绘图意义的倾角，称为\textbf{快度}。这样有 $\cosh\theta=\gamma,  \sinh\theta=\gamma u$。
-“boost”取时间轴上的推动之意，但可见一个较好称呼是\textbf{伪转动}(pseudo rotation)：
-$t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
-如图 \ref{fig:boost}，光速相对于日常情形较大，因此图上光线应“下压”，则空间轴转动不明显，退回 Galileo 变换，大家共用绝对时间。快度概念比速度更简洁。比如，设 $u_1=\tanh\theta_{1}$ 是 $B$ 相对于 $A$ 的速度，而 $u_2=\tanh\theta_{2}$ 是 $C$ 相对于 $B$ 的速度，可证 $C$ 相对于 $A$ 的速度是 $u={(u_{1}+u_{2})}/{(1+u_{1} u_{2})}=\tanh(\theta_1+\theta_{2})$，此即速度叠加公式。
-
-物理学用矩阵书写物理量，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵，称之为\textbf{张量}(tensor)。
-物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
-关键就在于坐标变换下物理量的分量如何变。
-分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
-现在就可更严格地阐述狭义相对论的原理：\textit{物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值}，如 $c=1,\pi/2$ 和 $\hbar$。合称\textbf{Lorentz 不变性}(invariance)。
-例如，经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
-
-原则上，当然存在满足光速不变、相对性原理，但非 Lorentz 不变的理论，因为前文推导实际上默认了通常的额外条件，比如光走直线、不存在其它不变常数；甚至将来可能存在实验证否光速不变或相对性原理。但相对论以及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可 Lorentz 不变性，直至存在实验证否。
+因为上式在低速极限下退回 Galileo 变换 $t'=t,x'=x-ut$，从而兼容经典力学。
+“boost”取时间轴上的推动之意，但由图 \ref{fig:boost} 可知，一个较好称呼是\textbf{伪转动}(pseudo rotation)。
 
 \begin{figure}[p]
     \centering
@@ -183,8 +193,68 @@ $t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
     }
     \subfloat[\centering Galileo 变换]{\includegraphics[width=.42\textwidth]{fig/chpt01/GALILEAN.pdf}
     }
-    \caption{四类变换的图像直观}\label{fig:boost}
+    \caption{\small
+    $x'$ 轴直线 $t'=0$ 即 $t=u x$，同理 $t'$ 轴即 $t=(1 / u) x$。速率 $u$ 代表动系时间轴斜率。以转动变换类比之，相应的三角函数应替换为双曲函数。$\theta:=\operatorname{artanh}u$不是绘图意义的倾角，称为\textbf{快度}。这样 $\cosh\theta=\gamma,  \sinh\theta=\gamma u$，变换为 $t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
+    如图，光速相对于日常情形较大，因此图上光线应“下压”，则空间轴转动不明显，退回 Galileo 变换，大家共用绝对时间。快度概念比速度更简洁。比如，设 $u_1=\tanh\theta_{1}$ 是 $B$ 相对于 $A$ 的速度，而 $u_2=\tanh\theta_{2}$ 是 $C$ 相对于 $B$ 的速度，可证 $C$ 相对于 $A$ 的速度是 $u={(u_{1}+u_{2})}/{(1+u_{1} u_{2})}=\tanh(\theta_1+\theta_{2})$，此即速度叠加公式。
+    }\label{fig:boost}
 \end{figure}
+
+物理学用矩阵书写物理量，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵，称之为\textbf{张量}(tensor)。
+物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
+关键就在于坐标变换下物理量的分量如何变。
+分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
+现在就可更严格地阐述狭义相对论的原理：\textit{物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值}，如 $c=1,\pi/2$ 和 $\hbar$。合称\textbf{Lorentz 不变性}(invariance)。
+例如，经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
+
+原则上，当然存在满足光速不变、相对性原理，但非 Lorentz 不变的理论，因为前文推导实际上默认了通常的额外条件，比如光走直线、不存在其它不变常数；甚至将来可能存在实验证否光速不变或相对性原理。但相对论以及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可 Lorentz 不变性，直至存在实验证否。
+
+\newpage
+\begin{figure}[!h]
+    \centering
+        \subfloat[\centering 双曲线校准]{
+        \includegraphics[height=.45\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
+        }
+        \subfloat[\centering 钟慢效应]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
+        }
+    \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
+    例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
+\end{figure}
+    \begin{figure}[!h]
+        \centering
+        \subfloat[\centering 在 $S'$ 中静止]{
+        \includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 2.pdf}
+        }
+        \qquad
+        \subfloat[\centering 在 $S$ 中静止]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 1.pdf}
+        }
+        \caption{\small 尺缩效应}
+    \end{figure}
+\newpage
+    
+\begin{wrapfigure}{l}{.45\textwidth}
+    \centering
+    \includegraphics[width=.45\textwidth]{fig/chpt01/ladder.pdf}
+    \caption{汽车匀速进库}
+\end{wrapfigure}
+    
+    尺缩效应还导致\textbf{车库佯谬}\footnote{Ladder paradox，由 Rindler 提出，最初借梯子和谷仓(barn)举例，还可用火车和隧道。}。
+    设汽车与车库静长相等。汽车朝库匀速前进，司机认为动库变短、不能放下，司库认为动车收缩、放下有余。二者矛盾吗？不妨设车库无后墙（类似于隧道洞口），画图时借用校准曲线以保证车和库有相等静长。由图易见，以司库所在惯性系的同时面衡量，车短于库；以司机所在惯性系的同时面衡量，车长于库。两人观点都对，因为同时性的相对性导致结论的相对性。“\textit{到底}放下还是放不下?”这种问题没有意义，正如在尺缩问题中“到底哪把尺子较长”亦无意义。我们若真要“比较”，能让各位意见一致的做法只能是都放入静系中去。
+    从因果角度来理解将更便于在脑海里建立物理图像。“车尾接触入口”“车头接触出口”两个事件没有因果联系，故二人观点都对。我们在脑海中，不假思索地以为有因果联系，这个错觉来源于火车的车身。但在相对论中没有严格的刚体，只能将车身各质元的恒定高速运动理解为独自的、互相影响很小的。当然，现实生活中没有这么长且如此高速的火车，相互作用能在车头车尾间迅速传递，的确具有因果联系。
+    当车库有坚硬后墙时，车头固然撞墙停止。但撞墙信息以相互作用纵波传至车身各部分皆需时间，只当车尾获悉后整个车身才能停住，因而汽车将缩至比司库期初所测
+    
+    \begin{wrapfigure}{r}{.35\textwidth}
+        \centering
+        \includegraphics[width=.35\textwidth]{fig/chpt01/TWIN PARADOX.pdf}
+        \caption{孪生佯谬}
+        \label{fig:twin}
+    \end{wrapfigure}
+
+    \noindent 长度更短的程度。这时的确在谁看来都装得下。设材料性质理想，使信息传递为光速且质点获悉信号后立即停止，读者不妨在图上补出撞车后的时空图。
+
+    最后，著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。
+    前文已直接证明了这一点。图 \ref{fig:twin} 给出了三角情形，也可理解为，折线的同时面在 $B$ 处发生突变，因此惯性观者多出了图中阴影部分的时间差。
+    结论是不能交换的，因为不能将相对性原理滥用于非惯性系和惯性系间；而实际情形中，两人非质点，因此走惯性运动较为舒适，而走非惯性运动将感受到巨大的加速度，使相对论现象足够明显的物理量达光速级。
+
 
 \subsection{惯性系存在性}
 
@@ -195,7 +265,8 @@ $t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
 设 $A,B$ 共同自由落体，二者相对加速度近似为零。关键在于，\textit{总能以一者为研究对象，另一者抽象为背景坐标系}。比如，$B$ 可以是一部足够小、无自转的封闭电梯，而 $A$ 是乘客，则 $A$ 将感到失重。Newton 理论指出 $B$ 系中出现惯性力，但它与引力局域抵消，$B$ 系中做任何局域的力学实验结果都与惯性系等效，尤其在抛弃绝对系概念后，我们无法分辨。
 
 对任意自由落体质点而言，总存在局域坐标系，使质点相对于该系的动力学，像是在理想惯性系中一样。这种坐标系称为相应质点的\textbf{局域惯性系}。参考系的惯性性在局域上不可物理观测，惯性系可以且只能局域建立。任何我们所规定的惯性系，其实均是局域惯性系。Newton 的绝对运动不是相对于绝对系的运动，而是相对于局域惯性系的运动。
-Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 这个天才是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》，推论 VI “运动定律”\cite{Principia}。Newton 用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，那么月球就遵循一个 Kepler 轨道。}。尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
+Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》\cite{Principia} 推论 VI “运动定律”。可用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，那么月球就遵循一个 Kepler 轨道。}。
+尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
 
 现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
 
@@ -230,9 +301,10 @@ $(k,l)$\textbf{型张量}简称 $(k,l)$-\textbf{张量}，应满足如下\textbf
 $(k+l)$ 叫作张量的\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,n)$ 型分别称\textbf{$n$ 阶逆变、协变张量}或 $n$-张量，比如切矢是 1-逆变张量，余矢是 1-协变张量；度规是对称、非退化的 2-协变张量；Kronecker 符号是 2-张量。由张量的变换律，若存在坐标系使其分量为零，其在任何坐标系下分量都为零，故不论何型都称\textbf{零张量}。
 基本运算性质如下：
 \begin{enumerate}
-    \item 张量的直接拼凑称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\psi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，其变换式只是将各自的 Jacobi 矩阵元按实数的规律乘起来；
-    \item 张量的缩并仍是张量，因为变换式只是消去一对 Jacobi 矩阵元；
-    \item 若干张量线性相加仍是张量；\item 指标升降约定用 $g_{\mu\nu},g^{\mu\nu}$，构成\textbf{度规对偶}。
+    \item 张量的直接拼凑称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\psi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自 Jacobi 矩阵元按实数规律相乘；
+    \item 张量缩并仍是张量，因为变换式只是消去一对 Jacobi 矩阵元；
+    \item 若干张量线性相加仍是张量；\item 指标升降约定用 $g_{\mu\nu},g^{\mu\nu}$，构成\textbf{度规对偶}；
+    \item 求坐标偏导：$T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$，但保持张量性的导数见 \ref{sec:co-di} 节。
 \end{enumerate}
 
 虽然这在物理和计算上没有问题，但似乎还是缺了些什么。我们期望的是如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
@@ -295,8 +367,11 @@ $L$ 只通过 $q,\dot q$ 的关系隐含 $\sigma$。按理来说因为有 $q(\si
 此即\textbf{Euler-Lagrange 方程}，简称\textbf{E-L 方程}。常用“$\simeq$”强调消除边界项。由反证法知等价性。读者由此可推得经典力学方程。
 不过需强调，对简单的 $L$ 才考虑计算 E-L 方程，更多时候按以上标准流程直接变分。即使不用等时变分，基本上也总会找理由消除边界项。故以后常省略积分域，少数情况才讨论边界。
 
-粒子受外场作用，而场自身的演化也要服从最小作用量原理。以粒子情形类比，场的位形取相应空间场，但场的路径应是空间场往时间的延伸，即正是时空上的场 $\psi(x)$，如张量场，而位形是某 $\Sigma_t$ 上的截取 $\psi(t,\bm x)$。
-不妨从离散粒子系统逼近。假设 $\bm x$ 的自由度是有限的，场形同粒子系统，拉氏量涉及对各粒子的求和，其连续极限即对 $\bm x$ 的积分：$L=\int\mathcal L(\psi,\psi_{,\mu})\d[3]{x}\Rightarrow S=\int \mathcal L \d[4]{x}$，其中坐标偏导记为 $\psi_{,\mu}=\del_\mu\psi=\pdv*{\psi}{x^\mu}$。$\mathcal L$ 称为\textbf{拉氏密度}，毕竟泛函宗量是 $\psi(x)$，故更彻底的做法是用时空坐标作为积分变量。$\psi,\del_t\psi$ 源于对 $q,\dot q$ 的类比，而空间导数理解为场相邻单元间的势能。
+粒子受外场作用，而场自身的演化也要服从最小作用量原理。
+考虑单个场，不妨从离散粒子系统逼近。
+同时面 $t=0$ 上系统位形为 $\{\psi_i(0)\}$，路径为 $\{\psi_i(t)\}$，拉氏量涉及对各粒子的求和。
+考虑连续极限，$i$ 化为 $\bm x$，路径是空间场往时间的延伸，即正是时空上的场 $\psi(x)$。
+拉氏量涉及时间导数 $\del_t\psi$、相邻微小单元间的势能 $\del_i\psi$ 的积分：$L=\int\mathcal L(\psi,\psi_{,\mu})\d[3]{x}\Rightarrow S=\int \mathcal L \d[4]{x}$。$\mathcal L$ 称为\textbf{拉氏密度}。
 同理，默认许多理论能存在 $\mathcal L$ 表述；$\mathcal L$ 一般不显含时空点的坐标 $x^\mu$，且\textit{至少}含一阶导。在粒子情形我们通过决定性原理排除高阶导，但现在是关于时空坐标的导数，且空间项有相互作用势的含义，冒然排除高阶是激进做法。一般应写作
 \eq{
 S(\psi(x))=\int \mathcal L(\psi,\psi_{,\mu_1},\cdots,\psi_{,\mu_1\cdots\mu_k})\d[4]{x}.
@@ -318,7 +393,7 @@ S(\psi(x))=\int \mathcal L(\psi,\psi_{,\mu_1},\cdots,\psi_{,\mu_1\cdots\mu_k})\d
 
 对称性是当代物理的重要概念。读者熟知动量、能量概念及其守恒，现代观点下，许多守恒量可解释为对称性的结果。在量子场论中，对称性还用于粒子分类、相互作用约束等。
 以圆为例，它具有左右对称、旋转对称等，实质是圆在反射变换、旋转变换下长相没变。
-作用量理论中，我们考虑的是位形空间上的\textbf{点变换}。描述点变换只需给定新旧点在同一坐标系下的坐标关系 $\tilde{q}=\phi(q)$。这说明点变换和坐标变换十分相似。区别在于，前者是点变、坐标系不变（\textbf{主动观点}），后者是点不变、坐标系变（\textbf{被动观点}）。
+作用量理论中，我们考虑的是位形空间上的\textbf{点变换}。描述点变换只需给定新旧点在同一坐标系下的坐标关系 $\tilde{q_i}=\phi(q_i)$。这说明点变换和坐标变换十分相似。区别在于，前者是点变、坐标系不变（\textbf{主动观点}），后者是点不变、坐标系变（\textbf{被动观点}）。
 为教学方便，常直接用坐标变换的语言讨论对称性。对于更复杂的对称性，为避免混淆概念，要明白实质是点变换。
 
 全体变换构成一个群\footnote{集合上若存在一个满足结合律的二元封闭运算，且具有恒等元和逆元的存在性，则这种集合称为\textbf{群}(group)，其元素称为\textbf{群元}，该运算称为\textbf{群乘}。}。比如沿 $x$ 轴的任意平移变换表为 $\bar x=x+a$，记作 $\phi_a$。为使 $\{\phi_a|a\in\R\}$ 是群，只需规定群乘为 $\phi_a\phi_b:=\phi_{a+b}$，这样 $\R$ 的加法和乘法自动给出 $\phi_0$ 为恒等变换，$\phi_{-a}$ 为 $\phi_{a}$ 为逆元。像这样，可用实数作为表征参数的变换称为\textbf{单参变换}。参数只取有限值时称\textbf{离散变换}，比如反射变换只包含两种操作；参数取值为某区间 $I\subset\R$ 时称\textbf{连续变换}，如平移、旋转按平移量、旋转角来描述可有无穷多种。
@@ -365,7 +440,7 @@ S(\psi(x))=\int \mathcal L(\psi,\psi_{,\mu_1},\cdots,\psi_{,\mu_1\cdots\mu_k})\d
 但对阐释常见的能量、动量来讲，Noether 定理是足够的。它们正是\textbf{时空对称性}的结果。
 考虑 $N$ 个粒子的系统，\textbf{空间平移对称性}的守恒量为
 \eq{
-    Q=\frac{1}{\epsilon} \sum_{i=1}^{N}\frac{\partial L}{\partial \dot{\boldsymbol{x}}_{i}} \cdot \delta_s \bm x_i=\hat{\bm e}\cdot \sum_{i=1}^{N} \boldsymbol{p}_{i},\quad \boldsymbol{p}_{i}:=\frac{\partial L}{\partial \dot{\boldsymbol{x}}_{i}},
+    Q=\frac{1}{\epsilon} \frac{\partial L}{\partial \dot{\boldsymbol{x}}_{i}} \cdot \delta_s \bm x_i=\hat{\bm e}\cdot \sum_{i=1}^{N} \boldsymbol{p}_{i},\quad \boldsymbol{p}_{i}:=\frac{\partial L}{\partial \dot{\boldsymbol{x}}_{i}},
 }
 $\bm p_i$ 称为\textbf{正则动量}。此即总正则动量在 $\hat{\bm e}$ 方向上的分量守恒。读者可验证 $L=T+V$ 的确给出了通常我们所理解的动量 $\bm p=\pdv*{L}{\bm u}=m\bm u$。
 \textbf{空间各向同性}的守恒量为
@@ -501,87 +576,6 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 
 对于光，虽不能定义固有时和质量概念，但可借量子理论的 de Broglie 关系定义其能量和动量。设频率 $\nu$ 和波矢 $k^i$，则能量为 $E=h\nu$，3-动量为 $p^i = \hbar k^i$。4-动量仍满足 $P^0=E,P^i=p^i$。
 
-\subsection{典型相对论效应}
-
-狭义相对论有许多著名的运动学效应，它们可从伪转动变换定量获得。“两颗超新星是同时爆发的吗”？“介子存活了多长时间”？“蟹状星云和半人马星座 $\alpha$ 星之间有多远”？这些问题的答案都是相对的。本节介绍的是如何从时空图直观并且同样定量地得到这些结果。
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.45\textwidth]{fig/chpt01/order.pdf}
-    \caption{类空间隔}
-    \label{fig:spacelike}
-\end{figure}
-
-若间隔类光或类时，则各惯性系将一致认同两个事件的先后顺序，因为 Lorentz 变换具有正时性。但对于类空间隔，其事件的坐标时差距可以在不同惯性系下取任意实数。即存在一些观者判定两个事件同时，另一些观者则断言 $p$ 先于 $q$，剩下的观者反之。这在图 \ref{fig:simurela}, \ref{fig:spacelike} 中一目了然。类空间隔的事件先后次序没有意义。类时或类光线统称\textbf{因果线}(causal curve)，能用因果线连接的事件正是具有因果联系的事件。在 $\R^4$ 中这等价于用非类空间隔连接。数学上不妨设曲线分段光滑，并使用高数里的中值定理即可。
-    比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$
-    与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
-
-\begin{figure}[ht]
-        \centering
-        \includegraphics[width=.5\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
-        \caption{校准线}
-\end{figure}
-
- 
-
-    \begin{figure}[ht]
-        \centering
-        \subfloat[\centering 在 $S$ 中静止]{
-        \includegraphics[width=.45\textwidth]{fig/chpt01/TIME DILATION S.pdf}
-        }%
-        \qquad
-        \subfloat[\centering 在 $S'$ 中静止]{\includegraphics[width=.45\textwidth]{fig/chpt01/TIME DILATION S'.pdf}
-        }
-        \caption{钟慢效应}
-    \end{figure}
-
-    用时空图的校准线，钟慢效应便一目了然。例如，两个观者都看到 $S$ 系原点上的时
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=.35\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
-        \caption{\small $S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢}
-    \end{figure} 
-    钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。
-    
-    沿 $S$ 系 $x$ 轴静置尺子的情况由时空图道尽。
-
-    \begin{figure}[ht]
-        \centering
-        \subfloat[\centering 在 $S'$ 中静止]{
-        \includegraphics[width=.38\textwidth]{fig/chpt01/INVARIANT 2.pdf}
-        }%
-        \qquad
-        \subfloat[\centering 在 $S$ 中静止]{\includegraphics[width=.4\textwidth]{fig/chpt01/INVARIANT 1.pdf}
-        }
-        \caption{\small 尺缩效应}
-    \end{figure}
-
-
-    
-\begin{wrapfigure}{l}{.45\textwidth}
-    \centering
-    \includegraphics[width=.45\textwidth]{fig/chpt01/ladder.pdf}
-    \caption{汽车匀速进库}
-\end{wrapfigure}
-    
-    尺缩效应导致了有趣的\textbf{车库佯谬}\footnote{英语为 ladder paradox，由 Rindler 提出，最初是借梯子和谷仓(barn)举例的；还可用火车和隧道。}。
-    设汽车与车库静长相等。汽车朝库匀速前进，司机认为动库变短、不能放下，司库认为动车收缩、放下有余。二者矛盾吗？不妨设车库无后墙（类似于隧道洞口），画图时借用校准曲线以保证车和库有相等静长。由图易见，以司库所在惯性系的同时面衡量，车短于库；以司机所在惯性系的同时面衡量，车长于库。两人观点都对，因为同时性的相对性导致结论的相对性。“\textit{到底}放下还是放不下?”这种问题没有意义，正如在尺缩问题中“到底哪把尺子较长”亦无意义。我们若真要“比较”，能让各位意见一致的做法只能是都放入静系中去。
-    从因果角度来理解将更便于在脑海里建立物理图像。“车尾接触入口”“车头接触出口”两个事件没有因果联系，故二人观点都对。我们在脑海中，不假思索地以为有因果联系，这个错觉来源于火车的车身。但在相对论中没有严格的刚体，只能将车身各质元的恒定高速运动理解为独自的、互相影响很小的。当然，现实生活中没有这么长且如此高速的火车，相互作用能在车头车尾间迅速传递，的确具有因果联系。
-    当车库有坚硬后墙时，车头固然撞墙停止。但撞墙信息以相互作用纵波传至车身各部分皆需时间，只当车尾获悉后整个车身才能停住，因而汽车将缩至比司库期初所测长
-    
-    \begin{wrapfigure}{r}{.35\textwidth}
-        \centering
-        \includegraphics[width=.35\textwidth]{fig/chpt01/TWIN PARADOX.pdf}
-        \caption{孪生佯谬}
-        \label{fig:twin}
-    \end{wrapfigure}
-
-    \noindent 度更短的程度。这时的确在谁看来都装得下。设材料性质理想，使信息传递为光速且质点获悉信号后立即停止，读者不妨在图上补出撞车后的时空图。
-
-    最后，著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。
-    前文已直接证明了这一点。图 \ref{fig:twin} 给出了三角情形，也可理解为，折线的同时面在 $B$ 处发生突变，因此惯性观者多出了图中阴影部分的时间差。
-    结论是不能交换的，因为不能将相对性原理滥用于非惯性系和惯性系间；而实际情形中，两人非质点，因此走惯性运动较为舒适，而走非惯性运动将感受到巨大的加速度，使相对论现象足够明显的物理量达光速级。
-
 \subsection{经典电动力学}
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
@@ -644,7 +638,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 \eq{\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}.}
 再注意 $A_0=-\varphi,A_i=a_j$，则\footnote{不同于普通代数等式有乘除消项的说法，指标运算中，必须理解为是用缩并得到 $\delta^\mu_\nu$ 以消项。}
 \eq{
-    E_i=F_{i0},\quad B_i=\varepsilon_{ijk}\del^j A^k=\varepsilon_{ijk}\del^{[j}A^{k]}=\frac 12 \varepsilon_{ijk}F^{jk}\Leftrightarrow F^{ij}=\varepsilon^{ijk}B_k.
+    E_i=F_{i0},\quad B_i=\varepsilon_{ijk}\del^j A^k=\varepsilon_{ijk}\del^{[j}A^{k]}=\frac 12 \varepsilon_{ijk}F^{jk}\eqto F^{ij}=\varepsilon^{ijk}B_k.
 }
 可使用矩阵表示为
 \eq{\left(F_{\mu\nu}\right)=\left[\begin{array}{cccc}0& -E^{1} & -E^{2} & -E^{3}\\E^{1} & 0 & B^{3} & -B^{2} \\E^{2} & -B^{3} & 0 & B^{1} \\E^{3} & B^{2} & -B^{1} & 0 \end{array}\right],}
@@ -670,7 +664,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 }
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\del_t \bm E=4\pi \bm j$。
 
-为消除规范自由度，可约定\textbf{规范固定}(gauge fixing)条件，简称规范条件。比如\textbf{Lorenz 规范}\footnote{指丹麦物理学家 Ludvig Valentin Lorenz(1829-1891)。当然它又是 Lorentz 协变的，所以也可叫做 Lorentz 规范。二人名字的发音相同，容易混淆，需要注意 Lorentz 是荷兰的物理学家，相对论的奠基者之一。}
+为消除规范自由度，可约定\textbf{规范固定}(gauge fixing)条件。比如\textbf{Lorenz 规范}\footnote{指丹麦物理学家 Ludvig Valentin Lorenz(1829-1891)。当然它又是 Lorentz 协变的，所以也可叫做 Lorentz 规范。二人名字的发音相同，容易混淆，需要注意 Lorentz 是荷兰的物理学家，相对论的奠基者之一。}
 \eq{
     \del_\mu A^\mu =0.
 }
@@ -812,7 +806,7 @@ g_{\mu\nu,\lambda}=\Gamma^\rho_{\lambda\mu}g_{\rho\nu}+\Gamma^\rho_{\lambda\nu}g
 \begin{figure}[ht]
     \centering
 \includegraphics[width=.4\textwidth]{fig/chpt01/geodesic.pdf}
-    \caption{\small $\R^2$ 任意坐标系及直线}
+    \caption{ $\R^2$ 任意坐标系及直线}
 \end{figure}
 
 引力作用现解释为度规非闵。因为倘若存在某系使得处处 $g_{\mu\nu}=\eta_{\mu\nu}$，该系就为惯性系，而自由粒子运动为直线，说明无引力。可见即使克氏符是赝张量，其实也能体现绝对的引力现象，因为度规非闵等价于\textit{不存在}坐标系使克氏符\textit{处处}为零。只保证存在局域惯性系使克氏符严格在测地线上全零。
@@ -890,11 +884,11 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
 \eq{
     g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\tilde J^{-2},
 }
-则
+假设坐标变换保持右手性，则
 \eq{
     \sgn g=-1\To 1/\tilde J=\sqrt{-g}\To S=\int \mathcal L \sqrt{-g}\d[4]{x},
 }
-这里不妨假设坐标变换保持右手性。可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。规定\textbf{适配体元} $D^4 x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $D^4 x=\sqrt{-g}\d[4]{x}$。
+可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。规定\textbf{适配体元} $D^4 x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $D^4 x=\sqrt{-g}\d[4]{x}$。
 可以考虑用张量缩并获得标量。这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导的构造，故最终场方程至少是二阶的。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论，而 Poisson 方程恰好也是二阶的。
 然暂不清楚将二阶导数作用于何物，因此要回到物理学。相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。若欲寻求尽可能简单的定义，则该张量场\textit{在一点}就应具备潮汐意义。
 
@@ -968,9 +962,9 @@ Jacobi 场固然无穷多种，但我们感兴趣满足对钟正交性的 Jacobi
 \delta R_{\mu \nu}=2\nabla_{[\lambda}\delta \Gamma_{\nu]\mu}^\lambda,
 }
 于是 $g^{\mu\nu}\var R_{\mu\nu}=2 \nabla_{[\lambda}( g^{\mu\nu} \delta \Gamma_{\nu]\mu}^\lambda) =2\nabla_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]})$，其积分为边界项，舍去后有
-\[\var \int R\sqrt{-g}\d[4]{x} 
-\simeq\int G_{\mu\nu} \var g^{\mu\nu} \sqrt{-g}\d[4]{x},\]
-其中 $G_{\mu\nu}:=R_{\mu\nu}-\frac 12 g_{\mu\nu} R$ 称\textbf{Einstein 张量}。还可有 $G:=g^{\mu\nu}G_{\mu\nu}=R-\frac{1}{2}\delta^\mu_\mu R=-R\Rightarrow R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G$。这里没有引入物质场，因此自由引力场在最小耦合意义上满足 $G_{\mu\nu}=0$ 即 $R_{\mu\nu}=0$，称\textbf{真空方程}(vacuum equation)。闵氏度规显然是一个解。
+\eq{\var \int R\sqrt{-g}\d[4]{x} 
+\simeq\int G_{\mu\nu} \var g^{\mu\nu} \sqrt{-g}\d[4]{x},\quad G_{\mu\nu}:=R_{\mu\nu}-\frac 12 g_{\mu\nu} R.}
+$G_{\mu\nu}$ 称\textbf{Einstein 张量}。还可有 $G:=g^{\mu\nu}G_{\mu\nu}=R-\frac{1}{2}\delta^\mu_\mu R=-R\Rightarrow R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G$。这里没有引入物质场，因此自由引力场在最小耦合意义上满足 $G_{\mu\nu}=0$ 即 $R_{\mu\nu}=0$，称\textbf{真空方程}(vacuum equation)。闵氏度规显然是一个解。
 真空方程已能描述很多引力现象，因为场源往往限制在很小的区域内，而外部区域真空，可允许试验粒子运动。
 
 再考虑物质部分 $S_M$。约定 $\delta S_M =-\frac{1}{2} \int T_{\mu \nu} \delta g^{\mu \nu} D^4{x}$，即令
@@ -978,9 +972,9 @@ Jacobi 场固然无穷多种，但我们感兴趣满足对钟正交性的 Jacobi
 T_{\mu \nu}:=-\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g^{\mu\nu}}=-2\fdv{\mathcal L_M}{g^{\mu\nu}}+g_{\mu\nu}\mathcal L_M,
 }
 则 $\var S\simeq\frac{1}{2\kappa}\int\left(G_{\mu\nu}-\kappa T_{\mu\nu}\right)\var g^{\mu\nu}\sqrt{-g}\d[4]{x}=0\Rightarrow G_{\mu\nu}=\kappa T_{\mu\nu}$，此即引力场方程的一般形式。可以预料 $T_{\mu\nu}$ 与场源质量（因而能量、动量）有关。还可有
-\eq{ 
+\[ 
 R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\mu\nu}T\right),
-}
+\]
 称为\textbf{反迹}(trace-reversed)表达。当然，$T_{\mu\nu}$ 的具体意义和 $\kappa$ 的值还需落实。
 
 \subsection{曲率的性质}
