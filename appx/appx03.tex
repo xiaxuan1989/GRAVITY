@@ -46,7 +46,9 @@ e'_\mu=A^\nu{ }_\mu e_\nu,
 
 \section{对偶空间}
 
-以 $\mathbb F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\mathbb F)$。置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\mathbb F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f\left(k^\mu e_\mu\right)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
+以 $\mathbb F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\mathbb F)$。
+
+置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\mathbb F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f\left(k^\mu e_\mu\right)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
 
 假若 $f$ 还是双射，则 $f\in\mathrm{Isom}(V, W)$ 且 $f^{-1}\in\hom(W,V)$。换言之，$V,W$ 的线性双射为同构。若存在同构，则称 $V,W$ 互为\textbf{线性同构的}，记作 $U\cong V$。有限维时易证等价于 $\dim U=\dim V$。易知 $f$ 是单射时，核为 $\ker f:=\{\alpha\in V:f(\alpha)=0\}=\{0\}$；$f$ 是满射时像为 $\Im f=W$。秩为 $\rank f:=\dim \Im f$，可证满足 $\dim \ker f + \dim \Im f = \dim V$。故若 $f$ 单射，则 $\Im f\cong V$。对线性变换而言，这说明单射等价于满射。换言之，满秩线性变换乃 $V$ 自同构。
 
@@ -82,7 +84,7 @@ $V,V^*$ 间的同构当然是不唯一的。注意到 $\{e_\mu\}$ 到其对偶�
     V \arrow[r, "i_V"] \ar[d, "f"'] & V^{*} \\
     W \arrow[r, "i_W"] & W^{*} \arrow[u, "f^{*}"'],
 \end{tikzcd}\]
-故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。
+故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。真正有用的是 $V,V^*$，好似两面镜子相互反射。
 
 对偶基关系为 $\langle e^\mu,e_\nu\rangle=\delta^\mu_\nu$，因而当然也可把 $e^\mu$ 视作基而 $e_\mu$ 是其对偶基。只是遵从惯例，矢量的基使用下标，其对偶基是对偶矢量的基，用上标。设 $v=v^\mu e_\mu,\omega=\omega_\mu e^\mu$，当然 $v(\omega)=\omega(v)=v^\mu\omega_\mu$，自然有
 \eq{
@@ -103,12 +105,13 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
     遂见结果相同。
 \end{proof}
 
+% 协变逆变的交换图
+
 这种变换形式称为逆变，新量$=$矩阵$\times$旧量。原基底满足 $e_\nu={(A^{-1})}^\mu{}_\nu e^\prime_\mu$，称为协变，旧量$=$矩阵$\times$新量。
 
-设 $Q\in V^{**}$ 在 $\{e^i\}$ 的对偶下的分量为 $Q^i=Q(e^i)$，则又回到了 式。这意味着可将它等同地视作切矢。真正有用的是 $V,V^*$，好似两面镜子可以相互反射。
- 
+设 $Q\in V^{**}$ 在 $\{e^i\}$ 的对偶下的分量为 $Q^i=Q(e^i)$，则又回到了 式。这意味着可将它等同地视作切矢。
 
-（逆、协变称呼的由来）
+
 
 的\textit{基是协变的，其对偶基是逆变的}。进而可见矢量分量变换是逆变形式，因此也称 $V$ 中的矢量为\textit{逆变矢量}。这两种形式的变换之所以称为协变和逆变，其实是与线性空间基的变换相对比而来的。与矢量基相同形式变换的称为协变，与矢量基相反形式变换的称为逆变。
 
@@ -253,7 +256,7 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 仿照售货机例子和前文的降指标概念，可定义：
 
 \begin{definition}
-    设双线性映射 $f:V\times V\to W$。固定 $\alpha\in V$，与 $f$ 配合把 $\beta\in V$ 映到 $f(\alpha,\beta)\in W$ 的线性映射，记\footnote{五线谱的降记号 “$\flat$” 读作“降”(flat)。} $f_\flat(\alpha)=f(\alpha,\oo)$。$f_\flat\in\hom(V,\hom(V,W))$ 称为\textbf{降映射}。
+    设双线性映射 $f:V\times V\to W$。固定 $\alpha\in V$，与 $f$ 配合把 $\beta\in V$ 映到 $f(\alpha,\beta)\in W$ 的线性映射，记\footnote{五线谱的降记号 “$\flat$” 读作“降”(flat)、升记号 “$\sharp$” 读作“升”(sharp)。} $f_\flat(\alpha)=f(\alpha,\oo)$。$f_\flat\in\hom(V,\hom(V,W))$ 称为\textbf{降映射}。
 \end{definition}
 
 
@@ -276,7 +279,7 @@ $f$ 满秩时称为非退化的。易证充要条件是分量矩阵可逆，或
 
 \begin{definition}
     升降指标操作本质为音乐同构，故是相对于某度规而言的。比如 $(1,1)$-张量 $T$ 的降为
-    $\c_1^1(g\otimes T)=T_\flat$。升指标用度规逆\footnote{五线谱的升记号 “$\sharp$” 读作“升”(sharp)。}，即 $\c_1^1(g^{-1}\otimes T)=T^\sharp$。就矢量、对偶矢量而言，可将音乐同构称为度规对偶：$A\in V$ 的降为 $A_\flat:=g_\flat A$；$\omega\in V^*$ 的升是 $\omega^\sharp:=g^{-1}(\omega,\oo)$。
+    $\c_1^1(g\otimes T)=T_\flat$。升指标用度规逆，即 $\c_1^1(g^{-1}\otimes T)=T^\sharp$。就矢量、对偶矢量而言，可将音乐同构称为度规对偶：$A\in V$ 的降为 $A_\flat:=g_\flat A$；$\omega\in V^*$ 的升是 $\omega^\sharp:=g^{-1}(\omega,\oo)$。
 \end{definition}
 
 \begin{remark}
