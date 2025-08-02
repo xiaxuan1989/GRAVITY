@@ -48,13 +48,13 @@ e'_\mu=A^\nu{ }_\mu e_\nu,
 
 以 $\mathbb F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\mathbb F)$。
 
-置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\mathbb F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f\left(k^\mu e_\mu\right)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
+置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\mathbb F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f(k^\mu e_\mu)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
 
 假若 $f$ 还是双射，则 $f\in\mathrm{Isom}(V, W)$ 且 $f^{-1}\in\hom(W,V)$。换言之，$V,W$ 的线性双射为同构。若存在同构，则称 $V,W$ 互为\textbf{线性同构的}，记作 $U\cong V$。有限维时易证等价于 $\dim U=\dim V$。易知 $f$ 是单射时，核为 $\ker f:=\{\alpha\in V:f(\alpha)=0\}=\{0\}$；$f$ 是满射时像为 $\Im f=W$。秩为 $\rank f:=\dim \Im f$，可证满足 $\dim \ker f + \dim \Im f = \dim V$。故若 $f$ 单射，则 $\Im f\cong V$。对线性变换而言，这说明单射等价于满射。换言之，满秩线性变换乃 $V$ 自同构。
 
 对任意线性空间 $V,W$，只要对 $\hom(V,W)$ 定义如下加法、数乘、零元：$\forall f,g\in \hom(V,W),v\in V,\alpha\in\mathbb F$ 有
 \[(f+g)(v):=f(v)+g(v),\quad (\alpha f)(v):=\alpha f(v),\quad 0(v):=0,\]
-则 $\hom(V,W)$ 成为了线性空间。一般考虑线性函数。称 $V^*=\hom(V,\mathbb F)$ 为\textbf{对偶空间}，任意线性函数 $\omega\in V^*$ 称为\textbf{对偶矢量}。
+则 $\hom(V,W)$ 成为了线性空间。一般考虑线性函数。任意线性函数 $\omega\in V^*:=\hom(V,\mathbb F)$ 称为\textbf{对偶矢量}，称 $V^*$ 为\textbf{对偶空间}。
 比如，行向量空间就是列向量空间的对偶空间。
 考虑从原来的 $V$ 来产生 $V^*$ 的基。方法是，假设 $\{e_\mu\}$ 是 $V$ 的一个基，则定义 $V^*$ 中有一组元素 $\{e^\mu\}$ 满足
 \eq{ e^\mu(e_\nu):=\delta^\mu_\nu,}
@@ -84,12 +84,7 @@ $V,V^*$ 间的同构当然是不唯一的。注意到 $\{e_\mu\}$ 到其对偶�
     V \arrow[r, "i_V"] \ar[d, "f"'] & V^{*} \\
     W \arrow[r, "i_W"] & W^{*} \arrow[u, "f^{*}"'],
 \end{tikzcd}\]
-故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。真正有用的是 $V,V^*$，好似两面镜子相互反射。
-
-对偶基关系为 $\langle e^\mu,e_\nu\rangle=\delta^\mu_\nu$，因而当然也可把 $e^\mu$ 视作基而 $e_\mu$ 是其对偶基。只是遵从惯例，矢量的基使用下标，其对偶基是对偶矢量的基，用上标。设 $v=v^\mu e_\mu,\omega=\omega_\mu e^\mu$，当然 $v(\omega)=\omega(v)=v^\mu\omega_\mu$，自然有
-\eq{
-\omega_\mu=\omega(e_\mu),\quad v^\mu=v(e^\mu).
-}
+故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。真正有用的是 $V,V^*$，好似两面镜子相互反射。设 $v=v^\mu e_\mu$，自然有 $v^\mu=v^\nu \langle e^\mu,e_\nu\rangle=v(e^\mu)$。
 最后来研究各种分量、基变换的关系。
 \begin{theorem}
     若 $V$ 中有一基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则相应的对偶基变换为
@@ -107,13 +102,9 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 
 % 协变逆变的交换图
 
-这种变换形式称为逆变，新量$=$矩阵$\times$旧量。原基底满足 $e_\nu={(A^{-1})}^\mu{}_\nu e^\prime_\mu$，称为协变，旧量$=$矩阵$\times$新量。
+与矢量基相同形式变换的称为协变，与矢量基相反形式变换的称为逆变。
 
-设 $Q\in V^{**}$ 在 $\{e^i\}$ 的对偶下的分量为 $Q^i=Q(e^i)$，则又回到了 式。这意味着可将它等同地视作切矢。
-
-
-
-的\textit{基是协变的，其对偶基是逆变的}。进而可见矢量分量变换是逆变形式，因此也称 $V$ 中的矢量为\textit{逆变矢量}。这两种形式的变换之所以称为协变和逆变，其实是与线性空间基的变换相对比而来的。与矢量基相同形式变换的称为协变，与矢量基相反形式变换的称为逆变。
+% 这种变换形式称为逆变，新量$=$矩阵$\times$旧量。原基底满足 $e_\nu={(A^{-1})}^\mu{}_\nu e^\prime_\mu$，称为协变，旧量$=$矩阵$\times$新量。
 
 \section{张量空间}
 

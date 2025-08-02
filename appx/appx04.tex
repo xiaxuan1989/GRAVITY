@@ -11,13 +11,13 @@
 当然，同胚使得许多坐标系能力有限，不能揽下全局。比如，极坐标系不能完整覆盖 $\R^2$，坐标取值为 $V=(0,+\infty)\times(0,2\pi)$。因此常考察开子集。为圆满完成指派任务，整个背景须由若干坐标系拼接，且互相分担对方力所不及之地。
 
 \begin{definition}
-    置 $(M,\mathscr T)$。存在 $n\in\N$，使 $M$ 任意点都存在邻域同胚于 $(\R^n,\mathscr T_u)$ 某开集，则称其是\textbf{局部欧的}。
-    显然等价说法为：存在 $M$ 的开覆盖 $\mathscr P$ 满足 $\forall O\in\mathscr P$，$\exists$ 同胚 $\psi:O\to V\in\mathscr T_u$。
-    $\psi$ 称为\textbf{坐标映射}，$\psi(p)$ 称为 $p$ 的\textbf{坐标}。$O$ 称为\textbf{坐标域}(patch)，$(O,\psi)$ 称为\textbf{坐标系}或\textbf{图}(chart)。$\mathscr P$ 所相应的坐标系族 $\mathcal A=\{(O,\psi)\}$ 称为\textbf{图册}(atlas)。$(M,\mathcal A)$ 称为（无边）\textbf{局部欧氏空间}。维数为 $\dim M:=n$。当 $\mathcal A$ 自明时简记 $M$。
+    置 $(M,\mathscr T)$。存在 $n\in\N$，使 $M$ 任意点都存在邻域同胚于 $(\R^n,\mathscr T_u)$ 某开集，则称其\textbf{局部欧的}。
+    显然等价说法为：$\exists$ $M$ 的开覆盖 $\mathscr P$ 使 $\forall O\in\mathscr P$，$\exists$ 同胚 $\psi:O\to V\in\mathscr T_u$。
+    $\psi$ 称为\textbf{坐标映射}，$\psi(p)$ 称为 $p$ 的\textbf{坐标}。$O$ 称为\textbf{坐标域}(patch)，$(O,\psi)$ 称为\textbf{坐标系}或\textbf{图}(chart)。$\mathscr P$ 所相应的坐标系族 $\mathcal A=\{(O,\psi)\}$ 称为\textbf{图册}(atlas)。$(M,\mathcal A)$ 称为\textbf{局部欧氏空间}。维数为 $\dim M:=n$。当 $\mathcal A$ 自明时简记 $M$。
 \end{definition}
 
 \begin{remark}
-    同胚连续性由全集拓扑或诱导拓扑衡量。原则上允许各坐标系不同维，这样空间没有唯一维数，但实用价值不大。
+    同胚连续性由全集拓扑或诱导拓扑衡量。原则上可修改定义，使其允许各坐标系不同维，这样空间无唯一维数，但实用价值不大。
 \end{remark}
 
 同胚赋予的第 $i$ 个坐标构成映射 $x^i:O\to\R$，坐标系又常记 $\{x\}$。
@@ -52,12 +52,12 @@
 假设有两个图册 $\mathcal A,\mathcal B$。它们可能并不相容，即其间存在相交但不相容的坐标系。如果它们相容，则可合并为一个更大的图册。当然希望将所有相容的坐标系都囊括进来，尽可能构成足够大的图册。
 
 \begin{definition}
-    不真含于任何 $C^r$-图册的 $C^r$-图册称为\textbf{最大的}(maximal) 。若局部欧氏空间 $(M,\mathcal A)$ 的图册 $\mathcal A$ 是 $C^r$-最大图册，则称（无边）\textbf{$C^r$-实微分流形}，简称 $C^r$-流形。常考虑光滑流形。对复流形而言即要求微分结构全纯（解析）。
+    不真含于任何 $C^r$-图册的 $C^r$-图册称为\textbf{最大的}(maximal) 。若局部欧氏空间 $(M,\mathcal A)$ 的图册 $\mathcal A$ 是 $C^r$-最大图册，则称 \textbf{$C^r$-实微分流形}，简称 $C^r$-流形。常考虑光滑流形。对复流形而言即要求微分结构全纯（解析）。
     最大图册又称\textbf{微分结构}。
 \end{definition}
 
 \begin{remark}
-    常补充第二可数、$T_2$、仿紧等性质，即将局部欧氏空间改为拓扑流形。拓扑流形是（第二可数 $T_2$）$C^0$-流形。
+    拓扑流形是第二可数 $T_2$ 的 $C^0$-流形。实际上常默认微分流形定义中的局部欧氏空间为拓扑流形，甚至补充仿紧等性质。
 \end{remark}
 
 \begin{eg}
@@ -65,7 +65,7 @@
 \end{eg}
 
 \begin{definition}
-    置 $C^k$-流形上的曲线 $C$。若 $\forall p\in \Im C$，存在坐标系 $(\psi,O)$ 使 $p\in O$ 且\textbf{参数方程} $\psi\circ C$ 是 $C^r$ 的（$r\leqslant k$），就称 $C$ 是 $C^r$\textbf{-曲线}。有限个光滑曲线收尾相连构成\textbf{至少分段光滑曲线}。
+    置 $C^k$-流形上的曲线 $C$。若 $\forall p\in \Im C$，存在坐标系 $(\psi,O)$ 使 $p\in O$ 且\textbf{参数方程} $\psi\circ C$ 是 $C^r$ 的（$r\leqslant k$），就称 $C$ 是 $C^r$\textbf{-曲线}。有限个光滑曲线收尾相连构成\textbf{分段光滑曲线}。
 \end{definition}
 
 \begin{remark}
@@ -243,7 +243,7 @@ $\langle \omega, v\rangle$。
     \eq{\dv{\sigma}=\dv{(x^i \circ C)}{\sigma}\del_i.}
 \end{theorem}
 
-借助于至少囊括曲线段的坐标系 $\{x^\mu\}$，则 $x^\mu$ 在曲线上关于 $[t_1,t_2]$ 至少分段可导，故 $\dv*{t}$ 可展开至坐标基
+借助于至少囊括曲线段的坐标系 $\{x^\mu\}$，则 $x^\mu$ 在曲线上关于 $[t_1,t_2]$ 分段可导，故 $\dv*{t}$ 可展开至坐标基
     \[\dv{t}=\dv{x^\mu}{t}\pdv{x^\mu},\]
 
 曲面
@@ -303,7 +303,7 @@ Cartan 还注意到余切空间可给函数微分一个更严格的理解。标�
 单位分解搬到时空上来。
 
 \begin{definition}
-    至少分段 $C^1$-曲线 $C:[t_1,t_2]\to M$
+    分段 $C^1$-曲线 $C:[t_1,t_2]\to M$
 
 线长是其上 Riemann 积分泛函（或视作 $\Im C$ 的 Lebesgue 测度）
     \[L(C)=\int_{t_1}^{t_2} \sqrt{\abs{g\left(\dv{t},\dv{t}\right)}}\d{t},\]

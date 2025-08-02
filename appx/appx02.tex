@@ -37,8 +37,16 @@ $\mathscr{T}\subset 2^X$ 称为 $X$ 的一个\textbf{拓扑}(topology)，若：
     \item $\forall \sigma\subset \mathscr{T}$，$\bigcup_{U\in\sigma} U\in \mathscr{T}$；
     \item $U,V\in\mathscr{T}\To U\cap V\in\mathscr{T}$。或等价地对有限集 $\{A_{i}\} \subset \mathscr{T}$，$\bigcap_{i} A_{i} \in \mathscr{T}$。
 \end{itemize}
-$\mathscr{T}$ 的元素称为 $X$ 在 $\mathscr{T}$ 下的\textbf{开集}，简称\textbf{开集}。$A\subset X$ 称为\textbf{闭集}，若 $X\backslash A\in\mathscr{T}$。
-对$x\in X,U\subset X$，若 $\exists O\in\mathscr{T}$ 使 $x\in O\subset U$，则 $U$ 是 $x$ 的一个\textbf{邻域}。$x$ 的全体邻域构成 $\mathscr N(x)$。邻域为开则称\textbf{开邻域}，构成 $\mathscr N(x)\cap\mathscr T$。$(X,\mathscr T)$ 称为 $X$ 关于拓扑 $\mathscr T$ 的\textbf{拓扑空间}。拓扑空间的元素称为\textbf{点}(point)。
+$\mathscr{T}$ 的元素称为 $X$ 在 $\mathscr{T}$ 下的\textbf{开子集}，简称\textbf{开集}。
+$(X,\mathscr T)$ 称为 $X$ 关于拓扑 $\mathscr T$ 的\textbf{拓扑空间}。拓扑空间的元素称为\textbf{点}(point)。
+\end{definition}
+
+\begin{definition}
+    对$x\in X,U\subset X$，若 $\exists O\in\mathscr{T}$ 使 $x\in O\subset U$，则 $U$ 是 $x$ 的一个\textbf{邻域}。$x$ 的全体邻域构成 $\mathscr N(x)$。邻域为开则称\textbf{开邻域}，构成 $\mathscr N(x)\cap\mathscr T$。
+\end{definition}
+
+\begin{definition}
+    $A\subset X$ 称为\textbf{闭集}，若 $X\backslash A\in\mathscr{T}$。
 \end{definition}
 
 $\mathscr T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。讨论开集时也常省略全集。De Morgan 律指出：并集之补等于补集之交，因此闭集也能给出拓扑的定义。容易得出等价表述为：$\mt,X$ 是闭的；有限闭集之并为闭；任意闭集之交为闭。
@@ -58,17 +66,12 @@ $\mathscr T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。�
     同胚的逆也必须连续。考虑复平面上的单位圆周 $C:|z|=1$。按 $f(x)=\e^{\i x}$ 定义 $f:[0,2\pi)\to C$。它是连续双射，但逆不连续。而直观上圆周与区间不能同胚。
 \end{remark}
 
-
 \begin{definition}
 置 $(X,\mathscr T)$ 和 $A\subset X$。
 \textbf{内部}为开集 $A^\circ:=\bigcup_{O\in\mathscr T\cap 2^A} O$，也即含于 $A$ 的最大开集。
 \textbf{闭包}(closure)为闭集 $\bar{A}:=\bigcap_{X\backslash B\in\mathscr T,A\subset B} B$，也即包含 $A$ 的最小闭集。
 $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)。
 \end{definition}
-
-
-注意，边界点的存在并不要求 $D$ 要包含它，实际上 $D$ 为开集时可称作 $D\cup\partial D$ 的\textit{内部}，而为闭集时就称为\textit{带边区域}，内部就应写为 $i(D)=D\backslash\partial D$。
-
 
 \begin{remark}
     显然 $A^\circ\subset A\subset \bar A$。$A^\circ\cup\partial A=\bar A$，$A^\circ\cap\partial A=\mt$。
@@ -80,11 +83,12 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
     $(X\backslash A)^\circ=X\backslash \bar A$。
 \end{theorem}
 \begin{proof}
-    根据定义，$A^\circ:=\bigcup_{X\backslash F\in\mathscr T,X\backslash F\subset A} X\backslash F=X\backslash\bigcap_{X\backslash F\in\mathscr T,X\backslash A\subset F} F=X\backslash\overline{X\backslash A}$。替换得 $(X\backslash A)^\circ=X\backslash \bar A$。
+    根据定义，$A^\circ:=\bigcup_{X\backslash F\in\mathscr T,X\backslash F\subset A} X\backslash F=X\backslash\bigcap_{X\backslash F\in\mathscr T,X\backslash A\subset F} F=X\backslash\overline{X\backslash A}$。
+    替换即可。
 \end{proof}
 
 \begin{theorem}
-    $A$ 为开集 $\iff A=A^\circ\iff\forall x\in A,A\in\mathscr N(x)\iff\forall x\in A,\exists U\in\mathscr N(x)$ 使 $U\subset A$。
+    $A$ 为开集 $\eqto A=A^\circ\eqto\forall x\in A,A\in\mathscr N(x)\eqto\forall x\in A,\exists U\in\mathscr N(x)$ 使 $U\subset A$。
 \end{theorem}
 
 \begin{proof}
@@ -103,11 +107,11 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
 \end{proof}
 
 \begin{theorem}
-    $x\in\bar A\iff \forall U\in\mathscr N(x),U\cap A\ne\mt$。
+    $x\in\bar A\iff\forall U\in\mathscr N(x),U\cap A\ne\mt$。
 \end{theorem}
 \begin{proof}
-    给定 $x\in\bar A$，假设 $\exists U \in\mathscr N(x),U \cap A=\mt$。$\exists O\in\mathscr T$ 使 $x\in O\subset U\To A\subset X \backslash U\subset X \backslash O$，$X \backslash O$ 为闭集 $\To \bar{A} \subset X \backslash O\iff O \cap \bar{A}=\mt$，矛盾； 
-    给定 $\forall U\in\mathscr N(x),U\cap A\ne\mt$，假设 $x\in X \backslash \bar{A}$。$X \backslash \bar{A}\in\mathscr T\To \exists X \backslash \bar{A}\in\mathscr N(x),(X \backslash \bar{A}) \cap A=A \backslash \bar{A}=\mt$，矛盾。
+    给定 $x\in\bar A$，假设 $\exists U \in\mathscr N(x),U \cap A=\mt$。则 $\exists O\in\mathscr T$ 使 $x\in O\subset U\To A\subset X \backslash U\subset X \backslash O$，$X \backslash O$ 为闭集 $\To \bar{A} \subset X \backslash O\iff O \cap \bar{A}=\mt$，矛盾；
+    给定 $\forall U\in\mathscr N(x),U\cap A\ne\mt$，假设 $x\in X \backslash \bar{A}$。则 $X \backslash \bar{A}\in\mathscr T\To \exists X \backslash \bar{A}\in\mathscr N(x),(X \backslash \bar{A}) \cap A=A \backslash \bar{A}=\mt$，矛盾。
 \end{proof}
 
 \begin{definition}
@@ -115,7 +119,7 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
 $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
 \end{definition}
 \begin{remark}
-    $x\in A'\iff \forall U\in\mathscr N(x),(U\cap A)\backslash\{x\}=U\cap (A\backslash\{x\})\ne\mt$。$U$ 可等价换为任意含 $x$ 开集。
+    $x\in A'\eqto \forall U\in\mathscr N(x),(U\cap A)\backslash\{x\}=U\cap (A\backslash\{x\})\ne\mt$。$U$ 可等价换为任意含 $x$ 开集。
 \end{remark}
 \begin{eg}
     考虑实直线，$0,1/2,1$ 都是 $[0,1)$ 的聚点。
@@ -126,8 +130,8 @@ $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
 \end{theorem}
 
 \begin{proof}
-    任给 $x\in A'$。$\forall U\in\mathscr N(x),(U\cap A)\backslash\{x\}\ne\mt\To \forall U\in\mathscr N(x),U\cap A\ne\mt\iff x\in\bar A$。说明 $A'\subset \bar A$，此 $A\cup A'\subset\bar A$；
-    任给 $x\in\bar A\backslash A'$。$x\in\bar A,x\notin A'\iff \exists U\in\mathscr N(x),(U\cap A)\backslash\{x\}=\mt$ 且 $U\cap A\ne\mt\To U\cap A=\{x\}\To x\in A$。说明 $\bar A\backslash A'\subset A\iff \bar A\subset A\cup A'$。
+    任给 $x\in A'$。$\forall U\in\mathscr N(x),(U\cap A)\backslash\{x\}\ne\mt\Rightarrow \forall U\in\mathscr N(x),U\cap A\ne\mt\eqto x\in\bar A$。说明 $A'\subset \bar A$，此 $A\cup A'\subset\bar A$；
+    任给 $x\in\bar A\backslash A'$。$x\in\bar A,x\notin A'\eqto \exists U\in\mathscr N(x),(U\cap A)\backslash\{x\}=\mt$ 且 $U\cap A\ne\mt\Rightarrow U\cap A=\{x\}\Rightarrow x\in A$。说明 $\bar A\backslash A'\subset A\iff \bar A\subset A\cup A'$。
 \end{proof}
 
 \begin{theorem}
@@ -147,7 +151,7 @@ $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
 \end{remark}
 
 \begin{definition}
-    在 $(X,\mathscr T)$ 下，可定义 $A \subset X$ 的\textbf{相对}(relative)\textbf{拓扑}或\textbf{诱导}(induced)\textbf{拓扑} $\mathscr T_r=\{B\subset A:\exists O\in\mathscr T$ 使 $B=O \cap A\}$。赋予诱导拓扑的子集称为原集的\textbf{拓扑子空间}(topological subspace)。
+    在 $(X,\mathscr T)$ 下，可定义 $A \subset X$ 的\textbf{相对}(relative)\textbf{拓扑}或\textbf{诱导}(induced)\textbf{拓扑} $\mathscr T_r=\{O \cap A: O\in\mathscr T\}$。赋予诱导拓扑的子集称为原集的\textbf{拓扑子空间}(topological subspace)。
 \end{definition}
 
 \begin{eg}
@@ -176,8 +180,8 @@ $\mathscr{T}=\left\{\bigcup_{U\in\mathscr{F}}U:\mathscr{F}\subset\mathscr{B}\rig
     \textbf{度量空间}(metric space)是集合 $X$ 和\textbf{距离函数}（或\textbf{度量}）$d: X \times X \to [0,\infty)$ 的卡氏积，$\forall x,y,z\in X$ 满足：
     \begin{itemize}
         \item $d(x,y)=d(y,x)$；
-        \item $d(x,y) = 0\iff x=y$；
-        \item $d(x,z) \leqslant d(x,y)+d(y,z)$。
+        \item $d(x,y) = 0\eqto x=y$；
+        \item $d(x,z) \leqslant d(x,y)+d(y,z)$。（三角不等式）
     \end{itemize}
     $B(x,r)=\{y \in X: d(x, y)<r\}$ 称为以 $x \in X$ 为中心、$r$ 为半径的\textbf{开球}(open ball)。
     总可用局部性质构造拓扑：全体开球 $\{B(x,\epsilon):x\in X,\epsilon >0\}$ 就是一个拓扑基，其生成拓扑 $\mathscr T_d$ 就是 $(X,d)$ 的\textbf{度量诱导拓扑}，构成 $(X,d,\mathscr T_d)$。称 $(X,\mathscr T_d)$ 是\textbf{可度量的}。
@@ -216,14 +220,14 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 我们已悉知 $\epsilon$-$\delta$ 语言可视为连续性在通常拓扑的特例。现在再用度量空间重新叙述。
 置 $(X,d_X,\mathscr T_X),(Y,d_Y,\mathscr T_Y)$ 和映射 $f:X\to Y$。$f$ 在 $x \in X$ 处对度量诱导拓扑连续，当且仅当 $\forall\epsilon>0,\exists\delta>0$ 使 $B(x,\delta) \subset f^{-1} [B(f(x),\epsilon)]$。
 即 $f^{-1} [B(f(x),\epsilon)]$ 是 $x$ 点邻域。
-换言之，$d_X(x,x^{\prime})<\delta\To d_Y(f(x),f(x^{\prime}))<\epsilon$。
+换言之，$d_X(x,x^{\prime})<\delta\Rightarrow d_Y(f(x),f(x^{\prime}))<\epsilon$。
 若 $f$ 在任意点连续，即 $\forall x \in X,\epsilon > 0$，$f^{-1} [B(f(x),\epsilon)]\in\mathscr T_X$，结合“任意并”性质和逆像的保并性，可知 $\forall U\in\mathscr T_Y$，$f^{-1}[U]\in\mathscr T_X$，即 $f$ 连续。
 
 对于度量空间，点列 $\left\{x_n\right\}$ 收敛于 $x$ 等价于 $\lim_{n\to\infty}d(x, x_n)=0$。
-点列称为基本列或 Cauchy 列，即$\forall\epsilon>0,\exists N\in\N$使 $k,l>N\To d(x_{k},x_{l})<\epsilon$。
+点列称为基本列或 Cauchy 列，即$\forall\epsilon>0,\exists N\in\N$使 $k,l>N\Rightarrow d(x_{k},x_{l})<\epsilon$。
 度量空间称为\textbf{完备的}(complete)，若其中任意 Cauchy 列都收敛于其中的点。实直线上闭区间完备，但开区间不完备：只需注意 $\{1/n\}_{n=2}^\infty$ 在 $(0,1)$ 上无极限。$\R^{n}$ 当然完备。
 一致连续性即 $\forall \epsilon>0,\exists\delta>0$ 
-使 $\forall x_{1},x_{2} \in X$，$d(x_{1},x_{2})<\delta\To d(f(x_{1}),f(x_{2}))<\epsilon$。
+使 $\forall x_{1},x_{2} \in X$，$d(x_{1},x_{2})<\delta\Rightarrow d(f(x_{1}),f(x_{2}))<\epsilon$。
 注意一致连续要更强：对整个空间要求一致的 $\delta$。
 
 \begin{definition}
