@@ -55,7 +55,7 @@ $\mathscr T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。�
 分析学中，$\mt$ 和能表为开区间之并的集合都是 $\R$ 上开集，构成 $\R$ 的\textbf{通常}(usual)\textbf{拓扑} $\mathscr T_u$。视 $x,y\in\R$ 的距离为 $|x-y|$，则开区间实质是以 $\frac{x+y}{2}$ 为心的一维球。$(\R,\mathscr T_u)$ 称为\textbf{实直线}。通常拓扑当然比离散、凝聚拓扑更直观，后者一般用于构造反例。
 
 \begin{definition}
-    对 $(X,\mathscr T_X),(Y,\mathscr T_Y)$，$f: X \to Y$ \textbf{连续}，若 $\forall A\in\mathscr T_Y$，$f^{-1}[A]\in \mathscr T_X$。
+    对 $(X,\mathscr T_X),(Y,\mathscr T_Y)$，$f: X \to Y$ \textbf{连续}，若 $\forall A\in\mathscr T_Y$，$f^{-1}[A]\in \mathscr T_X$。以拓扑空间为对象、连续映射为态射可构建\textbf{拓扑空间范畴} $\cate{Top}$。
 \end{definition}
 
 \begin{definition}
@@ -226,7 +226,13 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 
 对于度量空间，点列 $\left\{x_n\right\}$ 收敛于 $x$ 等价于 $\lim_{n\to\infty}d(x, x_n)=0$。
 点列称为基本列或 Cauchy 列，即$\forall\epsilon>0,\exists N\in\N$使 $k,l>N\Rightarrow d(x_{k},x_{l})<\epsilon$。
-度量空间称为\textbf{完备的}(complete)，若其中任意 Cauchy 列都收敛于其中的点。实直线上闭区间完备，但开区间不完备：只需注意 $\{1/n\}_{n=2}^\infty$ 在 $(0,1)$ 上无极限。$\R^{n}$ 当然完备。
+度量空间称为\textbf{完备的}(complete)，若其中任意 Cauchy 列都收敛于其中的点。
+
+%
+
+实直线上闭区间完备，但开区间不完备：只需注意 $\{1/n\}_{n=2}^\infty$ 在 $(0,1)$ 上无极限。
+
+$\R^{n}$ 当然完备。
 一致连续性即 $\forall \epsilon>0,\exists\delta>0$ 
 使 $\forall x_{1},x_{2} \in X$，$d(x_{1},x_{2})<\delta\Rightarrow d(f(x_{1}),f(x_{2}))<\epsilon$。
 注意一致连续要更强：对整个空间要求一致的 $\delta$。
@@ -242,13 +248,32 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 置度量空间 $X$。$f: X \to X$ 称为（严格）\textbf{压缩映射}(contraction)，若 $\exists c\in(0,1)$，使 $\forall x,y \in X$ 且 $x\ne y$，有 $d(f(x),f(y)) \leqslant c d(x,y)$。
 仿照分析学可类似证明 \textbf{Banach 不动点定理}：若度量空间 $X$ 完备，$f$ 为一个压缩映射，则 $f(x)=x$ 的解存在且唯一。这是非线性泛函分析的一个有用工具。
 
-\section{紧致性与连通性}
+%%%
 
-分析学给出了若干等价的实数定理，其中一条是著名的\textbf{Heine-Borel 有限覆盖定理}：若闭区间能被某个开集族覆盖，则可从其中找到有限多元素，构成依旧能覆盖的子族。
+\begin{definition}
+    \textbf{有限 $\epsilon$-网}(net)是有限集 $\{x_n\}\subset X$，使 $\forall x\in X$，$\exists x_i$ 使 $d(x,x_i)<\epsilon$。换言之，$X\subset\bigcup_{i=1}^n B(x_i,\epsilon)$。
+\end{definition}
+
+\begin{definition}
+    $(X,d)$ 称为\textbf{全有界的}(totally bounded)，若存在任意 $\epsilon>0$ 的有限 $\epsilon$-网。换言之，可被有限多个半径任意小的球覆盖。
+\end{definition}
+
+\begin{remark}
+    全有界 $\To$ 有界。
+\end{remark}
+
+\begin{eg}
+    无穷维希尔伯特空间 $\ell^2$ 是完备的。任意 $\epsilon>0$，$\{e_n\}_{n=1}^\infty$ 构成 $\ell^2$ 的 $\epsilon$-网格，但它是无穷集，不全有界。
+\end{eg}
+
+%%%
+
+\section{紧致性}
+
+分析学给出了若干等价的实数定理，其中一条是著名的\textbf{Heine-Borel 有限覆盖定理}：若有界闭集能被某开集族覆盖，则可从中找到有限个开集，构成依旧能覆盖的子族。
 19 世纪中叶，Dirichlet 在试图严格化函数连续性时，率先用有限覆盖技术，证明了闭区间上的连续实函数一致连续。
 不过他的结果半个世纪后才发表，期间 Heine, Weierstrass 等人各自独立地用类似技术也证明了该结论。Borel 利用这些技术证明了上述的有限覆盖定理。后来 Lebesgue 等人才把它推广到了一般情形。
-
-有限覆盖定理叙述的内容实际上也是一个集合有界闭的充要条件。“有界闭”就是实数闭区间的推广描述。有界性是与距离密切相关的，但有限覆盖性只涉及开集。可见关于有界闭集的分析学命题，很多都能延伸到点集拓扑。
+有界性是与距离密切相关的，但有限覆盖性只涉及开集。可见关于有界闭集的分析学命题，很多都能延伸到点集拓扑。
 
 \begin{definition}
     置 $(X,\mathscr T)$。
@@ -269,29 +294,52 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
     不妨以 $(0,1]$ 为例，存在开覆盖 $\{(1/n,2):n\in\N\}$ 不具有限子覆盖；其余情形同理。
 \end{proof}
 
-\begin{eg}[Heine-Borel]
-    实直线上，闭区间等价于紧集。
-\end{eg}
-
 \begin{definition}
-    \textbf{仿紧}
+    若 $K\subset X$ 中任何序列都包含收敛子列，则称 $K$ 是\textbf{相对紧的}。若这些子列还收敛于 $K$ 中，则称\textbf{自列紧的}，简称\textbf{列紧}\footnote{列紧在部分书中指相对紧。}。
 \end{definition}
 
+%%%
+\begin{remark}
+    紧 $\To$ 列紧。
+    若空间满足可数基或序列空间性质，两者可能一致。
+\end{remark}
 
-可数公理
+\begin{theorem}\label{thm:compactness}
+    度量空间上，紧 $\iff$ 列紧 $\iff$ 全有界 $\wedge$ 完备。
+\end{theorem}
+\begin{proof}
+    设 $X$ 是紧的。任意 $x\in X$，$\exists O\in\mathscr S$ 使 $x\in O$，则 $\mathscr S$ 是 $x$ 的某邻域的有限子覆盖。任意点列 $\{x_n\}$ 都有极限点 $x$，则 $\exists O\in\mathscr S$ 使 $x\in O$，因此 $\{x_n\}$ 有收敛子列。
+    反之，若 $X$ 是完备的且有界的，则 $\forall \epsilon>0,\exists x_1,\cdots,x_n\in X$
+    使 $\bigcup_{i=1}^n B(x_i,\epsilon)$ 覆盖 $X$。任意开覆盖 $\mathscr C$ 都存在 $\epsilon$-覆盖 $\mathscr S=\{B(x_i,\epsilon):x_i\in X\}$，则 $\mathscr S$ 是 $\mathscr C$ 的有限子覆盖。
+    反之，若 $X$ 的任意开覆盖都存在有限子覆盖，则任意点列 $\{x_n\}$ 的极限点 $x$ 都有某开邻域 $O$，使 $\{x_n\}$ 的无限个点都在 $O$ 中，因此 $\{x_n\}$ 有收敛子列。任意有界序列都有收敛子列，因此 $X$ 是完备的。
+\end{proof}
+
+\begin{eg}[Bolzano-Weierstrass]
+    实直线上，列紧 $\iff$ 有界 $\wedge$ 闭。
+\end{eg}
+\begin{proof}
+    只需说明有界闭 $\iff$ 全有界，完备性自动满足。
+
+    若 $K\subset \R$ 是紧集。考虑 $K\subset\bigcup_{n\in\N^+}(-n,n)=\R$，紧性使存在 $K\subset \bigcup_{i=1}^m(-n_i,n_i)=(-\max_i{n_i},\max_i{n_i})$，即有界。
+\end{proof}
+
+\begin{eg}[Heine-Borel]
+    结合 \ref{thm:compactness} 知，实直线上，紧 $\iff$ 有界 $\wedge$ 闭。
+\end{eg}
+%%%
+
+% 可数公理
 
 \begin{definition}
     \textbf{第二可数}
 \end{definition}
 给出有用的拓扑结构，使点足够稠密但又不至于太怪异，称为几何背景。
 
-分离公理
+% 分离公理
 
 \begin{definition}
     拓扑空间 $X$ 称为 $T_2$ 或 \textbf{Hausdorff 的}，若对任意不同的两点 $x,y \in X$，存在 $x$ 的开邻域 $A$ 与 $y$ 的开邻域 $B$，使得 $A \cap B=\mt$。
 \end{definition}
-
-以拓扑空间为对象、连续映射为态射可构建\textbf{拓扑空间范畴} $\cate{Top}$。
 
 \begin{theorem}
     显然度量空间是 $T_2$ 的。
@@ -306,6 +354,14 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
     一个更为地道的非 $T_2$ 空间：考虑正整数组成的空间 $\N_+$，开集取成 $\mt,\N_+$ 以及集合 $\{1,2,3,\cdots,n\}$。这个空间既非 $T_2$ 亦非紧致的（见后面关于紧致的定义）。
 \end{eg}
 
+%%%
+\begin{definition}
+    \textbf{仿紧}
+\end{definition}
+%%%
+
+\section{连通性}
+
 \begin{definition}
     一个拓扑空间 $X$ 称为\textbf{连通的}，如果它不能写成两个互不相交 的非空开集的并。有用的两条等价说法是: 任何一个从 $X$ 到赋予离散拓扑的两点集合 $\{0,1\}$ 的连续映射都不是满射；连通拓扑空间只有两个既开又闭的子集。
 
@@ -318,24 +374,28 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 \end{definition}
 
 \begin{definition}
-    $C':I'\to $ 称为\textbf{重参数化}。严格单调
+    $C':I'\to X$ 称为\textbf{重参数化}。严格单调
 \end{definition}
 
 \begin{definition}
     拓扑空间 $X$ 称为\textbf{路径连通的}(path-connected)或\textbf{弧连通的}(arcwise connected)，如果 $X$ 中的任意两点都可被一条完全在 $X$ 中的路径连接。
 \end{definition}
 
-路径连通的拓扑空间一定是连通的。反之不一定，存在“擦边”的反例。流形的路径连通与连通等价，稍后叙述之。$\R^{n}$ 中的连通开子空间是路径连通的。
+\begin{remark}
+    路径连通 $\To$ 连通。
+\end{remark}
 
-列紧性
-
-$\R^{n}$ 中的任何有界序列有一个收敛子列
+\begin{eg}
+    $\R^{n}$ 中的连通开子空间是路径连通的。
+\end{eg}
 
 开球就是连通的
 
 一般总能将非连通集视为有限个连通分支之并，不妨只考虑其中一个连通分支。连通集合称为\textbf{单连通的}，就是说，其中任意形似橡皮圈的闭合曲线（称\textbf{简单闭线}）所围成的任意曲面都含于此集合中。
 
 单连通区域总同胚开球。
+
+%%%
 
 连通区域的表面正是\textbf{闭曲面}。
 比如，闭曲面总能将 $\R^n$ 分为有界部分（即所包围区域）和无界部分，因此可区分空间的内外。
