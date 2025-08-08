@@ -8,7 +8,7 @@
 \begin{definition}
     \textbf{外微分}(exterior derivative)是映射 $\d:\Lambda_l(V)\to\Lambda_{l+1}(V)$ 使
     \eq{
-        \d\omega=\sum_{\mu_1<\cdots<\mu_l}\d\omega_{\mu_1\cdots\mu_l}\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
+        \d\omega :=\sum_{\mu_1<\cdots<\mu_l}\d\omega_{\mu_1\cdots\mu_l}\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
     }
 \end{definition}
 
@@ -17,7 +17,11 @@
 \end{theorem}
 
 \begin{remark}
-    这说明外微分可用任意无挠联络表为 $\d\omega=(l+1)\a(\nabla\omega)$，因为 $\omega_{[\mu_1\cdots\mu_l;\sigma]}=\omega_{[\mu_1\cdots\mu_l,\sigma]}$。可见外微分定义显然无关于坐标系或无挠联络的选取。
+    注意 $\omega_{[\mu_1\cdots\mu_l;\sigma]}=\omega_{[\mu_1\cdots\mu_l,\sigma]}$，这说明外微分可用任意无挠联络表为
+    \eq{
+        \d\omega=(l+1)\a(\nabla\omega).
+    }
+    可见外微分定义显然无关于坐标系或无挠联络的选取。
 \end{remark}
 
 \begin{proof}由楔积定义知 $e^{\nu_1}\wedge\cdots\wedge e^{\nu_n}(e_{\mu_1},\cdots,e_{\mu_n})=n!\delta_{\mu_1}^{[\nu_1}\cdots\delta_{\mu_n}^{\nu_n]}$，则
@@ -97,12 +101,18 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
 \begin{definition}
     任选 $M$ 的单位分解 $\{\rho_i\}$。最高阶形式 $\omega$ 在 $M$ 上的积分为
     \eq{
-        \int_M\omega:=\sum_i\int_M\rho_i\omega.
+        \int_M\omega:=\sum_i\int_{O_i}\rho_i\omega.
     }
 \end{definition}
 \begin{remark}
-    可证与单位分解选取无关。实际上，总默认对诱导形式积分：$\int_S\omega=\int_S\tilde\omega$。
+    实际上，总默认对诱导形式积分：$\int_S\omega=\int_S\tilde\omega$。
 \end{remark}
+\begin{theorem}
+    积分定义与单位分解选取无关。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
 
 函数的积分视为其对偶形式的积分：
 \begin{definition}
@@ -169,9 +179,9 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     \]
     每个邻域都有局部坐标系，而内部邻域没有贡献，这样总体的 $\int_\Omega\d\omega$ 就只剩下表面的变化 $\int_{\partial\Omega}\omega$。证明的严格术语将在第四章介绍。
 \end{proof}
-积分域 $\Omega$ 亦可写作 $i(\Omega)$，因为 $\int_{\partial\Omega}\d\omega=\int_\Omega \d\d\omega=0$（Poincaré 引理），这里$\d\d\omega=0$ 可看作任意阶形式。当然，我们只定义了同阶形式在同维区域的积分，故此亦可视作规定不同维时积分为零，即如果 $k\neq k'$，则 $k$-形式在 $k'$ 维背景上的积分为零。
+积分域 $\Omega$ 亦可写作 $\Omega^\circ$，因为 $\int_{\partial\Omega}\d\omega=\int_\Omega \d\d\omega=0$（Poincaré 引理），这里$\d\d\omega=0$ 可看作任意阶形式。当然，我们只定义了同阶形式在同维区域的积分，故此亦可视作规定不同维时积分为零，即如果 $k\neq k'$，则 $k$-形式在 $k'$ 维背景上的积分为零。
 
-可做对照：$\int_{\partial\partial\Omega}\omega=\int_{\partial\Omega} \d\omega=0$，这里不妨设 $\omega$ 为 $(l-2)$-形式场而 $\Omega$ 为 $l$ 维。这对任意 $\omega$ 成立，因而可能性只有 $\partial^2\Omega=\mt$，即边缘本身没有边缘。如何从直观上理解这件事？我们知道默认 $\Omega$ 为任意连通闭集，这应当使连通开集 $i(\Omega)$ 有界，因而 $\partial\Omega$ 有界，且$\partial^2\Omega=\mt$ 还意味着它无边\footnote{有界无边的流形有时可称\textit{闭流形}（取闭合之意），请注意同闭集等名称区分。}！如此便可确定 $\partial\Omega$ 的内外部，因而有外指法矢的明确含义，故从背景 $M$ 可立即诱导出边界的定向。
+可做对照：$\int_{\partial\partial\Omega}\omega=\int_{\partial\Omega} \d\omega=0$，这里不妨设 $\omega$ 为 $(l-2)$-形式场而 $\Omega$ 为 $l$ 维。这对任意 $\omega$ 成立，因而可能性只有 $\partial^2\Omega=\mt$，即边缘本身没有边缘。如何从直观上理解这件事？我们知道默认 $\Omega$ 为任意连通闭集，这应当使连通开集 $\Omega^\circ$ 有界，因而 $\partial\Omega$ 有界，且$\partial^2\Omega=\mt$ 还意味着它无边\footnote{有界无边的流形有时可称\textit{闭流形}（取闭合之意），请注意同闭集等名称区分。}！如此便可确定 $\partial\Omega$ 的内外部，因而有外指法矢的明确含义，故从背景 $M$ 可立即诱导出边界的定向。
 
 \begin{eg}[Green]
     设 $A$ 是 $(\R^2,\delta)$ 上的对偶矢量场，$S$ 是单连通开集，则
@@ -213,7 +223,7 @@ $\vec n$ 是曲面的正定向法矢场，
     \eq{
     \tilde\epsilon=i_n\epsilon,
     }
-    这里 $n$ 是外法矢场（以$i(D)$ 为内部）。
+    这里 $n$ 是外法矢场（以 $D^\circ$ 为内部）。
 \end{theorem}
 \begin{proof}
     $\forall q\in\partial D$，设 $\{e_\mu\}$ 是 $q$ 的正交基，满足 $e_1=n$，则
@@ -303,7 +313,7 @@ $\vec n$ 是曲面的正定向法矢场，
         i_X\omega=i_v\omega,\quad i_X\d\omega=i_v\d_x\omega+i_{\partial_t}(\dot{\omega}_I\d t\wedge\d x^I)=i_v\d_x\omega+\dot\omega.
     }
     则依 Lie导数定义、Cartan公式、Stokes公式有
-    \begin{align*} \dv{t}\bigg|_{t=0}\int_{D_t}\omega&=\dv{t}\bigg|_{t=0}\int_{D_0}\phi_t^*\omega\\ &=\int_{D_0}\dv{t}\bigg|_{t=0}\phi_t^*\omega=\int_{D_0}\mathcal L_X\omega\\ &=\int_{D_0}\d i_X\omega+i_X\d\omega\\ &=\int_{\partial D_0}i_v\omega+\int_{D_0}i_v\d_x\omega+\int_{D_0}\frac{\partial\omega}{\partial t}.\qedhere \end{align*}
+    \begin{align*} \dv{t}\bigg|_{t=0}\int_{D_t}\omega&=\dv{t}\bigg|_{t=0}\int_{D_0}\phi_t^*\omega =\int_{D_0}\dv{t}\bigg|_{t=0}\phi_t^*\omega=\int_{D_0}\mathcal L_X\omega\\ &=\int_{D_0}\d i_X\omega+i_X\d\omega =\int_{\partial D_0}i_v\omega+\int_{D_0}i_v\d_x\omega+\int_{D_0}\frac{\partial\omega}{\partial t}.\qedhere \end{align*}
 \end{proof}
 
 \begin{eg}

@@ -1,4 +1,48 @@
 \chapter{纤维丛}\label{appx:bundle}
+
+\section{丛}
+丛是更复杂的矢量丛和纤维丛概念的基本底层结构。
+
+\begin{definition}
+    {\heiti 丛}（bundle）是一个三元组$(E, B, \pi)$，其中$\pi: E\to B$（或$E\xrightarrow{\pi} B$）是一个连续满射；
+    拓扑空间$B$称为{\heiti 底空间}，拓扑空间$E$称为{\heiti 总空间}或 {\heiti 丛空间} ，映射$\pi$称为{\heiti 丛投影}；
+    $\forall b\in B$，空间$\pi^{-1}(b)\in E$称为植于$ b\in B$点的{\heiti 纤维}（fibre）。
+\end{definition}
+直观地，我们认为丛是纤维$\pi^{-1}(b)$的并集，并被空间$E$的拓扑“粘在一起”。
+
+
+\begin{definition}
+     如果$E'$ 是 $E$ 的子空间，$B'$ 是 $B$ 的子空间，且 $ \pi' = \pi |_{E'}: E'\to B'$；
+     那么称丛 $(E',  B',\pi')$ 是 $(E, B,\pi)$ 的{\heiti 子丛}。
+\end{definition}
+
+\begin{definition}
+    若映射$s: B\to E$使得$\pi \circ s = {\rm id}$成立，则称$s$是丛$(E, B,\pi)$的{\heiti 截面}。
+    换句话说，截面$s$把$b\in B$点映射成纤维$\pi^{-1}(b)$中的元素，即$s(b)\in \pi^{-1}(b)$。
+\end{definition}
+    
+%设$(E',B,\pi')$是$(E, B,\pi)$的子丛；再设$s$是$(E, B,\pi)$的截面；
+%则$s$是$(E',B,\pi')$的截面的充要条件是：$\forall b\in B$，有$s(b)\in E'$。
+
+
+给一个最简单的例子，设有拓扑空间$B$和拓扑空间$F$，$B\times F$是它们的笛卡尔积空间；
+则$(B\times F, B,\pi)$构成丛，其中$\pi$是$B\times F$到$B$的投影。
+笛卡尔积丛$(B \times F, B,\pi)$的每个截面$s$具有$s(b) = \bigl(b,\, f(b)\bigr)$的形式，
+其中映射$f: B\to F$是由$s$唯一决定的。
+关于截面的这个命题证明过程大致是：
+“$f: B\to F$是由$s$唯一决定的”是显然的，因为$s$就是
+在每一点处指定了纤维丛中的元素，也就是说唯一决定了$f$。
+假设每个映射$s: B\to B\times F$具有$s(b) = \bigl(\tau(b), \, f (b)\bigr)$的形式；
+由于$b=\pi \circ s(b) = \tau(b)$，所以$s$为$B\times F$截面的
+充要条件是$s(b) = \bigl(b,\, f(b)\bigr)$对于每个$b\in B$成立。
+
+    
+%这个命题说，将映射$\pi\circ s: B\to F$赋给积丛$(B \times F, B,\pi)$的每个截面$s$的函数是
+%从$(B \times F,B,\pi)$的所有截面集合到映射集合$B\to F$的双射。
+%如果$(E,B,\pi)$是积丛$(B\times F,B,\pi)$的子丛，则$(E,B,\pi)$的截面$s$具有$s(b) = \bigl(b, f (b)\bigr)$的形式，
+%其中$f: B\to F$是一个映射，使得对于每个表$(b, f (b))\in E$。
+
+
 Newton 线元在数学上称为\textbf{半度规}。
 
 规范理论

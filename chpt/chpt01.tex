@@ -579,8 +579,7 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \subsection{经典电动力学}
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
-我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。而 Noether 定理正也指出，对称性与守恒量有关。类比波函数，考虑
-闵氏时空上的标量场 $\phi$。置惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
+我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。而 Noether 定理正也指出，对称性与守恒量有关。考虑闵氏时空上的标量场 $\phi$。置惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
 若 $\phi$ 是实的，最简单的选择是 $\del^\mu\phi\del_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
 \eq{
 \mathcal L= -\frac 12\del^\mu\phi\del_\mu\phi-U(\phi)\To \square\phi-\pdv*{U}{\phi}=0,
@@ -838,7 +837,7 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
 可以看到 $\dv*{U^\lambda}{\tau}$ 或偏导数只有 Lorentz 协变性而无广义协变性。我们将 4-加速理解为对 4-速求一种保持张量协变性的导数，这种导数只在局域惯性系中才还原为 ${\d\tilde U^\alpha}/{\d\tau}$。不妨记 $D/\d\tau$，即 $A^\lambda={D U^\lambda}/{\d\tau}=\dv*{U^\lambda}{\tau}+\Gamma^\lambda_{\mu\nu}U^\mu U^\nu$。
-$D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文所翻译的\textbf{共变}或许更无歧义。$D/\d\tau$ 称为\textbf{沿线协变导数}。换言之 $D/\d\tau$ 总保持其作用对象的广义协变性，而只在局域惯性系中还原回 $\d/\d\tau$。
+$D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{共变}。$D/\d\tau$ 称为\textbf{沿线协变导数}。换言之 $D/\d\tau$ 总保持其作用对象的广义协变性，而只在局域惯性系中还原回 $\d/\d\tau$。
 相应于 $\dv*{\tau}$ 可按全微分关系表为若干坐标偏导 $\del_\nu$ 的线性组合，对 $D/\d\tau$ 而言亦有\textbf{协变导数} $\nabla_\mu$ 的概念\footnote{注意与规范协变导数 $D_\mu$ 相区分。}。一般只讨论张量的协变导数。比如对逆变矢量 $V^\mu$ 而言有 ${D V^\mu}/{\d\tau}=:\nabla_\nu V^\mu {\d x^\nu}/{\d \tau}=U^\nu\nabla_\nu V^\mu$，且可有类似的分号简记：$V^\mu{}_{;\nu}=\nabla_\nu V^\mu :={V^\mu}{}_{,\nu}+\Gamma^\mu_{\sigma\nu}V^\sigma$。常把多出的克氏符项称为对偏导数的“协变性修正”。
 协变导数的优势是无需借助于曲线及其参数，但劣势是某点的 $ V^\mu{}_{;\nu}$ 要求 $V^\mu$ 在该点邻域都有定义，而沿线求导只要求曲线上的邻域有定义。
 
@@ -1201,7 +1200,8 @@ $\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(
 \end{align*}
 其中点撇分别代表 $\del_{\hat t},\del_{r}$。
 对 Ricci 张量同样可置
-$R_{\mu\nu}\d x^\mu\d x^\nu=\del_\sigma\Gamma^\sigma-\d^2\ln\sqrt{-g}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}\d x^\mu\d x^\nu$，其中 $\sqrt{-g}=\e^{\mu+\nu}r^2\sin\theta$。结果为
+\[R_{\mu\nu}\d x^\mu\d x^\nu=\del_\sigma\Gamma^\sigma-\d^2\ln\sqrt{-g}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}\d x^\mu\d x^\nu,\]
+其中 $\sqrt{-g}=\e^{\mu+\nu}r^2\sin\theta$。结果为
 \begin{align*}
     R_{00} &= -(\ddot\mu+\dot\mu(\dot\mu-\dot\nu))+\e^{2(\nu-\mu)} \left(\nu''+2\nu'/r+\nu'(\nu'-\mu')\right), \\
     R_{11} &= \e^{2(\mu-\nu)} \left(\ddot\mu+\dot\mu(\dot\mu-\dot\nu)\right)-\nu''+2\mu'/r-\nu'(\nu'-\mu'), \\
