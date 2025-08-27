@@ -66,8 +66,8 @@
 F_p=Gm\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
 }
 
-接下来只以初始位置 $(r_0,0)$ 为极轴方向建立极坐标，以研究水星运动。有心力的形式为 $m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。
-第二式导致角动量守恒，记 $mr^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得\textbf{Binet 式}
+接下来只以初始位置 $(r_0,0)$ 为极轴方向建立极坐标，以研究水星运动。有心力的形式为
+$m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导致角动量守恒，记 $mr^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得 Binet 式
 \eq{
 \dv[2]{\mu}{\theta}+\mu=-\frac{mF}{L^2\mu^2}=J(\mu),\quad \mu=1/r.
 }
@@ -122,125 +122,119 @@ Eddington(1882-1944，英国天体物理学家) 在 1919 年的一次日食观�
 (post-Newtonian theory)
 
 \section{时空延拓}
-\subsection{Rindler 系}
 
-匀加速运动是一个重要的模型。但不同于 Newton 理论，在狭义相对论中，这涉及何种速度对何种时间求导的微妙问题。若认为这种加速度指相对于某外部观者的 3-加速，相对论限制告诉我们它不可能恒定。
-一种自然的想法是用 4-加速，但为保持正交性，至多只能要求其模长恒定。
-实际上，代入 $u^i=0$ 于 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$ 知\textit{4-加速等于共动系 3-加速}。4-加速模长恒定时，在观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
-下面研究匀加速的轨迹。
-不妨取惯性系使质点初速为零。为使共动系 3-加速恒定，4-加速只能同其平行。因而 $a^i,u^i$ 平行，因而 $A^\mu A_\mu=\gamma^4 a^2+\gamma^6u^2a^2=\gamma^6 a^2$。$A^\mu$ 类空，则模长可记 $A=\gamma^3a$ 且恒定。
-这也说明 $U^\mu,A^\mu$ 所在平面是固定的，依据对称性可退化至 2 维来研究。我们可根据 $a=\dv*{u}{t},u=\dv*{x}{t}$ 计算曲线 $(t,x)$。设初态 $(0,R)$，一个简单的做法是取快度 $\theta$ 为曲线参数，这样
-\[t=\int \frac{\d u}{a}=\int_0^\theta  \frac{\cosh^3\theta}{A}\frac{\d\theta}{\cosh^2\theta}=\frac{\sinh\theta}{A},\quad x=\int u\d{t}=\int_0^\theta \tanh\theta\frac{\cosh\theta\d{\theta}}{A}=\frac{\cosh\theta}{A}.\]
-可见轨迹为双曲线 $x^2-t^2=1/A^2$，初态意味着 $A=1/R$。这类似于欧氏几何中，向心加速度模长恒为 $a$、匀速 $v$ 转动的质点将走圆弧 $x^2+y^2=R^2$，且 $a=v^2/R$。
-双曲线的渐近线相当于原点处的光锥 $C_N$。故对匀加速观者而言，信息不能从光锥另一侧逾越过来，故称\textbf{Rindler 视界}。
+\subsection{Fermi-Walker 移动}
+在广义相对论中，Fermi-Walker 移动是一个重要的概念，用于描述沿着测地线的运动。它是指在一个弯曲时空中，沿着测地线移动的观测者所经历的时间和空间的变化。
+
+相对论限制告诉我们，相对于某外部观者的 3-加速不可能恒定。匀加速运动多指 4-加速费移的运动。而 4-加速等于共动系 3-加速，故在共动观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
+4-加速费移说明 $U^\mu,A^\mu$ 所在平面固定，可退化至 2 维来研究。
+取惯性系 $\{T,X\}$，设 4-加速模长恒为 $A$，4-速模长恒为 $-1$ 且指向未来，则
+\[-\left(\dv{U^0}{\tau}\right)^2+\left(\dv{U^1}{\tau}\right)^2=A^2,\quad U^0=\sqrt{(U^1)^2+1}.\]
+设速度初态 $U^1=0$，则 $U^1=\sinh A\tau,U^0=\cosh A\tau$。设位置初态 $T=0,X=x$，则 $T=\frac 1A\sinh A\tau,X=x+\frac 1A\cosh A\tau-\frac 1A$。
+可见轨迹为双曲线。
+不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
+由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
+\eq{T=x\sinh At,\quad X=x\cosh At.}
+则 $\d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2$。坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
 
 \begin{figure}[h!]
     \centering
-    \subfloat[\centering 按 $A=1/R$ 均匀分布]{
+    \subfloat[\centering 按 $A=1/x$ 分布]{
     \begin{tikzpicture}[scale=1.2]
     \draw[color=gray] (0,0)--(2,2);
-    \draw (0,0)--(4,0) node[right]{$\scriptstyle x$};
+    \draw (0,0)--(4,0) node[right]{$\scriptstyle X$};
     \draw[dashed] (0,0)--(-0.3,0);
     \draw[dashed] (0,0)--(0,-0.3);
-    \draw (0,0)--(0,2) node[above]{$\scriptstyle t$};
-    \draw (0,0)--({1.3*sinh(0.42)*2.5},{1.3*sinh(0.42)}) node[midway,sloped,above]{$\scriptstyle R=1$};
-    \draw (0,0)--(1.5*2.5,1.5) node[right]{$\scriptstyle\hat{x}$};
-    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{t}$};
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--({1.3*sinh(0.42)*2.5},{1.3*sinh(0.42)}) node[midway,sloped,above]{$\scriptstyle x$};
+    \draw (0,0)--(1.5*2.5,1.5) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
     \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
     \draw[domain=0:0.85,thick,samples=100] plot({2*cosh(\x)},{2*sinh(\x)});
     \draw[domain=0:0.6,thick,samples=100] plot({3*cosh(\x)},{3*sinh(\x)});
     \foreach \n in {1,2,3}{
     \fill (\n,0) circle(0.03);
     \fill ({\n*cosh(0.42)},{\n*sinh(0.42)}) circle(0.03);
-    \draw[dashed] (\n*0.915,0)--(0.8+\n*0.915,0.8*2.5) node[above]{$\scriptstyle\hat{x}=\n$};}
+    \draw[dashed] (\n*0.915,0)--(0.8+\n*0.915,0.8*2.5) node[above]{$\scriptstyle\hat{X}=\n$};}
     \end{tikzpicture}
     }
     \quad
     \subfloat[\centering 按 $A$ 相等分布]{\begin{tikzpicture}[scale=1.2]
     \draw[color=gray] (0,0)--(2,2);
     \draw[color=gray] (1,0)--(3,2);
-    \draw (0,0)--(3,0) node[right]{$\scriptstyle x$};
+    \draw (0,0)--(3,0) node[right]{$\scriptstyle X$};
     \draw[dashed] (0,0)--(-0.3,0);
     \draw[dashed] (0,0)--(0,-0.3);
-    \draw (0,0)--(0,2) node[above]{$\scriptstyle t$};
-    \draw (0,0)--(2.5,1) node[right]{$\scriptstyle\hat{x}$};
-    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{t}$};
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--(2.5,1) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
     \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
     \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)+1},{sinh(\x)});
     \fill (1,0) circle(0.03);
     \fill (2,0) circle(0.03);
     \end{tikzpicture}
     }%
-    \caption{\small 在闵氏几何中，无非是将三角函数替为双曲函数，圆弧也就对应于双曲线。物体在加速度模长恒定时经伪转动走双曲线，且可预料 $x^2-t^2=R^2$ 时 $A^2=1/R^2$。}
+    \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
 \end{figure}
-考虑一系列初态均匀相离的观者，均沿轴匀加速运动。若加速度按 $1/R$ 分布，则它们共用一条 Rindler 视界，因而这些双曲线成伸缩关系。于是易知，在向右匀速运动的惯性系看来，这些匀加速观者间距未变，仍然均匀。
-然而若各观者加速度一致，则一系列双曲线成平移关系，不能保持各自间距恒等，不同于 Newton 力学。
 
-上述讨论说明，按 $A=1/R$ 分布的一系列双曲线，连同一系列 $\hat x$ 轴，可构成一个均匀坐标网格，坐标表为 $(r,\theta)$，称为\textbf{Rindler 系}。
+双曲线的渐近线相当于原点处的光锥 $C_N$。故对匀加速观者而言，信息不能从光锥另一侧逾越过来，故称\textbf{Rindler 视界}。
 
+\subsection{自由下落系}
+
+考虑到球对称性，我们只用 2 个维度
+\[
+\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2.
+\]
+用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
+2 维图上每一点都可确定两条不同的类光测地线，所有类光测地线可分为两类。空间上朝外的称\textbf{外向}(outgoing)，反之称\textbf{内向}(incoming)。
+令 $\d s^2=0$，则
+\eq{\label{dia_Sch}
+t=\pm\left(r+2M\ln|r-2M|\right)+C.
+}
+考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，为负则为内向族。然而 $r=2M$ 时 $t\to\infty$，故在 $\{t,x\}$ 系下不会有光线穿过视界。
+还有一种办法，可考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在遥远观者（Schwarzschild 系）看来，钟在视界处的读数 $\tau$ 近乎定格，任何物质似乎永不落入视界。
+但若真如此，黑洞的形成将无从谈起。“永远性”是相对的。若能找到新系，来消除类光内向族在视界处的奇性，就可连续地描述物质落入视界的过程。
+
+考虑 $L=-\sqrt{-g_{\mu\nu}\dot x^\mu\dot x^\nu}$，其中点表示对 $\tau$ 求导。则 $\pdv*{L}{\dot x^\kappa}=g_{\kappa\lambda}\dot x^\lambda$ 和 $\pdv*{L}{x^\kappa}=\frac{1}{2}g_{\mu\nu,\kappa}\dot x^\mu\dot x^\nu$，E-L 方程是 $\dv{\tau}(g_{\mu\nu}\dot x^\nu)-\frac 12 g_{\alpha\beta,\mu}\dot x^\alpha\dot x^\beta=0$。由于 $g_{\mu\nu,0}=0$，从而 $g_{0\nu}\dot x^\nu=\text{常数}$。取 $\nu=0$ 有 $\left(1-{2M}/{r}\right)\dot t=\text{常数}$。
+若质点从无穷远处自由落体，则 $r\to\infty$ 时 $\dot t\to 1$，从而 $(1-{2M}/{r})\dot t=1$。从而 $\dot t=1/(1-{2M}/{r})$，由模长知 $\dot r=-\sqrt{2M/r}$
 
 
 
 \subsection{Eddington 系}
-假设有一闯入 $r<2M$ 的\textbf{探险者}，对其而言，外部空间于其而言仿若永不能逾越的\textit{时间上的过去}，而内部空间乃至 $r=0$ 处仿若必将走向的\textit{时间上的未来}。
 
-
-
-我们用时空图来理解上述奇性。视界在观感上是一个 3 维空间里的 2 维球面，但在时空图里，它应沿时间方向延伸为一张 3 维类时超曲面。若将时空图绘制为 3 维的，则可以用一个 2 维圆柱面代表视界。
-
-若在时空图中标注各点微小光锥的方向，就能将各点时空结构直观地呈现出来，因此欲求出时空中的光线轨迹。光没有质量而走类光线，因此我们不能定义固有时。
-
-
-
-可以预料，上述直线推至一般坐标系甚至一般时空时，应得仿射参数化的测地线方程，对 $\d s^2=0$ 求导很容易证明这一点。实际上，正因为用间隔不变形可得测地线，我们在求某时空的类光测地线时，总是直接处理度规即可，这样便省去克氏符的计算。考虑到球对称性，我们只用 2 个维度
-\[
-0=\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2,
-\]
-故曲线斜率满足
-\eq{\label{dia_Sch}
-\left(\dv{t}{r}\right)^2=\frac{1}{(1-2M/r)^2}\To t=\pm\left(r+2M\ln|r-2M|\right)+C.
-}
-接着要在图中画出上述类光测地线。图上每一点都可确定两条不同的类光测地线，分别属于两\textit{族(family)}，因此可均匀地取积分常数以绘制网格。每一条类光测地线都代表光路，因而每一点的光锥面必定切于两族在此处的类光测地线，因此不妨在每个格点都画上一个椭圆，构成一个小“妙脆角”，以代表微小未来光锥（完整光锥用小“沙漏”表示），用以揭示该处的时空结构。所有类光测地线可分为两类。作为未来光锥右侧的称为\textit{外向(outgoing)族}，反之为\textit{内向(incoming)族}。比如，注意 $r>2M$ 时，\eqref{dia_Sch} 中正负号取正后斜率为正，只能作为未来光锥右侧，故为外向族。其他情况以此类推。
-
-
-
-如图所示，圆柱面为事件视界，波浪线为奇点。可见直接用 Schwarzschild 系使视界出现奇性，生硬地割裂了时空的内外部分。取一个 $r>2M$ 的静态观者，这样由 $\d s^2=-\d\tau^2$ 知其固有时与坐标时的关系\footnote{至此可重新观察 Schwarzschild 度规，若类比钟慢和尺缩效应，我们可将 $1/\sqrt{1-2M/r}$ 理解为 $\gamma$，而这种速度就是 $v=\sqrt{2M/r}$。Newton 理论能给予一个直观理解。物体从引力场某处逃逸的条件是有足够的动能，使得在力场范围内都不为零，这样一旦越过范围就可用剩余动能逃走。最坏的情况是力场范围延至无穷远，则物体动能要足够大，以至于最差只能在无穷远处为零，这样由能量守恒推知速度至少为 $\sqrt{2M/r}$。1799 年，Laplace 假设引力可以吸引光，则对光而言逃脱条件便是 $r>2M$，因此从内部发出的光无法到达无穷远处。这当然不严谨，因为真空光速参考系不变；不能定义光的质量，故光受引力的影响只能由广义相对论解释；内部光线只是无法到达无穷远，仍可超出 $r=2M$ 而至有限远，这与黑洞有本质不同。用 $\gamma$ “推导”引力度规的方式可见文献 Czerniawski。}为
+注意到内向族分别在 $r>2M,0<r<2M$ 单调，可设想直接将其映射为向内 $45^\circ$ 斜率的直线 $\tilde t=-r+C$，且为了 $r=0$ 时 $t=\tilde t$，可取
 \eq{
-\d\tau=\sqrt{1-2M/r}\d{t},
+    \tilde t=t+2M\ln\abs{\frac{r}{2M}-1}.
 }
-这说明，静态观者借自己的标准钟观察一个探险者，会发现其落入 $r=2M$ 的过程逐渐缓慢，因为
-\[
-\dv{t}{\tau}=\frac{1}{\sqrt{1-2M/r}}
-\]
-会从 1 逐渐递增至 $r=2M$ 处发散，进而其在 $r=2M$ 附近“毫无动静”，仿佛时间停滞流逝，最终将永远定格于 $r=2M$ 而不会坠入视界。然而在探险者看来，他进入视界“确实”是顺理成章的。$r>2M$ 的部分让人误解为任何质点永远位于视界之外，因为我们容易把 $t\to\infty$ 混同于“永远”。古希腊时期有一著名的 Zeno 悖论讨论过类似效应。Zeno 为讨论无穷的含义设计了这样的情形：一位运动员 Achilles 欲同一只乌龟(tortoise)赛跑，且乌龟起点先于他若干路程 $L$。按常理来说，他的速度 $v_1$ 快于乌龟的 $v_2$，明显会在有限时间 $L/(v_1-v_2)$ 内超过乌龟。但设想这样计时：他欲超过乌龟，必须先追至乌龟的起点，但一旦如此，乌龟又能前进若干步，这样便有新的起点等着他，如此这般有无穷多这样的起点，则他“永远”也赶不上乌龟。实际上这并不存在孰是孰非的问题，因为答案是相对于所选取的计时方式而言的。乌龟均匀向前，它未“想得”那么复杂，因此可将“乌龟时”理解为和观众一致认同的普通时 $t$。Achilles 时（或称 Zeno 时） 记作 $t'$，两种时间皆起于零。当 $t=L/v_1$ 时，Achilles 到达乌龟在 $t'=0$ 时的起点，则 $t'$ 加一，以此类推有
-\[
-t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg),
-\]
-上式自然将 $t'$ 从 $\N$ 延拓至 $\R_+$，因此从 Achilles 时 $t$ 到乌龟时 $t'$ 的变换为
-\[
-t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),
-\]
-可见二者走势一致，区别在于 $t'$ 会在 $t=L/(v_2-v_1)$ 发散。
-
-
-
-这给了我们寻找新坐标的启发。我们亦可给视界赋予发散的坐标，这样就可将度规的奇性隐藏在坐标变换中。先想办法消除度规中的因子 $(1-2M/r)^{-1}$。常常采取因式分解，即
-\[
-\d s^2=\left(1-{2M}/{r}\right)\left(-\d t^2+\left(1-{2M}/{r}\right)^{-2}\d r^2\right),
-\]
-定义一个新半径使得
-\eq{
-\d r_*=\frac{\d r}{1-2M/r}\Rightarrow r_*=r+2M\ln\abs{\frac{r}{2M}-1},
-}
-这里取积分常数使得 $r=0$ 时 $r_*=0$，可见其与 $r$ 走势一致而仅在 $r=2M$ 处发散。类比 Zeno 悖论，可称\textit{乌龟坐标}。度规就可表为
-\[
-\d s^2=(1-2M/r)\left(-\d t^2+\d r_*^2\right),
-\]
-这样就消除了发散因子。然而这个变换并不够，因为其行列式 $g$ 在 $r=2M$ 为零，意味着逆矩阵元发散。但是这种变换很常用，值得单独命名并继续使用。对物理量 $x$，变换 $x'=x+(r_*-r)$ 在 $r<2M$ 时 $x'<x$，故称\textit{超前(advanced)变换}，而 $x'=x-(r_*-r)$在 $r<2M$ 时 $x'>x$，故称\textit{推迟(retarded)变换}。考虑到奇性导致了类似于 Zeno 悖论的现象，应将坐标时 $t$ 超前变换至 $\tilde t$，则度规表为
+则度规表为
 \eq{
 \d s^2=-\left(1-\frac{2 M}{r}\right) {\d \tilde t}^2+\frac{4M}{r}\,\mathrm{d} \tilde t\, \mathrm{d} r+\left(1+\frac{2 M}{r}\right)\d r^2,
 }
-便可使时空交叉项为正，符合黑洞演化的方向。上式在 $r=2M$ 处所有分量皆收敛，而行列式 $g=-(g_{01})^2\ne 0$，这才算消去奇性。该坐标系称为\textit{超前 Eddington 系}。利用十字相乘法可分解出两个类光测地线族，其一是
+$g_{01}\geqslant 0$ 符合黑洞演化的方向。现在度规分量在视界处收敛，且 $g=-(g_{01})^2\ne 0$，这才算消去奇性。
+
+
+
+
+
+
+$t=-r_*+C$，且为了 $r=0$ 时 $r_*=0$，可取
+\eq{
+    r_*=r+2M\ln\abs{\frac{r}{2M}-1}.
+}
+类比 Zeno 悖论\footnote{古希腊哲学家 Zeno 描述了类似效应：运动员 Achilles 欲同一只乌龟赛跑，且乌龟起点先于他若干路程 $L$。按通常的时间 $t$ 来说，他的速度 $v_1$ 快于乌龟的 $v_2$，明显在有限时间 $t=L/(v_1-v_2)$ 内超过乌龟。但设想这样计时：他欲超过乌龟，必须先追至乌龟的起点，但一旦如此，乌龟又能前进若干步，这样便有新的起点等着他，如此这般有无穷多这样的起点，则他“永远”也赶不上乌龟。这种计时方法称为 Achilles 时或 Zeno 时，记作 $t'$。令 $t',t$ 皆起于零。当 $t=L/v_1$ 时，Achilles 到达乌龟在 $t'=0$ 时的起点， $t'$ 加一，以此类推有
+\[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\To t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
+其中将 $t'\in\N$ 自然延拓至 $t'\in\R_+$。可见 $t'$ 在 $t=L/(v_2-v_1)$ 发散，因此按 $t'$ 衡量他永不超过乌龟。}，
+可称\textbf{乌龟坐标}(tortoise coordinates)。数学中的 Lambert 函数定义为满足 $x=y\e^y,y\geqslant -1$ 的$y=\operatorname{W}(x)$。用它可解出 $r=2M(1+\operatorname{W}(\pm\e^{r_*/2M-1}))$，正负号对应 $\sgn(r-2M)$。
+注意 $\d r_*={\d r}/{(1-2M/r)}$，从而度规表为 $\d s^2=(1-2M/r)\left(-\d t^2+\d r_*^2\right)$，奇性消除了。关键在于，新坐标系给视界赋予发散坐标，就可将度规奇性隐藏起来。
+
+但这个变换还不够，因为行列式 $g$ 在 $r=2M$ 为零，意味着逆矩阵元发散。时间也需要变换。
+变换 $x'=x+(r_*-r)$ 在 $r<2M$ 时 $x'<x$，故称\textbf{超前}(advanced)变换，而 $x'=x-(r_*-r)$在 $r<2M$ 时 $x'>x$，故称\textbf{推迟}(retarded)变换。
+
+该坐标系称为\textbf{超前 Eddington–Finkelstein 系}，简称 Eddington 系。
+
+
+
+利用十字相乘法可分解出两个类光测地线族，其一是
 \eq{
 \dv{\tilde t}{r}=\frac{r+2M}{r-2M}\Rightarrow \tilde t=r+4M\ln\abs{r-2M}+C_1, \quad r=2M,
 }
@@ -248,28 +242,34 @@ t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),
 \eq{
 \dv{\tilde t}{r}=-1\Rightarrow \tilde t=-r+C_2.
 }
-显然前者为外向族而后者为内向族。进而可画得图 \ref{fig:mink}。
+显然前者为外向族而后者为内向族。
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/schBH.pdf}
-    \caption{静态黑洞时空图}
-    \label{fig:mink}
+    \caption{\small 静态黑洞 Eddington 图。绘制时积分常数均匀选取。可在格处画上椭圆，构成“妙脆角”，以代表微小未来光锥，或用“沙漏”表示完整光锥。}
 \end{figure}
-其中设有一个静态观者和一个位于 $\tilde t$-$r$ 平面的探险者。可见视界外的质点可以穿越视界进入黑洞，而一旦进入就无法逃逸，并最终落入奇点。探险者若想摆脱黑洞的引力束缚，只能采用某种喷气火箭，以大于该处静态观者所需力量向右飞行。一旦燃料储备不足，便连静态观者也当不了。假设其燃料充足，若探险者企图接近视界而迅速掉头离开，则越近风险越大，因为从 $r=2M$ 附近逃离须使飞船接近光速。并且，当视界内部很空旷时，对探险者而言，其进入视界时并无触觉，若稍有不慎，未能警觉自己所处位置，则很可能多走一步而遁入厄运。当然，探险者还是能通过视觉上“眼前一黑”来观察，但更可怕的是，探险者并非真正的质点，而不同位置所受引力在此极端地带将差距巨大，因此潮汐力（对应于曲率大小）极有可能撕碎探险者，除非视界半径很大而稀释了曲率。此外，前文用测量效应说明了静态观者对探险者的观察，亦可用视觉效应这种现象。若静态观者借光信号观察探险者，则从图 \ref{fig:mink} 容易看出，随探险者逐渐接近视界，探险者所发出的光将越来越晚地到达静态观者，而坠入的画面无法传播出来。
+其中设有一个静态观者和一个位于 $\tilde t$-$r$ 平面的探险者。
+
+可见视界外的质点可以穿越视界进入黑洞，而一旦进入就无法逃逸，并最终落入奇点。探险者若想摆脱黑洞的引力束缚，只能采用某种喷气火箭，以大于该处静态观者所需力量向右飞行。一旦燃料储备不足，便连静态观者也当不了。假设其燃料充足，若探险者企图接近视界而迅速掉头离开，则越近风险越大，因为从 $r=2M$ 附近逃离须使飞船接近光速。并且，当视界内部很空旷时，对探险者而言，其进入视界时并无触觉，若稍有不慎，未能警觉自己所处位置，则很可能多走一步而遁入厄运。
+
+当然，探险者还是能通过视觉上“眼前一黑”来观察，但更可怕的是，探险者并非真正的质点，而不同位置所受引力在此极端地带将差距巨大，因此潮汐力（对应于曲率大小）极有可能撕碎探险者，除非视界半径很大而稀释了曲率。此外，前文用测量效应说明了静态观者对探险者的观察，亦可用视觉效应这种现象。若静态观者借光信号观察探险者，则从图容易看出，随探险者逐渐接近视界，探险者所发出的光将越来越晚地到达静态观者，而坠入的画面无法传播出来。
 
 
 
 \subsection{Kruskal 系}
-能描述 Schwarzschild 时空的坐标系有很多，超前 Eddington 系并非完美无缺。比如，Schwarzschild 系能保证 $g_{01}=0$ 而超前 Eddington 系不然。可能存在一个“更好”的坐标系既能消除奇性，又能使 $g_{01}=0$。第 
+Schwarzschild 系能保证 $g_{01}=0$ 而 Eddington 系不然。是否存在一个坐标系既能消除奇性，又能保持 $g_{01}=0$？
 
-节就提过研究弯曲时空引力性质的技巧，那就是到平直时空的加速度系去，而 Rindler 坐标系正好能满足 $g_{01}=0$，我们可从中获取灵感。考虑到 Rindler 系的坐标具备时空的性质（尤其是远处的加速系），现在就将其改记 $(t,x)$。不妨先讨论 $x>0$，反之情形同理。原来的闵氏系改记 $(T,X)$。这样闵氏度规 $\d s^2=-\d T^2+\d X^2$ 在坐标变换 $X=x\cosh t,T=x\sinh t$ 下变为“Rindler 度规” $\d s^2=-x^2\d t^2+\d x^2$，二者无实质区别，为同一度规。现在我们不再按 $T,X$ 正交来绘制时空图，而是按 $t,x$ 正交。同理求出内、外向族分别为
+同理求出内、外向族分别为
 \[
 t=-\ln x+C_1,\quad t=\ln x+C_2.
 \]
-故可绘制如下图 。注意，闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和闵氏系的相对地位，就像是 Schwarzschild 系或 Eddington 系和“更好”坐标系的相对地位。
+故可绘制如下图 。
+
+注意，闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和闵氏系的相对地位，就像是 Schwarzschild 系或 Eddington 系和“更好”坐标系的相对地位。
 
 
-类光测地线意味着 $\d s^2=0$，而张量为零的事实不受坐标系影响，因此上述类光测地线族其实“对应于”闵氏时空里的类光测地线族
+
+因此上述类光测地线族其实“对应于”闵氏时空里的类光测地线族
 \[
 T=-X+C_1,\quad T=X+C_2.
 \]
@@ -297,6 +297,7 @@ T=\frac{V+U}{2},\quad X=\frac{V-U}{2},
 V=\e^v>0,\quad U=-\e^{-u}<0.
 }
 度规现表为 $\d s^2=-\d V\d U$，不存在任何坐标奇性。
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/rindler.pdf}
@@ -339,11 +340,7 @@ V=\e^{\beta v}>0,\quad U=-\e^{-\beta u}<0.
 \eq{
 X^2-T^2=-VU=\e^{(v-u)/4M}=\left(\frac{r}{2M}-1\right)\e^{r/2M},
 }
-注意 $r>0$，我们可用数学中的 \textit{Lambert 函数}
-\eq{
-y=\operatorname{W}(x)\Longleftrightarrow x=y\e^y,y\geqslant -1
-}
-将其表为
+可用 Lambert 函数将其表为
 \eq{\label{eq:r=T,X}
 r=2M\operatorname{W}\left(\frac{X^2-T^2}{\e}\right)+2M.
 }
@@ -388,7 +385,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-然而上图 \ref{} 只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的\textit{延拓(extension)}。前文多次提及延拓这个词，通俗来讲，我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是延拓时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。综上所述，无论 Schwarzschild 系 \ref{} 还是超前 Eddington 系 \ref{}，二者所对应的时空或许只是某个更大时空的\textit{子时空}。为此可想办法延拓它，直至一个可以证明不能再延拓的结果，称之为\textit{最大延拓(maximal extension)}。
+然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的\textit{延拓(extension)}。前文多次提及延拓这个词，通俗来讲，我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是延拓时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。综上所述，无论 Schwarzschild 系   还是超前 Eddington 系 ，二者所对应的时空或许只是某个更大时空的\textit{子时空}。为此可想办法延拓它，直至一个可以证明不能再延拓的结果，称之为\textit{最大延拓(maximal extension)}。
 
 
 
@@ -397,7 +394,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-当然，仍有微妙区别：在 Rindler 图 \ref{} 中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
+当然，仍有微妙区别：在 Rindler 图   中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
 
 
 这就是用坐标系延拓时空。形象地说，本身或延拓后无限延伸的测地线称为\textit{完备的(complete)}。只有那种根本不能再继续延伸的测地线，才能叫\textit{不完备(incomplete)}。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
