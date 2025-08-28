@@ -572,11 +572,7 @@ E=p_i u^i-L=pu+{m}/{\gamma}=\sqrt{p^2+m^2}=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
 此即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。$P^\mu$ 同时具备能量和动量意义，即 $P^0=\gamma m=E,P^i=\gamma m u^i=p^i$，则模方为 $-E^2+p^2=P^\mu P_\mu=-m^2$ 或者 $E^2= p^2+m^2$，此即\textbf{质壳}(mass-shell)\textbf{关系}或\textbf{Hamilton-Jacobi 方程}。
 
 $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma f^i$，其中\textbf{3-力}为 $f^i:=\dot{p}^i$。质量守恒时 $F^\mu=m A^\mu,f^i=m a^i$，功能关系 $f^i u_i=\dot{E}$ 得到保留。
-质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。\textit{质点宿命在光锥之内}。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
-
-对于光，虽不能定义固有时和质量概念，但可借量子理论的 de Broglie 关系定义其能量和动量。设频率 $\nu$ 和波矢 $k^i$，则能量为 $E=h\nu$，3-动量为 $p^i = \hbar k^i$。4-动量仍满足 $P^0=E,P^i=p^i$。
-
-实际上，描述光线时一般取任意仿射参数 $\lambda$。比如，考虑一点 $x_{0}$，此处一个指向未来的类光矢量 $N$ 就可代表光的走向。由 $\alpha(\lambda)=x_{0}+\lambda N$ 定义的直线 $\alpha$ 就是自由光子经过 $x_{0}$ 的世界线。
+质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
 \subsection{经典电动力学}
 
@@ -697,8 +693,65 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 
 而运动方程为 $\mu^* Z^\mu\del_\mu Z^\nu=F^\mu{}_{\lambda}J^\lambda$，式右称为\textbf{4-Lorentz 力密度}。
 
+\subsection{光学}
 
+对于光，虽不能定义固有时和质量概念，但可借量子理论的 de Broglie 关系定义其能量和动量。设频率 $\nu$ 和波矢 $k^i$，则能量为 $E=h\nu$，3-动量为 $p^i = \hbar k^i$。4-动量仍满足 $P^0=E,P^i=p^i$。
 
+实际上，描述光线时一般取任意仿射参数 $\lambda$。比如，考虑一点 $x_{0}$，此处一个指向未来的类光矢量 $N$ 就可代表光的走向。由 $\alpha(\lambda)=x_{0}+\lambda N$ 定义的直线 $\alpha$ 就是自由光子经过 $x_{0}$ 的世界线。
+
+\subsection{Fermi-Walker 移动}
+Fermi-Walker 移动是一个重要的概念，用于描述沿着测地线的运动。它是指在一个弯曲时空中，沿着测地线移动的观测者所经历的时间和空间的变化。
+
+相对论限制告诉我们，相对于某外部观者的 3-加速不可能恒定。匀加速运动多指 4-加速费移的运动。而 4-加速等于共动系 3-加速，故在共动观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
+4-加速费移说明 $U^\mu,A^\mu$ 所在平面固定，可退化至 2 维来研究。
+取惯性系 $\{T,X\}$，设 4-加速模长恒为 $A$，4-速模长恒为 $-1$ 且指向未来，则
+\[-\left(\dv{U^0}{\tau}\right)^2+\left(\dv{U^1}{\tau}\right)^2=A^2,\quad U^0=\sqrt{(U^1)^2+1}.\]
+设速度初态 $U^1=0$，则 $U^1=\sinh A\tau,U^0=\cosh A\tau$。设位置初态 $T=0,X=x$，则 $T=\frac 1A\sinh A\tau,X=x+\frac 1A\cosh A\tau-\frac 1A$。
+可见轨迹为双曲线。
+不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
+由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
+\eq{T=x\sinh At,\quad X=x\cosh At\To \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
+坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering 按 $A=1/x$ 分布]{
+    \begin{tikzpicture}[scale=1.2]
+    \draw[color=gray] (0,0)--(2,2);
+    \draw (0,0)--(4,0) node[right]{$\scriptstyle X$};
+    \draw[dashed] (0,0)--(-0.3,0);
+    \draw[dashed] (0,0)--(0,-0.3);
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--({1.3*sinh(0.42)*2.5},{1.3*sinh(0.42)}) node[midway,sloped,above]{$\scriptstyle x$};
+    \draw (0,0)--(1.5*2.5,1.5) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
+    \draw[domain=0:0.85,thick,samples=100] plot({2*cosh(\x)},{2*sinh(\x)});
+    \draw[domain=0:0.6,thick,samples=100] plot({3*cosh(\x)},{3*sinh(\x)});
+    \foreach \n in {1,2,3}{
+    \fill (\n,0) circle(0.03);
+    \fill ({\n*cosh(0.42)},{\n*sinh(0.42)}) circle(0.03);
+    \draw[dashed] (\n*0.915,0)--(0.8+\n*0.915,0.8*2.5) node[above]{$\scriptstyle\hat{X}=\n$};}
+    \end{tikzpicture}
+    }
+    \quad
+    \subfloat[\centering 按 $A$ 相等分布]{\begin{tikzpicture}[scale=1.2]
+    \draw[color=gray] (0,0)--(2,2);
+    \draw[color=gray] (1,0)--(3,2);
+    \draw (0,0)--(3,0) node[right]{$\scriptstyle X$};
+    \draw[dashed] (0,0)--(-0.3,0);
+    \draw[dashed] (0,0)--(0,-0.3);
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--(2.5,1) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)+1},{sinh(\x)});
+    \fill (1,0) circle(0.03);
+    \fill (2,0) circle(0.03);
+    \end{tikzpicture}
+    }%
+    \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
+\end{figure}
 
 \subsection{Lorentz 变换推导*}\label{sec:PoincareLorentz}
 
@@ -1065,7 +1118,7 @@ T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{
 }
 这称为\textbf{Einstein 方程}。$\frac{1}{16\pi}\int R \sqrt{-g}\d[4]{x}$ 称为\textbf{Einstein-Hilbert 作用量}。
 
-\subsection{电磁最小引力耦合}
+\subsection{最小引力耦合}
 
 现设流体带固有电荷密度 $\rho^*$，电流密度为 $J^\mu=\rho^* Z^\mu$。电荷守恒从局域惯性系出发变换为 $\nabla_\mu J^\mu = 0$，则后续对 $A_\mu,g^{\mu\nu}$ 的变分均有 $\var(J^\mu\sqrt{-g})=0$。
 研究电磁场 $F_{\mu\nu}$ 的最小引力耦合。单粒子的运动方程遵循
@@ -1198,7 +1251,7 @@ $\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(
 结果为
 \begin{align*}
     & \Gamma_{00}^0=\dot{\nu}, \quad \Gamma_{01}^0=\nu^{\prime}, \quad \Gamma_{11}^0=\e^{2(\mu-\nu)} \dot{\mu}, \\& \Gamma_{00}^1=\e^{2(\nu-\mu)} \nu^{\prime}, \quad \Gamma_{01}^1=\dot{\mu}, \quad \Gamma_{11}^1=\mu^{\prime}, \quad \Gamma_{22}^1=-r \e^{-2 \mu}, \quad \Gamma_{33}^1=-r \e^{-2 \mu} \sin ^2 \theta, \\
-    & \Gamma_{12}^2=\frac{1}{r}, \quad \Gamma_{33}^2=-\sin \theta \cos \theta, \quad \Gamma_{13}^3=\frac{1}{r}, \quad \Gamma_{23}^3=\cot \theta.
+    & \Gamma_{12}^2=\Gamma_{13}^3={1}/{r}, \quad \Gamma_{33}^2=-\sin \theta \cos \theta, \quad \Gamma_{23}^3=\cot \theta.
 \end{align*}
 其中点撇分别代表 $\del_{\hat t},\del_{r}$。
 对 Ricci 张量同样可置
@@ -1214,7 +1267,7 @@ $\nu''+2\nu'/r+\nu'(\nu'-\mu')=0,
 -\nu''+2\mu'/r-\nu'(\nu'-\mu')=0, 
 \e^{2\mu}-1+r(\mu'-\nu')=0$。
 前两者相加得 $\mu'+\nu'=0$，代入后者有 $(r\e^{-2\mu(r)})'=1$，得
-\[\e^{-2\mu}=1-\frac{2M}{r},\quad \e^{2\nu}=\e^{f(\hat t)}\left(1-\frac{2M}{r}\right).\]
+\[\e^{-2\mu}=1-{2M}/{r},\quad \e^{2\nu}=\e^{f(\hat t)}(1-{2M}/{r}).\]
 其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即可有
 \eq{
     \d s^2=-\left(1-\frac{2M}{r}\right)\d t^2+\left(1-\frac{2M}{r}\right)^{-1}\d r^2+r^2\d\Omega^2,
@@ -1224,22 +1277,22 @@ $\nu''+2\nu'/r+\nu'(\nu'-\mu')=0,
 现列举分量如下以供查阅：
 \begin{align*}
     \Gamma_{01}^0&=\frac{M}{r^2}\left(1-\frac{2M}{r}\right)^{-1}, \quad \Gamma_{00}^1=\frac{M}{r^2}\left(1-\frac{2M}{r}\right), \\
-    \Gamma_{11}^1&=-\Gamma_{01}^0,\quad\Gamma_{22}^1=-r\left(1-\frac{2M}{r}\right),\quad\Gamma_{33}^1=\Gamma_{22}^1\sin ^2 \theta, \\
+    \Gamma_{11}^1&=-\Gamma_{01}^0,\quad\Gamma_{22}^1=-r(1-{2M}/{r}),\quad\Gamma_{33}^1=\Gamma_{22}^1\sin ^2 \theta, \\
     \Gamma_{12}^2&=1 / r,\quad\Gamma_{33}^2=-\sin \theta \cos \theta,\quad\Gamma_{13}^3=1 / r,\quad\Gamma_{23}^3=\cot \theta,
 \end{align*}
 以及
 \begin{align*}
-    R_{0101}&=-\frac{2 M}{r^3}, \quad R_{0202}=\frac{M}{r}\left(1-\frac{2M}{r}\right), \quad R_{0303}=R_{0202} \sin ^2 \theta, \\
-    R_{1212}&=-\frac{M}{r}\left(1-\frac{2M}{r}\right)^{-1}, \quad R_{1313}=R_{1212} \sin ^2 \theta, \quad R_{2323}=2 M r \sin ^2 \theta.
+    R_{0101}&=-\frac{2 M}{r^3}, \quad R_{0202}=\frac{M}{r}\left(1-\frac{2M}{r}\right), \quad R_{1212}=-\frac{M}{r}\left(1-\frac{2M}{r}\right)^{-1}, \\
+    R_{0303}&=R_{0202} \sin ^2 \theta, \quad R_{1313}=R_{1212} \sin ^2 \theta, \quad R_{2323}=2 M r \sin ^2 \theta.
 \end{align*}
 
 引力场恒稳，即存在坐标系使 $g_{\mu\nu,0}=0$（时间平移不变性），则称度规\textbf{稳态}(stationary)，相应系称稳态系；存在坐标系使 $g_{\mu\nu,0}=0$ 且 $g_{0i}=0$（时间反演不变性），称度规\textbf{静态}(static)。可见静态必稳态。
 Schwarzschild 最初除了真空、球对称假设外还引入了静态条件\footnote{1915 年 11 月 18 日，Schwarzschild 趁着假期出席了 Einstein 于普鲁士科学院所作关于场方程的首次演讲，随后于一战德国战场上给出该解——这是场方程第一个引力解析解。他于数月后病逝。}，但上述讨论表明真空球对称解必是 Schwarzschild 解，这也称为\textbf{Birkhoff 定理}。
 Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就是指度规在其中形如 $\d s^2=g_{00}\d t^2+K(g_{ij}\d x^i\d x^j)$，则只需取 $r=\rho(1+\frac{M}{2\rho})^2$ 有
 \eq{
-    \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d \rho^2+ \rho^2\d\Omega^2).
+    \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d x^2+\d y^2+\d z^2),
 }
-也可将 $(\d \rho^2+ \rho^2\d\Omega^2)$ 写作 $(\d x^2+\d y^2+\d z^2)$ 并取 $\rho=\sqrt{x^2+y^2+z^2}$。
+其中 $\rho=\sqrt{x^2+y^2+z^2}$。
 
 Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆矩阵分量的发散（即度规行列式 $g$ 为零）。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
 
@@ -1258,7 +1311,31 @@ Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black
 \eq{
 R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = \frac{48 M^2}{r^6},
 }
-上式在 $r=0$ 发散。这问题其实很严重，因为我们只是框定一堆物质，便使得光滑的时空上戳出一个“洞”，令人难以接受。$r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义。既然曲率在 $r=2M$ 处并不奇异，那就有可能找到一种坐标系使得度规分量不再发散，见第 \ref{chpt:BH} 章。该过程一般称为\textbf{消除度规奇性}，因而将度规分量在视界处的奇性称为\textbf{坐标奇性}或\textbf{假奇性}。相较而言，$r=0$ 处的奇性就称为\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散的事实与坐标系无关。此点称为\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
+上式在 $r=0$ 发散。这问题其实很严重，因为我们只是框定一堆物质，便使得光滑的时空上戳出一个“洞”，令人难以接受。$r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义。
+既然曲率在 $r=2M$ 处并不奇异，那就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
+$r=0$ 的奇性就称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
+
+考虑到球对称性，我们只用 2 个维度 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
+用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
+2 维图上每一点都可确定两条不同的类光测地线，所有类光测地线可分为两类。空间上朝外的称\textbf{外向}(outgoing)，反之称\textbf{内向}(incoming)。
+令 $\d s^2=0$，则
+\eq{\label{dia_Sch}
+t=\pm\left(r+2M\ln|r-2M|\right)+C.
+}
+考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，为负则为内向族。然而 $r=2M$ 时 $t\to\infty$，故在 $\{t,x\}$ 系下不会有光线穿过视界。
+还有一种办法，可考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在遥远观者（Schwarzschild 系）看来，钟在视界处的读数 $\tau$ 近乎定格，任何物质似乎永不落入视界。
+但若真如此，黑洞的形成将无从谈起。“永远性”是相对的。若能找到新系，来消除类光内向族在视界处的奇性，就可连续地描述物质落入视界的过程。
+
+考虑 $L=-\sqrt{-g_{\mu\nu}\dot x^\mu\dot x^\nu}$，其中点表示对 $\tau$ 求导。则 E-L 方程是 $\dv{\tau}(g_{\mu\nu}\dot x^\nu)=\frac 12 g_{\alpha\beta,\mu}\dot x^\alpha\dot x^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu}\dot x^\nu=\text{常数}$。取 $\nu=0$ 有 $\left(1-{2M}/{r}\right)\dot t=\text{常数}$。
+若质点从无穷远处自由落体，则 $r\to\infty$ 时 $\dot t\to 1$，从而 $(1-{2M}/{r})\dot t=1$。进而 $\dot t=1/(1-{2M}/{r})$，由模长知 $\dot r=-\sqrt{2M/r}$。
+以 $\tau$ 为新系时间坐标，且设 $g_{01} = 0$ 表示已对钟。
+
+自由落体时间
+
+可见视界外的质点可以穿越视界进入黑洞，而一旦进入就无法逃逸，并最终落入奇点。探险者若想摆脱黑洞的引力束缚，只能采用某种喷气火箭，以大于该处静态观者所需力量向右飞行。一旦燃料储备不足，便连静态观者也当不了。假设其燃料充足，若探险者企图接近视界而迅速掉头离开，则越近风险越大，因为从 $r=2M$ 附近逃离须使飞船接近光速。并且，当视界内部很空旷时，对探险者而言，其进入视界时并无触觉，若稍有不慎，未能警觉自己所处位置，则很可能多走一步而遁入厄运。
+
+当然，探险者还是能通过视觉上“眼前一黑”来观察，但更可怕的是，探险者并非真正的质点，而不同位置所受引力在此极端地带将差距巨大，因此潮汐力（对应于曲率大小）极有可能撕碎探险者，除非视界半径很大而稀释了曲率。此外，前文用测量效应说明了静态观者对探险者的观察，亦可用视觉效应这种现象。若静态观者借光信号观察探险者，则从图容易看出，随探险者逐渐接近视界，探险者所发出的光将越来越晚地到达静态观者，而坠入的画面无法传播出来。
+
 
 \section{修改引力理论}
 \subsection{宇宙学}
