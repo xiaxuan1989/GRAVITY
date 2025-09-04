@@ -1305,45 +1305,41 @@ Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textb
     \includegraphics[width=.7\textwidth]{fig/chpt01/blackhole.jpg}
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
-Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称为黑洞表面。若星体的斥力不能与引力抗衡，则质量将无限坍缩至近乎一点 $r=0$，而视界内极为空旷。
+Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
 
-考虑到球对称性，我们只用 2 个维度 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
+考虑到球对称性，只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
 用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
 2 维图上每一点都可确定两条不同的类光测地线，所有类光测地线可分为两类。空间上朝外的称\textbf{外向}(outgoing)，反之称\textbf{内向}(incoming)。
 令 $\d s^2=0$，则
 \eq{\label{dia_Sch}
 t=\pm\left(r+2M\ln|r-2M|\right)+C.
 }
-考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，为负则为内向族。然而 $r=2M$ 时 $t\to\infty$，故在 $\{t,x\}$ 系下任何物质永不落入视界。但请注意，同时的相对性导致“永远”的相对性。
+考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，负号对应内向族。然而 $r=2M$ 时 $t\to\infty$，故在 $\{t,x\}$ 系下任何物质永不落入视界。但请注意，同时的相对性导致“永远”的相对性。
 考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在 Schwarzschild 系下，钟在视界处的读数 $\tau$ 近乎定格。
-物理意义是，遥远观者需要通过对钟建立正交性，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢。
+物理意义是，遥远观者需要通过对钟建立正交性，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。
+欲连续地描述粒子落入视界的过程，就是找到坐标系使测地线连续，也即消除度规的奇性。
 
-要想连续地描述粒子落入视界的过程，就是想找到坐标系使测地线连续，也即消除度规的奇性。
-考虑直接按自由落体者建立坐标系。
-设 4-速 $Z^\mu$。置 $L=-\sqrt{-g_{\mu\nu} Z^\mu Z^\nu}$。E-L 方程是 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $\left(1-{2M}/{r}\right)Z^0=\text{常数}$。
-若质点从无穷远处释放，则 $r\to\infty$ 时 $Z^0\to 1$，从而常数为 1。进而 $Z^0=1/(1-{2M}/{r})$，由模长知 $Z^1=-\sqrt{2M/r}$。对偶为 $Z_0=-1,Z_1=-(1-{2M}/{r})^{-1}{\sqrt{2M/r}}$。
-下面建立新系 $\{\tau,R\}$。$\tau$ 可称\textbf{自由落体时}。由 $\tilde Z^\mu=\delta^\mu_0$ 知 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。设 $\tilde g_{01} = 0$ 表示已对钟，则 $\tilde Z_0 = -1,\tilde Z_1 = 0$。代入 $\pdv{\tilde x^\mu}{x^\nu}\tilde Z_\mu=Z_\nu$ 得 $\pdv{\tau}{t}=-Z_0,\pdv{\tau}{r}=-Z_1$，即
+考虑从 $r=r_0$ 释放的自由落体质点 $Z^\mu$。E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=E/(1-{2M}/{r})$，其中 $E=1-2M/r_0$，因为 $r=r_0$ 时 $Z^0=1$。由模长归一性，并取内向有 $Z^1=-\sqrt{E^2-1+{2M}/{r}}$。对偶为 $Z_0=-1,Z_1=-(1-{2M}/{r})^{-1}{\sqrt{2M/r}}$。
+下面按自由落体者建立新系 $\{\tau,R\}$。$\tau$ 可称\textbf{自由落体时}。由 $\tilde Z^\mu=\delta^\mu_0$ 知 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。设 $\tilde g_{01} = 0$ 表示已对钟，则 $\tilde Z_0 = -1,\tilde Z_1 = 0$。代入 $\pdv{\tilde x^\mu}{x^\nu}\tilde Z_\mu=Z_\nu$ 得 $\pdv{\tau}{t}=-Z_0,\pdv{\tau}{r}=-Z_1$，即
 \eq{
     \d\tau=\d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\To \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}}.
 }
-设 $\d R=A\d t+B\d r$。代入 $\tilde Z^\mu=\pdv{\tilde x^\mu}{x^\nu}Z^\nu$ 可知 $0=A Z^0+B Z^1$，也即
-\[\d R=A\left(\d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\right),\quad \tilde g_{11}=\frac 1{\tilde g^{11}}=\frac{1/A^2}{g^{00}+g^{11}\frac{r/2M}{(1-{2M}/{r})^2}}=\frac{2M}{A^2r}.\]
-可见 $R$ 可确定到只差缩放函数 $A(t,r)$，因为各落体者间距任意。不妨取 $A=1$。注意 $\d R-\d\tau=\sqrt{r/2M}\d r$，则可取 $R=\tau+\frac 23(2M)^{-\frac 12}r^{\frac 32}$。
-度规表为（可还原没动过的 $r^2\d\Omega^2$）
+其中积分常数均取零。做 $t\to\tau$ 变换后有
+\eq{\d s^2=-\left(1-\frac{2M}{r}\right)\d\tau^2+2\sqrt{\frac{2M}{r}}\d\tau\,\d r+\d r^2=-\d\tau^2+\left(\sqrt{\frac{2M}{r}}\d\tau+\d r\right)^2,}
+这称为\textbf{Gullstrand–Painlevé 系}，可以再加上没动过的 $r^2\d\Omega^2$。
+分量收敛且 $g\ne 0$ 表明已消除了视界奇性，但还不满足 $\tilde g_{00}=-1,\tilde g_{01}=0$。
+继续变换。
+记 $\d R=A\d t+B\d r$，代入 $\tilde Z^1=\pdv{R}{x^\nu}Z^\nu$ 可知 $B=-A Z^0/Z^1$，则
+$\d R=A\Big(\d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\Big)=A (\d\tau+\sqrt{r/2M}\d r)$，直接代入上述度规可知 $g_{11}=\frac{2M}{A^2r}$。
+可见 $R$ 可确定到只差缩放函数 $A(t,r)$，因为各落体者间距任意。
+不妨取 $A=1$，则 $R=\tau+\frac 23(2M)^{-1/2}r^{3/2}$。度规表为
 \eq{
-    \d s^2=-\d\tau^2+\frac{2M}{r}\d R^2+r^2\d\Omega^2,\quad r=(2M)^{\frac 13}\left(\frac 32(R-\tau)\right)^{\frac 23}.
+    \d s^2=-\d\tau^2+\frac{2M}{r}\d R^2+r^2\d\Omega^2,\quad r=(2M)^{1/3}\left(\frac 32(R-\tau)\right)^{2/3}.
 }
-这称为\textbf{Lemaître 系}。
-若放弃正交性，只做 $t\to\tau$ 变换而保持 Schwarzschild 系的空间坐标，则
-\eq{
-    \d s^2=-\left(1-\frac{2M}{r}\right)\d\tau^2+2\sqrt{\frac{2M}{r}}\d\tau\,\d r+\d r^2+r^2\d\Omega^2.
-}
-这称为\textbf{Gullstrand–Painlevé 系}。两种系均消除了视界奇性。
+这称为\textbf{Lemaître 系}。这是非稳态系，直观上，沿着落体运动 $R=R_0$ 当然感受到变化的引力场。
+自由落体者在 $\tau=R$ 到达 $r=0$。这说明视界内时空极为空旷，且一旦进入视界便无法逃脱，最终落入奇点。
 
-由此可见，$r$ 仍是类时坐标，且 $\pdv*{r}{\tau}<0    $，说明 $r$ 随 $\tau$ 单调减小。也即自由落体者的 $r$ 坐标必然减小，且在有限 $\tau$ 内可到达 $r=0$。这说明视界内时空极为空旷，且一旦进入视界便无法逃脱，最终落入奇点。
-
-可见非稳态，
- $\pdv*{g_{\mu\nu}}{\tau}\ne 0$，显然
+可见，显然
 
 
  则自然就
