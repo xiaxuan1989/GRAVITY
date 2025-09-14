@@ -13,7 +13,7 @@
 
 类似地，记 $\phi(p)=q$，若 $\phi$ 是同胚，则也可将 $p=\phi^{-1}(q)$ 处的 $f$ 值往前搬至 $q$ 处，即定义 $\phi_* f$ 使 $\phi_* f(q):=f(\phi^{-1}(q))$ 或者 $\phi_* f:=f\circ\phi^{-1}$，故
 \eq{
-    \phi_*=(\phi^{-1})^*\Longleftrightarrow \phi^*=(\phi^{-1})_*.
+    \phi_*=(\phi^{-1})^*\iff \phi^*=(\phi^{-1})_*.
 }
 再研究切矢场 $v$。确定一个 $v$ 只需对其作用于任意 $f$ 的结果做出要求。将 $v$ 推前即 $\phi_* v(f):=v(\phi^* f)$。这里未出现 $\phi^{-1}$，可见对一般光滑映射，只能借助切矢场给出：
 \begin{definition}
@@ -84,7 +84,7 @@ _1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^
 
 假设存在一个坐标系 $\{\hat x\}$ 使处处有
 \eq{
-    \xi=\pdv{\hat x^1}\Longleftrightarrow \hat \xi^\mu=\delta^\mu_1,
+    \xi=\pdv{\hat x^1}\iff \hat \xi^\mu=\delta^\mu_1,
 }
 
 
@@ -108,7 +108,7 @@ _1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^
 \]
 最简单的方法是借助复数。令 $z=x+\i y$，则 $\dv*{z}{\phi}=-y+\i x=\i z$，通解为
 \[
-    z=A\e^{\i(\phi-\phi_0)}\To x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
+    z=A\e^{\i(\phi-\phi_0)}\implies x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
 \]
 假设初值条件是 $p=\gamma(0)$，流线上点记 $q=\gamma(\alpha)$，则
 \[

@@ -141,7 +141,7 @@ $t=-r_*+C$，且为了 $r=0$ 时 $r_*=0$，可取
     r_*=r+2M\ln\abs{\frac{r}{2M}-1}.
 }
 类比 Zeno 悖论\footnote{古希腊哲学家 Zeno 描述了类似效应：运动员 Achilles 欲同一只乌龟赛跑，且乌龟起点先于他若干路程 $L$。按通常的时间 $t$ 来说，他的速度 $v_1$ 快于乌龟的 $v_2$，明显在有限时间 $t=L/(v_1-v_2)$ 内超过乌龟。但设想这样计时：他欲超过乌龟，必须先追至乌龟的起点，但一旦如此，乌龟又能前进若干步，这样便有新的起点等着他，如此这般有无穷多这样的起点，则他“永远”也赶不上乌龟。这种计时方法称为 Achilles 时或 Zeno 时，记作 $t'$。令 $t',t$ 皆起于零。当 $t=L/v_1$ 时，Achilles 到达乌龟在 $t'=0$ 时的起点， $t'$ 加一，以此类推有
-\[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\To t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
+\[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\implies t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
 其中将 $t'\in\N$ 自然延拓至 $t'\in\R_+$。可见 $t'$ 在 $t=L/(v_2-v_1)$ 发散，因此按 $t'$ 衡量他永不超过乌龟。}，
 可称\textbf{乌龟坐标}(tortoise coordinates)。数学中的 Lambert 函数定义为满足 $x=y\e^y,y\geqslant -1$ 的$y=\operatorname{W}(x)$。用它可解出 $r=2M(1+\operatorname{W}(\pm\e^{r_*/2M-1}))$，正负号对应 $\sgn(r-2M)$。
 注意 $\d r_*={\d r}/{(1-2M/r)}$，从而度规表为 $\d s^2=(1-2M/r)\left(-\d t^2+\d r_*^2\right)$，奇性消除了。关键在于，新坐标系给视界赋予发散坐标，就可将度规奇性隐藏起来。

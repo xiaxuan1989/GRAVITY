@@ -9,7 +9,7 @@
 \textbf{环}(ring)具有两种分别称为加法和乘法的运算，其中加法应构成交换群（Abel 群），乘法应满足结合律，并同加法一起满足分配律。加法单位元称为\textbf{零元}，加法逆元称为\textbf{负元}。不混淆时零元记作 $0$，而 $x$ 的负元记作 $-x$。
 若乘法满足交换律，则称\textbf{交换环}或 \textbf{Abel 环}。存在乘法单位元的环称\textbf{幺环}。非零元在乘法上可逆的环称\textbf{除环}。交换幺除环称为\textbf{域}(field)，常记作空心字符，如 $\mathbb{K}$。称域对其加法、乘法是\textbf{封闭的}。由于零元不可逆，故通常要求域首先至少有零元和乘法单位元。
 环 $R$ 的一个\textbf{双边理想}(2-sided ideal) $I$ 是 $R$ 的一个子环，且满足 
-\[r \in R, a \in I \To r a \in I, a r \in I.\]
+\[r \in R, a \in I \implies r a \in I, a r \in I.\]
 可用显然的方式定义\textbf{左理想}和\textbf{右理想}。
 
 群、环、域都只考虑某个集合的\textbf{内部运算}。我们当然也能考虑另一集合来构造所谓的\textbf{外部运算}。通常我们会在群上，加上一个由环给出的外部运算，这就是某环上的\textbf{模}(module)。
@@ -134,7 +134,7 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 张量与有限个矢量、对偶矢量线性地缩并出标量，因此可用多重线性函数表述。换言之，可直接称多重线性函数为张量，该定义多数情况与等价类 $[T^{\cdots}{}_{\cdots}]$ 表述等价。至少本节谈到张量均指多重线性函数。张量相比矢量、对偶矢量，无非是多出若干输入端口。
 可类比从单元函数拓展到多元函数。如图 \ref{fig:vending}，设想度规 $g$ 是一台具有两个槽(slat)的售货机，往槽中投入足够数量的一元纸币可获得一件商品，比如一听可乐。设某件商品需要两元纸币，则投入过程中，显示屏会不断改变数值以提示用户待支付的剩余金额，直至最终获得商品。这个过程类似于：
 \[
-    g(\oo,\oo)\To g(A,\oo)\in V^*\To g(A,B)\in\R.  
+    g(\oo,\oo)\implies g(A,\oo)\in V^*\implies g(A,B)\in\R.  
 \]
 关键在于，第一步输出的 $g(A,\oo)$ 将和之后输入的矢量 $B$ 线性地作用，最终输出实数，故相当于 $g(A,\oo)\in V^*$。类似地也有 $g(\oo,B)\in V^*$。
 多重线性函数还可混合地输入矢量、对偶矢量，就好比售货机可以混合地投入硬币和纸币，只是对应的槽不同。
@@ -301,7 +301,7 @@ $f$ 满秩时称为非退化的。易证充要条件是分量矩阵可逆，或
     非退化条件配以线性性和交换律可得到 $(f+g, h)=(f, h)+(g, h)$ 及 $(c f, g)=\bar{c}(f, g)$。称内积对第一槽有\textbf{共轭线性}。
     \end{theorem}
     \begin{theorem}
-    对非退化条件中取 $g=f$ 可有：$\forall g\in V,(f,g)=0\To f=0$。
+    对非退化条件中取 $g=f$ 可有：$\forall g\in V,(f,g)=0\implies f=0$。
     \end{theorem}
     \begin{eg}
         对 $C[a, b]$ 定义如下内积就构成内积空间：
@@ -462,7 +462,7 @@ $\varepsilon_{i_1\cdots i_n}$ 下标数与维度一致，故独立分量只有 $
 设 $\tilde J:=1/\det(\Pi^\mu{}_\nu)$，由 \eqref{eq:det-epsilon} 式得 $\epsilon_{1\cdots n}=1/\tilde J$。
 注意 $g=\tilde g\tilde J^{-2}=(-1)^s\tilde J^{-2}$，其中 $s$ 是负惯性指数。则
 \eq{
-    \sgn g=(-1)^s,\quad |g|=\tilde J^{-2}\To \epsilon_{1\cdots n}=1/\tilde J=\sgn\tilde J\sqrt{|g|}.
+    \sgn g=(-1)^s,\quad |g|=\tilde J^{-2}\implies \epsilon_{1\cdots n}=1/\tilde J=\sgn\tilde J\sqrt{|g|}.
 }
 由于 $\dim V=n$，故
 \begin{align}
@@ -500,7 +500,7 @@ $\varepsilon_{i_1\cdots i_n}$ 下标数与维度一致，故独立分量只有 $
 =(-1)^s\delta_{i_1\cdots i_n}^{1\cdots n} \delta^{j_1\cdots j_n}_{1\cdots n}=(-1)^s \delta_{i_1\cdots i_n}^{j_1\cdots j_n}.}
 经常还要涉及到其指标缩并：
 \eq{
-    \delta^{j_{k}j_{k+1}\cdots j_n}_{j_{k}i_{k+1}\cdots i_n}= k \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}\To \delta^{j_1\cdots j_k j_{k+1}\cdots j_n}_{j_1\cdots j_k i_{k+1}\cdots i_n}=  k !  \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}.
+    \delta^{j_{k}j_{k+1}\cdots j_n}_{j_{k}i_{k+1}\cdots i_n}= k \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}\implies \delta^{j_1\cdots j_k j_{k+1}\cdots j_n}_{j_1\cdots j_k i_{k+1}\cdots i_n}=  k !  \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}.
 }
 读者可由归纳法证明前者，后者是立即可得的结论。进而
 \eq{
