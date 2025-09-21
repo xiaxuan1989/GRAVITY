@@ -42,8 +42,7 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
 
 \subsection{对钟与定域性}
 
-如何对钟？
-首先想到单程信号。人类总依靠观者和被观测物的信息交流来感知世界，比如能给予视觉图像的可见光，或天文观测。
+如何对钟？首先想到单程信号。人类总依靠观者和被观测物的信息交流来感知世界，比如能给予视觉图像的可见光，或天文观测。
 无论可见光还是神经元生物电，其速率皆有限，传播过程花费时间，图像通常存在扭曲和滞后\footnote{对高速物体、强引力场现象的测算足以总结为一门课题，又同计算机图形学结合，称为\textbf{相对论视觉}。}，
 故不可能通过单程信号真正体会与周围的同时性。当然，这些信号依旧很快，以至于直到 Einstein 之前，人类都对同时性保有错觉。
 
@@ -59,9 +58,7 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
     \label{fig:clock_syn}
 \end{figure}
 
-随后我们想到双程信号。
-先讨论惯性参考系。
-规定\textbf{惯性观者}走匀速直线。
+随后想到双程信号。先讨论惯性参考系。规定惯性观者走匀速直线。
 无论技术发展如何，双程光速的测量原理至今仍和\textbf{Fizeau 程序}一致：从坐标原点发射球面光波，然后由放置在某处（尽量邻近）距离已知的镜子反射，随后记录光回到原点的时间，这样可计算光速。按现在的约定，不需要再测量光速，故以上步骤更倾向于测距。
 任取某条惯性观者线 $G$，规定为坐标原点。设相对静止的另一惯性观者 $G'$；实验上若任意时刻测距均相同，就认为二者相对静止。二者可同属一个惯性参考系。
 $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$），最后 $G$ 在某时刻接受该光（事件 $C$）。取 $A,C$ 的中间事件 $D$；实验上由标准钟测量。只需约定 $B,D$ 同时。
@@ -104,12 +101,14 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 由光速不变知 $2\sqrt{L^2+\Delta\ell^2/4}=\Delta t$，则 $\Delta\tau^2=\Delta t^2-\Delta\ell^2$，或者 $\Delta t=\gamma\Delta\tau$，其中 $\gamma:=1/\sqrt{1-u^2}\geqslant 1$ 是\textbf{Lorentz 因子}。可见 $\Delta t\geqslant\Delta\tau$，在观者看来，运动的时钟走时慢，这种现象称为\textbf{钟慢效应}或\textbf{时间膨胀}。这种效应是对称的，每个观者都认为其它的相对运动的时钟走时慢。
 比如，宇宙射线含有介子，但其寿命非常短，即使以光速运动，穿透大气层所需时间也通常是寿命的几十倍。按理来说它不可能到达地面，但钟慢效应使其保持年轻，寿命“延长”，故仍可到达。
 
-根据相对性原理，对任二惯性系 $\{x\},\{x'\}$ 必有两事件\textbf{间隔}（平方）$\Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu$ 的不变性，其中 $({\eta}_{\mu\nu}):=\diag(-1,1,1,1)$，即
-\[-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2=-\Delta t'^2+\Delta x'^2+\Delta y'^2+\Delta z'^2.\]
-而 Newton 理论则分开定义绝对时间长度和空间长度。
-$(\eta_{\mu\nu})$ 作为广义的单位阵，易证 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。
-定义\textbf{号差}(signature)为 $(\eta_{\mu\nu})$ 的迹，本书一般选择 $+2$，称为\textbf{东海岸}习惯\footnote{量子场论教材常选择 $(\eta_{\mu\nu})=\diag(1,-1,-1,-1)$，号差为 $-2$ 即\textbf{西海岸}习惯。更有甚者选择将时间分量排在最后作为第 4 分量，这样有 $\diag(1,1,1,-1)$ 但并不影响号差。也有一种可能有哲学区别的习惯，称\textbf{Wick 技巧}：令 $x^0=\i ct$ 则线元还原回勾股定理 $\d s^2= \delta_{\mu\nu}\d x^\mu\d x^\nu$，伪转动变换的确变为 $x$-$\i ct$ 平面的旋转变换。除讨论某些理论复结构方面的问题外不使用这种做法。}。
-该号差下，按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。间隔不变性对类时间隔成立($\Delta\tau^2=-\Delta s^2$)。对类光间隔，注意光速不变与 $\Delta s^2=0$ 等价，仍成立。考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
+定义两事件的\textbf{间隔}（平方）为
+\eq{
+    \Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2,\quad ({\eta}_{\mu\nu}):=\diag(-1,1,1,1).
+}
+$(\eta_{\mu\nu})$ 的迹称为\textbf{号差}(signature)，本书选择 $+2$，称\textbf{东海岸}习惯\footnote{量子场论教材常选择 $(\eta_{\mu\nu})=\diag(1,-1,-1,-1)$，号差为 $-2$ 即\textbf{西海岸}习惯。更有甚者选择将时间分量排在最后作为第 4 分量，这样有 $\diag(1,1,1,-1)$ 但并不影响号差。也有一种可能有哲学区别的习惯，称\textbf{Wick 技巧}：令 $x^0=\i ct$ 则线元还原回勾股定理 $\d s^2= \delta_{\mu\nu}\d x^\mu\d x^\nu$，伪转动变换的确变为 $x$-$\i ct$ 平面的旋转变换。除讨论某些理论复结构方面的问题外不使用这种做法。}。按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
+根据相对性原理，类时间隔在任二惯性系 $\{x\},\{x'\}$ 下保持不变性：$\Delta s^2=-\Delta\tau^2=\Delta s'^2$。
+对类光间隔，注意光速不变与 $\Delta s^2=0=\Delta s'^2$ 等价，仍成立。
+考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
 外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。这种现象称为\textbf{尺缩效应}或\textbf{长度收缩}。
 蟹状星云和半人马星座 $\alpha$ 星之间的距离是相对的，不必诧异。
 进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$，成立。
@@ -129,10 +128,11 @@ $(\eta_{\mu\nu})$ 作为广义的单位阵，易证 $(\eta_{\mu\nu})=(\eta^{\mu\
 \eq{
 \d s^2={\eta}_{\mu\nu}\d x^\mu\d x^\nu=-\d t^2+\d x^2+\d y^2+\d z^2.
 }
+作为对比，Newton 理论分开定义绝对时间长度和空间长度。
 设任意（分段光滑的）观者线 $C(\sigma)$，$\sigma$ 是任取参数，可有 $\gamma=\dv*{t}{\tau}$。考察它于事件 $C(\sigma_1),C(\sigma_2)$ 的固有时间 $\Delta\tau$。设置其固有坐标系 $\{x'\}$（$x'^0=\tau$），$C$ 上事件总满足 $x'^i=0$，则 $\d\tau^2=-\d s^2$。它在惯性系 $\{x\}$ 下的参数式记 $x^\mu(\sigma)$，则
 \eq{
 \Delta\tau=\int_C \sqrt{-\eta_{\mu\nu}\d x^\mu\d x^\nu}=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}\dv{x^\mu}{\sigma}\dv{x^\nu}{\sigma}}\d\sigma=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}T^\mu T^\nu}\d\sigma,}
-$T^\mu:=\dv*{x^\mu}{\sigma}$ 为关于 $\sigma$ 的\textbf{切矢}(tangent vector)在该系的分量，$\eta_{\mu\nu}T^\mu T^\nu$ 即模方。
+$T^\mu:=\dv{x^\mu}{\sigma}$ 为曲线关于 $\sigma$ 的\textbf{切矢}(tangent vector)在该系的分量，$\eta_{\mu\nu}T^\mu T^\nu$ 即模方。
 切矢按模方符号（进而相应曲线）可类似分为三类。
 \begin{figure}[t]
     \centering
@@ -187,9 +187,9 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 因为上式在低速极限下退回 Galileo 变换 $t'=t,x'=x-ut$，从而兼容经典力学。
 “boost”取时间轴上的推动之意，但由图 \ref{fig:boost} 可知，一个较好称呼是\textbf{伪转动}(pseudo rotation)。
 
-数学上给定 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 后用积分定义线长、矢量模，借圆弧和三角函数定义角，最后按投影定义切矢的内积(inner product)，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\l^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
+数学上给定 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 后用积分定义线长、矢量模，借圆弧和三角函数定义角，最后按投影定义内积(inner product)，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\l^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
 欧氏几何现降级为一种选择，而非保守派所认为的绝对真理。比如 ${\eta}_{\mu\nu}$ 就是\textbf{闵氏度规}，对应\textbf{闵氏几何}；还可有双曲几何 $\d\l^2=(\d x^2+\d y^2)/(1-x^2-y^2)$，当接近 $x^2+y^2<1$ 边缘时，该线元相较于欧氏线元会越来越大，但它除平面几何第五公理外符合其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
-第 $\alpha$ 坐标轴可按相应 $x^\alpha$ 参数化，切矢 $\dv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$ 称为\textbf{坐标基矢}，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。$\{\delta_\alpha^\mu\}_{\alpha=0}^3$ 称为坐标系的\textbf{坐标基}。可见惯性系的时空轴正交，因为 $\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{理论上的几何概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走直线、Lorentz 力确定空间正交性、宇称不守恒确定右手性。}。
+第 $\alpha$ 坐标轴可按相应 $x^\alpha$ 参数化，切矢 $\dv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$ 称为\textbf{坐标基矢}，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。$\{\delta_\alpha^\mu\}_{\alpha=0}^3$ 称为坐标系的\textbf{坐标基}。可见惯性系的时空轴正交，因为 $\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
 虽然时空图中动系坐标轴不是欧氏正交，但被约定为时空上的正交。
 
 \begin{figure}[p]
@@ -211,7 +211,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 \end{figure}
 
 总之，闵氏几何必须依赖于前文叙述的光速不变、相对性原理，以及一些额外条件，如光走直线、不存在其它不变常数、时空均匀性等。通过修改这些条件得到的新理论，可以用于实验检验，结果显示与相对论相差不大。
-并且，相对论以及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏，直至存在实验明显证否。
+并且，相对论以及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏几何，直至存在实验明显证否。
 
 \newpage
 \begin{figure}[!h]
@@ -219,6 +219,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
         \subfloat[\centering 双曲线校准]{
         \includegraphics[height=.45\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
         }
+        \quad
         \subfloat[\centering 钟慢效应]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
         }
     \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
@@ -229,7 +230,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
         \subfloat[\centering 在 $S'$ 中静止]{
         \includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 2.pdf}
         }
-        \qquad
+        \quad
         \subfloat[\centering 在 $S$ 中静止]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 1.pdf}
         }
         \caption{\small 尺缩效应}
@@ -287,12 +288,12 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
 例如，经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
 
 等效原理指出惯性系与非惯性系局域难以区分，因而最好是认同任意参考系，即一种广义相对性原理。更进一步地，我们本就默认物理对象、规律不受坐标系影响，即\textbf{坐标冗余性}，因而不仅考虑与参考系有关的那类坐标系，任意坐标系均可接受，即直接寻求对任意坐标变换的\textbf{广义协变性}。
-由前文知曲线线长可由切矢的积分给出。
+由前文知曲线线长可由曲线切矢的积分给出。
 广义协变性要求同一切矢在任意坐标系下皆表以 $T^\mu=\d x^\mu/\d\sigma$ 形式，则根据全微分知：
 \eq{
     T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu.
 }
-称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)或切矢，故上指标又称\textbf{逆变指标}。一点处全体逆变矢量构成该点\textbf{切空间}(tangent space)。实际上，物理学很多矢量都与相切有关，因而是逆变矢量。可以存在变换与之互逆的矢量：
+称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)或切矢，故上指标又称\textbf{逆变指标}。一点处全体逆变矢量构成该点\textbf{切空间}(tangent space)。物理学很多矢量都与相切有关，因而是逆变矢量。可以存在变换与之互逆的矢量：
 \eq{\omega'_i=\pdv{x^j}{x'^i}  \omega_j,}
 则称\textbf{协变矢量}(covector)或\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。下指标称\textbf{协变指标}。这一称呼与“协变性”有区别，没有物理方程“逆变性”的说法。
 
@@ -301,23 +302,25 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
     g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff g'_{\gamma\sigma}= g_{\mu\nu}\pdv{x^\mu}{x'^\gamma}\pdv{x^\nu}{x'^\sigma}.
 }
 主流几何理论总研究二次型，不研究 $\d\l=(|\d x|^3+|\d y|^3)^{1/3}$ 等。上式是合同变换，$g_{\mu\nu}$ 保持可逆，故总可定义 $(g^{\mu\nu}):=(g_{\mu\nu})^{-1}$，即满足 $g^{\mu \lambda} g_{\lambda\nu}=g_{\nu\lambda}g^{\lambda\mu}=\delta^\mu_\nu$。称 $g^{\mu\nu}$ 为\textbf{度规逆}。
-规定 $T_\mu$ 相应的\textbf{对偶矢量}(dual vector)为 $T_\mu:=g_{\mu\nu}T^\nu$，内积就可紧凑写作 $V^\mu W_\mu=V_\mu W^\mu$。它为协变矢量一例。也可对偶回去：$T^\mu=g^{\mu\nu}T_\nu$。
+$\eta_{\mu\nu}$ 作为广义单位阵，易证数值上 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。
+规定 $T_\mu$ 相应的\textbf{对偶矢量}(dual vector)为 $T_\mu:=g_{\mu\nu}T^\nu$，它为协变矢量一例。内积就可紧凑写作 $V^\mu W_\mu=V_\mu W^\mu$。也可对偶回去：$T^\mu=g^{\mu\nu}T_\nu$。
 
-推而广之的概念称为\textbf{广义协变张量}，本书简称张量。当然，称 $T^{\cdots}{}_{\cdots}$ 是张量，准确是想称分量等价类 $[T^{\cdots}{}_{\cdots}]=\{T^{\cdots}{}_{\cdots},T'^{\cdots}{}_{\cdots},\cdots\}$ 是张量。
+推而广之可得\textbf{广义协变张量}，本书简称张量。当然，称 $T^{\cdots}{}_{\cdots}$ 是张量，准确是想称分量等价类 $[T^{\cdots}{}_{\cdots}]=\{T^{\cdots}{}_{\cdots},T'^{\cdots}{}_{\cdots},\cdots\}$ 是张量。
 $(k,l)$\textbf{型张量}简称 $(k,l)$-\textbf{张量}，应满足如下\textbf{张量变换律}：
 \eq{
     T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{x'^{\mu_1}}{x^{\rho_1}}\cdots\pdv{x'^{\mu_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{x'^{\nu_1}}\cdots\pdv{x^{\sigma_l}}{x'^{\nu_l}},
 }
 可记忆为是满足指标平衡的 Jacobi 矩阵元乘积，这样就可快速写出公式。
 常习惯于先将上指标写完，再错开地写下指标。
-只要求 Lorentz 协变性 $\pdv*{x'^\mu}{x^\nu}=\Lambda^\mu{}_\nu$ 则称\textbf{Lorentz 张量}。张量一定是 Lorentz 张量，反之不然。
-$(k+l)$ 叫作张量的\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,n)$ 型分别称\textbf{$n$ 阶逆变、协变张量}或 $n$-张量，比如切矢是 1-逆变张量，余矢是 1-协变张量；度规是对称、非退化的 2-协变张量；Kronecker 符号是 2-张量。由张量的变换律，若存在坐标系使其分量为零，其在任何坐标系下分量都为零，故不论何型都称\textbf{零张量}。
+只要求 Lorentz 协变性 $T'^{\cdots}{}_{\cdots}=T^{\cdots}{}_{\cdots}\Lambda^\mu{}_\nu\cdots \Lambda^\rho{}_\sigma$ 则称\textbf{Lorentz 张量}。张量一定是 Lorentz 张量，反之不然。
+$(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,n)$ 型分别称\textbf{$n$ 阶逆变、协变张量}或 $n$-张量，比如切矢是 1-逆变张量，余矢是 1-协变张量；度规是对称、非退化的 2-协变张量；Kronecker 符号是 2-张量。由张量的变换律，若存在坐标系使其分量为零，其在任何坐标系下分量都为零，故不论何型都称\textbf{零张量}。
 基本运算性质如下：
 \begin{enumerate}
     \item 张量的直接拼凑称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\psi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自 Jacobi 矩阵元按实数规律相乘；
-    \item 张量缩并仍是张量，因为变换式只是消去一对 Jacobi 矩阵元；
-    \item 若干张量线性相加仍是张量；\item 指标升降约定用 $g_{\mu\nu},g^{\mu\nu}$，构成\textbf{度规对偶}；
-    \item 求坐标偏导：$T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$，但保持张量性的导数见 \ref{sec:co-di} 节。
+    \item 张量\textbf{缩并}仍是张量，因为变换式只是消去一对 Jacobi 矩阵元；
+    \item 张量的\textbf{线性组合}仍是张量；
+    \item \textbf{指标升降}约定用 $g_{\mu\nu},g^{\mu\nu}$，构成\textbf{度规对偶}；
+    \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变，广义协变导数见 \ref{sec:co-di} 节。
 \end{enumerate}
 
 虽然这在物理和计算上没有问题，但似乎还是缺了些什么。我们期望的是如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
@@ -451,7 +454,11 @@ S(\psi(x))=\int \mathcal L(\psi,\psi_{,\mu_1},\cdots,\psi_{,\mu_1\cdots\mu_k})\d
 
 注意逆命题不一定成立，因为并非所有守恒量都来源于某个对称性。
 但对阐释常见的能量、动量来讲，Noether 定理是足够的。它们正是\textbf{时空对称性}的结果。
-若整体平移 $\eta=0$，则守恒量为 $Q=p_i \xi^i$，其中 $p_i=\frac{\partial L}{\partial \dot{q}^i}$ 称为\textbf{正则动量}。此即总正则动量在 $\hat{\bm e}$ 方向上的分量守恒。
+若整体平移 $\eta=0$，则守恒量为 $Q=p_i \xi^i$，其中 $p_i=\pdv*{L}{\dot{q}^i}$ 称为\textbf{正则动量}。
+
+$p^0=E$
+
+此即总正则动量在 $\hat{\bm e}$ 方向上的分量守恒。
 
 当 $\xi$ 即空间单位矢量 $\hat{\bm e}$ 时，
 若系统只沿 无穷小整体平移，则的守恒量为
@@ -466,6 +473,8 @@ S(\psi(x))=\int \mathcal L(\psi,\psi_{,\mu_1},\cdots,\psi_{,\mu_1\cdots\mu_k})\d
     Q=\frac{1}{\theta} \sum_{i=1}^{N}\bm p_i \cdot \delta_s \bm x_i=\bm n\cdot\sum_{i=1}^{N} \bm L_i,\quad \bm L_i:=\bm x_i\times\boldsymbol{p}_{i},
 }
 即总角动量在 $n$ 方向上的分量守恒。
+
+
 严格来说，对称变换指的是位形空间上的 $\delta_s q$，而不是重参化 $\delta_s t$。$\delta_s t$ 之所以也被称作对称变换，是因为其通过 $\Delta q=\delta_s q+\dot q\delta_s t$ 导致的 $\delta_s q$ 是对称变换。若系统具有\textbf{时间平移对称性}，其中时间的无穷小整体平移记作 $\delta_s t=\epsilon$，且 $q=\bm x$ 在该重参化下满足 $\Delta q=0$，因此 $\delta_s q=-\dot q\delta_s t=-\epsilon\dot q$，
 时间平移对称性的守恒量为
 \eq{
@@ -898,7 +907,7 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 这其实也是对一套新理论的基本要求，称为\textbf{Newton 极限}。
 由归一性知
 \eq{
-    U^\mu=(-g_{00})^{-1/2}\delta^\mu_0,
+    U^\mu=\frac{\delta^\mu_0}{\sqrt{-g_{00}}},
 }
 从而一阶意义上 $U^\mu=\delta^\mu_0$。此时测地线方程为 $\dv*{U^\mu}{\tau}=-\Gamma_{00}^\mu= \frac 12 g^{\mu\nu} g_{00,\nu}=\frac 12 \eta^{\mu\nu} h_{00,\nu}$，则 $-\del^i\phi=\dv*[2]{x^i}{t}=\frac 12 \delta^{ij} h_{00,j}$，故
 \eq{
@@ -1337,30 +1346,42 @@ t=\pm\left(r+2M\ln|r-2M|\right)+C.
 物理意义是，遥远观者需要通过对钟建立正交性，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。
 欲连续地描述粒子落入视界的过程，就是找到坐标系使测地线连续，也即消除度规的奇性。
 
-考虑从 $r=r_0$ 释放的自由落体质点 $Z^\mu$。E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=E/(1-{2M}/{r})$，其中 $E=1-2M/r_0$，因为 $r=r_0$ 时 $Z^0=1$。由模长归一性，并取内向有 $Z^1=-\sqrt{E^2-1+{2M}/{r}}$。对偶为 $Z_0=-1,Z_1=-(1-{2M}/{r})^{-1}{\sqrt{2M/r}}$。
-下面按自由落体者建立新系 $\{\tau,R\}$。$\tau$ 可称\textbf{自由落体时}。由 $\tilde Z^\mu=\delta^\mu_0$ 知 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。设 $\tilde g_{01} = 0$ 表示已对钟，则 $\tilde Z_0 = -1,\tilde Z_1 = 0$。代入 $\pdv{\tilde x^\mu}{x^\nu}\tilde Z_\mu=Z_\nu$ 得 $\pdv{\tau}{t}=-Z_0,\pdv{\tau}{r}=-Z_1$，即
+于 $(t_0,r_0)$ 释放自由落体质点 $Z^\mu$，观测结果建议其内向。E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
+由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
+下面按自由落体者建立新系 $\{\tau,R\}$。$\tau$ 可称\textbf{自由落体时}。
+由 $\tilde Z^\mu=\delta^\mu_0$ 知 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。设 $\tilde g_{01} = 0$ 表示已对钟。代入 $\pdv{\tilde x^\mu}{x^\nu}\tilde Z_\mu=Z_\nu$ 得 $\pdv{\tau}{t}=-Z_0,\pdv{\tau}{r}=-Z_1$，
+即
 \eq{
-    \d\tau=\d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\implies \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}}.
+    \d\tau=-Z_0\d t-Z_1\d r=\sqrt{1-\frac{2M}{r_0}}\d t+\frac{\sqrt{2M/{r}-2M/{r_0}}}{1-{2M}/{r}}\d r.
 }
-其中积分常数均取零。做 $t\to\tau$ 变换后有
-\eq{\d s^2=-\left(1-\frac{2M}{r}\right)\d\tau^2+2\sqrt{\frac{2M}{r}}\d\tau\,\d r+\d r^2=-\d\tau^2+\left(\sqrt{\frac{2M}{r}}\d\tau+\d r\right)^2,}
-这称为\textbf{Gullstrand–Painlevé 系}，可以再加上没动过的 $r^2\d\Omega^2$。
+做 $t\to\tau$ 变换后有
+\[\d s^2=-\d\tau^2+\left(\frac{-Z^1\d\tau+\d r}{Z_0}\right)^2+r^2\d\Omega^2,\]
+其中加上了没动过的空间部分。
 分量收敛且 $g\ne 0$ 表明已消除了视界奇性，但还不满足 $\tilde g_{00}=-1,\tilde g_{01}=0$。
 继续变换。
-记 $\d R=A\d t+B\d r$，代入 $\tilde Z^1=\pdv{R}{x^\nu}Z^\nu$ 可知 $B=-A Z^0/Z^1$，则
-$\d R=A\Big(\d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\Big)=A (\d\tau+\sqrt{r/2M}\d r)$，直接代入上述度规可知 $g_{11}=\frac{2M}{A^2r}$。
+记 $\d R=A\d t+B\d r$，代入 $\tilde Z^1=\pdv{R}{x^\nu}Z^\nu$ 可知 $B=-AZ^0/Z^1$，则 $\d R=A(\d t-\frac{Z^0}{Z^1}\d r)=A(\frac{1}{-Z_0}(\d\tau+Z_1\d r)-\frac{Z^0}{Z^1}\d r)=\frac{A}{Z_0Z^1}(-Z^1\d\tau+\d r)$。
+直接代入上述度规可得
+\eq{
+    \d s^2 = -\d\tau^2+\frac{1}{A^2}\left(\frac{2M}{r}-\frac{2M}{r_0}\right)\d R^2+r^2\d\Omega^2,
+}
 可见 $R$ 可确定到只差缩放函数 $A(t,r)$，因为各落体者间距任意。
-不妨取 $A=1$，则 $R=\tau+\frac 23(2M)^{-1/2}r^{3/2}$。度规表为
+
+
+即
+\eq{
+    \d\tau=\d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\implies\gets \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}}.
+}
+\eq{\d s^2=-\d\tau^2+\left(\sqrt{\frac{2M}{r}}\d\tau+\d r\right)^2,}
+这称为\textbf{Gullstrand–Painlevé 系}
+$A=1$，则 $R=\tau+\frac 23(2M)^{-1/2}r^{3/2}$。
+度规表为
 \eq{
     \d s^2=-\d\tau^2+\frac{2M}{r}\d R^2+r^2\d\Omega^2,\quad r=(2M)^{1/3}\left(\frac 32(R-\tau)\right)^{2/3}.
 }
 这称为\textbf{Lemaître 系}。这是非稳态系，直观上，沿着落体运动 $R=R_0$ 当然感受到变化的引力场。
 自由落体者在 $\tau=R$ 到达 $r=0$。这说明视界内时空极为空旷，且一旦进入视界便无法逃脱，最终落入奇点。
 
-可见，显然
 
-
- 则自然就
 
 计算可得如下的\textbf{Kretschmann 标量}
 \eq{
