@@ -705,6 +705,8 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 
 最后研究经典宏观下带电粒子如何推广到连续介质。
 
+%% 介质
+
 考虑质量守恒且无内部作用的流体，称为\textbf{尘埃}(dust)。设 $\mu^*$ 是\textbf{固有能量密度}或\textbf{质量密度}。置尘埃系统仅受外引力场作用，则 $\mathcal L_M=-\mu^*$。质量守恒等价为 $\del_\nu(\mu^* U^\nu)=0$
 
 研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
@@ -730,8 +732,11 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 
 实际上，描述光线时一般取任意仿射参数 $\lambda$。比如，考虑一点 $x_{0}$，此处一个指向未来的类光矢量 $N$ 就可代表光的走向。由 $\alpha(\lambda)=x_{0}+\lambda N$ 定义的直线 $\alpha$ 就是自由光子经过 $x_{0}$ 的世界线。
 
+%% 光学
+
 \subsection{Fermi-Walker 移动}
-Fermi-Walker 移动是一个重要的概念，用于描述沿着测地线的运动。它是指在一个弯曲时空中，沿着测地线移动的观测者所经历的时间和空间的变化。
+
+%% 费移
 
 相对论限制告诉我们，相对于某外部观者的 3-加速不可能恒定。匀加速运动多指 4-加速费移的运动。而 4-加速等于共动系 3-加速，故在共动观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
 4-加速费移说明 $U^\mu,A^\mu$ 所在平面固定，可退化至 2 维来研究。
@@ -1339,15 +1344,12 @@ Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textb
 \end{figure}
 Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
 
-计算可得如下的\textbf{Kretschmann 标量}
-\eq{
-R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = \frac{48 M^2}{r^6},
-}
+计算可得\textbf{Kretschmann 标量} $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$。
 $r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义，在 $r=0$ 发散。
 既然曲率在 $r=2M$ 处并不奇异，那就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
 $r=0$ 的奇性就称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
-考虑到球对称性，只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
+考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
 于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，观测结果建议其\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
 E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
 由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
@@ -1582,6 +1584,8 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
 
 引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。这意味着即使各种量子引力理论层出不穷，但以当代技术，仍然很难直接做实验以获取有效数据。目前多用宇宙学观测所得到早期宇宙的数据来筛选理论。“大一统理论”通常指沿标准模型的思路，将强相互作用同电弱作用统一的尝试。狭义上的量子引力理论只涉足引力量子化问题，广义的量子引力理论或许是人们所希望的“万物理论”。
 
+%% KK 理论
+
 \section{标架表述}
 
 还可考虑有挠时空，$g_{\mu\nu},T^\lambda{}_{\mu\nu}$ 一齐作为引力场的基本物理量。这种理论发展为\textbf{引力规范理论}，典型地如\textbf{Einstein-Cartan 理论}。这些理论多采用了更为数学、但实质等价于 $g_{\mu\nu},T^\lambda{}_{\mu\nu}$ 形式的语言，故暂时只扼要介绍。其中 2 阶情形的最一般的规范理论作用量为
@@ -1594,7 +1598,12 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
 }
 其中 $R_{\alpha \beta \mu \nu}$ 是一般的\textbf{有挠 Riemann 曲率}，前一对指标与后一对指标没有对称性，前一对指标也没有反称性。但 Ricci 张量仍按 $R_{\alpha \beta}=R^\mu{ }_{\alpha \mu \beta}$ 定义。其中的指标升降均在 $g_{\mu\nu}$ 下。
 
+%% 标架
+
 \section{哈氏理论}
+
+%% Hamiltonian formalism
+
 \subsection{3+1 分解}
 
 \subsection{初值问题}
