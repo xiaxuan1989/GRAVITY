@@ -1,13 +1,9 @@
 \chapter{黑洞物理}\label{chpt:BH}
 
-\section{球对称带电黑洞}
-
-%% RN
-
 \section{经典实验验证}
 
-黑洞是广义相对论提出之后，第一个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
-而自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为著名的是引力红移、水星进动和星光偏折。
+黑洞是广义相对论提出之后，首个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
+自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为著名的是引力红移、水星进动和星光偏折，它们都与球对称度规有关。
 
 \subsection{引力红移}
 
@@ -384,6 +380,18 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 这种病态性质与高度的球对称性有关。Penrose 在 1965 年给出的\textit{奇性定理(singularity theorem)}中指出，耦合适当的物质并附加某些条件后，一定会出现不可延测地线，因而就产生了这么个奇点。奇性定理给出了两个重要猜想(conjecture)或者假设(hypothesis)。第一个是\textit{弱宇宙监督(weak cosmic censorship)假设}: 对于适当的物质方程组和一般物理意义的初始条件，奇点一定限制在黑洞区域内而“看不见”; 第二个是\textit{强(strong)宇宙监督假设}：解的奇性一定与其延拓遇到局部阻碍有关。后一个假设保证了动力学问题的唯一解必定是初始数据产生的经典时空，即\textit{经典决定性原理(Classical Newtonian determinism)}。如果抛弃条件的一般性，则这两个假设都不成立。Christodoulou 做出过标量场方程组的球对称解，其中的奇点就不在黑洞区域内，这样的时空就称作包含了\textit{裸(naked)奇点}。裸奇点很容易构造出来，比如直接令 $m<0$，但此时就不允许\textit{渐近平直(asymptotically flat)的 Cauchy 面}了，因而可能不太符合咱们的物理常识。这件事与所谓的\textit{正能量定理(positive mass theorem)}有关.
 
+\section{球对称带电黑洞}
+
+%% RN
+
+考虑一个带电质点，观测结果建议 $g_{\mu\nu}$ 呈球对称，电磁场为 $F_{\mu\nu}$，则对于 $r\ne 0$ 有 $T_{\mu\nu} = \frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right)$。这是无迹的，因而 $R_{\mu\nu} = 8\pi T_{\mu\nu}$，直接代入：
+\begin{align*}
+    R_{00} &= -(\ddot\mu+\dot\mu(\dot\mu-\dot\nu))+\e^{2(\nu-\mu)} \left(\nu''+2\nu'/r+\nu'(\nu'-\mu')\right), \\
+    R_{11} &= \e^{2(\mu-\nu)} \left(\ddot\mu+\dot\mu(\dot\mu-\dot\nu)\right)-\nu''+2\mu'/r-\nu'(\nu'-\mu'), \\
+    R_{22} &= \e^{-2\mu} \left(\e^{2\mu}-1+r(\mu'-\nu')\right), \quad R_{33} = R_{22} \sin ^2 \theta,\quad R_{01} = 2\dot\mu/r.
+\end{align*}
+
+对于遥远观者，$A_{0} = \frac{Q}{r}$，
 
 \section{轴对称时空}
     \subsection{旋转黑洞}
