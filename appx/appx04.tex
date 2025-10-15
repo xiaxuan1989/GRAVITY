@@ -499,13 +499,14 @@ pattern radius = 1pt}
     可以定义 $q$ 处的法矢 $n$，若对任意切矢 $w$ 有 $\langle n,w\rangle=0$，这里内积取决于 $M$ 所选度规。
 \end{definition}
 \begin{theorem}
-    当 $S$ 是 $M$ 的余 1 维子空间时，又可以形象地叫做一张\textbf{超曲面}(hypersurface)，其上一点的任意法矢间只差倍数关系。
+    当 $S$ 是 $M$ 的余 1 维子空间时，又可以形象地叫做一张，其上一点的任意法矢间只差倍数关系。
 \end{theorem}
 
 
 \begin{proof}
     证明 设 $\left\{e_2, \cdots,e_n\right\}$ 为 $T_q S$ 任一坐标基, 因 $\dim V_q=n, V_q$ 必有与 $\left\{e_2,\cdots,e_n\right\}$ 线性无关的元素, 任取其一并记作 $e_1$, 则 $\left\{e_\mu\mid\mu=1, \cdots, n\right\}$ 为 $V_q$ 的基底。令 $n=e_1$, 则 $\langle n, e_\tau\rangle =g(e_1,e_\tau)=0$，这里 $\tau=2,\cdots,n$，可见 $n$ 为法矢。若存在 $m$ 满足 $\langle m,e_\tau\rangle=0$, 则其在 $\left\{e_\mu\right\}$ 的分量 $m^\tau=0$, 因而只剩下分量 $m^1$，即 $m=m^1\left(e_1\right)^a$ $=m^1n$, 即 $m$ 与 $n$ 只差一因子 $m^1$。
 \end{proof}
+
 注意，余维数太多的话，比如三维空间的曲线，其上法矢就没有该性质了，因此选取更为任意。对于超曲面，约定其模长可以使得差别仅体现在“内外方向”上。以后默认取单位法矢，即要求 $\langle n,n\rangle=\pm 1$，正负号来自度规的正负定性。设 $p\in S$ 上的一个局部坐标系 $(U;x^1,\cdots,x^{n})$ 是 $M$ 正定的右手系使得域内点 $x^n\leqslant 0$，则$(U\cap S;x^1,\cdots,x^{n-1})$ 也是 $S$ 的局部坐标系，且 $\pdv{x^n}$ 就是法矢而且是外法矢。
 
 对一点 $q$，度规的作用范围是其整个矢量空间 $V_q$，因此类似于切矢，度规也有“切于” $S$ 的部分，那就是只作用于 $T_qS$ 的部分。
@@ -514,25 +515,4 @@ pattern radius = 1pt}
 此外，任意 $l$-形式也能按相应思路定义其\textbf{诱导形式}，这是有必要的，因为一旦把 $S$ 看作一个独立区域，而非从背景的嵌入视角观察，那么“不切于”的形式都是没有意义的。
 体元、定向也是形式，自然也有其诱导。
 
-\begin{definition}[诱导度规]
-    设 $S$ 是背景 $M$ 的子集而别无他求，其上一点 $q$ 处的切空间 $T_q S$ 的度规 $\tilde g$ 称为 $V_q$ 上 $g$ 的诱导度规(induced metric)，若对任意 $w_1,w_2\in T_q S$ 有
-    \eq{\tilde g(w_1,w_2)=g(w_1,w_2),}
-    可见诱导度规只是将度规的作用对象从 $V_q$ 限制于 $T_q S$，因此又称作度规在 $S$ 上的限制(restriction)。$g$ 定义在 $V_q$ 上，而 $\tilde g$ 可视作定义在$T_q S$ 上。
-\end{definition}
-满足上式的诱导度规有很多，下面介绍一种用于超曲面的惯例。在规定其单位法矢后，将 $v$ 沿着法向和切向分解，可得垂直的 $v_n=\pm\langle v,n\rangle n$（正负跟随 $\langle n,n\rangle=\pm 1$），切向就是 $v_t=v-v_n$，即
-\[
-v=v_t\pm\langle v,n\rangle n,
-\]
-如果将 $v_t$ 视作 $v$ 的\textit{投影(projection)}或限制，则应当有 (1,1) 型张量 $h$ 满足 $v_t=\c_1^2(h\otimes v)$，即
-\[
-v_t=h(\oo;v)=v\mp  n_\flat(v)n=I(\oo;v)\mp  n\otimes n_\flat(\oo;v),
-\]
-说明 $h=I\mp  n\otimes n_\flat$，用 $g$ 降下来，
-\eq{
-h_\flat=\c_1^1(g\otimes I)\mp \c_1^1(g\otimes n\otimes n_\flat)=g\mp n_\flat\otimes n_\flat,
-}
-可以验证这就是一个诱导度规。下面从缩并角度解释其合理性。为便于陈述, 设 $V_q$ 为 4 维，因而 $T_q S$ 为 3 维。作为诱导度规，$\tilde g$ 是 $T_q S$ 上的 3 维张量，即 $\tilde g \in \mathscr{T}_{T_q S}(0,2)$ (它不能作用于 $V_q\backslash T_q S$ 的元素)。但为了便于用 4 维等式演算，我们希望找到一个 4 维的 $(0,2)$ 型张量（即 $\mathscr{T}_{V_q}(0,2)$ 的元素），它能代表 3 维张量 $\tilde g$。而 $h_\flat \equiv g \mp n_\flat\otimes n_\flat$ 就是这样的 4 维张量等式。可以证明 $\mathscr{T}_{V_q}(0,2)$ 的子集 $\mathscr{S}_{V_q}(0,2) \equiv\left\{T \in\right.$ $\left.\mathscr{T}_{V_q}(0,2) \mid T( n,\oo)=0,T(\oo,n)=0\right\}$ 与 $\mathscr{T}_{T_q S}(0,2)$ 自然同构，因而可作认同\footnote{详见第 3 章参考系一节。}。
 
-易见 $g \notin \mathscr{S}_{V_q}(0,2)$ 而 $h_\flat \in \mathscr{S}_{V_q}(0,2)$ ，且 $h_\flat(w_1,w_2)=g (w_1,w_2),\forall w_1,w_2\in T_q S$，所以可把 $h_\flat$ 认同为 $\tilde g$。容易验证 $\mathscr{S}_{V_q}(0,2)$ 中满足诱导度规定义（因而可充当 $\tilde g$）的元素只有 $h_\flat$，这就是把 4 维张量 $h_\flat \equiv g \mp n_\flat\otimes n_\flat$ 看作诱导度规的理 由。以后将不在符号上区分 $h_\flat$ 和 $\tilde g$.
-
-以上关于 $(0,2)$ 型张量的结论还可推广：由 $T\in \mathscr{T}_{V_q}(0,k)$ 满足其任意槽与 $n$ 缩并为零，所构成的集合与 $\mathscr{T}_{T_q S}(0, l)$ 有自然同构关系。这使我们在讨论和书写公式时可用前者的元素代替后者的元素(写成 4 维而非 3 维张量等式)，从而带来许多方便。
