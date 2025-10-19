@@ -20,7 +20,7 @@
     \caption{\small 2 维时空图。以某惯性系为\textbf{绘图基准}是一种时空图的绘制习惯：将其坐标网格画成欧氏正交、时间轴未来方向朝上（空间轴右手排列）、尺度均匀的，这样迎合几何制，反向的光线也相互正交。}
 \end{wrapfigure}
 
-更普遍地，考察\textit{全体事件}规律排布的集合。比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
+更普遍地，考察\textit{全体}事件规律排布的集合。比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
 故同时事件集又可形象地称为\textbf{同时面}(simultaneity surface)。
 由于存在不同参考系选择，故建议直接默认存在一个 4 维\textbf{流形}(manifold)作为时空的理想模型。
 流形就是点连续分布形成的集合，从而能建立坐标系\footnote{最初，我们仅用微积分和坐标系研究背景的\textbf{局部}(local)性质，建立了\textbf{微分几何}(differential geometry)。随着集合论和\textbf{拓扑学}发展，我们发现可将背景准确称为\textbf{拓扑空间}(topological space)，其上提供了连续性定义。赋有坐标系的拓扑空间即流形，总规定系 $\{x\},\{x'\}$ 间的变换 $x'^\mu=x'^\mu(x)$ 可逆且光滑，这样可随意做微积分。
@@ -32,7 +32,7 @@
 x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
 }
 其中给时间乘上无歧义常数 $c$ 以使量纲一致。此后多采用几何制($c=G=1$)，则 $x^0=t$，这样 $x^0,t$ 都可称\textbf{坐标时}。
-时空中的曲线称\textbf{世界线}(worldline)。一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的世界管。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $a^i$ 编号，且用固有时 $a^0$ 参数化，便建立了所谓\textbf{共动系}或\textbf{固有系} $\{a\}$。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
+时空中的曲线称\textbf{世界线}(worldline)。一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的世界管。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $a^i$ 编号，且用固有时 $a^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{a\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
 
 这些概念看起来都很显然，但事实远非如此：时空结构很可能极其怪异。
 我们有野心将时空流形施以整个宇宙，但宇宙的拓扑形状迄今未知，也许在大尺度上无法用 $\R^4$ 覆盖；在 $10^{-15}$\,m 或 $10^{-25}$\,m 的小尺度上，不可能建立起足够刚性的参考系。目前我们认为这是因为微观量子性质，但也或许存在更深刻的物理。Wheeler 认为在 $10^{-35}$\,m 的亚核子尺度，量子引力的涨落极其剧烈，产生量子泡沫，戳破时空连续统。量子引力理论必须一致包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的\textbf{Planck 长度} $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着涨落的特征尺度在 Planck 长度的量级。
@@ -62,9 +62,9 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
 无论技术发展如何，双程光速的测量原理至今仍和\textbf{Fizeau 程序}一致：从坐标原点发射球面光波，然后由放置在某处（尽量邻近）距离已知的镜子反射，随后记录光回到原点的时间，这样可计算光速。按现在的约定，不需要再测量光速，故以上步骤更倾向于测距。
 任取某条惯性观者线 $G$，规定为坐标原点。设相对静止的另一惯性观者 $G'$；实验上若任意时刻测距均相同，就认为二者相对静止。二者可同属一个惯性参考系。
 $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$），最后 $G$ 在某时刻接受该光（事件 $C$）。取 $A,C$ 的中间事件 $D$；实验上由标准钟测量。只需约定 $B,D$ 同时。
-按此规定，惯性参考系的共动系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。
+按此规定，惯性参考系的固有系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。
 总之，单程光速是约定的，不可实验测量（除非找到非光对钟法）；我们可以测量的是双程光速，且用平均逼近瞬时。
-且注意，并非所有参考系都能办到对钟。
+且注意并非所有参考系都能对钟，见 \ref{sec:time-cong} 节。
 
 \begin{figure}[t]
     \centering
@@ -284,8 +284,11 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
 物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
 关键就在于坐标变换下物理量的分量如何变。
 分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
-现在就可更严格地阐述狭义相对论的原理：\textit{物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值}，如 $c=1,\pi/2$ 和 $\hbar$。合称\textbf{Lorentz 不变性}(invariance)。
-例如，经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
+Einstein 的狭义相对论原理就应更严格地阐述为一种\textbf{不变性}(invariance)：
+\begin{quote}
+    \textbf{Lorentz 不变性}\quad 物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值。
+\end{quote}
+值如 $c=1,\pi/2$ 和 $\hbar$。经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
 
 等效原理指出惯性系与非惯性系局域难以区分，因而最好是认同任意参考系，即一种广义相对性原理。更进一步地，我们本就默认物理对象、规律不受坐标系影响，即\textbf{坐标冗余性}，因而不仅考虑与参考系有关的那类坐标系，任意坐标系均可接受，即直接寻求对任意坐标变换的\textbf{广义协变性}。
 由前文知曲线线长可由曲线切矢的积分给出。
@@ -336,24 +339,23 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
 \end{align}
 其中 $S_k$ 是全体 $(1\cdots k)$ 排列之集；$\sigma\in S_k$ 为偶排列时 $\sgn\sigma=1$，否则为 $-1$；$\sigma(k)$ 为 $\sigma$ 的第 $k$ 项。上式分别称为 $T_{\cdots}$ 的\textbf{对称部分}(symmetric part)和\textbf{反称部分}(alternating part)。除序 $1/k!$ 是为与原张量平均。对上标定义同理。对两个指标，在代数学中就学过矩阵的对称、反称分解。上下标之间的对称、反称性要用度规升降后再讨论。有时会横跨地标注，如 $V^{[\mu}W^{\nu]},F_{(\mu|\sigma\lambda|\nu)}$ 都标记在了 $\mu,\nu$ 指标。运算性质如下：
 \begin{enumerate}
-    \item \textit{缩并时两种括号都有传递性}，如
-    \[T_{(\mu_1\cdots\mu_k)}S^{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}S^{(\mu_1\cdots\mu_k)}=T_{\mu_1\cdots\mu_k}S^{(\mu_1\cdots\mu_k)},\]
-    证明不难，留给读者；
-    \item \textit{嵌套括号时，同种子括号可随意添删，但异种子括号会直接为零}，如 $T_{[\cdots[\cdots]\cdots]}=T_{[\cdots]},T_{[\cdots(\cdots)\cdots]}=0$。这几乎显然，只需不失一般性地考虑
+    \item \textit{缩并时两种括号都有传递性}，读者自证不难：
+    \[T_{(\mu_1\cdots\mu_k)}S^{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}S^{(\mu_1\cdots\mu_k)}=T_{\mu_1\cdots\mu_k}S^{(\mu_1\cdots\mu_k)};\]
+    \item \textit{嵌套括号时，同种子括号随意添删，异种子括号为零}。这几乎显然，只需不失一般性地考虑
     \begin{align*}
         T_{[[\mu_1\cdots\mu_k]\mu_{k+1}\cdots\mu_{k+l}]}&=\sum_{\sigma\in S_{k+l},\tau\in S_k}\frac{\sgn\sigma\sgn\tau}{(k+l)!k!}\,T_{\mu_{\sigma(\tau(1))}\cdots\mu_{\sigma(\tau(k))}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}\\
         &=\sum_{\sigma\in S_{k+l}}\frac{k!\sgn\sigma}{(k+l)!k!}\,T_{\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}=T_{[\cdots]},
     \end{align*}
-    而另一条证明类似；
-    \item 由此还可推出\textit{异种括号缩并为零}，如 $T_{(\mu_1\cdots\mu_k)}S^{[\mu_1\cdots\mu_k]}=0$。
+    从而 $T_{[\cdots[\cdots]\cdots]}=T_{[\cdots]}$，类似地有 $T_{[\cdots(\cdots)\cdots]}=0$；
+    \item 由此可推\textit{异种括号缩并为零}，如 $T_{(\mu_1\cdots\mu_k)}S^{[\mu_1\cdots\mu_k]}=0$。
     对 $k\geqslant 3$ 只能有 $T_{\mu_1\cdots\mu_k}\ne T_{(\mu_1\cdots\mu_k)}+T_{[\mu_1\cdots\mu_k]}$，但仍可在\textbf{全对称}或\textbf{全反称}时有
-    \[T_{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}\Rightarrow T_{[\mu_1\cdots\mu_k]}=0,\quad
-        T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\Rightarrow T_{(\mu_1\cdots\mu_k)}=0.\]
+    \[T_{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}\implies T_{[\mu_1\cdots\mu_k]}=0,\quad
+        T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\implies T_{(\mu_1\cdots\mu_k)}=0.\]
 \end{enumerate}
 
 \subsection{拉氏理论}
 
-许多相互作用定律能靠着一种信念得到：\textit{实际规律总使系统}\textbf{作用量}\textit{最小}，这称为\textbf{最小作用量原理}(principle of least action)。当然，最小只是美学说法，其实只要求导数为零，故严格称法为\textbf{稳恒}(stationary)\textbf{作用量原理}，仅在分析解的稳定性时再关注最优化问题。
+许多相互作用定律能靠着一种信念得到：\textit{实际规律总使系统作用量最小}，这称为\textbf{最小作用量原理}(principle of least action)。当然，最小只是美学说法，其实只要求导数为零，故严格称法为\textbf{稳恒}(stationary)\textbf{作用量原理}，仅在分析解的稳定性时再关注最优化问题。
 这一哲思由 Lagrange, Hamilton 等人于 18 世纪提出。取惯性系及绝对时间，对 $N$ 个粒子的保守系统，给定初末位置 $\bm x_i(a),\bm x_i(b)$，势能 $V$ 给出相互作用，实际运动满足 Newton 第二定律 $m_i\ddot{\bm x}_i(t)=-\grad V(\bm x_i)$，其中 $i=1,\cdots,N$。
 非保守力的实质是统计效应，不在纯粹的经典力学范围中。上式可使如下作用量 $S$ 取最小值：
 \[S(\bm x_i(t))=\int_{a}^{b}L(\bm x_i,\dot{\bm x}_i)\d{t},\quad L=T-V,\quad T=\frac{1}{2}\sum_{i=1}^N m_i \dot{\bm x}_i^2,\]
@@ -503,7 +505,7 @@ Legendre 变换是一个更有优势的写法，因为这帮助我们在一般�
 
 自场当然也作用自己，但经典理论在处理这类问题时存在严重矛盾，如辐射阻尼。量子电动力学通过电子自能图的重整化来解决电子的自相互作用，虽依旧不尽完美，但至少知道症结在于点模型导致\textbf{无穷大自能}。应当认为，目前的理论都是某种尚未发掘的基本规律的\textbf{低能}情形，低能意指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
 现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
-只要意识到\textit{物理理论总是近似的}，就可给人类的科学提供台阶。\textit{所有理论都是错的，但一些是有用的}。因此，我们总是追求尽可能简单的理论，但这不意味着自然规律（若有且能被人总结）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。
+只要意识到物理理论总是近似的，就可给人类的科学提供台阶。正如 George Box 所说，\textit{所有理论都是错的，但一些是有用的}。我们总是追求尽可能简单的理论，但这不意味着自然规律（若有且能被人总结）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。
 
 研究各物质场间的相互作用，就要用各对应的物理量来构建总作用量。这一主题称为\textbf{耦合}(coupling)。
 目前除接受实验筛选，没有先验原理支撑唯一的耦合方式。
@@ -572,7 +574,7 @@ $u^i:=\dot{x}^i$ 称为\textbf{3-速}，其对偶为 $u_i=\eta_{ij}u^j=\delta_{i
 }
 由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。$\dv*[2]{x^\mu}{\tau}$ 是 Lorentz 张量，但还不是张量，后续将对此详解。$a^i:=\ddot{x}^i$ 称为（坐标）\textbf{3-加速}。
 可见 4-加速分量为 $A^0=\gamma \dot{\gamma}=\gamma^4 u\dot{u}=\gamma^4 u^ia_i, A^i=\gamma^2 a^i+\gamma^4 u^ja_j u^i$，
-其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。共动系中 $u^i=0$，故 \textit{4-加速等于共动系 3-加速}。
+其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。固有系中 $u^i=0$，故 4-加速等于固有系 3-加速。
 
 对单个自由质点构造拉氏量。对称性指出它是 Lorentz 不变标量。我们能找的只有 $\d\tau,m,c=1$，故 $S\propto m\int \d\tau$。注意 $u\ll 1$ 时
 \[
@@ -602,26 +604,26 @@ E=p_i u^i-L=pu+{m}/{\gamma}=\sqrt{p^2+m^2}=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
 $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma f^i$，其中\textbf{3-力}为 $f^i:=\dot{p}^i$。质量守恒时 $F^\mu=m A^\mu,f^i=m a^i$，功能关系 $f^i u_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
-下面来考察上述定义的粒子间简单的相互作用，为此只假设 4-动量在这些相互作用中守恒．出于方便，将用自由粒子这个词表示自由的有质粒子或光子．若 $\mathcal{A}$ 是自由粒子的一个有限集，则 $\mathcal{A}$ 中每一元素都有唯一的 4-动量，或是指向未来的类时矢量，或是类光矢量．任何这种集合中的矢量求和都是类时且指向未来的，除非所有的矢量全是互相平行的类光矢量，这时矢量求和是指向未来的类光矢量．我们把这样的求和称为 $\mathcal{A}$ 的总 4-动量．下面把自由粒子有限集的定义公式化，该集在某个事件中同(或许是新的)另一自由粒子的有限集相碰撞，而从碰撞中产生新的集合，例如，一个电子和一个质子碰撞而产生一个中子和一个中微子．
+下面来考察上述定义的粒子间简单的相互作用，为此只假设 4-动量在这些相互作用中守恒。出于方便，将用自由粒子这个词表示自由的有质粒子或光子。若 $\mathcal{A}$ 是自由粒子的一个有限集，则 $\mathcal{A}$ 中每一元素都有唯一的 4-动量，或是指向未来的类时矢量，或是类光矢量。任何这种集合中的矢量求和都是类时且指向未来的，除非所有的矢量全是互相平行的类光矢量，这时矢量求和是指向未来的类光矢量。我们把这样的求和称为 $\mathcal{A}$ 的总 4-动量。下面把自由粒子有限集的定义公式化，该集在某个事件中同(或许是新的)另一自由粒子的有限集相碰撞，而从碰撞中产生新的集合，例如，一个电子和一个质子碰撞而产生一个中子和一个中微子。
 \begin{definition}[接触作用]
     $\mathcal{A}$ 中的一个接触作用是一个三元组 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 是自由粒子的两个有限集，它们都不包含具有线性相关的 4-动量的粒子对（它们或许在物理上不可区分），且 $x \in\R^{3+1}$ 是这样的事件，使得
 
-（接触性）$x$ 是 $\mathcal{A}$ 中所有粒子的终点．即对 $\mathcal{A}$ 中一个粒子的每条世界线 $\alpha:\left[\xi_{0},\xi_{1}\right] \rightarrow M$，有 $\alpha\left(\xi_{1}\right)=x$；
+（接触性）$x$ 是 $\mathcal{A}$ 中所有粒子的终点。即对 $\mathcal{A}$ 中一个粒子的每条世界线 $\alpha:\left[\xi_{0},\xi_{1}\right] \rightarrow M$，有 $\alpha\left(\xi_{1}\right)=x$；
 
 （分散性）$x$ 是 $\widetilde{\mathcal{A}}$ 中所有粒子的起点；
 
-（4-动量守恒）$\mathcal{A}$ 的总 4-动量等于 $\widetilde{\mathcal{A}}$ 的总 4-动量．
+（4-动量守恒）$\mathcal{A}$ 的总 4-动量等于 $\widetilde{\mathcal{A}}$ 的总 4-动量。
 
-\noindent 如果 $A$ 只包含单个自由粒子，那么 $(\mathcal{A},x,\widetilde{\mathcal{A}})$ 称为衰变，例如，一个中子衰变到一个质子、一个电子和一个中微子．
+\noindent 如果 $A$ 只包含单个自由粒子，那么 $(\mathcal{A},x,\widetilde{\mathcal{A}})$ 称为衰变，例如，一个中子衰变到一个质子、一个电子和一个中微子。
 \end{definition}
 
-考虑一个相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\widetilde{\mathcal{A}}$ 包含单个光子．$\widetilde{\mathcal{A}}$ 的总 4-动量是类光矢量，所以对于 $\mathcal{A}$ 来说也是如此．因为 $\mathcal{A}$ 中各粒子的 4-动量有类时、类光的，且是未来指向的，故只有其全是平行的类光矢量时，总和才可能是类光矢量．因为 $\mathcal{A}$ 不能包含有平行 4-动量的不同光子，故它必定由单个光子组成，根据 4-动量守恒，这个光子的 4-动量与 $\widetilde{\mathcal{A}}$ 中光子的相同．因此从本质上讲，在 $x$ 处仿佛“什么也没发生”．我们得出结论，不存在我们所限定的那种非平凡相互作用，能够在单个光子上发生，而不发生其它事件．把 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的颠倒后表明，若 4-动量守恒，则单个光子不能衰变．
+考虑一个相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\widetilde{\mathcal{A}}$ 包含单个光子。$\widetilde{\mathcal{A}}$ 的总 4-动量是类光矢量，所以对于 $\mathcal{A}$ 来说也是如此。因为 $\mathcal{A}$ 中各粒子的 4-动量有类时、类光的，且是未来指向的，故只有其全是平行的类光矢量时，总和才可能是类光矢量。因为 $\mathcal{A}$ 不能包含有平行 4-动量的不同光子，故它必定由单个光子组成，根据 4-动量守恒，这个光子的 4-动量与 $\widetilde{\mathcal{A}}$ 中光子的相同。因此从本质上讲，在 $x$ 处仿佛“什么也没发生”。我们得出结论，不存在我们所限定的那种非平凡相互作用，能够在单个光子上发生，而不发生其它事件。把 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的颠倒后表明，若 4-动量守恒，则单个光子不能衰变。
 
-下面，我们考虑单个有质粒子衰变到两个有质粒子，例如一个原子核自发的 $\alpha$ 衰变．考虑一个有接触的相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\mathcal{A}$ 包含一个质量 $m_{0}$ 的单个自由有质粒子，而 $\widetilde{\mathcal{A}}$ 包含两个自由有质粒子 (一个质量 $m_{1}$，另一个 $m_{2}$ )．设 $P_{0},P_{1}$ 和 $P_{2}$ 分别是质量 $m_{0},m_{1}$ 和 $m_{2}$ 的有质粒子的 4-动量．则 $P_{0}=P_{1}+P_{2}$．按照“反转三角不等式”，由于 $P_{1}$ 和 $P_{2}$ 是线性无关且指向未来的，结合 $P\cdot P=-m^2$，有
+下面，我们考虑单个有质粒子衰变到两个有质粒子，例如一个原子核自发的 $\alpha$ 衰变。考虑一个有接触的相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\mathcal{A}$ 包含一个质量 $m_{0}$ 的单个自由有质粒子，而 $\widetilde{\mathcal{A}}$ 包含两个自由有质粒子 (一个质量 $m_{1}$，另一个 $m_{2}$ )。设 $P_{0},P_{1}$ 和 $P_{2}$ 分别是质量 $m_{0},m_{1}$ 和 $m_{2}$ 的有质粒子的 4-动量。则 $P_{0}=P_{1}+P_{2}$。按照“反转三角不等式”，由于 $P_{1}$ 和 $P_{2}$ 是线性无关且指向未来的，结合 $P\cdot P=-m^2$，有
 \[m_{0}>m_{1}+m_{2}.\]
-初始粒子的额外质量 $m_{0}-\left(m_{1}+m_{2}\right)$ 按质能方程，可认为是把 $m_{0}$ 分成两部分所要求的能量的一种度量．稍微不同的说法是，$\widetilde{A}$ 中的两个粒子结合而形成 $\mathcal{A}$ 中的一个粒子时，给后面粒子的质量贡献了“结合能”．此即质量亏损．
+初始粒子的额外质量 $m_{0}-\left(m_{1}+m_{2}\right)$ 按质能方程，可认为是把 $m_{0}$ 分成两部分所要求的能量的一种度量。稍微不同的说法是，$\widetilde{A}$ 中的两个粒子结合而形成 $\mathcal{A}$ 中的一个粒子时，给后面粒子的质量贡献了“结合能”。此即质量亏损。
 
-这个例子里，颠倒 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 就成了完全非弹性碰撞 (两个质量 $m_{1}$ 和 $m_{2}$ 的自由粒子碰撞并结合成第三个质量 $m_{0}$ 的自由粒子) 中所含有的那种接触作用．质量亏损仍然成立．更详细的分析将给出 $m_{0}-\left(m_{1}+m_{2}\right)$ 的近似公式，这可与该碰撞中动能损失的 Newton 公式作比较 (经典上把能量看做是从结合粒子中获得热量的形式)．
+这个例子里，颠倒 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 就成了完全非弹性碰撞 (两个质量 $m_{1}$ 和 $m_{2}$ 的自由粒子碰撞并结合成第三个质量 $m_{0}$ 的自由粒子) 中所含有的那种接触作用。质量亏损仍然成立。更详细的分析将给出 $m_{0}-\left(m_{1}+m_{2}\right)$ 的近似公式，这可与该碰撞中动能损失的 Newton 公式作比较 (经典上把能量看做是从结合粒子中获得热量的形式)。
 
 \subsection{经典电动力学}
 
@@ -728,7 +730,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 考虑质量守恒且无内部作用的流体，称为\textbf{尘埃}(dust)。设 $\mu^*$ 是\textbf{固有能量密度}或\textbf{质量密度}。置尘埃系统仅受外引力场作用，则 $\mathcal L_M=-\mu^*$。质量守恒等价为 $\del_\nu(\mu^* U^\nu)=0$
 
 研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
-取共动系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
+取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
 惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
 进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
 
@@ -750,7 +752,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 
 实际上，描述光线时一般取任意仿射参数 $\lambda$。比如，考虑一点 $x_{0}$，此处一个指向未来的类光矢量 $N$ 就可代表光的走向。由 $\alpha(\lambda)=x_{0}+\lambda N$ 定义的直线 $\alpha$ 就是自由光子经过 $x_{0}$ 的世界线。
 
-先回顾 3 维语言并考虑 SI．$\bm{E},\bm{B}$ 是真空中波动方程矢值解的事实表明：我们找到了 Maxwell 方程组的 “平面 波”解，其中
+先回顾 3 维语言并考虑 SI。$\bm{E},\bm{B}$ 是真空中波动方程矢值解的事实表明：我们找到了 Maxwell 方程组的 “平面 波”解，其中
 \eq{
 \bm{E}=\bm{\alpha} \cos \Omega+\bm{\beta} \sin \Omega,
 }
@@ -758,11 +760,11 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 \eq{
 \Omega=\frac{\omega}{c}(c t-\bm{r} \cdot \bm{e})，\quad \bm{e} \cdot \bm{e}=1,
 }
-$\omega>0,\bm{\alpha},\bm{\beta}$ 和 $\bm{e}$ 是常量；$\omega$ 是频率，$\bm{e}$ 是给出传播方向的单位矢量($t$ 增加 $\tau$ 且 $\bm r$ 增加 $c \tau \bm{e}$ 保持 $\Omega$ 不变)．这满足波动方程，如果常量不可普遍选取，将不可能找到使真空方程也成立的 $\bm B$．取上式的散度得
+$\omega>0,\bm{\alpha},\bm{\beta}$ 和 $\bm{e}$ 是常量；$\omega$ 是频率，$\bm{e}$ 是给出传播方向的单位矢量($t$ 增加 $\tau$ 且 $\bm r$ 增加 $c \tau \bm{e}$ 保持 $\Omega$ 不变)。这满足波动方程，如果常量不可普遍选取，将不可能找到使真空方程也成立的 $\bm B$。取上式的散度得
 \eq{
 \div \bm{E}=\frac{\omega}{c}(\bm{e} \cdot \bm{\alpha} \sin \Omega-\bm{e} \cdot \bm{\beta} \cos \Omega)=0,
 }
-即必须选择 $\bm{\alpha},\bm{\beta}$ 使其垂直于 $\bm{e}$．而另一方面，必须找到 $\bm{B}$ 使
+即必须选择 $\bm{\alpha},\bm{\beta}$ 使其垂直于 $\bm{e}$。而另一方面，必须找到 $\bm{B}$ 使
 \eq{
 \curl \bm{E}=\frac{\omega}{c}(\bm{e} \times \bm{\alpha} \sin \Omega-\bm{e} \times \bm{\beta} \cos \Omega)=-\frac{\partial \bm{B}}{\partial t},
 }
@@ -770,19 +772,19 @@ $\omega>0,\bm{\alpha},\bm{\beta}$ 和 $\bm{e}$ 是常量；$\omega$ 是频率，
 \eq{
 \bm{B}=\frac{\bm{e} \times \bm{E}}{c}=\frac{1}{c}(\bm{e} \times \bm{\alpha} \cos \Omega+\bm{e} \times \bm{\beta} \sin \Omega).
 }
-不难看出 $\bm{E},\bm{B}$ 同样满足真空方程．这种方法得到的解称为\textit{单色平面电磁波}．注意，$\bm{E}$ 和 $\bm{B}$ 垂直于传播方向，在此意义下这样的波是横波，$\bm{E}$ 的定义可更简要地写成
+不难看出 $\bm{E},\bm{B}$ 同样满足真空方程。这种方法得到的解称为\textbf{单色平面电磁波}。注意，$\bm{E}$ 和 $\bm{B}$ 垂直于传播方向，在此意义下这样的波是横波，$\bm{E}$ 的定义可更简要地写成
 \eq{
 \bm{E}=\Re{(\bm{\alpha}+\i\beta) \e^{-\i \Omega}},
 }
-用 Fourier 分析可证明真空中每个解都是单色平面波的组合．如果 $\bm{\alpha}$ 和 $\bm{\beta}$ 成正比，平面波是\textit{“平面”偏振}的或\textit{“线”偏振}的；如果 $\bm{\alpha} \cdot \bm{\alpha}=\bm{\beta} \cdot \bm{\beta},\bm{\alpha} \cdot \bm{\beta}=0$，平面波则是\textit{“圆”偏振}的．
+用 Fourier 分析可证明真空中每个解都是单色平面波的组合。如果 $\bm{\alpha}$ 和 $\bm{\beta}$ 成正比，平面波是\textbf{“平面”偏振}的或\textbf{“线”偏振}的；如果 $\bm{\alpha} \cdot \bm{\alpha}=\bm{\beta} \cdot \bm{\beta},\bm{\alpha} \cdot \bm{\beta}=0$，平面波则是\textbf{“圆”偏振}的。
 
-Maxwell 理论的核心概念是具有确定频率或一定色的光波可用 Maxwell 方程组的单色平面解来表示．
+Maxwell 理论的核心概念是具有确定频率或一定色的光波可用 Maxwell 方程组的单色平面解来表示。
 
 %% 光学
 
 
 
-类光世界线对应于电磁理论的几何光学极限．不仅仅有质粒子有“动量”和“能量”，光子也有，因而也应当有 4-动量 (例如光电效应，在这种效应中光子与逃离原子中电子轨道的电子之间的碰撞)．然而，不像有质粒子，光子的特性不是质量而是频率 $\nu$ (或者波长 $\lambda=1 / \nu$)，它与能量 $\varepsilon$ 的关系是 $\varepsilon=h\nu$（$h$ 是 Planck 常数），且与观者有密切关联 (D\"oppler 效应)．而且，我们没有相应类比出“质量”的“固有频率”，毕竟不存在光子在其中静止的惯性系，宁愿说光子没有质量．
+类光世界线对应于电磁理论的几何光学极限。不仅仅有质粒子有“动量”和“能量”，光子也有，因而也应当有 4-动量 (例如光电效应，在这种效应中光子与逃离原子中电子轨道的电子之间的碰撞)。然而，不像有质粒子，光子的特性不是质量而是频率 $\nu$ (或者波长 $\lambda=1 / \nu$)，它与能量 $\varepsilon$ 的关系是 $\varepsilon=h\nu$（$h$ 是 Planck 常数），且与观者有密切关联 (D\"oppler 效应)。而且，我们没有相应类比出“质量”的“固有频率”，毕竟不存在光子在其中静止的惯性系，宁愿说光子没有质量。
 
 对类光直线，由于 $N^\mu N_\mu=0$，即
 \[
@@ -793,76 +795,19 @@ Maxwell 理论的核心概念是具有确定频率或一定色的光波可用 Ma
 其中
 \[\vec d
 =\frac{\left(N \cdot e_{1}\right) e_{1}+\left(N \cdot e_{2}\right) e_{2}+\left(N \cdot e_{3}\right) e_{3}}{\sqrt{\left(N \cdot e_{1}\right)^{2}+\left(N \cdot e_{2}\right)^{2}+\left(N \cdot e_{3}\right)^{2}}}\]
-代表这条世界线的空间方向矢量．
+代表这条世界线的空间方向矢量。
 
 现在，通过类比能量定义，我们把 $\R^{3+1}$ 中的光子定义成 $\R^{3+1}$ 中的一条曲线 $\alpha$，把 $N$ 取成是光子的 4-动量，且光子的能量 $\varepsilon$ 在惯性基矢 $\left\{e_{\mu}\right\}$ 下写成
 \[\varepsilon=-N \cdot e_{0},\]
 则
 \[N=\varepsilon\left(\vec d+e_{0}\right).\]
-相应的频率 $\nu$ 和波长 $\lambda$ 则定义为 $\nu=\varepsilon / h$ 和 $\lambda=1 / \nu$ ．在另一组惯性基矢下，有 $N=$ $\hat{\varepsilon}(\hat{d}+\hat{e}_{0})$，其中 $\hat{d}$ 和 $\hat{\varepsilon}$ 是相应物理量的戴帽．可以看出
+相应的频率 $\nu$ 和波长 $\lambda$ 则定义为 $\nu=\varepsilon / h$ 和 $\lambda=1 / \nu$ 。在另一组惯性基矢下，有 $N=$ $\hat{\varepsilon}(\hat{d}+\hat{e}_{0})$，其中 $\hat{d}$ 和 $\hat{\varepsilon}$ 是相应物理量的戴帽。可以看出
 \[\frac{\hat{\varepsilon}}{\varepsilon}=\frac{\hat{\nu}}{\nu} \frac{1-v \cos \theta}{\sqrt{1-v^{2}}}=(1-v \cos \theta)+\frac{1}{2} v^{2}(1-v \cos \theta)+\cdots,\]
-其中 $v$ 是两个空间坐标系的相对速率，$\theta$ 是 (不戴帽坐标系中) 光子的方向 $d$ 与戴帽坐标系运动方向之间的夹角．此即相对论 D\"oppler 效应公式，其中展开级数第一项是经典 D\"oppler 效应公式．
+其中 $v$ 是两个空间坐标系的相对速率，$\theta$ 是 (不戴帽坐标系中) 光子的方向 $d$ 与戴帽坐标系运动方向之间的夹角。此即相对论 D\"oppler 效应公式，其中展开级数第一项是经典 D\"oppler 效应公式。
 
 
 
-对含有一个电子和一个光子的 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的相互作用分析可得所谓的 Compton 效应公式．
-
-
-
-\subsection{Fermi-Walker 移动}
-
-%% 费移
-
-相对论限制告诉我们，相对于某外部观者的 3-加速不可能恒定。匀加速运动多指 4-加速费移的运动。而 4-加速等于共动系 3-加速，故在共动观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
-4-加速费移说明 $U^\mu,A^\mu$ 所在平面固定，可退化至 2 维来研究。
-取惯性系 $\{T,X\}$，设 4-加速模长恒为 $A$，4-速模长恒为 $-1$ 且指向未来，则
-\[-\left(\dv{U^0}{\tau}\right)^2+\left(\dv{U^1}{\tau}\right)^2=A^2,\quad U^0=\sqrt{(U^1)^2+1}.\]
-设速度初态 $U^1=0$，则 $U^1=\sinh A\tau,U^0=\cosh A\tau$。设位置初态 $T=0,X=x$，则 $T=\frac 1A\sinh A\tau,X=x+\frac 1A\cosh A\tau-\frac 1A$。
-可见轨迹为双曲线。
-不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
-由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
-\eq{T=x\sinh At,\quad X=x\cosh At\implies \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
-坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
-
-\begin{figure}[h!]
-    \centering
-    \subfloat[\centering 按 $A=1/x$ 分布]{
-    \begin{tikzpicture}[scale=1.2]
-    \draw[color=gray] (0,0)--(2,2);
-    \draw (0,0)--(4,0) node[right]{$\scriptstyle X$};
-    \draw[dashed] (0,0)--(-0.3,0);
-    \draw[dashed] (0,0)--(0,-0.3);
-    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
-    \draw (0,0)--({1.3*sinh(0.42)*2.5},{1.3*sinh(0.42)}) node[midway,sloped,above]{$\scriptstyle x$};
-    \draw (0,0)--(1.5*2.5,1.5) node[right]{$\scriptstyle\hat{X}$};
-    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
-    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
-    \draw[domain=0:0.85,thick,samples=100] plot({2*cosh(\x)},{2*sinh(\x)});
-    \draw[domain=0:0.6,thick,samples=100] plot({3*cosh(\x)},{3*sinh(\x)});
-    \foreach \n in {1,2,3}{
-    \fill (\n,0) circle(0.03);
-    \fill ({\n*cosh(0.42)},{\n*sinh(0.42)}) circle(0.03);
-    \draw[dashed] (\n*0.915,0)--(0.8+\n*0.915,0.8*2.5) node[above]{$\scriptstyle\hat{X}=\n$};}
-    \end{tikzpicture}
-    }
-    \quad
-    \subfloat[\centering 按 $A$ 相等分布]{\begin{tikzpicture}[scale=1.2]
-    \draw[color=gray] (0,0)--(2,2);
-    \draw[color=gray] (1,0)--(3,2);
-    \draw (0,0)--(3,0) node[right]{$\scriptstyle X$};
-    \draw[dashed] (0,0)--(-0.3,0);
-    \draw[dashed] (0,0)--(0,-0.3);
-    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
-    \draw (0,0)--(2.5,1) node[right]{$\scriptstyle\hat{X}$};
-    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
-    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
-    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)+1},{sinh(\x)});
-    \fill (1,0) circle(0.03);
-    \fill (2,0) circle(0.03);
-    \end{tikzpicture}
-    }
-    \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
-\end{figure}
+对含有一个电子和一个光子的 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的相互作用分析可得所谓的 Compton 效应公式。
 
 \subsection{Lorentz 变换推导*}\label{sec:PoincareLorentz}
 
@@ -1035,26 +980,30 @@ $D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 
 \subsection{广义不变性}
 
-Einstein 想要借由广义协变性发展出一套坐标选择无关的理论，以\textit{尽可能排除人为因素}。但协变性对约束引力理论是不够的，事实上还需要不变性。首先，将 Lorentz 不变性中的常数不变推广到所谓的\textbf{绝对对象}(absolute object)，即与物质状态无关的各种量，除了常数 $c=G=1,\hbar/2$，最重要的是还包括更高指标的，比如 Jacobi 矩阵元 $\pdv*{x^\mu}{x'^\nu}$。与物质状态有关而可变的称\textbf{动力学对象}(dynamical object)，例如粒子的位置和动量、场的场强和能量密度等。给定任何物理方程，按定义总能把其中的量分为这两类。\textbf{广义不变性}就是说，\textit{任何物理定律有广义协变性，且方程中的绝对对象在任意坐标变换下相同}，就能决定了哪些绝对对象才可以出现于方程中。
+Einstein 想要借由广义协变性发展出一套坐标选择无关的理论，以\textit{尽可能排除人为因素}。但协变性对约束引力理论是不够的，事实上还需要不变性。首先，将 Lorentz 不变性中的常数不变推广到所谓的\textbf{绝对对象}(absolute object)，即与物质状态无关的各种量，除了常数 $c=G=1,\hbar/2$，最重要的是还包括更高指标的，比如 Jacobi 矩阵元 $\pdv*{x^\mu}{x'^\nu}$。与物质状态有关而可变的称\textbf{动力学对象}(dynamical object)，例如粒子的位置和动量、场的场强和能量密度等。给定任何物理方程，按定义总能把其中的量分为这两类。
+\begin{quote}
+    \textbf{广义不变性}\quad 任何物理定律有广义协变性，且方程中的绝对对象在任意坐标变换下相同。
+\end{quote}
+这样就决定哪些绝对对象可以出现于方程。
 Jacobi 矩阵元这种一定是绝对对象的项就不能出现了。一个描述物理定律的方程必须是指标平衡的张量方程，才可在坐标变换下消除 Jacobi 矩阵元，进而一种坐标系对应方程的一种表达，并保持广义不变性，不会同时出现两种坐标系符号。
 
 广义不变性所提出的要求当然高于 Lorentz 不变性。
 $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对象，但 $\eta_{\mu\nu}$ 不能在任意坐标变换下严格不变，它可变成某个 $g_{\mu\nu}$。在引力理论中，由于 $g_{\mu\nu}$ 必须出现，我们只能期望 $g_{\mu\nu}$ 是动力学对象，它所满足的某个方程才能有广义不变性。结合等效原理，我们知道这是物质源产生引力场的定量关系，称为\textbf{引力场方程}或\textbf{场方程}。当今主流上称这套理论为\textbf{广义相对论}。当然，最初他认为“广义相对”一词来自广义协变性，但现在看来是来自等效原理和广义不变性。为避免歧义，Wheeler 很早就提议将该理论称为\textbf{几何动力学}(geometrodynamics)以强调其本质，即与物质相互作用的动力学几何。 
 
-正如运动方程是 $x^\mu(\tau)$ 的常微分方程，场方程是 $g_{\mu\nu}$ 的偏微分方程，且根据广义不变性，它应是张量方程，其中的张量由度规及其偏导构造。记自由引力场、物质场的总拉氏密度为 $\mathcal L$。尽管可在局域惯性系中消除引力，但作为物理规律的作用量是不能在局域惯性系中失去耦合性的，它必须是标量场。取局域惯性系 $\{\xi\}$ 并置 $S=\int \mathcal L \d[4]{\xi}$。
+正如运动方程是 $x^\mu(\tau)$ 的常微分方程，场方程是 $g_{\mu\nu}$ 的偏微分方程，且根据广义不变性，它应是张量方程，其中的张量由度规及其偏导构造。自由引力场、物质最小引力耦合的总和记 $\mathcal L=\frac{1}{2\kappa}\mathcal L_G +\mathcal L_M$，其中 $\kappa$ 是按习惯设置的待定耦合常数。尽管可在局域惯性系中消除引力，但作为物理规律的作用量是不能在局域惯性系中失去耦合性的，它必须是标量场。取局域惯性系 $\{\xi\}$ 并置 $S=\int \mathcal L \d[4]{\xi}$。
 体元变换 $\d[4]x =\tilde J \d[4]{\xi}$ 的 $\tilde J$ 能用度规行列式表示。记度规在 $\{x\}$ 系的行列式是 $g:=\det(g_{\mu\nu})$。对 $g_{\mu\nu}$ 的定义取行列式有
 \eq{
     g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\tilde J^{-2},
 }
 假设坐标变换保持右手性，则
 \eq{
-    \sgn g=-1\implies 1/\tilde J=\sqrt{-g}\implies S=\int \mathcal L \sqrt{-g}\d[4]{x},
+    \sgn g=-1\implies 1/\tilde J=\sqrt{-g}\implies S=S_G+S_M=\int \mathcal L \sqrt{-g}\d[4]{x},
 }
 可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。规定\textbf{适配体元} $D^4 x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $D^4 x=\sqrt{-g}\d[4]{x}$。
-可以考虑用张量缩并获得标量。这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导的构造，故最终场方程至少是二阶的。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论，而 Poisson 方程恰好也是二阶的。
+可以考虑用张量缩并获得 $\mathcal L_G$。这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导的构造，故最终场方程至少是二阶的。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论，而 Poisson 方程恰好也是二阶的。
 然暂不清楚将二阶导数作用于何物，因此要回到物理学。相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。若欲寻求尽可能简单的定义，则该张量场\textit{在一点}就应具备潮汐意义。
 
-\subsection{类时线汇}
+\subsection{类时线汇}\label{sec:time-cong}
 
 \begin{figure}[ht]\centering
     \includegraphics[width=.5\textwidth]{fig/chpt01/geo-devi.pdf}
@@ -1062,16 +1011,16 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
             \label{fig:geo-devi}
 \end{figure}
 
-考虑类时线汇 $\mathscr R$，如图 \ref{fig:geo-devi}，对共动系的空间部分讨论如下。任选一条不自交的光滑曲线，使其上任一切矢都与过该点的观者相交，称为\textbf{横向曲线}。用 $s$ 参数化横向曲线，则与其相交的观者对应了交点参数，即在线汇中挑出了一个\textbf{单参族}，横向曲线沿各观者 4-速便扫出一张 2 维曲面，可称\textbf{世界面}(worldsheet)。设任意坐标系 $\{x\}$，则可表为 $x^\mu(\tau,s)$，其中 $\{\tau,s\}$ 可以视为共动系的子集，当然也可不要求对钟，直接约定某初始的横向曲线 $x^\mu(0,s)$。可取单参族中的一者为\textbf{基准观者}(fiducial observer)，比如 $x^\mu(\tau,0)$，而 $s$ 正方向的邻近观者称其\textbf{邻居}(neighbor)。\textbf{偏离矢量}(separation vector) $S^\mu:=\pdv*{x^\mu}{s}$ 大小象征相对间距。这样 $x^\mu(\tau,s)$ 上建立了观者 4-速场 $Z^\mu:=\pdv*{x^\mu}{\tau}$ 和偏离矢量场 $S^\mu$。由链式法则，它们的确逆变。
+考虑类时线汇 $\mathscr R$，如图 \ref{fig:geo-devi}。任选一条不自交的光滑曲线，使其上任一切矢都与过该点的观者相交，称为\textbf{横向曲线}。用 $s$ 参数化横向曲线，则与其相交的观者对应了交点参数，即在线汇中挑出了一个\textbf{单参族}，横向曲线沿各观者 4-速便扫出一张 2 维曲面，可称\textbf{世界面}(worldsheet)。设任意坐标系 $\{x\}$，则可表为 $x^\mu(\tau,s)$，其中 $\{\tau,s\}$ 可以视为固有系的子集，当然也可不要求对钟，直接约定某初始的横向曲线 $x^\mu(0,s)$。可取单参族中的一者为\textbf{基准观者}(fiducial observer)，比如 $x^\mu(\tau,0)$。\textbf{偏离矢量}(separation vector) $S^\mu:=\pdv*{x^\mu}{s}$ 的大小象征其与邻近观者 $x^\mu(\tau,\Delta s)$ 的间距，称其\textbf{邻居}(neighbor)。这样 $x^\mu(\tau,s)$ 上建立了观者 4-速场 $Z^\mu:=\pdv*{x^\mu}{\tau}$ 和偏离矢量场 $S^\mu$。由链式法则，它们的确逆变。
 很容易展开证明
 \eq{
     Z^\nu\nabla_\nu S^\mu=S^\nu\nabla_\nu Z^\mu.
 }
-类时线汇的共动系下 $\tilde Z^\mu=\delta^\mu_0$，从而 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。
+类时线汇的固有系下 $\tilde Z^\mu=\delta^\mu_0$，从而 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。
 
 考虑背景时空的一个\textbf{嵌入}(imbedded)子集 $\Omega$，将 $g_{\mu\nu}$ 的作用对象限制于 $\Omega$ 上，即对任意 $\Omega$ 的切矢场 $w_1,w_2$ 均有 $\tilde g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，就得到了度规的限制(restriction) $\tilde g_{\mu\nu}$，称\textbf{诱导度规}(induced metric)。换言之，总约定子集中的长度总用背景度规衡量。只需研究低一维嵌入的\textbf{超曲面}(hypersurface)，因为任意维的嵌入可逐步归纳得到。
 对超曲面的任意切矢 $w^\mu$ 满足 $n_\mu w^\mu = 0$ 的背景余切矢 $n_\mu$ 称为\textbf{法余矢}，$n^\mu = g^{\mu\nu}n_\nu$ 称为\textbf{法矢}。总可取坐标系使某个 $\hat x^0=f$ 坐标线即为超曲面，换言之超曲面方程为 $f(x^\mu)=C$ 或 $\d f=0$，其梯度 $\partial^\mu f$ 就是法矢，因为对任意曲面切矢 $T^\mu$ 总可在曲面上找到 $x^\mu(\lambda)$ 使 $T^\mu=\dv*{x^\mu}{\lambda}$，进而 $T^\mu\partial_\mu f=\dv*{f}{\lambda}=0$。任意余切矢分解为 $V_\mu = A \del_\mu f + B T_\mu$，则 $V_\mu w^\mu = B T_\mu w^\mu$。故法余矢必如 $A \del_\mu f$，即只相差倍数关系，可约定内外。
-满足上式的 $\tilde g_{\mu\nu}$ 有很多，我们选择一种惯例。规定一个单位外法矢 $n^\mu$。$V$ 沿法向分解为 $\pm  (V^\nu n_\nu)  n^\mu$，其中 $\pm =\sgn(n^\mu n_\mu)$。沿切向分解定义为 $h^\mu{}_\nu V^\nu$，$h^\mu{}_\nu:=g^{\mu\sigma}h_{\sigma\nu}$ 称为\textbf{投影映射}(projection map)。具体地，$h^\mu{}_\nu V^\nu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$，故可选
+满足上式的 $\tilde g_{\mu\nu}$ 有很多，我们选择一种惯例。规定一个单位外法矢 $n^\mu$。$V^\mu$ 沿法向分解为 $\pm  (V^\nu n_\nu)  n^\mu$，其中 $\pm = n^\mu n_\mu$。沿切向分解记为 $h^\mu{}_\nu V^\nu$，$h^\mu{}_\nu:=g^{\mu\sigma}h_{\sigma\nu}$ 称为\textbf{投影映射}(projection map)。具体地，$h^\mu{}_\nu V^\nu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$，故可选
 \eq{
     h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu,\quad h^\mu{}_\nu :=\delta^\mu_\nu \mp n^\mu n_\nu.
 }
@@ -1080,91 +1029,108 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
 当然，此处 $\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。取 $r=R$ 即得球面度规 $\d\l^2=R^2\d\Omega^2$，与 $g_{\mu\nu} - \del_\mu r \del_\nu r$ 结果一致。
 
 选定任意基准观者 $\gamma\in\mathscr R$。
-偏离矢量场的投影 $\eta^\lambda=h^\lambda{}_\nu S^\nu=S^\lambda+ Z_\nu S^\nu Z^\lambda$ 可指代其邻居，因为它与 $Z^\mu$ 正交，构成参考系的空间矢量场。故时常直接将 $\eta^\lambda$ 称为邻居。
-邻居的相对速度表征为 $\eta^\mu$ 沿 $Z^\mu$ 的某种导数。首先想到 $Z^\nu\nabla_\nu \eta^\mu$，然而它只在测地线汇中是空间矢量：$Z_\mu Z^\nu\nabla_\nu \eta^\mu = Z^\nu\nabla_\nu (Z_\mu \eta^\mu) - \eta^\mu A_\mu=-\eta^\mu A_\mu=-S^\mu A_\mu$。因此仍需投影：
+任意矢量 $V^\mu$ 有沿线协变导数 $Z^\nu\nabla_\nu V^\mu$。但若只想衡量其相对于固有系的变化，我们需要一种新的沿线导数。做法非常简单。将 $V^\mu$ 分解为 $h^\mu{}_\nu V^\nu- Z^\mu Z_\nu V^\nu$，分别求沿线协变导数，投影到各自的时轴和空间上，再合并即可
 \begin{align}
-    h^\mu{}_\sigma Z^\nu\nabla_\nu\eta^\sigma &= Z^\nu\nabla_\nu\eta^\mu - Z^\mu S^\nu A_\nu = S^\nu\nabla_\nu Z^\mu + Z_\sigma S^\sigma A^\mu + Z^\mu Z_\sigma S^\nu\nabla_\nu Z^\sigma \nonumber \\
-    &= \eta^\nu\nabla_\nu Z^\mu + \frac 12 Z^\mu S^\nu\nabla_\nu(Z_\sigma Z^\sigma) = \eta^\nu\nabla_\nu Z^\mu,
+    \frac{D_F V^\mu}{\d\tau} &:= h^\mu{}_\lambda Z^\nu\nabla_\nu (h^\lambda{}_\sigma V^\sigma) -Z^\mu Z_\lambda Z^\nu\nabla_\nu ( -Z^\lambda Z_\sigma V^\sigma) \nonumber \\
+    &= h^\mu{}_\sigma Z^\nu\nabla_\nu V^\sigma + h^\mu{}_\lambda (2 V_\sigma Z^{(\lambda} A^{\sigma)}) -Z^\mu Z_\sigma Z^\nu\nabla_\nu V^\sigma -Z^\mu Z_\lambda (-2 V_\sigma Z^{(\lambda} A^{\sigma)})\nonumber \\
+    &= Z^\nu\nabla_\nu V^\mu + (A^\mu Z^\nu - Z^\mu A^\nu)V_\nu,
 \end{align}
-我们将此称为\textbf{相对 3-速}。我们期望一种新导数使得 $\frac{D_F}{\d\tau}\eta^\mu=\eta^\nu\nabla_\nu Z^\mu$。
-$\frac{D_F}{\d\tau}\eta^\mu=0$ 时 $Z^\nu\nabla_\nu\eta^\mu = Z^\mu S^\nu A_\nu$，从而 $Z^\nu\nabla_\nu(\eta^\mu\eta_\mu)= 2\eta_\mu Z^\mu S^\nu A_\nu = 0$，换言之 $\eta^\mu$ 不仅与 $Z^\mu$ 保持正交，其模也恒定。从这个意义上，$Z^\mu$ 与自己保持平行、模长恒定，故 $\frac{D_F}{\d\tau}Z^\mu=0$。
-任意矢量可分解为 $h^\mu{}_\nu V^\nu- (V^\nu Z_\nu) Z^\mu$，从而
+其中注意 $Z^\sigma\nabla_\sigma h^{\mu\nu} = 2 Z^{(\mu} A^{\nu)}$。我们看到它与协变导数相差了 $2 A^{[\mu} Z^{\nu]}$，因而有望成为一种联络。换言之，利用导数的线性性、Leibniz 法则、$\frac{D_F f}{\d\tau}=\dv{f}{\tau}$，通过缩并可将其推广到任意张量。这称为\textbf{Fermi-Walker 导数}。此联络催生的平行移动称\textbf{Fermi-Walker 移动}，简称费移。
+比如 $\frac{D_F}{\d\tau}Z^\mu=0$。若 $V^\mu$ 费移，则 $\dv{\tau}(Z^\mu V_\mu)=\frac{D_F}{\d\tau}(Z^\mu V_\mu)=0$，且 $\dv{\tau}(V^\mu V_\mu)=\frac{D_F}{\d\tau}(Z^\mu V_\mu)=0$，即 $V^\mu$ 模恒定且与 $Z^\mu$ 保持夹角。不仅如此，空间投影为零还意味着 $h^\lambda{}_\sigma V^\sigma$ 在空间上保持，没有旋转。
+
+与 $Z^\mu$ 正交的矢量即此系的\textbf{空间矢量}(spatial vector)，如偏离矢量场的投影 $\eta^\lambda=h^\lambda{}_\nu S^\nu=S^\lambda+ Z_\nu S^\nu Z^\lambda$。它可指代其邻居，故时常直接将 $\eta^\lambda$ 称为邻居。
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{fig/chpt01/hand.png}
+    \caption{同时面就是全空间，空间矢量好比一支笔}
+\end{figure}
+用 $\eta^\mu$ 沿线导数表征邻居的相对速度，还要保证该速度也是空间矢量，故只需继续投影 $h^\mu{}_\sigma Z^\nu\nabla_\nu\eta^\sigma$：
+\begin{align}
+    u^\mu:=\frac{D_F}{\d\tau}\eta^\mu &= Z^\nu\nabla_\nu(h^\mu{}_\sigma S^\sigma) - Z^\mu  A^\nu S_\nu = A^\mu Z^\nu S_\nu + h^\mu {}_\sigma S^\nu\nabla_\nu Z^\sigma \nonumber \\
+    &= Z^\sigma S_\sigma Z^\nu \nabla_\nu Z^\mu + S^\nu\nabla_\nu Z^\mu + \frac 12 Z^\mu S^\nu\nabla_\nu(Z_\sigma Z^\sigma) = \eta^\nu\nabla_\nu Z^\mu,
+\end{align}
+其中用到 $Z^\nu\nabla_\nu S^\mu=S^\nu\nabla_\nu Z^\mu$。将此称为\textbf{相对 3-速}。同理\textbf{相对 3-加速}为 $a^\mu:=\frac{D_F^2}{\d\tau^2}\eta^\mu$。
+费移的空间矢量类似于陀螺仪(gyroscope)自转轴。
+
+相对 3-速场的变化显然代表着整个线汇的形变。为此我们尝试将其拆分以明晰物理意义。
+观察 $u^\mu=(\nabla_\nu Z^\mu)\eta^\nu$，二者都是空间矢量，故可考虑将 $\nabla_\nu Z^\mu$ 投影为空间张量：
 \eq{
-    \frac{D_F V^\mu}{\d\tau} := h^\nu{}_\sigma V^\sigma\nabla_\nu Z^\mu - Z^\mu Z^\sigma\nabla_\sigma(Z^\nu V_\nu) = Z^\nu\nabla_\nu V^\mu + 2 A^{[\mu} Z^{\nu]}V_\nu,
+    B_{\mu\nu} := h_\mu{}^\sigma h_\nu{}^\lambda \nabla_\lambda Z_\sigma = \nabla_\nu Z_\mu + A_\mu Z_\nu.
 }
-其中注意导数是线性的，具有 Leibniz 法则且 $\frac{D_F f}{\d\tau}=\dv{f}{\tau}$。
-
-
-
-
-
-
-倘若邻居十分邻近，以至于 $S^\mu$ 平行于 $Z^\mu$，那么“相对 3-速”只涉及 $S^\mu$ 的模长
-
-任意矢量 $V^\mu$ 有沿线协变导数 $Z^\nu\nabla_\nu V^\mu$。如果我们只想衡量其投影的变化，即
-
-$Z^\mu Z_\sigma Z^\nu\nabla_\nu V^\sigma = Z^\mu Z^\nu\nabla_\nu (Z_\sigma V^\sigma) - Z^\mu V^\nu A_\nu$
-
-
-
-
-
-接下来介绍线汇 3-速的三类变化（膨胀、扭转和剪切），这需要我们将 $\vec u=\nabla_{\vec\eta} Z$ 分解为三个有其物理意义的项．为此，先将 $\nabla Z$ 投影成空间矢量 $B$，即
-\eq{B=\c^1_4 \c^2_3(h\otimes h\otimes\nabla Z_\flat),}
-其满足 $\c_1^1(Z\otimes B)=\c_2^1(Z\otimes B)=0$．显然 $B$ 作为 $(1,1)$ 型张量时就是从 3-矢 $\vec\eta$ 到 3-矢 $\vec u$ 的线性映射．下面为行文简洁，时常采取分量写法．
-只需证明 $\nabla_\nu Z_{\mu}=B_{\mu\nu}-A_\mu Z_\nu$，则 $u^\mu=B^\mu{}_\nu\eta^\nu$.
-将其对称和反称部分分别记作
-\[
-\theta_{\mu\nu}=B_{(\mu\nu)},\quad\omega_{\mu\nu}=B_{[\mu\nu]}.
-\]
-由反称性知 $\omega$ 的任意分量矩阵的对角元为零，当然无迹．但 $\theta_{\mu\nu}$ 还可分解为有迹和无迹两部分．以 $\theta$ 代表其迹，$\sigma_{\mu\nu}$代表无迹部分．无非是想 $\theta_{\mu\nu}=X_{\mu\nu}\theta+\sigma_{\mu\nu}$，这样自然有 $X^{\mu}{}_{\mu}=1$．$\theta$ 是借 $\tilde g^{-1}$ 所求之迹，因此最简单的做法是令 $X_{\mu\nu}=\tilde g/3$．这样便将 $B$ 分解为三个部分：
+从而 $u^\mu= B^\mu{}_\nu\eta^\nu$。若 $B_{\mu\nu}=B_{[\mu\nu]}$，则注意 $\dv{\tau}(\eta^\mu\eta_\mu)=2\eta_\mu u^\mu=2 B_{[\mu\nu]} \eta^\mu\eta^\nu = 0$，即 $\eta^\mu$ 长度不变，$B_{\mu\nu}$ 只引起转动。可称 $\omega_{\mu\nu}:=B_{[\mu\nu]}$ 为\textbf{扭转}(twist)或\textbf{涡量}(vorticity)。再考虑对称部分 $\theta_{\mu\nu}:=B_{(\mu\nu)}$。
+实对称矩阵 $(\theta^\mu{}_\nu)$ 总可通过正交变换对角化。设存在正交归一的坐标基（特征矢）使其表为 $(\theta^\mu{}_\nu)=\diag(\lambda_1,\lambda_2,\lambda_3)$，$\lambda_a$ 为特征值。
+在此基下 $u^a = \lambda_a \eta^a$（$a$ 不求和）。
+设迹 $\theta:=\theta^\mu{}_\mu = h^{\mu\nu} \theta_{\mu\nu}$。$\sigma_{\mu\nu}$ 代表无迹部分。为使 $\theta_{\mu\nu}=X_{\mu\nu}\theta+\sigma_{\mu\nu}$，无非想 $X^{\mu}{}_{\mu}=1$。最简单的做法是令 $X_{\mu\nu}=h_{\mu\nu}/3$。
+这样分解为三个部分：
 \eq{
-B_{\mu\nu}=\frac{1}{3}\theta \tilde g_{\mu\nu}+\sigma_{\mu\nu}+\omega_{\mu\nu}.
+B_{\mu\nu}=\frac{1}{3}\theta h_{\mu\nu}+\sigma_{\mu\nu}+\omega_{\mu\nu},\quad u^\mu=\frac{1}{3}\theta\eta^\mu+\sigma^\mu{}_\nu\eta^\nu+\omega^\mu{}_\nu\eta^\nu.
 }
-因此
+由于反称部分当然无迹，无需继续分解。
+可见若 $\theta\ne 0$ 而 $\sigma_{\mu\nu}=\omega_{\mu\nu}=0$，则 $u^\mu,\eta^\mu$ 将平行（也即 $\lambda_1=\lambda_2=\lambda_3 = \frac{\theta}{3}$），$\theta$ 只影响 $\eta^\mu$ 长度，相对于基准观者将有辐向伸缩，故 $\theta$ 称为\textbf{膨胀}(expansion)。
+若仅 $\sigma_{\mu\nu}\ne 0$，那么 $\lambda_1+\lambda_2+\lambda_3 = 0$，$\eta^\mu$ 分量有增有减。具体地，考察初态单位球面 $(\eta^1)^2+(\eta^2)^2+(\eta^3)^2=1$，微小时间 $\Delta\tau$ 后 $\tilde\eta^a=\eta^a+\lambda_a\eta^a\Delta\tau$（$a$ 不求和），因而变为椭球面 $\frac{(\tilde\eta^1)^2}{(1+\lambda_1\Delta\tau)^2}+\frac{(\tilde\eta^2)^2}{(1+\lambda_2\Delta\tau)^2}+\frac{(\tilde\eta^3)^2}{(1+\lambda_3\Delta\tau)^2}=1$，且其体积显然保持不变。
+因此 $\sigma_{\mu\nu}$ 正是\textbf{剪切}(shear)，象征线汇体积不变的切应形变。这些概念借鉴于弹性介质力学。
+
+$\omega_{\mu\nu} = 0$ 的参考系称\textbf{无旋的}(irrotational)，$\theta_{\mu\nu} = 0$ 的参考系称\textbf{刚性的}(rigid)。参考系\textbf{可全局对钟}即存在同时面族 $\d t = 0$ 与 $Z^\mu$ 正交，且观者只与同时面相交至多一次。换言之，$\exists h> 0, \phi$ 使 $Z_\mu = -h\del_\mu \phi$，从而\footnote{附录 \ref{sec:Frobenius} 的\textbf{Frobenius 定理}指出 $Z_{[\sigma}\nabla_{\nu} Z_{\mu]} = 0$ 等价于\textbf{超曲面正交}：对参考系内任意时空点，都存在过 $p$ 的超曲面与所有观者正交。这是自然的，可对钟前提是的确能存在正交同时面族，无论具体实操如何。}
+\[\nabla_{[\nu} Z_{\mu]} = -\del_{[\nu} h \del_{\mu]}\phi -h \nabla_{[\nu} \nabla_{\mu]}\phi = -\del_{[\nu} h \del_{\mu]}\phi\implies Z_{[\sigma}\nabla_{\nu} Z_{\mu]} = h\del_{[\nu} h \del_{(\sigma}\phi \del_{\mu)]}\phi = 0,\]
+反之不一定（不保证 $h>0$）。展开可知
 \eq{
-u^\mu=\frac{1}{3}\theta\eta^\mu+\sigma^\mu{}_\nu\eta^\nu+\omega^\mu{}_\nu\eta^\nu.
+    Z_{[\sigma}\nabla_{\nu} Z_{\mu]} = Z_{[\sigma} B_{\mu\nu]} - Z_{[（\sigma}Z_{\nu} Z_{\mu]} = Z_{[\sigma} B_{[\mu\nu]]} - Z_{[(\sigma}Z_{\nu)} Z_{\mu]} = Z_{[\sigma} \omega_{\mu\nu]}.
 }
-若只有 $\theta$ 非零，则 $\vec u,\vec\eta$ 将平行，因此 $\theta$ 只影响 $\vec\eta$ 长度，基准观者附近将有辐向伸缩变化，故$\theta$称为\textit{膨胀系数}或\textit{膨胀(expansion)}；若只有 $\omega_{\mu\nu}$ 非零，则易证 $\vec\eta$ 长度不变，其成为一个纯转动变换，故 $\omega_{\mu\nu}$ 称为\textit{转动(rotation)张量}或\textit{扭转(twist)}；若只有 $\sigma_{\mu\nu}$ 非零，则可类比连续介质力学的切应力概念，称其为\textit{剪切(shear)张量}或\textit{剪切}．我们将在下一章详细研究潮汐效应时再解释\footnote{比如，可证若 $\vec\eta$ 终点在单位球上，则该单位球会变为一个椭球．}．
+可见 $\omega_{\mu\nu} = 0$ 推出 $ Z_{[\sigma} \omega_{\mu\nu]} = 0$；$Z_{[\sigma} \omega_{\mu\nu]} = 0$ 推出 $\omega_{\mu\nu} = Z^\sigma Z_{\nu} \omega_{\sigma\mu} + Z^\sigma Z_{\mu} \omega_{\nu\sigma} = 0$，其中注意 $Z^\sigma \omega_{\sigma\mu} = 0$。从而 $\omega_{\mu\nu} = 0\iff Z_{[\sigma}\nabla_{\nu} Z_{\mu]} = 0$。$\omega_{\mu\nu} \ne 0$ 推出不存在 $h,\phi$ 使 $Z_\mu = -h\del_\mu \phi$，即有旋参考系不可全局对钟。
+即使不能确定同时面，但仍可能定义空间几何。展开膨胀部分：
+\[2\theta_{\mu\nu} =2\nabla_{(\mu}Z_{\nu)}+2 A_{(\mu}Z_{\nu)}
+=2g_{\alpha(\mu}\nabla_{\nu)} Z^\alpha
++Z^\alpha\nabla_\alpha h_{\mu\nu}=Z^\alpha\partial_\alpha h_{\mu\nu}
+  +2h_{\alpha(\mu}\partial_{\nu)} Z^\alpha = 0,\]
+其中注意 $Z_{\beta}\nabla_\nu Z^\beta = 0$ 使 $g_{\alpha\mu}\nabla_{\nu} Z^\alpha=h_{\alpha\mu}\nabla_{\nu} Z^\alpha$；无挠性导致克氏符抵消。
+取共动坐标系 $\{t,x^i\}$，则 $Z^\mu = \delta^\mu_0/\sqrt{-g_{00}},Z_\mu = g_{\mu 0}/\sqrt{-g_{00}}$。从而
+\eq{
+    h_{\mu 0} = 0,\quad h_{ij} = g_{ij}-\frac{g_{i0}g_{j0}}{g_{00}}.
+}
+于是 $h_{\alpha\mu}\partial_{\nu} Z^\alpha = h_{\alpha 0}\partial_{\nu}(1/\sqrt{-g_{00}})=0$，则 $2\theta_{\mu\nu} = (1/\sqrt{-g_{00}})\partial_0 h_{\mu\nu}$。从而刚性性等价于 $\pdv*{h_{\mu\nu}}{t}=0$。故在刚性系中可直接用 $h_{\mu\nu}$ 指代空间几何。
+
+Einstein 转盘模型就是一例。置闵氏时空及惯性柱坐标系 $\{t,r,\varphi,z\}$。设圆盘置于 $z=0$ 平面，盘心位于空间原点，且以角速率 $\omega$ 旋转。转盘系 $\mathscr R$ 中任一观者 $\gamma(\tau)$ 可表 $t=\gamma\tau,\varphi=\omega\gamma\tau$，其中 $\gamma=1/\sqrt{1-\omega^2r^2}$；$r,z$ 为常数。
+只当 $\omega r<1$ 时这条曲线才能表示类时观者，故取转盘系定义域为开集 $r<1/\omega$。由此知 $Z^0=\gamma,Z^2=\gamma\omega$。柱坐标下闵氏度规为 $\d s^2=-\d t^2+\d r^2+r^2\d\varphi^2+\d z^2$，则 $Z_0=-\gamma,Z_2=\gamma\omega r^2$。易得非零克氏符有 $\Gamma^1_{22}=-r,\Gamma^2_{12}=\Gamma^2_{21}=1/r$。非零 $\nabla_\mu Z_{\nu}$ 有 $Z_{0;1}=-\gamma^3\omega^2 r, Z_{1;2}=-\gamma\omega r, Z_{2;1}=\gamma^3\omega r$。综上加速度为 $A^1=-\gamma^2\omega^2 r$。因此 $A_1 Z_0 = \gamma^3\omega^2 r,A_1 Z_2 = -\gamma^3\omega^3 r^3$。$B_{10}=-B_{01}=\gamma^3\omega^2 r, B_{12}=-B_{21}=-\gamma^3\omega r$。故 $\omega_{\mu\nu}=B_{[\mu\nu]} = B_{\mu\nu}$ 非零，$\theta_{\mu\nu}=B_{(\mu\nu)}=0$。该系为刚性有旋系，从而不可全局对钟。但仍可有空间几何。取共动坐标系：$\theta=\varphi-\omega t$，其余照旧，则
+\[\d s^2 = -(1-\omega^2r^2)\d t^2+\d r^2+r^2\d\theta^2+2\omega r^2\d t\d\theta+\d z^2,\]
+诱导度规为 $\d\ell^2 = \d r^2+\frac{r^2}{1-\omega^2 r^2}\d\theta^2+\d z^2$。
+圆盘边缘 $r=R,z=0$，从而 $\d\ell = \frac{R}{\sqrt{1-\omega^2 R^2}}\d\theta$，积分得周长 ${2\pi R}/\sqrt{1-\omega^2 R^2}$。可见空间几何非欧性使周长与直径比率不再为 $\pi$。
+
+\begin{wrapfigure}{l}{0.25\textwidth}\centering
+    \includegraphics[width=.25\textwidth]{fig/chpt01/twist.pdf}
+    \caption{转盘时空图}
+\end{wrapfigure}
+
+我们用惯性系画出转盘的世界管将更直观。
+惯性系同时面对世界管水平截取的圆周，即为所测 $2\pi R$。
+而共动系观者世界线呈螺旋状，因此若试图局部找到正交同时面，大致上呈“螺旋意面”状，但对圆心处（静止）观者不正交。可见扭转的确导致对钟失效。
+然而实际上只研究圆盘边缘。圆周在时空中划出一张 2 维圆柱世界面，同时面在其上截出一条螺旋线。观察圆周上的一个共动观者，视圆锥面为观者所在的 2 维时空。若圆盘没动，则世界线为一条母线 $A$，同时面为底部圆周 $L$；而若转动，则走螺旋线 $a$，同时面为斜率互为倒数的另一条螺旋线 $l$。
+在惯性系看来圆柱面由从 $A$ 至 $A$ 的曲面构成，因此圆周为从 $A$ 环绕一圈至 $A$ 截取所得 $L$。但在共动系，圆柱面从 $a$ 至 $a$ 拼成，则圆周为从 $a$ 环绕至 $a$ 截取所得 $l$。
+可将此圆柱沿 $A,a$ 裁剪并展平，相应螺旋线即直线，则利用平面时空图便可算得 $2\pi R/\sqrt{1-R^2\omega^2}$。
+Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清：关键在于，狭义相对性原理使我们只能借惯性系观测“共动观者测量过程”，间接得到共动系测量结果。共动观者测量半径时将尺子与半径齐平，垂直于运动方向，尺长在惯性系看来不变，可知共动系测出来的半径也是 $R$。
+共动观者测量圆周时将尺子沿切向（尺长远短于周长从而圆弧近似直线），尺长在惯性系看来缩短为 $\sqrt{1-\omega^2R^2}$ 倍。故在惯性系看来，共动系用较短的尺子测出更长的周长。
+
 
 \subsection{潮汐}\label{sec:tidal}
 
-
-设物质场与引力场的最小耦合项为 $S_M=\int\mathcal L_M D^4{x}$，并通常令
-\eq{
-    S=S_G+S_M=\int\left(\frac{1}{2\kappa}\mathcal L_G +\mathcal L_M\right)\sqrt{-g}\d[4]{x},
-}
-其中 $\kappa$ 是按习惯设置的待定耦合常数。
-为构造 $\mathcal L_G$，先找到具有潮汐意义的张量。
-
-再考虑类时测地线汇，其共动系可称\textbf{测地系}。
-
-计算相对加速度。用偏离矢量也可以。
- $Z^\nu \nabla_\nu(Z^\kappa \nabla_\kappa S^\lambda)$
- 
-也可记作 ${D^2S^\lambda}/{\d\tau^2}$。则
+对类时线汇的研究便于我们研究物质的潮汐现象。只考虑引力作用，则物质走类时测地线汇。$A^\mu=0$ 使 Fermi-Walker 导数与协变导数无异，$Z^\sigma\nabla_\sigma h^{\mu\nu}=0$ 且 $Z^\nu\nabla_\nu \eta^\mu = \eta^\nu\nabla_\nu Z^\mu$。从而潮汐加速度 $a^\mu = h^\mu{}_\lambda\frac{D^2}{\d\tau^2}S^\lambda$，故可直接计算
 \begin{align}
     Z^\nu \nabla_\nu(Z^\kappa \nabla_\kappa S^\lambda)&= Z^\nu \nabla_\nu\left(S^\kappa\nabla_\kappa Z^\lambda\right) = \left(Z^\nu \nabla_\nu S^\kappa\right)\nabla_\kappa Z^\lambda+Z^\nu S^\kappa \nabla_\nu \nabla_\kappa Z^\lambda\nonumber\\
     &= \left(S^\nu \nabla_\nu Z^\kappa\right)\nabla_\kappa Z^\lambda+Z^\nu S^\kappa\left(\nabla_\kappa \nabla_\nu Z^\lambda+2\nabla_{[\nu}\nabla_{\kappa]}Z^\lambda\right)\nonumber\\
     &=S^\kappa\nabla_\kappa\left(Z^\nu \nabla_\nu Z^\lambda\right) +2Z^\nu S^\kappa\nabla_{[\nu}\nabla_{\kappa]}Z^\lambda\nonumber\\
     &=R^\lambda{}_{\mu\nu\kappa}  Z^\mu  Z^\nu S^\kappa,\quad R^\lambda{}_{\mu\nu\kappa}Z^\mu:= 2\nabla_{[\nu}\nabla_{\kappa]}Z^\lambda,
 \end{align}
-称为\textbf{测地偏离}(geodesic deviation)\textbf{方程}，解 $S^\lambda$ 称为\textbf{Jacobi 场}。$R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐形变程度，是 $g_{\mu\nu,\lambda\kappa}$ 级的张量：式左是协变导数，式右 $Z^\mu,S^\kappa$ 是逆变矢量。这称为\textbf{Riemann 张量}。
-Jacobi 场固然无穷多种，但我们感兴趣满足对钟的 Jacobi 场。任意 $S^\lambda$ 总可用 $h^\lambda{}_\nu$ 投影为正交 Jacobi 场 $\eta^\lambda=h^\lambda{}_\nu S^\nu$。
-而只要初始横向曲线与线汇正交，则此后都保持正交：$Z^\nu \nabla_\nu\left(\eta^\mu Z_\mu\right) =Z_\mu Z^\nu \nabla_\nu \eta^\mu=Z_\mu \eta^\nu \nabla_\nu Z^\mu=\frac{1}{2} \eta^\nu \nabla_\nu\left(Z_\mu Z^\mu\right)=0$。经初态对钟后坐标线 $\d\tau = 0$ 与测地线汇将保持正交，因此必有 $\tilde g_{0i} = 0$。
-
-可以展开定义式：计算 $\nabla_\nu\nabla_\kappa V^\lambda$ 时注意勿先展开内部，将 $\nabla_\kappa V^\lambda$ 视作整体以避开对克氏符求导，最后代入无挠性得
+称为\textbf{测地偏离}(geodesic deviation)\textbf{方程}，解 $S^\lambda$ 有无穷多种，称\textbf{Jacobi 场}。
+$R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐程度，是 $g_{\mu\nu,\lambda\kappa}$ 级的张量：式左是协变导数，式右 $Z^\mu,S^\kappa$ 是逆变矢量。这称为\textbf{Riemann 张量}。
+操作性上可这样获得正交 Jacobi 场 $\eta^\lambda$：初态用对钟确定出一条正交横向曲线，随后观者持全同钟各自演化，则 $\dv{\tau} (\eta^\mu Z_\mu ) =Z_\mu Z^\nu \nabla_\nu \eta^\mu=Z_\mu \eta^\nu \nabla_\nu Z^\mu=\frac{1}{2} \eta^\nu \nabla_\nu\left(Z_\mu Z^\mu\right)=0$，即保持正交。坐标线 $\d\tau = 0$ 是测地线汇的正交族，必有 $\tilde g_{0i} = 0$。
+可以展开 Riemann 张量定义式：计算 $\nabla_\nu\nabla_\kappa V^\lambda$ 时注意勿先展开内部，将 $\nabla_\kappa V^\lambda$ 视作整体以避开对克氏符求导，最后代入无挠性得
     \eq{\label{eq:Rie-cur}
          R^\lambda{}_{\mu\nu\kappa}:=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}.
     }
 故 $R^\lambda{}_{\mu\nu\kappa}$ 表征度规的非闵程度。
 
-再考虑 Newton 极限。取测地系 $\{\xi\}$ 并设正交 Jacobi 场 $\eta^\mu$，则 $\tilde Z^\mu=\delta^\mu_0,\tilde\eta^0=0$。根据定义显然有反称性
-\eq{\label{eq:R_..ab=-}
-    {R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]},
-}
-则测地偏离方程在共动系下写作 $\pdv[2]{\tilde\eta^i}{t}=-\tilde R^i{}_{0 j 0} \tilde\eta^j$。
-设每条测地线足够低速，故共动系成为了惯性系，进而 $\pdv[2]{\tilde\eta^i}{t}\approx \tilde\eta^j \pdv{\xi^j}\pdv[2]{\xi^i}{t}=-\tilde\eta^j \pdv{\xi^j}\tilde\del^i\phi$。
+再考虑 Newton 极限。取测地固有系 $\{\xi\}$ 并设正交 Jacobi 场 $\eta^\mu$，则 $\tilde Z^\mu=\delta^\mu_0,\tilde\eta^0=0$。根据定义显然有反称性 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$。
+则测地偏离方程在该系写作 $\pdv[2]{\tilde\eta^i}{t}=-\tilde R^i{}_{0 j 0} \tilde\eta^j$。
+设每条测地线足够低速，故该系成为了闵氏惯性系，进而 $\pdv[2]{\tilde\eta^i}{t}\approx \tilde\eta^j \pdv{\xi^j}\pdv[2]{\xi^i}{t}=-\tilde\eta^j \pdv{\xi^j}\tilde\del^i\phi$。
 从而 $\tilde R^\sigma{}_{0 \sigma 0}=\tilde R^i{}_{0 i 0} \approx \tilde\partial_i\tilde\partial^i{\phi}$。可见 $R_{\mu\nu}:={R^\sigma}_{\mu\sigma\nu}$ 很有意义，称为\textbf{Ricci 张量}。
 也可从 $g_{00}=-(1+2\phi)$ 及 $R_{\mu\nu}$ 定义得 $\tilde R_{00}=-\frac 12 \nabla^2 g_{00}=\nabla^2\phi$。
 还可尝试展开。首先可证线性代数中的 Jacobi 公式：
@@ -1187,21 +1153,14 @@ Jacobi 场固然无穷多种，但我们感兴趣满足对钟的 Jacobi 场。�
 
 现可给出实验操作意义的局域惯性系的定量标准。数学上固然要求局域惯性系严格建立在测地线上：假若克氏符在邻域 $U$ 内等于零，则借助邻域按 \eqref{eq:Rie-cur} 式得在线上 $R^\lambda{}_{\mu\nu\kappa}=0$，矛盾。只要邻域足够大，$R^\lambda{}_{\mu\nu\kappa}$ 便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于 $1/\sqrt{R}$，同时也远小于其测量精度时，即使时空范围未严格至测地线，但 $R^\lambda{}_{\mu\nu\kappa}$ 也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量潮汐，见 \ref{sec:eq-prin} 节。
 
-潮汐线汇
-
-\subsection{曲率的性质}
-
 数学上称 $R^\lambda{}_{\mu\nu\kappa}$ 为\textbf{Riemann 内禀曲率}(intrinsic curvature)或\textbf{曲率}。$1/\sqrt{R}$ 相当于曲率半径。曲率为零时称度规为\textbf{平直的}(flat)，非零时称\textbf{弯曲的}(curved)，物理学可以借用这些词而称\textbf{时空曲率}，时空分为\textbf{平直时空}和\textbf{弯曲时空}。渐弱度规也称\textbf{渐近平直}(asymptotically flat)度规。下面解释曲率称呼的意义。我们预先\textit{规定}欧氏空间是平直的，以它为基准可判断某条线、某张面的弯曲。考虑一个球面，其上任意切矢沿自身平移所得测地线即过球心的大圆。设从赤道某两处垂直延伸两条大圆弧，它们的间距逐渐缩短并交于极点。在一张平面上，初态平行的直线不可能改变间距。矢量平行移动就是相对于路径各处邻域平移，然而考虑将扇形围成圆锥面，矢量沿着包含尖端的环路平行移动后，与原矢量不重合，而直观上尖端处有曲率，故曲率非零时，平行移动结果往往与路径有关。
-
-由此可计算球面曲率不为零
-
+由球面诱导度规可计算球面曲率不为零。
 可见度规在非欧或非闵时，内禀曲率非零而使测地间隔变化。但内禀曲率其实只由度规和坐标系计算而来，甚至无需嵌入某个高维背景来定义度规和曲率——对于四维时空，我们就只能抛弃嵌入思想来想象它。内禀曲率只反应内禀的弯曲程度而与曲面本身无关：球面在内禀意义下弯曲，但圆柱面在内禀意义下平直（借柱坐标发现诱导度规平直），尽管它在直观上弯曲。数学上，描述圆柱面这种对象的弯曲程度就需要嵌入思想，称为\textbf{外}(extrinsic)\textbf{曲率}。一个直观理解是，凡能连续地展平的曲面，尽管外曲率可不为零，但内禀曲率为零；真正不可连续展平的曲面内禀曲率、外曲率都非零。读者可观察纸塑地球仪是如何尝试将平面纸张大致贴合球面的。
 
-
-只需默认无挠性并运用取测地系的技巧（其中 $\tilde R^\lambda{}_{\mu\nu\kappa}=-2\tilde \Gamma^\lambda_{\mu[\nu,\kappa]}$），就可证明曲率具有若干性质：
+只需默认无挠性并运用取局域惯性系的技巧（其中 $\tilde R^\lambda{}_{\mu\nu\kappa}=-2\tilde \Gamma^\lambda_{\mu[\nu,\kappa]}$），就可证明曲率具有若干性质：
 \begin{itemize}
     \item $2\nabla_{[\nu}\nabla_{\kappa]} \omega_\mu = - R^\lambda{}_{\mu\nu\kappa} \omega_\lambda$，因为无挠性导致 $\nabla_{[\nu}\nabla_{\kappa]}(V^\mu \omega_\mu)=0$。
-    \item ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$，即 \eqref{eq:R_..ab=-} 式；
+    \item ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$，根据定义即知；
     \item ${R^\lambda}_{[\mu\nu\kappa]}=0$，\textbf{Ricci 循环恒等式}(cyclic identities)。
 \end{itemize}
 \textbf{降指标 Riemann 曲率} $R_{\lambda\mu\nu\kappa}:=g_{\lambda\sigma}{R^\sigma}_{\mu\nu\kappa}$ 是一个常用概念，它与原先 ${R^\lambda}_{\mu\nu\kappa}$ 有等价的独立分量数，因此有时也称 Riemann 曲率。同理可证：
@@ -1219,7 +1178,10 @@ Jacobi 场固然无穷多种，但我们感兴趣满足对钟的 Jacobi 场。�
     R^\lambda{}_{ \mu \sigma\nu ; \kappa}+R^\lambda{}_{ \mu \nu\kappa;\sigma}+R^\lambda{}_{ \mu \kappa\sigma;\nu}=0.
 }
 
-直观上，四维时空的 Riemann 曲率的分量有 $4^4=256$ 之多，但以上性质使其分量往往重复或为零。利用简单的组合数学可知其实际只有 20 个独立分量。由此还可证明，Riemann 曲率是唯一可由度规二阶导线性组合而成的张量。细节放入附录 \ref{appx:curvature}。故我们选择用 Riemann 曲率描述引力。
+直观上，四维时空的 Riemann 曲率的分量有 $4^4=256$ 之多，但以上性质使其分量往往重复或为零。
+将 $(R_{\mu\nu\lambda\kappa})$ 划分为整体以 $A=\mu\nu$ 和 $B=\lambda\kappa$ 为行列指标的对称矩阵 $(R_{AB})$，由于 $A$ 或 $B$ 内部有反称性，因此 $A$ 或 $B$ 有 $N=\binom{n}{2}$ 种取法，再由 $A,B$ 间的对称性得总共 $\binom{N+1}{2}$ 个独立分量．考虑完所有对称性、反称性，最后考虑 Ricci 恒等式．
+一种约束就会消去一个独立自由度，故最终 Riemann 曲率的独立分量数为 $\binom{N+1}{2}-\binom{n}{4}=\frac{n^2(n^2-1)}{12}$。$n=4$ 时即 20。
+由此还可证明，Riemann 曲率是唯一可由度规二阶导线性组合而成的张量。细节放入附录 \ref{appx:curvature}。故我们选择用 Riemann 曲率描述引力。
 可用缩并将 Riemann 曲率进行压缩从而保留有用数据。由反称性知
 $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种缩并是平凡的：$R^\sigma{}_{\mu\nu\sigma}=-R^\sigma{}_{\mu\sigma\nu}=-R_{\mu\nu}$，以及 $R^\sigma{}_{\sigma\mu\nu}=g^{\lambda\sigma}R_{\lambda\sigma\mu\nu}=g^{(\lambda\sigma)}R_{[\lambda\sigma]\mu\nu}=0$。可见初步缩并的唯一有用结果是 Ricci 曲率。可直接根据定义得
 \eq{
@@ -1227,6 +1189,11 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
 }
 亦可根据 $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$ 有 $R_{\mu\nu}=g^{\sigma\lambda}R_{\sigma\mu\lambda\nu}=g^{\sigma\lambda}R_{\lambda\nu\sigma\mu}=R_{\nu\mu}$。
 此外，Ricci 标量也是非平凡缩并，虽然这不是唯一能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 得到的非平凡标量（见附录 \ref{appx:curvature}），但确实是足够简单的一个。
+
+
+\subsection{潮汐的形式}
+
+
 
 \subsection{Einstein 方程}
 
@@ -1283,7 +1250,7 @@ T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{
 那么当然 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$。可见 $T^{00}=T_{00}=\mu$ 即能量密度，$T^{i0}=T^{0i}=\mu u^i $ 即动量密度或能流密度，而 $T^{ij}=\mu u^i u^j$ 即动流密度或应力张量。因此，$T^{\mu\nu}$ 称为物质场源的\textbf{4-动流密度}或\textbf{能动张量}(energy-momentum tensor)。
 代入 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$，则 $\nabla_\mu T^{\mu\nu}=\mu^* Z^\mu\nabla_\mu Z^\nu$。故 $\nabla_\mu T^{\mu\nu}=0$ 等价于 $Z^\mu\nabla_\mu Z^\nu =0$，说明各质元自由落体。
 
-考虑 Newton 极限。取共动系，$R_{\mu\nu}Z^\mu Z^\nu=\tilde R_{00}=\nabla^2\phi= 4\pi\mu^*$。另一方面 $\tilde Z^\mu=\delta^\mu_0,\tilde Z_\mu=-\delta_{\mu 0}$，则 $T_{\mu\nu}Z^\mu Z^\nu=\tilde T_{00}=\tilde T^{00}=\mu^*$。进而 $T:=g_{\mu\nu}T^{\mu\nu}=-T^{00}=-\mu^*$。由前文知 $R=-G=-\kappa T$，场方程与 $Z^\mu Z^\nu$ 缩并得 $4\pi\mu^*-\frac 12 (-1)\kappa \mu^*=\kappa\mu^*$，则
+考虑 Newton 极限。取固有系，$R_{\mu\nu}Z^\mu Z^\nu=\tilde R_{00}=\nabla^2\phi= 4\pi\mu^*$。另一方面 $\tilde Z^\mu=\delta^\mu_0,\tilde Z_\mu=-\delta_{\mu 0}$，则 $T_{\mu\nu}Z^\mu Z^\nu=\tilde T_{00}=\tilde T^{00}=\mu^*$。进而 $T:=g_{\mu\nu}T^{\mu\nu}=-T^{00}=-\mu^*$。由前文知 $R=-G=-\kappa T$，场方程与 $Z^\mu Z^\nu$ 缩并得 $4\pi\mu^*-\frac 12 (-1)\kappa \mu^*=\kappa\mu^*$，则
 \eq{
     R_{\mu\nu}-\frac12 g_{\mu\nu} R=8\pi T_{\mu\nu},\quad \kappa=8\pi.
 }
@@ -1393,7 +1360,7 @@ $\del_0 G^{\mu 0} =-\del_i G^{\mu i} - \Gamma^\mu_{\lambda\nu} G^{\lambda\nu} - 
 这不含度规的三阶及更高阶时间偏导，故 $G^{\mu 0}$ 至多只含 $g_{\mu\nu,0}$，即 $G^{\mu 0} =\kappa T^{\mu 0}$ 只能用以约束初值条件，从而动力学方程只剩 $G^{ij} =\kappa T^{ij}$，以确定 $g_{ij,00}$。剩下 $g_{0\mu,00}$ 由坐标条件确定即可，从而可代数或数值地求解方程。
 第二是引力波。Einstein 本人在 1918 年就关注到方程的波动性，并认为存在波动解。在以后章节中，我们会证明其存在性，并说明其传播速度为光速。
 
-\subsection{球对称黑洞}
+\subsection{球对称度规}
 
 首要任务是研究理想质点引力场。以一质点为空间坐标原点，观测结果建议\textit{质点引力场呈空间球对称}(spherical symmetry)：存在坐标系 $\{\bar t,\bar r,\theta,\phi\}$，空间部分为正交球坐标系，且变换 $\theta\mapsto -\theta,\phi\mapsto -\phi$ 保持度规形式，则对经纬度只存在 $\d\theta^2,\d\phi^2$ 项；$\Sigma_{\bar t}$ 内任意 $\bar r$ 球面的诱导度规为 $K(\bar t,\bar r)\d\Omega^2$；其余分量只与 $\bar t,\bar r$ 有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
 \[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
@@ -1439,11 +1406,11 @@ $\nu''+2\nu'/r+\nu'(\nu'-\mu')=0,
 \e^{2\mu}-1+r(\mu'-\nu')=0$。
 前两者相加得 $\mu'+\nu'=0$，代入后者有 $(r\e^{-2\mu(r)})'=1$，得
 \[\e^{-2\mu}=1-{2M}/{r},\quad \e^{2\nu}=\e^{f(\hat t)}(1-{2M}/{r}).\]
-其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即可有
+其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即有\textbf{Schwarzschild 度规}
 \eq{
     \d s^2=-\left(1-\frac{2M}{r}\right)\d t^2+\left(1-\frac{2M}{r}\right)^{-1}\d r^2+r^2\d\Omega^2,
 }
-此即\textbf{Schwarzschild 度规}。上式采用的坐标系称为\textbf{Schwarzschild 系}。显然它的确渐近平直。
+采用的坐标系称为\textbf{Schwarzschild 系}。显然它的确渐近平直。
 取 Newton 极限，则引力势 $\phi=-\frac 12(1+g_{00})=-M/r$ 还原回 Newton 引力定律，因而 Newton 极限下 $M$ 解释为场源质量。
 现列举分量如下以供查阅：
 \begin{align*}
@@ -1467,7 +1434,8 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 
 Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散（即行列式 $g$ 为零）。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
 
-假设某静态观者 $r=r_0$。其 4-速为 $U^\mu=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
+观测结果建议自由落体\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
+假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
 或者，它也可视作等 $r$ 面 $r=r_0$ 的其中一条母线，法余矢为 $n_\mu=\del_\mu r=\delta^1_\mu$。模方为 $n^\mu n_\mu=g^{11}=1-2M/r_0$，可见 $r_0>2M$ 时 $n^\mu$ 类空，$r=r_0$ 类时。但 $r=2M$ 类光。
 这说明光只能在 $r>2M$ 区域自由穿梭，一旦进入 $r<2M$ 便不能逃脱。光至多只能沿 $r=2M$ 传播。观者只可静止于 $r>2M$。
 综上 $r=2M$ 称为\textbf{静界}(static surface)、\textbf{事件视界}(event horizon)或简称\textbf{视界}。
@@ -1477,14 +1445,13 @@ Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textb
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
 Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
-
 计算可得\textbf{Kretschmann 标量} $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$。
 $r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义，在 $r=0$ 发散。
 既然曲率在 $r=2M$ 处并不奇异，那就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
 $r=0$ 的奇性就称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
 考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
-于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，观测结果建议其\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
+于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。
 E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
 由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
 以释放点为零点，$\tau$ 可表为 $t$ 或 $r$ 的单元函数。用 $r$ 表示 $\tau$ 可注意沿线有 $\d\tau =\d r/Z^1$。容易发现按 $\frac{r}{r_0}=\frac{1+\cos\eta}{2}=\cos^2 \frac{\eta}{2}$ 积分比较方便，则
@@ -1504,7 +1471,7 @@ E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\al
 考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在 Schwarzschild 系下，钟在视界处的读数 $\tau$ 近乎定格。
 物理意义是，遥远观者需要对钟，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。
 
-沿测地线汇建立共动系，从而能连续地描述粒子落入视界的过程，即消除奇性。
+沿测地线汇建立固有系，从而能连续地描述粒子落入视界的过程，即消除奇性。
 考虑测地线汇从 $t = 0 = \tau$ 释放，每一线用 $r_m$ 标记，新系为 $(\tau,r_m)$。由 $Z^\mu Z_\mu = -1$ 可知
 \[\d\tau=-Z_0(r_m)\d t-Z_1(r,r_m)\d r=\sqrt{1-\frac{2M}{r_m}}\d t+\frac{\sqrt{2M/{r}-2M/{r_m}}}{1-{2M}/{r}}\d r.\]
 $r = r_m\cos^2\frac{\eta}{2},\tau = -\frac{r_m^{3/2}}{\sqrt{8M}} (\eta+\sin\eta)$ 确定了变换 $r(\tau,r_m)$
@@ -1527,7 +1494,7 @@ $r_m$ 称\textbf{Novikov 径向坐标}。可以看到的确 $\tilde g_{00}=-1,\t
     \d s^2 &= -\d\tau^2+\left(\sqrt{\frac{2M}{r}}\d\tau+\d r\right)^2+r^2\d\Omega^2\\
     &= -\d\tau^2+\frac{2M}{r}\d R^2+r^2\d\Omega^2,\quad r=(2M)^{1/3}\left(\frac 32(R-\tau)\right)^{2/3}.
 \end{align}
-前者为\textbf{Gullstrand–Painlevé 系}，$r=2M$ 时分量收敛且 $g\ne 0$ 表明已消除奇性，但还不是测地系； 
+前者为\textbf{Gullstrand–Painlevé 系}，$r=2M$ 时分量收敛且 $g\ne 0$ 表明已消除奇性，但还不是测地固有系； 
 后者为\textbf{Lemaître 系}。可以看到 $\tau=R$ 对应 $r=0$。
 
 
@@ -1596,7 +1563,7 @@ $\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
     &\simeq \int  (g_{\mu\nu} \delta g^{\mu\nu}\nabla^\lambda \nabla_\lambda \phi - \delta g^{\mu\lambda} \nabla_\mu\nabla_\lambda \phi)  D^4x\\
     &=\int  (g_{\mu\nu} \square_g \phi - \nabla_\mu\nabla_\nu \phi) \delta g^{\mu\nu} D^4x.
 \end{align*}
-故引入物质场后的结果为
+故引入物质场后的结果为 %% 似乎有问题
 \eq{
     \phi G_{\mu \nu}+\Lambda g_{\mu\nu}=8 \pi T_{\mu \nu}+\frac{\omega}{\phi}\left(\partial_\mu \phi \partial_\nu \phi-\frac{1}{2} g_{\mu \nu} \partial_\lambda \phi \partial^\lambda \phi\right)+\nabla_\mu \del_\nu \phi-g_{\mu \nu} \square_g \phi,
 }
