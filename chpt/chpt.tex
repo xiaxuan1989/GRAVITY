@@ -1,11 +1,193 @@
 
-
-用 $B_{\mu\nu}$ 来分析潮汐的具体形式。$A^\mu=0$ 使 $B_{\mu\nu}=Z_{\mu;\nu}$。对其求沿线协变导数：
+用 $B_{\mu\nu}$ 来分析潮汐的具体形式。$A^\mu=0$ 使 $B_{\mu\nu}=\nabla_\nu Z_{\mu}$。对其求沿线协变导数并注意 $\nabla_{\nu}\nabla_{\kappa} \omega_\mu - \nabla_{\kappa}\nabla_{\nu} \omega_\mu = - R_{\lambda\mu\nu\kappa} \omega^\lambda$：
 \eq{
-    Z^\lambda \nabla_\lambda (\nabla_\nu Z_\mu) = R^\lambda{}_{\mu\nu\kappa}Z^\mu = \nabla_{\nu}\nabla_{\kappa}Z^\lambda - \nabla_{\kappa}\nabla_{\nu}Z^\lambda
+    Z^\kappa \nabla_\kappa \nabla_\nu Z_\mu = Z^\kappa \nabla_\nu \nabla_\kappa Z_\mu + R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa = - B^\kappa{}_\nu B_{\mu\kappa} + R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa.
+}
+缩并得到\textbf{Raychaudhuri 方程}
+\eq{
+    Z^\kappa \nabla_\kappa \theta = g^{\mu\nu} Z^\kappa \nabla_\kappa \nabla_\nu Z_\mu = -\frac{1}{3}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu} - R_{\mu\nu} Z^\mu Z^\nu.
+}
+再计算扭转 $\sigma_{\mu\nu} \equiv B_{(\mu\nu)}-\frac{1}{3}\theta\,h_{\mu\nu}$ 的变化
+
+
+% 分解、基本恒等式与 Raychaudhuri 后续：剪切张量的演化方程
+
+
+% 投影与分解
+\eq{
+B_{\mu\nu} := \nabla_\nu Z_\mu
+= \tfrac13 \theta\, h_{\mu\nu} + \sigma_{\mu\nu} + \omega_{\mu\nu},\qquad
+\theta := B^\mu{}_\mu,\quad
+\sigma_{\mu\nu}=\sigma_{\nu\mu},\ \ \sigma^\mu{}_\mu=0,\quad
+\omega_{\mu\nu}=-\omega_{\nu\mu}.
 }
 
-Raychaudhuri 方程
+% B 的沿流线导数（已由上文给出）
+\eq{
+\dot B_{\mu\nu} := Z^\kappa \nabla_\kappa B_{\mu\nu}
+= - B_\mu{}^{\lambda} B_{\lambda\nu} - R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa .
+}
+
+% 取对称无迹投影即可得到剪切的演化
+\eq{
+\dot\sigma_{\mu\nu}
+:= \left(\dot B_{\alpha\beta}\right)_{\langle\mu\nu\rangle}
+= -\left(B_\mu{}^{\lambda} B_{\lambda\nu}\right)_{\langle\mu\nu\rangle}
+      -\left(R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa\right)_{\langle\mu\nu\rangle}.
+}
+
+% 先处理二次项 (代入 B 的分解并在 h-子空间做代数化简)
+\eq{
+\left(B_\mu{}^{\lambda} B_{\lambda\nu}\right)_{\langle\mu\nu\rangle}
+= \tfrac{2}{3}\,\theta\,\sigma_{\mu\nu}
+  + \sigma_\mu{}^{\lambda}\sigma_{\lambda\nu}
+  + \omega_\mu{}^{\lambda}\omega_{\lambda\nu}
+  - \tfrac13 h_{\mu\nu}\!\left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+                              - \omega_{\alpha\beta}\omega^{\alpha\beta}\right).
+}
+
+% 再处理曲率项：分解为 Weyl 的电部分与 Ricci 的 STF 投影
+\eq{
+\left(R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa\right)_{\langle\mu\nu\rangle}
+= E_{\mu\nu}
++ \tfrac12\!\left(h_\mu{}^{\alpha} h_\nu{}^{\beta}
+      - \tfrac13 h_{\mu\nu} h^{\alpha\beta}\right) R_{\alpha\beta},
+\qquad
+E_{\mu\nu}:= C_{\mu\alpha\nu\beta} Z^\alpha Z^\beta .
+}
+
+% 将以上两式代回得到剪切演化的闭式方程
+\eq{
+\boxed{
+\begin{aligned}
+Z^\kappa \nabla_\kappa \sigma_{\mu\nu}
+=&\ - \tfrac{2}{3}\,\theta\,\sigma_{\mu\nu}
+   - \sigma_\mu{}^{\lambda}\sigma_{\lambda\nu}
+   - \omega_\mu{}^{\lambda}\omega_{\lambda\nu}
+\\[2pt]
+&\ + \tfrac13 h_{\mu\nu}\!\left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+                               - \omega_{\alpha\beta}\omega^{\alpha\beta}\right)
+   - E_{\mu\nu}
+   - \tfrac12\!\left(h_\mu{}^{\alpha} h_\nu{}^{\beta}
+      - \tfrac13 h_{\mu\nu} h^{\alpha\beta}\right) R_{\alpha\beta}.
+\end{aligned}
+}
+}
+
+
+
+
+\newcommand{\ang}[1]{\left\langle #1 \right\rangle} % 对称无迹部分
+
+% 定义“沿流正交、对称、无迹投影”（尖括号）：
+\begin{equation}
+X_{\ang{\mu\nu}} \equiv
+\left(
+h_{(\mu}{}^{\alpha} h_{\nu)}{}^{\beta}
+-\tfrac{1}{3} h_{\mu\nu} h^{\alpha\beta}
+\right) X_{\alpha\beta},
+\qquad
+\dot{\sigma}_{\ang{\mu\nu}} \equiv
+\left(
+h_{(\mu}{}^{\alpha} h_{\nu)}{}^{\beta}
+-\tfrac{1}{3} h_{\mu\nu} h^{\alpha\beta}
+\right) Z^\kappa \nabla_\kappa \sigma_{\alpha\beta}.
+\end{equation}
+
+% 取(\ref{eq:dotB-master})的 ST（对称—无迹—正交）部分得到剪切的演化：
+% 先给出 Weyl 张量的电部以分离曲率的无迹正交部分
+\begin{equation}
+E_{\mu\nu} \equiv C_{\mu\alpha\nu\beta} Z^\alpha Z^\beta,
+\qquad
+\mathcal{R}_{\ang{\mu\nu}} \equiv
+\left(
+h_{(\mu}{}^{\alpha} h_{\nu)}{}^{\beta}
+-\tfrac{1}{3} h_{\mu\nu} h^{\alpha\beta}
+\right) R_{\alpha\beta},
+\end{equation}
+其中 $C_{\mu\alpha\nu\beta}$ 为 Weyl 张量，$\mathcal{R}_{\ang{\mu\nu}}$ 是 ${R}_{\alpha\beta}$ 的“横向对称无迹”部分。
+
+% 经过代数整理，可得剪切（\sigma_{\mu\nu}）的 Raychaudhuri 型演化方程：
+\begin{align}
+\dot{\sigma}_{\ang{\mu\nu}}
+&= -\tfrac{2}{3}\,\theta\,\sigma_{\mu\nu}
+   - \sigma_{\alpha\ang{\mu}\,}\sigma_{\nu\ang{}}{}^{\alpha}
+   - \omega_{\alpha\ang{\mu}\,}\omega_{\nu\ang{}}{}^{\alpha}
+   + \tfrac{1}{3} h_{\mu\nu}\left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+   - \omega_{\alpha\beta}\omega^{\alpha\beta}\right)
+\nonumber\\
+&\quad
++ E_{\mu\nu}
+- \tfrac{1}{2}\,\mathcal{R}_{\ang{\mu\nu}} .
+\label{eq:shear-evolution-ricci}
+\end{align}
+
+% 若使用 Einstein 方程将 Ricci 项写成物质源的各向异性应力部分，
+% 取能量动量张量的 1+3 分解
+% T_{\mu\nu}=\rho Z_\mu Z_\nu+p\,h_{\mu\nu}+2q_{(\mu}Z_{\nu)}+\pi_{\mu\nu},
+% 其中 \pi_{\mu\nu} 为正交、对称、无迹张量，则
+\begin{equation}
+\mathcal{R}_{\ang{\mu\nu}}
+= 4\pi G\left( \rho + 3p \right)_{\ang{\mu\nu}}
++4\pi G\left(-2\,\pi_{\mu\nu}\right)
+\ \Longrightarrow\
+-\tfrac{1}{2}\,\mathcal{R}_{\ang{\mu\nu}}
+= +2\pi G\,\pi_{\mu\nu} \quad (\text{无热流 }q_\mu=0 \text{ 且取适当单位}).
+\end{equation}
+因此在物质源表示下，剪切演化式常写为
+\begin{equation}
+\dot{\sigma}_{\ang{\mu\nu}}
++ \tfrac{2}{3}\theta\,\sigma_{\mu\nu}
++ \sigma_{\alpha\ang{\mu}\,}\sigma_{\nu\ang{}}{}^{\alpha}
++ \omega_{\alpha\ang{\mu}\,}\omega_{\nu\ang{}}{}^{\alpha}
+- \tfrac{1}{3} h_{\mu\nu}\left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+- \omega_{\alpha\beta}\omega^{\alpha\beta}\right)
++ E_{\mu\nu}
+- 4\pi G\,\pi_{\mu\nu}
+=0 .
+\label{eq:shear-evolution-matter}
+\end{equation}
+
+% 两个常见极限：
+% 1) 真空（或无各向异性应力）且测地、无扭转（\omega_{\mu\nu}=0）的丛：
+\begin{align}
+\text{(真空且 }\omega_{\mu\nu}=0\text{)}:\qquad
+\dot{\sigma}_{\ang{\mu\nu}}
++ \tfrac{2}{3}\theta\,\sigma_{\mu\nu}
++ \sigma_{\alpha\ang{\mu}\,}\sigma_{\nu\ang{}}{}^{\alpha}
++ E_{\mu\nu}=0 .
+\end{align}
+
+% 2) 共形平坦（E_{\mu\nu}=0）且各向同性流体（\pi_{\mu\nu}=0）：
+\begin{align}
+\text{(共形平坦且 }\pi_{\mu\nu}=0\text{)}:\qquad
+\dot{\sigma}_{\ang{\mu\nu}}
+= - \tfrac{2}{3}\theta\,\sigma_{\mu\nu}
+  - \sigma_{\alpha\ang{\mu}\,}\sigma_{\nu\ang{}}{}^{\alpha}
+  - \omega_{\alpha\ang{\mu}\,}\omega_{\nu\ang{}}{}^{\alpha}
+  + \tfrac{1}{3} h_{\mu\nu}\!\left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+  - \omega_{\alpha\beta}\omega^{\alpha\beta}\right).
+\end{align}
+
+% 为完整性，给出挠率（扭转）的演化式（测地丛）：
+\begin{equation}
+\dot{\omega}_{\mu\nu}
+\equiv h_{\mu}{}^{\alpha} h_{\nu}{}^{\beta} Z^\kappa \nabla_\kappa \omega_{\alpha\beta}
+= -\tfrac{2}{3}\theta\,\omega_{\mu\nu}
+- 2\,\sigma_{\alpha[\mu}\,\omega_{\nu]}{}^{\alpha} .
+\label{eq:twist-evolution}
+\end{equation}
+
+% 上式 (\ref{eq:shear-evolution-ricci})–(\ref{eq:twist-evolution}) 与文中给出的标量 Raychaudhuri 方程一道，
+% 给出了测地丛形变（\theta,\sigma_{\mu\nu},\omega_{\mu\nu}）的完整动力学。
+
+
+
+\eq{
+B_{\mu\nu}=\frac{1}{3}\theta h_{\mu\nu}+\sigma_{\mu\nu}+\omega_{\mu\nu},\quad u^\mu=\frac{1}{3}\theta\eta^\mu+\sigma^\mu{}_\nu\eta^\nu+\omega^\mu{}_\nu\eta^\nu.
+}
+
+
 
 Weyl 张量
 
