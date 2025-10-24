@@ -696,7 +696,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
  F_{[\mu\nu,\lambda]}=2  A_{[[\nu,\mu],\lambda]}=2  A_{[\nu,(\mu,\lambda)]}=0,
 }
 这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\del_t \bm B$。
-%% 也可从 $Accelerate^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
+%% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
 
 为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。选择用 $F_{\mu\nu}$ 构造，因为 $A^\mu$ 的运动方程应至少二阶，且由 $F_{\mu\nu}=2\del_{[\mu}A_{\nu]} + 2\del_{[\mu} \del_{\nu]}f=\del_{\mu} (A_{\nu}+\del_\nu f)-\del_{\nu} (A_{\mu}+\del_\mu f)$ 可知 $F_{\mu\nu}$ 保持 U(1) 对称性。
 最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。考虑
@@ -1041,8 +1041,9 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
 与 $Z^\mu$ 正交的矢量即此系的\textbf{空间矢量}(spatial vector)，如偏离矢量场的投影 $\eta^\lambda=h^\lambda{}_\nu S^\nu=S^\lambda+ Z_\nu S^\nu Z^\lambda$。它可指代其邻居，故时常直接将 $\eta^\lambda$ 称为邻居。
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\textwidth]{fig/chpt01/hand.png}
-    \caption{同时面就是全空间，空间矢量好比一支笔}
+    \includegraphics[height=0.3\textwidth]{fig/chpt01/hand.png}\quad
+    \includegraphics[height=0.3\textwidth]{fig/chpt01/gyroscope.pdf}
+    \caption{空间矢量好比一支笔，费移的空间矢量类似于陀螺仪自转轴}
 \end{figure}
 用 $\eta^\mu$ 沿线导数表征邻居的相对速度，还要保证该速度也是空间矢量，故只需继续投影 $h^\mu{}_\sigma Z^\nu\nabla_\nu\eta^\sigma$：
 \begin{align}
@@ -1050,7 +1051,6 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
     &= Z^\sigma S_\sigma Z^\nu \nabla_\nu Z^\mu + S^\nu\nabla_\nu Z^\mu + \frac 12 Z^\mu S^\nu\nabla_\nu(Z_\sigma Z^\sigma) = \eta^\nu\nabla_\nu Z^\mu,
 \end{align}
 其中用到 $Z^\nu\nabla_\nu S^\mu=S^\nu\nabla_\nu Z^\mu$。将此称为\textbf{相对 3-速}。同理\textbf{相对 3-加速}为 $a^\mu:=\frac{D_F^2}{\d\tau^2}\eta^\mu$。
-费移的空间矢量类似于陀螺仪(gyroscope)自转轴。
 
 相对 3-速场的变化显然代表着整个线汇的形变。为此我们尝试将其拆分以明晰物理意义。
 观察 $u^\mu=(\nabla_\nu Z^\mu)\eta^\nu$，二者都是空间矢量，故可考虑将 $\nabla_\nu Z^\mu$ 投影为空间张量：
@@ -1145,11 +1145,11 @@ $R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐程度，是 $g_{\mu\nu,\lambda\kappa}$
 \eq{
     R_{\mu\nu}=\Gamma^\sigma_{\mu\nu,\sigma}-(\ln\sqrt{-g})_{,\mu\nu}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa_{\mu\nu}-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}.
 }
-可有进一步的缩并，即 $R_{\mu\nu}$ 的迹
+进一步最简单的缩并是 $R_{\mu\nu}$ 的迹
 \eq{
     R:=R^\mu{}_\mu=g^{\mu\nu}R_{\mu\nu}.
 }
-此即一个足够简单的 $g_{\mu\nu,\lambda\kappa}$ 级的标量，称为\textbf{Ricci 标量}。
+此即 $g_{\mu\nu,\lambda\kappa}$ 级的标量，称为\textbf{Ricci 标量}。
 
 现可给出实验操作意义的局域惯性系的定量标准。数学上固然要求局域惯性系严格建立在测地线上：假若克氏符在邻域 $U$ 内等于零，则借助邻域按 \eqref{eq:Rie-cur} 式得在线上 $R^\lambda{}_{\mu\nu\kappa}=0$，矛盾。只要邻域足够大，$R^\lambda{}_{\mu\nu\kappa}$ 便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于 $1/\sqrt{R}$，同时也远小于其测量精度时，即使时空范围未严格至测地线，但 $R^\lambda{}_{\mu\nu\kappa}$ 也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量潮汐，见 \ref{sec:eq-prin} 节。
 
@@ -1188,16 +1188,53 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
     R_{\mu\nu}=R_{(\mu\nu)}.
 }
 亦可根据 $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$ 有 $R_{\mu\nu}=g^{\sigma\lambda}R_{\sigma\mu\lambda\nu}=g^{\sigma\lambda}R_{\lambda\nu\sigma\mu}=R_{\nu\mu}$。
-此外，Ricci 标量也是非平凡缩并，虽然这不是唯一能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 得到的非平凡标量（见附录 \ref{appx:curvature}），但确实是足够简单的一个。
+
+用 $B_{\mu\nu}$ 来分析潮汐的具体形式。$A^\mu=0$ 使 $B_{\mu\nu}=\nabla_\nu Z_{\mu}$。对其求沿线协变导数并注意 $\nabla_{\nu}\nabla_{\kappa} \omega_\mu - \nabla_{\kappa}\nabla_{\nu} \omega_\mu = - R_{\lambda\mu\nu\kappa} \omega^\lambda$：
+\[Z^\kappa \nabla_\kappa B_{\mu\nu} = Z^\kappa \nabla_\nu B_{\mu\kappa} + R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa = - B^\kappa{}_\nu B_{\mu\kappa} + R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa.\]
+首先计算 $B_\mu{}^{\lambda} B_{\lambda\nu}
+=\frac19 \theta^2 h_{\mu\nu}
++\frac23 \theta (\sigma_{\mu\nu}+\omega_{\mu\nu})
++\sigma_\mu{}^{\lambda}\sigma_{\lambda\nu}
++\omega_\mu{}^{\lambda}\omega_{\lambda\nu}
++2\sigma_{[\mu|}{}^{\lambda}\omega_{\lambda|\nu]}$。
+于是缩并得到\textbf{Raychaudhuri 方程}
+\eq{
+    Z^\kappa \nabla_\kappa \theta = g^{\mu\nu} Z^\kappa \nabla_\kappa B_{\mu\nu} = -\frac{1}{3}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu} - R_{\mu\nu} Z^\mu Z^\nu.
+}
+再考虑 $\sigma_{\mu\nu} = B_{(\mu\nu)}-\frac{1}{3}\theta\,h_{\mu\nu} = B_{\langle\mu\nu\rangle}$，其中 $X_{\langle\mu\nu\rangle} :=
+\left(
+h_{(\mu}{}^{\alpha} h_{\nu)}{}^{\beta}
+-\frac{1}{3} h_{\mu\nu} h^{\alpha\beta}
+\right) X_{\alpha\beta}$ 称为对称无迹投影。目标是 $Z^\kappa \nabla_\kappa \sigma_{\mu\nu}=-B_{\langle\mu|}{}^{\lambda} B_{\lambda|\nu\rangle}+R_{\lambda\langle\mu\nu\rangle\kappa} Z^\lambda Z^\kappa = Z^\kappa \nabla_\kappa B_{(\mu\nu)}-\frac{h_{\mu\nu}}{3}Z^\kappa \nabla_\kappa\theta$，任选一种展开。
+选前者有 $B_{\langle\mu|}{}^{\lambda} B_{\lambda|\nu\rangle} = \frac{2}{3}\theta\sigma_{\mu\nu} + \sigma_{\langle\mu|}{}^{\lambda} \sigma_{\lambda|\nu\rangle} + \omega_{\langle\mu|}{}^{\lambda} \omega_{\lambda|\nu\rangle}$ 和 $R_{\lambda\langle\mu\nu\rangle\kappa} Z^\lambda Z^\kappa = R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa + \frac13h_{\mu\nu}R_{\alpha\beta}Z^\alpha Z^\beta$。这里由 $R_{\lambda\mu\nu\kappa}=R_{[\lambda\mu][\nu\kappa]}$ 知 $R_{\lambda\mu\nu\kappa} Z^\lambda Z^\kappa$ 是空间张量。
+同理有
+\eq{
+ Z^\kappa \nabla_\kappa \omega_{\alpha\beta}
+= -\frac{2}{3}\theta \omega_{\mu\nu}
+- 2 \sigma_{\alpha[\nu} \omega_{\mu]}{}^{\alpha} .
+}
 
 
-\subsection{潮汐的形式}
-
-
+尝试对 $R_{\lambda\mu\nu\kappa}$ 迹分解。我们期望其无迹部分保持相同的指标对称性，考虑 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - X(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + Y R g_{\alpha[\nu} g_{\beta]\mu}$。要求 $g^{\alpha\nu}C_{\alpha\mu\nu\beta} = R_{\mu\beta} - X((n-2)R_{\mu\beta}+g_{\mu\beta} R) + Y(n-1)R_{\mu\beta} = 0$ 可确定待定系数，有
+\eq{
+    C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
+}
+这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$，则可以计算得 $R_{\lambda\langle\mu\nu\rangle\kappa} Z^\lambda Z^\kappa = C_{\alpha\mu\nu\beta} Z^\alpha Z^\beta + \frac12 R_{\langle \mu\nu \rangle}$，从而
+\begin{align}
+    Z^\kappa \nabla_\kappa \sigma_{\mu\nu} &= -\frac23 \theta\sigma_{\mu\nu}
+  - \sigma_\mu{}^{\lambda}\sigma_{\lambda\nu} - \omega_\mu{}^{\lambda}\omega_{\lambda\nu}
+  + \frac13 h_{\mu\nu} \left(\sigma_{\alpha\beta}\sigma^{\alpha\beta}
+  - \omega_{\alpha\beta}\omega^{\alpha\beta}\right)\nonumber \\
+  & + C_{\alpha\mu\nu\beta} Z^\alpha Z^\beta + \frac12 \left(
+h_{\mu\alpha} h_{\nu\beta}
+-\frac{1}{3} h_{\mu\nu} h_{\alpha\beta}
+\right)R^{\alpha\beta}.
+\end{align}
+于是 Weyl 张量直接影响剪切。能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如\textbf{Kretschmann 标量} $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda}$ 或 $C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
 
 \subsection{Einstein 方程}
 
-最小耦合指出可取 $\mathcal L_G=R$。下面研究变分。为简便运算，选择对 $g^{\mu\nu}$ 而非 $g_{\mu\nu}$变分，则 $\var(R\sqrt{-g})$ 即涉及 $g^{\mu\nu},R_{\mu\nu},\sqrt{-g}$ 三个部分。
+最小耦合指出可取 $\mathcal L_G=R$。下面计算变分。为简便运算，选择对 $g^{\mu\nu}$ 而非 $g_{\mu\nu}$变分，则 $\var(R\sqrt{-g})$ 即涉及 $g^{\mu\nu},R_{\mu\nu},\sqrt{-g}$ 三个部分。
 首先是 $\delta\sqrt{-g}$。注意 $\delta^{\mu}_{\nu}=g^{\mu\lambda}g_{\lambda\nu}$ 可得 $0=g^{\mu\lambda}\var g_{\lambda\nu}+g_{\lambda\nu}\var g^{\mu\lambda}$，故
 \eq{
 \var g=gg^{\mu\nu}\var g_{\mu\nu}=-g g_{\mu\nu}\var g^{\mu\nu},\quad \delta \sqrt{-g}=-\frac12\sqrt{-g}g_{\mu\nu}\delta g^{\mu\nu}.
@@ -1445,7 +1482,7 @@ Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textb
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
 Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
-计算可得\textbf{Kretschmann 标量} $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$。
+计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$。
 $r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义，在 $r=0$ 发散。
 既然曲率在 $r=2M$ 处并不奇异，那就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
 $r=0$ 的奇性就称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。

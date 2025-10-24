@@ -123,6 +123,59 @@ Eddington 在 1919 年的一次日食观测中摄下了光线被引力“弯曲�
 
 \section{时空延拓}
 
+\subsection{Rindler 系}
+
+相对论限制告诉我们，相对于某外部观者的 3-加速不可能恒定。相对论性匀加速指 4-加速费移，因为 4-加速等于共动系 3-加速，故在共动观者看来，即方向和模长同时恒定的 3-加速，故的确是一种匀加速。
+4-加速费移说明 $U^\mu,A^\mu$ 所在平面固定，可退化至 2 维来研究。
+取惯性系 $\{T,X\}$，设 4-加速模长恒为 $A$，4-速模长恒为 $-1$ 且指向未来，则
+\[-\left(\dv{U^0}{\tau}\right)^2+\left(\dv{U^1}{\tau}\right)^2=A^2,\quad U^0=\sqrt{(U^1)^2+1}.\]
+设速度初态 $U^1=0$，则 $U^1=\sinh A\tau,U^0=\cosh A\tau$。设位置初态 $T=0,X=x$，则 $T=\frac 1A\sinh A\tau,X=x+\frac 1A\cosh A\tau-\frac 1A$。
+可见轨迹为双曲线。
+不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
+由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
+\eq{T=x\sinh At,\quad X=x\cosh At\implies \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
+坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering 按 $A=1/x$ 分布]{
+    \begin{tikzpicture}[scale=1.2]
+    \draw[color=gray] (0,0)--(2,2);
+    \draw (0,0)--(4,0) node[right]{$\scriptstyle X$};
+    \draw[dashed] (0,0)--(-0.3,0);
+    \draw[dashed] (0,0)--(0,-0.3);
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--({1.3*sinh(0.42)*2.5},{1.3*sinh(0.42)}) node[midway,sloped,above]{$\scriptstyle x$};
+    \draw (0,0)--(1.5*2.5,1.5) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
+    \draw[domain=0:0.85,thick,samples=100] plot({2*cosh(\x)},{2*sinh(\x)});
+    \draw[domain=0:0.6,thick,samples=100] plot({3*cosh(\x)},{3*sinh(\x)});
+    \foreach \n in {1,2,3}{
+    \fill (\n,0) circle(0.03);
+    \fill ({\n*cosh(0.42)},{\n*sinh(0.42)}) circle(0.03);
+    \draw[dashed] (\n*0.915,0)--(0.8+\n*0.915,0.8*2.5) node[above]{$\scriptstyle\hat{X}=\n$};}
+    \end{tikzpicture}
+    }
+    \quad
+    \subfloat[\centering 按 $A$ 相等分布]{\begin{tikzpicture}[scale=1.2]
+    \draw[color=gray] (0,0)--(2,2);
+    \draw[color=gray] (1,0)--(3,2);
+    \draw (0,0)--(3,0) node[right]{$\scriptstyle X$};
+    \draw[dashed] (0,0)--(-0.3,0);
+    \draw[dashed] (0,0)--(0,-0.3);
+    \draw (0,0)--(0,2) node[above]{$\scriptstyle T$};
+    \draw (0,0)--(2.5,1) node[right]{$\scriptstyle\hat{X}$};
+    \draw (0,0)--(0.8,0.8*2.5) node[above]{$\scriptstyle\hat{T}$};
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)},{sinh(\x)});
+    \draw[domain=0:1.4,thick,samples=100] plot({cosh(\x)+1},{sinh(\x)});
+    \fill (1,0) circle(0.03);
+    \fill (2,0) circle(0.03);
+    \end{tikzpicture}
+    }
+    \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
+\end{figure}
+
 \subsection{Eddington 系}
 
 用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
