@@ -66,6 +66,12 @@
 F_p=Gm\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
 }
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=.4\textwidth]{fig/chpt02/mercury.pdf}
+    \caption{\small 其余行星影响水星轨道}
+\end{figure}
+
 接下来只以初始位置 $(r_0,0)$ 为极轴方向建立极坐标，以研究水星运动。有心力的形式为
 $m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导致角动量守恒，记 $mr^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得 Binet 式
 \eq{
@@ -80,30 +86,44 @@ $m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式�
 \[\eval{\dv{J}{x}}_{0}=\eval{\dv{\mu}}_{\mu_0}\left(- \frac{mF}{L^2\mu^2} \right)= \frac{2m}{L^2\mu_0^3}F_0 - \frac{m}{L^2\mu_0^2} \eval{\dv{F}{\mu}}_{\mu_0} = -2 - \frac{r_0}{F_0} F'(r_0).\]
 这里撇号表示对 $r$ 求导。则稳定轨道要求有心力的形式满足
 \eq{
-1-\eval{\dv{J}{x}}_{0}=3+\frac{r_0}{F_0} F'(r_0)>0.
+1-\eval{\dv{J}{x}}_{0}=3+\frac{r_0}{F_0} F'(r_0)>0,\quad r_0F_p'(r_0)=Gm\pi r_0 \sum_{i} \lambda_i\frac{R_i^2+r_0^2}{(R_i^2-r_0^2)^2}.
 }
 在波动方程中，这个括号的含义是频率平方，注意其中是对 $\theta$ 求导而非 $t$，故应是
-\[
-\frac{2\pi}{\Delta\theta}=\sqrt{3+\frac{r_0}{F_0} F'(r_0)}.
-\]
-其中 $\Delta\theta$ 的含义就是一次微扰振荡周期
+\eq{
+\frac{2\pi}{\Delta\theta}=\sqrt{3+\frac{r_0}{F_0} F'(r_0)}\implies\Delta \theta=2\pi\sqrt{\frac{F_{\odot}(r_0)+F_p(r_0)}{F_\odot(r_0)+3F_p(r_0)+r_0F_p'(r_0)}}.
+}
+其中代入了 $F=F_{\odot}+F_p$ 于 $\Delta\theta$ 则\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。}。$\Delta\theta$ 的含义就是一次微扰振荡周期
 \[
 T_r=\frac{\Delta\theta}{\dot\theta}=\frac{\Delta\theta mr_0^2}{L}=\Delta\theta\sqrt{-\frac{F_0}{mr_0}}
 \]
-所扫过的角度。可见只有 $F_\odot$ 时使 $\Delta\theta=2\pi$，相当于又回到原位而无进动。而一旦错开，一次周期内就出现了进动。代入数据知
-\eq{
-r_0F_p'(r_0)=Gm\pi r_0 \sum_{i=2}^9 \lambda_i\frac{R_i^2+r_0^2}{(R_i^2-r_0^2)^2}\approx 1.088 \times 10^{16}\,\mathrm{N},
+所扫过的角度。可见只有 $F_\odot$ 时使 $\Delta\theta=2\pi$，相当于又回到原位而无进动。而一旦错开，一次周期内就出现了进动。进动率为 $\omega=(\Delta\theta-2\pi)/T$，
+式中 $T$ 为水星公转周期，一般取恒星年(sidereal year)\footnote{某行星的恒星年是太阳在黄道上的视位置相对遥远恒星变化一周所经历时间，也相当于该行星相对于遥远恒星公转一周所经历的时间。千禧年时地球恒星年的平均长度为 365.25636 天。回归年(tropical year)是太阳的平黄经变化一周所经历时间。由于太阳视运动非均匀，选取不同的起点会得到不同的长度。若选取春分点作为基准，太阳从春分点出发运行一周再次回到春分点的时间为春分点年。千禧年时回归年的平均长度为 365.24219 天。恒星年比回归年要长 20 分 24.5 秒，这个差异正是地球造成的岁差。}，或甚至是 $T_r$，再不济用 Kepler 第二定律计算亦可。
+
+\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccccc}
+\toprule
+\textbf{行星编号} & \textbf{行星名称} & \textbf{质量} & \textbf{轨道半径} & $\boldsymbol{\lambda}$ &
+$\boldsymbol{\lambda r_0/(R^2 - r_0^2)}$ &
+$\boldsymbol{\lambda r_0 (R^2 + r_0^2)/(R^2 - r_0^2)^2}$ \\
+ &  & ($10^{24}$ kg) & ($10^{11}$ m) & ($10^{12}$ kg m$^{-1}$) & (kg m$^{-2}$) & (kg m$^{-2}$) \\
+\midrule
+1 & 水星 & 0.3332 & 0.5791 & $\cdots$ & $\cdots$ & $\cdots$ \\
+2 & 金星 & 4.870  & 1.082  & 7.163  & 49.65 & 89.51 \\
+3 & 地球 & 5.976  & 1.496  & 6.358  & 19.35 & 26.17 \\
+4 & 火星 & 0.6421 & 2.279  & 0.4484 & 0.5345 & 0.6083 \\
+5 & 木星 & 1899   & 7.783  & 388.3  & 37.33 & 37.75 \\
+6 & 土星 & 568.6  & 14.27  & 63.42  & 1.807 & 1.813 \\
+\bottomrule
+\end{tabular}
 }
-而 $F_p(r_0)\approx 7.587 \times 10^{15}\,\mathrm{N}, F_\odot(r_0)\approx -1.318 \times 10^{22}\,\mathrm{N}$。代入 $F=F_{\odot}+F_p$ 于 $\Delta\theta$ 则\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。}
-\eq{
-\Delta \theta=2\pi\sqrt{\frac{F_{\odot}(r_0)+F_p(r_0)}{F_\odot(r_0)+3F_p(r_0)+r_0F_p'(r_0)}}\approx 2\pi(1+9.884\times 10^{-7}).
-}
-进动率为
-\eq{
-\omega=\frac{\Delta\theta-2\pi}{T},
-}
-式中 $T$ 为水星公转周期，一般取恒星年(sidereal year)\footnote{某行星的恒星年是太阳在黄道上的视位置相对遥远恒星变化一周所经历时间，也相当于该行星相对于遥远恒星公转一周所经历的时间。千禧年时地球恒星年的平均长度为 365.25636 天。回归年(tropical year)是太阳的平黄经变化一周所经历时间。由于太阳视运动非均匀，选取不同的起点会得到不同的长度。若选取春分点作为基准，太阳从春分点出发运行一周再次回到春分点的时间为春分点年。千禧年时回归年的平均长度为 365.24219 天。恒星年比回归年要长 20 分 24.5 秒，这个差异正是地球造成的岁差。}，或甚至是 $T_r$，再不济用 Kepler 第二定律计算亦可。代入数据知
-\[\omega\approx\frac{\pi(1.977\times 10^{-6})}{87.969\,\text{天}}\approx 532''/\text{世纪},\]
+\caption{行星数据与计算结果}
+\end{table}
+
+代入数据知 $r_0F_p'(r_0)\approx 1.088 \times 10^{16}\,\mathrm{N}$。
+而 $F_p(r_0)\approx 7.587 \times 10^{15}\,\mathrm{N}, F_\odot(r_0)\approx -1.318 \times 10^{22}\,\mathrm{N}$。
+$\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\omega\approx{\pi(1.977\times 10^{-6})}/{87.969\,\text{天}}\approx 532''/\text{世纪}$，
 仍与观测值 $575''$/世纪相差 $43''$/世纪。
 
 再考虑广义相对论效应。
