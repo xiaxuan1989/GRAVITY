@@ -59,28 +59,28 @@
 % 数学字体
 \usepackage{mathrsfs}               % 花体
 \usepackage{anyfontsize}            % 允许任意字体大小
-% 保存原字体设置
+% 临时保存字体设置
 \let\oldencodingdefault\encodingdefault
-\let\oldrmdefault\rmdefault
-\let\oldsfdefault\sfdefault
-\let\oldttdefault\ttdefault
+\let\oldrmdefault\rmdefault         % 罗马衬线
+\let\oldsfdefault\sfdefault         % 无衬线
+\let\oldttdefault\ttdefault         % 等宽
 % 切换到 T1 编码并指定 newtx 的正文字体系列
-\def\encodingdefault{T1}
+\def\encodingdefault{T1}            % 默认用 T1 字符编码（西欧语言常用）。
 \renewcommand{\rmdefault}{ntxtlf}
 \renewcommand{\sfdefault}{qhv}
 \renewcommand{\ttdefault}{ntxtt}
-\usepackage{newtxmath}              % newtx
-% 恢复原字体设置
+\usepackage{newtxmath}
+% 复原字体设置
 \let\encodingdefault\oldencodingdefault
 \let\rmdefault\oldrmdefault
 \let\sfdefault\oldsfdefault
 \let\ttdefault\oldttdefault
-\let\Bbbk\relax                     % 清除可能冲突的 \Bbbk
+\let\Bbbk\relax                     % 清除 \Bbbk 避免冲突，因为 newtxmath 定义了自己的 \Bbbk
 \usepackage{esint}                  % 积分符号
 % 重定义大型 ∑ 和 ∏ 运算符
-\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}
-\let\sumop\relax \let\prodop\relax
-\DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
+\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}         % 声明 CMlargesymbols 符号字体，用 Computer Modern 的大号扩展（cmex）
+\let\sumop\relax \let\prodop\relax                          % 清除原有定义
+\DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}    % 用新字体里的对应 slot 重定义
 \DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"51}
 
 
