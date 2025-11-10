@@ -1026,8 +1026,8 @@ $c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对
 选定任意基准观者 $\gamma\in\mathscr R$。
 任意矢量 $V^\mu$ 有沿线协变导数 $Z^\nu\nabla_\nu V^\mu$。但若只想衡量其相对于固有系的变化，我们需要一种新的沿线导数。做法非常简单。将 $V^\mu$ 分解为 $h^\mu{}_\nu V^\nu- Z^\mu Z_\nu V^\nu$，分别求沿线协变导数，投影到各自的时轴和空间上，再合并即可
 \begin{align}
-    \frac{D_F V^\mu}{\d\tau} &:= h^\mu{}_\lambda Z^\nu\nabla_\nu (h^\lambda{}_\sigma V^\sigma) -Z^\mu Z_\lambda Z^\nu\nabla_\nu ( -Z^\lambda Z_\sigma V^\sigma) \nonumber \\
-    &= h^\mu{}_\sigma Z^\nu\nabla_\nu V^\sigma + h^\mu{}_\lambda (2 V_\sigma Z^{(\lambda} A^{\sigma)}) -Z^\mu Z_\sigma Z^\nu\nabla_\nu V^\sigma -Z^\mu Z_\lambda (-2 V_\sigma Z^{(\lambda} A^{\sigma)})\nonumber \\
+    \frac{D_F V^\mu}{\d\tau} &:= h^\mu{}_\lambda Z^\sigma\nabla_\sigma (h^{\lambda\nu} V_\nu) -Z^\mu Z_\lambda Z^\sigma\nabla_\sigma ( -Z^\lambda Z^\nu V_\nu) \nonumber \\
+    &= Z^\nu\nabla_\nu V^\mu + \left(h^\mu{}_\lambda (2 Z^{(\lambda} A^{\nu)}) -Z^\mu Z_\lambda (-2 Z^{(\lambda} A^{\nu)})\right)V_\nu\nonumber \\
     &= Z^\nu\nabla_\nu V^\mu + (A^\mu Z^\nu - Z^\mu A^\nu)V_\nu,
 \end{align}
 其中注意 $Z^\sigma\nabla_\sigma h^{\mu\nu} = 2 Z^{(\mu} A^{\nu)}$。我们看到它与协变导数相差了 $2 A^{[\mu} Z^{\nu]}$，因而有望成为一种联络。换言之，利用导数的线性性、Leibniz 法则、$\frac{D_F f}{\d\tau}=\dv{f}{\tau}$，通过缩并可将其推广到任意张量。这称为\textbf{Fermi-Walker 导数}。此联络催生的平行移动称\textbf{Fermi-Walker 移动}，简称费移。
@@ -1088,7 +1088,7 @@ Einstein 转盘模型就是一例。置闵氏时空及惯性柱坐标系 $\{t,r,
 只当 $\omega r<1$ 时这条曲线才能表示类时观者，故取转盘系定义域为开集 $r<1/\omega$。由此知 $Z^0=\gamma,Z^2=\gamma\omega$。柱坐标下闵氏度规为 $\d s^2=-\d t^2+\d r^2+r^2\d\varphi^2+\d z^2$，则 $Z_0=-\gamma,Z_2=\gamma\omega r^2$。易得非零克氏符有 $\Gamma^1_{22}=-r,\Gamma^2_{12}=\Gamma^2_{21}=1/r$。非零 $\nabla_\mu Z_{\nu}$ 有 $Z_{0;1}=-\gamma^3\omega^2 r, Z_{1;2}=-\gamma\omega r, Z_{2;1}=\gamma^3\omega r$。综上加速度为 $A^1=-\gamma^2\omega^2 r$。因此 $A_1 Z_0 = \gamma^3\omega^2 r,A_1 Z_2 = -\gamma^3\omega^3 r^3$。$B_{10}=-B_{01}=\gamma^3\omega^2 r, B_{12}=-B_{21}=-\gamma^3\omega r$。故 $\omega_{\mu\nu}=B_{[\mu\nu]} = B_{\mu\nu}$ 非零，$\theta_{\mu\nu}=B_{(\mu\nu)}=0$。该系为刚性有旋系，从而不可全局对钟。但仍可有空间几何。取共动坐标系：$\theta=\varphi-\omega t$，其余照旧，则
 \[\d s^2 = -(1-\omega^2r^2)\d t^2+\d r^2+r^2\d\theta^2+2\omega r^2\d t\d\theta+\d z^2,\]
 诱导度规为 $\d\ell^2 = \d r^2+\frac{r^2}{1-\omega^2 r^2}\d\theta^2+\d z^2$。
-圆盘边缘 $r=R,z=0$，从而 $\d\ell = \frac{R}{\sqrt{1-\omega^2 R^2}}\d\theta$，积分得周长 ${2\pi R}/\sqrt{1-\omega^2 R^2}$。可见空间几何非欧性使周长与直径比率不再为 $\pi$。
+圆盘边缘 $r=R,z=0$，从而积分得周长 ${2\pi R}/\sqrt{1-\omega^2 R^2}$。可见空间几何非欧性使周长与直径比率不再为 $\pi$。
 
 \begin{wrapfigure}{l}{0.25\textwidth}\centering
     \includegraphics[width=.25\textwidth]{fig/chpt01/twist.pdf}
