@@ -348,7 +348,7 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
         T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\implies T_{(\mu_1\cdots\mu_k)}=0.\]
 \end{enumerate}
 
-\subsection{拉氏理论}
+\subsection{拉氏理论与对称性}
 
 许多相互作用定律能靠着一种信念得到：\textit{实际规律总使系统作用量最小}，这称为\textbf{最小作用量原理}(principle of least action)。当然，最小只是美学说法，其实只要求导数为零，故严格称法为\textbf{稳恒}(stationary)\textbf{作用量原理}，仅在分析解的稳定性时再关注最优化问题。
 这一哲思由 Lagrange, Hamilton 等人于 18 世纪提出。取惯性系及绝对时间，对 $N$ 个粒子的保守系统，给定初末位置 $\bm x_a(t_0),\bm x_a(t_1)$（$a=1,\cdots,N$），势能 $V$ 给出相互作用，实际运动满足 Newton 第二定律 $m_a\ddot{\bm x}_a(t)=-\grad V(\bm x_a)$。
@@ -383,30 +383,6 @@ $L$ 只通过 $q,\dot q$ 的关系隐含 $t$。按理来说有 $q(t)$，$L$ 就�
 此即\textbf{Euler-Lagrange 方程}，简称\textbf{E-L 方程}。常用“$\simeq$”强调消除边界项。由反证法知等价性。读者由此可推得经典力学方程。
 不过需强调，对简单的 $L$ 才考虑计算 E-L 方程，更多时候按以上标准流程直接变分。故以后常省略积分域，少数情况才讨论边界。
 
-粒子受外场作用，而场自身的演化也要服从最小作用量原理。
-考虑单个场，不妨从离散粒子系统逼近。
-同时面 $t=0$ 上系统位形为 $\{\Phi_i(0)\}$，路径为 $\{\Phi_i(t)\}$，拉氏量涉及对各粒子的求和。
-考虑连续极限，$i$ 化为 $\bm x$，路径是空间场往时间的延伸，即正是时空上的场 $\Phi(x)$。
-拉氏量涉及时间导数 $\del_t\Phi$、相邻微小单元间的势能 $\del_i\Phi$ 的积分：$L=\int\mathcal L(\Phi,\Phi_{,\mu})\d[3]{x}\Rightarrow S=\int \mathcal L \d[4]{x}$。$\mathcal L$ 称为\textbf{拉氏密度}。
-同理，默认许多理论能存在 $\mathcal L$ 表述；$\mathcal L$ 一般不显含时空点的坐标 $x^\mu$，且\textit{至少}含一阶导。在粒子情形我们通过决定性原理排除高阶导，但现在是关于时空坐标的导数，且空间项有相互作用势的含义，冒然排除高阶是激进做法。一般对若干场（仍简写 $\Phi$）应记
-\eq{
-S(\Phi(x))=\int \mathcal L(\Phi,\Phi_{,\mu_1},\cdots,\Phi_{,\mu_1\cdots\mu_k})\d[4]{x}.
-}
-若 $\mathcal L$ 至多含二阶导，即 $\mathcal L(\Phi,\Phi_{,\mu})$，则类似计算可得场的 E-L 方程
-\eq{
-\pdv{x^\mu} \pdv{\mathcal L}{\Phi_{,\mu}}-\pdv{\mathcal L}{\Phi}=0.
-}
-当然，实操中总是直接计算变分。
-单元微积分下，边界项即函数作差；在多元情形中这是高维 Gauss 定理，见附录 \ref{appx:form}。故为消除边界项可有三类方法：
-\begin{enumerate}
-    \item 若无任何条件，可取无穷积分，认为场在无穷远没有贡献（被积项至少比 $1/r^2$ 更快地趋于零）或不存在边界；
-    \item 仅在 $\delta \Phi=0$ 条件下，可通过修改 $\mathcal L$ 使其消除边界项；
-    \item 考虑积分域 $U$时，规定边界上任意阶都有 $(\delta \Phi)_{,\mu_1\cdots\mu_k}=0$（比如认为 $U$ 外的旁路 $\Phi$ 恒定地与边界一致），这一更强的条件使 $\mathcal L$ 无论含多少阶导数都能消除边界项。
-\end{enumerate}
-总之，不与物理意义冲突时，默认舍去变分中的全微分项。
-
-\subsection{对称性}
-
 对称性是当代物理的重要概念。圆具有左右、旋转对称等，实质是圆在反射、旋转变换下长相没变。考虑单粒子 $m$ 的体系。假设粒子在时间 $\Delta t$ 后运动了 $\bm v\Delta t$。为判断粒子之后如何运动，可将整个系统沿反方向 $-\bm v\Delta t$ 平移，注意体系（的作用量）具有空间平移对称性，因此新体系的 $m$、初始条件等同于旧体系，从而运动相同的 $\bm v\Delta t$，相当于旧体系将一直保持 $m\bm v$ 守恒。同理，设想一根杆子自由转动，由于体系具有空间各向同性，因此它将保持角动量守恒。
 可见，对称性可以导致守恒量，并约束相互作用。
 
@@ -419,24 +395,23 @@ S(\Phi(x))=\int \mathcal L(\Phi,\Phi_{,\mu_1},\cdots,\Phi_{,\mu_1\cdots\mu_k})\d
 保持作用量形式不变的变换称\textbf{对称变换}，换言之 $\delta q$ 只引起 $\delta S=0$，称作用量具有这种对称性。
 当然也可让二者只相差边界项或常系数（称为\textbf{准不变性}），因为它们给出相同正路。
 
-$q(t)\to\tilde q(\tilde t)$ 下路径的改变为\textbf{等时变分} $\bar\delta q^i(t)=\tilde q^i(t)-q^i(t)$，参数的改变 $\delta t=\tilde t-t$。这里的变分统称\textbf{Noether 变分}，注意与前文区分\footnote{当然，等时变分和 Fréchet 变分的代数性质一致。}。之后将 $q^i(t)$ 简写为 $q^i$。无穷小时即 $\delta t =\epsilon \eta(t, q^i, \dot{q}^i), \bar\delta q^i =\epsilon \xi^i(t,q^i,\dot{q}^i)$。
-注意 $\tilde q^i(\tilde t)=\tilde q^i+\dv{t}(\tilde q^i)\delta t+O(\epsilon^2)$，代入 $\tilde q^i=\bar\delta q^i+q^i$ 可以看到 $\dv{t}(\bar\delta q^i)\delta t$ 也是 $O(\epsilon^2)$，所以总变化保留至一阶有
-\[
-\delta q^i=\tilde q^i(\tilde t)- q^i=\bar\delta q^i+\dot q^i \delta t,\quad \delta\dot q^i=\dv{\tilde t}(\tilde q^i(\tilde t))-\dot q^i=\bar\delta\dot q^i+ \ddot q^i\delta t.
-\]
-后者是直接替换；当然，也可同理地直接计算并注意 $\bar\delta\dot q^i=\dv{t}(\bar\delta q^i)$。注意 $\d\tilde t=\dv{\tilde t}{t}\d t=\left(1+\dv{t}(\delta t)\right)\d t$，
-$\delta q^i$ 引起的作用量变化为
-\begin{align*} \delta S&=\int L\left(\tilde t,\tilde q^i(\tilde t),\dv{\tilde q^i(\tilde t)}{\tilde t}\right)\d{\tilde t}-\int L\d{t} =\int \left(1+\dv{t}(\delta t)\right)\left(L+\delta L\right)\d t-\int L\d{t}\\
-&=\int \left(\delta L+L\dv{t}(\delta t)\right)\d t=\int \left(\pdv{L}{t}\delta t+\pdv{L}{q^i}\delta q^i+\pdv{L}{\dot q^i}\delta\dot q^i+L\dv{t}(\delta t)\right)\d t\\
+$q(t)\to\tilde q(\tilde t)$ 下，变化可分为 $\bar\delta q^i(t)=\tilde q^i(t)-q^i(t)$（称\textbf{等时变分}）和 $\delta t=\tilde t-t$。此处变分统称\textbf{Noether 变分}，注意与前文区分\footnote{当然，等时变分和 Fréchet 变分的代数性质一致。比如 $\bar\delta\dot q^i=\dv{t}(\bar\delta q^i)$ 和 $\bar\delta t=0$。}。之后将 $q^i(t)$ 简写为 $q^i$。引入无穷小参数有 $\delta t =\epsilon \eta(t, q^i, \dot{q}^i), \bar\delta q^i =\epsilon \xi^i(t,q^i,\dot{q}^i)$。
+代入 $\tilde q^i=\bar\delta q^i+q^i$ 可以看到总变化为
+\eq{
+\delta q^i=\tilde q^i(\tilde t)- q^i=\tilde q^i+\dv{t}(\tilde q^i)\delta t+O(\epsilon^2)- q^i=\bar\delta q^i+\dot q^i \delta t+O(\epsilon^2),
+}
+保留至一阶就是 $\delta=\bar\delta+\delta t\dv{t}$。
+替换可得 $\delta\dot q^i=\bar\delta\dot q^i+ \ddot q^i\delta t$，当然也可直接计算 $\dv{\tilde t}(\tilde q^i(\tilde t))-\dot q^i$。同理 $\delta L=\bar\delta L+\dot L\delta t$。注意 $\delta(\d t)=\d\tilde t-\d t=\dv{\tilde t}{t}\d t-\d t=\dv{t}(\delta t)\d t$。作用量变化为
+\begin{align*} \delta S&=\int \left(\delta L\d t+L\delta(\d t)\right)=\int \left(\delta L+L\dv{t}(\delta t)\right)\d t\\
 &=\int \left(\pdv{L}{q^i}\bar\delta q^i+\pdv{L}{\dot q^i}\bar\delta\dot q^i+L\dv{t}(\delta t)+\dot L\delta t\right)\d t\\
 &=\int \left(\left(\pdv{L}{q^i}-\dv{t} \pdv{L}{\dot q^i}\right)\bar\delta q^i+\dv{t}(\pdv{L}{\dot q^i}\bar\delta q^i+L\delta t)\right)\d t,
 \end{align*}
-考虑准不变性，这就等价于上式积分的大括号为全导数项 $\dv{K}{t}$，即相差边界项 $\delta S=K_2-K_1$。但注意上式第二项已是全导数，而 $\delta t$ 的贡献全部收了进去，可见 $\delta t$ 并不影响准不变性，准不变性实际上只约束 $\bar\delta q^i$ 的形式。更多时候还是直接要求严格的对称性 $\delta S=0$，则 $\dv{K}{t}=0$，这就是\textbf{Noether 条件}，作为作用量对称性的判据。
+考虑准不变性，这就等价于上式积分的大括号为全导数项 $\dv{K}{t}$，即相差边界项 $\delta S=K_2-K_1$。但注意上式第二项已是全导数，而 $\delta t$ 的贡献全部收了进去，可见 $\delta t$ 并不影响准不变性，准不变性实际上仅约束 $\bar\delta q^i$ 的形式。更多时候还是直接要求严格的对称性 $\delta S=0$，则 $\dv{K}{t}=0$，这就是\textbf{Noether 条件}，作为作用量对称性的判据。
 若 $q^i(t)$ 是正路，且变换是整体变换，则
 \eq{
     \dv{Q}{t}=0,\quad  Q:=\frac{1}{\epsilon}\left(\pdv{L}{\dot q^i}\bar\delta q^i+L \delta t\right)=\pdv{L}{\dot q^i} \xi^i+L \eta.
 }
-对于多参数变换的推广是类似的。
+$Q$ 称为\textbf{Noether 荷}。对多参数变换的推广是类似的。
 可见\textit{在壳时连续整体对称性导致相应的守恒量}，这称为\textbf{Noether 定理}。但注意并非所有守恒量都来源于某个对称性。
 
 对阐释常见的能量、动量来讲，Noether 定理是足够的。
@@ -462,48 +437,82 @@ Legendre 变换帮助我们在一般理论的拉氏量下直接定义能量。�
 \]
 $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 就分别对应动量、能量守恒。若存在循环坐标，则循环坐标的变换可轻松使得 $\delta S=0$。
 
-%% 场论 Noether 定理 
+\subsection{场的拉氏理论}
 
-考虑时空场 $\Phi(x)$。变换写作 $\Phi\to\tilde\Phi$ 和时空点变换\footnote{可见时空点变换（或一般的位形空间）和坐标变换十分相似。前者为新点、旧点在同一坐标系下的表示 $x\to\tilde x$，称\textbf{主动观点}（点变、坐标系不变）；后者为同一时空点在不同坐标系下的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}（点不变、坐标系变）。两种观点可以互相转换。} $x\to\tilde x$。则
+粒子受外场作用，而场自身的演化也要服从最小作用量原理。
+考虑单个场，不妨从离散粒子系统逼近。
+同时面 $t=0$ 上系统位形为 $\{\Phi_i(0)\}$，路径为 $\{\Phi_i(t)\}$，拉氏量涉及对各粒子的求和。
+考虑连续极限，$i$ 化为 $\bm x$，路径是空间场往时间的延伸，即正是时空上的场 $\Phi(x)$。
+拉氏量涉及时间导数 $\del_t\Phi$、相邻微小单元间的势能 $\del_i\Phi$ 的积分：$L=\int\mathcal L(\Phi,\Phi_{,\mu})\d[3]{x}\Rightarrow S=\int \mathcal L \d[4]{x}$。$\mathcal L$ 称\textbf{拉氏密度}。
+对若干场 $a=1,\cdots,n$ 一般地有
+\eq{
+S(\Phi_a(x))=\int \mathcal L(x^\mu,\Phi_a,\Phi_{a,\mu})\d[4]{x}\implies \pdv{x^\mu} \pdv{\mathcal L}{\Phi_{a,\mu}}-\pdv{\mathcal L}{\Phi_a}=0.
+}
+当然，作为物理规律的 $\mathcal L$ 一般不显含时空点坐标 $x^\mu$。在粒子情形我们通过决定性原理排除高阶导，由于现在 $\del_\mu$ 还包含相互作用势的含义，不能冒然排除高阶：事实上 $\mathcal L$ 的确可能存在高阶导 $\Phi_{,\cdots}$，则 E-L 方程一般需要修改；但若高阶导只是表面上看起来存在，实际可通过某种方式消除（马上将看到），则 E-L 方程照旧。实操中总是直接计算变分，即可规避“E-L 方程可能错误”这种麻烦。
+
+单元微积分下，边界项即函数作差；在多元情形中这是高维 Gauss 定理，见附录 \ref{appx:form}。故为消除边界项可有三类方法：
+\begin{enumerate}
+    \item 若无任何条件，可取无穷积分，认为场在无穷远没有贡献（被积项至少比 $1/r^2$ 更快地趋于零）或不存在边界；
+    \item 仅在 $\delta \Phi=0$ 条件下，可通过修改 $\mathcal L$ 使其消除边界项；
+    \item 考虑积分域 $U$时，规定边界上任意阶都有 $(\delta \Phi)_{,\cdots}=0$（比如认为 $U$ 外的旁路 $\Phi$ 恒定地与边界一致），这一更强的条件使 $\mathcal L$ 无论含多少阶导数都能消除边界项。
+\end{enumerate}
+总之，不与物理意义冲突时，默认舍去变分中的全微分项。
+
+考虑闵氏时空上实标量场 $\phi$ 的案例。置惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
+最简单的选择是 $\del^\mu\phi\del_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
+\[\mathcal L= -\frac 12\del^\mu\phi\del_\mu\phi-U(\phi)\implies \square\phi-\pdv*{U}{\phi}=0,\]
+从 E-L 方程可以看出，$\phi$ 的一次项对运动方程无实质贡献，故势能项最简单的取法是至少二次项，如 $U(\phi)=\frac 12 m^2\phi^2$，则得\textbf{Klein-Gordon 方程} $(\square-m^2\phi)=0$。这里 $\square=\del^\mu\del_\mu=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}$即电动力学中的 d'Alembert 算子，类似于 3 维空间中的 Laplace 算子 $\nabla^2$。
+这最初是为得到相对论量子力学的一种尝试，$m$ 表示量子化后的粒子静质量。
+
+考虑对时空场 $\Phi(x)$ 进行变换\footnote{可见时空点变换（或一般的位形空间）和坐标变换十分相似。前者为新点、旧点在同一坐标系下的表示 $x\to\tilde x$，称\textbf{主动观点}（点变、坐标系不变）；后者为同一时空点在不同坐标系下的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}（点不变、坐标系变）。两种观点可以互相转换。} $\Phi(x)\to\tilde\Phi(\tilde x)$，$\bar\delta\Phi=\epsilon F,\delta x^\mu=\epsilon\xi^\mu$。则
 \[
-\delta\Phi =\bar\delta \Phi+\Phi_{,\nu}\delta x^\nu,\quad \delta\Phi_{,\nu}=\bar\delta \Phi_{,\nu} + \Phi_{,\sigma\nu}\delta x^\sigma,
+\delta\Phi =\bar\delta \Phi+\Phi_{,\nu}\delta x^\nu,\quad \delta\Phi_{,\nu}=\bar\delta \Phi_{,\nu} + \Phi_{,\sigma\nu}\delta x^\sigma,\quad \delta\mathcal L =\bar\delta\mathcal L+\mathcal L_{,\nu}\delta x^\nu,
 \]
-并注意 $\bar\delta(\Phi_{,\nu})=\del_\nu(\bar\delta \Phi)$。我们知道体元变换 $\d[4]\tilde x=J\d[4]x$，其中 $\det(\pdv{\tilde x^\mu}{x^\nu})$ 为 Jacobi 行列式。代入 $\delta x^\mu$ 则 $J=\det(\delta_\nu^\mu+\del_\nu\delta x^\mu)$。尝试继续展开至一阶。
-
-
-\eq{
-    J=1+\del_\mu\delta x^\mu,
-}
-
+并注意 $\bar\delta(\Phi_{,\nu})=\del_\nu(\bar\delta \Phi),\bar\delta x^\mu=0$。我们知道体元变换 $\d[4]\tilde x=J\d[4]x$，其中 Jacobi 行列式为
+\[
+J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_n}\sgn(\mu_0\cdots \mu_3)\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3}.
+\]
+代入 $\delta x^\mu$ 则 $\pdv{\tilde x^\mu}{x^\nu}=\delta_\nu^\mu+\del_\nu\delta x^\mu$。零阶项 $\sum \sgn(\mu_0\cdots \mu_3) \delta_0^{\mu_0}\cdots\delta_3^{\mu_3}=\sgn(0123)=1$。一阶项为 $\sum \sgn(\mu_0\cdots \mu_3)\delta_0^{\mu_0}\cdots\del_\nu\delta x^{\mu_\nu}\cdots\delta_3^{\mu_3}=\delta_{\mu_\nu}^{\nu}\del_\nu\delta x^{\mu_\nu}=\del_\nu\delta x^\nu$。所以 $J=1+\del_\mu\delta x^\mu$，也即 $\delta(\d[4]{x})=\del_\mu\delta x^\mu\d[4]{x}$。综上
 \begin{align*} \delta S
-&=\int \left(\delta L+L\dv{t}(\delta t)\right)\d t=\int \left(\pdv{L}{t}\delta t+\pdv{L}{q^i}\delta q^i+\pdv{L}{\dot q^i}\delta\dot q^i+L\dv{t}(\delta t)\right)\d t\\
-&=\int \left(\pdv{L}{q^i}\bar\delta q^i+\pdv{L}{\dot q^i}\bar\delta\dot q^i+L\dv{t}(\delta t)+\dot L\delta t\right)\d t\\
-&=\int \left(\left(\pdv{L}{q^i}-\dv{t} \pdv{L}{\dot q^i}\right)\bar\delta q^i+\dv{t}(\pdv{L}{\dot q^i}\bar\delta q^i+L\delta t)\right)\d t,
+&=\int \left(\delta\mathcal L+\mathcal L \del_\mu\delta x^\mu\right)\d[4]{x}=\int \left(\bar\delta\mathcal L+\del_\mu(\mathcal L\delta x^\mu)\right)\d[4]{x}\\
+&=\int \left(\left(\pdv{L}{\Phi}-\pdv{x^\mu} \pdv{\mathcal L}{\Phi_{,\mu}}\right)\bar\delta\Phi+\pdv{x^\mu}(\pdv{\mathcal L}{\Phi_{,\mu}}\bar\delta\Phi+\mathcal L\delta x^\mu)\right)\d[4]{x}.
 \end{align*}
-
-
-但实操时总按具体的作用量就事论事。
-
+若 $\Phi(x)$ 是正路且做整体变换时，有
 \eq{
-    \Delta S:=\int \mathcal L\left(\tilde x,\tilde\Phi(\tilde x),\tilde \del_\nu\tilde\Phi(\tilde x)\right)\d[4]{\tilde x}-\int \mathcal L(x,\Phi(x),\Phi_{,\nu}(x)) \d[4]{x},
+    \del_\mu J^\mu=0,\quad  J^\mu:=\frac{1}{\epsilon}\left(\pdv{\mathcal L}{\Phi_{,\mu}}\bar\delta\Phi+\mathcal L\delta x^\mu\right)=\pdv{\mathcal L}{\Phi_{,\mu}} F+\mathcal L \xi^\mu.
 }
+这就是 \textbf{Noether 守恒流}。含有高阶导 $\Phi_{,\cdots}$ 时，表达式会有所不同。因此一般具体问题具体分析，但整套计算程序是相似的。
+定义 $\rho:=J^0,j^i:=J^i$，则 $\del_t\rho+\div\bm j=0$ 就是荷 $Q=\int \rho \d[3]x$ 的连续性方程，$\rho,\bm j$ 分别解释为该系所测\textbf{荷密度}和\textbf{流密度}。
 
-\begin{align*} \quad~&\int  \mathcal L\left(\tilde x,\tilde\Phi(\tilde x),\tilde \del_\nu\tilde\Phi(\tilde x)\right)J\d[4]{x}  =\int \left(1+\del_\sigma\delta x^\sigma\right) \left(\mathcal L+\del_\nu \mathcal L \delta x^\nu\right. \\ &+\left.\frac{\partial \mathcal L}{\partial \Phi}\left(\delta \Phi+\Phi_{,\nu}\delta x^\nu \right)+\frac{\partial \mathcal L}{\partial \Phi_{,\mu}}\left(\del_\mu\delta \Phi+  \Phi_{,\sigma,\mu}\delta x^\sigma\right)\right)\d[4]x,
-\end{align*}
-
-\eq{\Delta S=\int\left(\left(\frac{\partial \mathcal L}{\partial \Phi}-\pdv{x^\mu} \frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \right)\delta \Phi+\pdv{x^\mu}\left(\frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \delta \Phi+\mathcal L \delta x^\mu\right)\right)\d[4]x.}
-
+纯时空变换 $\bar\delta\Phi=-\Phi_{,\mu}\delta x^\mu$ 对应\textbf{时空对称性}或\textbf{外部对称性}，纯场变换 $\bar\delta\Phi=\delta\Phi$ 对应\textbf{内部对称性}。
+置 $\{x\}$ 为惯性系。
+代入纯时空变换 $F=-\Phi_{,\mu}\xi^\mu$，故
 \eq{
-    \left(\frac{\partial \mathcal L}{\partial \Phi}-\pdv{x^\mu} \frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \right)\delta \Phi+\pdv{x^\mu}\left(\frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \delta \Phi+\mathcal L \delta x^\mu\right)=0,
+    J^\mu=-S^{\mu\nu}\xi_\nu,\quad S^{\mu\nu}:=\pdv{\mathcal L}{\Phi_{,\mu}}\del^\nu\Phi-\mathcal L\eta^{\mu\nu}.
 }
-可见 $\delta x^\mu$ 的贡献总是时空导数的形式，故仅对 $\delta \Phi$ 做出要求。进一步地，若 $\Phi(x)$ 是正路且做整体变换时，有
+若考虑时空均匀的平移对称（惯性系且 $\del_\nu\xi^\mu=0$），则
 \eq{
-    \del_\mu J^\mu=0,\quad  J^\mu:=\frac{1}{\epsilon}\left(\frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \delta \Phi+\mathcal L \delta x^\mu\right)=\frac{\partial \mathcal L}{\partial \Phi_{,\mu}} F+\mathcal L \xi^\mu.
+    \del_\mu S^{\mu\nu}=\del_t S^{0\nu}+\del_i S^{i\nu}=0,
 }
-这就是 \textbf{Noether 守恒流}。由于 $\mathcal L$ 包含求和的意义，因此守恒量需要其空间积分来产生。
+考虑时间变换 $\xi^0$ 就是取 $\nu=0$，考虑空间变换 $\xi^i$ 就是取 $\nu=i$。上式就解释为 4-动量的连续性方程。所以 $S^{\mu\nu}$ 称为\textbf{正则能动张量}(canonical energy-momentum tensor)。总 4-动量为
+\eq{
+    P^\mu=\int S^{0\mu}\d[3]{x}.
+}
+时间分量为 $P^0=H$。\textbf{哈氏量密度}或\textbf{能量密度}为
+\eq{
+    \mathcal H=S^{00}=\pi\dot\Phi-\mathcal L,\quad \pi = \pdv{\mathcal L}{\dot\Phi},
+}
+其中 $\pi$ 为\textbf{共轭动量密度}，$\dot\Phi=\del_t\Phi$。$S^{0i}=\pi\delta^i\Phi$ 就是\textbf{动量密度}。
 
-当然，不同于粒子情形，场论的拉氏量可能涉及高阶导数，甚至是复数场，因此一般具体问题具体分析，但整套计算程序是相似的。
+合起来称 $S^{0\nu}$ 为\textbf{4-动量密度}。
 
+分析能量连续性 $\dot H=-\int\del_i S^{i0}\d[3]x$，故 $S^{i0}$ 是\textbf{能流密度}。
+从定义就能看出 $S^{\mu\nu}$ 一般不对称，所以动量和能流还不能完全划等号。
+
+
+我们希望能在 $S^{\mu\nu}$ 上
+
+称为 \textbf{Belinfante 张量}
 
 
 
@@ -521,31 +530,8 @@ Newton 时空的对称性是分开的，即时间平移、空间平移（含转�
 \eq{0=\xi^\lambda \del_\lambda g_{\mu\nu}+\del_\mu \xi^\rho g_{\rho \nu}+\del_\nu\xi^\sigma g_{\mu\sigma}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\del_{(\mu}\xi_{\nu)} =\nabla_{(\mu}\xi_{\nu)},}
 这称为该度规的 \textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为 \textbf{Killing 矢量场}。点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
 
- 
 
-
-要求 $\Delta \Phi=0$，则
-\eq{
-    J^\mu=\frac{\partial \mathcal L}{\partial \Phi_{,\mu}} \frac{\Delta \Phi-\Phi_{,\nu}\delta x^\nu}{\epsilon}+\mathcal L \xi^\mu=-S^{\mu\nu}\xi_\nu,\quad S^{\mu\nu}:=\pdv{\mathcal L}{\Phi_{,\mu}}\Phi^{,\nu}-\mathcal L\eta^{\mu\nu}.
-}
-其中 $S^{\mu\nu}$ 。
-
-
-然而，从定义看出 $S^{\mu\nu}$ 不一定是对称张量。我们希望能在 $S^{\mu\nu}$ 上
-
-称为 \textbf{Belinfante 张量}
-
-\textbf{正则}(canonical)\textbf{能动张量}
-
-
-可将广义不变性类比到其它动力学对称性，比如以后会学习电磁场的\textbf{局域规范不变性}和 $\pi$ 介子场的\textbf{手征对称性}．
-
-
-用后来量子场论的术语说，前者是\textbf{整体规范变换}，后者是\textbf{局域规范变换}．
-
-$T^{\mu\nu}$
-
-
+$0=\xi_\nu\del_\mu T^{\mu\nu}+T^{\mu\nu}\del_\mu\xi_\nu=\xi_\nu\del_\mu T^{\mu\nu}+T^{(\mu\nu)}\del_\mu\xi_\nu$
 
 \subsection{有效性}
 
@@ -631,87 +617,58 @@ L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=-m/\gamma,\quad S=-m\int\sqrt{-\e
 若想取参数为固有时 $\tau$，则默认是\textit{正路}的固有时。对于任何邻近旁路，$\tau$ 都非其固有时而只是纯粹的参数。为何不能用每条路径自己的固有时来作参数？因为变分应与参数无关。比如置有限积分域，Fréchet 空间中任意邻近旁路上所用参数的取值范围，必为同一区间，若每条路径皆用自己的固有时作参数就办不到。既然该参数无论如何都只有数学意义，我们取坐标时 $t$ 就可避免这些讨论。变分得到实际方程后，再将 $\eta_{\mu\nu}\dot x^\mu \dot x^\nu=-1$ 代入，就相当于将 $x^\mu(t)$ 重参化为 $x^\mu(\tau)$。许多书籍对如下现象都未解释或作出错误解释：若用固有时 $\tau$ 作参数，则 $L=-m$，得不到任何方程，故强行解释为需还原代数形式才能进行变分。正确的解释是 $U^\mu U_\mu=-1$ 只对正路成立，其中参数 $\tau$ 与固有时一致。变分必须考虑邻近旁路，有它们自己的不同于 $\tau$ 的固有时，因而沿这些旁路 $U^\mu U_\mu\ne -1$。由 $L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu\dot x^\nu}$ 可计算得 $\pdv*{L}{\dot x^\kappa}=m\eta_{\kappa\lambda}\dot x^\lambda$ 和 $\pdv*{L}{x^\kappa}=0$，
 则 E-L 方程在约去 $m$ 并与 $\eta^{\mu\kappa}$ 缩并后是直线方程 $\ddot x^\mu=0$，也可重参化为 $A^\mu=0$，符合实验对自由质点的观测结果，可以认为作用量构造正确。
 我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空中的直线是使固有时最大而非最小，即“长程线”。对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。
-可计算知 $\pdv*{u}{u^i}=u_i/u$，故
-\eq{
-p_i=\pdv*{L}{u^i}=\gamma m u_i\implies p^i=\gamma m u^i=m u^i+\frac{1}{2} m u^{2}u^i+\cdots,
-}
-后者称为\textbf{3-动量}，并将 $\gamma$ 按二项式定理展开。可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正。也可用 4-速 $U^\mu=\gamma\dot x^\mu$ 得出相应动量，注意 $L=m U^\mu U_\mu/\gamma=m U_\mu \dot x^\mu$，则
-\eq{
-    P_\mu=\pdv*{L}{\dot x^\mu}=m U_\mu\implies P^\mu=m U^\mu.
-}
-后者称为\textbf{4-动量}。$x^0$ 代表时间，因此在相对论中能量为
-\eq{
-E=P^0=\sqrt{p^2+m^2}=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
-}
-它也正是 $p_i u^i-L$。
 
-
-易知 $p^2:=p_i p^i=m^2u^2/(1-u^2)$，则 $u={p}/{\sqrt{p^2+m^2}},\gamma={\sqrt{p^2+m^2}}/{m}$。故
-
-此即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。$P^\mu$ 同时具备能量和动量意义，即 $P^0=\gamma m=E,P^i=\gamma m u^i=p^i$，则模方为 $-E^2+p^2=P^\mu P_\mu=-m^2$ 或者 $E^2= p^2+m^2$，此即\textbf{质壳}(mass-shell)\textbf{关系}或\textbf{Hamilton-Jacobi 方程}。
+注意 $U^\mu=\gamma\dot x^\mu$，则 $L=m U^\mu U_\mu/\gamma=m U_\mu \dot x^\mu$，所以惯性系下的正则动量为
+\eq{
+    P_\mu=\pdv*{L}{\dot x^\mu}=m U_\mu\implies P^\mu=m U^\mu,
+}
+称为\textbf{4-动量}。由时空对称性，其分量分别解释为动量 $p^i=P^i$（称为\textbf{3-动量}）和能量 $E=P^0=p_i u^i-L$。
+将 $\gamma$ 按二项式定理展开：
+\eq{
+p^i=\gamma m u^i=m u^i+\frac{1}{2} m u^{2}u^i+\cdots,\quad E=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
+}
+可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正；后者即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
+$P^\mu$ 的模方为 $-E^2+p^2=P^\mu P_\mu=-m^2$ 或者 $E^2= p^2+m^2$，此即\textbf{质壳}(mass-shell)\textbf{关系}或\textbf{Hamilton-Jacobi 方程}。
 
 $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma f^i$，其中\textbf{3-力}为 $f^i:=\dot{p}^i$。质量守恒时 $F^\mu=m A^\mu,f^i=m a^i$，功能关系 $f^i u_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
-
-
 \subsection{经典电动力学}
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
-我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。而 Noether 定理正也指出，对称性与守恒量有关。考虑闵氏时空上的标量场 $\phi$。置惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
-若 $\phi$ 是实的，最简单的选择是 $\del^\mu\phi\del_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
+我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。比如，量子力学的成功启发我们考虑一个复标量场 $\phi$，则作用量可用其共轭 $\bar\phi$ 构造：
 \eq{
-\mathcal L= -\frac 12\del^\mu\phi\del_\mu\phi-U(\phi)\implies \square\phi-\pdv*{U}{\phi}=0,
+    \mathcal L=-\del^\mu\phi\del_\mu\bar\phi-U(\phi\bar\phi).
 }
-从 E-L 方程可以看出，$\phi$ 的一次项对运动方程无实质贡献，故势能项最简单的取法是至少二次项，如 $U(\phi)=\frac 12 m^2\phi^2$，则得\textbf{Klein-Gordon 方程} $\square\phi-m^2\phi=0$。
-这最初是为得到相对论量子力学的一种尝试。
-在量子场论中用以描述自旋为零的粒子，如 $\pi$ 介子。$m$ 表示量子化后的粒子静质量。当然，量子理论通常考虑复标量场 $\phi$，则标量可用其共轭 $\bar\phi$ 构造：
+上式在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$（称为\textbf{U(1) 荷}）使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
 \eq{
-    \mathcal L=-  \del^\mu\phi\del_\mu\bar\phi-U(\phi\bar\phi).
+    \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\implies J^\mu=\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right).
 }
-作用量具有 Lorentz 不变性，涉及时空的 Lorentz 变换。但作用量的内在结构还会导致另一种对称性，其不涉及时空变换，称为\textbf{内部对称性}。比如上式还在整体\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。
-这称为\textbf{U(1) 对称性}。引入耦合强度 $e$ 使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则场的（一阶）改变为
+利用其它类型的张量或旋量来构造 U(1) 对称的作用量，可得不同的 Noether 流。接下来将看到，无论具体对象是什么，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。换言之，它们都带有电荷，参与电磁相互作用。故我们将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
 
+现实里，场论的定域性使相位往往应随时空点可变，即 $\phi \to \e^{\i e\alpha(x)} \phi$，这称为变换的\textbf{局域化}或\textbf{规范化}(gauging)。原来的作用量满足整体对称性，但不满足局域对称性，因为 $\del_\mu \e^{\i e\alpha}=\e^{\i e\alpha}\i e\del_\mu\alpha\ne 0$。
+为满足局域对称性，需要引入耦合项来改造 $\del_\mu$，使得新导数满足 $D_\mu\phi\to\e^{\i e\alpha(x)}D_\mu\phi$。最小耦合指出，只需以相加的方式引入：
 \eq{
-    \delta \Phi(x) =\epsilon F(x),
+    D_\mu := \partial_\mu -\i e A_\mu,\quad \mathcal L=-D^\mu\phi \overline{D_\mu \phi} - U(\phi\bar\phi),
 }
-
-\eq{\delta \phi :=\tilde \phi-\phi=\i \epsilon \phi, \quad \delta \bar{\phi}=-\i \epsilon \bar{\phi},\quad\delta x^\mu=0,}
-则
+注意 $\overline{D_\mu \phi}=\partial_\mu \bar\phi+\i e A_\mu \bar\phi$。拆开可发现这相当于加上缩并项 $\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right) A_\mu$。$D_\mu$ 称为\textbf{规范协变导数}。
+这个新矢量场 $A_\mu$ 称为\textbf{规范场}，$D_\mu\phi$ 的变换要求
 \eq{
-    \delta \mathcal L=\del_\mu J^\mu, 
-}
-
-直接导出守恒流
-$J^\mu=\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right)$，但读者仍可验证 $\partial_\mu J^\mu=0$。定义 $\rho:=J^0,j^i:=J^i$，则 $\del_t\rho+\div\bm j=0$，于是 $\rho,\bm j$ 分别解释为该系所测电荷密度和电流密度。称 $J^\mu$ 为\textbf{4-电流密度}。
-
-
-研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
-取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
-惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
-进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
-
-然 $\phi$ 只代表电荷系统，电磁场从何而来？
-
-原来，场论的定域性使相位往往应随时空点可变，这称为相位变换的\textbf{局域化}或\textbf{规范化}(gauging)。
-
-局域化一下
-
-为得局域 U(1) 对称性，需引入矢量场 $A_\mu$，而最小耦合指出，只需给作用量加上缩并项 $\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right) A_\mu$，则
-\eq{
-    \mathcal L=-D^\mu\phi \overline{D_\mu \phi} - U(\phi\bar\phi),\quad D_\mu \phi :=(\partial_\mu -\i e A_\mu)\phi.
-}
-注意 $\overline{D_\mu \phi}=\partial_\mu \bar\phi+\i e A_\mu \bar\phi$。
-考虑局域相位变换 $\phi\to\e^{\i e\alpha(x)} \phi$，为使作用量不变，只需 $D^\mu\phi\to\e^{\i e\alpha(x)}D^\mu\phi$，也即
-\eq{
-    A_\mu \to A_\mu +\del_\mu \alpha(x).
+    A_\mu \to A_\mu +\frac{1}{e}\del_\mu \alpha(x).
 }
 即任意 $A_\mu+\del_\mu f$ 导致一致作用量，此称\textbf{规范自由性}(gauge freedom)。
 守恒流更新为
 \eq{
     J^\mu=\i e\left(\phi\overline{D^\mu\phi}-\bar{\phi} D^\mu \phi\right).
 }
-$D_\mu=\partial_\mu -\i e A_\mu$ 称为\textbf{规范协变导数}。定义$\varphi:=A^0,a^i:=A^i$，从而分别解释为电标势和磁矢势。$A_\mu$ 称为\textbf{4-势}，可见规范自由性导致 $\varphi+C,\bm a+\grad f$ 的选取自由。
+定义$\varphi:=A^0,a^i:=A^i$，分别解释为电标势和磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm a+\grad f$ 的选取自由。可见，对称性催生电荷，规范化催生电磁场。
+
+研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
+
+
+取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
+惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
+进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
 
 $ \int J^\mu \d[3]x = q U^\mu$
 
@@ -760,7 +717,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 \eq{
     \del_\mu A^\mu =0.
 }
-这种 $A^\mu$ 总是存在的，因为对任意 $\del^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \del_\mu f$ 且 $\del^\mu\del_\mu f=-\del^\mu A_\mu $，即可有 $\del^\mu \tilde A_\mu =0$。而 $\del^\mu\del_\mu=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}$ 即电动力学中的 d'Alembert 算子 $\square$，类似于 3 维空间中的 Laplace 算子 $\nabla^2$。“$\square f =$\,常数”的非零解存在且甚多。
+这种 $A^\mu$ 总是存在的，因为对任意 $\del^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \del_\mu f$ 且 $\square f=\del^\mu\del_\mu f=-\del^\mu A_\mu $，即可有 $\del^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
 利用 $A^\mu$ 和 Lorenz 规范，可将 Maxwell 方程组写作一条：
 \eq{
     -4\pi J_\nu=\del^\mu\del_\mu A_\nu-\del_\nu \del^\mu A_\mu = \del^\mu\del_\mu A_\nu =\square A_\nu.
@@ -916,6 +873,11 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 }
 其中规定 $h_{\mu\nu},\phi$ 在无穷远处均衰减至零。
 
+\subsection{引力场作为规范理论}
+
+可将广义不变性类比到其它动力学对称性，比如以后会学习电磁场的\textbf{局域规范不变性}和 $\pi$ 介子场的\textbf{手征对称性}。
+
+用后来量子场论的术语说，前者是\textbf{整体规范变换}，后者是\textbf{局域规范变换}。
 
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
@@ -1124,7 +1086,7 @@ R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\m
 \eq{
 T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{\mathcal L_M}{g_{\mu\nu}}+g^{\mu\nu}\mathcal L_M=g^{\mu\alpha}g^{\nu\beta} T_{\alpha\beta}.
 }
-那么当然 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$。可见 $T^{00}=T_{00}=\mu$ 即能量密度，$T^{i0}=T^{0i}=\mu u^i $ 即动量密度或能流密度，而 $T^{ij}=\mu u^i u^j$ 即动流密度或应力张量。因此，$T^{\mu\nu}$ 称为物质场源的\textbf{4-动流密度}或\textbf{能动张量}(energy-momentum tensor)。
+那么当然 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$。可见 $T^{00}=T_{00}=\mu$ 即能量密度，$T^{i0}=T^{0i}=\mu u^i $ 即动量密度或能流密度，而 $T^{ij}=\mu u^i u^j$ 即动流密度或应力张量。因此，$T^{\mu\nu}$ 称为物质场源的\textbf{4-动流密度}或\textbf{能动张量}。
 代入 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$，则 $\nabla_\mu T^{\mu\nu}=\mu^* Z^\mu\nabla_\mu Z^\nu$。故 $\nabla_\mu T^{\mu\nu}=0$ 等价于 $Z^\mu\nabla_\mu Z^\nu =0$，说明各质元自由落体。
 
 考虑 Newton 极限。取固有系，$R_{\mu\nu}Z^\mu Z^\nu=\tilde R_{00}=\nabla^2\phi= 4\pi\mu^*$。另一方面 $\tilde Z^\mu=\delta^\mu_0,\tilde Z_\mu=-\delta_{\mu 0}$，则 $T_{\mu\nu}Z^\mu Z^\nu=\tilde T_{00}=\tilde T^{00}=\mu^*$。进而 $T:=g_{\mu\nu}T^{\mu\nu}=-T^{00}=-\mu^*$。由前文知 $R=-G=-\kappa T$，场方程与 $Z^\mu Z^\nu$ 缩并得 $4\pi\mu^*-\frac 12 (-1)\kappa \mu^*=\kappa\mu^*$，则
