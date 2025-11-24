@@ -503,19 +503,11 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_n}\sgn(\mu_0\cd
     \mathcal H=S^{00}=\pi\dot\Phi-\mathcal L,\quad \pi = \pdv{\mathcal L}{\dot\Phi},
 }
 其中 $\pi$ 为\textbf{共轭动量密度}，$\dot\Phi=\del_t\Phi$。$S^{0i}=\pi\delta^i\Phi$ 就是\textbf{动量密度}。
-
 合起来称 $S^{0\nu}$ 为\textbf{4-动量密度}。
-
 分析能量连续性 $\dot H=-\int\del_i S^{i0}\d[3]x$，故 $S^{i0}$ 是\textbf{能流密度}。
 从定义就能看出 $S^{\mu\nu}$ 一般不对称，所以动量和能流还不能完全划等号。
 
-
-我们希望能在 $S^{\mu\nu}$ 上
-
 称为 \textbf{Belinfante 张量}
-
-
-
 
 能保持 $g'_{kl}=g_{ij}$ 不变的特殊变换称为\textbf{等度规变换}(isometry)。
 Newton 时空的对称性是分开的，即时间平移、空间平移（含转动）。
@@ -642,7 +634,7 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 }
 上式在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$（称为\textbf{U(1) 荷}）使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
 \eq{
-    \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\implies J^\mu=\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right).
+    \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\implies J^\mu=\i e \phi\overleftrightarrow{\partial^\mu}\bar\phi:=\i e(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi).
 }
 利用其它类型的张量或旋量来构造 U(1) 对称的作用量，可得不同的 Noether 流。接下来将看到，无论具体对象是什么，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。换言之，它们都带有电荷，参与电磁相互作用。故我们将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
 
@@ -651,7 +643,7 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \eq{
     D_\mu := \partial_\mu -\i e A_\mu,\quad \mathcal L=-D^\mu\phi \overline{D_\mu \phi} - U(\phi\bar\phi),
 }
-注意 $\overline{D_\mu \phi}=\partial_\mu \bar\phi+\i e A_\mu \bar\phi$。拆开可发现这相当于加上缩并项 $\i e\left(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi \right) A_\mu$。$D_\mu$ 称为\textbf{规范协变导数}。
+注意 $\overline{D_\mu \phi}=\partial_\mu \bar\phi+\i e A_\mu \bar\phi$。拆开可发现这相当于加上缩并项 $\i e \phi\overleftrightarrow{\partial^\mu}\bar\phi A_\mu$。$D_\mu$ 称为\textbf{规范协变导数}。
 这个新矢量场 $A_\mu$ 称为\textbf{规范场}，$D_\mu\phi$ 的变换要求
 \eq{
     A_\mu \to A_\mu +\frac{1}{e}\del_\mu \alpha(x).
