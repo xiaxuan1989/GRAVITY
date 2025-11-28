@@ -437,6 +437,17 @@ Legendre 变换帮助我们在一般理论的拉氏量下直接定义能量。�
 \]
 $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 就分别对应动量、能量守恒。若存在循环坐标，则循环坐标的变换可轻松使得 $\delta S=0$。
 
+
+固定起点 $(q^i_0,t_0)$，考虑任意终点 $(q^i,t)$，我们总能找到一条在壳路径连接二者。终点移动，这条在壳路径随之而动。在壳路径上的 $S$ 就表为了终点的函数 $S(q^i,t)$，称为\textbf{Hamilton 主函数}。这时在终点处做 $\delta q,\delta t$ 就称为\textbf{在壳变分}，但仍与 Noether 变分的代数性质一致。立即有
+\eq{
+    \delta S = p_i \bar\delta q^i + L\delta t = p_i \delta q^i - H \delta t,
+}
+其中注意起点处应有 $\delta t=0,\delta q^i=0$。由此可见 $p_i=\pdv*{S}{q^i},H=-\pdv*{S}{t}$。$H(t,q^i,\dot q^i)$ 中 $\dot q^i$ 可由 $t,q^i,p_i$ 表出，因此可写出关于 $S(q^i,t)$ 一阶非线性偏微分方程
+\eq{
+    H\left(t,q^i,\pdv{S}{q^i}\right)+\pdv{S}{t}=0,
+}
+称为\textbf{Hamilton-Jacobi 方程}。
+
 \subsection{场的拉氏理论}
 
 粒子受外场作用，而场自身的演化也要服从最小作用量原理。
@@ -620,7 +631,9 @@ L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=-m/\gamma,\quad S=-m\int\sqrt{-\e
 p^i=\gamma m u^i=m u^i+\frac{1}{2} m u^{2}u^i+\cdots,\quad E=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
 }
 可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正；后者即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
-$P^\mu$ 的模方为 $-E^2+p^2=P^\mu P_\mu=-m^2$ 或者 $E^2= p^2+m^2$，此即\textbf{质壳}(mass-shell)\textbf{关系}或\textbf{Hamilton-Jacobi 方程}。
+$P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\textbf{条件}。
+另一方面 $-E^2+p^2=P^\mu P_\mu$ 或者 $E^2= p^2+m^2$，此即相对论性\textbf{色散关系}(dispersion relation)。
+同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程 $\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2$。
 
 $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma f^i$，其中\textbf{3-力}为 $f^i:=\dot{p}^i$。质量守恒时 $F^\mu=m A^\mu,f^i=m a^i$，功能关系 $f^i u_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
@@ -632,7 +645,7 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \eq{
     \mathcal L=-\del^\mu\phi\del_\mu\bar\phi-U(\phi\bar\phi).
 }
-上式在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$（称为\textbf{U(1) 荷}）使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
+上式在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$ 使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
 \eq{
     \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\implies J^\mu=\i e \phi\overleftrightarrow{\partial^\mu}\bar\phi:=\i e(\phi\partial^\mu \bar{\phi}-\bar{\phi} \partial^\mu \phi).
 }
@@ -653,7 +666,38 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \eq{
     J^\mu=\i e\left(\phi\overline{D^\mu\phi}-\bar{\phi} D^\mu \phi\right).
 }
-定义$\varphi:=A^0,a^i:=A^i$，分别解释为电标势和磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm a+\grad f$ 的选取自由。可见，对称性催生电荷，规范化催生电磁场。
+定义$\varphi:=A^0,a^i:=A^i$，分别解释为电标势和磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm a+\grad f$ 的选取自由。可见，对称性催生电荷 $J^\mu$，规范化催生电磁场 $A_\mu$。Noether 荷 $\int J^0\d[3]x$ 表示 $\phi$ 所携带的带电\textit{数}，再配合耦合常数 $e$ 就得到了电量。
+
+为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。因为 $A^\mu$ 的运动方程应至少二阶，作用量中需要出现 $\del_\mu A_\nu$。
+$A^\mu A_\mu$ 并不规范不变，但对于一阶导，可立即看到
+\eq{
+    F_{\mu \nu}:=2\del_{[\mu} A_{\nu]}
+}
+是规范不变的，因为 $F_{\mu\nu}=2\del_{[\mu}A_{\nu]} + 2\del_{[\mu} \del_{\nu]}f=\del_{\mu} (A_{\nu}+\del_\nu f)-\del_{\nu} (A_{\mu}+\del_\mu f)$。这称为\textbf{电磁张量}。它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi,A_i=a_j$，则 $\bm E=-\grad\varphi-\del_t{\bm a}$ 就是电动力学的关系。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
+表达磁场需要引入叉乘。
+叉乘 $\bm A\times \bm B$ 的分量写法为\footnote{$\varepsilon_{ijk}$ 称为\textbf{Levi-Civita 符号}，若 $(ijk)\in S_n$，则 $\varepsilon_{ijk}=\sgn(ijk)$，否则为零。且可证明（见附录 \ref{sec:tensor-density} 节）
+\[\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}.\]
+不同于普通代数等式有乘除消项的说法，指标运算中，必须理解为是用缩并得到 $\delta^\mu_\nu$ 以消项。} $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，可以转写为 $B_i=\frac 12 \varepsilon_{ijk}F^{jk}=\varepsilon_{ijk}\del^{[j}A^{k]}=\varepsilon_{ijk}\del^j A^k$，这正是 $\bm B:=\curl\bm a$。
+我们总结为
+\eq{
+    E_i=F_{i0},\quad B_i=\frac 12 \varepsilon_{ijk}F^{jk}\iff F^{i0}=E^i,\quad F^{ij}=\varepsilon^{ijk}B_k.
+}
+可使用矩阵表为
+\eq{\left(F_{\mu\nu}\right)=\left[\begin{array}{cccc}0& -E^{1} & -E^{2} & -E^{3}\\E^{1} & 0 & B^{3} & -B^{2} \\E^{2} & -B^{3} & 0 & B^{1} \\E^{3} & B^{2} & -B^{1} & 0 \end{array}\right].}
+
+我们选择用 $F_{\mu\nu}$ 构造。
+最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。考虑
+\eq{
+    \mathcal L=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}-\left(D^\mu\phi \overline{D_\mu \phi} + U(\phi\bar\phi)\right),
+}
+其中耦合强度由实验测定并取 Gauss 几何制($4\pi\epsilon_0 = 1$)。
+进而
+\[\delta\int F^{\mu\nu} F_{\mu\nu} \d[4]{x}=4\int F^{\mu\nu} \delta (\del_\mu A_\nu) \d^4 x\simeq -4\int \del_\mu F^{\mu\nu} \delta A_\nu \d^4 x.\]
+另一项 $-\var\int\left(D^\mu\phi \overline{D_\mu \phi} + U(\phi\bar\phi)\right)\d[4]x=\int J^\mu \delta A_\mu \d[4]x$，故
+\eq{
+    \del_\mu F^{\mu\nu}=-4\pi J^\nu,
+}
+这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\del_t \bm E=4\pi \bm j$。
 
 研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
 
@@ -671,19 +715,16 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 }
 其中耦合强度收进荷的单位定义。耦合项变分为
 \[\delta \int  A_\mu U^\mu\mathrm{d} \tau=\int \left(\del_\nu A_{\mu} \delta x^\nu U^\mu+A_\mu \frac{\mathrm{d} \delta x^\mu}{\mathrm{d} \tau}\right) \mathrm{d} \tau \simeq \int  F_{\mu \nu} U^\nu \delta x^\mu \mathrm{d} \tau,\]
-其中 $F_{\mu \nu}:=2\del_{[\mu} A_{\nu]}$ 称\textbf{电磁张量}。变分结果为
+可以看到电磁张量自然作为场强而出现。
+变分结果为
 \eq{
     \frac{\d P^\mu}{\d\tau}=m\frac{\d^2 x^\mu}{\d\tau^2}=q F^{\mu}{}_{\nu}U^\nu.
 }
-只需注意电磁场 $\bm B:=\curl\bm a,\bm E:=-\grad\varphi-\del_t{\bm a}$，便能将其解释为 Lorentz 力定律。首先，叉乘 $\bm A\times \bm B$ 的分量写法为 $\varepsilon_{ijk} A^j B^k$，$\varepsilon_{ijk}$ 称为\textbf{Levi-Civita 符号}，若 $(ijk)\in S_n$，则 $\varepsilon_{ijk}=\sgn(ijk)$，否则为零。且可证明（见附录 \ref{sec:tensor-density} 节）
-\eq{\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}.}
-再注意 $A_0=-\varphi,A_i=a_j$，则\footnote{不同于普通代数等式有乘除消项的说法，指标运算中，必须理解为是用缩并得到 $\delta^\mu_\nu$ 以消项。}
-\eq{
-    E_i=F_{i0},\quad B_i=\varepsilon_{ijk}\del^j A^k=\varepsilon_{ijk}\del^{[j}A^{k]}=\frac 12 \varepsilon_{ijk}F^{jk}\eqto F^{ij}=\varepsilon^{ijk}B_k.
-}
-可使用矩阵表示为
-\eq{\left(F_{\mu\nu}\right)=\left[\begin{array}{cccc}0& -E^{1} & -E^{2} & -E^{3}\\E^{1} & 0 & B^{3} & -B^{2} \\E^{2} & -B^{3} & 0 & B^{1} \\E^{3} & B^{2} & -B^{1} & 0 \end{array}\right],}
-它\textit{确有}场强意义。取 $f^i=m \dot{u}^i$ 可看出该方程正是 $\bm f=q(\bm E+\bm u\times\bm B)$。称 $q F^{\mu}{}_{\nu}U^\nu$ 为\textbf{4-Lorentz 力}。
+
+
+便能将其解释为 Lorentz 力定律。
+
+取 $f^i=m \dot{u}^i$ 可看出该方程正是 $\bm f=q(\bm E+\bm u\times\bm B)$。称 $q F^{\mu}{}_{\nu}U^\nu$ 为\textbf{4-Lorentz 力}。
 类似地，欲直接得 3 维表述可用惯性坐标时 $t$ 作为参数，位形空间取同时面 $\Sigma_t$，这样可表为 $L=-m\sqrt{1-u^2}-q\varphi+qu_i a^i$，对 $x^i$ 变分即可。可见最小耦合迫使场强成为 4-速的线性变换。从定义立即得到微分恒等式
 \eq{
  F_{[\mu\nu,\lambda]}=2  A_{[[\nu,\mu],\lambda]}=2  A_{[\nu,(\mu,\lambda)]}=0,
@@ -691,19 +732,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\del_t \bm B$。
 %% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
 
-为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。选择用 $F_{\mu\nu}$ 构造，因为 $A^\mu$ 的运动方程应至少二阶，且由 $F_{\mu\nu}=2\del_{[\mu}A_{\nu]} + 2\del_{[\mu} \del_{\nu]}f=\del_{\mu} (A_{\nu}+\del_\nu f)-\del_{\nu} (A_{\mu}+\del_\mu f)$ 可知 $F_{\mu\nu}$ 保持 U(1) 对称性。
-最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。考虑
-\eq{
-    \mathcal L=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}-\left(D^\mu\phi \overline{D_\mu \phi} + U(\phi\bar\phi)\right),
-}
-其中耦合强度由实验测定并取 Gauss 几何制($4\pi\epsilon_0 = 1$)。
-进而
-\[\delta\int F^{\mu\nu} F_{\mu\nu} \d[4]{x}=4\int F^{\mu\nu} \delta (\del_\mu A_\nu) \d^4 x\simeq -4\int \del_\mu F^{\mu\nu} \delta A_\nu \d^4 x.\]
-另一项 $-\var\int\left(D^\mu\phi \overline{D_\mu \phi} + U(\phi\bar\phi)\right)\d[4]x=\int J^\mu \delta A_\mu \d[4]x$，故
-\eq{
-    \del_\mu F^{\mu\nu}=-4\pi J^\nu,
-}
-这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\del_t \bm E=4\pi \bm j$。
+
 
 为消除规范自由度，可约定\textbf{规范固定}(gauge fixing)条件。比如\textbf{Lorenz 规范}\footnote{指丹麦物理学家 Ludvig Valentin Lorenz(1829-1891)。当然它又是 Lorentz 协变的，所以也可叫做 Lorentz 规范。二人名字的发音相同，容易混淆，需要注意 Lorentz 是荷兰的物理学家，相对论的奠基者之一。}
 \eq{
