@@ -469,21 +469,16 @@ S(\Phi_a(x))=\int \mathcal L(x^\mu,\Phi_a,\Phi_{a,\mu})\d[4]{x}\implies \pdv{x^\
 \end{enumerate}
 总之，不与物理意义冲突时，默认舍去变分中的全微分项。
 
-考虑闵氏时空上实标量场 $\phi$ 的案例。置惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
-最简单的选择是 $\del^\mu\phi\del_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
-\[\mathcal L= -\frac 12\del^\mu\phi\del_\mu\phi-U(\phi)\implies \square\phi-\pdv*{U}{\phi}=0,\]
-从 E-L 方程可以看出，$\phi$ 的一次项对运动方程无实质贡献，故势能项最简单的取法是至少二次项，如 $U(\phi)=\frac 12 m^2\phi^2$，则得\textbf{Klein-Gordon 方程} $(\square-m^2\phi)=0$。这里 $\square=\del^\mu\del_\mu=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}$即电动力学中的 d'Alembert 算子，类似于 3 维空间中的 Laplace 算子 $\nabla^2$。
-这最初是为得到相对论量子力学的一种尝试，$m$ 表示量子化后的粒子静质量。
-
 考虑对时空场 $\Phi(x)$ 进行变换\footnote{可见时空点变换（或一般的位形空间）和坐标变换十分相似。前者为新点、旧点在同一坐标系下的表示 $x\to\tilde x$，称\textbf{主动观点}（点变、坐标系不变）；后者为同一时空点在不同坐标系下的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}（点不变、坐标系变）。两种观点可以互相转换。} $\Phi(x)\to\tilde\Phi(\tilde x)$，$\bar\delta\Phi=\epsilon F,\delta x^\mu=\epsilon\xi^\mu$。则
 \[
 \delta\Phi =\bar\delta \Phi+\Phi_{,\nu}\delta x^\nu,\quad \delta\Phi_{,\nu}=\bar\delta \Phi_{,\nu} + \Phi_{,\sigma\nu}\delta x^\sigma,\quad \delta\mathcal L =\bar\delta\mathcal L+\mathcal L_{,\nu}\delta x^\nu,
 \]
 并注意 $\bar\delta(\Phi_{,\nu})=\del_\nu(\bar\delta \Phi),\bar\delta x^\mu=0$。我们知道体元变换 $\d[4]\tilde x=J\d[4]x$，其中 Jacobi 行列式为
 \[
-J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_n}\sgn(\mu_0\cdots \mu_3)\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3}.
+J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cdots \mu_3)\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3}=\varepsilon_{\mu_0\cdots \mu_3}\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3}.
 \]
-代入 $\delta x^\mu$ 则 $\pdv{\tilde x^\mu}{x^\nu}=\delta_\nu^\mu+\del_\nu\delta x^\mu$。零阶项 $\sum \sgn(\mu_0\cdots \mu_3) \delta_0^{\mu_0}\cdots\delta_3^{\mu_3}=\sgn(0123)=1$。一阶项为 $\sum \sgn(\mu_0\cdots \mu_3)\delta_0^{\mu_0}\cdots\del_\nu\delta x^{\mu_\nu}\cdots\delta_3^{\mu_3}=\delta_{\mu_\nu}^{\nu}\del_\nu\delta x^{\mu_\nu}=\del_\nu\delta x^\nu$。所以 $J=1+\del_\mu\delta x^\mu$，也即 $\delta(\d[4]{x})=\del_\mu\delta x^\mu\d[4]{x}$。综上
+其中 $\varepsilon_{\pi}$ 称为\textbf{Levi-Civita 符号}，若 $\pi\in S_n$，则 $\varepsilon_{\pi}=\sgn \pi$，否则为零。
+代入 $\delta x^\mu$ 则 $\pdv{\tilde x^\mu}{x^\nu}=\delta_\nu^\mu+\del_\nu\delta x^\mu$。零阶项 $\varepsilon_{\mu_0\cdots \mu_3} \delta_0^{\mu_0}\cdots\delta_3^{\mu_3}=\varepsilon_{0\cdots 3}=1$。一阶项为 $\varepsilon_{\mu_0\cdots \mu_3}\delta_0^{\mu_0}\cdots\del_\nu\delta x^{\mu_\nu}\cdots\delta_3^{\mu_3}=\delta_{\mu_\nu}^{\nu}\del_\nu\delta x^{\mu_\nu}=\del_\nu\delta x^\nu$。所以 $J=1+\del_\mu\delta x^\mu$，也即 $\delta(\d[4]{x})=\del_\mu\delta x^\mu\d[4]{x}$。综上
 \begin{align*} \delta S
 &=\int \left(\delta\mathcal L+\mathcal L \del_\mu\delta x^\mu\right)\d[4]{x}=\int \left(\bar\delta\mathcal L+\del_\mu(\mathcal L\delta x^\mu)\right)\d[4]{x}\\
 &=\int \left(\left(\pdv{L}{\Phi}-\pdv{x^\mu} \pdv{\mathcal L}{\Phi_{,\mu}}\right)\bar\delta\Phi+\pdv{x^\mu}(\pdv{\mathcal L}{\Phi_{,\mu}}\bar\delta\Phi+\mathcal L\delta x^\mu)\right)\d[4]{x}.
@@ -505,7 +500,8 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_n}\sgn(\mu_0\cd
 \eq{
     \del_\mu S^{\mu\nu}=\del_t S^{0\nu}+\del_i S^{i\nu}=0,
 }
-考虑时间变换 $\xi^0$ 就是取 $\nu=0$，考虑空间变换 $\xi^i$ 就是取 $\nu=i$。上式就解释为 4-动量的连续性方程。所以 $S^{\mu\nu}$ 称为\textbf{正则能动张量}(canonical energy-momentum tensor)。总 4-动量为
+考虑时间变换 $\xi^0$ 就是取 $\nu=0$，考虑空间变换 $\xi^i$ 就是取 $\nu=i$。
+上式就解释为能量、动量的连续性方程。所以 $S^{\mu\nu}$ 称为\textbf{正则能动张量}(canonical energy-momentum tensor)。总动量为
 \eq{
     P^\mu=\int S^{0\mu}\d[3]{x}.
 }
@@ -514,7 +510,6 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_n}\sgn(\mu_0\cd
     \mathcal H=S^{00}=\pi\dot\Phi-\mathcal L,\quad \pi = \pdv{\mathcal L}{\dot\Phi},
 }
 其中 $\pi$ 为\textbf{共轭动量密度}，$\dot\Phi=\del_t\Phi$。$S^{0i}=\pi\delta^i\Phi$ 就是\textbf{动量密度}。
-合起来称 $S^{0\nu}$ 为\textbf{4-动量密度}。
 分析能量连续性 $\dot H=-\int\del_i S^{i0}\d[3]x$，故 $S^{i0}$ 是\textbf{能流密度}。
 从定义就能看出 $S^{\mu\nu}$ 一般不对称，所以动量和能流还不能完全划等号。
 
@@ -549,7 +544,6 @@ $0=\xi_\nu\del_\mu T^{\mu\nu}+T^{\mu\nu}\del_\mu\xi_\nu=\xi_\nu\del_\mu T^{\mu\n
 
 %% 有效性
 
-\section{狭义相对论}
 \subsection{Lorentz 群}
 观察 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$，其形同正交矩阵。回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\iff (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
 其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\l$ 不变。
@@ -623,14 +617,11 @@ L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=-m/\gamma,\quad S=-m\int\sqrt{-\e
 
 注意 $U^\mu=\gamma\dot x^\mu$，则 $L=m U^\mu U_\mu/\gamma=m U_\mu \dot x^\mu$，所以惯性系下的正则动量为
 \eq{
-    P_\mu=\pdv*{L}{\dot x^\mu}=m U_\mu\implies P^\mu=m U^\mu,
+    P_\mu=\pdv{L}{\dot x^\mu}=m U_\mu\implies P^\mu=m U^\mu,
 }
 称为\textbf{4-动量}。由时空对称性，其分量分别解释为动量 $p^i=P^i$（称为\textbf{3-动量}）和能量 $E=P^0=p_i u^i-L$。
-将 $\gamma$ 按二项式定理展开：
-\eq{
-p^i=\gamma m u^i=m u^i+\frac{1}{2} m u^{2}u^i+\cdots,\quad E=\gamma m=m+\frac{1}{2} mu^{2}+\cdots,
-}
-可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正；后者即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
+将 $\gamma$ 按二项式定理展开 $p^i=Eu^i=\gamma m u^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)u^i$。
+可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
 $P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\textbf{条件}。
 另一方面 $-E^2+p^2=P^\mu P_\mu$ 或者 $E^2= p^2+m^2$，此即相对论性\textbf{色散关系}(dispersion relation)。
 同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程 $\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2$。
@@ -641,7 +632,13 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \subsection{经典电动力学}
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
-我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。比如，量子力学的成功启发我们考虑一个复标量场 $\phi$，则作用量可用其共轭 $\bar\phi$ 构造：
+我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。
+考虑最简单的实标量场 $\phi$。置闵氏时空惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\del_\mu\phi$ 构造。
+最简单的选择是 $\del^\mu\phi\del_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
+\[\mathcal L= -\frac 12\del^\mu\phi\del_\mu\phi-U(\phi)\implies \square\phi-\pdv*{U}{\phi}=0,\]
+从 E-L 方程可以看出，$\phi$ 的一次项对运动方程无实质贡献，故势能项最简单的取法是至少二次项，如 $U(\phi)=\frac 12 m^2\phi^2$，则得\textbf{Klein-Gordon 方程} $(\square-m^2\phi)=0$。这里 $\square=\del^\mu\del_\mu=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}$即电动力学中的 d'Alembert 算子，类似于 3 维空间中的 Laplace 算子 $\nabla^2$。
+这最初是为得到相对论量子力学的一种尝试，$m$ 表示量子化后的粒子静质量。
+量子力学的成功启发我们考虑一个复标量场 $\phi$，则作用量可用其共轭 $\bar\phi$ 构造：
 \eq{
     \mathcal L=-\del^\mu\phi\del_\mu\bar\phi-U(\phi\bar\phi).
 }
@@ -675,18 +672,24 @@ $A^\mu A_\mu$ 并不规范不变，但对于一阶导，可立即看到
 }
 是规范不变的，因为 $F_{\mu\nu}=2\del_{[\mu}A_{\nu]} + 2\del_{[\mu} \del_{\nu]}f=\del_{\mu} (A_{\nu}+\del_\nu f)-\del_{\nu} (A_{\mu}+\del_\mu f)$。这称为\textbf{电磁张量}。它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi,A_i=a_j$，则 $\bm E=-\grad\varphi-\del_t{\bm a}$ 就是电动力学的关系。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
 表达磁场需要引入叉乘。
-叉乘 $\bm A\times \bm B$ 的分量写法为\footnote{$\varepsilon_{ijk}$ 称为\textbf{Levi-Civita 符号}，若 $(ijk)\in S_n$，则 $\varepsilon_{ijk}=\sgn(ijk)$，否则为零。且可证明（见附录 \ref{sec:tensor-density} 节）
-\[\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}.\]
-不同于普通代数等式有乘除消项的说法，指标运算中，必须理解为是用缩并得到 $\delta^\mu_\nu$ 以消项。} $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，可以转写为 $B_i=\frac 12 \varepsilon_{ijk}F^{jk}=\varepsilon_{ijk}\del^{[j}A^{k]}=\varepsilon_{ijk}\del^j A^k$，这正是 $\bm B:=\curl\bm a$。
+由行列式知叉乘 $\bm A\times \bm B$ 的分量写法为 $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，
+可转写\footnote{可证明 $\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}$。
+详见附录 \ref{sec:tensor-density} 节。不同于普通代数等式有乘除消项的说法，指标运算中，必须理解为是用缩并得到 $\delta^\mu_\nu$ 以消项。}
+为 $B_i=\frac 12 \varepsilon_{ijk}F^{jk}=\varepsilon_{ijk}\del^{[j}A^{k]}=\varepsilon_{ijk}\del^j A^k$，这正是 $\bm B:=\curl\bm a$。
 我们总结为
 \eq{
     E_i=F_{i0},\quad B_i=\frac 12 \varepsilon_{ijk}F^{jk}\iff F^{i0}=E^i,\quad F^{ij}=\varepsilon^{ijk}B_k.
 }
 可使用矩阵表为
 \eq{\left(F_{\mu\nu}\right)=\left[\begin{array}{cccc}0& -E^{1} & -E^{2} & -E^{3}\\E^{1} & 0 & B^{3} & -B^{2} \\E^{2} & -B^{3} & 0 & B^{1} \\E^{3} & B^{2} & -B^{1} & 0 \end{array}\right].}
+从定义立即得到微分恒等式
+\eq{
+ F_{[\mu\nu,\lambda]}=2  A_{[[\nu,\mu],\lambda]}=2  A_{[\nu,(\mu,\lambda)]}=0,
+}
+这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\del_t \bm B$。
+%% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
 
-我们选择用 $F_{\mu\nu}$ 构造。
-最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。考虑
+使用 $F_{\mu\nu}$ 的最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。考虑
 \eq{
     \mathcal L=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}-\left(D^\mu\phi \overline{D_\mu \phi} + U(\phi\bar\phi)\right),
 }
@@ -699,15 +702,7 @@ $A^\mu A_\mu$ 并不规范不变，但对于一阶导，可立即看到
 }
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\del_t \bm E=4\pi \bm j$。
 
-研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
-
-
-取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
-惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
-进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
-
-$ \int J^\mu \d[3]x = q U^\mu$
-
+另一使 $F_{\mu\nu}$ 直接出现并表现场强含义的途径是研究带电粒子运动。
 回到经典宏观视角将有所裨益，这时场还原回带电粒子。
 置点电荷 $q$ 及其 4-速 $U^\mu$，同样考虑最小耦合
 \eq{
@@ -720,17 +715,10 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 \eq{
     \frac{\d P^\mu}{\d\tau}=m\frac{\d^2 x^\mu}{\d\tau^2}=q F^{\mu}{}_{\nu}U^\nu.
 }
-
-
-便能将其解释为 Lorentz 力定律。
-
 取 $f^i=m \dot{u}^i$ 可看出该方程正是 $\bm f=q(\bm E+\bm u\times\bm B)$。称 $q F^{\mu}{}_{\nu}U^\nu$ 为\textbf{4-Lorentz 力}。
-类似地，欲直接得 3 维表述可用惯性坐标时 $t$ 作为参数，位形空间取同时面 $\Sigma_t$，这样可表为 $L=-m\sqrt{1-u^2}-q\varphi+qu_i a^i$，对 $x^i$ 变分即可。可见最小耦合迫使场强成为 4-速的线性变换。从定义立即得到微分恒等式
-\eq{
- F_{[\mu\nu,\lambda]}=2  A_{[[\nu,\mu],\lambda]}=2  A_{[\nu,(\mu,\lambda)]}=0,
-}
-这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\del_t \bm B$。
-%% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
+类似地，欲直接得 3 维表述可用惯性坐标时 $t$ 作为参数，位形空间取同时面 $\Sigma_t$，这样可表为 $L=-m\sqrt{1-u^2}-q\varphi+qu_i a^i$，对 $x^i$ 变分即可。可见最小耦合迫使场强成为 4-速的线性变换。
+
+
 
 
 
@@ -748,6 +736,15 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 最后研究经典宏观下带电粒子如何推广到连续介质。
 
 %% 介质
+
+研究耦合项 $q\int A_\mu U^\mu \d\tau$。 
+
+
+取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
+惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
+进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
+
+$ \int J^\mu \d[3]x = q U^\mu$
 
 考虑质量守恒且无内部作用的流体，称为\textbf{尘埃}(dust)。设 $\mu^*$ 是\textbf{固有能量密度}或\textbf{质量密度}。置尘埃系统仅受外引力场作用，则 $\mathcal L_M=-\mu^*$。质量守恒等价为 $\del_\nu(\mu^* U^\nu)=0$
 
@@ -769,6 +766,13 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 \eq{
     \delta(x-x_0):=\begin{cases}+\infty,\quad x=x_0,\\ 0,\quad x\ne x_0;\end{cases}\quad \int f(x)\delta(x-x_0)\d{x}=f(x_0).
 }
+
+由定义，电磁场的能动张量为
+\eq{
+T_{\mu\nu}=\frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right),
+}
+显然 $T=0$。以闵氏时空举例，电磁场在惯性系中所测能量密度为 $T^{00}=(\bm E^2+\bm B^2)/8\pi$；能流或动量密度为 $T^{i0}=-T_{i0}$ 即 Poynting 矢量 $(\bm E\times \bm B) / 4\pi$；动流密度或应力张量为 $T^{ij}=-(E^i E^j+B^i B^j)/4\pi+T^{00}\delta^{ij}$。代入 $\nabla_\mu F^{\mu\nu}=-4 \pi J^\nu$ 得
+$\nabla^\mu T_{\mu\nu}=-F_{\nu\lambda}J^\lambda$。
 
 \subsection{光学}
 %% 光学
@@ -1081,16 +1085,11 @@ T_{\mu \nu}:=-\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g^{\mu\nu}}=-2\fd
 \[ 
 R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\mu\nu}T\right),
 \]
-称为\textbf{反迹}(trace-reversed)表达。当然，$T_{\mu\nu}$ 的具体意义和 $\kappa$ 的值还需落实。
+称为\textbf{反迹}(trace-reversed)表达。
+下证 $T_{\mu\nu}$ 就是 Belinfante 能动张量。
 
-对 Bianchi 恒等式缩并 $\lambda,\sigma$ 再用 $g^{\mu\kappa}$ 升指标，且注意 $g^{\mu\kappa} R_{\lambda \mu\nu\kappa}=g^{\mu\kappa} R_{\mu\lambda\kappa \nu}=R^{\kappa}{}_{\lambda\kappa \nu}=R_{\lambda\nu}$，则 $\nabla^{\mu} R_{\mu\nu}+ \nabla^\lambda R_{\lambda\nu}-\del_\nu R=0\Rightarrow\nabla^{\mu} R_{\mu\nu}=\frac 12\del_\nu R$，故 $G_{\mu\nu}$ 无散：
-\eq{
-    \nabla^{\mu}G_{\mu\nu}=0.
-}$\nabla^{\mu}G_{\mu\nu}=0$ 要求
-\eq{
-    \nabla_\mu T^{\mu\nu}=0,
-}
-取 $\nu=0$ 即能量局域守恒，取 $\nu=i$ 即动量局域守恒。
+对 Bianchi 恒等式缩并 $\lambda,\sigma$ 再用 $g^{\mu\kappa}$ 升指标，且注意 $g^{\mu\kappa} R_{\lambda \mu\nu\kappa}=g^{\mu\kappa} R_{\mu\lambda\kappa \nu}=R^{\kappa}{}_{\lambda\kappa \nu}=R_{\lambda\nu}$，则 $\nabla^{\mu} R_{\mu\nu}+ \nabla^\lambda R_{\lambda\nu}-\del_\nu R=0\Rightarrow\nabla^{\mu} R_{\mu\nu}=\frac 12\del_\nu R$，故 $G_{\mu\nu}$ 无散 $\nabla^{\mu}G_{\mu\nu}=0$。另一方面，$\nabla_\mu T^{\mu\nu}=0$。
+
 
 考虑尘埃及其 4-速场 $Z^\mu$，
 只需取局域惯性系即知质量守恒等价为 $\nabla_\nu(\mu^* Z^\nu)=0$。而协变散度可直接用偏导表示。
@@ -1178,12 +1177,8 @@ Lorenz 规范从局域惯性系出发变换为 $\nabla^\mu A_\mu =0$，则引力
 \end{align}
 其中 $\square_g:=\nabla^\mu\nabla_\mu$ 称为\textbf{Laplace-Beltrami 算子}。$g_{\mu\nu}$ 出现在克氏符中，以上都是$g_{\mu\nu},F_{\mu\nu}$ 的耦合方程。
 
-由定义，电磁场的能动张量为
-\eq{
-T_{\mu\nu}=\frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right),
-}
-显然 $T=0$。以闵氏时空举例，电磁场在惯性系中所测能量密度为 $T^{00}=(\bm E^2+\bm B^2)/8\pi$；能流或动量密度为 $T^{i0}=-T_{i0}$ 即 Poynting 矢量 $(\bm E\times \bm B) / 4\pi$；动流密度或应力张量为 $T^{ij}=-(E^i E^j+B^i B^j)/4\pi+T^{00}\delta^{ij}$。代入 $\nabla_\mu F^{\mu\nu}=-4 \pi J^\nu$ 得
-$\nabla^\mu T_{\mu\nu}=-F_{\nu\lambda}J^\lambda$。
+
+
 设荷电介质为尘埃，则有\textbf{Einstein-Maxwell 作用量}
 \eq{
     S=\int\left(\frac{1}{16\pi}(R - F^{\mu\nu} F_{\mu\nu})-\mu^*+A_\nu J^\nu\right)\sqrt{-g}\d[4]{x}.
