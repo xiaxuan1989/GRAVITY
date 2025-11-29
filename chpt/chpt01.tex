@@ -1405,12 +1405,25 @@ E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\al
 考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在 Schwarzschild 系下，钟在视界处的读数 $\tau$ 近乎定格。
 物理意义是，遥远观者需要对钟，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。
 
-用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
-令 $\d s^2=0$，则
-\eq{\label{dia_Sch}
-t=\pm\left(r+2M\ln|r-2M|\right)+C.
-}
+找到坐标系能连续地描述粒子落入视界的过程，等价于消除奇性。
+先用光线研究时空的因果结构。
+令 $\d s^2=0$，则 $t=\pm\left(r+2M\ln|r-2M|\right)+C$。
 考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，负号对应内向族。
+注意到内向族分别在 $r>2M,0<r<2M$ 单调，可设想直接将其映射为向内 $45^\circ$ 斜率的直线 $\tilde t=-r+C$，且为了 $r=0$ 时 $t=\tilde t$，可取
+\eq{
+    \tilde t=t+2M\ln\abs{\frac{r}{2M}-1}\implies \d s^2=-\left(1-\frac{2 M}{r}\right) {\d \tilde t}^2+\frac{4M}{r}\,\mathrm{d} \tilde t\, \mathrm{d} r+\left(1+\frac{2 M}{r}\right)\d r^2,
+}
+现在度规分量在视界处收敛，且 $g=-(g_{01})^2\ne 0$，这才算消去奇性。
+
+Eddington 系
+
+利用十字相乘法可分解出两个类光测地线族，其一是
+\eq{
+\dv{\tilde t}{r}=\frac{r+2M}{r-2M}\Rightarrow \tilde t=r+4M\ln\abs{r-2M}+C_1, \quad r=2M,
+}
+其二正是 $\dv{\tilde t}{r}=-1$ 或 $\tilde t=-r+C$。
+显然前者为外向族而后者为内向族。
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/schBH.pdf}
