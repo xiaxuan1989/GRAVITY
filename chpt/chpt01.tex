@@ -437,11 +437,11 @@ $a^i:=\ddot{x}^i$ 称为（坐标）\textbf{3-加速}。
 }
 称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)，故上指标又称\textbf{逆变指标}。
 根据式 \eqref{eq:Lorentz} 知 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}=\eta_{\sigma\lambda}\Lambda_{\lambda\nu}$，这里 $\Lambda^{-1}$ 是 $\Lambda$ 的逆。
-故 $U_\mu$ 满足的变换为
+故 $U_\mu$ 满足的变换与之互逆：
 \eq{
     U'_\nu=(\Lambda^{-1})^{\mu}{}_{\nu} U_\mu,\quad (\Lambda^{-1})^{\mu}{}_{\nu}=\eta^{\mu\alpha}\eta_{\nu\beta}\Lambda^{\beta}{}_{\alpha}.
 }
-按这种方式变换的矢量则称\textbf{协变矢量}(covector)。这一称呼与“协变性”有区别，没有物理方程“逆变性”的说法。推而广之可得\textbf{Lorentz 张量}，满足 Lorentz 变换下的张量变换律：
+按这种方式变换的矢量则称\textbf{协变矢量}(covector)。下指标称\textbf{协变指标}。这一称呼与“协变性”有区别，没有物理方程“逆变性”的说法。推而广之可得\textbf{Lorentz 张量}(tensor)，满足 Lorentz 变换下的张量变换律：
 \eq{
     T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\Lambda^{\mu_1}{}_{\rho_1}\cdots\Lambda^{\mu_k}{}_{\rho_k}(\Lambda^{-1})^{\sigma_1}{}_{\nu_1}\cdots(\Lambda^{-1})^{\sigma_l}{}_{\nu_l},
 }
@@ -457,59 +457,11 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
     \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变。
 \end{enumerate}
 $U^\mu$、$U_\mu$、Kronecker 符号都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\del_\nu U^\mu$ 也是 Lorentz 张量。
-闵氏度规在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
-
-
-
-
-，但还不是张量，后续将对此详解。
-
-
-，则根据全微分知：且是广义的逆变矢量。
-\eq{
-    T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu.
-}
-
-
-一点处全体逆变矢量构成该点\textbf{切空间}(tangent space)。物理学很多矢量都与相切有关，因而是逆变矢量。
-
-可以存在变换与之互逆的矢量：
-\eq{\omega'_i=\pdv{x^j}{x'^i}  \omega_j,}
-
-
-或\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。下指标称\textbf{协变指标}。
-
-度规的定义实际默认了\textbf{Gauss 假设}：希望存在坐标系使线元表为勾股定理。进而在广义协变性要求下保持二次型：
-\eq{
-    g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff g'_{\gamma\sigma}= g_{\mu\nu}\pdv{x^\mu}{x'^\gamma}\pdv{x^\nu}{x'^\sigma}.
-}
-主流几何理论总研究二次型，不研究 $\d\l=(|\d x|^3+|\d y|^3)^{1/3}$ 等。上式是合同变换，$g_{\mu\nu}$ 保持可逆，故总可定义 $(g^{\mu\nu}):=(g_{\mu\nu})^{-1}$，即满足 $g^{\mu \lambda} g_{\lambda\nu}=g_{\nu\lambda}g^{\lambda\mu}=\delta^\mu_\nu$。称 $g^{\mu\nu}$ 为\textbf{度规逆}。
-
-
-度规是一个\textit{指定好的}对称、非退化 2-协变张量
-
-
-称之为\textbf{张量}(tensor)
-
-，本书简称张量。
-
-\eq{
-    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{x'^{\mu_1}}{x^{\rho_1}}\cdots\pdv{x'^{\mu_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{x'^{\nu_1}}\cdots\pdv{x^{\sigma_l}}{x'^{\nu_l}},
-}
-
-Jacobi 矩阵元
-
-
-张量一定是 Lorentz 张量，反之不然。
-
-只要求 Lorentz 协变性 $T'^{\cdots}{}_{\cdots}=T^{\cdots}{}_{\cdots}\Lambda^\mu{}_\nu\cdots \Lambda^\rho{}_\sigma$ 则称\textbf{Lorentz 张量}。
-
-
-
+闵氏度规（包括 $\eta^{\mu\nu}$）在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
 
 虽然这在物理和计算上没有问题，但似乎还是缺了些什么。
 称 $T^{\cdots}{}_{\cdots}$ 是张量，准确是想称分量等价类 $[T^{\cdots}{}_{\cdots}]=\{T^{\cdots}{}_{\cdots},T'^{\cdots}{}_{\cdots},\cdots\}$ 是张量。
-我们的确期望的是，如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
+我们的确期望的是，如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，构成现代微分几何的基石，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
 这种所谓“坐标无关”，我们给出准确陈述：\textbf{坐标独立性}(coordinate independence)或\textbf{坐标选择无关}，从而支撑了物理上的坐标冗余性。
 最重要地，计算时还存在一类高维矩阵不满足任何协变性，常称\textbf{赝张量}。
 对于赝张量，映射语言需要将其强行定义为“坐标系依赖的张量”，非常累赘，分量语言反成聪明的选择。唯遇到歧义或能简化推导时，才讨论映射语言。
@@ -856,6 +808,23 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
 尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
 
 现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
+
+
+根据全微分知，4-速实际上可在任意的坐标变换下保持协变，即更广义的逆变矢量 $T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu$。变换改成了任意 Jacobi 矩阵元。反过来也可证明，广义逆变矢量总存在曲线与之相切，故不再与切矢区分。
+一点处全体切矢构成该点\textbf{切空间}(tangent space)。
+$\omega'_i=\pdv{x^j}{x'^i} \omega_j$ 则对应\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
+广义协变的张量满足
+\eq{
+    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{x'^{\mu_1}}{x^{\rho_1}}\cdots\pdv{x'^{\mu_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{x'^{\nu_1}}\cdots\pdv{x^{\sigma_l}}{x'^{\nu_l}},
+}
+本书今后简称张量。
+张量一定是 Lorentz 张量，反之不然。
+度规是一个\textit{指定好的}对称、非退化 2-协变张量。换言之，我们实际默认了\textbf{Gauss 假设}：希望存在坐标系使线元表为广义勾股定理。进而在广义协变性要求下保持二次型：
+\eq{
+    g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff g'_{\gamma\sigma}= g_{\mu\nu}\pdv{x^\mu}{x'^\gamma}\pdv{x^\nu}{x'^\sigma}.
+}
+主流几何理论总研究二次型，不研究 $\d\l=(|\d x|^3+|\d y|^3)^{1/3}$ 等。上式是合同变换，$g_{\mu\nu}$ 保持可逆，故总可定义 $(g^{\mu\nu}):=(g_{\mu\nu})^{-1}$，即满足 $g^{\mu \lambda} g_{\lambda\nu}=g_{\nu\lambda}g^{\lambda\mu}=\delta^\mu_\nu$。称 $g^{\mu\nu}$ 为\textbf{度规逆}。
+偏导不是张量。
 
 \subsection{引力度规}
 
