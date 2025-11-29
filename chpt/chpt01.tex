@@ -1,5 +1,6 @@
 \chapter{经典引力场论}\label{chpt:GR}
-\section{场论初步}
+
+\section{相对性场论}
 \subsection{时空}
 
 物理学研究各类\textbf{事件}(event)。类似于记叙文，真实事件持续一段时间并占据一定体积，但可理想地只用时刻和空间点构成\textbf{时空点}来确定事件。目前认为物质都由\textbf{粒子}(particle)组成，其经典上占据一个空间点，日常物质隶属\textbf{有质粒子}，我们只需一个有质粒子即可作为事件的\textbf{观者}(observer)，实验上总选足够小的仪器。
@@ -57,13 +58,12 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
     \label{fig:clock_syn}
 \end{figure}
 
-随后想到双程信号。先讨论惯性参考系。规定惯性观者走匀速直线。
+随后想到双程信号。先讨论惯性参考系，\ref{sec:time-cong} 节再讨论哪种参考系才能对钟。规定惯性观者走匀速直线。
 无论技术发展如何，双程光速的测量原理至今仍和\textbf{Fizeau 程序}一致：从坐标原点发射球面光波，然后由放置在某处（尽量邻近）距离已知的镜子反射，随后记录光回到原点的时间，这样可计算光速。按现在的约定，不需要再测量光速，故以上步骤更倾向于测距。
 任取某条惯性观者线 $G$，规定为坐标原点。设相对静止的另一惯性观者 $G'$；实验上若任意时刻测距均相同，就认为二者相对静止。二者可同属一个惯性参考系。
 $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$），最后 $G$ 在某时刻接受该光（事件 $C$）。取 $A,C$ 的中间事件 $D$；实验上由标准钟测量。只需约定 $B,D$ 同时。
-按此规定，惯性参考系的固有系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。
+按此规定，惯性参考系的固有系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。\ref{sec:inertial} 节再讨论惯性系的存在性。
 总之，单程光速是约定的，不可实验测量（除非找到非光对钟法）；我们可以测量的是双程光速，且用平均逼近瞬时。
-且注意并非所有参考系都能对钟，见 \ref{sec:time-cong} 节。
 
 \begin{figure}[t]
     \centering
@@ -90,7 +90,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 起初我们这样理解场论：设想一种\textbf{试验粒子}(test particle)，忽略其体积、形变及自旋，最重要地是忽略其自场对外场之干扰，就能测量受力来研究外场。每单位荷的场力即\textbf{场强}(strength)，通常无关于试验粒子，往往又能表为某个\textbf{势}(potential)之导数。
 在量子场论中，粒子解释为量子场的激发态。质子、电子、夸克等 Fermi 子携带作用荷，Bose 子场提供作用媒介。比如，电子场影响电磁场，产生波包（光子）传递电磁作用，在低能情形表现为电磁力。故严格来说，电磁场不依附于某个带电体，将总场分解为由各源所产生的部分是一种经典分析方法。
 
-\subsection{相对论}
+\subsection{狭义相对论}
 
 考虑任意惯性运动对象 $\gamma$ 于事件 $\gamma(\tau_1),\gamma(\tau_2)$ 经历的(elapsed along)固有时间 $\Delta\tau=\tau_2-\tau_1$。
 惯性观者 $G$ 有办法直接测算这一时间吗？假设在 $G$ 系 $\{t,x,y,z\}$ 看来，$\Delta t$ 内 $\gamma$ 走过 $\Delta x,\Delta y,\Delta z$。Descartes 系的勾股定理为$\Delta\ell^2=\delta_{ij}\Delta x^i\Delta x^j$，其中 $(\delta_{ij})$ 为单位阵并对指标使用求和约定。$\delta_{ij}$ 称为\textbf{Kronecker 符号}。速率可写作 $u=\Delta\ell/\Delta t$。
@@ -128,7 +128,8 @@ $(\eta_{\mu\nu})$ 的迹称为\textbf{号差}(signature)，本书选择 $+2$，�
 \d s^2={\eta}_{\mu\nu}\d x^\mu\d x^\nu=-\d t^2+\d x^2+\d y^2+\d z^2.
 }
 作为对比，Newton 理论分开定义绝对时间长度和空间长度。
-设任意（分段光滑的）观者线 $C(\sigma)$，$\sigma$ 是任取参数，可有 $\gamma=\dv*{t}{\tau}$。考察它于事件 $C(\sigma_1),C(\sigma_2)$ 的固有时间 $\Delta\tau$。设置其固有坐标系 $\{x'\}$（$x'^0=\tau$），$C$ 上事件总满足 $x'^i=0$，则 $\d\tau^2=-\d s^2$。它在惯性系 $\{x\}$ 下的参数式记 $x^\mu(\sigma)$，则
+设任意（分段光滑的）观者线 $C(\sigma)$，$\sigma$ 是任取参数，可有 $\gamma=\dv*{t}{\tau}$。
+考察它于事件 $C(\sigma_1),C(\sigma_2)$ 的固有时间 $\Delta\tau$。设置其固有坐标系 $\{x'\}$（$x'^0=\tau$），$C$ 上事件总满足 $x'^i=0$，则 $\d\tau^2=-\d s^2$。它在惯性系 $\{x\}$ 下的参数式记 $x^\mu(\sigma)$，则
 \eq{
 \Delta\tau=\int_C \sqrt{-\eta_{\mu\nu}\d x^\mu\d x^\nu}=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}\dv{x^\mu}{\sigma}\dv{x^\nu}{\sigma}}\d\sigma=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}T^\mu T^\nu}\d\sigma,}
 $T^\mu:=\dv{x^\mu}{\sigma}$ 为曲线关于 $\sigma$ 的\textbf{切矢}(tangent vector)在该系的分量，$\eta_{\mu\nu}T^\mu T^\nu$ 即模方。
@@ -172,7 +173,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 惯性系 $\{x\},\{x'\}$ 间满足
 \eq{\eta_{\alpha\beta}\d x'^\alpha\d x'^\beta=\eta_{\gamma\sigma}\d x^\gamma\d x^\sigma\iff \eta_{\alpha\beta}\pdv{x'^\alpha}{x^\gamma}\pdv{x'^\beta}{x^\sigma}=\eta_{\gamma\sigma},}
 由 \eqref{eq:chris} 式可快速证明变换的仿射性：
-\eq{\label{Lorentz} 
+\eq{\label{eq:Lorentz} 
 \pdv{x'^\alpha}{x^{\gamma}}{x^\epsilon}=0\iff  x'^\mu=x_0^\mu+ \Lambda^{\mu}{}_{\nu}x^\nu,\quad \text{$\Lambda^{\mu}{}_{\nu}$ 满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$}.
 }
 满足上式的变换称\textbf{Poincaré 变换}。
@@ -209,8 +210,8 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
     }\label{fig:boost}
 \end{figure}
 
-总之，闵氏几何必须依赖于前文叙述的光速不变、相对性原理，以及一些额外条件，如光走直线、不存在其它不变常数、时空均匀性等。通过修改这些条件得到的新理论，可以用于实验检验，结果显示与相对论相差不大。
-并且，相对论以及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏几何，直至存在实验明显证否。
+闵氏几何依赖于前文叙述的光速不变、相对性原理，以及一些额外条件（光走直线、不存在其它不变常数、时空均匀性等）。修改这些条件得到的新理论，可用于实验检验，结果显示与相对论相差不大。
+相对论及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏几何，直至存在实验明显证否。
 
 \newpage
 \begin{figure}[!h]
@@ -259,94 +260,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
     最后，著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。
     前文已直接证明了这一点。图 \ref{fig:twin} 给出了三角情形，也可理解为，折线的同时面在 $B$ 处发生突变，因此惯性观者多出了图中阴影部分的时间差。
     结论是不能交换的，因为不能将相对性原理滥用于非惯性系和惯性系间；而实际情形中，两人非质点，因此走惯性运动较为舒适，而走非惯性运动将感受到巨大的加速度，使相对论现象足够明显的物理量达光速级。
-    
-\subsection{惯性系存在性}
 
-前文对惯性系存在性的考虑，仍然承袭 Newton 体系的思维，即认为存在一个绝对静止系，则相对其匀速的物体可作为惯性系，而具有加速度的物体不能充当惯性系。然而，并无任何先验原理帮助我们确定绝对静止系在哪。
-实际上，物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，而理想惯性系必须远离所有物质以孤立，因此严格来说不存在。但实验上 Newton 定律一定程度适用于地面系，可见惯性系仍是有用概念。问题出在哪里？
-
-物质在仅受引力作用时有\textbf{Galileo 性}：任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对 Galileo 性的解释如下。$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}。Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
-设 $A,B$ 共同自由落体，二者相对加速度近似为零。关键在于，\textit{总能以一者为研究对象，另一者抽象为背景坐标系}。比如，$B$ 可以是一部足够小、无自转的封闭电梯，而 $A$ 是乘客，则 $A$ 将感到失重。Newton 理论指出 $B$ 系中出现惯性力，但它与引力局域抵消，$B$ 系中做任何局域的力学实验结果都与惯性系等效，尤其在抛弃绝对系概念后，我们无法分辨。
-
-对任意自由落体质点而言，总存在局域坐标系，使质点相对于该系的动力学，像是在理想惯性系中一样。这种坐标系称为相应质点的\textbf{局域惯性系}。参考系的惯性性在局域上不可物理观测，惯性系可以且只能局域建立。任何我们所规定的惯性系，其实均是局域惯性系。Newton 的绝对运动不是相对于绝对系的运动，而是相对于局域惯性系的运动。
-Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》\cite{Principia} 推论 VI “运动定律”。可用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，那么月球就遵循一个 Kepler 轨道。}。
-尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
-
-现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
-
-\subsection{广义协变性}
-
-物理学用矩阵书写物理量，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵，称之为\textbf{张量}(tensor)。
-物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
-关键就在于坐标变换下物理量的分量如何变。
-分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
-Einstein 的狭义相对论原理就应更严格地阐述为一种\textbf{不变性}(invariance)：
-\begin{quote}
-    \textbf{Lorentz 不变性}\quad 物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值。
-\end{quote}
-值如 $c=1,\pi/2$ 和 $\hbar$。经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
-
-等效原理指出惯性系与非惯性系局域难以区分，因而最好是认同任意参考系，即一种广义相对性原理。更进一步地，我们本就默认物理对象、规律不受坐标系影响，即\textbf{坐标冗余性}，因而不仅考虑与参考系有关的那类坐标系，任意坐标系均可接受，即直接寻求对任意坐标变换的\textbf{广义协变性}。
-由前文知曲线线长可由曲线切矢的积分给出。
-广义协变性要求同一切矢在任意坐标系下皆表以 $T^\mu=\d x^\mu/\d\sigma$ 形式，则根据全微分知：
-\eq{
-    T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu.
-}
-称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)或切矢，故上指标又称\textbf{逆变指标}。一点处全体逆变矢量构成该点\textbf{切空间}(tangent space)。物理学很多矢量都与相切有关，因而是逆变矢量。可以存在变换与之互逆的矢量：
-\eq{\omega'_i=\pdv{x^j}{x'^i}  \omega_j,}
-则称\textbf{协变矢量}(covector)或\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。下指标称\textbf{协变指标}。这一称呼与“协变性”有区别，没有物理方程“逆变性”的说法。
-
-度规的定义实际默认了\textbf{Gauss 假设}：希望存在坐标系使线元表为勾股定理。进而在广义协变性要求下保持二次型：
-\eq{
-    g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff g'_{\gamma\sigma}= g_{\mu\nu}\pdv{x^\mu}{x'^\gamma}\pdv{x^\nu}{x'^\sigma}.
-}
-主流几何理论总研究二次型，不研究 $\d\l=(|\d x|^3+|\d y|^3)^{1/3}$ 等。上式是合同变换，$g_{\mu\nu}$ 保持可逆，故总可定义 $(g^{\mu\nu}):=(g_{\mu\nu})^{-1}$，即满足 $g^{\mu \lambda} g_{\lambda\nu}=g_{\nu\lambda}g^{\lambda\mu}=\delta^\mu_\nu$。称 $g^{\mu\nu}$ 为\textbf{度规逆}。
-$\eta_{\mu\nu}$ 作为广义单位阵，易证数值上 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。
-规定 $T_\mu$ 相应的\textbf{对偶矢量}(dual vector)为 $T_\mu:=g_{\mu\nu}T^\nu$，它为协变矢量一例。内积就可紧凑写作 $V^\mu W_\mu=V_\mu W^\mu$。也可对偶回去：$T^\mu=g^{\mu\nu}T_\nu$。
-
-推而广之可得\textbf{广义协变张量}，本书简称张量。当然，称 $T^{\cdots}{}_{\cdots}$ 是张量，准确是想称分量等价类 $[T^{\cdots}{}_{\cdots}]=\{T^{\cdots}{}_{\cdots},T'^{\cdots}{}_{\cdots},\cdots\}$ 是张量。
-$(k,l)$\textbf{型张量}简称 $(k,l)$-\textbf{张量}，应满足如下\textbf{张量变换律}：
-\eq{
-    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{x'^{\mu_1}}{x^{\rho_1}}\cdots\pdv{x'^{\mu_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{x'^{\nu_1}}\cdots\pdv{x^{\sigma_l}}{x'^{\nu_l}},
-}
-可记忆为是满足指标平衡的 Jacobi 矩阵元乘积，这样就可快速写出公式。
-常习惯于先将上指标写完，再错开地写下指标。
-只要求 Lorentz 协变性 $T'^{\cdots}{}_{\cdots}=T^{\cdots}{}_{\cdots}\Lambda^\mu{}_\nu\cdots \Lambda^\rho{}_\sigma$ 则称\textbf{Lorentz 张量}。张量一定是 Lorentz 张量，反之不然。
-$(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,n)$ 型分别称\textbf{$n$ 阶逆变、协变张量}或 $n$-张量，比如切矢是 1-逆变张量，余矢是 1-协变张量；度规是对称、非退化的 2-协变张量；Kronecker 符号是 2-张量。由张量的变换律，若存在坐标系使其分量为零，其在任何坐标系下分量都为零，故不论何型都称\textbf{零张量}。
-基本运算性质如下：
-\begin{enumerate}
-    \item 张量的直接拼凑称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\Phi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自 Jacobi 矩阵元按实数规律相乘；
-    \item 张量\textbf{缩并}仍是张量，因为变换式只是消去一对 Jacobi 矩阵元；
-    \item 张量的\textbf{线性组合}仍是张量；
-    \item \textbf{指标升降}约定用 $g_{\mu\nu},g^{\mu\nu}$，构成\textbf{度规对偶}；
-    \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变，广义协变导数见 \ref{sec:co-di} 节。
-\end{enumerate}
-
-虽然这在物理和计算上没有问题，但似乎还是缺了些什么。我们期望的是如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
-这种所谓“坐标无关”，我们给出准确陈述：\textbf{坐标独立性}(coordinate independence)或\textbf{坐标选择无关}，从而支撑了物理上的坐标冗余性。
-最重要地，计算时还存在一类高维矩阵不满足任何协变性，常称\textbf{赝张量}。
-对于赝张量，映射语言需要将其强行定义为“坐标系依赖的张量”，非常累赘，分量语言反成聪明的选择。唯遇到歧义或能简化推导时，才讨论映射语言。
-
-
-今后会经常遇到某些指标具有对称、反称性，这往往是物理量的具体定义导致的，且可以简化大量运算。对赝张量和张量都可定义
-\begin{align}
-    T_{\cdots(\mu_1\cdots\mu_k)\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},\\
-    T_{\cdots[\mu_1\cdots\mu_k]\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},
-\end{align}
-其中 $S_k$ 是全体 $(1\cdots k)$ 排列之集；$\sigma\in S_k$ 为偶排列时 $\sgn\sigma=1$，否则为 $-1$；$\sigma(k)$ 为 $\sigma$ 的第 $k$ 项。上式分别称为 $T_{\cdots}$ 的\textbf{对称部分}(symmetric part)和\textbf{反称部分}(alternating part)。除序 $1/k!$ 是为与原张量平均。对上标定义同理。对两个指标，在代数学中就学过矩阵的对称、反称分解。上下标之间的对称、反称性要用度规升降后再讨论。有时会横跨地标注，如 $V^{[\mu}W^{\nu]},F_{(\mu|\sigma\lambda|\nu)}$ 都标记在了 $\mu,\nu$ 指标。运算性质如下：
-\begin{enumerate}
-    \item \textit{缩并时两种括号都有传递性}，读者自证不难：
-    \[T_{(\mu_1\cdots\mu_k)}S^{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}S^{(\mu_1\cdots\mu_k)}=T_{\mu_1\cdots\mu_k}S^{(\mu_1\cdots\mu_k)};\]
-    \item \textit{嵌套括号时，同种子括号随意添删，异种子括号为零}。这几乎显然，只需不失一般性地考虑
-    \begin{align*}
-        T_{[[\mu_1\cdots\mu_k]\mu_{k+1}\cdots\mu_{k+l}]}&=\sum_{\sigma\in S_{k+l},\tau\in S_k}\frac{\sgn\sigma\sgn\tau}{(k+l)!k!}\,T_{\mu_{\sigma(\tau(1))}\cdots\mu_{\sigma(\tau(k))}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}\\
-        &=\sum_{\sigma\in S_{k+l}}\frac{k!\sgn\sigma}{(k+l)!k!}\,T_{\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}=T_{[\cdots]},
-    \end{align*}
-    从而 $T_{[\cdots[\cdots]\cdots]}=T_{[\cdots]}$，类似地有 $T_{[\cdots(\cdots)\cdots]}=0$；
-    \item 由此可推\textit{异种括号缩并为零}，如 $T_{(\mu_1\cdots\mu_k)}S^{[\mu_1\cdots\mu_k]}=0$。\textbf{全对称}或\textbf{全反称}时，二阶张量可分解 $T_{\mu\nu}=T_{(\mu\nu)}+T_{[\mu\nu]}$。三阶及以上张量则不然，但仍可有
-    \[T_{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}\implies T_{[\mu_1\cdots\mu_k]}=0,\quad
-        T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\implies T_{(\mu_1\cdots\mu_k)}=0.\]
-\end{enumerate}
 
 \subsection{拉氏理论与对称性}
 
@@ -448,6 +362,179 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 }
 称为\textbf{Hamilton-Jacobi 方程}。
 
+\subsection{Lorentz 群与张量}
+观察 \eqref{eq:Lorentz}，$\Lambda^{\mu}{}_{\sigma}$ 形同正交矩阵。回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\iff (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
+其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\l$ 不变。
+
+同理，我们要扩大对正交矩阵的直觉，考虑 $(\eta_{\mu\nu})$ 这种带负号的单位阵。以后，凡满足 $|\Lambda|^2=1$ 的矩阵 $\Lambda$ 都称正交矩阵。$\Lambda$ 也代表转动，但无非是比空间转动还多出了时空伪转动。取 \eqref{eq:Lorentz} 式 $\sigma=\lambda=0$ 就有
+\eq{
+    (\Lambda^0{}_0)^2=1+\delta_{ij}\Lambda^i{}_0\Lambda^j{}_0=1+(\Lambda^1{}_0)^2+(\Lambda^2{}_0)^2+(\Lambda^3{}_0)^2\geqslant 1.
+}
+可见我们能按 $\Lambda^0{}_0,|\Lambda|$ 的符号将所有满足 \eqref{eq:Lorentz} 的 $\Lambda$ 分为四类。$\Lambda^0{}_0$ 的符号代表时间是否反演，因此 $\Lambda^0{}_0\geqslant 1$ 的 $\Lambda$ 称\textbf{正时的}。只有正时的变换才保持时间轴的未来、过去方向。$|\Lambda|$ 的符号代表整个时空坐标系的右手性，$|\Lambda|=1$ 时称\textbf{固有的}(proper)。进而可分为如表 \ref{table:class} 所示的四种情形。
+\begin{table}[ht]\centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \diagbox{$|\Lambda|$}{$\Lambda^0{}_0$}& $\geqslant 1$ & $\leqslant -1$  \\ 
+    \hline
+    $1$ & 正常时空 &  时空翻转 \\ 
+    \hline
+    $-1$ & 空间反射 & 时间反演 \\ 
+    \hline
+    \end{tabular}
+    \caption{变换的四种分类}
+    \label{table:class}
+\end{table}
+固有、正时的线性 Poincaré 变换称为（正齐次）\textbf{Lorentz 变换}。
+
+线元在坐标变换下的不变性，可以通过主动观点理解为时空对称性，故物理学会直接称 Poincaré 变换构成的集合 $P$ 为\textbf{Poincaré 群}，而不区分该变换究竟是指坐标变换还是点变换。
+只包含时空平移的群称\textbf{时空平移群}。如果变换是线性的，则一种变换对应一种矩阵，故群乘可对应矩阵乘法，数学上称\textbf{广义正交群}，号差 $+2$ 下记作 O(1,3)，这里前者指度规负项个数，后者指正项个数。因此 $P$ 可视为 O(1,3) 和平移群所张成的，即数学上的半直积。可按正时和负时分为 O$^+$(1,3) 和 O$^-$(1,3)。O(1,3) 的固有子群 SO(1,3) 称\textbf{狭义正交群}，正时且固有的子群称\textbf{Lorentz 群} SO$^+$(1,3)。
+\begin{table}[ht]\centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \diagbox{$|\Lambda|$}{$\Lambda^0{}_0$}& $\geqslant 1$ & $\leqslant -1$  \\ 
+    \hline
+    $1$ & SO$^+$(1,3) &  SO$^-$(1,3) \\ 
+    \hline
+    $-1$ & O$^+$(1,3)$\backslash$SO$^+$(1,3) & O$^-$(1,3)$\backslash$SO$^-$(1,3) \\ 
+    \hline
+    \end{tabular}
+    \caption{四个分支}
+\end{table}
+正时性和固有性之间无连续过渡，故 O(1,3) 分为四个连通分支\footnote{通俗地说，拓扑空间称为\textbf{连通的}(connected)，是指空间是一整块的，其任意两点存在完全位于空间中的连续路径。两个分离球体之并不是连通的，但二者都是其连通的子集，这称为\textbf{连通支集}(component)或\textbf{连通分支}(branch)。}。
+显然若 ${\Lambda^{0}}_{0}=1$，则 Lorentz 变换实质只有固有的旋转作用，即空间部分是$({R^{i}}_{j})$，而剩下的是恒等变换。固有空间旋转构成的集合是\textbf{空间转动群} SO(3)，可视为 SO(1,3) 的子群。
+号差不改变实质也可体现：可证 O(1,3),O(3,1) 同构。
+
+物理学用矩阵书写物理量的分量表示，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵。
+物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
+关键就在于坐标变换下物理量的分量如何变。
+分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
+光速不变、狭义相对论原理等命题就应更严格地阐述为一种\textbf{不变性}(invariance)：
+\begin{quote}
+    \textbf{Lorentz 不变性}\quad 物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值。
+\end{quote}
+值如 $c=1,\pi/2$ 和 $\hbar$。经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
+
+我们遇到的第一个例子就是曲线切矢。
+对于类时线，可取固有时为参数：
+\eq{
+    U^\mu:=\dv{x^\mu}{\tau},
+}
+称为\textbf{4-速}。显然 4-速是单位类时切矢：$\eta_{\mu\nu}U^\mu U^\nu=-1$。规定 $U_\mu:=\eta_{\mu\nu}U^\nu$，就还可紧凑写作 $U^\mu U_\mu = -1$。这称为矢量在度规下的\textbf{对偶矢量}(dual vector)。
+定义 $(\eta^{\mu\nu}):=(\eta_{\mu\nu})^{-1}$。$\eta_{\mu\nu}$ 作为广义单位阵，易证数值上 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。故还可对偶回去：$U^\mu=\eta^{\mu\nu}U_\nu$。
+$u^i:=\dot{x}^i$ 称为\textbf{3-速}，其对偶为 $u_i=\eta_{ij}u^j=\delta_{ij}u^j$，模长即 $u:=\sqrt{u_i u^i}$。可见 4-速分量为 $U^0=\gamma,U^i=\gamma u^i$。
+同理，\textbf{4-加速}为
+\eq{
+    A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\del_\nu U^\mu.
+}
+由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。
+$a^i:=\ddot{x}^i$ 称为（坐标）\textbf{3-加速}。
+可见 4-加速分量为 $A^0=\gamma \dot{\gamma}=\gamma^4 u\dot{u}=\gamma^4 u^ia_i, A^i=\gamma^2 a^i+\gamma^4 u^ja_j u^i$，
+其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。固有系中 $u^i=0$，故 4-加速等于固有系 3-加速。
+
+同一个 4-速在另一惯性系下测得 $U'^\mu=\d x'^\mu/\d\tau$（Lorentz 协变性），故
+\eq{
+    U'^\mu=\Lambda^\mu{}_\nu U^\nu.
+}
+称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)，故上指标又称\textbf{逆变指标}。
+根据式 \eqref{eq:Lorentz} 知 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}=\eta_{\sigma\lambda}\Lambda_{\lambda\nu}$，这里 $\Lambda^{-1}$ 是 $\Lambda$ 的逆。
+故 $U_\mu$ 满足的变换为
+\eq{
+    U'_\nu=(\Lambda^{-1})^{\mu}{}_{\nu} U_\mu,\quad (\Lambda^{-1})^{\mu}{}_{\nu}=\eta^{\mu\alpha}\eta_{\nu\beta}\Lambda^{\beta}{}_{\alpha}.
+}
+按这种方式变换的矢量则称\textbf{协变矢量}(covector)。这一称呼与“协变性”有区别，没有物理方程“逆变性”的说法。推而广之可得\textbf{Lorentz 张量}，满足 Lorentz 变换下的张量变换律：
+\eq{
+    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\Lambda^{\mu_1}{}_{\rho_1}\cdots\Lambda^{\mu_k}{}_{\rho_k}(\Lambda^{-1})^{\sigma_1}{}_{\nu_1}\cdots(\Lambda^{-1})^{\sigma_l}{}_{\nu_l},
+}
+这里根据指标数量，可称 $(k,l)$ 型张量，简称 $(k,l)$-张量。常习惯于先将上指标写完，再错开地写下指标。上式可记忆为满足指标平衡的矩阵元乘积，这样就可快速写出公式。
+$(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,n)$ 型分别称 $n$ 阶逆变、协变张量。
+若存在惯性系使其分量为零，其显然在任何惯性系下分量都为零，故不论何型都称\textbf{零张量}。
+基本运算性质如下：
+\begin{enumerate}
+    \item 张量分量相乘称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\Phi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自变换相乘；
+    \item 张量\textbf{缩并}仍是张量，因为变换式只是消去一对矩阵元；
+    \item 张量的\textbf{线性组合}仍是张量；
+    \item \textbf{指标升降}约定用度规及其逆，构成\textbf{度规对偶}；
+    \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变。
+\end{enumerate}
+$U^\mu$、$U_\mu$、Kronecker 符号都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\del_\nu U^\mu$ 也是 Lorentz 张量。
+闵氏度规在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
+
+
+
+
+，但还不是张量，后续将对此详解。
+
+
+，则根据全微分知：且是广义的逆变矢量。
+\eq{
+    T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu.
+}
+
+
+一点处全体逆变矢量构成该点\textbf{切空间}(tangent space)。物理学很多矢量都与相切有关，因而是逆变矢量。
+
+可以存在变换与之互逆的矢量：
+\eq{\omega'_i=\pdv{x^j}{x'^i}  \omega_j,}
+
+
+或\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。下指标称\textbf{协变指标}。
+
+度规的定义实际默认了\textbf{Gauss 假设}：希望存在坐标系使线元表为勾股定理。进而在广义协变性要求下保持二次型：
+\eq{
+    g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff g'_{\gamma\sigma}= g_{\mu\nu}\pdv{x^\mu}{x'^\gamma}\pdv{x^\nu}{x'^\sigma}.
+}
+主流几何理论总研究二次型，不研究 $\d\l=(|\d x|^3+|\d y|^3)^{1/3}$ 等。上式是合同变换，$g_{\mu\nu}$ 保持可逆，故总可定义 $(g^{\mu\nu}):=(g_{\mu\nu})^{-1}$，即满足 $g^{\mu \lambda} g_{\lambda\nu}=g_{\nu\lambda}g^{\lambda\mu}=\delta^\mu_\nu$。称 $g^{\mu\nu}$ 为\textbf{度规逆}。
+
+
+度规是一个\textit{指定好的}对称、非退化 2-协变张量
+
+
+称之为\textbf{张量}(tensor)
+
+，本书简称张量。
+
+\eq{
+    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{x'^{\mu_1}}{x^{\rho_1}}\cdots\pdv{x'^{\mu_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{x'^{\nu_1}}\cdots\pdv{x^{\sigma_l}}{x'^{\nu_l}},
+}
+
+Jacobi 矩阵元
+
+
+张量一定是 Lorentz 张量，反之不然。
+
+只要求 Lorentz 协变性 $T'^{\cdots}{}_{\cdots}=T^{\cdots}{}_{\cdots}\Lambda^\mu{}_\nu\cdots \Lambda^\rho{}_\sigma$ 则称\textbf{Lorentz 张量}。
+
+
+
+
+虽然这在物理和计算上没有问题，但似乎还是缺了些什么。
+称 $T^{\cdots}{}_{\cdots}$ 是张量，准确是想称分量等价类 $[T^{\cdots}{}_{\cdots}]=\{T^{\cdots}{}_{\cdots},T'^{\cdots}{}_{\cdots},\cdots\}$ 是张量。
+我们的确期望的是，如果有分量，就应该有某种数学对象，使得分量是这一数学对象在不同坐标系下的不同转述。当然希望能用类似 $A=A^I e_I$ 的形式表述矢量。换一组 $\{e_I\}$ 就可给出另一组分量，但这又涉及 $e_I$ 的定义是什么。鉴于对切矢图像的充分观察，Cartan 率先给出了这一数学对象的构造，称为\textbf{映射语言}，详见附录 \ref{appx:manifold}。但这套框架比较抽象。很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
+这种所谓“坐标无关”，我们给出准确陈述：\textbf{坐标独立性}(coordinate independence)或\textbf{坐标选择无关}，从而支撑了物理上的坐标冗余性。
+最重要地，计算时还存在一类高维矩阵不满足任何协变性，常称\textbf{赝张量}。
+对于赝张量，映射语言需要将其强行定义为“坐标系依赖的张量”，非常累赘，分量语言反成聪明的选择。唯遇到歧义或能简化推导时，才讨论映射语言。
+
+
+今后会经常遇到某些指标具有对称、反称性，这往往是物理量的具体定义导致的，且可以简化大量运算。对赝张量和张量都可定义
+\begin{align}
+    T_{\cdots(\mu_1\cdots\mu_k)\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},\\
+    T_{\cdots[\mu_1\cdots\mu_k]\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},
+\end{align}
+其中 $S_k$ 是全体 $(1\cdots k)$ 排列之集；$\sigma\in S_k$ 为偶排列时 $\sgn\sigma=1$，否则为 $-1$；$\sigma(k)$ 为 $\sigma$ 的第 $k$ 项。上式分别称为 $T_{\cdots}$ 的\textbf{对称部分}(symmetric part)和\textbf{反称部分}(alternating part)。除序 $1/k!$ 是为与原张量平均。对上标定义同理。对两个指标，在代数学中就学过矩阵的对称、反称分解。上下标之间的对称、反称性要用度规升降后再讨论。有时会横跨地标注，如 $V^{[\mu}W^{\nu]},F_{(\mu|\sigma\lambda|\nu)}$ 都标记在了 $\mu,\nu$ 指标。运算性质如下：
+\begin{enumerate}
+    \item \textit{缩并时两种括号都有传递性}，读者自证不难：
+    \[T_{(\mu_1\cdots\mu_k)}S^{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}S^{(\mu_1\cdots\mu_k)}=T_{\mu_1\cdots\mu_k}S^{(\mu_1\cdots\mu_k)};\]
+    \item \textit{嵌套括号时，同种子括号随意添删，异种子括号为零}。这几乎显然，只需不失一般性地考虑
+    \begin{align*}
+        T_{[[\mu_1\cdots\mu_k]\mu_{k+1}\cdots\mu_{k+l}]}&=\sum_{\sigma\in S_{k+l},\tau\in S_k}\frac{\sgn\sigma\sgn\tau}{(k+l)!k!}\,T_{\mu_{\sigma(\tau(1))}\cdots\mu_{\sigma(\tau(k))}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}\\
+        &=\sum_{\sigma\in S_{k+l}}\frac{k!\sgn\sigma}{(k+l)!k!}\,T_{\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\mu_{\sigma(k+1)}\cdots\mu_{\sigma(k+l)}}=T_{[\cdots]},
+    \end{align*}
+    从而 $T_{[\cdots[\cdots]\cdots]}=T_{[\cdots]}$，类似地有 $T_{[\cdots(\cdots)\cdots]}=0$；
+    \item 由此可推\textit{异种括号缩并为零}，如 $T_{(\mu_1\cdots\mu_k)}S^{[\mu_1\cdots\mu_k]}=0$。\textbf{全对称}或\textbf{全反称}时，二阶张量可分解 $T_{\mu\nu}=T_{(\mu\nu)}+T_{[\mu\nu]}$。三阶及以上张量则不然，但仍可有
+    \[T_{\mu_1\cdots\mu_k}=T_{(\mu_1\cdots\mu_k)}\implies T_{[\mu_1\cdots\mu_k]}=0,\quad
+        T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\implies T_{(\mu_1\cdots\mu_k)}=0.\]
+\end{enumerate}
+
 \subsection{场的拉氏理论}
 
 粒子受外场作用，而场自身的演化也要服从最小作用量原理。
@@ -459,7 +546,8 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 \eq{
 S(\Phi_a(x))=\int \mathcal L(x^\mu,\Phi_a,\Phi_{a,\mu})\d[4]{x}\implies \pdv{x^\mu} \pdv{\mathcal L}{\Phi_{a,\mu}}-\pdv{\mathcal L}{\Phi_a}=0.
 }
-当然，作为物理规律的 $\mathcal L$ 一般不显含时空点坐标 $x^\mu$。在粒子情形我们通过决定性原理排除高阶导，由于现在 $\del_\mu$ 还包含相互作用势的含义，不能冒然排除高阶：事实上 $\mathcal L$ 的确可能存在高阶导 $\Phi_{,\cdots}$，则 E-L 方程一般需要修改；但若高阶导只是表面上看起来存在，实际可通过某种方式消除（马上将看到），则 E-L 方程照旧。实操中总是直接计算变分，即可规避“E-L 方程可能错误”这种麻烦。
+这里\textit{坐标系可以是任意的}。
+当然，作为物理规律的 $\mathcal L$ 一般不显含 $x^\mu$。在粒子情形我们通过决定性原理排除高阶导，由于现在 $\del_\mu$ 还包含相互作用势的含义，不能冒然排除高阶：事实上 $\mathcal L$ 的确可能存在高阶导 $\Phi_{,\cdots}$，则 E-L 方程一般需要修改；但若高阶导只是表面上看起来存在，实际可通过某种方式消除（马上将看到），则 E-L 方程照旧。实操中总是直接计算变分，即可规避“E-L 方程可能错误”这种麻烦。
 
 单元微积分下，边界项即函数作差；在多元情形中这是高维 Gauss 定理，见附录 \ref{appx:form}。故为消除边界项可有三类方法：
 \begin{enumerate}
@@ -544,64 +632,8 @@ $0=\xi_\nu\del_\mu T^{\mu\nu}+T^{\mu\nu}\del_\mu\xi_\nu=\xi_\nu\del_\mu T^{\mu\n
 
 %% 有效性
 
-\subsection{Lorentz 群}
-观察 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$，其形同正交矩阵。回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\iff (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
-其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\l$ 不变。
-
-同理，我们要扩大对正交矩阵的直觉，考虑 $(\eta_{\mu\nu})$ 这种带负号的单位阵。以后，凡满足 $|\Lambda|^2=1$ 的矩阵 $\Lambda$ 都称正交矩阵。$\Lambda$ 也代表转动，但无非是比空间转动还多出了时空伪转动。取 \eqref{Lorentz} 式 $\sigma=\lambda=0$ 就有
-\eq{
-    (\Lambda^0{}_0)^2=1+\delta_{ij}\Lambda^i{}_0\Lambda^j{}_0=1+(\Lambda^1{}_0)^2+(\Lambda^2{}_0)^2+(\Lambda^3{}_0)^2\geqslant 1.
-}
-可见我们能按 $\Lambda^0{}_0,|\Lambda|$ 的符号将所有满足 \eqref{Lorentz} 的 $\Lambda$ 分为四类。$\Lambda^0{}_0$ 的符号代表时间是否反演，因此 $\Lambda^0{}_0\geqslant 1$ 的 $\Lambda$ 称\textbf{正时的}。只有正时的变换才保持时间轴的未来、过去方向。$|\Lambda|$ 的符号代表整个时空坐标系的右手性，$|\Lambda|=1$ 时称\textbf{固有的}(proper)。进而可分为如表 \ref{table:class} 所示的四种情形。
-\begin{table}[ht]\centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    \diagbox{$|\Lambda|$}{$\Lambda^0{}_0$}& $\geqslant 1$ & $\leqslant -1$  \\ 
-    \hline
-    $1$ & 正常时空 &  时空翻转 \\ 
-    \hline
-    $-1$ & 空间反射 & 时间反演 \\ 
-    \hline
-    \end{tabular}
-    \caption{变换的四种分类}
-    \label{table:class}
-\end{table}
-固有、正时的线性 Poincaré 变换称为（正齐次）\textbf{Lorentz 变换}。
-
-线元在坐标变换下的不变性，可以通过主动观点理解为时空对称性，故物理学会直接称 Poincaré 变换构成的集合 $P$ 为\textbf{Poincaré 群}，而不区分该变换究竟是指坐标变换还是点变换。
-只包含时空平移的群称\textbf{时空平移群}。如果变换是线性的，则一种变换对应一种矩阵，故群乘可对应矩阵乘法，数学上称\textbf{广义正交群}，号差 $+2$ 下记作 O(1,3)，这里前者指度规负项个数，后者指正项个数。因此 $P$ 可视为 O(1,3) 和平移群所张成的，即数学上的半直积。可按正时和负时分为 O$^+$(1,3) 和 O$^-$(1,3)。O(1,3) 的固有子群 SO(1,3) 称\textbf{狭义正交群}，正时且固有的子群称\textbf{Lorentz 群} SO$^+$(1,3)。
-\begin{table}[ht]\centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    \diagbox{$|\Lambda|$}{$\Lambda^0{}_0$}& $\geqslant 1$ & $\leqslant -1$  \\ 
-    \hline
-    $1$ & SO$^+$(1,3) &  SO$^-$(1,3) \\ 
-    \hline
-    $-1$ & O$^+$(1,3)$\backslash$SO$^+$(1,3) & O$^-$(1,3)$\backslash$SO$^-$(1,3) \\ 
-    \hline
-    \end{tabular}
-    \caption{四个分支}
-\end{table}
-正时性和固有性之间无连续过渡，故 O(1,3) 分为四个连通分支\footnote{通俗地说，集合称为\textbf{连通的}(connected)，是指集合是一整块的，其任意两点存在完全位于集合中的连续路径。两个分离球体之并不是连通的，但二者都是其连通的子集，这称为\textbf{连通支集}(component)或\textbf{连通分支}(branch)。}。
-显然若 ${\Lambda^{0}}_{0}=1$，则 Lorentz 变换实质只有固有的旋转作用，即空间部分是$({R^{i}}_{j})$，而剩下的是恒等变换。固有空间旋转构成的集合是\textbf{空间转动群} SO(3)，可视为 SO(1,3) 的子群。
-号差不改变实质也可体现在群论中：可证 O(1,3),O(3,1) 同构。
-
 
 \subsection{相对论动力学}
-
-本节默认惯性系。对于类时线，可取固有时为参数：
-\eq{
-    U^\mu:=\dv{x^\mu}{\tau},
-}
-称为\textbf{4-速}。显然 4-速是单位类时切矢：$U_\mu U^\mu=-1$，且是广义的逆变矢量。
-$u^i:=\dot{x}^i$ 称为\textbf{3-速}，其对偶为 $u_i=\eta_{ij}u^j=\delta_{ij}u^j$，模长即 $u:=\sqrt{u_i u^i}$。可见 4-速分量为 $U^0=\gamma,U^i=\gamma u^i$。
-同理，\textbf{4-加速}为
-\eq{
-    A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\del_\nu U^\mu.
-}
-由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。$\dv*[2]{x^\mu}{\tau}$ 是 Lorentz 张量，但还不是张量，后续将对此详解。$a^i:=\ddot{x}^i$ 称为（坐标）\textbf{3-加速}。
-可见 4-加速分量为 $A^0=\gamma \dot{\gamma}=\gamma^4 u\dot{u}=\gamma^4 u^ia_i, A^i=\gamma^2 a^i+\gamma^4 u^ja_j u^i$，
-其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。固有系中 $u^i=0$，故 4-加速等于固有系 3-加速。
 
 对单个自由质点构造拉氏量。对称性指出它是 Lorentz 不变标量。我们能找的只有 $\d\tau,m,c=1$，故 $S\propto m\int \d\tau$。注意 $u\ll 1$ 时
 \[
@@ -810,6 +842,21 @@ $\omega>0,\bm{\alpha},\bm{\beta}$ 和 $\bm{e}$ 是常量；$\omega$ 是频率，
 Maxwell 理论的核心概念是具有确定频率或一定色的光波可用 Maxwell 方程组的单色平面解来表示。
 
 \section{广义相对论}
+
+\subsection{惯性系存在性}\label{sec:inertial}
+
+前文对惯性系存在性的考虑，仍然承袭 Newton 体系的思维，即认为存在一个绝对静止系，则相对其匀速的物体可作为惯性系，而具有加速度的物体不能充当惯性系。然而，并无任何先验原理帮助我们确定绝对静止系在哪。
+实际上，物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，而理想惯性系必须远离所有物质以孤立，因此严格来说不存在。但实验上 Newton 定律一定程度适用于地面系，可见惯性系仍是有用概念。问题出在哪里？
+
+物质在仅受引力作用时有\textbf{Galileo 性}：任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对 Galileo 性的解释如下。$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}。Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
+设 $A,B$ 共同自由落体，二者相对加速度近似为零。关键在于，\textit{总能以一者为研究对象，另一者抽象为背景坐标系}。比如，$B$ 可以是一部足够小、无自转的封闭电梯，而 $A$ 是乘客，则 $A$ 将感到失重。Newton 理论指出 $B$ 系中出现惯性力，但它与引力局域抵消，$B$ 系中做任何局域的力学实验结果都与惯性系等效，尤其在抛弃绝对系概念后，我们无法分辨。
+
+对任意自由落体质点而言，总存在局域坐标系，使质点相对于该系的动力学，像是在理想惯性系中一样。这种坐标系称为相应质点的\textbf{局域惯性系}。参考系的惯性性在局域上不可物理观测，惯性系可以且只能局域建立。任何我们所规定的惯性系，其实均是局域惯性系。Newton 的绝对运动不是相对于绝对系的运动，而是相对于局域惯性系的运动。
+Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》\cite{Principia} 推论 VI “运动定律”。可用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，那么月球就遵循一个 Kepler 轨道。}。
+尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
+
+现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
+
 \subsection{引力度规}
 
 引力场强正是试验质点加速度，加速度又恰是运动学概念，仅涉及时空坐标；另一方面，由于涉及运动坐标系，局域惯性系必将完整涉及 4 个坐标。可见四维时空很适合用于描述引力。
@@ -1770,27 +1817,24 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
 
 本节旨在补上任意 Lorentz 变换的代数证明。由于重点只在矩阵的行列指标，故本节将上标都写作下标以简化运算。
 根据相对性原理，对 $\Lambda$ 的分类同样适用于相应 $\Lambda^{-1}$。当然，亦可直接证明之。注意 $|\Lambda^{-1}|=|\Lambda|^{-1}$，我们只需证明 $(\Lambda^{-1})_{00}=\Lambda_{00}$。
-欲用 $\Lambda$ 表示 $\Lambda^{-1}$。由式 \eqref{Lorentz} 有
-\eq{\label{eq:nA-1=nA}
-    \eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}=\eta_{\sigma\lambda}\Lambda_{\lambda\nu},
-}
-进而
-\eq{\label{eq:1258}
-    (\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}.}
-此即用 $\Lambda$ 表示 $\Lambda^{-1}$ 的方法，取其 $\sigma=\lambda=0$ 就有 $(\Lambda^{-1})_{00}=\Lambda_{00}=(\Lambda^\mathrm{T})_{00}$。
+用 $\Lambda$ 表示 $\Lambda^{-1}$ 就是 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$。
+取其 $\sigma=\lambda=0$ 就有 $(\Lambda^{-1})_{00}=\Lambda_{00}=(\Lambda^\mathrm{T})_{00}$。
+
+
 
 下面用 $\{x\},\{x'\}$ 的相对速度表示 Lorentz 变换。
 我们说 $S'$ 系相对于 $S$ 的速度是 $u_i=\dv*{x_i}{t}$，是指 $S'$ 任意的相对静止的世界线在 $S$ 下测得的速度分量都是 $u_i$。显然这等价于研究 $S'$ 系的空间原点运动。反之，设 $S$ 系的空间原点在 $S'$ 下测得 $u'_i=\dv*{x'_i}{t'}$。先考虑 $S'$ 的空间原点，其世界线始终满足 $\d x'_i=0$，则 $\d x_\lambda=(\Lambda^{-1})_{\lambda 0}\d x'_0$，故 $\Lambda_{00}=(\Lambda^{-1})_{00}=\dv*{t}{t'},(\Lambda^{-1})_{i0}=u_i\dv*{t}{t'}$，
-    据式 \eqref{eq:nA-1=nA} 有 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}(\Lambda^{-1})_{\nu\lambda}={\eta}_{\sigma\lambda}$，    取 $\sigma=\lambda=0$ 有 $(\Lambda_{00})^2=1+\delta_{ij}(\Lambda^{-1})_{i0}(\Lambda^{-1})_{j0}$。
+据式 \eqref{eq:Lorentz} 有 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}(\Lambda^{-1})_{\nu\lambda}={\eta}_{\sigma\lambda}$（显然 $\Lambda^{-1}$ 也是 Lorentz 变换）。
+取 $\sigma=\lambda=0$ 有 $(\Lambda_{00})^2=1+\delta_{ij}(\Lambda^{-1})_{i0}(\Lambda^{-1})_{j0}$。
     再结合正时条件有 $\Lambda_{00}=(\Lambda^{-1})_{00}=\gamma$，以及 $(\Lambda^{-1})_{i0}=\gamma u_i$，其中 $u:=\sqrt{u_i u_i}$。再考虑 $S$ 的空间原点，类似地有 $\Lambda_{00}=\dv*{t'}{t},\Lambda_{i0}=u'_i \dv*{t'}{t}=\gamma u'_i$，
     以及
     \[u'_iu'_i=u_i u_i=u^2.\]
     这看似是显然的，但现在要作为经过证明的结论。
-    不过，这是用 $u'_i$ 表示 $\Lambda$，固然渴望用 $u_i$ 直接表示。对 \eqref{eq:1258} 其余 $\sigma,\lambda$ 值讨论有 $(\Lambda^{-1})_{i0}=-\Lambda_{0i},(\Lambda^{-1})_{0i} =-\Lambda_{i0}$，
+    不过，这是用 $u'_i$ 表示 $\Lambda$，固然渴望用 $u_i$ 直接表示。对 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$ 其余 $\sigma,\lambda$ 值讨论有 $(\Lambda^{-1})_{i0}=-\Lambda_{0i},(\Lambda^{-1})_{0i} =-\Lambda_{i0}$，
     以及 $(\Lambda^{-1})_{ij}=(\Lambda^\mathrm{T})_{ij}$。
     可得 $\Lambda_{0i}=(\Lambda^\mathrm{T})_{i0}=-\gamma u_i$。
 
-    还差 $\Lambda_{i0},\Lambda_{ij}$。尝试用 $u_i$ 表示 $u'_i$。取 \eqref{Lorentz} 式 $\sigma=0,\lambda=k$（反之亦可），有
+    还差 $\Lambda_{i0},\Lambda_{ij}$。尝试用 $u_i$ 表示 $u'_i$。取 \eqref{eq:Lorentz} 式 $\sigma=0,\lambda=k$（反之亦可），有
     \eq{\label{eq:Au'=u}
         \delta_{ij}\Lambda_{i0}\Lambda_{jk}=\Lambda_{00}\Lambda_{0k}\implies \Lambda_{jk} u'_j=-\gamma u_k.
     }
@@ -1804,7 +1848,7 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
     \eq{
         \delta_{ik} R_{ij} R_{kl}=\delta_{jl},\quad R_{ij} u_j=-u'_i,\quad R_{ij} u'_i=-u_j.
     }
-    取 \eqref{Lorentz} 式 $\sigma=j,\lambda=l$ 有 $\delta_{ik}\Lambda_{ij}\Lambda_{kl}=\delta_{jl}+ \gamma^2 u_j u_l$，
+    取 \eqref{eq:Lorentz} 式 $\sigma=j,\lambda=l$ 有 $\delta_{ik}\Lambda_{ij}\Lambda_{kl}=\delta_{jl}+ \gamma^2 u_j u_l$，
     结合式 \eqref{eq:Au'=u},\eqref{eq:Au=u'} 以及上式，经过一些繁琐计算后可得 $S_{ij}=\frac{\gamma-1}{u^2}u'_i u_j$，综上任意 Lorentz 变换可表为
     \eq{
         \Lambda_{00}=\gamma,\quad\Lambda_{0i}=-\gamma u_i,\quad\Lambda_{i0}=-\gamma R_{ij} u_j,\quad \Lambda_{ij}=R_{ij}+\frac{\gamma-1}{u^2}  R_{ik} u_k u_j.
