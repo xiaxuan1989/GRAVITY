@@ -809,8 +809,12 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
 
 现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
 
+等效原理指出惯性系与非惯性系局域难以区分，因而最好是认同任意参考系，即一种广义相对性原理。更进一步地，我们本就默认物理对象、规律不受坐标系影响，即\textbf{坐标冗余性}，因而不仅考虑与参考系有关的那类坐标系，任意坐标系均可接受，即直接寻求对任意坐标变换的\textbf{广义协变性}。
 
-根据全微分知，4-速实际上可在任意的坐标变换下保持协变，即更广义的逆变矢量 $T'^\mu= \pdv{x'^\mu}{x^\nu}T^\nu$。变换改成了任意 Jacobi 矩阵元。反过来也可证明，广义逆变矢量总存在曲线与之相切，故不再与切矢区分。
+%% 潜力，已经暗示
+广义协变性要求同一切矢在任意坐标系下皆表以 $T^\mu=\d x^\mu/\d\sigma$ 形式
+
+根据全微分知，4-速实际上可在任意的坐标变换下保持协变，即更广义的逆变矢量 $T'^\mu=\pdv{x'^\mu}{x^\nu}T^\nu$。变换改成了任意 Jacobi 矩阵元。反过来也可证明，广义逆变矢量总存在曲线与之相切，故不再与切矢区分。
 一点处全体切矢构成该点\textbf{切空间}(tangent space)。
 $\omega'_i=\pdv{x^j}{x'^i} \omega_j$ 则对应\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
 广义协变的张量满足
@@ -1401,31 +1405,18 @@ E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\al
 考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在 Schwarzschild 系下，钟在视界处的读数 $\tau$ 近乎定格。
 物理意义是，遥远观者需要对钟，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。
 
-沿测地线汇建立固有系，从而能连续地描述粒子落入视界的过程，即消除奇性。
-考虑测地线汇从 $t = 0 = \tau$ 释放，每一线用 $r_m$ 标记，新系为 $(\tau,r_m)$。由 $Z^\mu Z_\mu = -1$ 可知
-\[\d\tau=-Z_0(r_m)\d t-Z_1(r,r_m)\d r=\sqrt{1-\frac{2M}{r_m}}\d t+\frac{\sqrt{2M/{r}-2M/{r_m}}}{1-{2M}/{r}}\d r.\]
-$r = r_m\cos^2\frac{\eta}{2},\tau = -\frac{r_m^{3/2}}{\sqrt{8M}} (\eta+\sin\eta)$ 确定了变换 $r(\tau,r_m)$
-记变换 $\d r = \pdv{r}{\tau}\d\tau + \pdv{r}{r_m}\d r_m$，由测地线 $\tau$ 轴 $\d\r_m = 0$ 可知 $\pdv{r}{\tau} = Z^1(r,r_m)$，从而 $-Z^1(r,r_m)\d\tau+\d r=\cos^2\frac{\eta}{2}\d r_m$。依次做 $t\to\tau,r\to r_m$ 变换有
-\[\d s^2 = -\d\tau^2+\left(\frac{-Z^1(r,r_m)\d\tau+\d r}{Z_0(r_m)}\right)^2+r^2\d\Omega^2= -\d\tau^2+\frac{\cos^4({\eta}/{2})\d r_m^2}{1-2M/r_m}+r^2\d\Omega^2.\]
-其中加上了没动过的空间部分。$\eta(\tau,r_m)$ 表明这是非稳态系，直观上落体者当然感受到变化的引力场。
-$r_m$ 称\textbf{Novikov 径向坐标}。可以看到的确 $\tilde g_{00}=-1,\tilde g_{01}=0$。
-物理意义上，前者直接因为 $Z^\mu Z_\mu = -1$；后者是因为测地线汇从 $\tau = 0$ 静止释放且 $Z^\mu Z_\mu = -1$，由 \ref{sec:tidal} 节知一定保持正交。
-
-实际上也可先从 $\tilde g_{01}=0$ 出发，利用 $\pdv{\tilde x^\mu}{x^\nu}\tilde Z_\mu=Z_\nu$ 得 $\pdv{\tau}{t}=-Z_0,\pdv{\tau}{r}=-Z_1$；
-记 $\d R=A\d t+B\d r$，代入 $\tilde Z^1=\pdv{R}{x^\nu}Z^\nu$ 可知 $B=-AZ^0/Z^1$，则 $\d R=A(\d t-\frac{Z^0}{Z^1}\d r)=A(\frac{1}{-Z_0}(\d\tau+Z_1\d r)-\frac{Z^0}{Z^1}\d r)=\frac{A}{Z_0Z^1}(-Z^1\d\tau+\d r)$。
-可见 $R$ 可确定到只差缩放函数。
-一个更方便的假设是所有测地线从无穷远释放并令 $A=1$（$R$ 沿 $t$ 均匀），因而
-\begin{align}
-    \d\tau &= \d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\implies \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}},\\
-    \d R &= \d\tau+\sqrt{\frac{r}{2M}}\d r = \d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\implies R=\tau+\frac 23(2M)^{-1/2}r^{3/2},
-\end{align}
-则
-\begin{align}
-    \d s^2 &= -\d\tau^2+\left(\sqrt{\frac{2M}{r}}\d\tau+\d r\right)^2+r^2\d\Omega^2\\
-    &= -\d\tau^2+\frac{2M}{r}\d R^2+r^2\d\Omega^2,\quad r=(2M)^{1/3}\left(\frac 32(R-\tau)\right)^{2/3}.
-\end{align}
-前者为\textbf{Gullstrand–Painlevé 系}，$r=2M$ 时分量收敛且 $g\ne 0$ 表明已消除奇性，但还不是测地固有系； 
-后者为\textbf{Lemaître 系}。可以看到 $\tau=R$ 对应 $r=0$。
+用\textbf{类光测地线族}(family of null geodesics)研究时空的因果结构。
+令 $\d s^2=0$，则
+\eq{\label{dia_Sch}
+t=\pm\left(r+2M\ln|r-2M|\right)+C.
+}
+考虑 $r>2M$，上式正负号取正后斜率为正，为外向族，负号对应内向族。
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.6\textwidth]{fig/chpt02/schBH.pdf}
+    \caption{\small 静态黑洞 Eddington 图。绘制时积分常数均匀选取。可在格处画上椭圆，构成“妙脆角”，以代表微小未来光锥，或用“沙漏”表示完整光锥。}
+\end{figure}
+其中设有一个静态观者和一个位于 $\tilde t$-$r$ 平面的探险者。
 
 \subsection{类时线汇的形变}\label{sec:time-cong}
 
@@ -1734,6 +1725,8 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
 
 
 \section{相对论的其它话题}
+
+\begin{comment}
 \subsection{Döppler 效应}
 
 类光世界线对应于电磁理论的几何光学极限。不仅仅有质粒子有“动量”和“能量”，光子也有，因而也应当有 4-动量 (例如光电效应，在这种效应中光子与逃离原子中电子轨道的电子之间的碰撞)。然而，不像有质粒子，光子的特性不是质量而是频率 $\nu$ (或者波长 $\lambda=1 / \nu$)，它与能量 $\varepsilon$ 的关系是 $\varepsilon=h\nu$（$h$ 是 Planck 常数），且与观者有密切关联 (D\"oppler 效应)。而且，我们没有相应类比出“质量”的“固有频率”，毕竟不存在光子在其中静止的惯性系，宁愿说光子没有质量。
@@ -1781,6 +1774,7 @@ $\nabla^\mu\phi\nabla_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\sq
 初始粒子的额外质量 $m_{0}-\left(m_{1}+m_{2}\right)$ 按质能方程，可认为是把 $m_{0}$ 分成两部分所要求的能量的一种度量。稍微不同的说法是，$\widetilde{A}$ 中的两个粒子结合而形成 $\mathcal{A}$ 中的一个粒子时，给后面粒子的质量贡献了“结合能”。此即质量亏损。
 
 这个例子里，颠倒 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 就成了完全非弹性碰撞 (两个质量 $m_{1}$ 和 $m_{2}$ 的自由粒子碰撞并结合成第三个质量 $m_{0}$ 的自由粒子) 中所含有的那种接触作用。质量亏损仍然成立。更详细的分析将给出 $m_{0}-\left(m_{1}+m_{2}\right)$ 的近似公式，这可与该碰撞中动能损失的 Newton 公式作比较 (经典上把能量看做是从结合粒子中获得热量的形式)。
+\end{comment}
 
 \subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
 
