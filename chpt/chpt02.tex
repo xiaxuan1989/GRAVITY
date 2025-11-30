@@ -128,7 +128,7 @@ $\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\omega\approx{\pi(1
 
 再考虑广义相对论效应。
 
-通过求解在所谓的\textit{线性近似}下的场方程，就可以算出水星近日点进动的正确值。只要能够取得这个进动的正确值，就表示广义相对论的正确性已经通过了该实验的检验。
+通过求解在所谓的\textbf{线性近似}下的场方程，就可以算出水星近日点进动的正确值。只要能够取得这个进动的正确值，就表示广义相对论的正确性已经通过了该实验的检验。
 
 
 
@@ -196,6 +196,61 @@ Eddington 在 1919 年的一次日食观测中摄下了光线被引力“弯曲�
     \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
 \end{figure}
 
+双曲线的渐近线相当于原点处的光锥 $C_N$。故对匀加速观者而言，信息不能从光锥另一侧逾越过来
+
+故称\textbf{Rindler 视界}。
+
+同理求出内、外向族分别为
+\[
+t=-\ln x+C_1,\quad t=\ln x+C_2.
+\]
+故可绘制如下图 。
+
+注意，闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和闵氏系的相对地位，就像是 Schwarzschild 系或 Eddington 系和“更好”坐标系的相对地位。
+
+
+
+因此上述类光测地线族其实“对应于”闵氏时空里的类光测地线族
+\[
+T=-X+C_1,\quad T=X+C_2.
+\]
+
+仿照这一思想，欲视类光测地线族为坐标网格（称为\textbf{类光坐标}）。
+
+第  节中将双曲线、射线视作坐标线而衍生出 Rindler 坐标系，在 Rindler 图  里，这是在令
+\eq{
+v=t+\ln x,\quad u=t-\ln x.
+}
+度规表为 $\d s^2=-\e^{v-u}\d v\d u$。
+
+而在闵氏图里是令
+\eq{
+V=T+X,\quad U=T-X,
+}
+或
+\eq{
+T=\frac{V+U}{2},\quad X=\frac{V-U}{2},
+}
+这有双曲函数的形式，而 $T,X$ 与 $t,x$ 的变换正是双曲函数，
+
+故易知如下指数式
+\eq{
+V=\e^v>0,\quad U=-\e^{-u}<0.
+}
+度规现表为 $\d s^2=-\d V\d U$，不存在任何坐标奇性。
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.6\textwidth]{fig/chpt02/rindler.pdf}
+    \caption{消除 Rindler 系的坐标奇性}
+    \label{fig:rindlerIM}
+\end{figure}
+如图 \ref{fig:rindlerIM} 所示，则从直观上，闵氏时空图就像是把 Rindler 图 里竖直的 $x=0$ 从 $t=0$ 处向右“掰弯”成如光锥面一般的 Rindler 视界 $T^2=X^2$，即 $VU=0$，由上式知 $V,U$ 轴正方向如图 \ref{fig:rindlerIM}。图中蓝色双曲线代表等 $r$ 线，红色射线代表等 $t$ 线。可见，从 Rindler 图到闵氏图经历了如下过程：
+\[
+(t,x)\to(v,u)\to(V,U)\to(T,X).
+\]
+依葫芦画瓢地寻找“更好”坐标系。
+
 \subsection{Eddington 系}
 
 $t=-r_*+C$，且为了 $r=0$ 时 $r_*=0$，可取
@@ -250,66 +305,17 @@ $r_m$ 称\textbf{Novikov 径向坐标}。可以看到的确 $\tilde g_{00}=-1,\t
 后者为\textbf{Lemaître 系}。可以看到 $\tau=R$ 对应 $r=0$。
 
 \subsection{Kruskal 系}
-Schwarzschild 系能保证 $g_{01}=0$ 而 Eddington 系不然。是否存在一个坐标系既能消除奇性，又能保持 $g_{01}=0$？
-
-双曲线的渐近线相当于原点处的光锥 $C_N$。故对匀加速观者而言，信息不能从光锥另一侧逾越过来
-
-故称\textbf{Rindler 视界}。
-
-同理求出内、外向族分别为
-\[
-t=-\ln x+C_1,\quad t=\ln x+C_2.
-\]
-故可绘制如下图 。
-
-注意，闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和闵氏系的相对地位，就像是 Schwarzschild 系或 Eddington 系和“更好”坐标系的相对地位。
 
 
 
-因此上述类光测地线族其实“对应于”闵氏时空里的类光测地线族
-\[
-T=-X+C_1,\quad T=X+C_2.
-\]
+在超前 Eddington 系中，时间对角项在 $r=2M$ 为零，为消除奇性，只能借由超前变换所产生的非零时空交叉项，但我们并不想要交叉项。可见，必须使 $T,X$ 坐标的时间对角项非零。
 
-仿照这一思想，欲视类光测地线族为坐标网格（称为\textit{类光坐标}）。
 
-第  节中将双曲线、射线视作坐标线而衍生出 Rindler 坐标系，在 Rindler 图  里，这是在令
-\eq{
-v=t+\ln x,\quad u=t-\ln x.
-}
-度规表为 $\d s^2=-\e^{v-u}\d v\d u$。
-
-而在闵氏图里是令
-\eq{
-V=T+X,\quad U=T-X,
-}
-或
-\eq{
-T=\frac{V+U}{2},\quad X=\frac{V-U}{2},
-}
-这有双曲函数的形式，而 $T,X$ 与 $t,x$ 的变换正是双曲函数，
-
-故易知如下指数式
-\eq{
-V=\e^v>0,\quad U=-\e^{-u}<0.
-}
-度规现表为 $\d s^2=-\d V\d U$，不存在任何坐标奇性。
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=.6\textwidth]{fig/chpt02/rindler.pdf}
-    \caption{消除 Rindler 系的坐标奇性}
-    \label{fig:rindlerIM}
-\end{figure}
-如图 \ref{fig:rindlerIM} 所示，则从直观上，闵氏时空图就像是把 Rindler 图 里竖直的 $x=0$ 从 $t=0$ 处向右“掰弯”成如光锥面一般的 Rindler 视界 $T^2=X^2$，即 $VU=0$，由上式知 $V,U$ 轴正方向如图 \ref{fig:rindlerIM}。图中蓝色双曲线代表等 $r$ 线，红色射线代表等 $t$ 线。可见，从 Rindler 图到闵氏图经历了如下过程：
-\[
-(t,x)\to(v,u)\to(V,U)\to(T,X).
-\]
-依葫芦画瓢地寻找“更好”坐标系。在超前 Eddington 系中，时间对角项在 $r=2M$ 为零，为消除奇性，只能借由超前变换所产生的非零时空交叉项，但我们并不想要交叉项。可见，必须使 $T,X$ 坐标的时间对角项非零。回到 Schwarzschild 系。不妨先研究 $r>2M$。$v,u$ 从类光测地线族产生，注意 $t=\pm\left(r+2M\ln|r-2M|\right)+C$ 与 $t=\pm r_*$ 相差常数，因此内、外向族分别给出
+回到 Schwarzschild 系。不妨先研究 $r>2M$。$v,u$ 从类光测地线族产生，注意 $t=\pm\left(r+2M\ln|r-2M|\right)+C$ 与 $t=\pm r_*$ 相差常数，因此内、外向族分别给出
 \eq{
 v=t+r_*,\quad u=t-r_*.
 }
-由于 $r_*$ 作了超前变换，因此前者称\textit{超前类光坐标}，后者称\textit{推迟类光坐标}。可见对 Rindler 时空来说其乌龟坐标是 $x_*=\ln x$，读者很容易验证这一点。度规在 $v,u$ 下表为
+由于 $r_*$ 作了超前变换，因此前者称\textbf{超前类光坐标}，后者称\textbf{推迟类光坐标}。可见对 Rindler 时空来说其乌龟坐标是 $x_*=\ln x$，读者很容易验证这一点。度规在 $v,u$ 下表为
 \[
 \d s^2=-(1-2M/r)\d v\d u,
 \]
@@ -341,19 +347,23 @@ X^2-T^2=-VU=\e^{(v-u)/4M}=\left(\frac{r}{2M}-1\right)\e^{r/2M},
 \eq{\label{eq:r=T,X}
 r=2M\operatorname{W}\left(\frac{X^2-T^2}{\e}\right)+2M.
 }
-这个坐标系称为 \textit{Kruskal 系}。我们再次按 $T,X$ 正交绘制 2 维时空图。$(-\d T^2+\d X^2)$ 形式的保留使类光测地线斜率仍为 $\pm 1$。实际上，像这样给原度规乘以一个正因子就称为 \textit{Weyl 重标度(rescaling)变换}，简称 Weyl 变换，它能保留时空结构，故又称为\textit{共形(conformal)变换}。
+这个坐标系称为\textbf{Kruskal 系}。
+
+又是一个既能消除奇性又能保持 $g_{01}=0$ 的坐标系。
+
+我们再次按 $T,X$ 正交绘制 2 维时空图。$(-\d T^2+\d X^2)$ 形式的保留使类光测地线斜率仍为 $\pm 1$。实际上，像这样给原度规乘以一个正因子就称为\textbf{Weyl 重标度}(rescaling)变换，简称 Weyl 变换，它能保留时空结构，故又称为\textbf{共形}(conformal)变换。
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/kruskal.pdf}
     \caption{Kruskal 延拓}
     \label{fig:kruskal}
 \end{figure}
-从图 \ref{fig:kruskal} 上可见，Kruskal 系也会“掰弯” Schwarzschild 时空的视界 $r=2M$，使之变为光锥面 $VU=0$。易知各坐标的取值分布同图 \ref{fig:rindlerIM} 相似。然而，我们只考虑了 $r>2M$ 的情况，在图上标记为开区域 \textit{A 区}，对应 $V>0,U<0$。那 $r<2M$ 呢？Schwarzschild 系的 $r>2M$ 和 $r<2M$ 借超前 Eddington 系消除 $r=2M$ 坐标奇性。
+从图 \ref{fig:kruskal} 上可见，Kruskal 系也会“掰弯” Schwarzschild 时空的视界 $r=2M$，使之变为光锥面 $VU=0$。易知各坐标的取值分布同图 \ref{fig:rindlerIM} 相似。然而，我们只考虑了 $r>2M$ 的情况，在图上标记为开区域\textbf{A 区}，对应 $V>0,U<0$。那 $r<2M$ 呢？Schwarzschild 系的 $r>2M$ 和 $r<2M$ 借超前 Eddington 系消除 $r=2M$ 坐标奇性。
 从图上看，从 A 区任意点出发的内向类光线一定坠向 $V$ 正半轴，说明其代表事件视界，故可记作 $\H_V^+$。Kruskal 系也能消除坐标奇性，我们可越过视界来到上方，这里 $V,U>0$，说明我们自然地拓宽了 $V,U$ 的定义。为使 $U$ 为正，应定义
 \eq{
 V=\e^{v/4M}>0,\quad U=\e^{-u/4M}>0,
 }
-可验证度规仍表为 \eqref{eq:kruskal} 式。这里等 $r$ 线应无限延伸，因为等 $t$ 线从 $U$ 正半轴至 $V$ 正半轴遍历了所有 $t$ 值。一系列等 $r$ 线至多扫至时空奇点 $r=0\Leftrightarrow T^2-X^2=1$ 而无法越过，所扫区域里的任意类时、类光线确实都坠入奇点，说明其代表黑洞，称为 \textit{B 区}。可见，超前 Eddington 系覆盖了 $\mathrm{A}\cup\H_V^+\cup\mathrm{B}$，即整个 Schwarzschild 时空。奇点及其外部红色区域不属于时空。综上，A,B 区的坐标变换可整合为
+可验证度规仍表为 \eqref{eq:kruskal} 式。这里等 $r$ 线应无限延伸，因为等 $t$ 线从 $U$ 正半轴至 $V$ 正半轴遍历了所有 $t$ 值。一系列等 $r$ 线至多扫至时空奇点 $r=0\Leftrightarrow T^2-X^2=1$ 而无法越过，所扫区域里的任意类时、类光线确实都坠入奇点，说明其代表黑洞，称为\textbf{B 区}。可见，超前 Eddington 系覆盖了 $\mathrm{A}\cup\H_V^+\cup\mathrm{B}$，即整个 Schwarzschild 时空。奇点及其外部红色区域不属于时空。综上，A,B 区的坐标变换可整合为
 \eq{
 V=\e^{(r_*+t)/4M},\quad U=-\sgn(r-2M)\e^{(r_*-t)/4M}.
 }
@@ -371,7 +381,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-使度规式  越过视界而自然地\textit{延拓(extend)}至内部，但即使如此也不能越过点 $r=0$，
+使度规式  越过视界而自然地\textbf{延拓}(extend)至内部，但即使如此也不能越过点 $r=0$，
 
 直观上是因为我们已经覆盖了整个 $r>0$，而 $r<0$ 无意义。本节末会讲清延拓方法。
 
@@ -382,7 +392,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的\textit{延拓(extension)}。前文多次提及延拓这个词，通俗来讲，我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是延拓时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。综上所述，无论 Schwarzschild 系   还是超前 Eddington 系 ，二者所对应的时空或许只是某个更大时空的\textit{子时空}。为此可想办法延拓它，直至一个可以证明不能再延拓的结果，称之为\textit{最大延拓(maximal extension)}。
+然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的\textbf{延拓}。前文多次提及延拓这个词，通俗来讲，我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是延拓时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。综上所述，无论 Schwarzschild 系   还是超前 Eddington 系 ，二者所对应的时空或许只是某个更大时空的\textbf{子时空}。为此可想办法延拓它，直至一个可以证明不能再延拓的结果，称之为\textbf{最大延拓}(maximal extension)。
 
 
 
@@ -394,7 +404,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 当然，仍有微妙区别：在 Rindler 图   中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
 
 
-这就是用坐标系延拓时空。形象地说，本身或延拓后无限延伸的测地线称为\textit{完备的(complete)}。只有那种根本不能再继续延伸的测地线，才能叫\textit{不完备(incomplete)}。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
+这就是用坐标系延拓时空。形象地说，本身或延拓后无限延伸的测地线称为\textbf{完备的}(complete)。只有那种根本不能再继续延伸的测地线，才能叫\textbf{不完备}(incomplete)。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
 
 
 
@@ -408,15 +418,14 @@ t=2M\ln\frac{X+T}{|X-T|},
 只限于 $r>0$
 
 
-该式表明 Schwarzschild 度规可定义在一个比原来大得多的时空上，称其 \textit{Kruskal 延拓}。
+该式表明 Schwarzschild 度规可定义在一个比原来大得多的时空上，称其 \textbf{Kruskal 延拓}。
 
 ，我们无法再继续延拓下去，因此 Kruskal 延拓是 Schwarzschild 时空的最大延拓。
 
 2 维 Kruskal 延拓只是 $\R^2$ 的一个蝴蝶状子集
 
 
-
-因而我们又称 Kruskal 延拓是\textit{共形平直}的。
+因而我们又称 Kruskal 延拓是\textbf{共形平直}的。
 
 
 
@@ -428,7 +437,7 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-可以预料，若对 Schwarzschild 系坐标时 $t$ 做推迟变换，即得超前 Eddington 系的时间反演坐标，故称\textit{推迟 Eddington 系}，它描述的就是黑洞的反演：物质从视界穿出，物理现象朝着与黑洞性质相反的方向进行。从图上看，IV 区沿类时方向可以走向 A 区。物理学家将 IV 区打趣地称为\textit{白洞(white hole)}，简称 \textit{W 区}。同理\textit{白洞视界}记 $\H_V^-,\H_U^-$。可见，推迟 Eddington 系覆盖了 $\mathrm{A}\cup\H_U^-\cup\mathrm{W}$。最后还有一个 III 区，从度规上看，其也是一个渐近平直视界外时空，而它亦可从 W 区穿出而坠入 B 区，鉴于相似性又称 III 区为 \textit{A$'$ 区}，然而此二区域不可能有任何信息交流，即\textit{无因果联系}，因为从 A 出发的任意类时或类光线都不能进入 A$'$，反之亦然。于是物理学家戏称 A$'$ 为另一独立的“宇宙”，二者互为\textit{平行宇宙(parallel universes)}。如果硬要说二者有“擦边性”的瓜葛，那只能在原点 $V,U=0$ 处。还原另二空间维度，它就是一个半径 $r=2M$ 的 2 维球面，称为\textit{虫洞(wormhole)}、\textit{喉(throat)}或\textit{分叉点(bifurcation)}，以代表两个“宇宙”唯一可能但却不能通过的道路。这些概念是在全时空为真空的前提下所得，其物理实在性还须另做讨论。从初值问题的角度考虑，整个时空存在的可能性很小。
+可以预料，若对 Schwarzschild 系坐标时 $t$ 做推迟变换，即得超前 Eddington 系的时间反演坐标，故称\textbf{推迟 Eddington 系}，它描述的就是黑洞的反演：物质从视界穿出，物理现象朝着与黑洞性质相反的方向进行。从图上看，IV 区沿类时方向可以走向 A 区。物理学家将 IV 区打趣地称为\textbf{白洞}(white hole)，简称 \textbf{W 区}。同理\textbf{白洞视界}记 $\H_V^-,\H_U^-$。可见，推迟 Eddington 系覆盖了 $\mathrm{A}\cup\H_U^-\cup\mathrm{W}$。最后还有一个 III 区，从度规上看，其也是一个渐近平直视界外时空，而它亦可从 W 区穿出而坠入 B 区，鉴于相似性又称 III 区为 \textbf{A$'$ 区}，然而此二区域不可能有任何信息交流，即\textbf{无因果联系}，因为从 A 出发的任意类时或类光线都不能进入 A$'$，反之亦然。于是物理学家戏称 A$'$ 为另一独立的“宇宙”，二者互为\textbf{平行宇宙}(parallel universes)。如果硬要说二者有“擦边性”的瓜葛，那只能在原点 $V,U=0$ 处。还原另二空间维度，它就是一个半径 $r=2M$ 的 2 维球面，称为\textbf{虫洞}(wormhole)、\textbf{喉}(throat)或\textbf{分叉点}(bifurcation)，以代表两个“宇宙”唯一可能但却不能通过的道路。这些概念是在全时空为真空的前提下所得，其物理实在性还须另做讨论。从初值问题的角度考虑，整个时空存在的可能性很小。
 
 \section{Penrose 图}
 
@@ -442,11 +451,11 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 这些问题花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。
 
-人们现在普遍认为星体\textit{引力坍缩(gravitational collapse)}的末日归宿就是黑洞。
+人们现在普遍认为星体\textbf{引力坍缩}(gravitational collapse)的末日归宿就是黑洞。
 
-进入黑洞的测地线会在有限固有时内碰上奇点而“断掉”，不可无限制地延伸下去，称作\textit{不可延测地线(inextendible geodesic)}。接近奇点的宏观观者会被差距强烈的潮汐力撕碎。
+进入黑洞的测地线会在有限固有时内碰上奇点而“断掉”，不可无限制地延伸下去，称作\textbf{不可延测地线}(inextendible geodesic)。接近奇点的宏观观者会被差距强烈的潮汐力撕碎。
 
-这种病态性质与高度的球对称性有关。Penrose 在 1965 年给出的\textit{奇性定理(singularity theorem)}中指出，耦合适当的物质并附加某些条件后，一定会出现不可延测地线，因而就产生了这么个奇点。奇性定理给出了两个重要猜想(conjecture)或者假设(hypothesis)。第一个是\textit{弱宇宙监督(weak cosmic censorship)假设}: 对于适当的物质方程组和一般物理意义的初始条件，奇点一定限制在黑洞区域内而“看不见”; 第二个是\textit{强(strong)宇宙监督假设}：解的奇性一定与其延拓遇到局部阻碍有关。后一个假设保证了动力学问题的唯一解必定是初始数据产生的经典时空，即\textit{经典决定性原理(Classical Newtonian determinism)}。如果抛弃条件的一般性，则这两个假设都不成立。Christodoulou 做出过标量场方程组的球对称解，其中的奇点就不在黑洞区域内，这样的时空就称作包含了\textit{裸(naked)奇点}。裸奇点很容易构造出来，比如直接令 $m<0$，但此时就不允许\textit{渐近平直(asymptotically flat)的 Cauchy 面}了，因而可能不太符合咱们的物理常识。这件事与所谓的\textit{正能量定理(positive mass theorem)}有关.
+这种病态性质与高度的球对称性有关。Penrose 在 1965 年给出的\textbf{奇性定理}(singularity theorem)中指出，耦合适当的物质并附加某些条件后，一定会出现不可延测地线，因而就产生了这么个奇点。奇性定理给出了两个重要猜想(conjecture)或者假设(hypothesis)。第一个是\textbf{弱宇宙监督}(weak cosmic censorship)假设: 对于适当的物质方程组和一般物理意义的初始条件，奇点一定限制在黑洞区域内而“看不见”; 第二个是\textbf{强宇宙监督}(strong cosmic censorship)假设：解的奇性一定与其延拓遇到局部阻碍有关。后一个假设保证了动力学问题的唯一解必定是初始数据产生的经典时空，即\textbf{经典决定性原理}(Classical Newtonian determinism)。如果抛弃条件的一般性，则这两个假设都不成立。Christodoulou 做出过标量场方程组的球对称解，其中的奇点就不在黑洞区域内，这样的时空就称作包含了\textbf{裸}(naked)奇点。裸奇点很容易构造出来，比如直接令 $m<0$，但此时就不允许\textbf{渐近平直的 Cauchy 面}了，因而可能不太符合咱们的物理常识。这件事与所谓的\textbf{正能量定理}(positive mass theorem)有关.
 
 \section{轴对称时空}
     \subsection{旋转黑洞}
