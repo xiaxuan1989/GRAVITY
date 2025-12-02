@@ -1,4 +1,49 @@
 
+考虑 Lorenz 规范下的无源方程 $\square A_\mu = 0$。
+由 Fourier 定理，$[0,L]$ 上任意良好的函数总可写作 $f(x)=\sum c_n \exp(\i \frac{2\pi n}{L}x)$。
+推广到 $\R$ 上就是 $f(x)=\int_\R \tilde f(k)\e^{ikx}\d k$，$\R^3$ 就是 $f(\bm x)=\int_\R \tilde f(\bm k)\e^{i\bm k\cdot\bm x}\d[3]k$。
+将 $\e^{i\bm k\cdot\bm x}$ 称为基底平面波，因其同相位点之集 $\bm x$ 满足 $\bm k\cdot\bm x$ 为常数，即波前为平面，属于一种平面波；其次，任意 $f(x)$ 可以 $\e^{i\bm k\cdot\bm x}$ 为基底，展开系数为各 Fourier 变换结果 $\tilde f(\bm k)$。
+
+同理，$A_\mu(x)=\int a_\mu(k) \e^{\i\theta} \d[4]k$，其中 $\theta = k^\mu x_\mu \in \R$。所以 $\square A_\mu = \int a_\mu \e^{\i\theta} \square\theta \d[4]k$
+
+
+
+$A_\mu = \Re{C_\mu \e^{\i\theta}}$，其中 $C_\mu\in\C$ 称为\textbf{偏振矢量}，$\del_\mu C^\mu = 0$。
+
+对于光，虽不能定义固有时和质量概念，但可借量子理论的 de Broglie 关系定义其能量和动量。设频率 $\nu$ 和波矢 $k^i$，则能量为 $E=h\nu$，3-动量为 $p^i = \hbar k^i$。4-动量仍满足 $P^0=E,P^i=p^i$。
+
+实际上，描述光线时一般取任意仿射参数 $\lambda$。比如，考虑一点 $x_{0}$，此处一个指向未来的类光矢量 $N$ 就可代表光的走向。由 $\alpha(\lambda)=x_{0}+\lambda N$ 定义的直线 $\alpha$ 就是自由光子经过 $x_{0}$ 的世界线。
+
+先回顾 3 维语言并考虑 SI。$\bm{E},\bm{B}$ 是真空中波动方程矢值解的事实表明：我们找到了 Maxwell 方程组的 “平面 波”解，其中
+\eq{
+\bm{E}=\bm{\alpha} \cos \Omega+\bm{\beta} \sin \Omega,
+}
+式中 $\bm{\alpha},\bm{\beta}$ 是常矢量，而 
+\eq{
+\Omega=(\omega t-\omega \bm{r} \cdot \bm{e})，\quad \bm{e} \cdot \bm{e}=1,
+}
+$\omega>0,\bm{\alpha},\bm{\beta}$ 和 $\bm{e}$ 是常量；$\omega$ 是频率，$\bm{e}$ 是给出传播方向的单位矢量($t$ 增加 $\tau$ 且 $\bm r$ 增加 $c \tau \bm{e}$ 保持 $\Omega$ 不变)。这满足波动方程，如果常量不可普遍选取，将不可能找到使真空方程也成立的 $\bm B$。取上式的散度得
+\eq{
+\div \bm{E}=\frac{\omega}{c}(\bm{e} \cdot \bm{\alpha} \sin \Omega-\bm{e} \cdot \bm{\beta} \cos \Omega)=0,
+}
+即必须选择 $\bm{\alpha},\bm{\beta}$ 使其垂直于 $\bm{e}$。而另一方面，必须找到 $\bm{B}$ 使
+\eq{
+\curl \bm{E}=\frac{\omega}{c}(\bm{e} \times \bm{\alpha} \sin \Omega-\bm{e} \times \bm{\beta} \cos \Omega)=-\frac{\partial \bm{B}}{\partial t},
+}
+一种可能的选择是
+\eq{
+\bm{B}=\frac{\bm{e} \times \bm{E}}{c}=\frac{1}{c}(\bm{e} \times \bm{\alpha} \cos \Omega+\bm{e} \times \bm{\beta} \sin \Omega).
+}
+不难看出 $\bm{E},\bm{B}$ 同样满足真空方程。这种方法得到的解称为\textbf{单色平面电磁波}。注意，$\bm{E}$ 和 $\bm{B}$ 垂直于传播方向，在此意义下这样的波是横波，$\bm{E}$ 的定义可更简要地写成
+\eq{
+\bm{E}=\Re{(\bm{\alpha}+\i\beta) \e^{-\i \Omega}},
+}
+用 Fourier 分析可证明真空中每个解都是单色平面波的组合。如果 $\bm{\alpha}$ 和 $\bm{\beta}$ 成正比，平面波是\textbf{“平面”偏振}的或\textbf{“线”偏振}的；如果 $\bm{\alpha} \cdot \bm{\alpha}=\bm{\beta} \cdot \bm{\beta},\bm{\alpha} \cdot \bm{\beta}=0$，平面波则是\textbf{“圆”偏振}的。
+
+Maxwell 理论的核心概念是具有确定频率或一定色的光波可用 Maxwell 方程组的单色平面解来表示。
+
+
+%% 
 
 \textbf{标架}(frame，四维时称 tetrad)一般指非坐标基的任意基底。取四维标架 $\{e_I, I =0,1,2,3\}$。我们主要考虑正交归一的标架，即
 \eq{
