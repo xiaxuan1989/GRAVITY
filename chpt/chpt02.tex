@@ -9,32 +9,20 @@
 
 %% 考虑等效原理。
 
-设置两个稳态观者，一者为光源 $e$，一者为吸收端 $r$。
-
-Killing 矢量 $\xi^\mu = \pdv{x^\mu}{x'^\nu}\delta^\nu_0 = \pdv*{x^\mu}{t}$， $t$ 为 Schwarzschild 时间。知 $k^\mu\xi_\mu$ 沿光路为常量。
-
-Schwarzschild 系下，角频率为 $\omega=-k_\mu U^\mu=-k_\mu \frac{\delta^\mu_0}{\sqrt{-g_{00}}}=-\frac{k_0}{\sqrt{-g_{00}}}=-\frac{k_\mu\xi^\mu}{\sqrt{-g_{00}}}$，波长为 $\lambda = $。
-
-所以\textbf{红移量}为
+设置两个稳态观者，一者为光源 $e$，一者为接收端 $r$。二者 4-速共线于 Killing 矢量 $\xi^\mu = \pdv{x^\mu}{x'^\nu}\delta^\nu_0 = \pdv*{x^\mu}{t}$，$t$ 为稳态时间。知 $k^\mu\xi_\mu$ 沿光路为常量。
+角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。故
 \eq{
-    z=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{g_{00}(x_r)}{g_{00}(x_e)}}=\frac{\omega_r}{\omega_e}
+    z=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1,
 }
+这称为\textbf{红移量}，$\sqrt{-\xi_\mu\xi^\mu}$ 称为红移因子。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。若 $r_r>r_e$，则 $z>0$，光将红移，否则蓝移。但这并非因为光爬出引力势阱而消耗能量。被高处静止观测者测得的频率更低。
 
-$\sqrt{-g_{00}}$ 称为红移因子。
+取 Schwarzschild 度规，则
+\eq{
+    z=\sqrt{\frac{1-2GM/r_r c^2}{1-2GM/r_e c^2}}-1.
+}
+近似下得到 $z=-\Delta\phi$
 
 
-
-假设有一光源在 $r$ 处发出频率为 $\nu$ 的光子，若此时光源静止于某惯性系，则光子能量为 $E=h\nu$。若此时光源以速度 $v$ 沿径向运动，则能量变为
-\[E'=h\nu\sqrt{1-v^2/c^2}.\]
-若光子在 $r$ 处被接收，且接收器静止于同一惯性系，则光子能量仍为 $E=h\nu$。因此，光子在 $r$ 处的频率为
-\[\nu'=\frac{E'}{h}= \nu\sqrt{1-v^2/c^2}.\]
-若光源和接收器处于不同的引力场中，设光源在 $r_1$ 处，接收器在 $r_2$ 处，则光子能量为
-\[E=h\nu\sqrt{1-2GM/r_1c^2},\]
-接收器处的能量为
-\[E'=h\nu\sqrt{1-2GM/r_2c^2}.\]
-因此，光子在 $r_2$ 处的频率为
-\[\nu'=\frac{E'}{h}= \nu\sqrt{\frac{1-2GM/r_2c^2}{1-2GM/r_1c^2}}.\]
-这就是引力红移的公式。若 $r_1=r_2$，则 $\nu'=\nu$，即光子频率不变；若 $r_1<r_2$，则 $\nu'<\nu$，即光子频率降低；若 $r_1>r_2$，则 $\nu'>\nu$，即光子频率升高。
 
 引力红移的实验验证是通过测量光子频率的变化来实现的。最著名的实验是 Pound-Rebka 实验，该实验在 1959 年由 Robert Pound 和 Glen A. Rebka 在哈佛大学进行。他们使用了一个高塔和一个伽马射线源，测量了从塔顶到塔底的伽马射线频率变化，验证了引力红移的预测。
 
