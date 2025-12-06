@@ -18,7 +18,7 @@
 \begin{wrapfigure}{r}{.5\textwidth}
     \centering
     \includegraphics[width=.5\textwidth]{fig/chpt01/worldlines.pdf}
-    \caption{\small 2 维时空图。以某惯性系为\textbf{绘图基准}是一种时空图的绘制习惯：将其坐标网格画成欧氏正交、时间轴未来方向朝上（空间轴右手排列）、尺度均匀的，这样迎合几何制，反向的光线也相互正交。}
+    \caption{\small 2 维时空图。以某惯性系为\textbf{绘图基准}是一种时空图的绘制习惯：将其坐标网格画成欧氏正交 $90^\circ$、时间轴未来方向朝上（空间轴右手排列）、尺度均匀的，这样迎合几何制，反向的光线也相互正交。}
 \end{wrapfigure}
 
 更普遍地，考察\textit{全体}事件规律排布的集合。比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
@@ -54,7 +54,7 @@ x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
     \qquad
     \subfloat[\centering 动系对钟]{\includegraphics[height=.4\textwidth]{fig/chpt01/reflec2.pdf}
     }
-    \caption{\small 若以 $G$ 为绘图基准，只需使反射光与 $G$ 夹角呈 $45^\circ$ 即可使 $BD,AC$ 正交，结果如(a)。以该系为基准，研究一个运动惯性观者的对钟情况，结果如(b)。可见惯性系的坐标轴总关于 $45^\circ$ 斜线对称。}
+    \caption{\small 若以 $G$ 为绘图基准，只需使反射光与 $G$ 夹角呈 $45^\circ$ 即可使 $BD,AC$ 呈 $90^\circ$，结果如(a)。以该系为基准，研究一个运动惯性观者的对钟情况，结果如(b)。可见惯性系的坐标轴总关于 $45^\circ$ 斜线对称。}
     \label{fig:clock_syn}
 \end{figure}
 
@@ -189,8 +189,8 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 
 数学上给定 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 后用积分定义线长、矢量模，借圆弧和三角函数定义角，最后按投影定义内积(inner product)，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\l^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
 欧氏几何现降级为一种选择，而非保守派所认为的绝对真理。比如 ${\eta}_{\mu\nu}$ 就是\textbf{闵氏度规}，对应\textbf{闵氏几何}；还可有双曲几何 $\d\l^2=(\d x^2+\d y^2)/(1-x^2-y^2)$，当接近 $x^2+y^2<1$ 边缘时，该线元相较于欧氏线元会越来越大，但它除平面几何第五公理外符合其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
-第 $\alpha$ 坐标轴可按相应 $x^\alpha$ 参数化，切矢 $\dv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$ 称为\textbf{坐标基矢}，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。$\{\delta_\alpha^\mu\}_{\alpha=0}^3$ 称为坐标系的\textbf{坐标基}。可见惯性系的时空轴正交，因为 $\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
-虽然时空图中动系坐标轴不是欧氏正交，但被约定为时空上的正交。
+第 $\alpha$ 坐标轴可按相应 $x^\alpha$ 参数化，切矢 $\dv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$ 称为此系的\textbf{坐标基矢}（在此系的分量），这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。$\{\delta_\alpha^\mu\}_{\alpha=0}^3$ 称\textbf{坐标基}。可见惯性系的时空轴正交，因为 $\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
+虽然时空图中动系坐标轴不是欧氏正交，但被约定为时空上的正交，即闵氏正交。
 
 \begin{figure}[p]
     \centering
@@ -421,15 +421,15 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 }
 称为\textbf{4-速}。显然 4-速是单位类时切矢：$\eta_{\mu\nu}U^\mu U^\nu=-1$。规定 $U_\mu:=\eta_{\mu\nu}U^\nu$，就还可紧凑写作 $U^\mu U_\mu = -1$。这称为矢量在度规下的\textbf{对偶矢量}(dual vector)。
 定义 $(\eta^{\mu\nu}):=(\eta_{\mu\nu})^{-1}$。$\eta_{\mu\nu}$ 作为广义单位阵，易证数值上 $(\eta_{\mu\nu})=(\eta^{\mu\nu})$。故还可对偶回去：$U^\mu=\eta^{\mu\nu}U_\nu$。
-$u^i:=\dot{x}^i$ 称为\textbf{3-速}，其对偶为 $u_i=\eta_{ij}u^j=\delta_{ij}u^j$，模长即 $u:=\sqrt{u_i u^i}$。可见 4-速分量为 $U^0=\gamma,U^i=\gamma u^i$。
+$\dot{x}^i$ 称为\textbf{3-速}，其对偶为 $\dot{x}_i=\eta_{ij}\dot{x}^j=\delta_{ij}\dot{x}^j$，模长即 $u:=\sqrt{\dot{x}^i \dot{x}_i}$。可见 4-速分量为 $U^0=\gamma,U^i=\gamma \dot{x}^i$。
 同理，\textbf{4-加速}为
 \eq{
     A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\del_\nu U^\mu.
 }
 由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。
-$a^i:=\ddot{x}^i$ 称为（坐标）\textbf{3-加速}。
-可见 4-加速分量为 $A^0=\gamma \dot{\gamma}=\gamma^4 u\dot{u}=\gamma^4 u^ia_i, A^i=\gamma^2 a^i+\gamma^4 u^ja_j u^i$，
-其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 a^ia_i+\gamma^6(u^ia_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。固有系中 $u^i=0$，故 4-加速等于固有系 3-加速。
+$\ddot{x}^i$ 称为\textbf{坐标 3-加速}。
+可见 4-加速分量为 $A^0=\gamma \dot{\gamma}=\gamma^4 u\dot{u}=\gamma^4 \dot{x}^i\ddot{x}_i, A^i=\gamma^2 \ddot{x}^i+\gamma^4 \dot{x}^j\ddot{x}_j \dot{x}^i$，
+其中考虑到 3-加速在 3-速上投影为 $\dot{u}$；模方为 $A^\mu A_\mu=\gamma^4 \ddot{x}^i\ddot{x}_i+\gamma^6(\dot{x}^i \ddot{x}_i)^2$。故 $A^\mu=0$ 时任意坐标 3-加速都为零。固有系中 $\dot{x}^i=0$，故 4-加速等于固有系 3-加速。
 
 同一个 4-速在另一惯性系下测得 $U'^\mu=\d x'^\mu/\d\tau$（Lorentz 协变性），故
 \eq{
@@ -456,7 +456,7 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
     \item \textbf{指标升降}约定用度规及其逆，构成\textbf{度规对偶}；
     \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\del_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变。
 \end{enumerate}
-$U^\mu$、$U_\mu$、Kronecker 符号都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\del_\nu U^\mu$ 也是 Lorentz 张量。
+$U^\mu$、$U_\mu$、Kronecker 符号\footnote{注意 $\{x\}$ 的第 $x^0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，所以变换到另一系 $\{x'\}$ 为 $\Lambda^{\mu}{}_{\nu}\delta^\nu_0=\Lambda^{\mu}{}_{0}$。}都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\del_\nu U^\mu$ 也是 Lorentz 张量。
 闵氏度规（包括 $\eta^{\mu\nu}$）在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
 
 虽然这在物理和计算上没有问题，但似乎还是缺了些什么。
@@ -603,14 +603,14 @@ L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=-m/\gamma,\quad S=-m\int\sqrt{-\e
 \eq{
     P_\mu=\pdv{L}{\dot x^\mu}=m U_\mu\implies P^\mu=m U^\mu,
 }
-称为\textbf{4-动量}。由时空对称性，其分量分别解释为动量 $p^i=P^i$（称为\textbf{3-动量}）和能量 $E=P^0=p_i u^i-L$。
-将 $\gamma$ 按二项式定理展开 $p^i=Eu^i=\gamma m u^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)u^i$。
-可见若 $u\ll 1$，则 3-动量近似于经典动量 $m u^i$，即 3-动量给出了其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
+称为\textbf{4-动量}。由时空对称性，其分量分别解释为动量 $p^i=P^i$（称为\textbf{3-动量}）和能量 $E=P^0=p_i \dot{x}^i-L$。
+将 $\gamma$ 按二项式定理展开 $p^i=E \dot{x}^i=\gamma m \dot{x}^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)\dot{x}^i$。
+可见若 $u\ll 1$，则 3-动量近似于经典动量 $m \dot{x}^i$，即 3-动量给出了其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
 $P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\textbf{条件}。
 另一方面 $-E^2+p^2=P^\mu P_\mu$ 或者 $E^2= p^2+m^2$，此即相对论性\textbf{色散关系}(dispersion relation)。
 同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程 $\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2$。
 
-$F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma f^i$，其中\textbf{3-力}为 $f^i:=\dot{p}^i$。质量守恒时 $F^\mu=m A^\mu,f^i=m a^i$，功能关系 $f^i u_i=\dot{E}$ 得到保留。
+$F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\gamma \dot{p}^i$，其中 $\dot{p}^i$ 即\textbf{3-力}。质量守恒时 $F^\mu=m A^\mu,\dot{p}^i=m\ddot{x}^i$，功能关系 $\dot{p}^i \dot{x}_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
 \subsection{经典电动力学}
@@ -647,7 +647,7 @@ $F^\mu:=\dv*{P^\mu}{\tau}$ 称\textbf{4-力}，分量 $F^0=\gamma\dot{E},F^i=\ga
 \eq{
     J^\mu=\i e\left(\phi\overline{D^\mu\phi}-\bar{\phi} D^\mu \phi\right).
 }
-定义$\varphi:=A^0,a^i:=A^i$，分别解释为电标势和磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm a+\grad f$ 的选取自由。可见，对称性催生电荷 $J^\mu$，规范化催生电磁场 $A_\mu$。Noether 荷 $\int J^0\d[3]x$ 表示 $\phi$ 所携带的带电\textit{数}，再配合耦合常数 $e$ 就得到了电量。
+$\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm A+\grad f$ 的选取自由。可见，对称性催生电荷 $J^\mu$，规范化催生电磁场 $A_\mu$。Noether 荷 $\int J^0\d[3]x$ 表示 $\phi$ 所携带的带电\textit{数}，再配合耦合常数 $e$ 就得到了电量。
 
 为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。因为 $A^\mu$ 的运动方程应至少二阶，作用量中需要出现 $\del_\mu A_\nu$。
 $A^\mu A_\mu$ 并不规范不变，但对于一阶导，可立即看到
@@ -700,7 +700,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
     \frac{\d P^\mu}{\d\tau}=m\frac{\d^2 x^\mu}{\d\tau^2}=q F^{\mu}{}_{\nu}U^\nu.
 }
 取 $f^i=m \dot{u}^i$ 可看出该方程正是 $\bm f=q(\bm E+\bm u\times\bm B)$。称 $q F^{\mu}{}_{\nu}U^\nu$ 为\textbf{4-Lorentz 力}。
-类似地，欲直接得 3 维表述可用惯性坐标时 $t$ 作为参数，位形空间取同时面 $\Sigma_t$，这样可表为 $L=-m\sqrt{1-u^2}-q\varphi+qu_i a^i$，对 $x^i$ 变分即可。可见最小耦合迫使场强成为 4-速的线性变换。
+类似地，欲直接得 3 维表述可用惯性坐标时 $t$ 作为参数，位形空间取同时面 $\Sigma_t$，这样可表为 $L=-m\sqrt{1-u^2}-q\varphi+qu_i A^i$，对 $x^i$ 变分即可。可见最小耦合迫使场强成为 4-速的线性变换。
 
 
 
@@ -726,7 +726,7 @@ S=\int \left(-m+q A_\mu U^\mu\right)\d\tau,
 
 取固有系 $\{a\}$ 测得\textbf{固有电荷密度} $\rho^*$，即满足 $q=\int\rho^*\d[3]{a}$，则 $q\int\d\tau=\int\rho^*\d[4]{a}$。
 惯性系变换保持 Jacobi 行列式为 1，则 $\d[4]x =\d[4]{a}$。
-进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $u^i$
+进而耦合项为 $\int A_\mu J^\mu \d[4]x$，其中 $J^\mu=\rho^*U^\mu$。设某荷电系统的 3-速场 $\dot{x}^i$
 
 $ \int J^\mu \d[3]x = q U^\mu$
 
@@ -1119,7 +1119,7 @@ R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\m
 \eq{
 T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\mathcal L_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{\mathcal L_M}{g_{\mu\nu}}+g^{\mu\nu}\mathcal L_M=g^{\mu\alpha}g^{\nu\beta} T_{\alpha\beta}.
 }
-那么当然 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$。可见 $T^{00}=T_{00}=\mu$ 即能量密度，$T^{i0}=T^{0i}=\mu u^i $ 即动量密度或能流密度，而 $T^{ij}=\mu u^i u^j$ 即动流密度或应力张量。因此，$T^{\mu\nu}$ 称为物质场源的\textbf{4-动流密度}或\textbf{能动张量}。
+那么当然 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$。可见 $T^{00}=T_{00}=\mu$ 即能量密度，$T^{i0}=T^{0i}=\mu \dot{x}^i $ 即动量密度或能流密度，而 $T^{ij}=\mu \dot{x}^i \dot{x}^j$ 即动流密度或应力张量。因此，$T^{\mu\nu}$ 称为物质场源的\textbf{4-动流密度}或\textbf{能动张量}。
 代入 $T^{\mu\nu}=\mu^* Z^\mu Z^\nu$，则 $\nabla_\mu T^{\mu\nu}=\mu^* Z^\mu\nabla_\mu Z^\nu$。故 $\nabla_\mu T^{\mu\nu}=0$ 等价于 $Z^\mu\nabla_\mu Z^\nu =0$，说明各质元自由落体。
 
 考虑 Newton 极限。取固有系，$R_{\mu\nu}Z^\mu Z^\nu=\tilde R_{00}=\nabla^2\phi= 4\pi\mu^*$。另一方面 $\tilde Z^\mu=\delta^\mu_0,\tilde Z_\mu=-\delta_{\mu 0}$，则 $T_{\mu\nu}Z^\mu Z^\nu=\tilde T_{00}=\tilde T^{00}=\mu^*$。进而 $T:=g_{\mu\nu}T^{\mu\nu}=-T^{00}=-\mu^*$。由前文知 $R=-G=-\kappa T$，场方程与 $Z^\mu Z^\nu$ 缩并得 $4\pi\mu^*-\frac 12 (-1)\kappa \mu^*=\kappa\mu^*$，则
@@ -1353,10 +1353,9 @@ Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textb
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
 Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
-计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$。
-$r=0,2M$ 两处的奇性在此体现出区别：上式在 $r=2M$ 有意义，在 $r=0$ 发散。
-既然曲率在 $r=2M$ 处并不奇异，那就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
-$r=0$ 的奇性就称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
+计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$，在 $r=2M$ 有意义，在 $r=0$ 发散，故两处的奇性体现出区别。
+既然曲率在 $r=2M$ 处并不奇异，就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
+$r=0$ 的奇性称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
 考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
 于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。
@@ -1492,7 +1491,6 @@ h_{\mu\alpha} h_{\nu\beta}
  Z^\kappa \nabla_\kappa \omega_{\alpha\beta} = -\frac{2}{3}\theta \omega_{\mu\nu} - 2 \sigma_{\alpha[\nu} \omega_{\mu]}{}^{\alpha}.
 }
 
-\section{修改引力理论}
 \subsection{宇宙学}
 观测结果建议，宇宙在大尺度上\textbf{均匀}(homogeneous)且\textbf{各向同性}(isotropic)。这使得不能用非零质量密度和常数场强求解 Poisson 方程，因为试图计算某点场强时，要涉及对充斥全空间的物质做积分，这是反常积分，需用有限域逼近。简单计算就可发现结果取决于趋于无穷的方式（“为零”或“发散”），则称为 Neumann-Zeeliger 疑难，说明积分不良定义。可见 Newton 引力论很难发展出宇宙学。
 
@@ -1512,7 +1510,7 @@ h_{\mu\alpha} h_{\nu\beta}
 }
 甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
 
-\subsection{Mach 原理及标量场}
+\section{Mach 原理及标量场}
 
 Newton 为了解释绝对空间的存在性，提出了所谓的\textbf{水桶实验}。将一盛有清水的桶静置，并用一根长绳悬吊（图中略去）使桶可以靠绳索的扭力而转动；随后，尽可能使桶很快地加速旋转至某一角速度并保持。起初，桶相对于我们旋转，但（大部分）水由于惯性仍将保持静止，并且液面是平坦的；待桶的运动通过摩擦力传导至水，使水开始渐渐地随桶旋转，液面逐渐凹陷。在某个时刻，水和桶都将以该角速度旋转，即相对静止，液面凹陷呈抛物面状；尽可能很快地停止旋转，这个时候水由于惯性仍然要旋转一会儿才会静止，液面仍然凹陷。
 虽说本质是思想实验，但其可行性还是挺大的：Newton 本人就声称“已经做过实验”，并对该结果表示肯定。
@@ -1609,7 +1607,7 @@ $\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
 }
 可证 $f(R)$ 的作用实际上相当于引入额外标量场。我们以后再谈细节。
 
-\subsection{Kaluza-Klein 理论}
+\section{Kaluza-Klein 理论}
 
 我们甚至不排除更高维时空的存在，将四维时空中的相互作用视作更高维物理的结果。
 Kaluza 最先注意到电磁张量看起来像截断克氏符：引入第五（空间）维度使得 $A_{\mu}=g_{\mu 4}$，假定 $g_{\mu\nu,4}=0$ 则
