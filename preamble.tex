@@ -200,37 +200,84 @@
 
 
 %================== 数学符号 =================
-\newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% Font series for categories
+\newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% 范畴论字体
+\newcommand{\bm}{\vb*}          % 粗体 boldsymbol
 
-\def\bm{\vb*}
-\def\d{\dd}
-\def\oo{\,\vdot\,}
+%\let\dotunder\d    % 先备份原来的下加点重音
+\renewcommand{\d}{\dd}          % 微分
+\newcommand{\p}{\partial}       % 偏导
+\newcommand{\cd}{\nabla}        % 协变导数
+\newcommand{\D}{\mathrm{D}}     % 协变微分
+\newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
 
-\def\D{\mathsf{D}}
-\def\c{\mathrm{C}}
-\def\C{\mathbb{C}}
-\def\a{\mathrm{A}}
-\def\R{\mathbb{R}}
-\def\N{\mathbb{N}}
-\def\Z{\mathbb{Z}}
-\def\Q{\mathbb{Q}}
-\def\l{\ell}
-\def\eqto{\Leftrightarrow}
-\def\mt{\varnothing}
-\def\e{\mathrm{e}}
-\def\i{\mathrm{i}}
-\def\pl{\mathrel{/\mskip-4mu/}}
+\usepackage{xparse}
+\ExplSyntaxOn
+\NewDocumentCommand{\Dv}{ s O{1} m g }
+ {
+  % 选择分式样式：星号版用 physics 的 \flatfrac，普通版用 \frac
+  \IfBooleanTF{#1}{\cs_set_eq:NN \__Dv_frac:nn \flatfrac}{\cs_set_eq:NN \__Dv_frac:nn \frac}
 
-\def\sgn{\operatorname{sgn}}
-\def\diag{\operatorname{diag}}
-\def\S{\mathrm{S}}
-\def\A{\mathrm{A}}
-\def\alt{\operatorname{alt}}
-\def\H{\mathcal{H}}
-\def\I{\mathscr{I}}
+  % #3: 若没有 #4，则 #3 视为自变量（算子形式 D/dx）；有 #4 则 #3 为函数、#4 为自变量
+  \IfNoValueTF{#4}
+   {
+    \int_compare:nNnTF {#2} = {1}
+     { \__Dv_frac:nn { \mathrm{D} } { \mathrm{d}#3 } }
+     { \__Dv_frac:nn { \mathrm{D}^{#2} } { \mathrm{d}#3^{#2} } }
+   }
+   {
+    \int_compare:nNnTF {#2} = {1}
+     { \__Dv_frac:nn { \mathrm{D}#3 } { \mathrm{d}#4 } }
+     { \__Dv_frac:nn { \mathrm{D}^{#2}#3 } { \mathrm{d}#4^{#2} } }
+   }
+ }
+\NewDocumentCommand{\DFv}{ s O{1} m g }
+ {
+  \IfBooleanTF{#1}{\cs_set_eq:NN \__DFv_frac:nn \flatfrac}{\cs_set_eq:NN \__DFv_frac:nn \frac}
 
-\def\del{\partial}
+  %\cs_set:Nn \__DFv_DF: { \DF }
 
+  % 只有一个参数：算子形式  D_F/dx
+  \IfNoValueTF{#4}
+   {
+    \int_compare:nNnTF {#2} = {1}
+     { \__DFv_frac:nn { \DF } { \mathrm{d}#3 } }
+     { \__DFv_frac:nn { \DF^{#2} } { \mathrm{d}#3^{#2} } }
+   }
+   % 两个参数：对 #3 关于 #4 求 Fermi derivative
+   {
+    \int_compare:nNnTF {#2} = {1}
+     { \__DFv_frac:nn { \DF #3 } { \mathrm{d}#4 } }
+     { \__DFv_frac:nn { \DF^{#2} #3 } { \mathrm{d}#4^{#2} } }
+   }
+ }
+\ExplSyntaxOff
+
+\newcommand{\Lie}{\mathscr{L}}  % Lie 导数
+\newcommand{\Lag}{\mathcal{L}}  % 拉氏密度
+
+\newcommand{\oo}{\,\vdot\,}     % 占位符
+
+%\newcommand{\DD}{\mathsf{D}} % 维数
+
+\newcommand{\C}{\mathbb{C}} % 复数
+\newcommand{\R}{\mathbb{R}} % 实数
+\newcommand{\N}{\mathbb{N}} % 自然数
+\newcommand{\Z}{\mathbb{Z}} % 整数
+
+\newcommand{\eqto}{\Leftrightarrow} % 等价
+\newcommand{\im}{\implies}          % 蕴含
+\newcommand{\mt}{\varnothing}       % 空集
+%\pl {\mathrel{/\mskip-4mu/}} % 平行符号
+
+\newcommand{\e}{\mathrm{e}}         % 自然常数
+\renewcommand{\i}{\mathrm{i}}         % 虚数单位
+
+\newcommand{\sgn}{\operatorname{sgn}}    % 取符
+\newcommand{\diag}{\operatorname{diag}}  % 对角
+
+\renewcommand{\S}{\operatorname{S}}        % 对称化
+\newcommand{\A}{\operatorname{A}}        % 反称化
+\newcommand{\alt}{\operatorname{alt}}   % 反称化算子
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tikz 公式标注

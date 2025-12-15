@@ -56,12 +56,12 @@
 \begin{definition}
     张量场沿切矢场 $\xi$ 的 \textbf{Lie 导数}为
 \eq{
-\mathscr L_\xi T:=\lim_{t\to 0}\frac{\phi_t^* T-T}{t}.
+\Lie_\xi T:=\lim_{t\to 0}\frac{\phi_t^* T-T}{t}.
 }
 \end{definition}
 
 \begin{eg}
-    就标量场 $f$ 而言 $\mathscr L_\xi f=\xi(f)$。
+    就标量场 $f$ 而言 $\Lie_\xi f=\xi(f)$。
 \end{eg}
 
 则 Killing 矢量场的各流线可视作第 $\hat x^1$ 坐标线，Killing 方程将化为
@@ -108,7 +108,7 @@ _1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^
 \]
 最简单的方法是借助复数。令 $z=x+\i y$，则 $\dv*{z}{\phi}=-y+\i x=\i z$，通解为
 \[
-    z=A\e^{\i(\phi-\phi_0)}\implies x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
+    z=A\e^{\i(\phi-\phi_0)}\im x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
 \]
 假设初值条件是 $p=\gamma(0)$，流线上点记 $q=\gamma(\alpha)$，则
 \[

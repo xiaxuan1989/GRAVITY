@@ -90,7 +90,7 @@ $m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式�
 }
 在波动方程中，这个括号的含义是频率平方，注意其中是对 $\theta$ 求导而非 $t$，故应是
 \eq{
-\frac{2\pi}{\Delta\theta}=\sqrt{3+\frac{r_0}{F_0} F'(r_0)}\implies\Delta \theta=2\pi\sqrt{\frac{F_{\odot}(r_0)+F_p(r_0)}{F_\odot(r_0)+3F_p(r_0)+r_0F_p'(r_0)}}.
+\frac{2\pi}{\Delta\theta}=\sqrt{3+\frac{r_0}{F_0} F'(r_0)}\im\Delta \theta=2\pi\sqrt{\frac{F_{\odot}(r_0)+F_p(r_0)}{F_\odot(r_0)+3F_p(r_0)+r_0F_p'(r_0)}}.
 }
 其中代入了 $F=F_{\odot}+F_p$ 于 $\Delta\theta$ 则\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。}。$\Delta\theta$ 的含义就是一次微扰振荡周期
 \[
@@ -153,7 +153,7 @@ Eddington 在 1919 年的一次日食观测中摄下了光线被引力“弯曲�
 可见轨迹为双曲线。
 不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
 由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
-\eq{T=x\sinh At,\quad X=x\cosh At\implies \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
+\eq{T=x\sinh At,\quad X=x\cosh At\im \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
 坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
 
 \begin{figure}[h!]
@@ -258,7 +258,7 @@ $t=-r_*+C$，且为了 $r=0$ 时 $r_*=0$，可取
     r_*=r+2M\ln\abs{\frac{r}{2M}-1}.
 }
 类比 Zeno 悖论\footnote{古希腊哲学家 Zeno 描述了类似效应：运动员 Achilles 欲同一只乌龟赛跑，且乌龟起点先于他若干路程 $L$。按通常的时间 $t$ 来说，他的速度 $v_1$ 快于乌龟的 $v_2$，明显在有限时间 $t=L/(v_1-v_2)$ 内超过乌龟。但设想这样计时：他欲超过乌龟，必须先追至乌龟的起点，但一旦如此，乌龟又能前进若干步，这样便有新的起点等着他，如此这般有无穷多这样的起点，则他“永远”也赶不上乌龟。这种计时方法称为 Achilles 时或 Zeno 时，记作 $t'$。令 $t',t$ 皆起于零。当 $t=L/v_1$ 时，Achilles 到达乌龟在 $t'=0$ 时的起点， $t'$ 加一，以此类推有
-\[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\implies t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
+\[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\im t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
 其中将 $t'\in\N$ 自然延拓至 $t'\in\R_+$。可见 $t'$ 在 $t=L/(v_2-v_1)$ 发散，因此按 $t'$ 衡量他永不超过乌龟。}，
 可称\textbf{乌龟坐标}(tortoise coordinates)。数学中的 Lambert 函数定义为满足 $x=y\e^y,y\geqslant -1$ 的$y=\operatorname{W}(x)$。用它可解出 $r=2M(1+\operatorname{W}(\pm\e^{r_*/2M-1}))$，正负号对应 $\sgn(r-2M)$。
 注意 $\d r_*={\d r}/{(1-2M/r)}$，从而度规表为 $\d s^2=(1-2M/r)\left(-\d t^2+\d r_*^2\right)$，奇性消除了。关键在于，新坐标系给视界赋予发散坐标，就可将度规奇性隐藏起来。
@@ -293,8 +293,8 @@ $r_m$ 称\textbf{Novikov 径向坐标}。可以看到的确 $\tilde g_{00}=-1,\t
 可见 $R$ 可确定到只差缩放函数。
 一个更方便的假设是所有测地线从无穷远释放并令 $A=1$（$R$ 沿 $t$ 均匀），因而
 \begin{align}
-    \d\tau &= \d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\implies \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}},\\
-    \d R &= \d\tau+\sqrt{\frac{r}{2M}}\d r = \d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\implies R=\tau+\frac 23(2M)^{-1/2}r^{3/2},
+    \d\tau &= \d t+\frac{\sqrt{2M/r}}{1-{2M}/{r}}\d r\im \tau = t+2 \sqrt{2Mr}+2M\ln\abs{\frac{\sqrt{r}-\sqrt{2M}}{\sqrt{r}+\sqrt{2M}}},\\
+    \d R &= \d\tau+\sqrt{\frac{r}{2M}}\d r = \d t+\frac{\sqrt{r/2M}}{1-{2M}/{r}}\d r\im R=\tau+\frac 23(2M)^{-1/2}r^{3/2},
 \end{align}
 则
 \begin{align}
@@ -363,7 +363,7 @@ r=2M\operatorname{W}\left(\frac{X^2-T^2}{\e}\right)+2M.
 \eq{
 V=\e^{v/4M}>0,\quad U=\e^{-u/4M}>0,
 }
-可验证度规仍表为 \eqref{eq:kruskal} 式。这里等 $r$ 线应无限延伸，因为等 $t$ 线从 $U$ 正半轴至 $V$ 正半轴遍历了所有 $t$ 值。一系列等 $r$ 线至多扫至时空奇点 $r=0\Leftrightarrow T^2-X^2=1$ 而无法越过，所扫区域里的任意类时、类光线确实都坠入奇点，说明其代表黑洞，称为\textbf{B 区}。可见，超前 Eddington 系覆盖了 $\mathrm{A}\cup\H_V^+\cup\mathrm{B}$，即整个 Schwarzschild 时空。奇点及其外部红色区域不属于时空。综上，A,B 区的坐标变换可整合为
+可验证度规仍表为 \eqref{eq:kruskal} 式。这里等 $r$ 线应无限延伸，因为等 $t$ 线从 $U$ 正半轴至 $V$ 正半轴遍历了所有 $t$ 值。一系列等 $r$ 线至多扫至时空奇点 $r=0\eqto T^2-X^2=1$ 而无法越过，所扫区域里的任意类时、类光线确实都坠入奇点，说明其代表黑洞，称为\textbf{B 区}。可见，超前 Eddington 系覆盖了 $\mathrm{A}\cup\H_V^+\cup\mathrm{B}$，即整个 Schwarzschild 时空。奇点及其外部红色区域不属于时空。综上，A,B 区的坐标变换可整合为
 \eq{
 V=\e^{(r_*+t)/4M},\quad U=-\sgn(r-2M)\e^{(r_*-t)/4M}.
 }

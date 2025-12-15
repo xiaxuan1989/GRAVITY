@@ -35,7 +35,7 @@ $\mathscr{T}\subset 2^X$ 称为 $X$ 的一个\textbf{拓扑}(topology)，若：
 \begin{itemize}
     \item $\mt,X \in \mathscr{T}$；
     \item $\forall \sigma\subset \mathscr{T}$，$\bigcup_{U\in\sigma} U\in \mathscr{T}$；
-    \item $U,V\in\mathscr{T}\implies U\cap V\in\mathscr{T}$。或等价地对有限集 $\{A_{i}\} \subset \mathscr{T}$，$\bigcap_{i} A_{i} \in \mathscr{T}$。
+    \item $U,V\in\mathscr{T}\im U\cap V\in\mathscr{T}$。或等价地对有限集 $\{A_{i}\} \subset \mathscr{T}$，$\bigcap_{i} A_{i} \in \mathscr{T}$。
 \end{itemize}
 $\mathscr{T}$ 的元素称为 $X$ 在 $\mathscr{T}$ 下的\textbf{开子集}，简称\textbf{开集}。
 $(X,\mathscr T)$ 称为 $X$ 关于拓扑 $\mathscr T$ 的\textbf{拓扑空间}。拓扑空间的元素称为\textbf{点}(point)。
@@ -93,11 +93,11 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
 \end{theorem}
 
 \begin{proof}
-    $A=A^\circ\in\mathscr T$；反之 $A\in\mathscr T,A\subset A\implies A\subset A^\circ\iff A=A^\circ$。
+    $A=A^\circ\in\mathscr T$；反之 $A\in\mathscr T,A\subset A\im A\subset A^\circ\iff A=A^\circ$。
 
     $A=A^\circ\iff\forall x\in A,\exists O\in\mathscr T$ 使 $x\in O\subset A\iff\forall x\in A, A\in\mathscr N(x)$。
     
-    $\forall x\in A$ 下，$\exists U\in\mathscr N(x)$ 使 $U\subset A\implies \exists O\in\mathscr T$ 使 $ x\in O\subset U\subset A \implies A\in\mathscr N(x)$；反之 $\exists A\in\mathscr N(x)$ 使 $A\subset A$。
+    $\forall x\in A$ 下，$\exists U\in\mathscr N(x)$ 使 $U\subset A\im \exists O\in\mathscr T$ 使 $ x\in O\subset U\subset A \im A\in\mathscr N(x)$；反之 $\exists A\in\mathscr N(x)$ 使 $A\subset A$。
 \end{proof}
 
 \begin{theorem}
@@ -111,8 +111,8 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
     $x\in\bar A\iff\forall U\in\mathscr N(x),U\cap A\ne\mt$。
 \end{theorem}
 \begin{proof}
-    给定 $x\in\bar A$，假设 $\exists U \in\mathscr N(x),U \cap A=\mt$。则 $\exists O\in\mathscr T$ 使 $x\in O\subset U\implies A\subset X \backslash U\subset X \backslash O$，$X \backslash O$ 为闭集 $\implies \bar{A} \subset X \backslash O\iff O \cap \bar{A}=\mt$，矛盾；
-    给定 $\forall U\in\mathscr N(x),U\cap A\ne\mt$，假设 $x\in X \backslash \bar{A}$。则 $X \backslash \bar{A}\in\mathscr T\implies \exists X \backslash \bar{A}\in\mathscr N(x),(X \backslash \bar{A}) \cap A=A \backslash \bar{A}=\mt$，矛盾。
+    给定 $x\in\bar A$，假设 $\exists U \in\mathscr N(x),U \cap A=\mt$。则 $\exists O\in\mathscr T$ 使 $x\in O\subset U\im A\subset X \backslash U\subset X \backslash O$，$X \backslash O$ 为闭集 $\im \bar{A} \subset X \backslash O\iff O \cap \bar{A}=\mt$，矛盾；
+    给定 $\forall U\in\mathscr N(x),U\cap A\ne\mt$，假设 $x\in X \backslash \bar{A}$。则 $X \backslash \bar{A}\in\mathscr T\im \exists X \backslash \bar{A}\in\mathscr N(x),(X \backslash \bar{A}) \cap A=A \backslash \bar{A}=\mt$，矛盾。
 \end{proof}
 
 \begin{definition}
@@ -144,7 +144,7 @@ $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
 
 \begin{definition}
     $S:\N\to X,n\mapsto x_n$ 的值域 $\Im S=\left\{x_n\right\}$ 称为\textbf{序列}或\textbf{点列}。
-    若 $\exists x \in X$，$\forall U\in\mathscr N(x),\exists N\in\N$，使 $n>N\implies x_n\in U$，则称 $\{x_n\}$ 有\textbf{极限}或\textbf{收敛}于 $x$。
+    若 $\exists x \in X$，$\forall U\in\mathscr N(x),\exists N\in\N$，使 $n>N\im x_n\in U$，则称 $\{x_n\}$ 有\textbf{极限}或\textbf{收敛}于 $x$。
 \end{definition}
 
 \begin{remark}
@@ -259,7 +259,7 @@ $\R^{n}$ 当然完备。
 \end{definition}
 
 \begin{remark}
-    全有界 $\implies$ 有界。
+    全有界 $\im$ 有界。
 \end{remark}
 
 \begin{eg}
@@ -300,7 +300,7 @@ $\R^{n}$ 当然完备。
 
 %%%
 \begin{remark}
-    紧 $\implies$ 列紧。
+    紧 $\im$ 列紧。
     若空间满足可数基或序列空间性质，两者可能一致。
 \end{remark}
 
@@ -382,7 +382,7 @@ $\R^{n}$ 当然完备。
 \end{definition}
 
 \begin{remark}
-    路径连通 $\implies$ 连通。
+    路径连通 $\im$ 连通。
 \end{remark}
 
 \begin{eg}
