@@ -207,11 +207,18 @@
 \renewcommand{\d}{\dd}          % 微分
 \newcommand{\p}{\partial}       % 偏导
 \newcommand{\cd}{\nabla}        % 协变导数
-\newcommand{\D}{\mathrm{D}}     % 协变微分
 \newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
 
 \usepackage{xparse}
 \ExplSyntaxOn
+
+% 协变微分
+\NewDocumentCommand{\D}{o m}{%
+  \IfNoValueTF{#1}
+    {\mathop{}\!\mathrm{D}#2}%
+    {\mathop{}\!\mathrm{D}^{#1}#2}%
+}
+
 \NewDocumentCommand{\Dv}{ s O{1} m g }
  {
   % 选择分式样式：星号版用 physics 的 \flatfrac，普通版用 \frac
@@ -254,6 +261,7 @@
 
 \newcommand{\Lie}{\mathscr{L}}  % Lie 导数
 \newcommand{\Lag}{\mathcal{L}}  % 拉氏密度
+\newcommand{\Ham}{\mathcal{H}}  % 哈氏密度
 
 \newcommand{\oo}{\,\vdot\,}     % 占位符
 
