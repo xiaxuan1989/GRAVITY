@@ -362,7 +362,7 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 \eq{
     (\Lambda^0{}_0)^2=1+\delta_{ij}\Lambda^i{}_0\Lambda^j{}_0=1+(\Lambda^1{}_0)^2+(\Lambda^2{}_0)^2+(\Lambda^3{}_0)^2\geqslant 1.
 }
-可见我们能按 $\Lambda^0{}_0,|\Lambda|$ 的符号将所有满足 \eqref{eq:Lorentz} 的 $\Lambda$ 分为四类。$\Lambda^0{}_0$ 的符号代表时间是否反演，因此 $\Lambda^0{}_0\geqslant 1$ 的 $\Lambda$ 称\textbf{正时的}。只有正时的变换才保持时间轴的未来、过去方向。$|\Lambda|$ 的符号代表整个时空坐标系的右手性，$|\Lambda|=1$ 时称\textbf{固有的}(proper)。进而可分为如表 \ref{table:class} 所示的四种情形。
+可见能按 $\Lambda^0{}_0,|\Lambda|$ 的符号将所有满足 \eqref{eq:Lorentz} 的 $\Lambda$ 分为四类。$\Lambda^0{}_0$ 的符号代表时间是否反演，因此 $\Lambda^0{}_0\geqslant 1$ 的 $\Lambda$ 称\textbf{正时的}。只有正时的变换才保持时间轴的未来、过去方向。$|\Lambda|$ 的符号代表整个时空坐标系的右手性，$|\Lambda|=1$ 时称\textbf{固有的}(proper)。进而可分为如表 \ref{table:class} 所示的四种情形。
 \begin{table}[ht]\centering
     \begin{tabular}{|c|c|c|c|}
     \hline
@@ -439,26 +439,26 @@ $\dot x^\mu$ 的空间部分 $\dot{x}^i$ 称为\textbf{3-速}，对偶为 $\dot{
 $\ddot{x}^i$ 称为\textbf{坐标 3-加速}。
 
 
-注意 $U^\mu=\gamma\dot x^\mu$，而 $\dot\gamma=\gamma^3\dot{x}_\mu\ddot{x}^\mu=\gamma^3\dot{x}_i\ddot{x}^i$（因为 $\dot x^0=1,\ddot x^0=0$），显然 $\pdv*{L}{x^\kappa}=0$，故 E-L 方程为
-\eq{\dot P_\mu = m\eta_{\mu\nu} (\gamma\ddot x^\nu + \dot\gamma\dot x^\nu)=m\eta_{\mu\nu} (\gamma\ddot x^\nu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\nu)=0.}
-约去 $m$ 并与 $\eta^{\mu\kappa}$ 缩并有 $\gamma\ddot x^\nu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\nu=0$。
-取 $\nu=0$ 可知 $\dot{x}_i\ddot{x}^i=0$，故上式即 $\ddot x^\mu=0$。这正是直线方程，符合实验观测，可认为作用量构造正确。
-我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
-给 $\dot P_\mu$ 乘上 $\gamma=\dv{t}{\tau}$ 就相当于重参化\footnote{若想直接将作用量的参数取为固有时 $\tau$，则默认是\textit{正路}的固有时。对于任何邻近旁路，$\tau$ 都非其固有时而只是纯粹的参数。为何不能用每条路径自己的固有时来作参数？因为变分应与参数无关。比如置有限积分域，Fréchet 空间中任意邻近旁路上所用参数的取值范围，必为同一区间，若每条路径皆用自己的固有时作参数就办不到。
+注意 $U^\mu=\gamma\dot x^\mu$，而 $\dot\gamma=\gamma^3\dot{x}_\mu\ddot{x}^\mu=\gamma^3\dot{x}_i\ddot{x}^i$（因为 $\dot x^0=1,\ddot x^0=0$），显然 $\pdv*{L}{x^\kappa}=0$，故 E-L 方程为 $\dot P_\mu = \dot m U_\mu + m\eta_{\mu\nu} (\gamma\ddot x^\nu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\nu)=0$。
+给 $\dot P_\mu$ 乘上 $\gamma=\dv*{t}{\tau}$ 就相当于重参化\footnote{若想直接将作用量的参数取为固有时 $\tau$，则默认是\textit{正路}的固有时。对于任何邻近旁路，$\tau$ 都非其固有时而只是纯粹的参数。为何不能用每条路径自己的固有时来作参数？因为变分应与参数无关。比如置有限积分域，Fréchet 空间中任意邻近旁路上所用参数的取值范围，必为同一区间，若每条路径皆用自己的固有时作参数就办不到。
 既然该参数无论如何都只有数学意义，我们取坐标时 $t$ 就可避免这些讨论。
 变分得到正路后再将 $\eta_{\mu\nu}\dot x^\mu \dot x^\nu=-1$ 代入，也即重参化 $t\mapsto\tau$。
 许多书籍对如下现象都未解释或作出错误解释：若用固有时 $\tau$ 作参数，则 $L=-m$，得不到任何方程，故强行解释为需还原代数形式才能进行变分。正确的解释是 $U^\mu U_\mu=-1$ 只对正路成立，其中参数 $\tau$ 与固有时一致。变分必须考虑邻近旁路，有它们自己的不同于 $\tau$ 的固有时，因而沿这些旁路 $U^\mu U_\mu\ne -1$。}，我们有
 \eq{
-    \dv{P_\mu}{\tau}= m\eta_{\mu\nu} (\gamma^2\ddot x^\nu + \gamma^4\dot{x}_i\ddot{x}^i\dot x^\nu) = m A_\mu,\quad A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\p_\nu U^\mu.
+    \dv{P_\mu}{\tau}= \dv{m}{\tau} U_\mu + m A_\mu=0,\quad A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\p_\nu U^\mu=\gamma^2\ddot x^\mu + \gamma^4\dot{x}_i\ddot{x}^i\dot x^\mu.
 }
-这称为\textbf{4-加速}。故 $\ddot x^\mu=0$ 等价为 $A^\mu=0$。
+$A^\mu$ 称\textbf{4-加速}。
+假设 $\dv*{m}{\tau}=0$，约去 $m$ 并与 $\eta^{\mu\kappa}$ 缩并有 $A^\mu=0$，也即 $\ddot x^\nu + \gamma^2\dot{x}_i\ddot{x}^i\dot x^\nu=0$。
+取 $\nu=0$ 可知 $\dot{x}_i\ddot{x}^i=0$，故 $A^\mu=0$ 等价于 $\ddot x^\mu=0$。
+这都是直线方程，符合实验观测，可认为作用量构造正确。
+我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
 由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。
 模方为 $A^\mu A_\mu=\gamma^4 \ddot{x}^i\ddot{x}_i+\gamma^6(\dot{x}^i \ddot{x}_i)^2$。
 固有系中 $\dot{x}^i=0$，故 4-加速等于固有系 3-加速。
 
 由时空对称性，$P^\mu$ 分量分别解释为\textbf{3-动量} $P^i=\gamma m \dot{x}^i$ 和能量 $E=P^0=P_i \dot{x}^i-L=\gamma m$。
 将 $\gamma$ 按二项式定理展开 $P^i=E \dot{x}^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)\dot{x}^i$。
-可见若 $u\ll 1$，则 3-动量近似于经典动量 $m \dot{x}^i$，即 3-动量给出了其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正。可见质点静止时也有能量，其应能释放并得到应用，对核能的开发已验证了这一点。
+可见若 $u\ll 1$，则 3-动量近似于经典动量 $m \dot{x}^i$，即 3-动量是其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正，并且质点静止时也有能量，对核能的开发已验证了这一点。
 $P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\textbf{条件}。
 另一方面 $-E^2+P_iP^i=P^\mu P_\mu$ 或者 $E^2= p^2+m^2,p^2=P_iP^i$，此即相对论性\textbf{色散关系}(dispersion relation)。
 同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程 $\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2$。
@@ -492,16 +492,14 @@ $\dot m=0$ 时 $F^\mu=m A^\mu$ 且功能关系 $\dot{P}^i \dot{x}_i=\dot{E}$ 得
 
 \subsection{Lorentz 张量}
 
-
-我们遇到的第一个例子就是曲线切矢。
-
-同一个 4-速在另一惯性系下测得 $U'^\mu=\d x'^\mu/\d\tau$（Lorentz 协变性），故
+由 Lorentz 协变性，
+4-速 $U^\mu=\d x^\mu/\d\tau$ 在另一惯性系下测得 $U'^\mu=\d x'^\mu/\d\tau$，故
 \eq{
     U'^\mu=\Lambda^\mu{}_\nu U^\nu.
 }
 称这种变换为\textbf{逆变的}(contravariant)，按这种方式变换的矢量称为\textbf{逆变矢量}(contravector)，故上指标又称\textbf{逆变指标}。
 根据式 \eqref{eq:Lorentz} 知 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}=\eta_{\sigma\lambda}\Lambda_{\lambda\nu}$，这里 $\Lambda^{-1}$ 是 $\Lambda$ 的逆。
-故 $U_\mu$ 满足的变换与之互逆：
+正则动量 $P_\mu=\pdv*{L}{\dot x^\mu}=mU_\mu$ 和对偶 4-速 $U_\mu$ 满足的变换与之互逆：
 \eq{
     U'_\nu=(\Lambda^{-1})^{\mu}{}_{\nu} U_\mu,\quad (\Lambda^{-1})^{\mu}{}_{\nu}=\eta^{\mu\alpha}\eta_{\nu\beta}\Lambda^{\beta}{}_{\alpha}.
 }
@@ -628,7 +626,7 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
 我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。
-考虑最简单的实标量场 $\phi$。置闵氏时空惯性系。场是粒子系统连续化，作用量中的动能项显然用 $\p_\mu\phi$ 构造。
+考虑最简单的实标量场 $\phi$。置闵氏时空惯性系。场是粒子系统连续化，Lorentz 不变作用量的动能项显然用 $\p_\mu\phi$ 构造。
 最简单的选择是 $\p^\mu\phi\p_\mu\phi$。其系数总可适当标度，但要求为正，则系数为负。我们可取
 \[\Lag= -\frac 12\p^\mu\phi\p_\mu\phi-U(\phi)\im \square\phi-\pdv*{U}{\phi}=0,\]
 从 E-L 方程可以看出，$\phi$ 的一次项对运动方程无实质贡献，故势能项最简单的取法是至少二次项，如 $U(\phi)=\frac 12 m^2\phi^2$，则得\textbf{Klein-Gordon 方程} $(\square-m^2\phi)=0$。这里 $\square=\p^\mu\p_\mu=\eta^{\mu\nu}\p_{\mu}\p_{\nu}$即电动力学中的 d'Alembert 算子，类似于 3 维空间中的 Laplace 算子 $\cd^2$。
@@ -637,14 +635,23 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
 \eq{
     \Lag=-\p^\mu\phi\p_\mu\bar\phi-U(\phi\bar\phi).
 }
-上式在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下保持不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$ 使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
+上式不仅 Lorentz 不变，且在整体的\textbf{相位变换}或\textbf{U(1)变换} $\phi \to \e^{\i \theta} \phi$ 下也不变。相应地 $\bar{\phi} \to \e^{-\i \theta} \bar{\phi}$。这就是一种内部对称性，称为\textbf{U(1) 整体对称性}。引入耦合强度 $e$ 使 $\theta=e\alpha$，取小量 $\alpha=\epsilon$，则一阶改变为（不区分 $\bar\delta,\delta$）
 \eq{
     \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\im J^\mu=\i e \phi\overleftrightarrow{\p^\mu}\bar\phi:=\i e(\phi\p^\mu \bar{\phi}-\bar{\phi} \p^\mu \phi).
 }
 利用其它类型的张量或旋量来构造 U(1) 对称的作用量，可得不同表达式的 Noether 流。马上将看到，无论具体对象如何，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。换言之，它们都带有电荷，参与电磁相互作用。故我们将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
 
-现实里，场论的定域性使相位往往应随时空点可变，即 $\phi \to \e^{\i e\alpha(x)} \phi$，这称为变换的\textbf{局域化}或\textbf{规范化}(gauging)。原来的作用量满足整体对称性，但不满足局域对称性，因为 $\p_\mu \e^{\i e\alpha}=\e^{\i e\alpha}\i e\p_\mu\alpha\ne 0$。
-为满足局域对称性，需要引入耦合项来改造 $\p_\mu$，使得新导数满足 $\D_\mu\phi\to\e^{\i e\alpha(x)}\D_\mu\phi$。最小耦合指出，只需以相加的方式引入：
+场论的定域性使相位往往应随时空点可变，即 $\phi \to \e^{\i e\alpha(x)} \phi$，这称为变换的\textbf{局域化}或\textbf{规范化}(gauging)。原来的作用量满足整体对称性，但不满足局域对称性，因为 $\p_\mu \e^{\i e\alpha}=\e^{\i e\alpha}\i e\p_\mu\alpha\ne 0$。注意 
+
+
+$\p_\mu(\e^{\i e\alpha(x)} \phi)=\e^{\i e\alpha(x)}(\p_\mu+\i e\p_\mu\alpha)\phi$。
+
+
+为满足局域对称性，需要引入耦合项来改造 $\p_\mu$，使得新导数满足 $\D_\mu\phi\to\e^{\i e\alpha(x)}\D_\mu\phi$。
+
+
+
+最小耦合指出，只需以相加的方式引入：
 \eq{
     \D_\mu := \p_\mu -\i e A_\mu,\quad \Lag=-\D^\mu\phi \overline{\D_\mu \phi} - U(\phi\bar\phi),
 }
@@ -775,8 +782,8 @@ $\cd^\mu T_{\mu\nu}=-F_{\nu\lambda}J^\lambda$。
 
 \subsection{惯性系存在性}\label{sec:inertial}
 
-前文对惯性系存在性的考虑，仍然承袭 Newton 体系的思维，即认为存在一个绝对静止系，则相对其匀速的物体可作为惯性系，而具有加速度的物体不能充当惯性系。然而，并无任何先验原理帮助我们确定绝对静止系在哪。
-实际上，物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，而理想惯性系必须远离所有物质以孤立，因此严格来说不存在。但实验上 Newton 定律一定程度适用于地面系，可见惯性系仍是有用概念。问题出在哪里？
+前文对惯性系存在性的考虑，仍然承袭 Newton 体系的思维，即认为存在一个先验的惯性系，相对其匀速的物体仍为惯性系，而具有加速度的为非惯性系。然而，并无任何原理帮助我们确定先验的惯性系在哪。
+实际上，物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，而理想的惯性系必须远离所有物质以孤立，因此严格来说不存在。但实验上 Newton 定律一定程度适用于地面系，可见惯性系仍是有用概念。问题出在哪里？
 
 物质在仅受引力作用时有\textbf{Galileo 性}：任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对 Galileo 性的解释如下。$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}。Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
 设 $A,B$ 共同自由落体，二者相对加速度近似为零。关键在于，\textit{总能以一者为研究对象，另一者抽象为背景坐标系}。比如，$B$ 可以是一部足够小、无自转的封闭电梯，而 $A$ 是乘客，则 $A$ 将感到失重。Newton 理论指出 $B$ 系中出现惯性力，但它与引力局域抵消，$B$ 系中做任何局域的力学实验结果都与惯性系等效，尤其在抛弃绝对系概念后，我们无法分辨。
@@ -831,7 +838,9 @@ $\omega'_i=\pdv{x^j}{x'^i} \omega_j$ 则对应\textbf{余切矢}(cotangent vecto
 \eq{\label{eq:metric}
     \d\tau^2=-g_{\mu\nu}\d x^\mu\d x^\nu,\quad g_{\mu\nu}:= \eta_{\alpha\beta}\pdv{\xi^\alpha}{x^\mu}\pdv{\xi^\beta}{x^\nu}.
 }
-此即\textbf{时空度规}或\textbf{Lorentz 度规}。光属于电磁或量子实验的内容，也符合等效原理。
+此即\textbf{时空度规}或\textbf{Lorentz 度规}。
+
+光属于电磁或量子实验的内容，也符合等效原理。
 取参数 $\lambda:=\xi^0$，同理得
 \eq{
     \dv[2]{x^\kappa}{\lambda}+\Gamma^\kappa_{\mu\nu}\dv{x^\mu}{\lambda}\dv{x^\nu}{\lambda}=0,\quad g_{\mu\nu}\dv{x^\mu}{\lambda}\dv{x^\nu}{\lambda}=0.
