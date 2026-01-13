@@ -1,6 +1,6 @@
 \chapter{经典引力场论}\label{chpt:GR}
 
-\section{相对论性场论}
+\section{定域场论}
 \subsection{经典力学的启示}
 
 先回顾经典力学的一些结果。
@@ -27,13 +27,12 @@ $L$ 只通过 $q,\dot q$ 的关系隐含 $t$。按理来说有 $q(t)$，$L$ 就�
 泛函求导法称为\textbf{变分法}。设正路 $q^i(t)$ 存在，任取旁路 $\hat q^i(t)$，但差值 $\delta q^i(t):=\hat q^i(t)-q^i(t)$ 严格遵循 $\delta q^i(a)=\delta q^i(b)=0$。
 这称为 \textbf{Fréchet 变分}。因 $\delta t=0$，则即使 $\pdv*{L}{t}\ne 0$ 也仍有 $\pdv{L}{t}\delta t= 0$。
 泛函变分指其增量的线性主部。注意 Fréchet 变分无关于 $t$ 及其端点，因此可与参数的微分、积分交换，且代数性质与微分相似。最小作用量原理指出正路上恒有 $\delta S=0$，即 $S$ 增量总属于 $o(\delta q^i)$。
-变分法关键是\textbf{分部积分法}，从含有 $\dot q$ 的部分得到\textbf{边界项}，结合变分限制条件而消去。
+变分法关键是\textbf{分部积分法}，从含有 $\dot q$ 的部分得到\textbf{边界项}，结合变分限制条件而消去。对指标 $i$ 使用求和约定：
 \begin{align}
-    \delta S&=\int_{a}^{b}\delta L\d{t}=\int_{a}^{b}\bigg(\pdv{L}{q^i}\delta q^i+\pdv{L}{\dot q^i}\delta \dot q^i\bigg) \d{t}\nonumber\\
-    &=\int_{a}^{b}\left(\pdv{L}{q^i}-\dv{t}\pdv{L}{\dot q^i}\right)\delta q^i\d{t}+ \eval{\pdv{L}{\dot q^i}\delta q^i}_{a}^{b}\nonumber\\
+    \delta S&=\int_{a}^{b}\delta L\d{t}=\int_{a}^{b}\bigg(\pdv{L}{q^i}\delta q^i+\pdv{L}{\dot q^i}\delta \dot q^i\bigg) \d{t}=\int_{a}^{b}\left(\pdv{L}{q^i}-\dv{t}\pdv{L}{\dot q^i}\right)\delta q^i\d{t}+ \eval{\pdv{L}{\dot q^i}\delta q^i}_{a}^{b}\nonumber\\
     &\simeq\int_{a}^{b}\left(\pdv{L}{q^i}-\dv{t}\pdv{L}{\dot q^i}\right)\delta q^i\d{t}=0,\quad\forall \delta q^i\iff \dv{t} \pdv{L}{\dot q^i}-\pdv{L}{q^i}=0.
 \end{align}
-此即\textbf{Euler-Lagrange 方程}，简称\textbf{E-L 方程}。常用“$\simeq$”强调消除边界项。由反证法知等价性。读者由此可推得经典力学方程。
+此即\textbf{Euler-Lagrange 方程}，简称\textbf{E-L 方程}。常用“$\simeq$”强调消除边界项。由反证法知等价性。读者由此可推得 $m\ddot{\bm x}=-\grad V$。
 不过需强调，对简单的 $L$ 才考虑计算 E-L 方程，更多时候按以上标准流程直接变分。故以后常省略积分域，少数情况才讨论边界。
 
 对称性是当代物理的重要概念。圆具有左右、旋转对称等，实质是圆在反射、旋转变换下长相没变。考虑单粒子 $m$ 的体系。假设粒子在时间 $\Delta t$ 后运动了 $\bm v\Delta t$。为判断粒子之后如何运动，可将整个系统沿反方向 $-\bm v\Delta t$ 平移，注意体系（的作用量）具有空间平移对称性，因此新体系的 $m$、初始条件等同于旧体系，从而运动相同的 $\bm v\Delta t$，相当于旧体系将一直保持 $m\bm v$ 守恒。同理，设想一根杆子自由转动，由于体系具有空间各向同性，因此它将保持角动量守恒。
@@ -55,8 +54,7 @@ $q(t)\to\tilde q(\tilde t)$ 下，变化可分为 $\bar\delta q^i(t)=\tilde q^i(
 }
 保留至一阶就是 $\delta=\bar\delta+\delta t\dv{t}$。
 替换可得 $\delta\dot q^i=\bar\delta\dot q^i+ \ddot q^i\delta t$，当然也可直接计算 $\dv{\tilde t}(\tilde q^i(\tilde t))-\dot q^i$。同理 $\delta L=\bar\delta L+\dot L\delta t$。注意 $\delta(\d t)=\d\tilde t-\d t=\dv{\tilde t}{t}\d t-\d t=\dv{t}(\delta t)\d t$。作用量变化为
-\begin{align*} \delta S&=\int \left(\delta L\d t+L\delta(\d t)\right)=\int \left(\delta L+L\dv{t}(\delta t)\right)\d t\\
-&=\int \left(\pdv{L}{q^i}\bar\delta q^i+\pdv{L}{\dot q^i}\bar\delta\dot q^i+L\dv{t}(\delta t)+\dot L\delta t\right)\d t\\
+\begin{align*} \delta S&=\int \var(L\d t)=\int \left(\delta L+L\dv{t}(\delta t)\right)\d t=\int \left(\pdv{L}{q^i}\bar\delta q^i+\pdv{L}{\dot q^i}\bar\delta\dot q^i+L\dv{t}(\delta t)+\dot L\delta t\right)\d t\\
 &=\int \left(\left(\pdv{L}{q^i}-\dv{t} \pdv{L}{\dot q^i}\right)\bar\delta q^i+\dv{t}(\pdv{L}{\dot q^i}\bar\delta q^i+L\delta t)\right)\d t,
 \end{align*}
 考虑准不变性，这就等价于上式积分的大括号为全导数项 $\dv{K}{t}$，即相差边界项 $\delta S=K_2-K_1$。但注意上式第二项已是全导数，而 $\delta t$ 的贡献全部收了进去，可见 $\delta t$ 并不影响准不变性，准不变性实际上仅约束 $\bar\delta q^i$ 的形式。更多时候还是直接要求严格的对称性 $\delta S=0$，则 $\dv{K}{t}=0$，这就是\textbf{Noether 条件}，作为作用量对称性的判据。
@@ -101,11 +99,39 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 
 \subsection{时空}
 
-物理学研究各类\textbf{事件}(event)。类似于记叙文，真实事件持续一段时间并占据一定体积，但可理想地只用时刻和空间点构成\textbf{时空点}来确定事件。目前认为物质都由\textbf{粒子}(particle)组成，其经典上占据一个空间点，日常物质隶属\textbf{有质粒子}，我们只需一个有质粒子即可作为事件的\textbf{观者}(observer)，实验上总选足够小的仪器。
+物理学研究各类\textbf{事件}(event)。类似于记叙文，真实事件持续一段时间并占据一定体积，但可理想地只用时刻和空间点构成\textbf{时空点}来确定事件。
+目前认为物质都由\textbf{粒子}(particle)组成，其经典上占据一个空间点，日常物质隶属\textbf{有质粒子}，我们只需一个有质粒子即可作为事件的\textbf{观者}(observer)，实验上总选足够小的仪器。
 尽管空间概念已深入人心，但它并不严格。我们不假思索地认为空间是同一时刻所有物质的分布，可实际上，观者只能对自己身上的事件做\textbf{直接观测}或\textbf{当时当地观测}(local measurement)。欲观测其它地方，单个观者必须想办法\textbf{间接观测}。这相当于处处设置观者形成\textbf{参考系}。任取事件，总存在一个观者经过它，进而记录直接测量结果，后续视需求再传递给其余观者。
 记录事件总选择坐标方法\footnote{读者或许认为可用叙述方法代替，即“此处何物发生何事”，而事件本身用其它自然语言叙述。但这只对其目击者有意义，缺乏科学数据的可传达性。若目击者欲转告事件发生的位置，或欲为后代留下记录，则不得不用经纬度这种明确、或某栋大楼正北一百米这种含蓄的坐标来描述位置。
 叙述方法只对那些有真实事件的地方才有效，但\textit{大多数时空点是“空”的，从未发生真实事件}。
 坐标空间是连续的不可数集，实际事件之集是离散的、有限归纳的集合，故二者不可能等同。}，就涉及实数性测量。
+
+\begin{wrapfigure}{r}{.5\textwidth}
+    \centering
+    \includegraphics[width=.5\textwidth]{fig/chpt01/worldlines.pdf}
+    \caption{\small 2 维时空图。以某惯性系为\textbf{绘图基准}是一种时空图的绘制习惯：将其坐标网格画成欧氏正交 $90^\circ$、时间轴未来方向朝上（空间轴右手排列）、尺度均匀的，这样迎合几何制，反向的光线也相互正交。}
+\end{wrapfigure}
+
+更普遍地，考察\textit{全体}事件规律排布的集合。比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
+故同时事件集又可形象地称为\textbf{同时面}(simultaneity surface)。
+由于存在不同参考系选择，故建议直接默认存在一个 4 维\textbf{流形}(manifold)作为时空的理想模型。
+流形就是点连续分布形成的集合，从而能建立坐标系\footnote{最初，我们仅用微积分和坐标系研究背景的\textbf{局部}(local)性质，建立了\textbf{微分几何}(differential geometry)。随着集合论和\textbf{拓扑学}发展，我们发现可将背景准确称为\textbf{拓扑空间}(topological space)，其上提供了连续性定义。赋有坐标系的拓扑空间即流形，总规定系 $\{x\},\{x'\}$ 间的变换 $x'^\mu=x'^\mu(x)$ 可逆且光滑，这样可随意做微积分。
+拓扑学提供了分析\textbf{整体}(global)性质的工具，便有了\textbf{现代微分几何}。}。
+同时面只是截取时空的一系列切片。
+实际上物理研究总要预设背景流形。比如，Newton 力学的研究背景是 $\R^3$ 空间；亦或更为抽象，如热力学会研究压强、温度的相图。
+若选好了一个坐标系 $\{x\}$，一个事件在该系的坐标可记作 $(x^0,x^1,x^2,x^3)$，约定 $x^0$ 对应时间，正方向为\textbf{未来}，反方向为\textbf{过去}，其余坐标对应空间。比如选择 Descartes 系 $\{x,y,z\}$：
+\[x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.\]
+其中给时间乘上无歧义常数 $c$ 以使量纲一致。此后多采用几何制($c=G=1$)，则 $x^0=t$，这样 $x^0,t$ 都可称\textbf{坐标时}。
+默认物体总在时空中连续地划过，从而确认某两事件的确属同一物体。粒子划过的连续曲线称\textbf{世界线}(worldline)。
+一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的世界管。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $a^i$ 编号，且用固有时 $a^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{a\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
+
+这些概念看起来都很显然，但事实远非如此：时空结构很可能极其怪异。
+我们有野心将时空流形施以整个宇宙，但宇宙的拓扑形状迄今未知，也许在大尺度上无法用 $\R^4$ 覆盖；在 $10^{-15}$\,m 或 $10^{-25}$\,m 的小尺度上，不可能建立起足够刚性的参考系。目前我们认为这是因为微观量子性质，但也或许存在更深刻的物理。Wheeler 认为在 $10^{-35}$\,m 的亚核子尺度，量子引力的涨落极其剧烈，产生量子泡沫，戳破时空连续统。量子引力理论必须一致包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的\textbf{Planck 长度} $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着涨落的特征尺度在 Planck 长度的量级。
+即便如此，人类仍只能间接地探测变态性质，即假设时空能用连续坐标描述。若基于这一假设成功描述了涨落，就有理由相信，至少日常生活中的时空结构良好，因为 Planck 长度确实太小。
+对于复杂的拓扑，仍然希望邻域上能连续地标记坐标，用 $\R^4$ 去近似。这正是流形的定义。拓扑背景不提供物理量的计算能力。
+
+\subsection{对钟}
+
 由经验原因，人们越来越放弃直接用一个物体来规定长度单位，而是借助时间单位和某种基准速率。
 我们必须约定如下二条测量原理：
 \begin{quote}
@@ -119,33 +145,6 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 国际单位制规定使用真空光并设 $c=$ 299792458\,m/s。
 
 即使如此，标准钟也只确保各观者钟全同，即只约束\textbf{走时率}(rate)，而对\textbf{初始设定}(setting)即零点选取未做要求。约定各零点才能得到坐标系，从而确定哪些事件构成时刻 $t$ 的\textbf{同时事件集} $\Sigma_t$，此即比空间更严格的替代概念。同时面在实验上的选取过程称为\textbf{对钟}或\textbf{钟同步}(clock synchronization)，这更依赖于基准速率。
-
-更普遍地，考察\textit{全体}事件规律排布的集合。比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
-故同时事件集又可形象地称为\textbf{同时面}(simultaneity surface)。
-由于存在不同参考系选择，故建议直接默认存在一个 4 维\textbf{流形}(manifold)作为时空的理想模型。
-流形就是点连续分布形成的集合，从而能建立坐标系\footnote{最初，我们仅用微积分和坐标系研究背景的\textbf{局部}(local)性质，建立了\textbf{微分几何}(differential geometry)。随着集合论和\textbf{拓扑学}发展，我们发现可将背景准确称为\textbf{拓扑空间}(topological space)，其上提供了连续性定义。赋有坐标系的拓扑空间即流形，总规定系 $\{x\},\{x'\}$ 间的变换 $x'^\mu=x'^\mu(x)$ 可逆且光滑，这样可随意做微积分。
-拓扑学提供了分析\textbf{整体}(global)性质的工具，便有了\textbf{现代微分几何}。}。
-同时面只是截取时空的一系列切片。
-实际上物理研究总要预设背景流形。比如，Newton 力学的研究背景是 $\R^3$ 空间；亦或更为抽象，如热力学会研究压强、温度的相图。
-无论坐标系选取如何，描述任一事件的 4 个坐标依次记作 $x^0,x^1,x^2,x^3$，约定 $x^0$ 对应时间，正方向为\textbf{未来}，反方向为\textbf{过去}，其余坐标对应空间。比如选择 Descartes 系 $\{x,y,z\}$：
-\eq{
-x^0:=ct,\quad x^1:=x,\quad x^2:=y,\quad x^3:=z.
-}
-其中给时间乘上无歧义常数 $c$ 以使量纲一致。此后多采用几何制($c=G=1$)，则 $x^0=t$，这样 $x^0,t$ 都可称\textbf{坐标时}。
-时空中的曲线称\textbf{世界线}(worldline)。一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的世界管。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $a^i$ 编号，且用固有时 $a^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{a\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
-
-\begin{wrapfigure}{r}{.5\textwidth}
-    \centering
-    \includegraphics[width=.5\textwidth]{fig/chpt01/worldlines.pdf}
-    \caption{\small 2 维时空图。以某惯性系为\textbf{绘图基准}是一种时空图的绘制习惯：将其坐标网格画成欧氏正交 $90^\circ$、时间轴未来方向朝上（空间轴右手排列）、尺度均匀的，这样迎合几何制，反向的光线也相互正交。}
-\end{wrapfigure}
-
-这些概念看起来都很显然，但事实远非如此：时空结构很可能极其怪异。
-我们有野心将时空流形施以整个宇宙，但宇宙的拓扑形状迄今未知，也许在大尺度上无法用 $\R^4$ 覆盖；在 $10^{-15}$\,m 或 $10^{-25}$\,m 的小尺度上，不可能建立起足够刚性的参考系。目前我们认为这是因为微观量子性质，但也或许存在更深刻的物理。Wheeler 认为在 $10^{-35}$\,m 的亚核子尺度，量子引力的涨落极其剧烈，产生量子泡沫，戳破时空连续统。量子引力理论必须一致包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的\textbf{Planck 长度} $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着涨落的特征尺度在 Planck 长度的量级。
-即便如此，人类仍只能间接地探测变态性质，即假设时空能用连续坐标描述。若基于这一假设成功描述了涨落，就有理由相信，至少日常生活中的时空结构良好，因为 Planck 长度确实太小。
-对于复杂的拓扑，仍然希望邻域上能连续地标记坐标，用 $\R^4$ 去近似。这正是流形的定义。拓扑背景不提供物理量的计算能力。
-
-\subsection{对钟与定域性}
 
 如何对钟？首先想到单程信号。人类总依靠观者和被观测物的信息交流来感知世界，比如能给予视觉图像的可见光，或天文观测。
 无论可见光还是神经元生物电，其速率皆有限，传播过程花费时间，图像通常存在扭曲和滞后\footnote{对高速物体、强引力场现象的测算足以总结为一门课题，又同计算机图形学结合，称为\textbf{相对论视觉}。}，
@@ -177,6 +176,12 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
     }
     \quad
     \subfloat[\centering $A,B$ 在 $S'$ 中同时]{\includegraphics[width=.35\textwidth]{fig/chpt01/SIMU2.pdf}
+    }\\
+    \subfloat[\centering 钟慢效应：在 $S$ 中静止]{
+        \includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S.pdf}
+    }
+    \qquad
+    \subfloat[\centering 钟慢效应：在 $S'$ 中静止]{\includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S'.pdf}
     }
     \caption{\small 作某事件的同时面可投影得其坐标时。设静系 $S$ 和动系 $S'$。某事件的 $t$ 坐标可做 $S$系同时面截得，而 $t'$ 坐标可做$S'$系同时面截得。
     两个超新星的爆发事件在某系同时，但一般在另一系不同时。无法区别出特定的同时面，此即\textbf{同时的相对性}。}
@@ -184,7 +189,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 \end{figure}
 
 考虑任意惯性运动对象 $\gamma$ 于事件 $\gamma(\tau_1),\gamma(\tau_2)$ 经历的(elapsed along)固有时间 $\Delta\tau=\tau_2-\tau_1$。
-惯性观者 $G$ 有办法直接测算这一时间吗？假设在 $G$ 系 $\{t,x,y,z\}$ 看来，$\Delta t$ 内 $\gamma$ 走过 $\Delta x,\Delta y,\Delta z$。Descartes 系的勾股定理为$\Delta\ell^2=\delta_{ij}\Delta x^i\Delta x^j$，其中 $(\delta_{ij})$ 为单位阵并对指标使用求和约定。$\delta_{ij}$ 称为\textbf{Kronecker 符号}。速率可写作 $u=\Delta\ell/\Delta t$。
+惯性观者 $G$ 有办法直接测算这一时间吗？假设在 $G$ 系 $\{t,x,y,z\}$ 看来，$\Delta t$ 内 $\gamma$ 走过 $\Delta x,\Delta y,\Delta z$。Descartes 系的勾股定理为$\Delta\ell^2=\delta_{ij}\Delta x^i\Delta x^j$，其中 $(\delta_{ij})$ 为单位阵。$\delta_{ij}$ 称为\textbf{Kronecker 符号}。速率可写作 $u=\Delta\ell/\Delta t$。
 总可设置与 $\gamma$ 相距 $L$、相对静止的镜子使光从 $\gamma(\tau_1)$ 发出并反射回 $\gamma(\tau_2)$，且镜面平行于运动方向。
 由 $\gamma$ 系知 $2L=\Delta\tau$。
 关键在于 $G$ 系中，镜面间距仍为 $L$，因为间距与运动方向垂直\footnote{测量长度即用量尺同时观察两端，涉及同时性。对任意沿垂线方向运动的尺 $A$，总可设置静止的尺 $B$ 使二者中垂线重合且静长相同。在 $B$ 看来，整个系统关于中垂线对称，故 $A$ 两端必同时到达 $B$ 所在直线，从而判断 $\sgn$($A$ 动长 - $B$ 静长)，$\sgn$ 表示取符。这也等于 $\sgn$($A$ 静长 - $B$ 动长)，因为在 $A$ 看来也有中垂线对称性，故这两个相遇事件在 $A$ 系也同时。但 $A$ 静长 = $B$ 静长，因此两个观者所处的情形是一致的，只是有反转或 $180^\circ$ 的对称。由相对性原理知 $\sgn$($A$ 动长 - $B$ 静长) = $\sgn$($B$ 动长 - $A$ 静长) = -$\sgn$($A$ 动长 - $B$ 静长)，故 $A$ 动长 = $B$ 静长 = $A$ 静长。}。
@@ -195,7 +200,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 \eq{
     \Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2,\quad ({\eta}_{\mu\nu}):=\diag(-1,1,1,1).
 }
-$(\eta_{\mu\nu})$ 的迹称为\textbf{号差}(signature)，本书选择 $+2$，称\textbf{东海岸}习惯\footnote{量子场论教材常选择 $(\eta_{\mu\nu})=\diag(1,-1,-1,-1)$，号差为 $-2$ 即\textbf{西海岸}习惯。更有甚者选择将时间分量排在最后作为第 4 分量，这样有 $\diag(1,1,1,-1)$ 但并不影响号差。也有一种可能有哲学区别的习惯，称\textbf{Wick 技巧}：令 $x^0=\i ct$ 则线元还原回勾股定理 $\d s^2= \delta_{\mu\nu}\d x^\mu\d x^\nu$，伪转动变换的确变为 $x$-$\i ct$ 平面的旋转变换。除讨论某些理论复结构方面的问题外不使用这种做法。}。按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
+迹 $\tr(\eta_{\mu\nu})=2$ 称为\textbf{号差}(signature)。按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
 根据相对性原理，类时间隔在任二惯性系 $\{x\},\{x'\}$ 下保持不变性：$\Delta s^2=-\Delta\tau^2=\Delta s'^2$。
 对类光间隔，注意光速不变与 $\Delta s^2=0=\Delta s'^2$ 等价，仍成立。
 考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
@@ -203,42 +208,89 @@ $(\eta_{\mu\nu})$ 的迹称为\textbf{号差}(signature)，本书选择 $+2$，�
 蟹状星云和半人马星座 $\alpha$ 星之间的距离是相对的，不必诧异。
 进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$，成立。
 
-    \begin{figure}[t]
-        \centering
-        \subfloat[\centering 在 $S$ 中静止]{
-        \includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S.pdf}
+\begin{figure}[!h]
+    \centering
+        \subfloat[\centering 双曲线校准]{
+        \includegraphics[height=.37\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
         }
-        \qquad
-        \subfloat[\centering 在 $S'$ 中静止]{\includegraphics[width=.35\textwidth]{fig/chpt01/TIME DILATION S'.pdf}
+        \quad
+        \subfloat[\centering 钟慢效应]{
+        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
+        }\\
+        \subfloat[\centering 尺缩效应：在 $S'$ 中静止]{
+        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT 2.pdf}
         }
-        \caption{钟慢效应}
-    \end{figure}
+        \quad
+        \subfloat[\centering 尺缩效应：在 $S$ 中静止]{
+        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT 1.pdf}
+        }
+    \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
+    例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
+\end{figure}
+
+若间隔类光或类时，则（未来朝向一致的）各惯性系将一致认同两个事件的先后顺序。但对于类空间隔，其事件的坐标时差距可以在不同惯性系下取任意实数。不同观者对其先后次序各抒己见。我们称类空间隔的事件没有\textbf{因果联系}。
+可见并非所有事件都能涉及因果。
+
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.37\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{fig/chpt01/order.pdf}
+    \caption{类空间隔}
+    \label{fig:spacelike}
+  \end{minipage}\quad
+  \begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{fig/chpt01/ladder.pdf}
+    \caption{汽车匀速进库}
+  \end{minipage}
+\end{figure}
+
+尺缩效应还导致\textbf{车库佯谬}\footnote{Ladder paradox，由 Rindler 提出，最初借梯子和谷仓(barn)举例，还可用火车和隧道。}。
+设汽车与车库静长相等。汽车朝库匀速前进，司机认为动库变短、不能放下，司库认为动车收缩、放下有余。二者矛盾吗？不妨设车库无后墙（类似于隧道洞口），画图时借用校准曲线以保证车和库有相等静长。由图易见，以司库所在惯性系的同时面衡量，车短于库；以司机所在惯性系的同时面衡量，车长于库。两人观点都对，因为同时性的相对性导致结论的相对性。“\textit{到底}放下还是放不下?”这种问题没有意义，正如在尺缩问题中“到底哪把尺子较长”亦无意义。我们若真要“比较”，能让各位意见一致的做法只能是都放入静系中去。
+从因果角度来理解将更便于在脑海里建立物理图像。“车尾接触入口”“车头接触出口”两个事件是类空间隔，没有因果联系，故二人观点都对。我们在脑海中，不假思索地以为有因果联系，这个错觉来源于火车的车身。但在相对论中没有严格的刚体，只能将车身各质元的恒定高速运动理解为独自的、互相影响很小的。当然，现实生活中没有这么长且如此高速的火车，相互作用能在车头车尾间迅速传递，的确具有因果联系。
+当车库有坚硬后墙时，车头固然撞墙停止。但撞墙信息以相互作用纵波传至车身各部分皆需时间，只当车尾获悉后整个车身才能停住，因而汽车将缩至比司库期初所测长度更短的程度。这时的确在谁看来都装得下。设材料性质理想，使信息传递为光速且质点获悉信号后立即停止，读者不妨在图上补出撞车后的时空图。
+
+\subsection{Lorentz 变换}
+
+\begin{figure}[p]
+    \centering
+    \subfloat[\centering 空间转动变换]{
+    \includegraphics[width=.45\textwidth]{fig/chpt01/ROTATION.pdf}
+    }
+    \subfloat[\centering 时空伪转动变换]{\includegraphics[width=.49\textwidth]{fig/chpt01/boost.pdf}
+    }
+
+    \subfloat[\centering 负方向伪转动]{\includegraphics[width=.44\textwidth]{fig/chpt01/INVERSE BOOST.pdf}
+    }
+    \subfloat[\centering Galileo 变换]{\includegraphics[width=.42\textwidth]{fig/chpt01/GALILEAN.pdf}
+    }
+    \caption{\small
+    $x'$ 轴直线 $t'=0$ 即 $t=u x$，同理 $t'$ 轴即 $t=(1 / u) x$。速率 $u$ 代表动系时间轴斜率。以转动变换类比之，相应的三角函数应替换为双曲函数。$\theta:=\operatorname{artanh}u$不是绘图意义的倾角，称为\textbf{快度}。这样 $\cosh\theta=\gamma,  \sinh\theta=\gamma u$，变换为 $t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
+    如图，光速相对于日常情形较大，因此图上光线应“下压”，则空间轴转动不明显，退回 Galileo 变换，大家共用绝对时间。快度概念比速度更简洁。比如，设 $u_1=\tanh\theta_{1}$ 是 $B$ 相对于 $A$ 的速度，而 $u_2=\tanh\theta_{2}$ 是 $C$ 相对于 $B$ 的速度，可证 $C$ 相对于 $A$ 的速度是 $u={(u_{1}+u_{2})}/{(1+u_{1} u_{2})}=\tanh(\theta_1+\theta_{2})$，此即速度叠加公式。
+    }\label{fig:boost}
+\end{figure}
 
 考虑无穷小的事件间隔或\textbf{时空线元}
 \eq{
 \d s^2={\eta}_{\mu\nu}\d x^\mu\d x^\nu=-\d t^2+\d x^2+\d y^2+\d z^2.
 }
-作为对比，Newton 理论分开定义绝对时间长度和空间长度。
-设任意（分段光滑的）观者线 $C(\sigma)$，$\sigma$ 是任取参数，可有 $\gamma=\dv*{t}{\tau}$。
-考察它于事件 $C(\sigma_1),C(\sigma_2)$ 的固有时间 $\Delta\tau$。设置其固有坐标系 $\{x'\}$（$x'^0=\tau$），$C$ 上事件总满足 $x'^i=0$，则 $\d\tau^2=-\d s^2$。它在惯性系 $\{x\}$ 下的参数式记 $x^\mu(\sigma)$，则
+惯性系 $\{x\},\{x'\}$ 间满足
+\eq{\eta_{\alpha\beta}\d x'^\alpha\d x'^\beta=\eta_{\gamma\sigma}\d x^\gamma\d x^\sigma\iff \eta_{\alpha\beta}\pdv{x'^\alpha}{x^\gamma}\pdv{x'^\beta}{x^\sigma}=\eta_{\gamma\sigma},}
+由 \eqref{eq:chris} 式可快速证明变换的仿射性：
+\eq{\label{eq:Lorentz} 
+\pdv{x'^\alpha}{x^{\gamma}}{x^\epsilon}=0\iff  x'^\mu=x_0^\mu+ \Lambda^{\mu}{}_{\nu}x^\nu,\quad \text{$\Lambda^{\mu}{}_{\nu}$ 满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$}.
+}
+满足上式的变换称\textbf{Poincaré 变换}。
+置 $S,S'$ 的时空原点重合，则 $x^\mu_0=0$，变换仅线性。设空间轴初态重合，但 $S'$ 相对于 $S$ 沿共同 $x,x'$ 轴匀速运动，则 $y,z$ 坐标一致。设正方向速率 $u$，则 $x=ut$ 对应 $x'=0$。    
+进而得到（或直接利用钟慢、尺缩）\textbf{二维 boost 变换}：
 \eq{
-\Delta\tau=\int_C \sqrt{-\eta_{\mu\nu}\d x^\mu\d x^\nu}=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}\dv{x^\mu}{\sigma}\dv{x^\nu}{\sigma}}\d\sigma=\int_{\sigma_1}^{\sigma_2}\sqrt{-\eta_{\mu\nu}T^\mu T^\nu}\d\sigma,}
-$T^\mu:=\dv{x^\mu}{\sigma}$ 为曲线关于 $\sigma$ 的\textbf{切矢}(tangent vector)在该系的分量，$\eta_{\mu\nu}T^\mu T^\nu$ 即模方。
-切矢按模方符号（进而相应曲线）可类似分为三类。
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=.35\textwidth]{fig/chpt01/order.pdf}
-    \caption{\small 若间隔类光或类时，则（由 $\Lambda^0{}_0>0$ 联系）各惯性系将一致认同两个事件的先后顺序。但对于类空间隔，其事件的坐标时差距可以在不同惯性系下取任意实数。不同观者对其先后次序各抒己见。
-    类空间隔的事件没有因果联系。}
-    \label{fig:spacelike}
-\end{figure}
-类时或类光线统称\textbf{因果线}(causal curve)，能用因果线连接的事件正是具有因果联系的事件。在 $\R^4$ 中这等价于用非类空间隔连接。
-类光矢量亦称\textbf{零模}(null)矢量，构成的集合 $C_N$ 称\textbf{光锥}(light cone)。
-$\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\lambda=a\tau+b$ 统称\textbf{仿射参数}(affine parameter)。
-光对其世界线上的事件标记为一致坐标时，即对光而言不能定义固有时。光不能充当观者。描述光线可用坐标时 $t$ 参数化。
-
-设 $V^\mu$ 类时，$W^\nu$ 是非零类时或类光矢量，则由三维 Cauchy 不等式知 $V^\mu W_\mu<0\eqto V^{0} W^{0}>0$，即 $V^\mu,W^\nu$ 具有相同的\textbf{时间指向}。
-因此可在光锥及其内部定义等价关系。约定某一惯性系后，规定 $V^0>0$ 是\textbf{指向未来}(future directed)矢量，那 $V^0<0$ 是\textbf{指向过去}(past directed)矢量。光锥被分为了\textbf{未来光锥}和\textbf{过去光锥}。讨论时间的反演时可以考虑指向过去的惯性系。类空矢量无未来或过去之分。
+     t'=\gamma( t-u x),\quad x'=\gamma( x-u t).
+}
+普通教材称之 Lorentz 变换。Einstein 最初用同时性对钟定义、仿射性假设得到上式，而线元后来才由 Minkowski（参见 \cite{PrincipleR}）提出。
+由此发展出来的理论由 Lorentz 命名为\textbf{相对性理论}(the theory of relativity)，简称\textbf{相对论}。当下主流称呼是\textbf{狭义相对论}(special relativity)。boost 变换仅为特例，一般情形的推导见 \ref{sec:PoincareLorentz} 节。
+因为上式在低速极限下退回 Galileo 变换 $t'=t,x'=x-ut$，从而兼容经典力学。
+“boost”取时间轴上的推动之意，但由图 \ref{fig:boost} 可知，一个较好称呼是\textbf{伪转动}(pseudo rotation)。
 
 \begin{figure}[t]
     \centering
@@ -261,99 +313,18 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
     \caption{光锥}
 \end{figure}
 
-惯性系 $\{x\},\{x'\}$ 间满足
-\eq{\eta_{\alpha\beta}\d x'^\alpha\d x'^\beta=\eta_{\gamma\sigma}\d x^\gamma\d x^\sigma\iff \eta_{\alpha\beta}\pdv{x'^\alpha}{x^\gamma}\pdv{x'^\beta}{x^\sigma}=\eta_{\gamma\sigma},}
-由 \eqref{eq:chris} 式可快速证明变换的仿射性：
-\eq{\label{eq:Lorentz} 
-\pdv{x'^\alpha}{x^{\gamma}}{x^\epsilon}=0\iff  x'^\mu=x_0^\mu+ \Lambda^{\mu}{}_{\nu}x^\nu,\quad \text{$\Lambda^{\mu}{}_{\nu}$ 满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}={\eta}_{\sigma\lambda}$}.
-}
-满足上式的变换称\textbf{Poincaré 变换}。
-置 $S,S'$ 的时空原点重合，则 $x^\mu_0=0$，变换仅线性。设空间轴初态重合，但 $S'$ 相对于 $S$ 沿共同 $x,x'$ 轴匀速运动，则 $y,z$ 坐标一致。设正方向速率 $u$，则 $x=ut$ 对应 $x'=0$。    
-进而得到（或直接利用钟慢、尺缩）\textbf{二维 boost 变换}：
-\eq{
-     t'=\gamma( t-u x),\quad x'=\gamma( x-u t).
-}
-普通教材称之 Lorentz 变换。Einstein 最初用同时性对钟定义、仿射性假设得到上式，而线元后来才由 Minkowski（参见 \cite{PrincipleR}）提出。
-由此发展出来的理论由 Lorentz 命名为\textbf{相对性理论}(the theory of relativity)，简称\textbf{相对论}。当下主流称呼是\textbf{狭义相对论}(special relativity)。boost 变换仅为特例，一般情形的推导见 \ref{sec:PoincareLorentz} 节。
-因为上式在低速极限下退回 Galileo 变换 $t'=t,x'=x-ut$，从而兼容经典力学。
-“boost”取时间轴上的推动之意，但由图 \ref{fig:boost} 可知，一个较好称呼是\textbf{伪转动}(pseudo rotation)。
-
-数学上给定 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 后用积分定义线长、矢量模，借圆弧和三角函数定义角，最后按投影定义内积，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
+数学上，给定线元 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$。设参数方程 $x^\mu(\sigma,\cdots)$，它可以是曲线、曲面等，沿参数 $\sigma$ 的\textbf{切矢}(tangent vector)为 $T^\mu:=\pdv*{x^\mu}{\sigma}$。只有一个参数时，即一条曲线，我们有 $T^\mu=\dv*{x^\mu}{\sigma}$，从而可用 $\int|\d s|=\int\sqrt{|g_{\mu\nu}T^\mu T^\nu|}\d\sigma$ 定义线长，借圆弧和三角函数定义角，最后按投影定义内积，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
 欧氏几何现降级为一种选择，而非保守派所认为的绝对真理。比如 ${\eta}_{\mu\nu}$ 就是\textbf{闵氏度规}，对应\textbf{闵氏几何}；还可有双曲几何 $\d\ell^2=(\d x^2+\d y^2)/(1-x^2-y^2)$，当接近 $x^2+y^2<1$ 边缘时，该线元相较于欧氏线元会越来越大，但它除平面几何第五公理外符合其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
-第 $\alpha$ 坐标轴可按相应 $x^\alpha$ 参数化，切矢 $\dv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$ 称为此系的\textbf{坐标基矢}（在此系的分量），这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。$\{\delta_\alpha^\mu\}_{\alpha=0}^3$ 称\textbf{坐标基}。可见惯性系的时空轴正交，因为 $\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
+给定坐标系 $\{x\},\{x'\}$，坐标变换 $x'^\mu(x)$ 也是参数方程，切矢 $\pdv*{x'^\mu}{x^\alpha}$ 称为系 $\{x\}$ 的第 $\alpha$ 个\textbf{坐标基矢}，$\{\pdv*{x'^\mu}{x^\alpha}\}_{\alpha=0}^3$ 称\textbf{坐标基}。为了看出它的确与 $\alpha$ 坐标轴相切，注意就曲线 $x'^\mu(x^\alpha)$ 而言，$\pdv*{x'^\mu}{x^\alpha}=\dv*{x'^\mu}{x^\alpha}$。
+取闵氏度规的惯性系，则 $\eta_{\mu\nu}\pdv{x^\mu}{t}\pdv{x^\nu}{x^i}=\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。可见惯性系的时空轴正交。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
 虽然时空图中动系坐标轴不是欧氏正交，但被约定为时空上的正交，即闵氏正交。
 
-\begin{figure}[p]
-    \centering
-    \subfloat[\centering 空间转动变换]{
-    \includegraphics[width=.45\textwidth]{fig/chpt01/ROTATION.pdf}
-    }
-    \subfloat[\centering 时空伪转动变换]{\includegraphics[width=.49\textwidth]{fig/chpt01/boost.pdf}
-    }
-
-    \subfloat[\centering 负方向伪转动]{\includegraphics[width=.44\textwidth]{fig/chpt01/INVERSE BOOST.pdf}
-    }
-    \subfloat[\centering Galileo 变换]{\includegraphics[width=.42\textwidth]{fig/chpt01/GALILEAN.pdf}
-    }
-    \caption{\small
-    $x'$ 轴直线 $t'=0$ 即 $t=u x$，同理 $t'$ 轴即 $t=(1 / u) x$。速率 $u$ 代表动系时间轴斜率。以转动变换类比之，相应的三角函数应替换为双曲函数。$\theta:=\operatorname{artanh}u$不是绘图意义的倾角，称为\textbf{快度}。这样 $\cosh\theta=\gamma,  \sinh\theta=\gamma u$，变换为 $t'= t\cosh\theta - x\sinh\theta, x'= x\cosh\theta -t \sinh\theta$。
-    如图，光速相对于日常情形较大，因此图上光线应“下压”，则空间轴转动不明显，退回 Galileo 变换，大家共用绝对时间。快度概念比速度更简洁。比如，设 $u_1=\tanh\theta_{1}$ 是 $B$ 相对于 $A$ 的速度，而 $u_2=\tanh\theta_{2}$ 是 $C$ 相对于 $B$ 的速度，可证 $C$ 相对于 $A$ 的速度是 $u={(u_{1}+u_{2})}/{(1+u_{1} u_{2})}=\tanh(\theta_1+\theta_{2})$，此即速度叠加公式。
-    }\label{fig:boost}
-\end{figure}
-
-闵氏几何依赖于前文叙述的光速不变、相对性原理，以及一些额外条件（光走直线、不存在其它不变常数、时空均匀性等）。修改这些条件得到的新理论，可用于实验检验，结果显示与相对论相差不大。
-相对论及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏几何，直至存在实验明显证否。
-
-\newpage
-\begin{figure}[!h]
-    \centering
-        \subfloat[\centering 双曲线校准]{
-        \includegraphics[height=.45\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
-        }
-        \quad
-        \subfloat[\centering 钟慢效应]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
-        }
-    \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
-    例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
-\end{figure}
-    \begin{figure}[!h]
-        \centering
-        \subfloat[\centering 在 $S'$ 中静止]{
-        \includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 2.pdf}
-        }
-        \quad
-        \subfloat[\centering 在 $S$ 中静止]{\includegraphics[height=.45\textwidth]{fig/chpt01/INVARIANT 1.pdf}
-        }
-        \caption{\small 尺缩效应}
-    \end{figure}
-
-\newpage
-\begin{wrapfigure}{l}{.45\textwidth}
-    \centering
-    \includegraphics[width=.45\textwidth]{fig/chpt01/ladder.pdf}
-    \caption{汽车匀速进库}
-\end{wrapfigure}
-    
-    尺缩效应还导致\textbf{车库佯谬}\footnote{Ladder paradox，由 Rindler 提出，最初借梯子和谷仓(barn)举例，还可用火车和隧道。}。
-    设汽车与车库静长相等。汽车朝库匀速前进，司机认为动库变短、不能放下，司库认为动车收缩、放下有余。二者矛盾吗？不妨设车库无后墙（类似于隧道洞口），画图时借用校准曲线以保证车和库有相等静长。由图易见，以司库所在惯性系的同时面衡量，车短于库；以司机所在惯性系的同时面衡量，车长于库。两人观点都对，因为同时性的相对性导致结论的相对性。“\textit{到底}放下还是放不下?”这种问题没有意义，正如在尺缩问题中“到底哪把尺子较长”亦无意义。我们若真要“比较”，能让各位意见一致的做法只能是都放入静系中去。
-    从因果角度来理解将更便于在脑海里建立物理图像。“车尾接触入口”“车头接触出口”两个事件没有因果联系，故二人观点都对。我们在脑海中，不假思索地以为有因果联系，这个错觉来源于火车的车身。但在相对论中没有严格的刚体，只能将车身各质元的恒定高速运动理解为独自的、互相影响很小的。当然，现实生活中没有这么长且如此高速的火车，相互作用能在车头车尾间迅速传递，的确具有因果联系。
-    当车库有坚硬后墙时，车头固然撞墙停止。但撞墙信息以相互作用纵波传至车身各部分皆需时间，只当车尾获悉后整个车身才能停住，因而汽车将缩至比司库期初所测
-    
-    \begin{wrapfigure}{r}{.35\textwidth}
-        \centering
-        \includegraphics[width=.35\textwidth]{fig/chpt01/TWIN PARADOX.pdf}
-        \caption{孪生佯谬}
-        \label{fig:twin}
-    \end{wrapfigure}
-
-    \noindent 长度更短的程度。这时的确在谁看来都装得下。设材料性质理想，使信息传递为光速且质点获悉信号后立即停止，读者不妨在图上补出撞车后的时空图。
-
-    最后，著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。
-    前文已直接证明了这一点。图 \ref{fig:twin} 给出了三角情形，也可理解为，折线的同时面在 $B$ 处发生突变，因此惯性观者多出了图中阴影部分的时间差。
-    结论是不能交换的，因为不能将相对性原理滥用于非惯性系和惯性系间；而实际情形中，两人非质点，因此走惯性运动较为舒适，而走非惯性运动将感受到巨大的加速度，使相对论现象足够明显的物理量达光速级。
-
-
-\subsection{Lorentz 群}
+矢量及相应曲线按模方符号可类似地分为三类。
+类光矢量亦称\textbf{零模}(null)矢量，构成的集合 $C_N$ 称\textbf{光锥}(light cone)。
+光对其世界线上的事件标记为一致坐标时，即对光而言不能定义固有时。光不能充当观者。描述光线可用其他方式参数化。
+设 $V^\mu$ 类时，$W^\nu$ 是非零类时或类光矢量，则由三维 Cauchy 不等式知 $V^\mu W_\mu<0\eqto V^{0} W^{0}>0$，即 $V^\mu,W^\nu$ 具有相同的\textbf{时间指向}。
+因此可在光锥及其内部定义等价关系。约定某一惯性系后，规定 $V^0>0$ 是\textbf{指向未来}(future directed)矢量，那 $V^0<0$ 是\textbf{指向过去}(past directed)矢量。光锥被分为了\textbf{未来光锥}和\textbf{过去光锥}。讨论时间的反演时可以考虑指向过去的惯性系。类空矢量无未来或过去之分。
+类时或类光线统称\textbf{因果线}(causal curve)，能用因果线连接的事件正是具有因果联系的事件。故因果现在可解释为信息以粒子为载体的传递。显然，粒子能依次经历的事件便存在着因果顺序。
 
 观察 \eqref{eq:Lorentz}，$\Lambda^{\mu}{}_{\sigma}$ 形同正交矩阵。回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\iff (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
 其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\ell$ 不变。
@@ -396,32 +367,20 @@ $\Delta\tau$ 即观者线的线长，故 $\tau$ 又称\textbf{线长参数}。$\
 显然若 ${\Lambda^{0}}_{0}=1$，则 Lorentz 变换实质只有固有的旋转作用，即空间部分是$({R^{i}}_{j})$，而剩下的是恒等变换。固有空间旋转构成的集合是\textbf{空间转动群} SO(3)，可视为 SO(1,3) 的子群。
 号差不改变实质也可体现：可证 O(1,3),O(3,1) 同构。
 
-物理学用矩阵书写物理量的分量表示，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵。
-物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
-关键就在于坐标变换下物理量的分量如何变。
-分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
-光速不变、狭义相对论原理等命题就应更严格地阐述为一种\textbf{不变性}(invariance)：
-\begin{quote}
-    \textbf{Lorentz 不变性}\quad 物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值。
-\end{quote}
-值如 $c=1,\pi/2$ 和 $\hbar$。经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
+闵氏几何依赖于前文叙述的光速不变、相对性原理，以及一些额外条件（光走直线、不存在其它不变常数、时空均匀性等）。修改这些条件得到的新理论，可用于实验检验，结果显示与相对论相差不大。
+相对论及在此基础上发展的量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可闵氏几何，直至存在实验明显证否。
 
 \subsection{相对论动力学}
 
-自场当然也作用自己，但经典理论在处理这类问题时存在严重矛盾，如辐射阻尼。量子电动力学通过电子自能图的重整化来解决电子的自相互作用，虽依旧不尽完美，但至少知道症结在于点模型导致\textbf{无穷大自能}。应当认为，目前的理论都是某种尚未发掘的基本规律的\textbf{低能}情形，低能意指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
-现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
-只要意识到物理理论总是近似的，就可给人类的科学提供台阶。正如 George Box 所说，\textit{所有理论都是错的，但一些是有用的}。我们总是追求尽可能简单的理论，但这不意味着自然规律（若有且能被人总结）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。
+光速不变、狭义相对性原理现在可严格地归纳为一种\textbf{不变性}(invariance)：
+\begin{quote}
+    \textbf{Lorentz 不变性}\quad 作用量是在 Lorentz 系的 Poincaré 变换下不变的标量。
+\end{quote}
+这个标量可以包含与物质状态无关的标量常数，如 $c=1,\pi/2$ 和 $\hbar$。
 
-研究各物质场间的相互作用，就要用各对应的物理量来构建总作用量。这一主题称为\textbf{耦合}(coupling)。
-目前除接受实验筛选，没有先验原理支撑唯一的耦合方式。
-以粒子和场的耦合为例。有时可修改自由粒子作用量，并保证无场时还原；更多是直接相加的形式：$\text{自由粒子作用量}+\textbf{耦合强度}\times\text{场与粒子的耦合项}$。引入耦合强度无非是为了给理论参数更多自由余地。
-从有效性和对称性出发，并依据该相互作用的实验特征、量纲要求，所考虑的最简单耦合称为\textbf{最小}(minimal)\textbf{耦合}。
-
-%% 有效性
-
-对单个自由质点构造拉氏量。其位形空间就是时空本身，世界线是路径，参数可取坐标时或固有时。
+考虑一个自由质点。其位形空间就是时空，世界线是路径，参数可取坐标时或线长参数。
 构建相对性理论的关键在于使用 Lorentz 不变的 $S$ 来获得运动方程。
-我们能找的只有 $\d\tau,m,c=1$，故 $S\propto m\int \d\tau$。注意速率 $u=\sqrt{\delta_{ij}\dot{x}^i \dot{x}^j}\ll 1$ 时
+我们能找的只有 $\d s,m,c=1$。由于曲线至少初始是类时的，故取 $S\propto m\int \sqrt{-\d s^2}$。注意速率 $u=\sqrt{\delta_{ij}\dot{x}^i \dot{x}^j}\ll 1$ 时
 \[
 m\int\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}\d{t}=m\int\sqrt{1-u^2}\d{t}\approx m\int\left(1-\frac{u^2}{2}\right)\d{t},
 \]
@@ -429,7 +388,9 @@ m\int\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}\d{t}=m\int\sqrt{1-u^2}\d{t}\appr
 \eq{
 L=-m\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=-m/\gamma,\quad S=-m\int\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}\d{t}.
 }
-则（惯性系下）正则动量为
+线长可以解释为质点经历的固有时：将质点运动视作一系列折线段之逼近，每一段都是与曲线瞬时共动的惯性运动，累加得到固有时为 $\tau_1-\tau_0 = \int \sqrt{-\eta_{\mu\nu}\d x^\mu\d x^\nu}$。
+由此可得 $\gamma=\dv*{t}{\tau}$。$\tau$ 又称\textbf{线长参数}。
+正则动量为
 \eq{
     P_\mu =\pdv{L}{\dot x^\mu}=\frac{m\eta_{\mu\nu}\dot x^\nu}{\sqrt{-\eta_{\kappa\lambda}\dot x^\kappa\dot x^\lambda}}= m U_\mu,\quad U^\mu:=\dv{x^\mu}{\tau},\quad U_\mu:=\eta_{\mu\nu}U^\nu.
 }
@@ -439,58 +400,68 @@ $\dot x^\mu$ 的空间部分 $\dot{x}^i$ 称为\textbf{3-速}，对偶为 $\dot{
 $\ddot{x}^i$ 称为\textbf{坐标 3-加速}。
 
 
-注意 $U^\mu=\gamma\dot x^\mu$，而 $\dot\gamma=\gamma^3\dot{x}_\mu\ddot{x}^\mu=\gamma^3\dot{x}_i\ddot{x}^i$（因为 $\dot x^0=1,\ddot x^0=0$），显然 $\pdv*{L}{x^\kappa}=0$，故 E-L 方程为 $\dot P_\mu = \dot m U_\mu + m\eta_{\mu\nu} (\gamma\ddot x^\nu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\nu)=0$。
-给 $\dot P_\mu$ 乘上 $\gamma=\dv*{t}{\tau}$ 就相当于重参化\footnote{若想直接将作用量的参数取为固有时 $\tau$，则默认是\textit{正路}的固有时。对于任何邻近旁路，$\tau$ 都非其固有时而只是纯粹的参数。为何不能用每条路径自己的固有时来作参数？因为变分应与参数无关。比如置有限积分域，Fréchet 空间中任意邻近旁路上所用参数的取值范围，必为同一区间，若每条路径皆用自己的固有时作参数就办不到。
+由于 $U^\mu=\gamma\dot x^\mu$，则 $\dot U^\mu = \gamma\ddot x^\mu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\mu$。其中由 $\dot x^0=1,\ddot x^0=0$ 得 $\dot{x}_\mu\ddot{x}^\mu=\dot{x}_i\ddot{x}^i$。
+显然 $\pdv*{L}{x^\kappa}=0$，故 E-L 方程为 $\dot P_\mu =0$，乘上 $\gamma=\dv*{t}{\tau}$ 就相当于重参化\footnote{若想直接将作用量的参数取为固有时 $\tau$，则默认是\textit{正路}的固有时。对于任何邻近旁路，$\tau$ 都非其固有时而只是纯粹的参数。为何不能用每条路径自己的固有时来作参数？因为变分应与参数无关。比如置有限积分域，Fréchet 空间中任意邻近旁路上所用参数的取值范围，必为同一区间，若每条路径皆用自己的固有时作参数就办不到。
 既然该参数无论如何都只有数学意义，我们取坐标时 $t$ 就可避免这些讨论。
 变分得到正路后再将 $\eta_{\mu\nu}\dot x^\mu \dot x^\nu=-1$ 代入，也即重参化 $t\mapsto\tau$。
-许多书籍对如下现象都未解释或作出错误解释：若用固有时 $\tau$ 作参数，则 $L=-m$，得不到任何方程，故强行解释为需还原代数形式才能进行变分。正确的解释是 $U^\mu U_\mu=-1$ 只对正路成立，其中参数 $\tau$ 与固有时一致。变分必须考虑邻近旁路，有它们自己的不同于 $\tau$ 的固有时，因而沿这些旁路 $U^\mu U_\mu\ne -1$。}，我们有
+许多书籍对如下现象都未解释或作出错误解释：若用固有时 $\tau$ 作参数，则 $L=-m$，得不到任何方程，故强行解释为需还原代数形式才能进行变分。正确的解释是 $U^\mu U_\mu=-1$ 只对正路成立，其中参数 $\tau$ 与固有时一致。变分必须考虑邻近旁路，有它们自己的不同于 $\tau$ 的固有时，因而沿这些旁路 $U^\mu U_\mu\ne -1$。}，我们有 $\dv*{P_\mu}{\tau}=0$。假设 $\dv*{m}{\tau}=0$，约去 $m$ 并与 $\eta^{\mu\kappa}$ 缩并有 $\dv*[2]{x^\mu}{\tau}=0$。其实也即 $\ddot x^\nu + \gamma^2\dot{x}_i\ddot{x}^i\dot x^\nu=0$，取 $\nu=0$ 可知 $\dot{x}_i\ddot{x}^i=0$，则的确等价于 $\ddot x^\mu=0$。这都是直线方程，符合实验观测，可认为作用量构造正确。称
 \eq{
-    \dv{P_\mu}{\tau}= \dv{m}{\tau} U_\mu + m A_\mu=0,\quad A^\mu:=\dv[2]{x^\mu}{\tau}=U^\nu\p_\nu U^\mu=\gamma^2\ddot x^\mu + \gamma^4\dot{x}_i\ddot{x}^i\dot x^\mu.
+    A^\mu:=\dv{U^\mu}{\tau}=U^\nu\p_\nu U^\mu=\gamma^2\ddot x^\mu + \gamma^4\dot{x}_i\ddot{x}^i\dot x^\mu
 }
-$A^\mu$ 称\textbf{4-加速}。
-假设 $\dv*{m}{\tau}=0$，约去 $m$ 并与 $\eta^{\mu\kappa}$ 缩并有 $A^\mu=0$，也即 $\ddot x^\nu + \gamma^2\dot{x}_i\ddot{x}^i\dot x^\nu=0$。
-取 $\nu=0$ 可知 $\dot{x}_i\ddot{x}^i=0$，故 $A^\mu=0$ 等价于 $\ddot x^\mu=0$。
-这都是直线方程，符合实验观测，可认为作用量构造正确。
-我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
+为\textbf{4-加速}。
 由于 $A^\mu U_\mu=\frac 12 \dv{\tau}(U^\mu U_\mu)=0$，4-加速一定类空。
 模方为 $A^\mu A_\mu=\gamma^4 \ddot{x}^i\ddot{x}_i+\gamma^6(\dot{x}^i \ddot{x}_i)^2$。
 固有系中 $\dot{x}^i=0$，故 4-加速等于固有系 3-加速。
 
-由时空对称性，$P^\mu$ 分量分别解释为\textbf{3-动量} $P^i=\gamma m \dot{x}^i$ 和能量 $E=P^0=P_i \dot{x}^i-L=\gamma m$。
+我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑图 \ref{fig:twin} 的三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
+著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。因为惯性观者经历的固有时更多。也可理解为，折线的同时面会发生突变，因此惯性观者多出了图 \ref{fig:twin} 阴影部分的时间差。
+
+\begin{wrapfigure}{r}{.35\textwidth}
+    \centering
+    \includegraphics[width=.35\textwidth]{fig/chpt01/TWIN PARADOX.pdf}
+    \caption{孪生佯谬}
+    \label{fig:twin}
+\end{wrapfigure}
+
+由时空对称性，$P^i=\gamma m \dot{x}^i,E=P^0=P_i \dot{x}^i-L=\gamma m$ 分别解释为\textbf{3-动量}和\textbf{能量}。
 将 $\gamma$ 按二项式定理展开 $P^i=E \dot{x}^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)\dot{x}^i$。
 可见若 $u\ll 1$，则 3-动量近似于经典动量 $m \dot{x}^i$，即 3-动量是其相对论修正。$E=\gamma m$ 即我们悉知的\textbf{质能方程}，经典动能 $(1/2)mu^{2}$ 的出现表明 $(\gamma-1)m$ 是其相对论修正，并且质点静止时也有能量，对核能的开发已验证了这一点。
 $P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\textbf{条件}。
 另一方面 $-E^2+P_iP^i=P^\mu P_\mu$ 或者 $E^2= p^2+m^2,p^2=P_iP^i$，此即相对论性\textbf{色散关系}(dispersion relation)。
-同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程 $\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2$。
+同理，考虑 Hamilton 主函数 $S(x^\mu)$，通过在壳变分 $x^\mu\to x^\mu+\delta x^\mu$ 可分析出 $P_\mu=\pdv*{S}{x^\mu}$，从而得到 Hamilton-Jacobi 方程
+\[\eta^{\mu\nu}\pdv{S}{x^\mu}\pdv{S}{x^\nu}=-m^2.\]
 
 $F^\mu:=\dv*{P^\mu}{\tau}=\gamma \dot P^\mu$ 称\textbf{4-力}，$\dot{P}^i$ 即\textbf{3-力}。
 对 $E^2= p^2+m^2$ 求导有 $E\dot E=\dot P^i P_i+m\dot m$，即 $\dot E=\dot P^i\dot x_i+\dot m/\gamma$。
 $\dot m=0$ 时 $F^\mu=m A^\mu$ 且功能关系 $\dot{P}^i \dot{x}_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
+
+
 单质点走类时线
 
 \textbf{光子}(photon)
+
+
 
 （静）质量特指粒子在相对静系所测质量，而基准信号不存在相对静系，故基准信号没有甚至不可定义质量，属于\textbf{无质粒子}。
 
 默认存在不变速度导致的遗憾是：有限能量下，有质粒子不能加速至这种速度。
 
-目前未发现超光速的快子(tachyon)，故我们更愿意承认亚光速粒子、光子在时间上的连续性，即确认某两事件属同一粒子。
 
-凡信息就需载体，故光速是信息传速上限。注意，存在粒子能依次经历的两事件才称有\textbf{因果联系}，可见并非所有事件都能涉及因果。
-相互作用是一种信息，物质总通过动量、能量、质量的变化反馈。
-可见相互作用至多以光速影响邻域，此即\textbf{定域性}(locality)或\textbf{局域性}。
-从而，我们总能适当忽略环境对所关心的系统的作用以建立\textbf{孤立系统}模型，即忽略环境与系统的动量、能量、质量交换。此乃物理研究之根基：
-宇宙是无所不包的最大时空，但我们往往只关心某些局部区域，即宇宙子系统。
-理解子系统必须且可以使用孤立系统，否则讨论任何客体时都须考虑整个宇宙的作用，结果一事无成。
-经典力学无定域性。Newton 引力定律是典型的超距案例，任二事件可通过 Newton 引力涉及因果。这一定律现只作为近似。对不具备连续性的事件亦能定义速率，比如介质光速。谈论超光速现象时往往指这种含义，以因果为前提的速度自然默认亚光速。
 
-场提供了定域性最自然的图像，迄今所有基本相互作⽤都归结于定域场。两相距较远的粒子的相互作⽤解释为：粒子（作为\textbf{源}）与场接触作用，再由场接触作用于另一粒子。接触作用强度均涉及粒子的\textbf{荷}(charge)。实际上，由于粒子动量、能量变化，为保持总和守恒，须设想粒子将其传递给周遭弥漫着的某种媒介。
-起初我们这样理解场论：设想一种\textbf{试验粒子}(test particle)，忽略其体积、形变及自旋，最重要地是忽略其自场对外场之干扰，就能测量受力来研究外场。每单位荷的场力即\textbf{场强}(strength)，通常无关于试验粒子，往往又能表为某个\textbf{势}(potential)之导数。
-在量子场论中，粒子解释为量子场的激发态。质子、电子、夸克等 Fermi 子携带作用荷，Bose 子场提供作用媒介。比如，电子场影响电磁场，产生波包（光子）传递电磁作用，在低能情形表现为电磁力。故严格来说，电磁场不依附于某个带电体，将总场分解为由各源所产生的部分是一种经典分析方法。
 
-\subsection{Lorentz 张量}
+
+
+
+\subsection{Lorentz 协变性}
+
+物理学用矩阵书写物理量的分量表示，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵。
+物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
+关键就在于坐标变换下物理量的分量如何变。
+分量及其方程的数学形式在某类坐标变换下不变，称为\textbf{协变性}(covariance)。狭义相对论具有 Lorentz 系间变换下的\textbf{Lorentz 协变性}。
+物理方程具有 Lorentz 协变性，且与物质状态无关的标量常数保持同样的值。
+经典电动力学虽然能将光解释为无源电磁波，但 Maxwell 方程的 Lorentz 协变性只涉及其数学形式，将协变性提升为不变性才能给出光速不变。
 
 由 Lorentz 协变性，
 4-速 $U^\mu=\d x^\mu/\d\tau$ 在另一惯性系下测得 $U'^\mu=\d x'^\mu/\d\tau$，故
@@ -518,7 +489,7 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
     \item \textbf{指标升降}约定用度规及其逆，构成\textbf{度规对偶}；
     \item \textbf{坐标偏导} $T^{\cdots}{}_{\cdots,\mu}=\p_\mu T^{\cdots}{}_{\cdots}=\pdv*{T^{\cdots}{}_{\cdots}}{x^\mu}$ 保持 Lorentz 协变。
 \end{enumerate}
-$U^\mu$、$U_\mu$、Kronecker 符号\footnote{注意 $\{x\}$ 的第 $x^0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，所以变换到另一系 $\{x'\}$ 为 $\Lambda^{\mu}{}_{\nu}\delta^\nu_0=\Lambda^{\mu}{}_{0}$。}都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\p_\nu U^\mu$ 也是 Lorentz 张量。
+$U^\mu$、$U_\mu$、Kronecker 符号\footnote{注意 $\{x\}$ 的 $0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，变换到另一惯性系 $\{x'\}$ 为 $\Lambda^{\mu}{}_{\nu}\delta^\nu_0=\Lambda^{\mu}{}_{0}=\pdv*{x'^\mu}{t}$。$\delta^\mu_\nu,\pdv*{x'^\mu}{t}$ 都是张量但 $\delta^\mu_0$ 不是。}都是 Lorentz 张量。偏导保持 Lorentz 协变，故 4-加速 $U^\nu\p_\nu U^\mu$ 也是 Lorentz 张量。
 $\eta_{\mu\nu},\eta^{\mu\nu}$ 在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
 
 虽然这在物理和计算上没有问题，但似乎还是缺了些什么。
@@ -550,6 +521,17 @@ $\eta_{\mu\nu},\eta^{\mu\nu}$ 在此处比较特殊，不仅满足 $\eta_{\mu\nu
 \end{enumerate}
 
 \subsection{场的拉氏理论}
+
+相互作用是一种信息，物质总通过动量、能量、质量的变化反馈。
+可见相互作用至多以光速影响邻域，此即\textbf{定域性}(locality)或\textbf{局域性}。
+从而，我们总能适当忽略环境对所关心的系统的作用以建立\textbf{孤立系统}模型，即忽略环境与系统的动量、能量、质量交换。此乃物理研究之根基：
+宇宙是无所不包的最大时空，但我们往往只关心某些局部区域，即宇宙子系统。
+理解子系统必须且可以使用孤立系统，否则讨论任何客体时都须考虑整个宇宙的作用，结果一事无成。
+经典力学无定域性。Newton 引力定律是典型的超距案例，任二事件可通过 Newton 引力涉及因果。这一定律现只作为近似。对不具备连续性的事件亦能定义速率，比如介质光速。谈论超光速现象时往往指这种含义，以因果为前提的速度自然默认亚光速。
+
+场提供了定域性最自然的图像，迄今所有基本相互作⽤都归结于定域场。两相距较远的粒子的相互作⽤解释为：粒子（作为\textbf{源}）与场接触作用，再由场接触作用于另一粒子。接触作用强度均涉及粒子的\textbf{荷}(charge)。实际上，由于粒子动量、能量变化，为保持总和守恒，须设想粒子将其传递给周遭弥漫着的某种媒介。
+起初我们这样理解场论：设想一种\textbf{试验粒子}(test particle)，忽略其体积、形变及自旋，最重要地是忽略其自场对外场之干扰，就能测量受力来研究外场。每单位荷的场力即\textbf{场强}(strength)，通常无关于试验粒子，往往又能表为某个\textbf{势}(potential)之导数。
+在量子场论中，粒子解释为量子场的激发态。质子、电子、夸克等 Fermi 子携带作用荷，Bose 子场提供作用媒介。比如，电子场影响电磁场，产生波包（光子）传递电磁作用，在低能情形表现为电磁力。故严格来说，电磁场不依附于某个带电体，将总场分解为由各源所产生的部分是一种经典分析方法。
 
 粒子受外场作用，而场自身的演化也要服从最小作用量原理。
 考虑单个场，不妨从离散粒子系统逼近。
@@ -623,6 +605,17 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
 称为 \textbf{Belinfante 张量}
 
 \subsection{经典电动力学}
+
+%% 有效性
+
+自场当然也作用自己，但经典理论在处理这类问题时存在严重矛盾，如辐射阻尼。量子电动力学通过电子自能图的重整化来解决电子的自相互作用，虽依旧不尽完美，但至少知道症结在于点模型导致\textbf{无穷大自能}。应当认为，目前的理论都是某种尚未发掘的基本规律的\textbf{低能}情形，低能意指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
+现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
+只要意识到物理理论总是近似的，就可给人类的科学提供台阶。正如 George Box 所说，\textit{所有理论都是错的，但一些是有用的}。我们总是追求尽可能简单的理论，但这不意味着自然规律（若有且能被人总结）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。
+
+研究各物质场间的相互作用，就要用各对应的物理量来构建总作用量。这一主题称为\textbf{耦合}(coupling)。
+目前除接受实验筛选，没有先验原理支撑唯一的耦合方式。
+以粒子和场的耦合为例。有时可修改自由粒子作用量，并保证无场时还原；更多是直接相加的形式：$\text{自由粒子作用量}+\textbf{耦合强度}\times\text{场与粒子的耦合项}$。引入耦合强度无非是为了给理论参数更多自由余地。
+从有效性和对称性出发，并依据该相互作用的实验特征、量纲要求，所考虑的最简单耦合称为\textbf{最小}(minimal)\textbf{耦合}。
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
 我们曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。
@@ -800,6 +793,9 @@ Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 
 广义协变性要求同一切矢在任意坐标系下皆表以 $T^\mu=\d x^\mu/\d\sigma$ 形式
 
 根据全微分知，4-速实际上可在任意的坐标变换下保持协变，即更广义的逆变矢量 $T'^\mu=\pdv{x'^\mu}{x^\nu}T^\nu$。变换改成了任意 Jacobi 矩阵元。反过来也可证明，广义逆变矢量总存在曲线与之相切，故不再与切矢区分。
+
+$\{\xi\}$ 的 $\alpha$ 坐标基在任意系 $\{x\}$ 的 $\mu$ 分量写作 $\pdv*{x^\mu}{\xi^\alpha}=\p_\alpha^\mu$，做变换 $\{x\}\to\{x'\}$ 可知 $\p_\alpha'^\mu=\pdv{x'^\mu}{x^\nu}\p_\alpha^\nu$，确为逆变矢量。
+
 一点处全体切矢构成该点\textbf{切空间}(tangent space)。
 $\omega'_i=\pdv{x^j}{x'^i} \omega_j$ 则对应\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
 广义协变的张量满足
@@ -895,11 +891,11 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 }
 从而能在 $\eta_{\mu\nu}$ 的惯性系中将引力近似解释为 $h_{\mu\nu}$。在弱场意义上，假若所研究的对象还\textbf{低速}，即 $h_{\mu\nu,0}=0$ 且试验质点近似静止，便可认为 Newton 理论成立。
 这其实也是对一套新理论的基本要求，称为\textbf{Newton 极限}。
-由归一性知
+取坐标系使 $U^\mu$ 与时轴 $t^\mu=\pdv*{x^\mu}{t}$ 相切，由归一性知
 \eq{
-    U^\mu=\frac{\delta^\mu_0}{\sqrt{-g_{00}}},
+    U^\mu=\dv{x^\mu}{\tau}=\frac{t^\mu}{\sqrt{-t_\mu t^\mu}},
 }
-从而一阶意义上 $U^\mu=\delta^\mu_0$。此时运动方程为 $\dv*{U^\mu}{\tau}=-\Gamma_{00}^\mu= \frac 12 g^{\mu\nu} g_{00,\nu}=\frac 12 \eta^{\mu\nu} h_{00,\nu}$，则 $-\p^i\phi=\dv*[2]{x^i}{t}=\frac 12 \delta^{ij} h_{00,j}$，故
+从而一阶意义上 $U^\mu=t^\mu$。在该系中 $\pdv*{x^\mu}{t} = \delta^\mu_0$，则运动方程可写为 $\dv*{U^\mu}{\tau}=-\Gamma_{00}^\mu= \frac 12 g^{\mu\nu} g_{00,\nu}=\frac 12 \eta^{\mu\nu} h_{00,\nu}$，则 $-\p^i\phi=\dv*[2]{x^i}{t}=\frac 12 \delta^{ij} h_{00,j}$，故
 \eq{
     h_{00}=-2\phi,\quad g_{00}=-(1+2\phi),
 }
@@ -994,7 +990,8 @@ $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 它存在且唯一，因为适配性（配合无挠性）就是 \eqref{eq:g=gamma} 式，从而 $\Gamma^\lambda_{\mu\nu}=\{^\lambda_{\mu\nu}\}$。
 适配性的意义在于保持内积，比如 $A^\mu U_\mu=\frac 12\Dv{\tau} (g_{\mu\nu} U^\nu U^\mu)=0$；假设 $V^\mu,W^\nu$ 沿某条线平行移动，则内积沿线恒定：$\Dv{\tau}(V^\mu W_\mu)=0$，就单个 $V^\mu$ 而言说明模方恒定。
 
-切矢 $T^\mu=\dv*{x^\mu}{\sigma}$ 沿自身平行移动的曲线称为\textbf{测地线}(geodesic)，即 $T^\mu\cd_\mu T^\lambda =0$。
+切矢 $T^\mu$ 沿自身平行移动的曲线称为\textbf{测地线}(geodesic)，即 $T^\mu\cd_\mu T^\lambda =0$。
+$\lambda=a\tau+b$ 统称\textbf{仿射参数}(affine parameter)。
 此称（自平行）\textbf{测地线方程}，参数正是仿射参数。
 但这不一定是\textbf{极值测地线} $\dv*{T^\lambda}{\sigma}+\{^\lambda_{\mu\nu}\}T^\mu T^\nu$，后者才是等效原理给出的自由落体。
 然而有挠联络仍可能遵循等效原理，因为 $T^\mu T^\nu=T^{(\mu} T^{\nu)}$，故只需满足 $\Gamma^\lambda_{(\mu\nu)}=\{^\lambda_{\mu\nu}\}$ 就已能使粒子走极值测地线。
@@ -1053,12 +1050,24 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 \end{align}
 
 考虑背景时空的一个\textbf{嵌入}(imbedded)子集 $\Omega$，将 $g_{\mu\nu}$ 的作用对象限制于 $\Omega$ 上，即对任意 $\Omega$ 的切矢场 $w_1,w_2$ 均有 $\tilde g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，就得到了度规的限制(restriction) $\tilde g_{\mu\nu}$，称\textbf{诱导度规}(induced metric)。换言之，总约定子集中的长度总用背景度规衡量。只需研究低一维嵌入的\textbf{超曲面}(hypersurface)，因为任意维的嵌入可逐步归纳得到。
-对超曲面的任意切矢 $w^\mu$ 满足 $n_\mu w^\mu = 0$ 的背景余切矢 $n_\mu$ 称为\textbf{法余矢}，$n^\mu = g^{\mu\nu}n_\nu$ 称为\textbf{法矢}。总可取坐标系使某个 $\hat x^0=f$ 坐标线即为超曲面，换言之超曲面方程为 $f(x^\mu)=C$ 或 $\d f=0$，其梯度 $\p^\mu f$ 就是法矢，因为对任意曲面切矢 $T^\mu$ 总可在曲面上找到 $x^\mu(\lambda)$ 使 $T^\mu=\dv*{x^\mu}{\lambda}$，进而 $T^\mu\p_\mu f=\dv*{f}{\lambda}=0$。任意余切矢分解为 $V_\mu = A \p_\mu f + B T_\mu$，则 $V_\mu w^\mu = B T_\mu w^\mu$。故法余矢必如 $A \p_\mu f$，即只相差倍数关系，可约定内外。
-满足上式的 $\tilde g_{\mu\nu}$ 有很多，我们选择一种惯例。规定一个单位外法矢 $n^\mu$。$V^\mu$ 沿法向分解为 $\pm  (V^\nu n_\nu)  n^\mu$，其中 $\pm = n^\mu n_\mu$。沿切向分解记为 $h^\mu{}_\nu V^\nu$，$h^\mu{}_\nu:=g^{\mu\sigma}h_{\sigma\nu}$ 称为\textbf{投影映射}(projection map)。具体地，$h^\mu{}_\nu V^\nu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$，故可选
+对超曲面的任意切矢 $w^\mu$ 满足 $n_\mu w^\mu = 0$ 的背景余切矢 $n_\mu$ 称为\textbf{法余矢}，$n^\mu = g^{\mu\nu}n_\nu$ 称为\textbf{法矢}。总可取系 $\{\hat x\}$ 使 $\hat t=C$ 坐标面即为超曲面，换言之超曲面方程为 $\hat t(x^0,\cdots,x^3)=C$ 或 $\d\hat t=0$。为了看出梯度 $\p_\mu \hat t = \pdv{\hat t}{x^\mu}$ 就是法余矢，因为对任意曲面切矢 $T^\mu$ 总可在曲面上找到 $x^\mu(\lambda)$ 使 $T^\mu=\dv*{x^\mu}{\lambda}$，进而 $T^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
+取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，这里 $\pm 1 = \sgn(\p_\mu\hat t \p^\mu\hat t)$，从而 $n^\mu n_\mu = \pm 1$。
+设线性无关分解 $V^\mu = A n^\mu + B T^\mu$。这里可看出法余矢之间只相差倍数关系，因为一旦 $B\ne 0$，则 $V_\mu w^\mu = B T_\mu w^\mu\ne 0$。
+显然 $V^\mu n_\mu = \pm A$ 或者 $A=\pm V^\nu n_\nu$。
+沿切向分解记为 $h^\mu{}_\nu V^\nu$，$h^\mu{}_\nu:=g^{\mu\sigma}h_{\sigma\nu}$ 称为\textbf{投影映射}(projection map)。具体地，$h^\mu{}_\nu V^\nu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$。最简单地，可选
 \eq{
-    h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu,\quad h^\mu{}_\nu :=\delta^\mu_\nu \mp n^\mu n_\nu.
+    h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu\implies h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu.
 }
-可验证 $h_{\mu\nu}$ 就是一个诱导度规。假设选取坐标系使得超曲面为坐标线：$n^\mu = \delta^\mu_0$，单位性即 $g_{00}=\pm 1$，故 $n_\mu = g_{\mu 0}$，故 $h_{0\nu} = g_{0\nu}(1\mp g_{0 0})=0$。换言之，用该系表示度规为 $\d s^2=\pm(\d x^0)^2+h_{ij}\d x^i\d x^j$，只需令坐标 $x^0$ 为常数就得到了 $h_{\mu\nu}$。此系下也有 $g=\pm h,h=\det(h_{ij})$。比如，先用球坐标 $\{r,\theta,\phi\}$ 改写欧氏度规为
+可验证 $h_{\mu\nu}$ 就是一个诱导度规。
+
+%% 坐标基
+
+ $h_{\alpha\beta}n^\alpha V^\beta = 0$。
+
+假设系 $\{x\}$ 使得超曲面为 $\d t=0$，则 $n_\mu = \pdv{t}{x^\mu}$
+
+
+在系 $\{x\}$ 中 $\pdv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$，则 $h_{0\nu} = 0$，即用该系表示度规为 $\d s^2=\pm\d t^2+h_{ij}\d x^i\d x^j$，即令 $t=C$（$\d t=0$）自动截取得 $h_{ij}$。此系下也有 $g=\pm h,h=\det(h_{ij})$。比如，先用球坐标 $\{r,\theta,\phi\}$ 改写欧氏度规为
 \[\d\ell^2=\d r^2+r^2\d\Omega^2,\quad \d\Omega^2:=\d\theta^2+\sin^2\theta\,\d\phi^2,\]
 当然，此处 $\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。取 $r=R$ 即得球面度规 $\d\ell^2=R^2\d\Omega^2$，与 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 结果一致。
 附录 \ref{appx:form} 指出了高维 Gauss 定理
@@ -1076,7 +1085,8 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
             \label{fig:geo-devi}
 \end{figure}
 
-考虑类时线汇 $\mathscr R$，如图 \ref{fig:geo-devi}。任选一条不自交的光滑曲线，使其上任一切矢都与过该点的观者相交，称为\textbf{横向曲线}。用 $s$ 参数化横向曲线，则与其相交的观者对应了交点参数，即在线汇中挑出了一个\textbf{单参族}，横向曲线沿各观者 4-速便扫出一张 2 维曲面，可称\textbf{世界面}(worldsheet)。设任意坐标系 $\{x\}$，则可表为 $x^\mu(\tau,s)$，其中 $\{\tau,s\}$ 可以视为固有系的子集，当然也可不要求对钟，直接约定某初始的横向曲线 $x^\mu(0,s)$。可取单参族中的一者为\textbf{基准观者}(fiducial observer)，比如 $x^\mu(\tau,0)$。\textbf{偏离矢量}(separation vector) $S^\mu:=\pdv*{x^\mu}{s}$ 的大小象征其与邻近观者 $x^\mu(\tau,\Delta s)$ 的间距，称其\textbf{邻居}(neighbor)。这样 $x^\mu(\tau,s)$ 上建立了观者 4-速场 $Z^\mu:=\pdv*{x^\mu}{\tau}$ 和偏离矢量场 $S^\mu$。由链式法则，它们的确逆变。
+考虑类时线汇 $\mathscr R$，如图 \ref{fig:geo-devi}。任选一条不自交的光滑曲线，使其上任一切矢都与过该点的观者相交，称为\textbf{横向曲线}。用 $s$ 参数化横向曲线，则与其相交的观者对应了交点参数，即在线汇中挑出了一个\textbf{单参族}，横向曲线沿各观者 4-速便扫出一张 2 维曲面，可称\textbf{世界面}(worldsheet)。设任意坐标系 $\{x\}$，则可表为 $x^\mu(\tau,s)$，其中 $\{\tau,s\}$ 可以视为固有系的子集，当然也可不要求对钟，直接约定某初始的横向曲线 $x^\mu(0,s)$。建立观者 4-速场 $Z^\mu:=\pdv*{x^\mu}{\tau}$ 和\textbf{偏离矢量}(separation vector)场 $S^\mu:=\pdv*{x^\mu}{s}$，它们相当于固有系的坐标基。由链式法则，它们的确逆变。
+取单参族中的一者为\textbf{基准观者}(fiducial observer)，比如 $x^\mu(\tau,0)$，考虑一个邻近观者 $x^\mu(\tau,\Delta s)$，称为\textbf{邻居}(neighbor)。偏离矢量的大小象征基准观者与邻居的间距。
 很容易展开证明
 \eq{
     Z^\nu\cd_\nu S^\mu=S^\nu\cd_\nu Z^\mu.
@@ -1116,7 +1126,7 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 \end{align}
 称为\textbf{测地偏离}(geodesic deviation)\textbf{方程}，解 $S^\lambda$ 有无穷多种，称\textbf{Jacobi 场}。
 $R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐程度，是 $g_{\mu\nu,\lambda\kappa}$ 级的张量，称为\textbf{Riemann 张量}。
-操作性上可这样获得正交 Jacobi 场 $\eta^\lambda$：初态用对钟确定出一条正交横向曲线，随后观者持全同钟各自演化，则 $\dv{\tau} (\eta^\mu Z_\mu ) =Z_\mu Z^\nu \cd_\nu \eta^\mu=Z_\mu \eta^\nu \cd_\nu Z^\mu=\frac{1}{2} \eta^\nu \cd_\nu\left(Z_\mu Z^\mu\right)=0$，即保持正交。坐标线 $\d\tau = 0$ 是测地线汇的正交族，必有 $\tilde g_{0i} = 0$。
+操作性上可这样获得正交 Jacobi 场 $\eta^\lambda$：初态用对钟确定出一条正交横向曲线，随后观者持全同钟各自演化，则 $\dv{\tau} (\eta^\mu Z_\mu ) =Z_\mu Z^\nu \cd_\nu \eta^\mu=Z_\mu \eta^\nu \cd_\nu Z^\mu=\frac{1}{2} \eta^\nu \cd_\nu\left(Z_\mu Z^\mu\right)=0$，即保持正交。同时面 $\d\tau = 0$ 是测地线汇的正交族，必有 $\tilde g_{0i} = 0$。
 可以展开 Riemann 张量定义式：计算 $\cd_\nu\cd_\kappa V^\lambda$ 时注意勿先展开内部，将 $\cd_\kappa V^\lambda$ 视作整体以避开对克氏符求导，最后代入无挠性得
     \eq{\label{eq:Rie-cur}
          R^\lambda{}_{\mu\nu\kappa}:=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}.
@@ -1135,7 +1145,13 @@ $R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐程度，是 $g_{\mu\nu,\lambda\kappa}$
 进一步的最简单缩并是求迹 $R:=R^\mu{}_\mu=g^{\mu\nu}R_{\mu\nu}$，
 此即 $g_{\mu\nu,\lambda\kappa}$ 级的标量，称\textbf{Ricci 标量}。
 
-现可给出实验操作意义的局域惯性系的定量标准。数学上固然要求局域惯性系严格建立在测地线上：假若克氏符在邻域 $U$ 内等于零，则借助邻域按 \eqref{eq:Rie-cur} 式得在线上 $R^\lambda{}_{\mu\nu\kappa}=0$，矛盾。只要邻域足够大，$R^\lambda{}_{\mu\nu\kappa}$ 便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于 $1/\sqrt{R}$（意义见 \ref{sec:curv} 节），同时也远小于其测量精度时，即使时空范围未严格至测地线，但 $R^\lambda{}_{\mu\nu\kappa}$ 也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量潮汐，见 \ref{sec:eq-prin} 节。
+数学上称 $R^\lambda{}_{\mu\nu\kappa}$ 为\textbf{Riemann 内禀曲率}(intrinsic curvature)或\textbf{曲率}。分析量纲可知曲率半径在 $(\mathcal K)^{-1/4}$ 量级，其中 $\mathcal K:=R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda}$ 称为\textbf{Kretschmann 标量}。
+曲率为零时称度规为\textbf{平直的}(flat)，非零时称\textbf{弯曲的}(curved)，物理学可以借用这些词而称\textbf{时空曲率}，时空分为\textbf{平直时空}和\textbf{弯曲时空}。渐弱度规也称\textbf{渐近平直}(asymptotically flat)度规。
+先解释曲率称呼的意义。我们预先\textit{规定}欧氏空间是平直的，以它为基准可判断某条线、某张面的弯曲。考虑一个球面，其上任意切矢沿自身平移所得测地线即过球心的大圆。设从赤道某两处垂直延伸两条大圆弧，它们的间距逐渐缩短并交于极点。在一张平面上，初态平行的直线不可能改变间距。矢量平行移动就是相对于路径各处邻域平移，然而考虑将扇形围成圆锥面，矢量沿着包含尖端的环路平行移动后，与原矢量不重合，而直观上尖端处有曲率，故曲率非零时，平行移动结果往往与路径有关。
+由球面诱导度规可计算球面曲率不为零。
+可见度规在非欧或非闵时，内禀曲率非零而使测地间隔变化。但内禀曲率其实只由度规和坐标系计算而来，甚至无需嵌入某个高维背景来定义度规和曲率——对于四维时空，我们就只能抛弃嵌入思想来想象它。内禀曲率只反应内禀的弯曲程度而与曲面本身无关：球面在内禀意义下弯曲，但圆柱面在内禀意义下平直（借柱坐标发现诱导度规平直），尽管它在直观上弯曲。数学上，描述圆柱面这种对象的弯曲程度就需要嵌入思想，称为\textbf{外}(extrinsic)\textbf{曲率}。一个直观理解是，凡能连续地展平的曲面，尽管外曲率可不为零，但内禀曲率为零；真正不可连续展平的曲面内禀曲率、外曲率都非零。读者可观察纸塑地球仪是如何尝试将平面纸张大致贴合球面的。
+
+现可给出实验操作意义的局域惯性系的定量标准。数学上固然要求局域惯性系严格建立在测地线上：假若克氏符在邻域 $U$ 内等于零，则借助邻域按 \eqref{eq:Rie-cur} 式得在线上 $R^\lambda{}_{\mu\nu\kappa}=0$，矛盾。只要邻域足够大，$R^\lambda{}_{\mu\nu\kappa}$ 便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于 $1/\sqrt[4]{\mathcal K}$，同时也远小于其测量精度时，即使时空范围未严格至测地线，但 $R^\lambda{}_{\mu\nu\kappa}$ 也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量潮汐，见 \ref{sec:eq-prin} 节。
 
 \subsection{Einstein 方程}
 
@@ -1204,11 +1220,7 @@ T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\Lag_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{\Lag_M
 
 坐标条件的任务本就是消除广义协变性带来的自由度，故当然不能是广义协变的等式。
 
-\subsection{曲率及其性质}\label{sec:curv}
-
-数学上称 $R^\lambda{}_{\mu\nu\kappa}$ 为\textbf{Riemann 内禀曲率}(intrinsic curvature)或\textbf{曲率}。$1/\sqrt{R}$ 相当于曲率半径。曲率为零时称度规为\textbf{平直的}(flat)，非零时称\textbf{弯曲的}(curved)，物理学可以借用这些词而称\textbf{时空曲率}，时空分为\textbf{平直时空}和\textbf{弯曲时空}。渐弱度规也称\textbf{渐近平直}(asymptotically flat)度规。下面解释曲率称呼的意义。我们预先\textit{规定}欧氏空间是平直的，以它为基准可判断某条线、某张面的弯曲。考虑一个球面，其上任意切矢沿自身平移所得测地线即过球心的大圆。设从赤道某两处垂直延伸两条大圆弧，它们的间距逐渐缩短并交于极点。在一张平面上，初态平行的直线不可能改变间距。矢量平行移动就是相对于路径各处邻域平移，然而考虑将扇形围成圆锥面，矢量沿着包含尖端的环路平行移动后，与原矢量不重合，而直观上尖端处有曲率，故曲率非零时，平行移动结果往往与路径有关。
-由球面诱导度规可计算球面曲率不为零。
-可见度规在非欧或非闵时，内禀曲率非零而使测地间隔变化。但内禀曲率其实只由度规和坐标系计算而来，甚至无需嵌入某个高维背景来定义度规和曲率——对于四维时空，我们就只能抛弃嵌入思想来想象它。内禀曲率只反应内禀的弯曲程度而与曲面本身无关：球面在内禀意义下弯曲，但圆柱面在内禀意义下平直（借柱坐标发现诱导度规平直），尽管它在直观上弯曲。数学上，描述圆柱面这种对象的弯曲程度就需要嵌入思想，称为\textbf{外}(extrinsic)\textbf{曲率}。一个直观理解是，凡能连续地展平的曲面，尽管外曲率可不为零，但内禀曲率为零；真正不可连续展平的曲面内禀曲率、外曲率都非零。读者可观察纸塑地球仪是如何尝试将平面纸张大致贴合球面的。
+\subsection{曲率及其性质}
 
 只需默认无挠性并运用取局域惯性系的技巧（$\tilde R^\lambda{}_{\mu\nu\kappa}=-2\tilde \Gamma^\lambda_{\mu[\nu,\kappa]}$），就可证明曲率具有若干性质：
 \begin{itemize}
@@ -1242,7 +1254,7 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
     C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
 }
 这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
-能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如\textbf{Kretschmann 标量} $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda}$ 或 $C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
+能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda},C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
 
 \subsection{最小引力耦合}
 
@@ -1423,8 +1435,11 @@ Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black
 $r=0$ 的奇性称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
 考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
-于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。
-E-L 方程给出 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
+于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。测地线方程为
+\[L=\frac{1}{2}g_{\mu\nu} Z^\mu Z^\nu\implies\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta.\]
+在 Schwarzschild 系下 $g_{\mu\nu,0}=0$，则 $g_{0\nu} Z^\nu=\text{常数}$。
+或者说因为 $\xi_\mu Z^\mu$ 守恒，取 $t$ 方向 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，而在 Schwarzschild 系下 $\xi_\mu Z^\mu=g_{0\nu} Z^\nu$。
+取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
 由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
 以释放点为零点，$\tau$ 可表为 $t$ 或 $r$ 的单元函数。用 $r$ 表示 $\tau$ 可注意沿线有 $\d\tau =\d r/Z^1$。容易发现按 $\frac{r}{r_0}=\frac{1+\cos\eta}{2}=\cos^2 \frac{\eta}{2}$ 积分比较方便，则
 \eq{

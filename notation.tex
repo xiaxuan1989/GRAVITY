@@ -1,9 +1,11 @@
 \chapter*{记号及单位制}
 \addcontentsline{toc}{chapter}{\nameref{notation}} 
 
+
+
 用分量指代物理量本身，书写将大大简化，且往往足以体现物理性质。比如，用 $E^i$ 可代表某个参考系所测电场 $\bm E=(E^1,E^2,E^3)=(E_x,E_y,E_z)$，用 $x^\mu$ 可代表四个时空坐标 $x^0=ct,x^1=x,x^2=y,x^3=z$。右上角的数字只是\textbf{指标}(index)而非乘幂。不必担心，很多情况下指标不会与乘幂相混淆。实在冲突时可根据上下文判断或额外注释。规定，时空指标一般取 $\mu,\nu$ 等希腊字母，遍及 $0,1,2,3$；空间指标取 $i,j$ 等拉丁字母，遍及 $1,2,3$。现代物理学总和指标打交道，初学者可能会感到复杂但又需要习惯。
 
-物理学的代数运算常涉及对某指标的求和。注意到，单个因式中指标一般至多出现两次：出现两次的指标是求和哑元，称为\textbf{哑}(dummy)\textbf{标}；留下的指标只出现一次，称\textbf{自由}(free)\textbf{指标}。比如，$4$ 维列向量 $X$ 的仿射变换可用方阵 $A$ 和常列向量 $Y$ 表为 $X'=AX+X_0$，分量表达为
+代数运算常涉及对某指标的求和。注意到，单个因式中指标一般至多出现两次：出现两次的指标是求和哑元，称为\textbf{哑}(dummy)\textbf{标}；留下的指标只出现一次，称\textbf{自由}(free)\textbf{指标}。比如，$4$ 维列向量 $X$ 的仿射变换可用方阵 $A$ 和常列向量 $Y$ 表为 $X'=AX+X_0$，分量表达为
 \[X'^\mu=\sum_{\nu=0}^3 A^{\mu}{}_{\nu}X^\nu+ Y^\mu,\]
 其中为了区分行列指标而将矩阵元的指标错开。在因式 $A^{\mu}{}_{\nu}X^\nu$ 中，$\mu$ 是自由指标，$\nu$ 是哑标。不与自由指标冲突的前提下，哑标可任意替换，比如换为 $A^{\mu}{}_{\sigma}X^\sigma$。多个因式之间可以出现重复哑标，因为它们是加法关系，比如用 $(A+B)$ 描述的线性变换：
 \[X'^\mu=\sum_{\nu=0}^3 (A^{\mu}{}_{\nu}+B^{\mu}{}_{\nu})X^\nu=\sum_{\nu=0}^3 A^{\mu}{}_{\nu}X^\nu+\sum_{\nu=0}^3 B^{\mu}{}_{\nu}X^\nu.\]
@@ -13,7 +15,7 @@ $A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\nu}X^\nu$ 都出现 $\nu$。替换哑元后也
 可以看到，\textbf{上标}(upper/raised indices)和\textbf{下标}(lower indices)位置总保持一致，这称为\textbf{指标平衡}。
 如上性质说明，可省略求和号而只关心通项，毫不影响代数计算。由此 Einstein 提出\textbf{求和约定}：若某个指标一上一下成对出现，则要对该指标求和。也称对该指标\textbf{缩并}(contraction)。比如 $\d\ell^2=\delta_{ij}\d x^i\d x^j,X'^\mu=A^{\mu}{}_{\nu}X^\nu+ Y^\mu$。
 
-物理学还涉及大量的坐标变换。将 4 维坐标系 $\{x\},\{x'\}$ 之间的光滑坐标变换记作
+将 4 维坐标系 $\{x\},\{x'\}$ 之间的光滑坐标变换记作
 $x'^\mu=h^\mu(x^0,x^1,x^2,x^3)$，
 通常混用符号地简写为 $x'^\mu=x'^\mu(x)$，链式法则给出
 \[
@@ -21,19 +23,21 @@ $x'^\mu=h^\mu(x^0,x^1,x^2,x^3)$，
 \]
 其中分母的上标看作分子的下标，$({\partial x'^\mu}/{\partial x^\nu})$ 就是分析学里的 \textbf{Jacobi 矩阵}。函数 $f$ 的全微分为
 \[
-    \d f=\pdv{f}{x^\mu}\d x^\mu=\del_\mu f\d x^\mu,
+    \d f=\pdv{f}{x^\mu}\d x^\mu=\p_\mu f\d x^\mu,
 \]
-因此梯度 $\del_\mu f$ 的变换是
+因此梯度 $\p_\mu f$ 的变换是
 \[
-    \del'_\mu f=\pdv{f}{x'^\mu}=\pdv{x^\nu}{x'^\mu}\pdv{f}{x^\nu}=\pdv{x^\nu}{x'^\mu}\del_\nu f.
+    \p'_\mu f=\pdv{f}{x'^\mu}=\pdv{x^\nu}{x'^\mu}\pdv{f}{x^\nu}=\pdv{x^\nu}{x'^\mu}\p_\nu f.
 \]
-注意对于 Jacobi 矩阵元，一般不用简记符 $\del_\mu$。
+注意对于 Jacobi 矩阵元，一般不用简记符 $\p_\mu$。
 
 Jacobi 矩阵的互逆性：
 \[\pdv{x^\mu}{\xi^\alpha}\pdv{\xi^\alpha}{x^\nu}=\pdv{\xi^\mu}{x^\kappa} \pdv{x^\kappa}{\xi^\nu}=\delta^\mu_\nu,\]
 其中 $\delta^i_j$ 也是单位阵元。
 
 部分量子场论教材选择统一使用下指标而只强调求和约定“总共重复两次”，更有甚者不区分指标顺序。这在讨论更深刻问题时出现缺陷，建议只在特殊情况采取简化。比如 $\delta^\mu_\nu$ 是考虑到 $I$ 是对称矩阵。
+
+本书选择 $({\eta}_{\mu\nu})=\diag(-1,1,1,1)$，故号差 $\tr(\eta_{\mu\nu})=2$，称\textbf{东海岸}习惯。量子场论教材常选择 $(\eta_{\mu\nu})=\diag(1,-1,-1,-1)$，号差为 $-2$ 即\textbf{西海岸}习惯。更有甚者选择将时间分量排在最后作为第 4 分量，这样有 $\diag(1,1,1,-1)$ 但并不影响号差。也有一种可能有哲学区别的习惯，称\textbf{Wick 技巧}：令 $x^0=\i ct$ 则线元还原回勾股定理 $\d s^2= \delta_{\mu\nu}\d x^\mu\d x^\nu$，伪转动变换的确变为 $x$-$\i ct$ 平面的旋转变换。除讨论某些理论复结构方面的问题外不使用这种做法。
 
 物理学是关乎实验测量的学科，讨论物理量的单位是极为重要的。在\textbf{国际制}(SI)中，我们认为时间、空间乃不同物理量，自然不会谈及“1s 等于多少 m”这种看似奇怪的问题。但在相对论中，这个问题很有意义，因为时空乃统一的概念。考虑令 $c=1$ 使 $x^0=t$，国际制下 $c$ 近似为 $3\times 10^8$ m/s，故这件事相当于
 \[
@@ -88,7 +92,7 @@ $g_{00}$ 同理，故可得
 \]
 用相同方法可得到
 \[
-    R_{\mu\nu}-\frac 12 g_{\mu\nu} R=\frac{8\pi G}{c^4} T_{\mu\nu},\quad U^\mu U_\mu = - c^2,\quad \curl\bm B=\mu_0\epsilon_0\del_t\bm E+\mu_0\bm j, \quad \cdots
+    R_{\mu\nu}-\frac 12 g_{\mu\nu} R=\frac{8\pi G}{c^4} T_{\mu\nu},\quad U^\mu U_\mu = - c^2,\quad \curl\bm B=\mu_0\epsilon_0\p_t\bm E+\mu_0\bm j, \quad \cdots
 \]
 方法皆完全相同。其中注意 $[\epsilon_0]=[T]^4[L]^{-3}[M]^{-1}[I]^2$（$[I]$ 为电流量纲），而从几何 Gauss 制到国际制的过程是补充 $c,G,4\pi\epsilon_0$。再通常将 $c$ 去掉而引入 $\mu_0=1/c^2\epsilon_0$。
 

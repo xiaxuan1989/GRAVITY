@@ -1,27 +1,22 @@
 \chapter{黑洞物理}\label{chpt:BH}
 
+黑洞是广义相对论提出之后，首个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
+
 \section{经典实验验证}
 
-黑洞是广义相对论提出之后，首个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
-自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为著名的是引力红移、水星进动和星光偏折，它们都与球对称度规有关。
+自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为经典的是引力红移、水星进动和星光偏折，它们都与 Schwarzschild 度规有关。
 
 \subsection{引力红移}
 
-%% 考虑等效原理。
-
-设置两个稳态观者，一者为光源 $e$，一者为接收端 $r$。二者 4-速共线于 Killing 矢量 $\xi^\mu = \pdv{x^\mu}{x'^\nu}\delta^\nu_0 = \pdv*{x^\mu}{t}$，$t$ 为稳态时间。知 $k^\mu\xi_\mu$ 沿光路为常量。
-角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。故
+置两个稳态观者，一者为光源 $e$，一者为接收端 $r$。二者 4-速共线于 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，$t$ 为稳态时间。$k^\mu$ 走测地线，知 $k^\mu\xi_\mu$ 沿光路守恒。
+角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。
+或者，注意 $\omega=-\dv*{\theta}{\tau}$，也将发现 $\omega_e/\omega_r=\d\tau|_r/\d\tau|_e=\sqrt{g_{00}|_r/g_{00}|_e}$。故
 \eq{
-    z=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1,
+    z:=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1 \xRightarrow{\text{取 Schwarzschild 度规}} \sqrt{\frac{1-2M/r_r}{1-2M/r_e}}-1,
 }
-这称为\textbf{红移量}，$\chi = \sqrt{-\xi_\mu\xi^\mu}$ 称为红移因子。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。
-取 Schwarzschild 度规，则
-\[z=\sqrt{\frac{1-2M/r_r}{1-2M/r_e}}-1.\]
-若 $r_r>r_e$，则 $z>0$，光将红移，否则蓝移。但这并非因为光爬出引力势阱而消耗能量。被高处静止观测者测得的频率更低。
-弱场近似得 $z=-\Delta\phi,\phi=-M/r$，考察地表处，则 $z=g\Delta h$。
-
-
-最著名的实验是 Pound-Rebka 实验，该实验在 1959 年由 Robert Pound 和 Glen A. Rebka 在哈佛大学进行。他们使用了一个高塔和一个伽马射线源，测量了从塔顶到塔底的伽马射线频率变化，验证了引力红移的预测。
+这称为\textbf{红移量}。$\chi = \sqrt{-\xi_\mu\xi^\mu}$ 称为\textbf{红移因子}。
+若 $r_r>r_e$，则 $z>0$，光将红移，否则蓝移。但这并非因为光爬出引力势阱而消耗能量，只是因为引力钟慢效应。被高处静止观测者测得的频率更低。
+弱场近似时 $\phi=-M/r$，取 $\Delta\phi=\phi_r-\phi_e$，有 $z=(1+2\phi_r)^{1/2}(1+2\phi_e)^{-1/2}-1\approx\Delta\phi$，考察近地表处相隔 $\Delta h$ 的观者，则 $z=g\Delta h$。这一形式也可用等效原理得到：将引力场中的稳态观者近似为平直时空中的加速观者，在平直时空的惯性系下，设从静止向上加速 $g$ 高为 $\Delta h$ 的电梯，起初底部发射光并测得频率 $\omega_e$，光经 $\Delta t=\Delta h + 1/2 g\Delta t^2\approx \Delta h$ 时间到达顶部，顶部这时的速度为 $u=g\Delta t\approx g\Delta h$，则根据 D\"oppler 效应 $\omega_r/\omega_e = \gamma(1-u)$，考虑到 $u\ll 1$，即 $\gamma\approx 1$，因此 $z = \gamma(1+u) - 1 \approx u = g\Delta h$。
 
 \subsection{水星进动}
 
@@ -126,11 +121,24 @@ $\boldsymbol{\lambda r_0 (R^2 + r_0^2)/(R^2 - r_0^2)^2}$ \\
 $\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\omega\approx{\pi(1.977\times 10^{-6})}/{87.969\,\text{天}}\approx 532''/\text{世纪}$，
 仍与观测值 $575''$/世纪相差 $43''$/世纪。
 
-再考虑广义相对论效应。
+再考虑广义相对论效应。为此我们要讨论在球对称度规中的测地线。给定初始条件 $(p,Z^\mu)$。易知，总能找到\footnote{设 $p$ 任意位置。先将极点平移至 $p$，此时 $\theta=0$。由于稳态观者一定不是测地线，所以 $Z^i\ne 0$。若 $Z^i$ 垂直于球面，则一定有 $\dv{\theta}{\tau}=0$。否则可绕极轴旋转（经度平移）使本初子午线与 $Z^i$ 的球面投影相切，从而 $\dv{\theta}{\tau}=0$。再将本初子午线（绕经纬度原点）旋转为赤道使得 $\theta=\pi/2$。}球坐标系使 $p$ 处 $\theta=\pi/2$ 且 $\dv{\theta}{\tau}=0$。$x^\lambda = \theta$ 的测地线方程为 $\ddot\theta+\frac{2}{r}\dot r\dot\theta-\sin\theta\cos\theta\dot\phi^2=0$（这里求导是对任意参数），可见 $\theta\equiv\pi/2$ 满足该方程和初始条件，由解的唯一性知质点运动的 $\theta$ 恒定。
+
+$\pdv{x^\mu}{t},\pdv{x^\mu}{\phi}$ 都是 Killing 矢量，代入到 $\xi_\mu Z^\mu$ 可定义两个守恒量：
+\eq{
+    E = - \pdv{x^\mu}{t} Z_\mu = - g_{0\nu} Z^\nu,\quad L = \pdv{x^\mu}{\phi} Z_\mu = 
+}
+
+测地线方程为 $\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta$。由 $g_{\mu\nu,0}=0$ 知 $g_{0\nu} Z^\nu=\text{常数}$。
+
+考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
+于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。
+
+
+
+取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
+由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
 
 通过求解在所谓的\textbf{线性近似}下的场方程，就可以算出水星近日点进动的正确值。只要能够取得这个进动的正确值，就表示广义相对论的正确性已经通过了该实验的检验。
-
-
 
 \subsection{星光偏折}
 Eddington 在 1919 年的一次日食观测中摄下了光线被引力“弯曲”的图片。这一点已经在几何光学近似中从理论上计算过。从那以后，用太阳系的种种检验对场方程作了所谓的，这些预测和实验都在这个物理条件下以很高的精度证实了广义相对论.
@@ -437,7 +445,9 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-可以预料，若对 Schwarzschild 系坐标时 $t$ 做推迟变换，即得超前 Eddington 系的时间反演坐标，故称\textbf{推迟 Eddington 系}，它描述的就是黑洞的反演：物质从视界穿出，物理现象朝着与黑洞性质相反的方向进行。从图上看，IV 区沿类时方向可以走向 A 区。物理学家将 IV 区打趣地称为\textbf{白洞}(white hole)，简称 \textbf{W 区}。同理\textbf{白洞视界}记 $\H_V^-,\H_U^-$。可见，推迟 Eddington 系覆盖了 $\mathrm{A}\cup\H_U^-\cup\mathrm{W}$。最后还有一个 III 区，从度规上看，其也是一个渐近平直视界外时空，而它亦可从 W 区穿出而坠入 B 区，鉴于相似性又称 III 区为 \textbf{A$'$ 区}，然而此二区域不可能有任何信息交流，即\textbf{无因果联系}，因为从 A 出发的任意类时或类光线都不能进入 A$'$，反之亦然。于是物理学家戏称 A$'$ 为另一独立的“宇宙”，二者互为\textbf{平行宇宙}(parallel universes)。如果硬要说二者有“擦边性”的瓜葛，那只能在原点 $V,U=0$ 处。还原另二空间维度，它就是一个半径 $r=2M$ 的 2 维球面，称为\textbf{虫洞}(wormhole)、\textbf{喉}(throat)或\textbf{分叉点}(bifurcation)，以代表两个“宇宙”唯一可能但却不能通过的道路。这些概念是在全时空为真空的前提下所得，其物理实在性还须另做讨论。从初值问题的角度考虑，整个时空存在的可能性很小。
+可以预料，若对 Schwarzschild 系坐标时 $t$ 做推迟变换，即得超前 Eddington 系的时间反演坐标，故称\textbf{推迟 Eddington 系}，它描述的就是黑洞的反演：物质从视界穿出，物理现象朝着与黑洞性质相反的方向进行。从图上看，IV 区沿类时方向可以走向 A 区。物理学家将 IV 区打趣地称为\textbf{白洞}(white hole)，简称 \textbf{W 区}。
+同理\textbf{白洞视界}记 $\H_V^-,\H_U^-$。可见，推迟 Eddington 系覆盖了 $\mathrm{A}\cup\H_U^-\cup\mathrm{W}$。
+最后还有一个 III 区，从度规上看，其也是一个渐近平直视界外时空，而它亦可从 W 区穿出而坠入 B 区，鉴于相似性又称 III 区为 \textbf{A$'$ 区}，然而此二区域不可能有任何信息交流，即无因果联系，因为从 A 出发的任意类时或类光线都不能进入 A$'$，反之亦然。于是物理学家戏称 A$'$ 为另一独立的“宇宙”，二者互为\textbf{平行宇宙}(parallel universes)。如果硬要说二者有“擦边性”的瓜葛，那只能在原点 $V,U=0$ 处。还原另二空间维度，它就是一个半径 $r=2M$ 的 2 维球面，称为\textbf{虫洞}(wormhole)、\textbf{喉}(throat)或\textbf{分叉点}(bifurcation)，以代表两个“宇宙”唯一可能但却不能通过的道路。这些概念是在全时空为真空的前提下所得，其物理实在性还须另做讨论。从初值问题的角度考虑，整个时空存在的可能性很小。
 
 \section{Penrose 图}
 
