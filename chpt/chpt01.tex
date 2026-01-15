@@ -313,7 +313,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
     \caption{光锥}
 \end{figure}
 
-数学上，给定线元 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$。设参数方程 $x^\mu(\sigma,\cdots)$，它可以是曲线、曲面等，沿参数 $\sigma$ 的\textbf{切矢}(tangent vector)为 $T^\mu:=\pdv*{x^\mu}{\sigma}$。只有一个参数时，即一条曲线，我们有 $T^\mu=\dv*{x^\mu}{\sigma}$，从而可用 $\int|\d s|=\int\sqrt{|g_{\mu\nu}T^\mu T^\nu|}\d\sigma$ 定义线长，借圆弧和三角函数定义角，最后按投影定义内积，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
+数学上，给定线元 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$。设参数方程 $x^\mu(\sigma,\cdots)$，它可以是曲线、曲面等，沿参数 $\sigma$ 的\textbf{切矢场}(tangent vector field)为 $T^\mu:=\pdv*{x^\mu}{\sigma}$。只有一个参数时，即一条曲线，我们有 $T^\mu=\dv*{x^\mu}{\sigma}$，从而可用 $\int\sqrt{|g_{\mu\nu}T^\mu T^\nu|}\d\sigma$ 定义线长，借圆弧和三角函数定义角，最后按投影定义内积，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
 欧氏几何现降级为一种选择，而非保守派所认为的绝对真理。比如 ${\eta}_{\mu\nu}$ 就是\textbf{闵氏度规}，对应\textbf{闵氏几何}；还可有双曲几何 $\d\ell^2=(\d x^2+\d y^2)/(1-x^2-y^2)$，当接近 $x^2+y^2<1$ 边缘时，该线元相较于欧氏线元会越来越大，但它除平面几何第五公理外符合其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
 给定坐标系 $\{x\},\{x'\}$，坐标变换 $x'^\mu(x)$ 也是参数方程，切矢 $\pdv*{x'^\mu}{x^\alpha}$ 称为系 $\{x\}$ 的第 $\alpha$ 个\textbf{坐标基矢}，$\{\pdv*{x'^\mu}{x^\alpha}\}_{\alpha=0}^3$ 称\textbf{坐标基}。为了看出它的确与 $\alpha$ 坐标轴相切，注意就曲线 $x'^\mu(x^\alpha)$ 而言，$\pdv*{x'^\mu}{x^\alpha}=\dv*{x'^\mu}{x^\alpha}$。
 取闵氏度规的惯性系，则 $\eta_{\mu\nu}\pdv{x^\mu}{t}\pdv{x^\nu}{x^i}=\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。可见惯性系的时空轴正交。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
@@ -901,6 +901,7 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 }
 其中规定 $h_{\mu\nu},\phi$ 在无穷远处均衰减至零。
 
+
 \subsection{引力场作为规范理论}
 
 可将广义不变性类比到其它动力学对称性，比如以后会学习电磁场的\textbf{局域规范不变性}和 $\pi$ 介子场的\textbf{手征对称性}。
@@ -932,10 +933,23 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 这其实分别就是主动和被动观点。
 
 
+
+
+
+
+注意，并不推荐直接从度规计算克氏符，因为有办法跳过零分量的计算。基本思想是，注意到 $g_{\mu\nu}\d x^\mu\d x^\nu$ 展开后自动省略零分量，因而直接读取非零分量。类似地，由于无挠性，也可给克氏符补上微元为
+$\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(\d g_{\sigma\mu}\,\d x^\mu- \frac{1}{2} \p_\sigma(\d s^2)\right)$，
+遍历 $\lambda$ 四个坐标即可，并注意对角矩阵的逆直接元素取倒数。亦或者，注意这与测地线方程相似，而我们已有度规 $\d s^2$，实际可直接对 $L\propto g_{\mu\nu} U^\mu U^\nu$ 计算 E-L 方程，从而读出克氏符。若只关心测地线而欲跳过克氏符，可以通过直接变分或改写测地线方程得
+\[g_{\mu\nu}\dv{U^\nu}{\tau}+\frac 12\left(2g_{\mu\beta,\alpha}-g_{\alpha\beta,\mu}\right)U^\alpha U^\beta = \dv{\tau}(g_{\mu\nu} U^\nu)-\frac 12 g_{\alpha\beta,\mu} U^\alpha U^\beta =0,\]
+这实际上对应 $L=\frac{1}{2}g_{\mu\nu} U^\mu U^\nu$ 的变分结果。后者即 $\dv*{P_\mu}{\tau}=\frac 12 m g_{\alpha\beta,\mu} U^\alpha U^\beta$。
+
+
+\subsection{Lie 导数}
+
 存在一类特殊的时空变换
 
 如果仿照等度规变换那样，满足
-\eq{\tilde g_{\mu\nu}(\tilde x)=g_{\mu\nu}(\tilde x)\Longleftrightarrow g_{\mu \nu}(x)=\frac{\p \tilde x^{ \rho}}{\p x^\mu} \frac{\p \tilde x^{ \sigma}}{\p x^\nu} g_{\rho \sigma}(\tilde x),}
+\eq{\tilde g_{\mu\nu}(\tilde x)=g_{\mu\nu}(\tilde x)\Longleftrightarrow g_{\mu \nu}(x)=\pdv{\tilde x^{ \rho}}{x^\mu} \pdv{\tilde x^{ \sigma}}{x^\nu} g_{\rho \sigma}(\tilde x),}
 
 能保持 $g'_{kl}=g_{ij}$ 不变的特殊变换称为\textbf{等度规变换}(isometry)。
 
@@ -946,7 +960,9 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 
 保留至一阶（即取 $\epsilon\to 0$）：
 \eq{0=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)},}
-这称为该度规的 \textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为 \textbf{Killing 矢量场}。点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
+这称为该度规的 \textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为。
+
+点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
 
 $0=\xi_\nu\p_\mu T^{\mu\nu}+T^{\mu\nu}\p_\mu\xi_\nu=\xi_\nu\p_\mu T^{\mu\nu}+T^{(\mu\nu)}\p_\mu\xi_\nu$
 
@@ -955,6 +971,35 @@ Lie 导数为
 \eq{
     \Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu.
 }
+
+
+
+若存在 $\{x'\}$ 使 $x'^0=t$ 有 $\pdv{g'_{\alpha\beta}}{t}=0$，那么该系的 $P'_{a}$ 将沿线守恒。
+
+假设
+
+
+给定一个
+
+总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
+
+
+沿矢量场 $v^\mu$，我们可以定义
+
+准确的标量写法为 $P'_{a}=P'_\mu\delta^\mu_a=P_\mu\pdv{x^\mu}{a}$。并且
+\[
+    \pdv{x'^\alpha}{x^\mu}\pdv{x'^\beta}{x^\nu}\pdv{g'_{\alpha\beta}}{t} = \pdv{x'^\alpha}{x^\mu}\pdv{x'^\beta}{x^\nu} \pdv{t}(g_{\rho\sigma}\pdv{x^{\rho}}{x'^\alpha} \pdv{x^{ \sigma}}{x'^\beta}).
+\]
+
+
+
+
+\[g_{\rho\nu}\pdv{x^\mu}\pdv{x^{\rho}}{a}\]
+
+\[\pdv{x^\lambda}{a} \p_\lambda g_{\mu\nu}+\pdv{x^\mu}\pdv{x^\rho}{a} g_{\rho \nu}+\pdv{x^\nu}\pdv{x^\sigma}{a} g_{\mu\sigma}\]
+
+这就是\textbf{Killing 矢量}。
+
 
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
@@ -1044,7 +1089,7 @@ Gauss 定理指出，散度的体积分可以转化为表面积分。
 }
 标量场的 Laplace-Beltrami 算子、2 阶张量的散度分别为
 \begin{align}
-    \square_g f&:=\nabla_\mu\nabla^\mu f=\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} g^{\mu\nu}\p_\nu f\right),\\ 
+    \square_g f&:=\cd_\mu\cd^\mu f=\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} g^{\mu\nu}\p_\nu f\right),\\ 
 T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}+\Gamma_{\lambda \nu}^\nu T^{\mu \lambda}
 =\frac{1}{\sqrt{-g}} \p_\nu\left(\sqrt{-g} T^{\mu \nu}\right)+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}.
 \end{align}
@@ -1056,7 +1101,7 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 显然 $V^\mu n_\mu = \pm A$ 或者 $A=\pm V^\nu n_\nu$。
 沿切向分解记为 $h^\mu{}_\nu V^\nu$，$h^\mu{}_\nu:=g^{\mu\sigma}h_{\sigma\nu}$ 称为\textbf{投影映射}(projection map)。具体地，$h^\mu{}_\nu V^\nu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$。最简单地，可选
 \eq{
-    h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu\implies h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu.
+    h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu\im h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu.
 }
 可验证 $h_{\mu\nu}$ 就是一个诱导度规。
 
@@ -1347,10 +1392,8 @@ $\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \Gamma^\mu_{\lambda\nu} G^{\lambda\nu} - \Gam
 \end{align*}
 其中 $\mu(\hat t,r),\nu(\hat t,r)$ 可以是复函数。
 
-再利用场方程确定分量：质点模型使对 $r\ne 0$ 均满足真空方程 $R_{\mu\nu}=0$。注意，并不推荐直接计算克氏符和曲率，因为有办法跳过零分量的计算。基本思想是，注意到 $g_{\mu\nu}\d x^\mu\d x^\nu$ 展开后自动省略零分量，因而直接读取非零分量。类似地，由于无挠性，也可给克氏符补上微元为
-$\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(\d g_{\sigma\mu}\,\d x^\mu- \frac{1}{2} \p_\sigma(\d s^2)\right)$，
-遍历 $\lambda$ 四个坐标即可，并注意对角矩阵的逆直接元素取倒数。亦或者，注意这与测地线方程相似，而我们已有度规 $\d s^2$，实际可直接对其变分。比如，只需取 $L=\e^{2\nu}(\dv{\hat t}{\tau})^2-\e^{2\mu}(\dv{r}{\tau})^2+r^2(\dv{\Omega}{\tau})^2$ 再计算 E-L 方程。
-结果为
+再利用场方程确定分量：质点模型使对 $r\ne 0$ 均满足真空方程 $R_{\mu\nu}=0$。
+使用 $\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu$ 或对 $L=\e^{2\nu}(\dv{\hat t}{\tau})^2-\e^{2\mu}(\dv{r}{\tau})^2-r^2(\dv{\Omega}{\tau})^2$ 变分得
 \begin{align*}
     & \Gamma_{00}^0=\dot{\nu}, \quad \Gamma_{01}^0=\nu^{\prime}, \quad \Gamma_{11}^0=\e^{2(\mu-\nu)} \dot{\mu}, \\& \Gamma_{00}^1=\e^{2(\nu-\mu)} \nu^{\prime}, \quad \Gamma_{01}^1=\dot{\mu}, \quad \Gamma_{11}^1=\mu^{\prime}, \quad \Gamma_{22}^1=-r \e^{-2 \mu}, \quad \Gamma_{33}^1=-r \e^{-2 \mu} \sin ^2 \theta, \\
     & \Gamma_{12}^2=\Gamma_{13}^3={1}/{r}, \quad \Gamma_{33}^2=-\sin \theta \cos \theta, \quad \Gamma_{23}^3=\cot \theta.
@@ -1434,26 +1477,28 @@ Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black
 既然曲率在 $r=2M$ 处并不奇异，就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
 $r=0$ 的奇性称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
-考虑到球对称性只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
-于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$。测地线方程为
-\[L=\frac{1}{2}g_{\mu\nu} Z^\mu Z^\nu\implies\dv{\tau}(g_{\mu\nu} Z^\nu)=\frac 12 g_{\alpha\beta,\mu} Z^\alpha Z^\beta.\]
-在 Schwarzschild 系下 $g_{\mu\nu,0}=0$，则 $g_{0\nu} Z^\nu=\text{常数}$。
-或者说因为 $\xi_\mu Z^\mu$ 守恒，取 $t$ 方向 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，而在 Schwarzschild 系下 $\xi_\mu Z^\mu=g_{0\nu} Z^\nu$。
-取 $\nu=0$ 有 $Z^0=\sqrt{1-2M/r_0}/(1-{2M}/{r})$，因为 $r=r_0$ 时 $Z^0=1/\sqrt{1-2M/r_0}$。
+由球对称性，只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
+于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，初态 $Z^\mu(r_0)=(-g_{00}(r_0))^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$。
+
+
+在 Schwarzschild 系下 $g_{\mu\nu,0}=0$，则有沿线守恒量。
+\eq{E := - g_{0\nu} Z^\nu = - g_{00} Z^0 = \left(1-\frac{2M}{r}\right)\dv{t}{\tau} = \sqrt{1-\frac{2M}{r_0}}.}
+或者说因为 $\xi_\mu Z^\mu$ 守恒，取 $t$ 方向 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，在 Schwarzschild 系下 $\xi_\mu Z^\mu=g_{0\nu} Z^\nu=g_{00}Z^0$。
+根据时空对称性，可将其解释为质点单位质量的总能量。
+故 $Z^0(r)=\sqrt{1-2M/r_0}/(1-{2M}/{r})$。
 由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
-以释放点为零点，$\tau$ 可表为 $t$ 或 $r$ 的单元函数。用 $r$ 表示 $\tau$ 可注意沿线有 $\d\tau =\d r/Z^1$。容易发现按 $\frac{r}{r_0}=\frac{1+\cos\eta}{2}=\cos^2 \frac{\eta}{2}$ 积分比较方便，则
+以释放点为零点，$\tau$ 可表为 $t$ 或 $r$ 的单元函数。用 $r$ 表示 $\tau$ 可注意沿线有 $\d\tau =\d r/Z^1$。容易发现按 ${r}/{r_0}=(1+\cos\eta)/{2}=\cos^2 \frac{\eta}{2}$ 积分比较方便，则
 \eq{
     \tau = \int_{r_0}^r \frac{-\d y}{\sqrt{2M/{y}-2M/{r_0}}} = -\sqrt{\frac{r_m^3}{2M}}\frac{\eta+\sin\eta}{2}.
 }
-在 $r=2M$ 时是有限值。在 $r=0$ 时 $\tau=\frac{\pi}{2}\sqrt{\frac{r_0}{2M}}$。然而由 $\d t=Z^0\d\tau=\frac{Z^0}{Z^1}\d r$，则
+在 $r=2M$ 时是有限值。在 $r=0$ 时 $\tau=\frac{\pi}{2}\sqrt{{r_0}/{2M}}$。然而由 $\d t=Z^0\d\tau=\frac{Z^0}{Z^1}\d r$，则
 \begin{align}
     t &= \sqrt{1-\frac{2M}{r_0}}\int_{r_0}^r \frac{{2M}/{y}-1}{\sqrt{2M/{y}-2M/{r_0}}}\d y = 2M \ln \left| 
-\frac{\sqrt{\frac{r_0}{2M}-1} + \tan \frac{\eta}{2}}
-     {\sqrt{\frac{r_0}{2M}-1} - \tan \frac{\eta}{2}}
+\frac{\sqrt{{r_0}/{2M}-1} + \tan \frac{\eta}{2}}
+     {\sqrt{{r_0}/{2M}-1} - \tan \frac{\eta}{2}}
 \right|\nonumber\\
-    & + 2M \sqrt{\frac{r_0}{2M}-1}\left(\eta+\frac{r_0}{4M}(\eta+\sin\eta)\right),
+    & + 2M \sqrt{\frac{r_0}{2M}-1}\left(\eta+\frac{r_0}{4M}(\eta+\sin\eta)\right)\xrightarrow{r\to 2M} \infty,
 \end{align}
-其在 $r=2M$ 发散。
 故在 $\{t,x\}$ 系下任何物质永不落入视界。但请注意，同时的相对性导致“永远”的相对性。
 考虑静止于 $r=r_0$ 的钟，其固有时满足 $\dv*{\tau}{t}={\sqrt{1-2M/r_0}}$。当 $r_0\to 2M$ 时 $\dv*{\tau}{t}\to 0$，说明在 Schwarzschild 系下，钟在视界处的读数 $\tau$ 近乎定格。
 物理意义是，遥远观者需要对钟，然而反射事件越接近视界，光就越难逃离，遥远观者接受光信号的用时就越来越久，对钟过程极为缓慢，从而出现永不落入的现象。

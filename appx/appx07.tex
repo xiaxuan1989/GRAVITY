@@ -19,14 +19,14 @@
 \begin{remark}
     注意 $\omega_{[\mu_1\cdots\mu_l;\sigma]}=\omega_{[\mu_1\cdots\mu_l,\sigma]}$，这说明外微分可用任意无挠联络表为
     \eq{
-        \d\omega=(l+1)\a(\nabla\omega).
+        \d\omega=(l+1)\A(\cd\omega).
     }
     可见外微分定义显然无关于坐标系或无挠联络的选取。
 \end{remark}
 
 \begin{proof}由楔积定义知 $e^{\nu_1}\wedge\cdots\wedge e^{\nu_n}(e_{\mu_1},\cdots,e_{\mu_n})=n!\delta_{\mu_1}^{[\nu_1}\cdots\delta_{\mu_n}^{\nu_n]}$，则
     \begin{align*}
-        \d\omega(\del_{\sigma},\del_{\mu_1},\cdots,\del_{\mu_l})&=\frac{1}{l!}\omega_{\nu_1\cdots\nu_l,\lambda}\d x^\lambda\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}(\del_{\sigma},\del_{\mu_1},\cdots,\del_{\mu_l})\\
+        \d\omega(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})&=\frac{1}{l!}\omega_{\nu_1\cdots\nu_l,\lambda}\d x^\lambda\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})\\
         &=\frac{(l+1)!}{l!} \omega_{[\nu_1\cdots\nu_l,\lambda]} \delta_{\sigma}^{\lambda}\delta_{\mu_1}^{\nu_1}\cdots\delta_{\mu_l}^{\nu_l}=(l+1)\omega_{[\mu_1\cdots\mu_l,\sigma]}.\qedhere
     \end{align*}
 \end{proof}
@@ -60,7 +60,7 @@
     \nabla^2=\d \delta+\delta \d=(\d+\delta)^2.\]
     由此，易从 $\d^2=0$ 证明 $\curl\grad f=\bm 0$和$\div\curl\bm A=0$。
     
-    对高维流形，旋度可直接用形式表述而不必 Hodge 对偶，比如四维矢量场 $V^\mu$ 的旋度就是 $2\nabla_{[\mu} V_{\nu]}$，无挠性使它在任意坐标系等价于 $2\del_{[\mu} V_{\nu]}$；二阶反称张量 $F_{\mu\nu}$ 的旋度则记作 $3\nabla_{[\mu}F_{\nu\lambda]}$。
+    对高维流形，旋度可直接用形式表述而不必 Hodge 对偶，比如四维矢量场 $V^\mu$ 的旋度就是 $2\nabla_{[\mu} V_{\nu]}$，无挠性使它在任意坐标系等价于 $2\p_{[\mu} V_{\nu]}$；二阶反称张量 $F_{\mu\nu}$ 的旋度则记作 $3\nabla_{[\mu}F_{\nu\lambda]}$。
 \end{eg}
 
 \begin{eg}
@@ -70,7 +70,7 @@
 \eq{\d F=0,\quad \delta F=4\pi J.}
 可见 $F$ 是闭形式。
 第二式又可表为 $\mathrm{d}F^*=4\pi{\star J}$，其中 $F^*:={\star}F$ 称为\textbf{对偶电磁张量}。
-某系所测电磁场为 $E=F(\oo,\del_0),B=-F^*(\oo,\del_0)$，因而 $F$ 在该系可表为
+某系所测电磁场为 $E=F(\oo,\p_0),B=-F^*(\oo,\p_0)$，因而 $F$ 在该系可表为
 \begin{align*}F&= E^{1} \mathrm{d} x^{1} \wedge \mathrm{d} x^{0}+E^{2} \mathrm{d} x^{2} \wedge \mathrm{d} x^{0}+E^{3} \mathrm{d} x^{3} \wedge \mathrm{d} x^{0} \\&+ B^{3} \mathrm{d} x^{1} \wedge \mathrm{d} x^{2}+B^{2} \mathrm{d} x^{3} \wedge \mathrm{d} x^{1}+B^{1} \mathrm{d} x^{2} \wedge \mathrm{d} x^{3}.\end{align*}
 由 $\d F=0$，一定存在 $1$-形式 $A$ 满足
 \eq{F=\d A.}
@@ -186,16 +186,16 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
 \begin{eg}[Green]
     设 $A$ 是 $(\R^2,\delta)$ 上的对偶矢量场，$S$ 是单连通开集，则
     \eq{
-    \int_S\left(\pdv{A_2}{x}-\pdv{A_1}{y}\right)\d x\,\d y=\oint_{\partial S} A_1\, \d x+A_2 \,\d y=\oint_{\partial S} A_\l\,\d\l.
+    \int_S\left(\pdv{A_2}{x}-\pdv{A_1}{y}\right)\d x\,\d y=\oint_{\partial S} A_1\, \d x+A_2 \,\d y=\oint_{\partial S} A_\ell\,\d\ell.
     }
 \end{eg}
 \begin{proof}
     置 1-形式 $\omega=A_\mu\mathrm{d} x^\mu$, 则
 \[\mathrm{d} \omega  =\frac{\partial A_\mu}{\partial x^\nu} \mathrm{d} x^\nu \wedge \mathrm{d} x^\mu=\left(\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}\right) \mathrm{d} x \wedge \mathrm{d} y,\]
 第一等式成立。
-选线长 $\l$ 为 $L$ 的局部坐标，把 $\tilde{\omega}$ 用坐标基展为 $\tilde{\omega}=\tilde{\omega}_1(\l)\mathrm{d} \l$, 两边作用于 $\partial / \partial \l$ 得
-$\tilde{\omega}_1(\l)=\tilde{\omega}(\partial / \partial \l)=\omega(\partial / \partial \l)=A(\partial / \partial \l)=A_\l$，
-故 $\tilde{\omega}=A_\l\, \mathrm{d} \l$。
+选线长 $\ell$ 为 $L$ 的局部坐标，把 $\tilde{\omega}$ 用坐标基展为 $\tilde{\omega}=\tilde{\omega}_1(\ell)\mathrm{d} \ell$, 两边作用于 $\partial / \partial \ell$ 得
+$\tilde{\omega}_1(\ell)=\tilde{\omega}(\partial / \partial \ell)=\omega(\partial / \partial \ell)=A(\partial / \partial \ell)=A_\ell$，
+故 $\tilde{\omega}=A_\ell\, \mathrm{d} \ell$。
 \end{proof}
 \begin{remark}
     $\int_{\partial S} \tilde{\omega}$ 的积分域是闭合曲线 $\partial S$，至少要用两个坐标域覆盖，因此应先对每个坐标域做局部积分再“缝合”。幸好可这样：设 $L$ 是 $\partial S$ 挖去一点所得，则它用一个坐标域即可覆盖，但挖去一点不影响 Riemann 积分。
@@ -289,11 +289,11 @@ $\vec n$ 是曲面的正定向法矢场，
 
 即
 \eq{
-    \int_{D} \nabla_\mu X^\mu \d{\Omega}=\int_{\del D} X^\mu \d V_\mu,\quad \d V_\mu=\epsilon_{\mu\nu\sigma\lambda}\d x^\nu\d x^\sigma\d x^\lambda,
+    \int_{D} \nabla_\mu X^\mu \d{\Omega}=\int_{\p D} X^\mu \d V_\mu,\quad \d V_\mu=\epsilon_{\mu\nu\sigma\lambda}\d x^\nu\d x^\sigma\d x^\lambda,
 }
-其中 $\del D$ 表示 $D$ 的边界，$\d V_\mu$ 称为 $\d{\Omega}$ ，或者
+其中 $\p D$ 表示 $D$ 的边界，$\d V_\mu$ 称为 $\d{\Omega}$ ，或者
 \eq{
-    \int_{D} \del_\mu (X^\mu \sqrt{-g})\d[4]{x}=\int_{\del D} (X^\mu \sqrt{-g}) \varepsilon_{\mu\nu\sigma\lambda}\d x^\nu\d x^\sigma\d x^\lambda.
+    \int_{D} \p_\mu (X^\mu \sqrt{-g})\d[4]{x}=\int_{\p D} (X^\mu \sqrt{-g}) \varepsilon_{\mu\nu\sigma\lambda}\d x^\nu\d x^\sigma\d x^\lambda.
 }
 
 
