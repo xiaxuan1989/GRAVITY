@@ -820,7 +820,6 @@ $\omega'_i=\pdv{x^j}{x'^i} \omega_j$ 则对应\textbf{余切矢}(cotangent vecto
 }
 考虑任意坐标系 $\{x\}$。注意 4-速表为 $U^\mu=\pdv{x^\mu}{\xi^\alpha}\tilde U^\alpha=\dv*{x^\mu}{\tau}$
 
-\[\cd_\nu V^\mu = \pdv{\xi^\beta}{x^\nu} \pdv{x^\mu}{\xi^\alpha}\pdv{\xi^\beta}\tilde V^\alpha=\pdv{x^\mu}{\xi^\alpha}\pdv{x^\nu}(\pdv{\xi^\alpha}{x^\sigma}V^\sigma)=\p_\nu V^\mu+V^\sigma\Gamma^\mu_{\sigma\nu}\]
 
 则
 \eq{
@@ -864,10 +863,10 @@ g_{\mu\nu,\lambda}=\Gamma^\rho_{\lambda\mu}g_{\rho\nu}+\Gamma^\rho_{\lambda\nu}g
 最后一步是注意 $g_{\kappa\nu,\mu}\dot x^\mu\dot x^\nu=g_{\kappa(\mu,\nu)}\dot x^\mu\dot x^\nu$。再重参数化即可。
 
 克氏符没有错开指标书写是考虑到一般不会混淆，且它其实是赝张量：
-\begin{align} \Gamma_{\mu \nu}^{\prime \lambda} &= \frac{\p x^{\prime \lambda}}{\p \xi^\alpha} \frac{\p^2 \xi^\alpha}{\p x^{\prime \mu} \p x^{\prime \nu}}=\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\rho}{\p \xi^\alpha} \frac{\p}{\p x^{\prime \mu}}\left(\frac{\p x^\sigma}{\p x^{\prime \nu}} \frac{\p \xi^\alpha}{\p x^\sigma}\right)\nonumber\\ 
-    & =\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\rho}{\p \xi^\alpha}\left(\frac{\p x^\sigma}{\p x^{\prime \nu}} \frac{\p x^\tau}{\p x^{\prime \mu}} \frac{\p^2 \xi^\alpha}{\p x^\tau \p x^\sigma}+\frac{\p^2 x^\sigma}{\p x^{\prime \mu} \p x^{\prime \nu}} \frac{\p \xi^\alpha}{\p x^\sigma}\right)\nonumber\\
+\begin{align*} \Gamma_{\mu \nu}^{\prime \lambda} &= \frac{\p x^{\prime \lambda}}{\p \xi^\alpha} \frac{\p^2 \xi^\alpha}{\p x^{\prime \mu} \p x^{\prime \nu}}=\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\rho}{\p \xi^\alpha} \frac{\p}{\p x^{\prime \mu}}\left(\frac{\p x^\sigma}{\p x^{\prime \nu}} \frac{\p \xi^\alpha}{\p x^\sigma}\right)\\ 
+    & =\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\rho}{\p \xi^\alpha}\left(\frac{\p x^\sigma}{\p x^{\prime \nu}} \frac{\p x^\tau}{\p x^{\prime \mu}} \frac{\p^2 \xi^\alpha}{\p x^\tau \p x^\sigma}+\frac{\p^2 x^\sigma}{\p x^{\prime \mu} \p x^{\prime \nu}} \frac{\p \xi^\alpha}{\p x^\sigma}\right)\\
 &=\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\tau}{\p x^{\prime \mu}} \frac{\p x^\sigma}{\p x^{\prime \nu}} \Gamma_{\tau \sigma}^\rho+\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p^2 x^\rho}{\p x^{\prime \mu} \p x^{\prime \nu}},
-\end{align}
+\end{align*}
 可见多出一项。$\Gamma^{\lambda}_{\mu\nu}$ 是坐标系自身信息。比如，平面上的惯性运动是直线，但是克氏符仍可非零，只要选择复杂的坐标系即可。
 
 \begin{figure}[ht]
@@ -893,7 +892,7 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 这其实也是对一套新理论的基本要求，称为\textbf{Newton 极限}。
 取坐标系使 $U^\mu$ 与时轴 $t^\mu=\pdv*{x^\mu}{t}$ 相切，由归一性知
 \eq{
-    U^\mu=\dv{x^\mu}{\tau}=\frac{t^\mu}{\sqrt{-t_\mu t^\mu}},
+    U^\mu=\frac{t^\mu}{\sqrt{-t_\mu t^\mu}},
 }
 从而一阶意义上 $U^\mu=t^\mu$。在该系中 $\pdv*{x^\mu}{t} = \delta^\mu_0$，则运动方程可写为 $\dv*{U^\mu}{\tau}=-\Gamma_{00}^\mu= \frac 12 g^{\mu\nu} g_{00,\nu}=\frac 12 \eta^{\mu\nu} h_{00,\nu}$，则 $-\p^i\phi=\dv*[2]{x^i}{t}=\frac 12 \delta^{ij} h_{00,j}$，故
 \eq{
@@ -939,82 +938,14 @@ Einstein 曾为此困扰而企图放弃广义协变性，提出\textbf{空穴论
 Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑原理}，即物质间的关系是拓扑性质的，实质上是引力场、物质场、时空都被一齐拖拽，而现实中看来，时空未动而坐标系变动。
 这其实分别就是主动和被动观点。
 
-
-
-
-
-
-
-
-
-\subsection{Lie 导数}
-
-给定一个光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
-\eq{
-    \dv{x^\mu}{\sigma}=V^\mu,
-}
-其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
-
-给定一个
-
-总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
-
-
-沿矢量场 $v^\mu$，我们可以定义
-
-$(k,l)$-张量的 Lie 导数为
-\begin{align*}
-    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
-    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
-    &=\pdv{t}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
-    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
-\end{align*}
-其中注意 $\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{t}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu$。
-
-一些特例：
-$\Lie_\xi f = \xi^\mu\p_\mu f = \pdv*{f}{t}$。
-
-$\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu$。$\Lie_\xi g_{\mu\nu}=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}$
-
-\eq{\Lie_\xi g_{\mu\nu}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)}=0,}
-这称为该度规的\textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为\textbf{Killing 矢量}。
-
-其含义是，若沿 $\xi^\mu$ 进行坐标变换：
-\[\frac{\p \tilde x^{ \rho}}{\p x^\mu}=\delta^\rho_\mu+\epsilon\p_\mu\xi^\rho,\]
-则
-
-存在一类特殊的时空变换
-
-如果仿照等度规变换那样，满足
-\eq{\tilde g_{\mu\nu}(\tilde x)=g_{\mu\nu}(\tilde x)\Longleftrightarrow g_{\mu \nu}(x)=\pdv{\tilde x^{ \rho}}{x^\mu} \pdv{\tilde x^{ \sigma}}{x^\nu} g_{\rho \sigma}(\tilde x),}
-
-能保持 $g'_{kl}=g_{ij}$ 不变的特殊变换称为\textbf{等度规变换}(isometry)。
-
-对任意度规，考虑无穷小变换 $\delta x^\mu=\epsilon\xi^\mu$，则 
-\eq{
-    g_{\mu\nu}(\tilde x)=g_{\mu\nu}(x)+\epsilon\xi^\lambda\p_\lambda g_{\mu\nu}(x),\quad ,
-}
-
-故直观上，Killing 矢量场的流线表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。
-
-点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
-
-
-
-$0=\xi_\nu\p_\mu T^{\mu\nu}+T^{\mu\nu}\p_\mu\xi_\nu=\xi_\nu\p_\mu T^{\mu\nu}+T^{(\mu\nu)}\p_\mu\xi_\nu$
-
-
-
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
-$(k,l)$-张量的协变导数为
+$(k,l)$-张量的协变导数为（注意 $\pdv{\xi^{\beta}}{x^{\nu}}\pdv{x^{\sigma}}{x^\lambda}{\xi^{\beta}}=-\pdv{x^{\sigma}}{\xi^{\beta}}\pdv{\xi^{\beta}}{x^\lambda}{x^{\nu}}=-\Gamma^{\sigma}_{\lambda\nu}$）
 \begin{align*}\label{eq:cov-tens}
     T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}&=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\pdv{\xi^\kappa}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
     &=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{x^\lambda}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}})\\
     &=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
 \end{align*}
-其中注意 $\pdv{\xi^{\beta}}{x^{\nu}}\pdv{x^{\sigma}}{x^\lambda}{\xi^{\beta}}=-\pdv{x^{\sigma}}{\xi^{\beta}}\pdv{\xi^{\beta}}{x^\lambda}{x^{\nu}}=-\Gamma^{\sigma}_{\lambda\nu}$。
-
 记忆技巧：先填上一个偏导，再对所有指标依次添加相应的克氏符修正项（正负取决于指标上下），并满足指标平衡。
 
 可见，首先，就标量 $f$ 而言，梯度 $f_{;\nu}=f_{,\nu}$ 已有广义协变性。逆变矢量的协变导数为 $V^\mu{}_{;\nu}=\cd_\nu V^\mu :={V^\mu}{}_{,\nu}+\Gamma^\mu_{\sigma\nu}V^\sigma$。协变矢量的协变导数为 $\omega_{\mu;\nu}=\omega_{\mu,\nu}-\Gamma^\sigma_{\mu\nu}\omega_\sigma$。
@@ -1024,12 +955,6 @@ $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 相应于 $\dv*{\tau}$ 可按全微分关系表为若干坐标偏导 $\p_\nu$ 的线性组合，对 $\Dv*{\tau}$ 而言亦有\textbf{协变导数} $\cd_\mu$ 的概念\footnote{注意与规范协变导数 $\D_\mu$ 相区分。}。一般只讨论张量的协变导数。比如对逆变矢量 $V^\mu$ 而言有 $\Dv*{U^\mu}{\tau}=\cd_\nu V^\mu {\d x^\nu}/{\d \tau}=U^\nu\cd_\nu V^\mu$，且可有类似的分号简记：
 
 协变导数的优势是无需借助于曲线及其参数，但劣势是某点的 $V^\mu{}_{;\nu}$ 要求 $V^\mu$ 在该点邻域都有定义，而沿线求导只要求曲线上的邻域有定义。
-
-
-
-
-%其次，从局域惯性系的偏导可知，任意协变导数应具有\textbf{Leibniz 法则}，便可从标量、逆变矢量的协变导数及 Leibniz 法则推出一般情形。首先就协变矢量而言，构造标量 $V^\mu\omega_\mu$，则对任意 $V^\mu$ 有 $(V^\mu\omega_\mu)_{;\nu} = (V^\mu\omega_\mu)_{,\nu} $，用 Leibniz 法则拆项并代入矢量协变导数有 $V^\mu \omega_{\mu;\nu}+\omega_{\mu}\Gamma^\mu_{\nu\sigma}V^\sigma=V^\mu(\omega_{\mu;\nu}+\Gamma^\sigma_{\mu\nu}\omega_{\sigma})=V^\mu \omega_{\mu,\nu}$，因此 
-
 
 数学上称满足 $\Dv*{V^\mu}{\tau}=0$ 的 $V^\mu$ 在做\textbf{平行移动}(parallel transport)或\textbf{Levi-Civita 移动}。
 \begin{figure}[ht]\centering
@@ -1083,6 +1008,115 @@ $\d[4]x =\tilde J \d[4]{\xi}$ 的 $\tilde J$ 能用度规行列式表示。记�
 注意，尽管可在局域惯性系中消除引力，但作为物理规律的作用量是不能在局域惯性系中失去耦合性的，$\Lag_G$ 必须是广义不变标量，来源于某种引力张量的缩并。
 这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论。
 然暂不清楚将二阶导数作用于何物，因此要回到物理学。相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。若欲寻求尽可能简单的定义，则该张量场\textit{在一点}就应具备潮汐意义。
+
+\subsection{Lie 导数}
+
+给定一个光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
+\eq{
+    \dv{x^\mu}{\sigma}=V^\mu,
+}
+其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
+
+给定一个
+
+总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
+
+
+沿矢量场 $v^\mu$，我们可以定义
+
+$(k,l)$-张量的 Lie 导数为（注意 $\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{t}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu$）
+\begin{align*}
+    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
+    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
+    &=\pdv{t}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
+    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+\end{align*}
+
+
+一些特例：
+$\Lie_\xi f = \xi^\mu\p_\mu f = \pdv*{f}{t}$。
+
+$\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu$。$\Lie_\xi g_{\mu\nu}=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}$
+
+\eq{\Lie_\xi g_{\mu\nu}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)}=0,}
+这称为该度规的\textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为\textbf{Killing 矢量}。
+
+其含义是，若沿 $\xi^\mu$ 进行坐标变换：
+\[\frac{\p \tilde x^{ \rho}}{\p x^\mu}=\delta^\rho_\mu+\epsilon\p_\mu\xi^\rho,\]
+则称为 $\xi^\mu$ 的单参微分同胚局部
+
+存在一类特殊的时空变换
+
+如果仿照等度规变换那样，满足
+\eq{\tilde g_{\mu\nu}(\tilde x)=g_{\mu\nu}(\tilde x)\Longleftrightarrow g_{\mu \nu}(x)=\pdv{\tilde x^{ \rho}}{x^\mu} \pdv{\tilde x^{ \sigma}}{x^\nu} g_{\rho \sigma}(\tilde x),}
+
+能保持 $g'_{kl}=g_{ij}$ 不变的特殊变换称为\textbf{等度规变换}(isometry)。
+
+对任意度规，考虑无穷小变换 $\delta x^\mu=\epsilon\xi^\mu$，则 
+\eq{
+    g_{\mu\nu}(\tilde x)=g_{\mu\nu}(x)+\epsilon\xi^\lambda\p_\lambda g_{\mu\nu}(x),\quad ,
+}
+
+故直观上，Killing 矢量场的流线表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。
+
+点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
+
+等度量变换所构成的集合称\textbf{等度规群}。
+
+则 Killing 矢量场的各流线可视作第 $\hat x^1$ 坐标线，Killing 方程将化为
+\eq{
+    0=\pdv{\hat g_{\mu\nu}}{\hat x^1}.
+}
+
+
+
+显然 Killing 矢量场的常系数线性组合还是 Killing 矢量场，所以等度规群可对应于全体 Killing 矢量场所构成的线性空间。于是，我们只要找到一组基底即可，即最大的一组线性独立的 Killing 矢量场。可证 $n$ 维空间的独立 Killing 矢量场的总数最多为 $\binom{n+1}{2}=\frac{n(n+1)}2$，细节待。具有这一数目的空间称为\textbf{最大对称空间}。寻找 Killing 矢量场的一般方法是求 Killing 方程的通解，但对于最大对称空间可轻松找到例子，之后验证即可。
+
+除了用 Killing 方程作为 Killing 矢量场的判据，还可以用如下方法。
+
+
+
+假设存在一个坐标系 $\{\hat x\}$ 使处处有
+\eq{
+    \xi=\pdv{\hat x^1}\iff \hat \xi^\mu=\delta^\mu_1,
+}
+
+
+
+实质上，只要找到某个坐标系 $\{\hat x\}$ 使得 $\hat g_{\mu\nu}$ 与某个坐标 $\hat x^1$ 无关，则 $\pdv*{\hat x^1}$ 就是一个 Killing 矢量场。
+
+
+有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\p_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。最简单的情况就是平移，即满足 $\p_\mu\xi_\nu=0$ 的常矢量。独立解只需取各轴的坐标基底场即可：
+\eq{
+    \xi_{1}=\pdv{x},\quad \xi_{2}=\pdv{y}.
+}
+其流线是各坐标轴的一系列平行线。
+凭借在对称性上的直觉，可知第三种将对应旋转，而切换到极坐标有 $\d \l^2=\d r^2+r^2\d\phi^2$，的确与 $\phi$ 无关，因此第三种是
+\eq{
+    \xi_3=\pdv{\phi}=-y\pdv{x}+x\pdv{y}.
+}
+读者亦可用 Killing 方程验证之。由于系数与坐标有关，因此 $\xi_3$ 独立于 $\xi_1,\xi_2$。
+可预料流线 $\gamma(\phi)$ 是原点的同心圆，但下面还是严格求解之：
+\[
+    \dv{x}{\phi}=-y,\quad \dv{y}{\phi}=x.
+\]
+最简单的方法是借助复数。令 $z=x+\i y$，则 $\dv*{z}{\phi}=-y+\i x=\i z$，通解为
+\[
+    z=A\e^{\i(\phi-\phi_0)}\im x=A\cos(\phi-\phi_0),\quad y=A\sin(\phi-\phi_0).
+\]
+假设初值条件是 $p=\gamma(0)$，流线上点记 $q=\gamma(\alpha)$，则
+\[
+    x_q=x_p\cos\alpha-y_p\sin\alpha,\quad y_q=x_p\sin\alpha+y_p\cos\alpha.
+\]
+坐标观点将 $x_q^\mu$ 视作 $p$ 的新坐标 $x'^\mu_p$，因而将上式视为对任意同一点 $p$ 的新旧坐标 $\{x\},\{x'\}$ 之关系。
+
+对于 $\mathbb E^3$，很明显 6 种独立 Killing 矢量场对应3种平移、3种平面旋转。对于 $(\R^2,\eta)$，旋转变换改为伪转动变换，极坐标对应为
+\eq{x=r\cosh\theta,\quad t=r\sinh\theta,}
+这样闵氏度规表为 $\d s^2=-r^2\d\theta^2+\d r^2$，称为 \textbf{Rindler 坐标系}。$\theta$ 正是快度。$\pdv*{\theta}$ 的流线为双曲线族。对于 $\R^{1,3}$，10 种独立 Killing 矢量场对应 4 种平移和 6 种平面旋转，其中平面旋转分为3 种空间旋转、3 种时空伪旋转，进而复合出任意 Poincaré 变换。不过，为了将变换的参数和物理上的速率联系在一起，只需根据 3-速定义证明 $u=\tanh\theta$ 即可。
+
+$0=\xi_\nu\p_\mu T^{\mu\nu}+T^{\mu\nu}\p_\mu\xi_\nu=\xi_\nu\p_\mu T^{\mu\nu}+T^{(\mu\nu)}\p_\mu\xi_\nu$
+
+
 
 \subsection{积分的边界}
 
@@ -1477,7 +1511,7 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 Schwarzschild 解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散（即行列式 $g$ 为零）。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
 
 观测结果建议自由落体\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
-假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
+假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(-g_{00}|_{r_0})^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
 或者，它也可视作等 $r$ 面 $r=r_0$ 的其中一条母线，法余矢为 $n_\mu=\p_\mu r=\delta^1_\mu$。模方为 $n^\mu n_\mu=g^{11}=1-2M/r_0$，可见 $r_0>2M$ 时 $n^\mu$ 类空，$r=r_0$ 类时。但 $r=2M$ 类光。
 这说明光只能在 $r>2M$ 区域自由穿梭，一旦进入 $r<2M$ 便不能逃脱。光至多只能沿 $r=2M$ 传播。观者只可静止于 $r>2M$。
 综上 $r=2M$ 称为\textbf{静界}(static surface)、\textbf{事件视界}(event horizon)或简称\textbf{视界}。
@@ -1492,13 +1526,9 @@ Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black
 $r=0$ 的奇性称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
 
 由球对称性，只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
-于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，初态 $Z^\mu(r_0)=(-g_{00}(r_0))^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$。
-
-
-在 Schwarzschild 系下 $g_{\mu\nu,0}=0$，则有沿线守恒量。
-\eq{E := - g_{0\nu} Z^\nu = - g_{00} Z^0 = \left(1-\frac{2M}{r}\right)\dv{t}{\tau} = \sqrt{1-\frac{2M}{r_0}}.}
-或者说因为 $\xi_\mu Z^\mu$ 守恒，取 $t$ 方向 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，在 Schwarzschild 系下 $\xi_\mu Z^\mu=g_{0\nu} Z^\nu=g_{00}Z^0$。
-根据时空对称性，可将其解释为质点单位质量的总能量。
+于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，初态 $Z^\mu(r_0)=(1-2M/r_0)^{-1/2}\delta^\mu_0$。
+取 $t$ 方向 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，因为 $Z^\mu$ 为测地线，故有单位质量的能量守恒 $E = -\xi_\mu Z^\mu$，在 Schwarzschild 系下有
+\eq{E = - g_{0\nu} Z^\nu = - g_{00} Z^0 = \left(1-\frac{2M}{r}\right)\dv{t}{\tau} = \sqrt{1-\frac{2M}{r_0}}.}
 故 $Z^0(r)=\sqrt{1-2M/r_0}/(1-{2M}/{r})$。
 由模长归一性并取负有 $Z^1=-\sqrt{2M/{r}-2M/{r_0}}$。
 以释放点为零点，$\tau$ 可表为 $t$ 或 $r$ 的单元函数。用 $r$ 表示 $\tau$ 可注意沿线有 $\d\tau =\d r/Z^1$。容易发现按 ${r}/{r_0}=(1+\cos\eta)/{2}=\cos^2 \frac{\eta}{2}$ 积分比较方便，则

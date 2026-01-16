@@ -20,7 +20,7 @@
 
 \subsection{水星进动}
 
-\begin{wrapfigure}{r}{3cm}\centering
+\begin{wrapfigure}{r}{2.9cm}\centering
     \begin{tikzpicture}[scale=.5]
     \draw[domain=0.4*180/pi:21.6*180/pi,samples=300] plot ({cos(\x)/(1-0.5*cos(0.97*(\x-45)))},{sin(\x)/(1-0.5*cos(0.97*(\x-45)))});
     \fill (0,0) circle(3pt);
@@ -33,19 +33,19 @@
 %% Goldstein《经典力学》第 5-8 章。
 
 先研究摄动。
-以太阳为参考，水星所处的外引力场写作
-\[\bm F(r,t)=\bm F_\odot+\bm F_p=-\frac{{G{M_\odot}m}}{r^3}\bm r-Gm\sum_i\frac{M_i(\bm r-\bm R_i)}{|\bm r-\bm R_i|^3},\]
+以太阳为参考，水星所处的外引力场写作（取几何制和单位质量）
+\[\bm F(r,t)=\bm F_\odot+\bm F_p=-\frac{M_\odot}{r^3}\bm r-\sum_i\frac{M_i(\bm r-\bm R_i)}{|\bm r-\bm R_i|^3},\]
 前一项是太阳的贡献，后面是各行星的作用总和。现在研究后者。设 $\bm r,\bm R_i$ 夹角 $\theta_i$，则 $d_i=|\bm r-\bm R_i|=R_i^2(t)+r^2-2R_i(t)r\cos\theta_i(t)$。
 忽略其余行星轨道的离心率之影响，即假定做半径 $\bm R_i$ 的圆周运动。设单个行星角速度为 $\omega_i$，将 $\bm F_p$ 在时域上做 Fourier 展开
 \[
-\bm F_p=- Gm\sum_i \sum_{n\in\Z} {{a_n}(r){\e^{\i n{\omega_i}t}}}\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},\quad a_n=\frac{\omega_i}{2\pi}\int_0^{2\pi/\omega_i}{\frac{{M_i\e^{-\i n\omega_i t}\,\d t}}{{R_i^2 + r^2 - 2R_ir\cos \theta_i}}}.
+\bm F_p=- \sum_i \sum_{n\in\Z} {{a_n}(r){\e^{\i n{\omega_i}t}}}\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},\quad a_n=\frac{\omega_i}{2\pi}\int_0^{2\pi/\omega_i}{\frac{{M_i\e^{-\i n\omega_i t}\,\d t}}{{R_i^2 + r^2 - 2R_ir\cos \theta_i}}}.
 \]
 只保留最低阶的 $n=0$ 并用$\d\theta_i$ 替换$\omega_i\d t$ 就可使引力势同时间无关，得到近似表达
-\eq{\bm F_p(r) = - Gm\sum_i  \int_0^{2\pi } \frac{M_i\,\d\theta/2\pi}{R_i^2 + r^2 - 2{R_i}r\cos \theta  }\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},}
+\eq{\bm F_p(r) = - \sum_i  \int_0^{2\pi } \frac{M_i\,\d\theta/2\pi}{R_i^2 + r^2 - 2{R_i}r\cos \theta  }\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},}
 引入线密度 $\lambda_i=M_i/(2\pi R_i)$，并沿水星初始方向为极轴，在黄道面上建立极坐标系 $(r,\theta)$，便发现上式表明，其余行星对水星的作用相当于 $M_i$ 均匀分布的一个圆环。这符合直觉，毕竟水星的进动极为缓慢，完整进动一周所需时间相较于其它行星周期很长，因此其它行星的作用的确和圆环类似。但对离水星较近的行星（比如金星），二者周期将在同一数量级，因此不便于近似为圆环。可见圆环模型成立条件是 $R_i\gg r$。幸好，除金星外其它行星都离得较远，将金星视作圆环的影响并不致命。问题现在相当于，在太阳引力基础上，计算附加这样一个微扰后行星的进动。
 由圆环对称性，可知作用力与 $\bm r$ 同向，即
 \[
-\bm F_p= Gm\frac{\bm r}{r}\sum_i  \lambda_iR_i\int_0^{2\pi } \frac{\cos\alpha\,\d\theta}{ d_i^2},
+\bm F_p= \frac{\bm r}{r}\sum_i  \lambda_iR_i\int_0^{2\pi } \frac{\cos\alpha\,\d\theta}{ d_i^2},
 \]
 可见其他引力的作用可视作朝外的有心力，我们就可直接讨论分量 $F=F_\odot+F_p$。
 我们希望先计算出 $F_p$ 与 $r$ 的关系，虽无初等表达，但由于该式本身就具条件 $R_i\gg r$，故可近似计算。一个聪明的做法并非按 $r/R_i$ 展开，而是重构模型本身。将 $(r,\theta)$ 平移以使原点与水星重合，记新坐标 $(d,\alpha)$，则 $R_i^2=r^2+d_i^2+2rd_i\cos\alpha$，
@@ -58,7 +58,7 @@
 \end{align*}
 即
 \eq{
-F_p=Gm\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
+F_p=\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
 }
 
 \begin{figure}[t]
@@ -68,20 +68,20 @@ F_p=Gm\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
 \end{figure}
 
 接下来只以初始位置 $(r_0,0)$ 为极轴方向建立极坐标，以研究水星运动。有心力的形式为
-$m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导致角动量守恒，记 $mr^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得 Binet 式
+$\ddot r-\dot\theta^2r=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导致角动量守恒，记 $r^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得 Binet 式
 \eq{
-\dv[2]{\mu}{\theta}+\mu=-\frac{mF}{L^2\mu^2}=J(\mu),\quad \mu=1/r.
+\dv[2]{\mu}{\theta}+\mu=-\frac{F}{L^2\mu^2}=J(\mu),\quad \mu=1/r.
 }
-默认加入微扰前是圆轨道模型，则 $\dv*{\mu}{\theta}=0,F_0=-{L^2}/{(mr_0^3)}$，从而 $\mu_0=J(\mu_0)$。
+默认加入微扰前是圆轨道模型，则 $\dv*{\mu}{\theta}=0,F_0=-{L^2}/{r_0^3}$，从而 $\mu_0=J(\mu_0)$。
 然而圆轨道闭合而不一定稳定。稳定即是说，物体运动受到微扰后依然束缚在圆轨道附近。下面寻找稳定条件。在 $\mu_0$ 附近展开 $J(\mu)$，记 $x=\mu-\mu_0$，只保留至一阶可得波动方程
 \[
 \dv[2]{x}{\theta}+\left(1-\eval{\dv{J}{x}}_{0}\right)x=0.
 \]
 如果括号为负，$x$ 将随 $\theta$ 指数增长或衰减，显然不再稳定。因此稳定要求括号为正，则 $x$ 将随 $\theta$ 作周期振荡。代入 $J(\mu)$ 定义得
-\[\eval{\dv{J}{x}}_{0}=\eval{\dv{\mu}}_{\mu_0}\left(- \frac{mF}{L^2\mu^2} \right)= \frac{2m}{L^2\mu_0^3}F_0 - \frac{m}{L^2\mu_0^2} \eval{\dv{F}{\mu}}_{\mu_0} = -2 - \frac{r_0}{F_0} F'(r_0).\]
+\[\eval{\dv{J}{x}}_{0}=\eval{\dv{\mu}}_{\mu_0}\left(- \frac{F}{L^2\mu^2} \right)= \frac{2F_0}{L^2\mu_0^3} - \frac{1}{L^2\mu_0^2} \eval{\dv{F}{\mu}}_{\mu_0} = -2 - \frac{r_0}{F_0} F'(r_0).\]
 这里撇号表示对 $r$ 求导。则稳定轨道要求有心力的形式满足
 \eq{
-1-\eval{\dv{J}{x}}_{0}=3+\frac{r_0}{F_0} F'(r_0)>0,\quad r_0F_p'(r_0)=Gm\pi r_0 \sum_{i} \lambda_i\frac{R_i^2+r_0^2}{(R_i^2-r_0^2)^2}.
+1-\eval{\dv{J}{x}}_{0}=3+\frac{r_0}{F_0} F'(r_0)>0,\quad r_0F_p'(r_0)=\pi r_0 \sum_{i} \lambda_i\frac{R_i^2+r_0^2}{(R_i^2-r_0^2)^2}.
 }
 在波动方程中，这个括号的含义是频率平方，注意其中是对 $\theta$ 求导而非 $t$，故应是
 \eq{
@@ -89,7 +89,7 @@ $m(\ddot r-\dot\theta^2r)=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式�
 }
 其中代入了\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。} $F=F_{\odot}+F_p$。$\Delta\theta$ 的含义就是一次微扰振荡周期
 \[
-T_r=\frac{\Delta\theta}{\dot\theta}=\frac{\Delta\theta mr_0^2}{L}=\Delta\theta\sqrt{-\frac{F_0}{mr_0}}
+T_r=\frac{\Delta\theta}{\dot\theta}=\frac{\Delta\theta r_0^2}{L}=\Delta\theta\sqrt{-\frac{F_0}{r_0}}
 \]
 所扫过的角度。可见只有 $F_\odot$ 时使 $\Delta\theta=2\pi$，相当于又回到原位而无进动。而一旦错开，一次周期内就出现了进动。进动率为 $\omega=(\Delta\theta-2\pi)/T$，
 式中 $T$ 为水星公转周期，一般取恒星年(sidereal year)\footnote{某行星的恒星年是太阳在黄道上的视位置相对遥远恒星变化一周所经历时间，也相当于该行星相对于遥远恒星公转一周所经历的时间。千禧年时地球恒星年的平均长度为 365.25636 天。回归年(tropical year)是太阳的平黄经变化一周所经历时间。由于太阳视运动非均匀，选取不同的起点会得到不同的长度。若选取春分点作为基准，太阳从春分点出发运行一周再次回到春分点的时间为春分点年。千禧年时回归年的平均长度为 365.24219 天。恒星年比回归年要长 20 分 24.5 秒，这个差异正是地球造成的岁差。}，或甚至是 $T_r$，再不济用 Kepler 第二定律计算亦可。
@@ -123,11 +123,8 @@ $\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\omega\approx{\pi(1
 
 再考虑广义相对论效应。为此我们要讨论在球对称度规中的测地线。给定初始条件 $(p,Z^\mu)$。易知，总能找到\footnote{设 $p$ 任意位置。先将极点平移至 $p$，此时 $\theta=0$。由于稳态观者一定不是测地线，所以 $Z^i\ne 0$。若 $Z^i$ 垂直于球面，则一定有 $\dv{\theta}{\tau}=0$。否则可绕极轴旋转（经度平移）使本初子午线与 $Z^i$ 的球面投影相切，从而 $\dv{\theta}{\tau}=0$。再将本初子午线（绕经纬度原点）旋转为赤道使得 $\theta=\pi/2$。}球坐标系使 $p$ 处 $\theta=\pi/2$ 且 $\dv{\theta}{\tau}=0$。$x^\lambda = \theta$ 的测地线方程为 $\ddot\theta+\frac{2}{r}\dot r\dot\theta-\sin\theta\cos\theta\dot\phi^2=0$（这里求导是对任意参数），可见 $\theta\equiv\pi/2$ 满足该方程和初始条件，由解的唯一性知质点运动的 $\theta$ 恒定。
 
-Killing 矢量 $\pdv{x^\mu}{t}$ 给出了守恒量 $E = \left(1-\frac{2M}{r}\right)\dv{t}{\tau}$。
-
-
-
-$\pdv{x^\mu}{\phi}$ 也是 Killing 矢量，守恒量 $\xi_\mu Z^\mu$ 给出
+Killing 矢量 $\pdv*{x^\mu}{t}$ 给出了（单位质量）能量守恒 $E = \left(1-\frac{2M}{r}\right)\dv{t}{\tau}$。
+$\pdv*{x^\mu}{\phi}$ 也是 Killing 矢量，给出了赤道平面的（单位质量）角动量守恒
 \eq{
     L = \pdv{x^\mu}{\phi} Z_\mu = r^2 \dv{\phi}{\tau}.
 }
