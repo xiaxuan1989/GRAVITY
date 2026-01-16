@@ -901,6 +901,13 @@ Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未�
 }
 其中规定 $h_{\mu\nu},\phi$ 在无穷远处均衰减至零。
 
+注意，并不推荐直接从度规计算克氏符，因为有办法跳过零分量的计算。基本思想是，注意到 $g_{\mu\nu}\d x^\mu\d x^\nu$ 展开后自动省略零分量，因而直接读取非零分量。类似地，由于无挠性，也可给克氏符补上微元为
+$\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(\d g_{\sigma\mu}\,\d x^\mu- \frac{1}{2} \p_\sigma(\d s^2)\right)$，
+遍历 $\lambda$ 四个坐标即可，并注意对角矩阵的逆直接元素取倒数。亦或者，注意这与测地线方程相似，而我们已有度规 $\d s^2$，实际可直接对 $L\propto g_{\mu\nu} U^\mu U^\nu$ 计算 E-L 方程，从而读出克氏符。若只关心测地线而欲跳过克氏符，可以通过直接变分或改写测地线方程得
+\[g_{\mu\nu}\dv{U^\nu}{\tau}+\frac 12\left(2g_{\mu\beta,\alpha}-g_{\alpha\beta,\mu}\right)U^\alpha U^\beta = \dv{\tau}(g_{\mu\nu} U^\nu)-\frac 12 g_{\alpha\beta,\mu} U^\alpha U^\beta =0,\]
+这实际上对应 $L=\frac{1}{2}g_{\mu\nu} U^\mu U^\nu$ 的变分结果。后者即 $\dv*{P_\mu}{\tau}=\frac 12 m g_{\alpha\beta,\mu} U^\alpha U^\beta$。
+
+若存在 $\{x'\}$ 使 $x'^0=t$ 有 $\pdv{g'_{\alpha\beta}}{t}=0$，那么该系的 $P'_{0}$ 将沿线守恒，准确的标量写法为 $P'_{0}=P'_\mu\delta^\mu_0=P_\mu\pdv{x^\mu}{t}$。
 
 \subsection{引力场作为规范理论}
 
@@ -937,14 +944,44 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 
 
 
-注意，并不推荐直接从度规计算克氏符，因为有办法跳过零分量的计算。基本思想是，注意到 $g_{\mu\nu}\d x^\mu\d x^\nu$ 展开后自动省略零分量，因而直接读取非零分量。类似地，由于无挠性，也可给克氏符补上微元为
-$\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(\d g_{\sigma\mu}\,\d x^\mu- \frac{1}{2} \p_\sigma(\d s^2)\right)$，
-遍历 $\lambda$ 四个坐标即可，并注意对角矩阵的逆直接元素取倒数。亦或者，注意这与测地线方程相似，而我们已有度规 $\d s^2$，实际可直接对 $L\propto g_{\mu\nu} U^\mu U^\nu$ 计算 E-L 方程，从而读出克氏符。若只关心测地线而欲跳过克氏符，可以通过直接变分或改写测地线方程得
-\[g_{\mu\nu}\dv{U^\nu}{\tau}+\frac 12\left(2g_{\mu\beta,\alpha}-g_{\alpha\beta,\mu}\right)U^\alpha U^\beta = \dv{\tau}(g_{\mu\nu} U^\nu)-\frac 12 g_{\alpha\beta,\mu} U^\alpha U^\beta =0,\]
-这实际上对应 $L=\frac{1}{2}g_{\mu\nu} U^\mu U^\nu$ 的变分结果。后者即 $\dv*{P_\mu}{\tau}=\frac 12 m g_{\alpha\beta,\mu} U^\alpha U^\beta$。
+
 
 
 \subsection{Lie 导数}
+
+给定一个光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
+\eq{
+    \dv{x^\mu}{\sigma}=V^\mu,
+}
+其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
+
+给定一个
+
+总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
+
+
+沿矢量场 $v^\mu$，我们可以定义
+
+$(k,l)$-张量的 Lie 导数为
+\begin{align*}
+    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
+    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
+    &=\pdv{t}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
+    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+\end{align*}
+其中注意 $\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{t}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu$。
+
+一些特例：
+$\Lie_\xi f = \xi^\mu\p_\mu f = \pdv*{f}{t}$。
+
+$\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu$。$\Lie_\xi g_{\mu\nu}=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}$
+
+\eq{\Lie_\xi g_{\mu\nu}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)}=0,}
+这称为该度规的\textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为\textbf{Killing 矢量}。
+
+其含义是，若沿 $\xi^\mu$ 进行坐标变换：
+\[\frac{\p \tilde x^{ \rho}}{\p x^\mu}=\delta^\rho_\mu+\epsilon\p_\mu\xi^\rho,\]
+则
 
 存在一类特殊的时空变换
 
@@ -955,67 +992,44 @@ $\Gamma^\lambda:=\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu=g^{\sigma\lambda}\left(
 
 对任意度规，考虑无穷小变换 $\delta x^\mu=\epsilon\xi^\mu$，则 
 \eq{
-    g_{\mu\nu}(\tilde x)=g_{\mu\nu}(x)+\epsilon\xi^\lambda\p_\lambda g_{\mu\nu}(x),\quad \frac{\p \tilde x^{ \rho}}{\p x^\mu}=\delta^\rho_\mu+\epsilon\p_\mu\xi^\rho,
+    g_{\mu\nu}(\tilde x)=g_{\mu\nu}(x)+\epsilon\xi^\lambda\p_\lambda g_{\mu\nu}(x),\quad ,
 }
 
-保留至一阶（即取 $\epsilon\to 0$）：
-\eq{0=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)},}
-这称为该度规的 \textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为。
+故直观上，Killing 矢量场的流线表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。
 
 点变换观点总可转述为坐标变换观点，故实际上对等度规变换的寻找可转化为对 Killing 矢量场的寻找。
+
+
 
 $0=\xi_\nu\p_\mu T^{\mu\nu}+T^{\mu\nu}\p_\mu\xi_\nu=\xi_\nu\p_\mu T^{\mu\nu}+T^{(\mu\nu)}\p_\mu\xi_\nu$
 
 
-Lie 导数为
-\eq{
-    \Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu.
-}
-
-
-
-若存在 $\{x'\}$ 使 $x'^0=t$ 有 $\pdv{g'_{\alpha\beta}}{t}=0$，那么该系的 $P'_{a}$ 将沿线守恒。
-
-假设
-
-
-给定一个
-
-总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
-
-
-沿矢量场 $v^\mu$，我们可以定义
-
-准确的标量写法为 $P'_{a}=P'_\mu\delta^\mu_a=P_\mu\pdv{x^\mu}{a}$。并且
-\[
-    \pdv{x'^\alpha}{x^\mu}\pdv{x'^\beta}{x^\nu}\pdv{g'_{\alpha\beta}}{t} = \pdv{x'^\alpha}{x^\mu}\pdv{x'^\beta}{x^\nu} \pdv{t}(g_{\rho\sigma}\pdv{x^{\rho}}{x'^\alpha} \pdv{x^{ \sigma}}{x'^\beta}).
-\]
-
-
-
-
-\[g_{\rho\nu}\pdv{x^\mu}\pdv{x^{\rho}}{a}\]
-
-\[\pdv{x^\lambda}{a} \p_\lambda g_{\mu\nu}+\pdv{x^\mu}\pdv{x^\rho}{a} g_{\rho \nu}+\pdv{x^\nu}\pdv{x^\sigma}{a} g_{\mu\sigma}\]
-
-这就是\textbf{Killing 矢量}。
-
 
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
+$(k,l)$-张量的协变导数为
+\begin{align*}\label{eq:cov-tens}
+    T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}&=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\pdv{\xi^\kappa}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
+    &=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{x^\lambda}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}})\\
+    &=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+\end{align*}
+其中注意 $\pdv{\xi^{\beta}}{x^{\nu}}\pdv{x^{\sigma}}{x^\lambda}{\xi^{\beta}}=-\pdv{x^{\sigma}}{\xi^{\beta}}\pdv{\xi^{\beta}}{x^\lambda}{x^{\nu}}=-\Gamma^{\sigma}_{\lambda\nu}$。
+
+记忆技巧：先填上一个偏导，再对所有指标依次添加相应的克氏符修正项（正负取决于指标上下），并满足指标平衡。
+
+可见，首先，就标量 $f$ 而言，梯度 $f_{;\nu}=f_{,\nu}$ 已有广义协变性。逆变矢量的协变导数为 $V^\mu{}_{;\nu}=\cd_\nu V^\mu :={V^\mu}{}_{,\nu}+\Gamma^\mu_{\sigma\nu}V^\sigma$。协变矢量的协变导数为 $\omega_{\mu;\nu}=\omega_{\mu,\nu}-\Gamma^\sigma_{\mu\nu}\omega_\sigma$。
+
 可以看到 $\dv*{U^\lambda}{\tau}$ 或偏导数只有 Lorentz 协变性而无广义协变性。我们将 4-加速理解为对 4-速求一种保持张量协变性的导数，这种导数只在局域惯性系中才还原为 ${\d\tilde U^\alpha}/{\d\tau}$。不妨记 $\Dv*{\tau}$，即 $A^\lambda=\Dv*{U^\lambda}{\tau}=\dv*{U^\lambda}{\tau}+\Gamma^\lambda_{\mu\nu}U^\mu U^\nu$。
 $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{共变}。$\Dv*{\tau}$ 称为\textbf{沿线协变导数}。换言之 $\Dv*{\tau}$ 总保持其作用对象的广义协变性，而只在局域惯性系中还原回 $\dv*{\tau}$。
-相应于 $\dv*{\tau}$ 可按全微分关系表为若干坐标偏导 $\p_\nu$ 的线性组合，对 $\Dv*{\tau}$ 而言亦有\textbf{协变导数} $\cd_\mu$ 的概念\footnote{注意与规范协变导数 $\D_\mu$ 相区分。}。一般只讨论张量的协变导数。比如对逆变矢量 $V^\mu$ 而言有 $\Dv*{U^\mu}{\tau}=\cd_\nu V^\mu {\d x^\nu}/{\d \tau}=U^\nu\cd_\nu V^\mu$，且可有类似的分号简记：$V^\mu{}_{;\nu}=\cd_\nu V^\mu :={V^\mu}{}_{,\nu}+\Gamma^\mu_{\sigma\nu}V^\sigma$。常把多出的克氏符项称为对偏导数的“协变性修正”。
+相应于 $\dv*{\tau}$ 可按全微分关系表为若干坐标偏导 $\p_\nu$ 的线性组合，对 $\Dv*{\tau}$ 而言亦有\textbf{协变导数} $\cd_\mu$ 的概念\footnote{注意与规范协变导数 $\D_\mu$ 相区分。}。一般只讨论张量的协变导数。比如对逆变矢量 $V^\mu$ 而言有 $\Dv*{U^\mu}{\tau}=\cd_\nu V^\mu {\d x^\nu}/{\d \tau}=U^\nu\cd_\nu V^\mu$，且可有类似的分号简记：
+
 协变导数的优势是无需借助于曲线及其参数，但劣势是某点的 $V^\mu{}_{;\nu}$ 要求 $V^\mu$ 在该点邻域都有定义，而沿线求导只要求曲线上的邻域有定义。
 
-其它张量的协变导数仍可从局域惯性系出发，按张量变换律推出，但更简单地关注如下事实：首先，就标量 $f$ 而言，由全微分或链式法则可知，偏导（梯度）已有广义协变性，故 $f_{;\nu}=f_{,\nu}$。
-其次，从局域惯性系的偏导可知，任意协变导数应具有\textbf{Leibniz 法则}，便可从标量、逆变矢量的协变导数及 Leibniz 法则推出一般情形。首先就协变矢量而言，构造标量 $V^\mu\omega_\mu$，则对任意 $V^\mu$ 有 $(V^\mu\omega_\mu)_{;\nu} = (V^\mu\omega_\mu)_{,\nu} $，用 Leibniz 法则拆项并代入矢量协变导数有 $V^\mu \omega_{\mu;\nu}+\omega_{\mu}\Gamma^\mu_{\nu\sigma}V^\sigma=V^\mu(\omega_{\mu;\nu}+\Gamma^\sigma_{\mu\nu}\omega_{\sigma})=V^\mu \omega_{\mu,\nu}$，因此 $\omega_{\mu;\nu}=\omega_{\mu,\nu}-\Gamma^\sigma_{\mu\nu}\omega_\sigma$。
-按此方法可得 $(k,l)$-张量的协变导数为
-\eq{\label{eq:cov-tens}
-     T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=
-      T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
-}
-记忆技巧：先填上一个偏导，再对所有指标依次添加相应的克氏符修正项（正负取决于指标上下），并满足指标平衡。
+
+
+
+%其次，从局域惯性系的偏导可知，任意协变导数应具有\textbf{Leibniz 法则}，便可从标量、逆变矢量的协变导数及 Leibniz 法则推出一般情形。首先就协变矢量而言，构造标量 $V^\mu\omega_\mu$，则对任意 $V^\mu$ 有 $(V^\mu\omega_\mu)_{;\nu} = (V^\mu\omega_\mu)_{,\nu} $，用 Leibniz 法则拆项并代入矢量协变导数有 $V^\mu \omega_{\mu;\nu}+\omega_{\mu}\Gamma^\mu_{\nu\sigma}V^\sigma=V^\mu(\omega_{\mu;\nu}+\Gamma^\sigma_{\mu\nu}\omega_{\sigma})=V^\mu \omega_{\mu,\nu}$，因此 
+
 
 数学上称满足 $\Dv*{V^\mu}{\tau}=0$ 的 $V^\mu$ 在做\textbf{平行移动}(parallel transport)或\textbf{Levi-Civita 移动}。
 \begin{figure}[ht]\centering

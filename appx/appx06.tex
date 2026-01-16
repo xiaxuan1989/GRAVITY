@@ -36,11 +36,7 @@
 
 
 反之是否成立？可以证明，
-给定一个光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
-\eq{
-    \dv{x^\mu}{\sigma}=V^\mu,
-}
-其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
+
 
 看来 $\forall \sigma\in\R$ 可借用 $V^\mu$ 的积分曲线定义微分同胚 $\phi_\sigma:M\to M$：设过 $p$ 的积分曲线为 $C_p$（且 $C_p(0)=p$），规定 $\phi_\sigma(p):=C_p(\sigma)$，于是似乎得到了单参微分同胚群。然而存在极端情形，某条积分曲线在参数取某些值时像点不存在，比如可人为挖去背景的某些区域，因此只能说 $V^\mu$ 局部地给出单参微分同胚群。准确地，只要 $p\in M$ 存在，总可找到其开邻域 $U\subset M$，使得 $U,\phi_t[U]$ 同胚且满足$\phi_t\phi_s=\phi_{t+s}$，其中参数范围为零的某开邻域 $I\subset\R$。这样我们就把 $\{\phi_t|t\in I\}$ 称为 $p$ 的\textbf{单参微分同胚局部群}。
 
@@ -68,11 +64,10 @@
 
 则 Killing 矢量场的各流线可视作第 $\hat x^1$ 坐标线，Killing 方程将化为
 \eq{
-    0=\delta^\lambda_1  \hat g_{\mu\nu,\lambda}+\hat g_{\rho \nu}\hat\del_\mu \delta^\rho
-_1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^1}.
+    0=\pdv{\hat g_{\mu\nu}}{\hat x^1}.
 }
 
-故直观上，Killing 矢量场的流线表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。
+
 
 
 
@@ -94,7 +89,7 @@ _1 +\hat g_{\mu\sigma}\hat\del_\nu\delta^\sigma_1 =\pdv{\hat g_{\mu\nu}}{\hat x^
 实质上，只要找到某个坐标系 $\{\hat x\}$ 使得 $\hat g_{\mu\nu}$ 与某个坐标 $\hat x^1$ 无关，则 $\pdv*{\hat x^1}$ 就是一个 Killing 矢量场。
 
 
-有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\del_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。最简单的情况就是平移，即满足 $\del_\mu\xi_\nu=0$ 的常矢量。独立解只需取各轴的坐标基底场即可：
+有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\p_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。最简单的情况就是平移，即满足 $\p_\mu\xi_\nu=0$ 的常矢量。独立解只需取各轴的坐标基底场即可：
 \eq{
     \xi_{1}=\pdv{x},\quad \xi_{2}=\pdv{y}.
 }
