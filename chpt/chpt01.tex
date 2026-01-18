@@ -167,7 +167,7 @@ $L$ 不显含的量称为\textbf{循环坐标}。由上式可知不显含 $q,t$ 
 任取某条惯性观者线 $G$，规定为坐标原点。设相对静止的另一惯性观者 $G'$；实验上若任意时刻测距均相同，就认为二者相对静止。二者可同属一个惯性参考系。
 $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$），最后 $G$ 在某时刻接受该光（事件 $C$）。取 $A,C$ 的中间事件 $D$；实验上由标准钟测量。只需约定 $B,D$ 同时。
 按此规定，惯性参考系的固有系称为\textbf{惯性坐标系}或\textbf{Lorentz 系}。不必认真区分时可笼统称为\textbf{惯性系}(inertial frame)。\ref{sec:inertial} 节再讨论惯性系的存在性。
-总之，单程光速是约定的，不可实验测量（除非找到非光对钟法）；我们可以测量的是双程光速，且用平均逼近瞬时。
+总之，单程光速是约定的，不可实验测量（除非找到非光对钟法）；可测的是双程光速，且用平均逼近瞬时。
 
 \begin{figure}[t]
     \centering
@@ -196,40 +196,38 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 由光速不变知 $2\sqrt{L^2+\Delta\ell^2/4}=\Delta t$，则 $\Delta\tau^2=\Delta t^2-\Delta\ell^2$，或者 $\Delta t=\gamma\Delta\tau$，其中 $\gamma:=1/\sqrt{1-u^2}\geqslant 1$ 是\textbf{Lorentz 因子}。可见 $\Delta t\geqslant\Delta\tau$，在观者看来，运动的时钟走时慢，这种现象称为\textbf{钟慢效应}或\textbf{时间膨胀}。这种效应是对称的，每个观者都认为其它的相对运动的时钟走时慢。
 比如，宇宙射线含有介子，但其寿命非常短，即使以光速运动，穿透大气层所需时间也通常是寿命的几十倍。按理来说它不可能到达地面，但钟慢效应使其保持年轻，寿命“延长”，故仍可到达。
 
-定义两事件的\textbf{间隔}（平方）为
+取 $({\eta}_{\mu\nu}):=\diag(-1,1,1,1)$。迹 $\tr(\eta_{\mu\nu})=2$ 称\textbf{号差}(signature)。定义事件的\textbf{间隔}为
 \eq{
-    \Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2,\quad ({\eta}_{\mu\nu}):=\diag(-1,1,1,1).
+    \Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2.
 }
-迹 $\tr(\eta_{\mu\nu})=2$ 称为\textbf{号差}(signature)。按 $\Delta s^2$ 为正、负或零，可分别称为\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
+按 $\Delta s^2$ 为正、负或零，可分别称\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
 根据相对性原理，类时间隔在任二惯性系 $\{x\},\{x'\}$ 下保持不变性：$\Delta s^2=-\Delta\tau^2=\Delta s'^2$。
 对类光间隔，注意光速不变与 $\Delta s^2=0=\Delta s'^2$ 等价，仍成立。
 考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
 外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。这种现象称为\textbf{尺缩效应}或\textbf{长度收缩}。
-蟹状星云和半人马星座 $\alpha$ 星之间的距离是相对的，不必诧异。
-进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$，成立。
+进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$ 成立。
 
 \begin{figure}[!h]
     \centering
         \subfloat[\centering 双曲线校准]{
-        \includegraphics[height=.37\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
+        \includegraphics[height=.4\textwidth]{fig/chpt01/HYPERBOLOIDS.pdf}
         }
         \quad
         \subfloat[\centering 钟慢效应]{
-        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
+        \includegraphics[height=.4\textwidth]{fig/chpt01/INVARIANT HYPERBOLOIDS.pdf}
         }\\
         \subfloat[\centering 尺缩效应：在 $S'$ 中静止]{
-        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT 2.pdf}
+        \includegraphics[height=.4\textwidth]{fig/chpt01/INVARIANT 2.pdf}
         }
         \quad
         \subfloat[\centering 尺缩效应：在 $S$ 中静止]{
-        \includegraphics[height=.37\textwidth]{fig/chpt01/INVARIANT 1.pdf}
+        \includegraphics[height=.4\textwidth]{fig/chpt01/INVARIANT 1.pdf}
         }
     \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
     例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
 \end{figure}
 
-若间隔类光或类时，则（未来朝向一致的）各惯性系将一致认同两个事件的先后顺序。但对于类空间隔，其事件的坐标时差距可以在不同惯性系下取任意实数。不同观者对其先后次序各抒己见。我们称类空间隔的事件没有\textbf{因果联系}。
-可见并非所有事件都能涉及因果。
+若间隔类光或类时，则（未来朝向一致的）各惯性系将一致认同两个事件的先后顺序。但对类空间隔，其坐标时差距可在不同惯性系下取任意实数。不同观者对其先后次序各抒己见，故称类空间隔的事件没有\textbf{因果联系}。可见并非所有事件都能涉及因果。
 
 \begin{figure}[t]
   \centering
@@ -327,7 +325,7 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
 类时或类光线统称\textbf{因果线}(causal curve)，能用因果线连接的事件正是具有因果联系的事件。故因果现在可解释为信息以粒子为载体的传递。显然，粒子能依次经历的事件便存在着因果顺序。
 
 观察 \eqref{eq:Lorentz}，$\Lambda^{\mu}{}_{\sigma}$ 形同正交矩阵。回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\iff (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
-其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\ell$ 不变。
+其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从正交右手归一系 $\{x\}$ 出发，只要坐标变换是保定向的，即 Jacobi 行列式满足 $J=\det(\pdv*{x'^i}{x^k})>0$，则称新系 $\{x'\}$ 也是右手系。对上式取行列式有  $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持 $\d\ell$ 不变。
 
 同理，我们要扩大对正交矩阵的直觉，考虑 $(\eta_{\mu\nu})$ 这种带负号的单位阵。以后，凡满足 $|\Lambda|^2=1$ 的矩阵 $\Lambda$ 都称正交矩阵。$\Lambda$ 也代表转动，但无非是比空间转动还多出了时空伪转动。取 \eqref{eq:Lorentz} 式 $\sigma=\lambda=0$ 就有
 \eq{
@@ -377,7 +375,6 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
     \textbf{Lorentz 不变性}\quad 作用量是在 Lorentz 系的 Poincaré 变换下不变的标量。
 \end{quote}
 这个标量可以包含与物质状态无关的标量常数，如 $c=1,\pi/2$ 和 $\hbar$。
-
 考虑一个自由质点。其位形空间就是时空，世界线是路径，参数可取坐标时或线长参数。
 构建相对性理论的关键在于使用 Lorentz 不变的 $S$ 来获得运动方程。
 我们能找的只有 $\d s,m,c=1$。由于曲线至少初始是类时的，故取 $S\propto m\int \sqrt{-\d s^2}$。注意速率 $u=\sqrt{\delta_{ij}\dot{x}^i \dot{x}^j}\ll 1$ 时
@@ -413,15 +410,15 @@ $\ddot{x}^i$ 称为\textbf{坐标 3-加速}。
 模方为 $A^\mu A_\mu=\gamma^4 \ddot{x}^i\ddot{x}_i+\gamma^6(\dot{x}^i \ddot{x}_i)^2$。
 固有系中 $\dot{x}^i=0$，故 4-加速等于固有系 3-加速。
 
-我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑图 \ref{fig:twin} 的三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
-著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。因为惯性观者经历的固有时更多。也可理解为，折线的同时面会发生突变，因此惯性观者多出了图 \ref{fig:twin} 阴影部分的时间差。
-
 \begin{wrapfigure}{r}{.35\textwidth}
     \centering
     \includegraphics[width=.35\textwidth]{fig/chpt01/TWIN PARADOX.pdf}
     \caption{孪生佯谬}
     \label{fig:twin}
 \end{wrapfigure}
+
+我们知道两点间直线最短，但由于 $\d s^2=-\d\tau^2$，故时空直线是使固有时最大而非最小，即长程线\footnote{对于分段光滑情形，显然总能转化为分段直线情形，故只需考虑图 \ref{fig:twin} 的三角情形，而显然斜线的固有时短于竖线，故结论仍成立。曲线性质更差的情形见第 \ref{chpt:causal} 章。}。
+著名的\textbf{孪生佯谬}(twin paradox)就是说，设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者。因为惯性观者经历的固有时更多。也可理解为，折线的同时面会发生突变，因此惯性观者多出了图 \ref{fig:twin} 阴影部分的时间差。
 
 由时空对称性，$P^i=\gamma m \dot{x}^i,E=P^0=P_i \dot{x}^i-L=\gamma m$ 分别解释为\textbf{3-动量}和\textbf{能量}。
 将 $\gamma$ 按二项式定理展开 $P^i=E \dot{x}^i=\left(m+\frac{1}{2} mu^{2}+\cdots\right)\dot{x}^i$。
@@ -436,25 +433,19 @@ $F^\mu:=\dv*{P^\mu}{\tau}=\gamma \dot P^\mu$ 称\textbf{4-力}，$\dot{P}^i$ 即
 $\dot m=0$ 时 $F^\mu=m A^\mu$ 且功能关系 $\dot{P}^i \dot{x}_i=\dot{E}$ 得到保留。
 质点线不能从类时光滑演变为类光，换言之，不可能在任意有限过程下达到类光，因为达到光速所需的力或能量无穷大，不被目前的物理规律允许。质点必走类时线，从而亚光速。此即\textbf{相对论限制}。故通常不考虑切矢模方符号变化的世界线。
 
-
+%%
 
 单质点走类时线
 
 \textbf{光子}(photon)
 
-
-
 （静）质量特指粒子在相对静系所测质量，而基准信号不存在相对静系，故基准信号没有甚至不可定义质量，属于\textbf{无质粒子}。
 
 默认存在不变速度导致的遗憾是：有限能量下，有质粒子不能加速至这种速度。
 
+\subsection{Lorentz 张量}
 
-
-
-
-
-
-\subsection{Lorentz 协变性}
+%%
 
 物理学用矩阵书写物理量的分量表示，如标量、矢量；Cauchy 研究弹性力学时还意识到，一点处质元与质元的作用力不能只由一个数组描述，需用多维矩阵。
 物理量总与其分量联系，因为观者只能利用仪器的坐标系测量分量，提取实验数据。
@@ -521,6 +512,8 @@ $\eta_{\mu\nu},\eta^{\mu\nu}$ 在此处比较特殊，不仅满足 $\eta_{\mu\nu
 \end{enumerate}
 
 \subsection{场的拉氏理论}
+
+%%
 
 相互作用是一种信息，物质总通过动量、能量、质量的变化反馈。
 可见相互作用至多以光速影响邻域，此即\textbf{定域性}(locality)或\textbf{局域性}。
@@ -602,6 +595,8 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
 分析能量连续性 $\dot H=-\int\p_i S^{i0}\d[3]x$，故 $S^{i0}$ 是\textbf{能流密度}。
 从定义就能看出 $S^{\mu\nu}$ 一般不对称，所以动量和能流还不能完全划等号。
 
+%% Lorentz
+
 称为 \textbf{Belinfante 张量}
 
 \subsection{经典电动力学}
@@ -633,6 +628,8 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
     \delta \phi =\e^{\i \theta} \phi-\phi=\i e\epsilon \phi, \quad \delta \bar{\phi}=-\i e\epsilon \bar{\phi}\im J^\mu=\i e \phi\overleftrightarrow{\p^\mu}\bar\phi:=\i e(\phi\p^\mu \bar{\phi}-\bar{\phi} \p^\mu \phi).
 }
 利用其它类型的张量或旋量来构造 U(1) 对称的作用量，可得不同表达式的 Noether 流。马上将看到，无论具体对象如何，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。换言之，它们都带有电荷，参与电磁相互作用。故我们将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
+
+%%
 
 场论的定域性使相位往往应随时空点可变，即 $\phi \to \e^{\i e\alpha(x)} \phi$，这称为变换的\textbf{局域化}或\textbf{规范化}(gauging)。原来的作用量满足整体对称性，但不满足局域对称性，因为 $\p_\mu \e^{\i e\alpha}=\e^{\i e\alpha}\i e\p_\mu\alpha\ne 0$。注意 
 
@@ -695,6 +692,8 @@ $A^\mu A_\mu$ 并不规范不变，但对于一阶导，可立即看到
 }
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\p_t \bm E=4\pi \bm j$。
 
+%% 回到经典
+
 另一使 $F_{\mu\nu}$ 直接出现并表现场强含义的途径是研究带电粒子运动。
 回到经典宏观视角将有所裨益，这时场还原回带电粒子。
 置点电荷 $q$ 及其 4-速 $U^\mu$，同样考虑最小耦合
@@ -755,6 +754,8 @@ $ \int J^\mu \d[3]x = q U^\mu$
 
 而运动方程为 $\mu^* Z^\mu\p_\mu Z^\nu=F^\mu{}_{\lambda}J^\lambda$，式右称为\textbf{4-Lorentz 力密度}。
 
+%% Dirac
+
 物理上常用 \textbf{Dirac $\delta$ 函数}描述质点系的密度分布：
 \eq{
     \delta(x-x_0):=\begin{cases}+\infty,\quad x=x_0,\\ 0,\quad x\ne x_0;\end{cases}\quad \int f(x)\delta(x-x_0)\d{x}=f(x_0).
@@ -768,7 +769,7 @@ T_{\mu\nu}=\frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu
 $\cd^\mu T_{\mu\nu}=-F_{\nu\lambda}J^\lambda$。
 
 \subsection{光学}
-%% 光学
+%% 光学，见 chpt.tex
 
 
 \section{广义相对论}
@@ -778,14 +779,25 @@ $\cd^\mu T_{\mu\nu}=-F_{\nu\lambda}J^\lambda$。
 前文对惯性系存在性的考虑，仍然承袭 Newton 体系的思维，即认为存在一个先验的惯性系，相对其匀速的物体仍为惯性系，而具有加速度的为非惯性系。然而，并无任何原理帮助我们确定先验的惯性系在哪。
 实际上，物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，而理想的惯性系必须远离所有物质以孤立，因此严格来说不存在。但实验上 Newton 定律一定程度适用于地面系，可见惯性系仍是有用概念。问题出在哪里？
 
-物质在仅受引力作用时有\textbf{Galileo 性}：任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对 Galileo 性的解释如下。$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}。Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
+物质在仅受引力作用时有\textbf{Galileo 性}：任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对 Galileo 性的解释如下。$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}\footnote{Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。}，而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
 设 $A,B$ 共同自由落体，二者相对加速度近似为零。关键在于，\textit{总能以一者为研究对象，另一者抽象为背景坐标系}。比如，$B$ 可以是一部足够小、无自转的封闭电梯，而 $A$ 是乘客，则 $A$ 将感到失重。Newton 理论指出 $B$ 系中出现惯性力，但它与引力局域抵消，$B$ 系中做任何局域的力学实验结果都与惯性系等效，尤其在抛弃绝对系概念后，我们无法分辨。
 
 对任意自由落体质点而言，总存在局域坐标系，使质点相对于该系的动力学，像是在理想惯性系中一样。这种坐标系称为相应质点的\textbf{局域惯性系}。参考系的惯性性在局域上不可物理观测，惯性系可以且只能局域建立。任何我们所规定的惯性系，其实均是局域惯性系。Newton 的绝对运动不是相对于绝对系的运动，而是相对于局域惯性系的运动。
-Einstein 于 1907 年察觉到这一等效性\footnote{顺便提一句，Newton 是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》\cite{Principia} 推论 VI “运动定律”。可用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，那么月球就遵循一个 Kepler 轨道。}。
+Einstein 于 1907 年察觉到这一等效性\footnote{Newton 是知道这件事的：“\textit{无论诸物体彼此间以何种方式运动，若它们被沿着平行线的相等加速力所推动，则它们都将继续彼此间的运动，遵循的方式就如同没有那些力作用一样}。”——《原理》\cite{Principia} 推论 VI “运动定律”。可用这个推论来计算太阳系中月球的复杂运动。在地球系下，惯性力和太阳引力在良好近似下相互抵消，则月球遵循 Kepler 轨道。}。
 尽管 Galileo 性是谈及质点的，但他坚信任何物质都应如此，他称之为\textbf{等效原理}(equivalence principle)。这里要包括电磁、量子等任何实验：容易想象，在落体电梯里打开手电筒，光相对电梯按一定频率走直线，而在地球上看光线只能弯曲且频率变化，便能预言光的偏折、红移。
 
 现在再研究可多大程度上建立局域惯性系。对于两相距足够远的时空点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见，理想的局域惯性系只建立在自由落体质点的世界线上。当然，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的时空区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
+
+也可通过一般坐标系下的作用量得到运动方程。由等效原理知
+\eq{
+    \delta\int\sqrt{-g_{\mu\nu}\d x^\mu \d x^\nu}=0.
+}
+由 $L=-\sqrt{-g_{\mu\nu}\dot x^\mu\dot x^\nu}$ 计算得 $\pdv*{L}{\dot x^\kappa}=g_{\kappa\lambda}\dot x^\lambda$ 和 $\pdv*{L}{x^\kappa}=\frac{1}{2}g_{\mu\nu,\kappa}\dot x^\mu\dot x^\nu$，
+则 E-L 方程是
+\eq{
+\ddot x^\lambda+\frac 12g^{\kappa\lambda}\left(2g_{\kappa\nu,\mu}-g_{\mu\nu,\kappa}\right)\dot x^\mu\dot x^\nu=0\im \ddot x^\lambda+\Gamma^\lambda_{\mu\nu}\dot x^\mu\dot x^\nu=0,
+}
+最后一步是注意 $g_{\kappa\nu,\mu}\dot x^\mu\dot x^\nu=g_{\kappa(\mu,\nu)}\dot x^\mu\dot x^\nu$。再重参数化即可。
 
 等效原理指出惯性系与非惯性系局域难以区分，因而最好是认同任意参考系，即一种广义相对性原理。更进一步地，我们本就默认物理对象、规律不受坐标系影响，即\textbf{坐标冗余性}，因而不仅考虑与参考系有关的那类坐标系，任意坐标系均可接受，即直接寻求对任意坐标变换的\textbf{广义协变性}。
 
@@ -851,16 +863,8 @@ g_{\mu\nu,\lambda}=\Gamma^\rho_{\lambda\mu}g_{\rho\nu}+\Gamma^\rho_{\lambda\nu}g
 }
 可将此作为克氏符的定义式。
 由此快速证明 Poincaré 变换的仿射性：任意惯性系下克氏符全零，则 $\pdv{x'^\alpha}{x^\mu}{x^\nu}=\Gamma^\lambda_{\mu\nu}\pdv{x'^\alpha}{x^\lambda}=0$。
-也可通过一般坐标系下的作用量得到运动方程。由等效原理知
-\eq{
-    \delta\int\sqrt{-g_{\mu\nu}\d x^\mu \d x^\nu}=0.
-}
-由 $L=-\sqrt{-g_{\mu\nu}\dot x^\mu\dot x^\nu}$ 计算得 $\pdv*{L}{\dot x^\kappa}=g_{\kappa\lambda}\dot x^\lambda$ 和 $\pdv*{L}{x^\kappa}=\frac{1}{2}g_{\mu\nu,\kappa}\dot x^\mu\dot x^\nu$，
-则 E-L 方程是
-\eq{
-\ddot x^\lambda+\frac 12g^{\kappa\lambda}\left(2g_{\kappa\nu,\mu}-g_{\mu\nu,\kappa}\right)\dot x^\mu\dot x^\nu=0\im \ddot x^\lambda+\Gamma^\lambda_{\mu\nu}\dot x^\mu\dot x^\nu=0,
-}
-最后一步是注意 $g_{\kappa\nu,\mu}\dot x^\mu\dot x^\nu=g_{\kappa(\mu,\nu)}\dot x^\mu\dot x^\nu$。再重参数化即可。
+
+
 
 克氏符没有错开指标书写是考虑到一般不会混淆，且它其实是赝张量：
 \begin{align*} \Gamma_{\mu \nu}^{\prime \lambda} &= \frac{\p x^{\prime \lambda}}{\p \xi^\alpha} \frac{\p^2 \xi^\alpha}{\p x^{\prime \mu} \p x^{\prime \nu}}=\frac{\p x^{\prime \lambda}}{\p x^\rho} \frac{\p x^\rho}{\p \xi^\alpha} \frac{\p}{\p x^{\prime \mu}}\left(\frac{\p x^\sigma}{\p x^{\prime \nu}} \frac{\p \xi^\alpha}{\p x^\sigma}\right)\\ 
@@ -938,6 +942,33 @@ Einstein 曾为此困扰而企图放弃广义协变性，提出\textbf{空穴论
 Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑原理}，即物质间的关系是拓扑性质的，实质上是引力场、物质场、时空都被一齐拖拽，而现实中看来，时空未动而坐标系变动。
 这其实分别就是主动和被动观点。
 
+\subsection{广义不变性}
+
+Einstein 想要借由广义协变性发展出一套坐标选择无关的理论，以\textit{尽可能排除人为因素}。但协变性对约束引力理论是不够的，事实上还需要不变性。首先，将 Lorentz 不变性中的常数不变推广到所谓的\textbf{绝对对象}(absolute object)，即与物质状态无关的各种量，除了常数 $c=G=1,\hbar/2$，最重要的是还包括更高指标的，比如 Jacobi 矩阵元 $\pdv*{x^\mu}{x'^\nu}$。与物质状态有关而可变的称\textbf{动力学对象}(dynamical object)，例如粒子的位置和动量、场的场强和能量密度等。给定任何物理方程，按定义总能把其中的量分为这两类。
+\begin{quote}
+    \textbf{广义不变性}\quad 任何物理定律有广义协变性，且方程中的绝对对象在任意坐标变换下相同。
+\end{quote}
+这样就决定哪些绝对对象可以出现于方程。
+Jacobi 矩阵元这种一定是绝对对象的项就不能出现了。一个描述物理定律的方程必须是指标平衡的张量方程，才可在坐标变换下消除 Jacobi 矩阵元，进而一种坐标系对应方程的一种表达，并保持广义不变性，不会同时出现两种坐标系符号。
+
+广义不变性所提出的要求当然高于 Lorentz 不变性。
+$c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对象，但 $\eta_{\mu\nu}$ 不能在任意坐标变换下严格不变，它可变成某个 $g_{\mu\nu}$。在引力理论中，由于 $g_{\mu\nu}$ 必须出现，我们只能期望 $g_{\mu\nu}$ 是动力学对象，它所满足的某个方程才能有广义不变性。结合等效原理，我们知道这是物质源产生引力场的定量关系，称为\textbf{引力场方程}或\textbf{场方程}。当今主流上称这套理论为\textbf{广义相对论}。当然，最初他认为“广义相对”一词来自广义协变性，但现在看来是来自等效原理和广义不变性。为避免歧义，Wheeler 很早就提议将该理论称为\textbf{几何动力学}(geometrodynamics)以强调其本质，即与物质相互作用的动力学几何。
+
+广义不变性结合等效原理给出了引力场的最小耦合方式。等效原理指出局域惯性系 $\{\xi\}$ 下作用量为 $S=\int \Lag \d[4]{\xi}$。按广义协变性变换到 $\{x\}$。
+$\d[4]x =\tilde J \d[4]{\xi}$ 的 $\tilde J$ 能用度规行列式表示。记度规在 $\{x\}$ 系的行列式是 $g:=\det(g_{\mu\nu})$。对 $g_{\mu\nu}$ 的定义取行列式有
+\eq{
+    g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\tilde J^{-2},
+}
+假设坐标变换保持右手性（或只关心积分绝对值），则
+\eq{
+    \sgn g=-1\im 1/\tilde J=\sqrt{-g}\im S=\int \Lag \sqrt{-g}\d[4]{x},
+}
+可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。规定\textbf{适配体元} $\D[4] x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $\D[4] x=\sqrt{-g}\d[4]{x}$，它是广义不变的。因此，为了使作用量保持广义不变，$\Lag$ 必须是广义不变的标量场。
+换言之，引力场通过 $\sqrt{-g}\d[4]{x}$ 与物质、其它场耦合。而就引力场自身而言，也要形如 $\int \Lag_G \sqrt{-g}\d[4]{x}$。
+注意，尽管可在局域惯性系中消除引力，但作为物理规律的作用量是不能在局域惯性系中失去耦合性的，$\Lag_G$ 必须是广义不变标量，来源于某种引力张量的缩并。
+这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论。
+然暂不清楚将二阶导数作用于何物，因此要回到物理学。相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。若欲寻求尽可能简单的定义，则该张量场\textit{在一点}就应具备潮汐意义。
+
 \subsection{Levi-Civita 联络}\label{sec:co-di}
 
 $(k,l)$-张量的协变导数为（注意 $\pdv{\xi^{\beta}}{x^{\nu}}\pdv{x^{\sigma}}{x^\lambda}{\xi^{\beta}}=-\pdv{x^{\sigma}}{\xi^{\beta}}\pdv{\xi^{\beta}}{x^\lambda}{x^{\nu}}=-\Gamma^{\sigma}_{\lambda\nu}$）
@@ -982,32 +1013,7 @@ $\lambda=a\tau+b$ 统称\textbf{仿射参数}(affine parameter)。
 承认等效原理，则任意联络总在结果上等效为 Levi-Civita 联络，计算就是最方便的。 
 也可额外承认每一时空点的局域 Lorentz 不变性，这直接要求无挠性，从而导致度规适配。若要求还要涵盖局域的平移对称性，即总地要求局域 Poincaré 对称性，需要考虑有挠，再选择是否度规适配，但此时适配性反而将破坏等效原理。
 
-\subsection{广义不变性}
 
-Einstein 想要借由广义协变性发展出一套坐标选择无关的理论，以\textit{尽可能排除人为因素}。但协变性对约束引力理论是不够的，事实上还需要不变性。首先，将 Lorentz 不变性中的常数不变推广到所谓的\textbf{绝对对象}(absolute object)，即与物质状态无关的各种量，除了常数 $c=G=1,\hbar/2$，最重要的是还包括更高指标的，比如 Jacobi 矩阵元 $\pdv*{x^\mu}{x'^\nu}$。与物质状态有关而可变的称\textbf{动力学对象}(dynamical object)，例如粒子的位置和动量、场的场强和能量密度等。给定任何物理方程，按定义总能把其中的量分为这两类。
-\begin{quote}
-    \textbf{广义不变性}\quad 任何物理定律有广义协变性，且方程中的绝对对象在任意坐标变换下相同。
-\end{quote}
-这样就决定哪些绝对对象可以出现于方程。
-Jacobi 矩阵元这种一定是绝对对象的项就不能出现了。一个描述物理定律的方程必须是指标平衡的张量方程，才可在坐标变换下消除 Jacobi 矩阵元，进而一种坐标系对应方程的一种表达，并保持广义不变性，不会同时出现两种坐标系符号。
-
-广义不变性所提出的要求当然高于 Lorentz 不变性。
-$c=1,\hbar$ 和 $\eta_{\mu\nu}$ 有资格成为 Lorentz 不变性下的绝对对象，但 $\eta_{\mu\nu}$ 不能在任意坐标变换下严格不变，它可变成某个 $g_{\mu\nu}$。在引力理论中，由于 $g_{\mu\nu}$ 必须出现，我们只能期望 $g_{\mu\nu}$ 是动力学对象，它所满足的某个方程才能有广义不变性。结合等效原理，我们知道这是物质源产生引力场的定量关系，称为\textbf{引力场方程}或\textbf{场方程}。当今主流上称这套理论为\textbf{广义相对论}。当然，最初他认为“广义相对”一词来自广义协变性，但现在看来是来自等效原理和广义不变性。为避免歧义，Wheeler 很早就提议将该理论称为\textbf{几何动力学}(geometrodynamics)以强调其本质，即与物质相互作用的动力学几何。
-
-广义不变性结合等效原理给出了引力场的最小耦合方式。等效原理指出局域惯性系 $\{\xi\}$ 下作用量为 $S=\int \Lag \d[4]{\xi}$。按广义协变性变换到 $\{x\}$。
-$\d[4]x =\tilde J \d[4]{\xi}$ 的 $\tilde J$ 能用度规行列式表示。记度规在 $\{x\}$ 系的行列式是 $g:=\det(g_{\mu\nu})$。对 $g_{\mu\nu}$ 的定义取行列式有
-\eq{
-    g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\tilde J^{-2},
-}
-假设坐标变换保持右手性（或只关心积分绝对值），则
-\eq{
-    \sgn g=-1\im 1/\tilde J=\sqrt{-g}\im S=\int \Lag \sqrt{-g}\d[4]{x},
-}
-可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。规定\textbf{适配体元} $\D[4] x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $\D[4] x=\sqrt{-g}\d[4]{x}$，它是广义不变的。因此，为了使作用量保持广义不变，$\Lag$ 必须是广义不变的标量场。
-换言之，引力场通过 $\sqrt{-g}\d[4]{x}$ 与物质、其它场耦合。而就引力场自身而言，也要形如 $\int \Lag_G \sqrt{-g}\d[4]{x}$。
-注意，尽管可在局域惯性系中消除引力，但作为物理规律的作用量是不能在局域惯性系中失去耦合性的，$\Lag_G$ 必须是广义不变标量，来源于某种引力张量的缩并。
-这种张量必须直接代表引力强弱，它不能是 $g_{\mu\nu}$ 级的，因为可用局域惯性系消为 $\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为其可表为克氏符，在一点处可取局域惯性系使其为零。这意味着至少要考虑二阶导。按有效性精神，先考虑有且仅有二阶的情形；且注意 Newton 引力论在低精度实验中是成立的，故广义相对论必须囊括这一理论。
-然暂不清楚将二阶导数作用于何物，因此要回到物理学。相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。若欲寻求尽可能简单的定义，则该张量场\textit{在一点}就应具备潮汐意义。
 
 \subsection{Lie 导数}
 
@@ -1019,7 +1025,7 @@ $\d[4]x =\tilde J \d[4]{\xi}$ 的 $\tilde J$ 能用度规行列式表示。记�
 
 给定一个
 
-总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv{x^\mu}{t}$。
+总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv*{x^\mu}{t}$。
 
 
 沿矢量场 $v^\mu$，我们可以定义
@@ -1221,9 +1227,10 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 $R^\lambda{}_{\mu\nu\kappa}$ 表征潮汐程度，是 $g_{\mu\nu,\lambda\kappa}$ 级的张量，称为\textbf{Riemann 张量}。
 操作性上可这样获得正交 Jacobi 场 $\eta^\lambda$：初态用对钟确定出一条正交横向曲线，随后观者持全同钟各自演化，则 $\dv{\tau} (\eta^\mu Z_\mu ) =Z_\mu Z^\nu \cd_\nu \eta^\mu=Z_\mu \eta^\nu \cd_\nu Z^\mu=\frac{1}{2} \eta^\nu \cd_\nu\left(Z_\mu Z^\mu\right)=0$，即保持正交。同时面 $\d\tau = 0$ 是测地线汇的正交族，必有 $\tilde g_{0i} = 0$。
 可以展开 Riemann 张量定义式：计算 $\cd_\nu\cd_\kappa V^\lambda$ 时注意勿先展开内部，将 $\cd_\kappa V^\lambda$ 视作整体以避开对克氏符求导，最后代入无挠性得
-    \eq{\label{eq:Rie-cur}
-         R^\lambda{}_{\mu\nu\kappa}:=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}.
-    }
+\eq{\label{eq:Rie-cur}
+R^\lambda{}_{\mu\nu\kappa}:=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}.
+}
+$R^\lambda{}_{\mu\nu\kappa}=0$ 等价于 $g_{\mu\nu}=\eta_{\mu\nu}$。
 故 $R^\lambda{}_{\mu\nu\kappa}$ 表征度规的非闵程度。
 
 再考虑 Newton 极限。取测地固有系 $\{\xi\}$ 并设正交 Jacobi 场 $\eta^\mu$，则 $\tilde Z^\mu=\delta^\mu_0,\tilde\eta^0=0$。根据定义显然有反称性 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$。
@@ -1312,6 +1319,12 @@ T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\Lag_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{\Lag_M
 对于有源方程，逻辑上自然想到是给定 $T_{\mu\nu}$ 后求解 $g_{\mu\nu}$，但实际上，$T_{\mu\nu}$ 的确切定义也需要 $g_{\mu\nu}$ 给定，比如 $Z^\mu Z_\mu = -1$。换言之，一般 $g_{\mu\nu}$ 同时出现于 $G_{\mu\nu},T_{\mu\nu}$ 中。因此整个方程的未知量除了 $g_{\mu\nu}$，实际上还包括描述物质场的物理量，比如电磁场 $F_{\mu\nu}$。故 Bianchi 恒等式 $\cd^\mu T_{\mu\nu}=0$ 并不自动满足，而要视作额外约束。以尘埃为例，未知量 $g_{\mu\nu},\mu,Z^\mu$ 总共有 $10+4+1=15$ 个。另一方面，Einstein 方程、坐标条件和 4-速归一化提供了 $10+4+1=15$ 个独立方程。
 
 坐标条件的任务本就是消除广义协变性带来的自由度，故当然不能是广义协变的等式。
+一种常见的坐标条件是\textbf{波坐标条件}或\textbf{谐和坐标条件}\footnote{数学上 $\square f = 0$ 的解称为谐和(harmonic)函数。}：
+%% Laplace-Beltrami 算子
+\eq{
+    \square_g x^\lambda=0\iff g^{\mu\nu}\Gamma^\lambda_{\mu\nu}=0,
+}
+其中 $x^\mu$ 按标量场处理。等价性只需展开：$\square_g x^\lambda=(-g)^{-1/2}\p_\mu(\sqrt{-g} g^{\mu\lambda})=-g^{\mu\nu}\Gamma^\lambda_{\mu\nu}$。
 
 \subsection{曲率及其性质}
 
@@ -1332,6 +1345,7 @@ T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{(\Lag_M\sqrt{-g})}{g_{\mu\nu}}=2\fdv{\Lag_M
 直观上，四维时空的 Riemann 曲率的分量有 $4^4=256$ 之多，但以上性质使其分量往往重复或为零。
 将 $(R_{\mu\nu\lambda\kappa})$ 划分为整体以 $A=\mu\nu$ 和 $B=\lambda\kappa$ 为行列指标的对称矩阵 $(R_{AB})$，由于 $A$ 或 $B$ 内部有反称性，因此 $A$ 或 $B$ 有 $N=\binom{n}{2}$ 种取法，再由 $A,B$ 间的对称性得总共 $\binom{N+1}{2}$ 个独立分量。考虑完所有对称性、反称性，最后考虑 Ricci 恒等式。
 一种约束就会消去一个独立自由度，故最终 Riemann 曲率的独立分量数为 $\binom{N+1}{2}-\binom{n}{4}=\frac{n^2(n^2-1)}{12}$。$n=4$ 时即 20。
+%%
 由此还可证明，Riemann 曲率是唯一可由度规二阶导线性组合而成的张量。细节放入附录 \ref{appx:curvature}。故我们选择用 Riemann 曲率描述引力。
 可用缩并将 Riemann 曲率进行压缩从而保留有用数据。由反称性知
 $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种缩并是平凡的：$R^\sigma{}_{\mu\nu\sigma}=-R^\sigma{}_{\mu\sigma\nu}=-R_{\mu\nu}$，以及 $R^\sigma{}_{\sigma\mu\nu}=g^{\lambda\sigma}R_{\lambda\sigma\mu\nu}=g^{(\lambda\sigma)}R_{[\lambda\sigma]\mu\nu}=0$。可见初步缩并的唯一有用结果是 Ricci 曲率。可直接根据定义得
@@ -1341,7 +1355,7 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
 亦可根据 $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$ 有 $R_{\mu\nu}=g^{\sigma\lambda}R_{\sigma\mu\lambda\nu}=g^{\sigma\lambda}R_{\lambda\nu\sigma\mu}=R_{\nu\mu}$。
 
 即使真空 $R_{\mu\nu}=0$，也可以 $R_{\lambda\mu\nu\kappa}\ne 0$。这是因为 $R_{\mu\nu}$ 是 $R_{\lambda\mu\nu\kappa}$ 的迹，但无迹部分 $C_{\alpha\mu\nu\beta}$ 本就满足 $C^\lambda{}_{\mu\lambda\kappa}=0$，自然不受物质影响。尝试具体的迹分解。
-通过反证法易得无迹部分唯一，故可先设置使解，再确定待定系数。
+通过反证法易得无迹部分唯一，故可先设置试解，再确定待定系数。
 无迹部分需要保持相同的指标对称性，考虑 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - X(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + Y R g_{\alpha[\nu} g_{\beta]\mu}$。要求 $g^{\alpha\nu}C_{\alpha\mu\nu\beta} = R_{\mu\beta} - X((n-2)R_{\mu\beta}+g_{\mu\beta} R) + Y(n-1)R_{\mu\beta} = 0$ 可确定 $X,Y$，有
 \eq{
     C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
@@ -1349,7 +1363,11 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
 这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
 能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda},C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
 
+%% 最大对称空间
+
 \subsection{最小引力耦合}
+
+%%
 
 现设流体带固有电荷密度 $\rho^*$，电流密度为 $J^\mu=\rho^* Z^\mu$。电荷守恒从局域惯性系出发变换为 $\cd_\mu J^\mu = 0$，则后续对 $A_\mu,g^{\mu\nu}$ 的变分均有 $\var(J^\mu\sqrt{-g})=0$。
 研究电磁场 $F_{\mu\nu}$ 的最小引力耦合。单粒子的运动方程遵循
@@ -1371,7 +1389,7 @@ Lorenz 规范从局域惯性系出发变换为 $\cd^\mu A_\mu =0$，则引力耦
 \end{align}
 其中 $\square_g:=\cd^\mu\cd_\mu$ 称为\textbf{Laplace-Beltrami 算子}。$g_{\mu\nu}$ 出现在克氏符中，以上都是$g_{\mu\nu},F_{\mu\nu}$ 的耦合方程。
 
-
+%%
 
 设荷电介质为尘埃，则有\textbf{Einstein-Maxwell 作用量}
 \eq{
@@ -1382,6 +1400,8 @@ Lorenz 规范从局域惯性系出发变换为 $\cd^\mu A_\mu =0$，则引力耦
     R_{\mu\nu}-\frac12 g_{\mu\nu} R=2\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right)+8\pi\mu^* Z_\mu Z_\nu.
 }
 称为\textbf{Einstein-Maxwell 方程}。
+
+%%
 
 最小引力耦合基于等效原理。
 可以看到以上弯曲时空中的电磁学方程，似乎都是将其平直情形做直接替换：
@@ -1399,14 +1419,11 @@ Lorenz 规范从局域惯性系出发变换为 $\cd^\mu A_\mu =0$，则引力耦
 若在量子理论中非要讨论诸如 $\cd_\mu(F^{\mu\nu}R)$ 的曲率项，可认为是在量子领域适当地放弃等效原理。但在经典理论的视角下，这些项的数量级太小，且目前实验精度无法达到（尤其是微弱的曲率），故等效原理仍被默认。总之，包括等效原理在内，最终都要接受实验的考验。
 
 
-\subsection{双曲性}
+\subsection{方程的双曲性}
+
+%%
 
 
-一种常见的坐标条件是\textbf{波坐标条件}或\textbf{谐和坐标条件}\footnote{数学上 $\square f = 0$ 的解称为谐和(harmonic)函数。}：
-\eq{
-    \square_g x^\lambda=0\iff g^{\mu\nu}\Gamma^\lambda_{\mu\nu}=0,
-}
-其中 $x^\mu$ 按标量场处理。等价性只需展开：$\square_g x^\lambda=(-g)^{-1/2}\p_\mu(\sqrt{-g} g^{\mu\lambda})=-g^{\mu\nu}\Gamma^\lambda_{\mu\nu}$。
 在谐和坐标条件下，经过冗长计算发现 Einstein 方程呈 $\square_gg_{\mu\nu}=N_{\mu\nu}$ 的形式，其中 $N_{\mu\nu}$ 是度规及其一阶导的非线性表达式。偏微分方程常见类型有椭圆型方程（如 Poisson 方程）、抛物型方程（如热传导方程）和双曲型方程（如波动方程）。考虑到 Lorentz 度规的号差，该方程组属于数学上的\textbf{拟线性}(quasilinear)\textbf{波动方程}。
 
 
@@ -1418,6 +1435,8 @@ $\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \Gamma^\mu_{\lambda\nu} G^{\lambda\nu} - \Gam
 第二是引力波。Einstein 本人在 1918 年就关注到方程的波动性，并认为存在波动解。在以后章节中，我们会证明其存在性，并说明其传播速度为光速。
 
 \subsection{球对称度规}
+
+%% Killing
 
 首要任务是研究理想质点引力场。以一质点为空间坐标原点，观测结果建议\textit{质点引力场呈空间球对称}(spherical symmetry)：存在坐标系 $\{\bar t,\bar r,\theta,\phi\}$，空间部分为正交球坐标系，且变换 $\theta\mapsto -\theta,\phi\mapsto -\phi$ 保持度规形式，则对经纬度只存在 $\d\theta^2,\d\phi^2$ 项；$\Sigma_{\bar t}$ 内任意 $\bar r$ 球面的诱导度规为 $K(\bar t,\bar r)\d\Omega^2$；其余分量只与 $\bar t,\bar r$ 有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
 \[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
@@ -1605,6 +1624,8 @@ $\omega_{\mu\nu} = 0$ 的参考系称\textbf{无旋的}(irrotational)，$\theta_
 }
 于是 $h_{\alpha\mu}\p_{\nu} Z^\alpha = h_{\alpha 0}\p_{\nu}(1/\sqrt{-g_{00}})=0$，则 $2\theta_{\mu\nu} = (1/\sqrt{-g_{00}})\p_0 h_{\mu\nu}$。从而刚性性等价于 $\pdv*{h_{\mu\nu}}{t}=0$。故在刚性系中可直接用 $h_{\mu\nu}$ 指代空间几何。
 
+%% Killing
+
 Einstein 转盘模型就是一例。置闵氏时空及惯性柱坐标系 $\{t,r,\varphi,z\}$。设圆盘置于 $z=0$ 平面，盘心位于空间原点，且以角速率 $\omega$ 旋转。转盘系 $\mathscr R$ 中任一观者 $\gamma(\tau)$ 可表 $t=\gamma\tau,\varphi=\omega\gamma\tau$，其中 $\gamma=1/\sqrt{1-\omega^2r^2}$；$r,z$ 为常数。
 只当 $\omega r<1$ 时这条曲线才能表示类时观者，故取转盘系定义域为开集 $r<1/\omega$。由此知 $Z^0=\gamma,Z^2=\gamma\omega$。柱坐标下闵氏度规为 $\d s^2=-\d t^2+\d r^2+r^2\d\varphi^2+\d z^2$，则 $Z_0=-\gamma,Z_2=\gamma\omega r^2$。易得非零克氏符有 $\Gamma^1_{22}=-r,\Gamma^2_{12}=\Gamma^2_{21}=1/r$。非零 $\cd_\mu Z_{\nu}$ 有 $Z_{0;1}=-\gamma^3\omega^2 r, Z_{1;2}=-\gamma\omega r, Z_{2;1}=\gamma^3\omega r$。综上加速度为 $A^1=-\gamma^2\omega^2 r$。因此 $A_1 Z_0 = \gamma^3\omega^2 r,A_1 Z_2 = -\gamma^3\omega^3 r^3$。$B_{10}=-B_{01}=\gamma^3\omega^2 r, B_{12}=-B_{21}=-\gamma^3\omega r$。故 $\omega_{\mu\nu}=B_{[\mu\nu]} = B_{\mu\nu}$ 非零，$\theta_{\mu\nu}=B_{(\mu\nu)}=0$。该系为刚性有旋系，从而不可全局对钟。但仍可有空间几何。取共动坐标系：$\theta=\varphi-\omega t$，其余照旧，则
 \[\d s^2 = -(1-\omega^2r^2)\d t^2+\d r^2+r^2\d\theta^2+2\omega r^2\d t\d\theta+\d z^2,\]
@@ -1660,7 +1681,7 @@ h_{\mu\alpha} h_{\nu\beta}
  Z^\kappa \cd_\kappa \omega_{\alpha\beta} = -\frac{2}{3}\theta \omega_{\mu\nu} - 2 \sigma_{\alpha[\nu} \omega_{\mu]}{}^{\alpha}.
 }
 
-\subsection{宇宙学}
+\subsection{宇宙学初步}
 观测结果建议，宇宙在大尺度上\textbf{均匀}(homogeneous)且\textbf{各向同性}(isotropic)。这使得不能用非零质量密度和常数场强求解 Poisson 方程，因为试图计算某点场强时，要涉及对充斥全空间的物质做积分，这是反常积分，需用有限域逼近。简单计算就可发现结果取决于趋于无穷的方式（“为零”或“发散”），则称为 Neumann-Zeeliger 疑难，说明积分不良定义。可见 Newton 引力论很难发展出宇宙学。
 
 但广义相对论允许我们研究均匀各向同性的解及其扰动。
@@ -1679,7 +1700,11 @@ h_{\mu\alpha} h_{\nu\beta}
 }
 甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
 
-\section{Mach 原理及标量场}
+%% 基本模型
+
+\section{标量-张量理论}
+
+\subsection{Mach 原理}
 
 Newton 为了解释绝对空间的存在性，提出了所谓的\textbf{水桶实验}。将一盛有清水的桶静置，并用一根长绳悬吊（图中略去）使桶可以靠绳索的扭力而转动；随后，尽可能使桶很快地加速旋转至某一角速度并保持。起初，桶相对于我们旋转，但（大部分）水由于惯性仍将保持静止，并且液面是平坦的；待桶的运动通过摩擦力传导至水，使水开始渐渐地随桶旋转，液面逐渐凹陷。在某个时刻，水和桶都将以该角速度旋转，即相对静止，液面凹陷呈抛物面状；尽可能很快地停止旋转，这个时候水由于惯性仍然要旋转一会儿才会静止，液面仍然凹陷。
 虽说本质是思想实验，但其可行性还是挺大的：Newton 本人就声称“已经做过实验”，并对该结果表示肯定。
@@ -1692,6 +1717,8 @@ Newton 为了解释绝对空间的存在性，提出了所谓的\textbf{水桶�
 19 世纪末，Mach 提出水并非相对于某种绝对介质旋转，而是相对于宇宙的全部物质组分，即星空背景。水凹陷是水的惯性效果，故 Mach 认为\textit{惯性需要在物质的相对运动中体现}，或者\textit{物体惯性受到周围物质分布的影响}。这称为\textbf{Mach 原理}，尽管是一条模糊的定性描述。准确地说，Mach 将桶参考系中所出现的惯性力理解为一种星空背景对水的作用，作用的强度体现为物体惯性，其大小与周围星空背景的质量及相对加速有关。比如，若周围物质很稀疏，就很难找到参照来判断一颗弹性球是否旋转，那么即使其旋转起来也不会形变。这似乎与引力很相似，但在实验上很难验证。因为反之需要加速周遭极大量的物质，绕着水桶旋转并观察水是否凹陷，尽管似乎直觉上应产生同样效果。
 
 Einstein 也曾受到这一原理的启发，而去寻找惯性和引力的关系，最后抓住了等效原理。但实际上，等效原理给出的是新答案，即水是相对于局域惯性系运动。换言之，广义相对论已通过等效原理回答了这一问题。Einstein 起初以为广义相对论符合 Mach 原理，但现在看来显然不符合。且当代观点更多认为 Mach 原理至少在现有实验条件下是错误的。相反，等效原理受到支持的验证就多得多。若非要认为惯性起源于相互作用的话，由于局域惯性系是由外引力场决定的，因此可认为凹陷现象是水和引力场之间的互动造就的。目前用广义相对论回答“怎么办”是完全可行的，而“为什么”则是留给科学哲学。
+
+\subsection{标量场}
 
 1960 年代，Brans 和 Dicke\cite{Brans-Dicke} 提出了一个接近 Mach 原理愿景的引力理论。
 首先注意，在地球的某个自由落体电梯中，等效原理的解释是电梯与乘客加速度一致，而 Mach 原理的解释是乘客的地球引力与星空背景的作用抵消。Newton 理论给出的地球引力为 $a=Gm/r^2$。假设星空背景有某种宇观质量 $M$ 和半径 $R$，并施加相同 $a$，根据量纲分析可知数量级上 $\frac{Gm}{r^2}\sim \frac{Rm}{Mr^2}$（几何制），因此 $\frac{1}{G}\sim\frac{M}{R}$。一种理解是 $\frac{M}{R}$ 由理论给出，而质量分布由广义相对论场方程的某个边界条件给出。还有一种是局部观察的 $G$（或场源质量）是随时空点变化的，其值由附近的质量分布决定。
@@ -1763,6 +1790,8 @@ $\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
 \end{gather}
 此即\textbf{Brans-Dicke 理论}。可见若 $\omega\to\infty$，则 $\phi$ 没有贡献，退回广义相对论。根据论文 \cite{Bhabra} 的结果，从 Schwarzschild 解的角度来看，对于非常大的 $\omega$，那么现有实验精度下，广义相对论和 Brans-Dicke 理论就已不可分辨。既然如此就选择广义相对论。截止到 2003年，飞往土星的 Cassini 飞船的 D\"oppler 跟踪(tracking)\cite{Will-thesis}的测量结果为 $\omega>40000$，即目前观测还是更倾向于广义相对论。
 
+\subsection{\texorpdfstring{$f(R)$ 理论}{f(R) 理论}}
+
 一个涉及宇宙暴胀的理论是 $f(R)$\textbf{理论}，其中自由引力场的拉氏密度为 $\Lag_G=f(R)$。
 记标量场 $f_R:=\dv*{f(R)}{R}$。变分有
 \begin{align*}
@@ -1774,7 +1803,9 @@ $\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
 \eq{
     f_R R_{\mu \nu}-\frac{1}{2} f(R) g_{\mu \nu}+g_{\mu \nu} \square_g f_R-\cd_\mu \cd_\nu f_R=\kappa T_{\mu\nu}.
 }
-可证 $f(R)$ 的作用实际上相当于引入额外标量场。我们以后再谈细节。
+可证 $f(R)$ 的作用实际上相当于引入额外标量场。
+
+%%
 
 \section{Kaluza-Klein 理论}
 
@@ -1899,28 +1930,28 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 
 
 \subsection{Compton 效应}
-对含有一个电子和一个光子的 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的相互作用分析可得所谓的 Compton 效应公式。
+对含有一个电子和一个光子的 ${A}$ 和 $\widetilde{{A}}$ 的相互作用分析可得所谓的 Compton 效应公式。
 
-下面来考察上述定义的粒子间简单的相互作用，为此只假设 4-动量在这些相互作用中守恒。出于方便，将用自由粒子这个词表示自由的有质粒子或光子。若 $\mathcal{A}$ 是自由粒子的一个有限集，则 $\mathcal{A}$ 中每一元素都有唯一的 4-动量，或是指向未来的类时矢量，或是类光矢量。任何这种集合中的矢量求和都是类时且指向未来的，除非所有的矢量全是互相平行的类光矢量，这时矢量求和是指向未来的类光矢量。我们把这样的求和称为 $\mathcal{A}$ 的总 4-动量。下面把自由粒子有限集的定义公式化，该集在某个事件中同(或许是新的)另一自由粒子的有限集相碰撞，而从碰撞中产生新的集合，例如，一个电子和一个质子碰撞而产生一个中子和一个中微子。
+下面来考察上述定义的粒子间简单的相互作用，为此只假设 4-动量在这些相互作用中守恒。出于方便，将用自由粒子这个词表示自由的有质粒子或光子。若 ${A}$ 是自由粒子的一个有限集，则 ${A}$ 中每一元素都有唯一的 4-动量，或是指向未来的类时矢量，或是类光矢量。任何这种集合中的矢量求和都是类时且指向未来的，除非所有的矢量全是互相平行的类光矢量，这时矢量求和是指向未来的类光矢量。我们把这样的求和称为 ${A}$ 的总 4-动量。下面把自由粒子有限集的定义公式化，该集在某个事件中同(或许是新的)另一自由粒子的有限集相碰撞，而从碰撞中产生新的集合，例如，一个电子和一个质子碰撞而产生一个中子和一个中微子。
 \begin{definition}[接触作用]
-    $\mathcal{A}$ 中的一个接触作用是一个三元组 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 是自由粒子的两个有限集，它们都不包含具有线性相关的 4-动量的粒子对（它们或许在物理上不可区分），且 $x \in\R^{3+1}$ 是这样的事件，使得
+    ${A}$ 中的一个接触作用是一个三元组 $({A},x,\widetilde{{A}})$，其中 ${A}$ 和 $\widetilde{{A}}$ 是自由粒子的两个有限集，它们都不包含具有线性相关的 4-动量的粒子对（它们或许在物理上不可区分），且 $x \in\R^{3+1}$ 是这样的事件，使得
 
-（接触性）$x$ 是 $\mathcal{A}$ 中所有粒子的终点。即对 $\mathcal{A}$ 中一个粒子的每条世界线 $\alpha:\left[\xi_{0},\xi_{1}\right] \rightarrow M$，有 $\alpha\left(\xi_{1}\right)=x$；
+（接触性）$x$ 是 ${A}$ 中所有粒子的终点。即对 ${A}$ 中一个粒子的每条世界线 $\alpha:\left[\xi_{0},\xi_{1}\right] \rightarrow M$，有 $\alpha\left(\xi_{1}\right)=x$；
 
-（分散性）$x$ 是 $\widetilde{\mathcal{A}}$ 中所有粒子的起点；
+（分散性）$x$ 是 $\widetilde{{A}}$ 中所有粒子的起点；
 
-（4-动量守恒）$\mathcal{A}$ 的总 4-动量等于 $\widetilde{\mathcal{A}}$ 的总 4-动量。
+（4-动量守恒）${A}$ 的总 4-动量等于 $\widetilde{{A}}$ 的总 4-动量。
 
-\noindent 如果 $A$ 只包含单个自由粒子，那么 $(\mathcal{A},x,\widetilde{\mathcal{A}})$ 称为衰变，例如，一个中子衰变到一个质子、一个电子和一个中微子。
+\noindent 如果 $A$ 只包含单个自由粒子，那么 $({A},x,\widetilde{{A}})$ 称为衰变，例如，一个中子衰变到一个质子、一个电子和一个中微子。
 \end{definition}
 
-考虑一个相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\widetilde{\mathcal{A}}$ 包含单个光子。$\widetilde{\mathcal{A}}$ 的总 4-动量是类光矢量，所以对于 $\mathcal{A}$ 来说也是如此。因为 $\mathcal{A}$ 中各粒子的 4-动量有类时、类光的，且是未来指向的，故只有其全是平行的类光矢量时，总和才可能是类光矢量。因为 $\mathcal{A}$ 不能包含有平行 4-动量的不同光子，故它必定由单个光子组成，根据 4-动量守恒，这个光子的 4-动量与 $\widetilde{\mathcal{A}}$ 中光子的相同。因此从本质上讲，在 $x$ 处仿佛“什么也没发生”。我们得出结论，不存在我们所限定的那种非平凡相互作用，能够在单个光子上发生，而不发生其它事件。把 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 的颠倒后表明，若 4-动量守恒，则单个光子不能衰变。
+考虑一个相互作用 $({A},x,\widetilde{{A}})$，其中 $\widetilde{{A}}$ 包含单个光子。$\widetilde{{A}}$ 的总 4-动量是类光矢量，所以对于 ${A}$ 来说也是如此。因为 ${A}$ 中各粒子的 4-动量有类时、类光的，且是未来指向的，故只有其全是平行的类光矢量时，总和才可能是类光矢量。因为 ${A}$ 不能包含有平行 4-动量的不同光子，故它必定由单个光子组成，根据 4-动量守恒，这个光子的 4-动量与 $\widetilde{{A}}$ 中光子的相同。因此从本质上讲，在 $x$ 处仿佛“什么也没发生”。我们得出结论，不存在我们所限定的那种非平凡相互作用，能够在单个光子上发生，而不发生其它事件。把 ${A}$ 和 $\widetilde{{A}}$ 的颠倒后表明，若 4-动量守恒，则单个光子不能衰变。
 
-下面，我们考虑单个有质粒子衰变到两个有质粒子，例如一个原子核自发的 $\alpha$ 衰变。考虑一个有接触的相互作用 $(\mathcal{A},x,\widetilde{\mathcal{A}})$，其中 $\mathcal{A}$ 包含一个质量 $m_{0}$ 的单个自由有质粒子，而 $\widetilde{\mathcal{A}}$ 包含两个自由有质粒子 (一个质量 $m_{1}$，另一个 $m_{2}$ )。设 $P_{0},P_{1}$ 和 $P_{2}$ 分别是质量 $m_{0},m_{1}$ 和 $m_{2}$ 的有质粒子的 4-动量。则 $P_{0}=P_{1}+P_{2}$。按照“反转三角不等式”，由于 $P_{1}$ 和 $P_{2}$ 是线性无关且指向未来的，结合 $P\cdot P=-m^2$，有
+下面，我们考虑单个有质粒子衰变到两个有质粒子，例如一个原子核自发的 $\alpha$ 衰变。考虑一个有接触的相互作用 $({A},x,\widetilde{{A}})$，其中 ${A}$ 包含一个质量 $m_{0}$ 的单个自由有质粒子，而 $\widetilde{{A}}$ 包含两个自由有质粒子 (一个质量 $m_{1}$，另一个 $m_{2}$ )。设 $P_{0},P_{1}$ 和 $P_{2}$ 分别是质量 $m_{0},m_{1}$ 和 $m_{2}$ 的有质粒子的 4-动量。则 $P_{0}=P_{1}+P_{2}$。按照“反转三角不等式”，由于 $P_{1}$ 和 $P_{2}$ 是线性无关且指向未来的，结合 $P\cdot P=-m^2$，有
 \[m_{0}>m_{1}+m_{2}.\]
-初始粒子的额外质量 $m_{0}-\left(m_{1}+m_{2}\right)$ 按质能方程，可认为是把 $m_{0}$ 分成两部分所要求的能量的一种度量。稍微不同的说法是，$\widetilde{A}$ 中的两个粒子结合而形成 $\mathcal{A}$ 中的一个粒子时，给后面粒子的质量贡献了“结合能”。此即质量亏损。
+初始粒子的额外质量 $m_{0}-\left(m_{1}+m_{2}\right)$ 按质能方程，可认为是把 $m_{0}$ 分成两部分所要求的能量的一种度量。稍微不同的说法是，$\widetilde{A}$ 中的两个粒子结合而形成 ${A}$ 中的一个粒子时，给后面粒子的质量贡献了“结合能”。此即质量亏损。
 
-这个例子里，颠倒 $\mathcal{A}$ 和 $\widetilde{\mathcal{A}}$ 就成了完全非弹性碰撞 (两个质量 $m_{1}$ 和 $m_{2}$ 的自由粒子碰撞并结合成第三个质量 $m_{0}$ 的自由粒子) 中所含有的那种接触作用。质量亏损仍然成立。更详细的分析将给出 $m_{0}-\left(m_{1}+m_{2}\right)$ 的近似公式，这可与该碰撞中动能损失的 Newton 公式作比较 (经典上把能量看做是从结合粒子中获得热量的形式)。
+这个例子里，颠倒 ${A}$ 和 $\widetilde{{A}}$ 就成了完全非弹性碰撞 (两个质量 $m_{1}$ 和 $m_{2}$ 的自由粒子碰撞并结合成第三个质量 $m_{0}$ 的自由粒子) 中所含有的那种接触作用。质量亏损仍然成立。更详细的分析将给出 $m_{0}-\left(m_{1}+m_{2}\right)$ 的近似公式，这可与该碰撞中动能损失的 Newton 公式作比较 (经典上把能量看做是从结合粒子中获得热量的形式)。
 \end{comment}
 
 \subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
