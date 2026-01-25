@@ -111,14 +111,9 @@
 %=================== 颜色相关 ===================
 \usepackage[svgnames,dvipsnames]{xcolor}  % 丰富的颜色名支持，自定义颜色
 
-%=================== 数学相关 ===================
-%\usepackage{isomath}                       % ISO 规范
-\usepackage{physics}                       % 物理
-\usepackage{mathtools,nccmath}             % amsmath的扩展和改进，增强数学排版能力
-
 %=================== 图形与绘图 ===================
 \usepackage{tikz}
-\usetikzlibrary{backgrounds}              % TikZ背景库
+\usetikzlibrary{backgrounds}              % 背景库
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees,mindmap} % 各类常用TikZ库
 \usetikzlibrary{tikzmark}                  % 用于标记TikZ节点
 \usetikzlibrary{calc,math}                 % 计算与数学辅助库
@@ -200,14 +195,21 @@
 
 
 %================== 数学符号 =================
-\newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% 范畴论字体
-\newcommand{\bm}{\vb*}          % 粗体 boldsymbol
+%\usepackage{isomath}           % ISO 规范
+\usepackage{bm}                 % boldsymbol \bm
+\usepackage{physics}
+%\usepackage{physics2}
+%\usepackage{fixdif} % 微分
+%\usepackage{derivative} % 求导
+%\usephysicsmodule{nabla.legacy} % 矢量场论算子
+\usepackage{mathtools,nccmath}  % amsmath的扩展和改进，增强数学排版能力
 
-%\let\dotunder\d    % 先备份原来的下加点重音
+\newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% 范畴论字体
+
+%\let\dotunder\d    % 备份下加点重音
 \renewcommand{\d}{\dd}          % 微分
 \newcommand{\p}{\partial}       % 偏导
 \newcommand{\cd}{\nabla}        % 协变导数
-\newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
 
 \usepackage{xparse}
 \ExplSyntaxOn
@@ -218,7 +220,6 @@
     {\mathop{}\!\mathrm{D}#2}%
     {\mathop{}\!\mathrm{D}^{#1}#2}%
 }
-
 \NewDocumentCommand{\Dv}{ s O{1} m g }
  {
   % 选择分式样式：星号版用 physics 的 \flatfrac，普通版用 \frac
@@ -237,6 +238,7 @@
      { \__Dv_frac:nn { \mathrm{D}^{#2}#3 } { \mathrm{d}#4^{#2} } }
    }
  }
+\newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
 \NewDocumentCommand{\DFv}{ s O{1} m g }
  {
   \IfBooleanTF{#1}{\cs_set_eq:NN \__DFv_frac:nn \flatfrac}{\cs_set_eq:NN \__DFv_frac:nn \frac}
@@ -278,29 +280,28 @@
 %\pl {\mathrel{/\mskip-4mu/}} % 平行符号
 
 \newcommand{\e}{\mathrm{e}}         % 自然常数
-\renewcommand{\i}{\mathrm{i}}         % 虚数单位
+\renewcommand{\i}{\mathrm{i}}       % 虚数单位
 
 \newcommand{\sgn}{\operatorname{sgn}}    % 取符
 \newcommand{\diag}{\operatorname{diag}}  % 对角
 
-\renewcommand{\S}{\operatorname{S}}        % 对称化
-\newcommand{\A}{\operatorname{A}}        % 反称化
+\renewcommand{\S}{\operatorname{S}}     % 对称化
+\newcommand{\A}{\operatorname{A}}       % 反称化
 \newcommand{\alt}{\operatorname{alt}}   % 反称化算子
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tikz 公式标注
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commands for Highlighting text -- non tikz method
-\newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
+%\newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
 %\newcommand{\highlight}[2]{\colorbox{#1!17}{$#2$}}
-\newcommand{\highlightdark}[2]{\colorbox{#1!47}{$\displaystyle #2$}}
+%\newcommand{\highlightdark}[2]{\colorbox{#1!47}{$\displaystyle #2$}}
 
 % Commands for Highlighting text -- non tikz method
-\renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
-\renewcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
+%\renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
+%\renewcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
 
 \newcommand{\hl}[3][a]{\tikzmarknode{#1}{\highlight{#2}{$\displaystyle #3$}}}
-
 \newcommand{\hn}[5][a]{
 \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
     \ifthenelse{#2>0}{\def\x{north}}{\def\x{south}}
@@ -314,7 +315,6 @@
     \draw [color=#4!57](#1.\x) |- ([xshift=-0.3ex,color=#4]a#1.south \z);
 \end{tikzpicture}
 }
-
 \newcommand{\hc}[5][a]{
 \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
     \ifthenelse{#2>0}{\def\x{north}}{\def\x{south}}

@@ -311,8 +311,10 @@ $G$ 在某时刻发出光（事件 $A$），到达 $G'$ 反射（事件 $B$）�
     \caption{光锥}
 \end{figure}
 
-数学上，给定线元 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$。设参数方程 $x^\mu(\sigma,\cdots)$，它可以是曲线、曲面等，沿参数 $\sigma$ 的\textbf{切矢场}(tangent vector field)为 $T^\mu:=\pdv*{x^\mu}{\sigma}$。只有一个参数时，即一条曲线，我们有 $T^\mu=\dv*{x^\mu}{\sigma}$，从而可用 $\int\sqrt{|g_{\mu\nu}T^\mu T^\nu|}\d\sigma$ 定义线长，借圆弧和三角函数定义角，最后按投影定义内积，等价于 $g_{\mu\nu}V^\mu W^\nu$。可用该式定义内积，反之给出线长和夹角，此即线性代数教材的逻辑。$g_{\mu\nu}$ 乃人为给定，称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。取 Descartes 系，代入勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$ 就得欧氏几何，$\delta_{ij}$ 称\textbf{欧氏度规}。
-欧氏几何现降级为一种选择，而非保守派所认为的绝对真理。比如 ${\eta}_{\mu\nu}$ 就是\textbf{闵氏度规}，对应\textbf{闵氏几何}；还可有双曲几何 $\d\ell^2=(\d x^2+\d y^2)/(1-x^2-y^2)$，当接近 $x^2+y^2<1$ 边缘时，该线元相较于欧氏线元会越来越大，但它除平面几何第五公理外符合其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
+数学上，给定线元 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 也就确立一门几何。设参数方程 $x^\mu(\sigma,\cdots)$，它可以是曲线、曲面等，沿参数 $\sigma$ 的\textbf{切矢场}(tangent vector field)为 $T^\mu:=\pdv*{x^\mu}{\sigma}$。只有一个参数时，即一条曲线，我们有 $T^\mu=\dv*{x^\mu}{\sigma}$。内积定义为\footnote{等价方式：先定义圆弧长和三角函数，再定义角，最后按投影定义内积。} $g_{\mu\nu}V^\mu W^\nu$，线长定义为 $\int\sqrt{|g_{\mu\nu}T^\mu T^\nu|}\d\sigma$。
+这套体系符合除平面几何第五公理外的其余公理。公理的特征是可替代性，故这说明第五公理不能由其余公理推出，而只能作为欧氏几何的约束。
+$g_{\mu\nu}$ 称为\textbf{度规}(metric)。据此定义有 $g_{\mu\nu}=g_{\nu\mu}$。欧氏几何就是 Descartes 系下的勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$，$\delta_{ij}$ 称\textbf{欧氏度规}。
+${\eta}_{\mu\nu}$ 称为\textbf{闵氏度规}，给出\textbf{闵氏几何}。
 给定坐标系 $\{x\},\{x'\}$，坐标变换 $x'^\mu(x)$ 也是参数方程，切矢 $\pdv*{x'^\mu}{x^\alpha}$ 称为系 $\{x\}$ 的第 $\alpha$ 个\textbf{坐标基矢}，$\{\pdv*{x'^\mu}{x^\alpha}\}_{\alpha=0}^3$ 称\textbf{坐标基}。为了看出它的确与 $\alpha$ 坐标轴相切，注意就曲线 $x'^\mu(x^\alpha)$ 而言，$\pdv*{x'^\mu}{x^\alpha}=\dv*{x'^\mu}{x^\alpha}$。
 取闵氏度规的惯性系，则 $\eta_{\mu\nu}\pdv{x^\mu}{t}\pdv{x^\nu}{x^i}=\eta_{\mu\nu}\delta^\mu_0\delta^\nu_i=\eta_{0i}=0$，这里 $\delta^\mu_\nu$ 也是 Kronecker 符号。可见惯性系的时空轴正交。这说明我们进行对钟并发展相应的几何后，同时面与各观者线正交，换言之，时空正交性在实验上由对钟产生\footnote{几何的理论概念只能代数地定义，如勾股定理。实际用物理定律来约定一类基准，各类规则形状的日常用品就是这样生产的。比如，默认光走空间直线、Lorentz 力确定空间正交性、宇称不守恒确定空间右手性。}。
 虽然时空图中动系坐标轴不是欧氏正交，但被约定为时空上的正交，即闵氏正交。
