@@ -178,7 +178,6 @@
 \newcommand{\bookauthor}{\@author}           % 作者快捷命令
 \makeatother
 
-
 %================== 名称重定义 ==================
 \renewcommand{\contentsname}{目录}
 \renewcommand{\proofname}{证}
@@ -186,6 +185,8 @@
 \numberwithin{equation}{section} % 公式按章节
 \numberwithin{figure}{chapter}  % 图序按章节
 %================== 定理环境 ====================
+\usepackage{enumerate} % 列举格式
+\usepackage{paralist} % 定义的紧凑列表
 \newtheorem{eg}{\indent 例}[chapter]
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}{定义}[chapter]
@@ -205,6 +206,7 @@
 \usepackage{mathtools,nccmath}  % amsmath的扩展和改进，增强数学排版能力
 
 \newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% 范畴论字体
+\newcommand{\topo}{\mathscr} % 拓扑字体
 
 %\let\dotunder\d    % 备份下加点重音
 \renewcommand{\d}{\dd}          % 微分
@@ -273,6 +275,8 @@
 \newcommand{\R}{\mathbb{R}} % 实数
 \newcommand{\N}{\mathbb{N}} % 自然数
 \newcommand{\Z}{\mathbb{Z}} % 整数
+\newcommand{\Q}{\mathbb{Q}} % 整数
+\newcommand{\F}{\mathbb{F}} % 域
 
 \newcommand{\eqto}{\Leftrightarrow} % 等价
 \newcommand{\im}{\implies}          % 蕴含
@@ -281,27 +285,23 @@
 
 \newcommand{\e}{\mathrm{e}}         % 自然常数
 \renewcommand{\i}{\mathrm{i}}       % 虚数单位
+\newcommand{\id}{\mathrm{id}}       % 恒等映射
 
 \newcommand{\sgn}{\operatorname{sgn}}    % 取符
 \newcommand{\diag}{\operatorname{diag}}  % 对角
+\newcommand{\supp}{\operatorname{supp}}  % 对角
 
 \renewcommand{\S}{\operatorname{S}}     % 对称化
 \newcommand{\A}{\operatorname{A}}       % 反称化
 \newcommand{\alt}{\operatorname{alt}}   % 反称化算子
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% tikz 公式标注
+% tikz 公式标注 - github.com/synercys/annotated_latex_equations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Commands for Highlighting text -- non tikz method
-%\newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
-%\newcommand{\highlight}[2]{\colorbox{#1!17}{$#2$}}
-%\newcommand{\highlightdark}[2]{\colorbox{#1!47}{$\displaystyle #2$}}
-
-% Commands for Highlighting text -- non tikz method
-%\renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
-%\renewcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
-
-\newcommand{\hl}[3][a]{\tikzmarknode{#1}{\highlight{#2}{$\displaystyle #3$}}}
+\newcommand{\hl}[3][a]{\tikzmarknode{#1}{
+        \colorbox{#2!17}{$\displaystyle #3$}
+    }
+} % highlight
 \newcommand{\hn}[5][a]{
 \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
     \ifthenelse{#2>0}{\def\x{north}}{\def\x{south}}
@@ -310,11 +310,10 @@
     \def\z{east}}{
     \def\y{east}
     \def\z{west}}
-    
-    \path (#1.\x) ++ (0,#2em) node[anchor=south \y,color=#4!67] (a#1){\textit{#5}};
-    \draw [color=#4!57](#1.\x) |- ([xshift=-0.3ex,color=#4]a#1.south \z);
+    \path (#1.\x) ++ (0,#2em) node[anchor=south \y,color=#4!67] (end#1){\textit{#5}};
+    \draw [color=#4!57](#1.\x) |- ([xshift=-0.3ex,color=#4]end#1.south \z);
 \end{tikzpicture}
-}
+} % highnote
 \newcommand{\hc}[5][a]{
 \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
     \ifthenelse{#2>0}{\def\x{north}}{\def\x{south}}
@@ -323,7 +322,7 @@
     \def\z{east}}{
     \def\y{east}
     \def\z{west}}
-    \path (#1.\x) ++ (#3em,#2em) node[anchor=south \y,color=#4!67] (a#1){\textit{#5}};
-    \draw [color=#4!57](#1.\x) |- ([xshift=-0.3ex,color=#4]a#1.south \z);
+    \path (#1.\x) ++ (#3em,#2em) node[anchor=south \y,color=#4!67] (end#1){\textit{#5}};
+    \draw [color=#4!57](#1.\x) |- ([xshift=-0.3ex,color=#4]end#1.south \z);
 \end{tikzpicture}
-}
+} % high-coordinate

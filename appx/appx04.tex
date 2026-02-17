@@ -1,24 +1,38 @@
 \chapter{流形及其张量场}\label{appx:manifold}
-    \begin{figure}[h!]\centering
-    \includegraphics[width=.8\textwidth]{fig/appx/Europe-Blank.png}
-    \caption{地球的局部坐标网格，图示为欧洲}
-\end{figure}
 
-\section{实流形}
+最初仅用微积分和坐标系研究“背景”的\textbf{局部}(local)性质，建立了\textbf{微分几何}(differential geometry)。随着集合论和拓扑学发展，我们发现可将“背景”准确定义为拓扑空间，且拓扑学提供了分析\textbf{整体}(global)性质的工具，便有了\textbf{现代微分几何}。
+
+\section{微分流形}
 物理背景作为拓扑空间，是无特征且无定形的，其中的点和曲线是不能先验识别或定义的，除非利用坐标系。有用的背景从来不可能真正脱离坐标。
 坐标方法就是一种给背景点连续指定 $\R^n$ 数据的映射。
 例如，平面上附着不同的坐标空间，一种可存放正交坐标，一种可存放极坐标，从而可赋予某点 $p$ 正交坐标 $(0,1)$，也可赋予极坐标 $(1,\pi/2)$，如图 \ref{fig:coor-chan}。拓扑学的同胚关系可描述坐标的指定，因为同胚具有双向连续性，且两个点不会被分配到同一坐标，从而避免歧义。
 当然，同胚使得许多坐标系能力有限，不能揽下全局。比如，极坐标系不能完整覆盖 $\R^2$，坐标取值为 $V=(0,+\infty)\times(0,2\pi)$。因此常考察开子集。为圆满完成指派任务，整个背景须由若干坐标系拼接，且互相分担对方力所不及之地。
 
+
+
+
+
 \begin{definition}
-    置 $(M,\mathscr T)$。存在 $n\in\N$，使 $M$ 任意点都存在邻域同胚于 $(\R^n,\mathscr T_u)$ 某开集，则称其\textbf{局部欧的}。
-    显然等价说法为：$\exists$ $M$ 的开覆盖 $\mathscr P$ 使 $\forall O\in\mathscr P$，$\exists$ 同胚 $\psi:O\to V\in\mathscr T_u$。
-    $\psi$ 称为\textbf{坐标映射}，$\psi(p)$ 称为 $p$ 的\textbf{坐标}。$O$ 称为\textbf{坐标域}(patch)，$(O,\psi)$ 称为\textbf{坐标系}或\textbf{图}(chart)。$\mathscr P$ 所相应的坐标系族 $\mathcal A=\{(O,\psi)\}$ 称为\textbf{图册}(atlas)。$(M,\mathcal A)$ 称为\textbf{局部欧氏空间}。维数为 $\dim M:=n$。当 $\mathcal A$ 自明时简记 $M$。
+    置 $(M,\topo T)$。存在 $n\in\N$，使 $M$ 任意点都存在邻域同胚于 $(\R^n,\topo T_u)$ 某开集，则称其\textbf{局部欧}。
+    等价说法为：$\exists$ $M$ 的开覆盖 $\topo P$ 使 $\forall O\in\topo P$，$\exists$ 同胚 $\psi:O\to V\in\topo T_u$。也可将“$V\in\topo T_u$”改成开球或 $\R^n$。
+    $\psi$ 称为\textbf{坐标映射}，$\psi(p)$ 称为 $p$ 的\textbf{坐标}。$O$ 称为\textbf{坐标域}(patch)，$(O,\psi)$ 称为\textbf{坐标系}或\textbf{图}(chart)。相应的坐标系族 $\mathcal A=\{(O,\psi):O\in\topo P\}$ 称为\textbf{图册}(atlas)。$(M,\mathcal A)$ 称为\textbf{局部欧氏空间}。维数为 $\dim M:=n$。当 $\mathcal A$ 自明时简记 $M$。
 \end{definition}
 
 \begin{remark}
     同胚连续性由全集拓扑或诱导拓扑衡量。原则上可修改定义，使其允许各坐标系不同维，这样空间无唯一维数，但实用价值不大。
 \end{remark}
+
+\begin{theorem}
+    局部欧的等价说法是任意点存在邻域同胚于开球或 $\R^n$。
+\end{theorem}
+\begin{proof}
+    因为 $\psi(x)$ 的开邻域内一定存在包含该点的开球。再注意开球与 $\R^n$ 同胚。
+\end{proof}
+
+\begin{figure}[ht]\centering
+    \includegraphics[width=.8\textwidth]{fig/appx/Europe-Blank.png}
+    \caption{地球的图}
+\end{figure}
 
 同胚赋予的第 $i$ 个坐标构成映射 $x^i:O\to\R$，坐标系又常记 $\{x\}$。
 就某个坐标系而言，坐标域的子集
@@ -27,8 +41,12 @@
 坐标域是某点邻域，故坐标系又称局部坐标系，同胚又称局部同胚。仅用一个坐标域就能覆盖则称\textbf{平凡的}(trivial)，此时可称坐标系是整体坐标系。典型的例子是 $\R^n$ 自身。设 $a=(x^1_a,\cdots,x^n_a)\in\R^n$，恒等映射给出\textbf{自然坐标} $\psi(a)=(x^1(a),\cdots,x^n(a))=a$。
 
 \begin{definition}
-    第二可数 $T_2$ 的局部欧氏空间称为 \textbf{$n$ 维实拓扑流形}，简记\textbf{拓扑流形} $M$。部分教材还加上仿紧的条件。将 $\R^n$ 换为 $\C^n$ 就是\textbf{复流形}。
+    仿紧、$T_2$ 的局部欧氏空间称为\textbf{拓扑流形}，简记 $M$。将 $\R^n$ 换为 $\C^n$ 就是\textbf{复流形}。
 \end{definition}
+
+\begin{remark}
+    也可用更严苛的条件：$C_2,T_2$。下一节将说明，两种定义都能使拓扑流形可度量。
+\end{remark}
 
 \begin{figure}[ht]
     \centering
@@ -39,111 +57,319 @@
 由于坐标域都是开的，故必存在相交之地。此处便涉及坐标系的转化。
 
 \begin{definition}
-    置某个图册 $\mathcal A$。
-    取 $(O_\alpha,\psi_\alpha),(O_\beta,\psi_\beta)\in \mathcal A$ 满足 $O_\alpha\cap O_\beta\ne\mt$。
-    若 $\psi_\alpha\circ\psi_\beta^{-1}$ 的 $r$ 阶导函数连续（$C^r$ 性），则称它们是 $C^r$\textbf{-相容的}。$\psi_\alpha\circ\psi_\beta^{-1}$ 称为\textbf{坐标变换}或\textbf{转移函数}。
-    若相交坐标系皆 $C^r$-相容，则 $\mathcal A$ 称为 $C^r$\textbf{-图册}。$C^\infty$-相容称为\textbf{光滑相容}或\textbf{相容}。
+    取 $(O_\alpha,\psi_\alpha),(O_\beta,\psi_\beta)\in \mathcal A$。若 $O_\alpha\cap O_\beta=\mt$；或 $O_\alpha\cap O_\beta\ne\mt$ 时\textbf{坐标变换}或\textbf{转移函数} $\psi_\alpha\circ\psi_\beta^{-1},\psi_\beta\circ\psi_\alpha^{-1}$ 的 $r$ 阶导函数连续（记 $C^r$），则称两坐标系 $C^r$\textbf{-相容}。
+    所含坐标系皆 $C^r$-相容的 $\mathcal A$ 称为 $C^r$\textbf{-图册}。$C^\infty$-相容简称\textbf{相容}。
 \end{definition}
 
 \begin{remark}
-    坐标变换可显式地表为 $n$ 个 $n$ 元函数，其 $C^r$ 性由 $\R^n$ 分析学给出。
+    坐标变换可显式地表为 $n$ 个 $n$ 元函数，其 $C^r$ 性由 $\R^n,\C^n$ 分析学给出。
 \end{remark}
+
+\begin{eg}
+    拓扑流形相当于仅要求 $C^0$-相容。
+\end{eg}
 
 假设有两个图册 $\mathcal A,\mathcal B$。它们可能并不相容，即其间存在相交但不相容的坐标系。如果它们相容，则可合并为一个更大的图册。当然希望将所有相容的坐标系都囊括进来，尽可能构成足够大的图册。
 
 \begin{definition}
-    不真含于任何 $C^r$-图册的 $C^r$-图册称为\textbf{最大的}(maximal) 。若局部欧氏空间 $(M,\mathcal A)$ 的图册 $\mathcal A$ 是 $C^r$-最大图册，则称 \textbf{$C^r$-实微分流形}，简称 $C^r$-流形。常考虑光滑流形。对复流形而言即要求微分结构全纯（解析）。
-    最大图册又称\textbf{微分结构}。
+    一个不真含于任何 $C^r$-图册的 $C^r$-图册称为\textbf{最大的}(maximal)。若局部欧氏空间的图册是 $C^r$-最大图册，则称 \textbf{$C^r$-流形}。最大图册又称\textbf{微分结构}。$C^\infty$-流形称为\textbf{微分流形}或\textbf{光滑流形}。
+\end{definition}
+
+\begin{eg}
+    \textbf{通常流形}就是指 $(\R^n,\topo T_u)$ 赋以包含自然坐标系的最大光滑图册。
+\end{eg}
+
+综上，将今后常用的 $C^\infty$-拓扑流形之定义总结如下：
+\begin{quote}
+    置 $T_2$ 仿紧空间 $(M,\topo T)$，若 $\exists\topo P\subset\topo T$ 使
+    \begin{itemize}
+        \item $M = \bigcup_{O\in\topo P}O$；
+        \item $\forall O\in\topo P$，$\exists$ 同胚 $\psi:O\to V\in\topo T_u$； 
+        \item $O_\alpha\cap O_\beta\ne\mt$ 时 $\psi_\alpha\circ\psi_\beta^{-1}$ 光滑，
+    \end{itemize}
+    则称 $\{(O,\psi):O\in\topo P\}$ 为光滑图册。若一个光滑图册 $\mathcal A$ 不真含于任何光滑图册，则称 $(M,\topo T,\mathcal A)$ 为一个\textbf{光滑拓扑流形}，简称\textbf{流形}。
+\end{quote}
+而简言之，
+\begin{quote}
+    \textbf{流形}是拓扑性质良好的空间，赋有相互光滑变换的一切局部坐标系。
+\end{quote}
+
+定量计算流形间的映射，必然使用坐标系，即通过 $\psi'\circ f\circ \psi^{-1}$ 来确定 $f$。
+\begin{definition}
+    置 $C^k$-流形 $M,M'$。$f:M\to M'$ 称为 $C^r$\textbf{-映射}，若 $\forall p\in M$，存在坐标系 $(\psi,O),(\psi',O')$ 使 $p\in O,f(p)\in O'$ 且 $\psi'\circ f\circ \psi^{-1}$ 是 $C^r$ 的（$r\leqslant k$）。
 \end{definition}
 
 \begin{remark}
-    拓扑流形是第二可数 $T_2$ 的 $C^0$-流形。实际上常默认微分流形定义中的局部欧氏空间为拓扑流形，甚至补充仿紧等性质。
+    $r\leqslant k$ 使 $C^r$ 性与坐标选择无关。此后类似概念的良定义性均同理。
 \end{remark}
 
 \begin{eg}
-    \textbf{通常流形}就是指 $(\R^n,\mathscr T_u)$ 赋以包含自然坐标系的最大光滑图册。
+    坐标变换 $\psi'\circ \psi^{-1}$ 相当于取恒等 $f=\id_M:M\to M$。
+\end{eg}
+\begin{eg}
+    曲线是流形间 $C^0$-映射 $C:I\to M$ 的特例。其中将 $I\subset\R$ 上坐标系视作恒等映射，从而只需考察\textbf{参数方程} $\psi\circ C$ 的性质。
 \end{eg}
 
 \begin{definition}
-    置 $C^k$-流形上的曲线 $C$。若 $\forall p\in \Im C$，存在坐标系 $(\psi,O)$ 使 $p\in O$ 且\textbf{参数方程} $\psi\circ C$ 是 $C^r$ 的（$r\leqslant k$），就称 $C$ 是 $C^r$\textbf{-曲线}。有限个光滑曲线收尾相连构成\textbf{分段光滑曲线}。
+    流形上的曲线为 $C^r$-映射就称 $C^r$\textbf{-曲线}。有限个光滑曲线收尾相连构成\textbf{分段光滑曲线}。
 \end{definition}
-
-\begin{remark}
-    $r\leqslant k$ 使曲线 $C^r$ 性与坐标选择无关。此后类似概念的良定义性均同理。
-\end{remark}
-
-\begin{theorem}
-    流形上，路径连通 $\iff$ 连通
-\end{theorem}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.4\textwidth]{fig/appx/curve.pdf}
-    \caption{曲线}
-\end{figure}
 
 \begin{definition}
-    置 $C^k$-流形 $M,M'$。$f:M\to M'$ 称为 $C^r$\textbf{-映射}，若 $\forall p\in M$，存在坐标系 $(\psi,O),(\psi',O')$ 使 $p\in O,f(p)\in O'$ 且 $\psi'\circ f\circ \psi^{-1}$ 是 $C^r$ 的（$r\leqslant k$）。
-    \textbf{$C^r$-微分同胚}(diffeomorphism)是双向 $C^r$ 的双射。光滑同胚的流形一定程度上可视作相等的，故又称\textbf{自同胚}。
+    \textbf{$C^r$-同胚}是流形间双向 $C^r$ 的双射。$C^\infty$-同胚称为\textbf{微分同胚}(diffeomorphism)或\textbf{光滑同胚}。
 \end{definition}
-\begin{remark}
-    固然希望抽象地定义 $f$，但准确定义又总要使用坐标系，通过 $\psi'\circ f\circ \psi^{-1}$ 来确定 $f$。
-\end{remark}
 
-以光滑流形为对象、光滑映射为态射，构成\textbf{光滑流形范畴} $\cate{Man}$，同构态射即光滑同胚。
-
-考察光滑映射 $\phi:M\to N$。在 $p,\phi(p)$ 分别取坐标系 $\psi,\psi_N$，则 $\phi$ 可借助坐标系表为 $\psi_N \circ\phi\circ\psi^{-1}$。
-倘若 $\phi$ 是同胚，则可定义新坐标系 $\psi':=\psi_N\circ\phi$，也即将 $\phi(p)$ 的坐标 $\psi_N(\phi(p))$ 视作 $p$ 的新坐标 $\psi'(p)$。这样给定一个 $\phi$ 相当于给定坐标变换 $\psi' \circ\psi^{-1}$。此即光滑同胚的主动、被动观点之别。
-
-\begin{definition}
-    置 $M$ 上的开覆盖 $\mathscr P=\{O_i\}$。若函数族 $\{\rho_i\}$ 满足
-    \begin{itemize}
-        \item $0\leqslant\rho_i\leqslant 1$；
-        \item $\rho_i$ 在 $O_i$ 上光滑，且支撑在 $O_i$ 上：$x\notin O_i$ 时 $\rho_i=0$；
-        \item $\sum_i \rho_i=1$,
-    \end{itemize}
-    则称为 $\mathscr P$ 的一个\textbf{单位分解}(partition of unity)。
-\end{definition}
 \begin{theorem}
-    任何开覆盖均存在从属于它的单位分解。
+    开球和 $\R^n$ 微分同胚
 \end{theorem}
 \begin{proof}
-    利用第二可数性。
+    不失一般性，$B(0,1),\R^n$ 的同胚式 \eqref{eq:B-Rn} 是双向光滑的。
 \end{proof}
+
+微分同胚的流形可建立起等价关系，故我们常考虑的微分同胚实际上是自同胚。
+看待微分同胚 $f:M\to M$ 有两种不同观点：将 $f$ 用同一个坐标系表为 $\psi\circ f\circ \psi^{-1}$，此即“点动、坐标不动”的主动观点；定义 $\psi':=\psi\circ f$ 就有坐标变换 $\psi' \circ\psi^{-1}$，此即“点不动、坐标动”的被动观点。
+
+以（光滑拓扑）流形为对象、光滑映射为态射，构成\textbf{流形范畴} $\cate{Man}$，同构态射即微分同胚。
+
+
+\begin{eg}
+    流形上的函数是流形间映射 $f:M\to\F$ 的特例。其中将 $\F=\R,\C$ 上坐标系视作恒等映射，从而只需考察 $n$ 元函数 $f\circ\psi^{-1}$ 的性质。
+\end{eg}
+
+\begin{definition}
+    流形上的函数称为\textbf{标量场}(scalar field)。$U\subset M$ 上全体 $C^r$-标量场构成的集合记作 $C^r(U)$。
+\end{definition}
+
+我们曾说明 $\F^X$ 是 $\F$-模。原则上还可引入乘法：$\forall p\in X,f,g\in \F^X$，
+\eq{(f+g)(p):=f(p)+g(p),\quad  (fg)(p):=f(p)g(p),}
+将常函数的赋值 $\alpha\in\F$ 就记为函数名，即 $\alpha(p):=\alpha$，于是数乘即用常函数相乘，同时也就囊括了零元。故 $\F^X$ 同时是 $\F$-模和交换幺环，称\textbf{函数环}。且注意可有 $\alpha(fg)=(\alpha f) g=f(\alpha g)$，从而 $\F^X$ 还是 $\F$-代数。
+但 $\F^X$ 不能是域，因为非零元不一定有逆：设 $f\ne 0$ 但存在零点，则不存在 $g$ 使 $f(p)g(p)=1$ 恒成立。
+
+现在考虑 $C^r(U)$。$C^r$-性保持了运算封闭，故 $C^r(U)$ 仍是交换幺 $\F$-代数，可称 $U$ 上的 $C^r$-函数环。为方便，我们常考虑实光滑函数。
+
+\begin{eg}
+    $C^k$-流形上的第 $i$ \textbf{坐标映射} $x^i:O\to\R$ 属于 $C^k(O)$。
+\end{eg}
+
+\section{流形的拓扑性质*}
+
+
+
+\begin{theorem}
+    局部欧 $\im$ 局部路径连通 $\wedge$ 局部紧 $\wedge$ 局部可度量。
+\end{theorem}
+
+\begin{proof}
+局部欧氏空间任意点都存在开邻域同胚于 $\R^n$，而同胚保持路径连通性，于是该开邻域也路径连通，因此局部欧 $\im$ 局部路径连通。
+
+
+    流形局部同胚于 $\mathbb R^n$，因此每点都有一个的开邻域；
+换言之，$M$ 是\emph{局部紧}的。
+\end{proof}
+
+\begin{theorem}
+    局部欧氏空间上，路径连通 $\iff$ 连通。
+\end{theorem}
+\begin{proof}
+    已知路径连通 $\im$ 连通。反之，局部欧 $\wedge$ 连通 $\im$ 局部路径连通 $\wedge$ 连通 $\im$ 路径连通。
+\end{proof}
+
+\begin{theorem}
+    $T_2 \wedge \text{局部紧} \im T_3$
+\end{theorem}
+
+\begin{proof}
+\textbf{局部正规}
+
+而在局部紧 $T_2$ 空间中，总可以把点与不含该点的闭集用互不相交的开集分开，这正是正则性。
+
+具体地，取任意 $x\in M$ 与闭集 $F\subset M$，且 $x\notin F$。
+因为 $F$ 闭，所以 $U_0:=M\setminus F$ 是开且含 $x$。
+由局部紧性，存在开集 $U$ 使得
+\[
+x\in U,\qquad \overline U\ \text{紧},\qquad \overline U\subset U_0.
+\]
+于是 $\overline U\cap F=\varnothing$。
+
+对每个 $y\in F$，由 $T_2$ 性，存在互不相交开集 $U_y\ni x$ 与 $W_y\ni y$。
+注意到 $\overline U$ 是紧集，且 $\{W_y\}_{y\in F}$ 是 $F$ 的开覆盖，
+从而也是 $\overline U\cap F=\varnothing$ 的“无关”——我们改用紧性来做如下操作：
+对每个 $p\in \overline U$，因 $p\notin F$ 且 $F$ 闭，$T_2$ $\Rightarrow$ 可分离，
+故存在开集 $A_p\ni p$ 与开集 $B_p\supset F$ 使得 $A_p\cap (M\setminus B_p)=\varnothing$，
+亦即 $A_p\subset B_p$ 且 $B_p$ 仍是包含 $F$ 的开集。
+于是 $\{A_p\}_{p\in\overline U}$ 覆盖紧集 $\overline U$，
+取有限子覆盖 $A_{p_1},\dots,A_{p_N}$，令
+\[
+V:=\bigcup_{j=1}^N A_{p_j},\qquad W:=\bigcap_{j=1}^N B_{p_j}.
+\]
+则 $V$ 为开且含 $\overline U$，$W$ 为开且含 $F$，并且由于每个 $A_{p_j}\subset B_{p_j}$，
+有 $V\subset W$，从而 $V\cap (M\setminus W)=\varnothing$。
+现在取 $U':=U$（开含 $x$）与 $W':=M\setminus V$（开含 $F$），便得
+\[
+U'\cap W'=\varnothing.
+\]
+于是正则。
+从而 $T_2 \wedge \text{局部紧}\iff T_2 \wedge (T_2 \wedge \text{局部紧}) \im T_1 \wedge \text{正则} \iff T_3$。
+\end{proof}
+
+拓扑单位分解（连续）：在 $T_2$ + 仿紧 且（通常）局部紧的条件下，能对任意开覆盖构造从属的连续单位分解（用 bump/收缩与局部紧性来做）。
+光滑单位分解（对光滑流形）：仿紧 + $T_2$（再加上光滑结构）保证能做出从属于任意开覆盖的光滑单位分解。
+所以在你问的流形语境里，“仿紧（单位分解）”是可以推出的。
+
+
+\begin{definition}
+    置开覆盖 $\topo P=\{O_i\}$。若函数族 $\{\rho_i\}$ 满足
+    \begin{itemize}
+        \item $0\leqslant\rho_i\leqslant 1$；
+        \item $\rho_i$ 支撑在 $O_i$ 上：$\supp\rho_i\subset U_i$，$x\notin O_i$ 时 $\rho_i=0$；
+        \item $\sum_i \rho_i=1$,
+    \end{itemize}
+    则称为 $\topo P$ 的一个\textbf{单位分解}(partition of unity)。若在 $O_i$ 上光滑，则称\textbf{光滑单位分解}。
+\end{definition}
+
+\begin{theorem}[Bump 函数引理 / 光滑 Urysohn 引理]\label{thm:smooth_urysohn_bump}
+设 $M$ 为光滑流形，$K\subset U\subset M$，其中 $K$ 为紧集，$U$ 为开集。
+则存在 $\varphi\in C^\infty(M)$ 满足
+\[
+0\le \varphi\le 1,\qquad \varphi\equiv 1\ \text{于}\ K,\qquad \supp(\varphi)\subset U.
+\]
+特别地，$\varphi$ 在 $M\setminus U$ 上恒为 $0$，且 $\varphi$ 的支撑是 $U$ 内的一个紧集。
+\end{theorem}
+
+\begin{proof}
+对每个 $x\in K$，取坐标图 $(W_x,\psi_x)$ 使得 $\overline{W_x}\subset U$ 且 $\psi_x(W_x)\subset \mathbb R^n$
+为开球（可取相对紧坐标邻域）。在 $\mathbb R^n$ 中取一个标准 bump 函数
+$b_x\in C^\infty_c(\psi_x(W_x))$，使得 $b_x\equiv 1$ 于一个较小的同心球，
+并令 $\tilde b_x$ 为将 $b_x$ 拉回到 $W_x$ 后再在 $M\setminus W_x$ 上延拓为 $0$ 得到的光滑函数。
+则 $\tilde b_x\in C^\infty(M)$，并且 $\supp(\tilde b_x)\subset W_x\subset U$，
+且在 $x$ 的某邻域上恒为 $1$。
+
+由于 $K$ 紧，可从 $\{W_x\}_{x\in K}$ 选出有限子覆盖 $W_{x_1},\dots,W_{x_N}$。
+令
+\[
+g:=\sum_{j=1}^N \tilde b_{x_j},
+\]
+则 $g\in C^\infty(M)$，且 $g>0$ 于 $K$，并且 $\supp(g)\subset \bigcup_{j=1}^N W_{x_j}\subset U$。
+取光滑函数 $\chi:\mathbb R\to[0,1]$ 满足 $\chi(t)=0$ 当 $t\le \tfrac12$，
+$\chi(t)=1$ 当 $t\ge 1$（可用一维 bump 函数构造）。
+因为 $g$ 在紧集 $K$ 上取得正的最小值 $m>0$，
+考虑 $\varphi:=\chi\!\left(\tfrac{g}{m}\right)$，则 $\varphi\in C^\infty(M)$，
+并且 $\varphi\equiv 1$ 于 $K$，且 $\supp(\varphi)\subset \supp(g)\subset U$，
+同时 $0\le \varphi\le 1$。证毕。
+\end{proof}
+
+需要把覆盖整理成局部有限（否则 $\sum_i \varphi_i$ 不一定光滑，甚至不一定有意义）
+需要 bump 函数把支撑塞进指定开集
+最后归一化 $\rho_i=\varphi_i/\sum_j\varphi_j$
+
+\begin{theorem}
+    仿紧 $\wedge$ $T_2\im$ 任何开覆盖均存在从属于它的单位分解。
+\end{theorem}
+\begin{proof}
+    设 $\topo P=\{O_\alpha\}$ 为 $M$ 的任意开覆盖。欲构造单位分解。
+
+    \medskip
+    \noindent\textbf{将开覆盖可数化并做局部有限细化。}
+    $C_2$ $\im$ Lindel\"of：任意开覆盖都有可数子覆盖。
+    于是存在可数指标集 $I=\mathbb N$ 及开集 $O_i\in\topo P$ 使得 $\{O_i\}_{i\in\mathbb N}$ 仍覆盖 $M$。
+
+    进一步，由于 $M$ 是可数基的 $T_2$ 流形，所以是副紧(paracompact)的，因此每个开覆盖都有\emph{局部有限}的开细化。
+    因而存在局部有限开覆盖 $\{U_i\}_{i\in\mathbb N}$，使得对每个 $i$ 都有
+    \[
+        U_i\subset O_i.
+    \]
+    （必要时可先取局部有限细化 $\{U_i\}$，再对每个 $U_i$ 选取一个包含它的 $O_{\alpha(i)}$，并重编号。）
+
+    \medskip
+    \noindent\textbf{构造从属于 $\{U_i\}$ 的非负光滑函数族 $\{\varphi_i\}$。}
+    由于 $M$ 局部紧且正规(normal)，对每个 $i$ 可取开集 $V_i$ 使得
+    \[
+        \overline{V_i}\subset U_i.
+    \]
+    由流形上的 bump 函数引理（亦即光滑 Urysohn 引理），存在 $\varphi_i\in C^\infty(M)$ 满足
+    \begin{itemize}
+        \item $0\le \varphi_i\le 1$；
+        \item $\varphi_i\equiv 1$ 于 $\overline{V_i}$；
+        \item $\supp(\varphi_i)\subset U_i$。
+    \end{itemize}
+    特别地，$\varphi_i$ 在 $M\setminus U_i$ 上恒为 $0$，因此也从属于原覆盖：$\supp(\varphi_i)\subset U_i\subset O_i$。
+
+    \medskip
+    \noindent\textbf{归一化。}
+    令
+    \[
+        \Phi(x):=\sum_{i=1}^\infty \varphi_i(x).
+    \]
+    由于 $\{U_i\}$ 局部有限，故对每个 $x\in M$，在某个邻域内仅有限个 $\varphi_i$ 非零，
+    因而上述和在该邻域内是有限和，$\Phi$ 是光滑函数。
+
+    下面证明 $\Phi(x)>0$ 对一切 $x$ 成立。
+    因为 $\{V_i\}$ 仍覆盖 $M$（可在取 $V_i$ 时保证这一点：对每个 $x\in U_i$ 选一个相对紧邻域并并入某个 $V_j$；或等价地先取 $\{V_i\}$ 为 $\{U_i\}$ 的开覆盖并满足 $\overline{V_i}\subset U_i$），
+    所以给定 $x\in M$，存在某个 $k$ 使得 $x\in V_k\subset \overline{V_k}$，从而 $\varphi_k(x)=1$，于是 $\Phi(x)\ge 1$。
+
+    因此可定义
+    \eq{
+        \rho_i(x):=\frac{\varphi_i(x)}{\Phi(x)}.
+    }
+    则 $\rho_i\in C^\infty(M)$，且 $0\le\rho_i\le 1$，并且
+    \[
+        \supp(\rho_i)\subset \supp(\varphi_i)\subset U_i\subset O_i.
+    \]
+    最后，
+    \[
+        \sum_{i=1}^\infty \rho_i(x)=\frac{\sum_i\varphi_i(x)}{\Phi(x)}=1,
+    \]
+    且由于局部有限性，上式在任意点的邻域内都是有限和，因此无收敛性问题。
+    故 $\{\rho_i\}$ 构成从属于 $\topo P$ 的单位分解。
+\end{proof}
+
+\begin{theorem}[Smirnov]
+    $\text{仿紧}\wedge T_2\wedge\text{局部可度量}\im$ 可度量
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    拓扑流形可度量。
+\end{theorem}
+\begin{proof}
+    定义一：$\text{仿紧} \wedge T_2 \wedge \text{局部欧}\im \text{仿紧} \wedge T_2 \wedge \text{局部可度量} \xRightarrow{\text{Smirnov}}$ 可度量。
+
+    定义二：$C_2 \wedge T_2 \wedge \text{局部欧} \im C_2 \wedge T_3 \xRightarrow{\text{Urysohn}}$ 可度量。
+\end{proof}
+\begin{remark}
+    注意可度量 $\im$ 仿紧，所以其实定义二 $\im$ 定义一。
+\end{remark}
+
+
+%%
 
 \section{切空间}
 
-\begin{definition}
-    流形上的函数称为\textbf{标量场}(scalar field)。置光滑流形 $M$，$U\subset M$ 上全体 $C^r$-标量场构成的集合记作 $C^r(U)$。常考虑实光滑函数。
-\end{definition}
+物理学的矢量总是靠作差或求导来产生，即切矢。曾指出给定某几何形体的参数方程 $x^\mu(t,\cdots)$ 后，可得到切矢场 $T^\mu = \pdv*{x^\mu}{t}$，它具有变换 $T'^\nu = \pdv{x'^\nu}{x^\mu}T^\mu$。而其中 $\pdv*{x'^\nu}{x^\mu}$ 就是 $\{x\}$ 的坐标基，故这相当于将切矢展开到 $\{x\}$ 坐标基 $T'^\nu = T^\mu \pdv{x'^\nu}{x^\mu}$，但最终用 $\{x'\}$ 表达。
+可见，坐标分量 $T'^\nu$ 是 $\pdv{t}=\pdv{x^\mu}{t}\pdv{x^\mu}=T^\mu \p_\mu$ 对 $x'^\nu:O\to\R$ 作用的结果，故仅需偏导数本身配合所作用的 $x'^\nu(x)$ 即可给出我们对切矢要求的所有性质。
+立即发现，这种描述已独立于坐标语言。数学又常常使用映射来构造概念，故何不直接定义 $T=\pdv*{t}$？
+Cartan 最先提出这一思想：用一个具有求导性质的泛函来代指切矢。
 
-我们曾谈到矢量需要一个抽象定义。物理学的矢量总是靠作差或求导来产生，即切矢。因此可将切矢对应到曲线来定义。
-给定一条穿过 $p\in M$ 的曲线 $\gamma$，要求其在 $p=\gamma(0)$ 处可导，规定给出相同切矢的曲线等价。相同性通过坐标分量（$\psi\circ\gamma$ 在 $t=0$ 处导数）来判断。等价类 $[\gamma]$ 称为一个切矢。
-Cartan 注意到，等价类中的曲线的沿线导数给出了相同的方向导数。例如，置 $\R^3$ 上一个可导标量场 $f$ 和曲线 $\bm r(t)$，若某点切矢为 $\bm A$，则此处 $\dv*{f}{t}=\bm{A\cdot\nabla} f$。可见，某点处的矢量总一一对应为任意标量场在该点的方向导数。数学又常常使用映射来构造概念，何不把切矢直接定义为导数本身？
-可以联合矢量 $A^i$ 而构成算符 $A^i\del_i$，随后就把 $A^i\del_i$ 称为 $A$。导数映射的运算性质构造了线性空间：可相加，可数乘，还可定义零元 $0(f)=0$。这样 $\{\del_i\}$ 的确线性无关：$A=0\Rightarrow A^i=A^j\del_j(x^i)=A(x^i)=0$。因此 $\{\del_i\}$ 就是基。
+将切矢定义为一个求导映射，与最传统的曲线相切有何直观联系？
+给定一条穿过 $p\in M$ 的曲线 $\gamma$ 且在 $p=\gamma(0)$ 处可导，规定给出相同切矢的曲线等价，相同性通过坐标分量 $\dv{t}\big|_{t=0}(\psi\circ\gamma)$ 来判断。
+置任意可导标量场 $f$，若某点切矢为 $A^\mu$，则方向导数为 $\dv*{f}{t}=A^\mu\p_\mu f$。故等价类 $[\gamma]$ 中的曲线给出了相同的方向导数 $\dv*{t}$，即曲线等价类与方向导数一一对应。
+标量场在此处的作用是引出切矢。犹如在电场中放入测试电荷，用静电力研究电场一样，标量场受导数作用出实数，以研究导数自身，而标量场不是关键。
 
-标量场在此处的作用是引出切矢。犹如在电场中放入测试电荷，以静电力来研究电场自身一样，标量场受导数作用出实数，以研究导数自身，而具体的标量场不是关键。切矢和偏导的关系，就类似于电场和静电力的关系。
-
-通常会采取更抽象但更优雅的定义。考察若干等价性质，这样能脱离分量而直接给出切矢整体。注意基源自各坐标偏导，$f$ 有 $n$ 个独立的求导方向，而若 $f\circ\psi^{-1}$ 是 $n$ 元的光滑函数，可用 $x^i$ 展开为
+剩下的问题在于需要哪些求导性质。若直接使用偏导符号 $A=A^\mu\pdv{x^\mu}$，实际上仍然使用了坐标语言，因此要将目光转向导数的代数性质。
+若 $f$ 是解析的，可用 $x^i$ 展开为
 \[
-    f=f(p)+\del_i f(p)(x^i-x^i(p))+ \frac 12\del_i\del_j f(p)(x^i-x^i(p))(x^j-x^j(p))+\cdots.
+    f=f(p)+\p_i f(p)(x^i-x^i(p))+ \frac 12\p_i\p_j f(p)(x^i-x^i(p))(x^j-x^j(p))+\cdots.
 \]
-$A$作用于它只剩下 $A(f)=A(x^i)\del_i f(p)=:A^i\del_i f(p)$，高阶项为零是因为必然存在 $x^j(p)-x^j(p)=0$。该过程只用到导数算子的线性性和 Leibniz 乘法法则（二者可推出常函数导数为零），故可认为\textit{一点处的切矢是满足 Leibniz 乘法法则的线性泛函}。
-当然，对无穷级数滥用代数性质是极为危险的，我们更倾向于考虑有限项相加，其次不一定要求标量场光滑。
-总之 Cartan 体系里所有东西都是泛函或算符，甚至是更多层嵌套。
+$A=A^\mu\p_\mu$ 是求导操作，至少要考虑到线性性、Leibniz 乘法法则 $A(fg)=g(p)A(f)+f(p)A(g)$。
+首先，线性性的确构成线性空间：可相加，可数乘，还可定义零元 $0(f)=0$。这样 $\{\p_i\}$ 的确线性无关：$A=0\Rightarrow A^i=A^j\p_j(x^i)=A(x^i)=0$，因此 $\{\p_i\}$ 就是基。
+其次，乘法法则给出 $A(1)=A(1\cdot 1)=2A(1)\Rightarrow A(1)=0$，再由线性性知$\forall c\in\R,A(c)=A(c\cdot 1)=c A(1)=0$。
+%%
+从而 $A$ 作用于 $f$ 的确只剩下 $A(f)=A(x^\mu)\p_\mu f(p)$，高阶项为零是因为必然存在 $x^j(p)-x^j(p)=0$。故线性性、乘法法则已经能反求得 $A=A^\mu\p_\mu$。因此这就是我们所需的全部求导代数性质了。
+当然，对无穷级数滥用代数运算是极为危险的，其次也不需要 $f$ 解析，故我们更倾向于考虑有限项相加。
 
-这说明切矢定义在线性空间乃至一个代数上。就 $C^r(M)$ 而言这比较好办，只需规定运算使 $\forall p\in M,f,g\in C^r(M)$，
-\eq{(f+g)(p):=f(p)+g(p),\quad  (fg)(p):=f(p)g(p),}
-且将常函数的赋值 $\alpha\in\R$ 就记为函数名，即 $\alpha(p):=\alpha$，数乘即用常函数相乘。光滑性使运算封闭。$C^r(M)$ 构成交换幺环，称为\textbf{光滑函数环}。但由于非零元不一定有逆，因此不能构成域：设 $f\ne 0$ 但存在零点，则不存在 $g$ 使 $f(p)g(p)=1$ 恒成立。同时 $C^r(M)$ 也是 $\R$-模，结合环性有 $\alpha(fg)=(\alpha f) g=f(\alpha g)$，构成 $\R$-代数。
-然而，在给出坐标分量时用到了某坐标系 $(\psi,O)$ 和 $x^i\in C^k(O)\ne C^k(M)$。可见，我们要考虑的是如何给 $C^r(O)$ 构造线性性。
-
-$C^k(M)$ 是合法的
-
-
-
-
-
-我们如何合法地谈及 $A(x^i)$ 呢？将 $x^i$ 任意拓展到 $M$ 上即可，因为只要 $f_1,f_2\in C^r(M)$ 在 $U\in\mathscr N(p)$ 上相等，则 $p$ 点任意切矢 $A$ 满足 $A(f_1)=A(f_2)$。对此只需置 $f:=f_1-f_2$ 并证明 $A(f)=0$。令 $h$ 在 $M\backslash U$ 上为零但 $h(p)\ne 0$，就可构造零元 $fh=0$，则 $0=A(fh)=h(p)A(f)$ 从而 $A(f)=0$。
+另一个关键在于，简单谈及 $C^r(M)$ 会忽视 $x^\mu$ 这种不在 $M$ 上的函数。
+为合法地谈及坐标分量 $A(x^\mu)$，应将 $U$ 上函数拓展到 $M$ 上。而只要 $f_1,f_2\in C^r(M)$ 在 $U\in\topo N(p)$ 上相等，则 $p$ 点任意切矢 $A$ 满足 $A(f_1)=A(f_2)$。对此只需置 $f:=f_1-f_2$ 并证明 $A(f)=0$。令 $h$ 在 $M\backslash U$ 上为零但 $h(p)\ne 0$，就可构造零元 $fh=0$，则 $0=A(fh)=h(p)A(f)$ 从而 $A(f)=0$。
 
 \begin{definition}
     置流形 $M$。设 $V\subset U\subset M$。$f:V\to\R$ 称为 $g:U\to\R$ 在 $V$ 上的\textbf{限制}，若 $\forall p\in V,f(p)=g(p)$。显然限制是唯一的。$g$ 称为 $f$ 在 $U$ 上的一个\textbf{延拓}。
@@ -151,16 +377,16 @@ $C^k(M)$ 是合法的
     
 \end{definition}
 
-对光滑流形 $M$ 及 $p\in M$，在 $C^r(M)$ 中规定等价关系：存在 $N\in\mathscr N(p)$ 使 $f,g\in C^r(M)$ 在 $N$ 上的限制相同。等价类 $[f]$ 称为\textbf{函数芽}，构成 $C^r(M)$ 的商集 $\mathscr G_p$。
+对光滑流形 $M$ 及 $p\in M$，在 $C^r(M)$ 中规定等价关系：存在 $N\in\topo N(p)$ 使 $f,g\in C^r(M)$ 在 $N$ 上的限制相同。等价类 $[f]$ 称为\textbf{函数芽}，构成 $C^r(M)$ 的商集 $C^r_p$。
     \eq{
         [f]+[g]:=[f+g],\quad [f][g]:=[fg].
     }
 \begin{definition}
-    $p\in M$ 处的\textbf{切矢} $v$ 是 $\mathscr G_p$ 上的线性函数，且 $\forall f,g\in\mathscr G_p$
+    \textbf{切矢}是满足 Leibniz 乘法法则的线性泛函：
+    置 $p\in M$，线性函数 $v:C^r_p\to\R$ 满足 $\forall f,g\in C^r_p$，
     \eq{
         v(fg)=g(p)v(f)+f(p)v(g).
     }
-
     $p$ 处全体切矢的集合 $T_p M$ 称为 $M$ 在 $p$ 处的\textbf{切空间}。全体切空间的无交并
     \eq{
         TM:=\bigsqcup_{p\in M} T_p M=\bigcup_{p\in M}\{p\}\times T_p M=\{(p,v):p\in M,v\in T_p M\}
@@ -172,7 +398,6 @@ $C^k(M)$ 是合法的
     部分教材将无交并写作 $\coprod$。
     直观图像是把切空间理解为背景在该点的切平面。
 \end{remark}
-
 
 \begin{theorem}
     $\dim T_p M=\dim M$。
@@ -214,18 +439,10 @@ $X_\mu$
 
 \begin{definition}
     $T^*_p M:=(T_p M)^*$ 称为 $M$ 在 $p$ 处的\textbf{余切空间}，其元素称为 $M$ 在 $p$ 处的\textbf{余切矢}。
-    全体余切空间的无交并 $T^*M:=\bigsqcup_{p\in M} T^*_p=\{(p,\omega):p\in M,\omega\in T^*_p M\}$ 称为\textbf{余切丛}。
+    全体余切空间的无交并 $T^*M:=\bigsqcup_{p\in M} T^*_p M$ 称为\textbf{余切丛}。
 \end{definition}
 
-代入 $V=T_p M,e_i=X_i$ 即可得到分量变换律。
-\eq{
-    T=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}\partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_k}\otimes\d x^{\nu_1}\otimes\cdots\otimes\d x^{\nu_l}.
-}
 
-余切矢量场和切矢场的缩并其实就是将对偶矢量作用于矢量，即
-$\langle \omega, v\rangle$。
-
-\section{张量场}
 
 切矢场就是给流形各处指定一个切矢，准确而言，还要带上起点信息：
 \begin{definition}
@@ -240,21 +457,17 @@ $\langle \omega, v\rangle$。
 \end{definition}
 
 \begin{eg}
-    第 $x^i$ 坐标线的切矢正是坐标基 $\delta^j_i\del_j=\del_i$。
+    第 $x^i$ 坐标线的切矢正是坐标基 $\delta^j_i\p_j=\p_i$。
 \end{eg}
 
 \begin{theorem}
-    \eq{\dv{\sigma}=\dv{(x^i \circ C)}{\sigma}\del_i.}
+    \eq{\dv{\sigma}=\dv{(x^i \circ C)}{\sigma}\p_i.}
 \end{theorem}
 
 借助于至少囊括曲线段的坐标系 $\{x^\mu\}$，则 $x^\mu$ 在曲线上关于 $[t_1,t_2]$ 分段可导，故 $\dv*{t}$ 可展开至坐标基
     \[\dv{t}=\dv{x^\mu}{t}\pdv{x^\mu},\]
 
-曲面
 
-\[
-        \pdv{t}=\pdv{x^\mu}{t}\pdv{x^\mu},
-    \]
     故应记 $\partial_t$。
 
 置映射 $g:A\to A$ 和 $f:A\to A$。若 $f\circ g=g\circ f$，则称 $f,g$ 是\textbf{对易的}(commutative)。若 $A$ 有减法运算，称映射 $[f,g]$ 为 $f,g$ 的\textbf{对易子}(commutator)，使 $[f,g](x)=f(g(x))-g(f(x))$。$f,g$ 对易即 $[f,g](x)=0$，简写为 $[f,g]=0$。、
@@ -284,17 +497,30 @@ $\langle \omega, v\rangle$。
 \end{proof}
 
 \begin{eg}
-    Fubini 定理指出 $\left[\del_\mu,\del_\nu\right]=0$，又称\textbf{偏导对易性}。
+    Fubini 定理指出 $\left[\p_\mu,\p_\nu\right]=0$，又称\textbf{偏导对易性}。
 \end{eg}
 
 
 Cartan 还注意到余切空间可给函数微分一个更严格的理解。标准分析学中常将 $\d f$ 定义为 $\Delta f$ 的线性主部，即 $\d f(x,\Delta x):=f'(x)\Delta x$。物理上的理解是在 $\Delta x$ 很小时给出的微小增量。由于 $\Delta x$ 是从某点 $x$ 出发的微小位移，因此一个更合适的理解是切矢，即
 \eq{
-    \d f(p)(A):=A(f)=A^i\del_i f.
+    \d f(p)(A):=A(f)=A^i\p_i f.
 }
-可以看到 $x^i$ 的微分正是坐标基 $\del_i$ 的对偶 $\d x^i(\del_j)=\del_j(x^i)=\delta^i_j$，称为\textbf{对偶坐标基}或\textbf{逆变基}。故 $\d f$ 的分量是 $\d f(\del_i)=\del_i f$，即可展开为 $\d f=\del_i f \d x^i$。在标准分析中，全微分理解为各线性映射间的关系，这里将线性映射叙述为余切矢量。由于分量是 $\del_i f$，因此有时建议称标量场的\textbf{梯度}\footnote{为区分于标准分析学中的概念，部分书籍会用粗体表示这些泛函，如 $\bm A,\bm\omega,\bm{\del}/{\bm{\del}x^i},\bm{\d}f$。但其实没有必要，因为两种概念其实是一致的。看似不同是因为本科教学为了通俗性，默认以坐标空间为基础，而没有额外提出流形。}。
+可以看到 $x^i$ 的微分正是坐标基 $\p_i$ 的对偶 $\d x^i(\p_j)=\p_j(x^i)=\delta^i_j$，称为\textbf{对偶坐标基}或\textbf{逆变基}。故 $\d f$ 的分量是 $\d f(\p_i)=\p_i f$，即可展开为 $\d f=\p_i f \d x^i$。在标准分析中，全微分理解为各线性映射间的关系，这里将线性映射叙述为余切矢量。由于分量是 $\p_i f$，因此有时建议称标量场的\textbf{梯度}\footnote{为区分于标准分析学中的概念，部分书籍会用粗体表示这些泛函，如 $\bm A,\bm\omega,\bm{\partial}/{\bm{\partial}x^i},\mathbf{d}f$。但其实没有必要，因为两种概念其实是一致的。看似不同是因为本科教学为了通俗性，默认以坐标空间为基础，而没有额外提出流形。}。
 
 函数的微分，对于标量函数有这些运算：加法 $f+g$、乘法 $fg$ 和微分 $f\mapsto\text df$。乘法对于加法是可分配的。微分对乘法也是一个分配，即 Leibniz 法则。
+
+
+%张量场
+
+代入 $V=T_p M,e_i=X_i$ 即可得到分量变换律。
+\eq{
+    T=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}\partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_k}\otimes\d x^{\nu_1}\otimes\cdots\otimes\d x^{\nu_l}.
+}
+
+余切矢量场和切矢场的缩并其实就是将对偶矢量作用于矢量，即
+$\langle \omega, v\rangle$。
+
+
 
 流形上的度规场是指在切丛上指定度规。
 
@@ -332,7 +558,7 @@ Cartan 还注意到余切空间可给函数微分一个更严格的理解。标�
     \]
     因此可引入形式记号 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu$ 而不论及线元 $\d s$ 的“虚实性”。此外，很容易发现参数单调性还迎合了物理学的因果要求。
     
-即它是两个矢量的线性函数 $g:V\times V\to\R$。首先有对称性 $g(A,B)=g(B,A)$；其次，若 $\forall B\in V$ 都有 $g(A,B)=0$，我们希望这只在 $A=0$ 时才能发生。这称为\textbf{非退化性}。规定度规的坐标分量是 $g_{ij}:=g(\del_i,\del_j)$，这样立即得出了。这样 $g_{ij}$ 可以看成 $g$ 在某坐标系下具体表达出的若干实数，$(g_{ij})$ 是 $g$ 的一个分量矩阵，且是对称的：
+即它是两个矢量的线性函数 $g:V\times V\to\R$。首先有对称性 $g(A,B)=g(B,A)$；其次，若 $\forall B\in V$ 都有 $g(A,B)=0$，我们希望这只在 $A=0$ 时才能发生。这称为\textbf{非退化性}。规定度规的坐标分量是 $g_{ij}:=g(\p_i,\p_j)$，这样立即得出了。这样 $g_{ij}$ 可以看成 $g$ 在某坐标系下具体表达出的若干实数，$(g_{ij})$ 是 $g$ 的一个分量矩阵，且是对称的：
  $g_{ij}=g_{ji}$。内积的分量写法是 $g( A, B)=g_{\mu\nu} A^\mu B^\nu$。
  
  这样曲线 $C(\sigma)$ 上任意两点间的线长就可定义为
@@ -341,7 +567,7 @@ Cartan 还注意到余切空间可给函数微分一个更严格的理解。标�
  }
  显然，仿射参数使切矢模方恒定，而线长参数还将使其归一为 $g(\dv{\sigma},\dv{\sigma})=\pm 1$。
 
- 这样正交归一系的坐标基就是使 $g(\del_i,\del_j)=\tilde g_{ij}$。
+ 这样正交归一系的坐标基就是使 $g(\p_i,\p_j)=\tilde g_{ij}$。
 
 度规可以展开成线性组合，这涉及从矢量的基底构造一种新基底，将运算符记作 $\otimes$，并期望度规能表示成 $g=g_{ij}\d x^i\otimes\d x^j$。为寻找其合理定义，尝试两边作用于切矢，则式左是 $g_{ij}A^i B^j=g_{ij} \d x^i(A)\d x^j(B)$，式右是 $g_{ij}\d x^i\otimes\d x^j(A,B)$，故直接希望 
 $\d x^i\otimes\d x^j(A,B):=\d x^i(A)\d x^j(B)$，即 $\otimes$ 的结果与相应矢量的作用相当于各自分开作用再相乘。

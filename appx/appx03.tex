@@ -1,4 +1,4 @@
-\chapter{线性代数拾遗}\label{appx:LA}
+\chapter{线性代数}\label{appx:LA}
 
 \section{线性空间}
 
@@ -19,19 +19,20 @@
 
 \textbf{代数}(algebra)首先是幺环 $R$ 上的模 $X$，且要给定另一称为乘积的内部运算，使得 $X$ 自身是环，并对 $\forall \alpha \in R, x,y \in X$ 有 $\alpha(xy)=(\alpha x) y=x(\alpha y)$。可见代数上有五种运算：$R$ 的加法和乘法、$X$ 的加法和乘积、外部乘法。
 
-进而回顾一下，域 $\mathbb F$ 上的\textbf{线性空间}其实就是 $\mathbb F$-模。由于 $\mathbb F$ 是域，选取左模或右模其实无关宏旨。一般取实数域 $\R$ 或复数域 $\C$，相应有实线性空间和复线性空间。显然 $\mathbb F$ 自身可以成为 $\mathbb F$-线性空间。线性空间的元素称为\textbf{向量}或\textbf{矢量}。其中内部运算称为（逐点）加法，外部运算称为数乘。物理上常称为\textbf{线性叠加原理}，而将矢量画成笔直的箭头。可以看到，$V$ 在赋予某种乘法后是一个代数，可称\textbf{线性代数}，比如内积空间或者张量积空间。当然，线性代数在现在更多指此概念所发展的一套学说。
+进而回顾一下，域 $\F$ 上的\textbf{线性空间}其实就是 $\F$-模。由于 $\F$ 是域，选取左模或右模其实无关宏旨。一般取实数域 $\R$ 或复数域 $\C$，相应有实线性空间和复线性空间。显然 $\F$ 自身可以成为 $\F$-线性空间。线性空间的元素称为\textbf{向量}或\textbf{矢量}。其中内部运算称为（逐点）加法，外部运算称为数乘。物理上常称为\textbf{线性叠加原理}，而将矢量画成笔直的箭头。可以看到，$V$ 在赋予某种乘法后是一个代数，可称\textbf{线性代数}，比如内积空间或者张量积空间。当然，线性代数在现在更多指此概念所发展的一套学说。
 
-设线性空间 $V$。某非空 $S\subset V$ 内元素的全体线性组合构成子空间 $\operatorname{span}B$，称为由 $B$ 张成的。若存在线性无关的非空子集 $B$ 使 $\operatorname{span}B=V$，则称 $B$ 是 $V$ 的一个\textbf{基}(basis)或一组\textbf{基矢}(basis vectors)。若 $B$ 是有限集，则称 $V$ 是\textbf{有限维的}，可定义维数 $\dim V:=|B|$。易知任意基的元素个数一致，由此维数是良定义的。若 $B$ 是无限集，也即任意有限矢量组 $\{e_\mu\}_{\mu=1}^n$ 都不构成基，则称 $V$ 是\textbf{无限维的}。典型例子是 $[a, b] \subset \R$ 上连续复函数构成无限维复线性空间 $C[a, b]$，直观上是因为 $[a, b]$ 有无穷多自由度，从而总存在函数不能有限表出。
+设线性空间 $V$。某非空 $S\subset V$ 内元素的全体线性组合构成子空间 $\operatorname{span}B$，称为由 $B$ 张成的。若存在线性无关的非空子集 $B$ 使 $\operatorname{span}B=V$，则称 $B$ 是 $V$ 的一个\textbf{基}(basis)或一组\textbf{基矢}(basis vectors)。$|B|<\aleph_0$ 则称 $V$ 是\textbf{有限维的}，可定义维数 $\dim V:=|B|$。易知任意基的元素个数一致，由此维数是良定义的。若 $|B|\geqslant \aleph_0$，也即任意有限矢量组 $\{e_\mu\}_{\mu=1}^n$ 都不构成基，则称 $V$ 是\textbf{无限维的}。典型例子是 $[a, b] \subset \R$ 上连续复函数构成无限维复线性空间 $C[a, b]$，直观上是因为 $[a, b]$ 有无穷多自由度，从而总存在函数不能有限表出。
 映射 $A:V\to V$ 称为 $V$ 上的\textbf{算子}、\textbf{算符}(operator)或\textbf{变换}。
 有限维里有很多结论不能简单推广至无限维，否定这些结论带来了更多“反直觉”的性质。相对论的物理量主要属于有限维。
 
 \begin{definition}
-    \textbf{泛函}严格指无限维 $V$ 上的函数。
+    给定域 $\F$。集合 $X$ 上的\textbf{函数}是指 $\F^X$ 的元素、\textbf{泛函}是指 $\F^{\F^X}$ 的元素。$\F^{\F^X}$ 中 $|X|$ 称\textbf{自由度}。
 \end{definition}
 
-\begin{remark}
-    曾用拉氏理论理解泛函，而 Fréchet 空间的确是无限维线性空间。
-\end{remark}
+对 $\F^X$ 定义如下加法、数乘、零元：$\forall f,g\in \F^X,x\in X,\alpha\in\F$ 有
+\[(f+g)(x):=f(x)+g(x),\quad (\alpha f)(x):=\alpha f(x),\quad 0(x):=0,\]
+$\F^X$ 就成了线性空间，且维数为 $|X|$。故泛函等价于线性空间上的函数。$\F^X$ 等势于 $\F^{|X|}$。若 $|X|<\aleph_0$，则 $X$ 上函数即有限数列，$X$ 上泛函相当于 $\F^{|X|}$ 上的多元函数。
+故我们多考虑无穷自由度的泛函，是无穷维线性空间 $\F^X$ 上的函数。
 
 易知 $x\in V$ 可由任意基 $\{e_\mu\}$ 唯一地线性表示，称系数组 $\{k^\mu\}$ 为 $x$ 由 $\{e_\mu\}$ 表出的\textbf{分量}，有限维时写作 $(k^1,\cdots,k^n)^\mathrm{T}$。欲谈及同一矢量在不同基间的分量变换，先要给定基变换。
 设 $\{e_\mu\},\{e'_\mu\}$ 是线性空间 $V$ 上两组不同的基，某矢量 $v\in V$ 在两组基下的分量分别是 $\{v^\mu\},\{v'^\mu\}$。设基矢 $e_\mu^{\prime}$ 在 $\{e_\mu\}$ 下的展开为
@@ -42,21 +43,24 @@ e'_\mu=A^\nu{ }_\mu e_\nu,
 \eq{
     v'^\mu=(A^{-1})^\mu{}_\nu v^\nu.
 }
-因此基变换和分量变换是互逆的。
+因此基变换和分量变换是互逆的。故相对于 $\{e_\mu\}$ 而言可称 $v\in V$ 为逆变矢量。
 
 \section{对偶空间}
 
-以 $\mathbb F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\mathbb F)$。
+以 $\F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\F)$。
 
-置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\mathbb F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f(k^\mu e_\mu)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
+置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f(k^\mu e_\mu)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
 
-假若 $f$ 还是双射，则 $f\in\mathrm{Isom}(V, W)$ 且 $f^{-1}\in\hom(W,V)$。换言之，$V,W$ 的线性双射为同构。若存在同构，则称 $V,W$ 互为\textbf{线性同构的}，记作 $U\cong V$。有限维时易证等价于 $\dim U=\dim V$。易知 $f$ 是单射时，核为 $\ker f:=\{\alpha\in V:f(\alpha)=0\}=\{0\}$；$f$ 是满射时像为 $\Im f=W$。秩为 $\rank f:=\dim \Im f$，可证满足 $\dim \ker f + \dim \Im f = \dim V$。故若 $f$ 单射，则 $\Im f\cong V$。对线性变换而言，这说明单射等价于满射。换言之，满秩线性变换乃 $V$ 自同构。
+假若 $f$ 还是双射，则 $f\in\mathrm{Isom}(V, W)$ 且 $f^{-1}\in\hom(W,V)$。换言之，$V,W$ 的线性双射为同构。有限维时易证 $U\cong V$ 等价于 $\dim U=\dim V$。易知 $f$ 是单射时，核为 $\ker f:=\{\alpha\in V:f(\alpha)=0\}=\{0\}$；$f$ 是满射时像为 $\Im f=W$。秩为 $\rank f:=\dim \Im f$，可证满足 $\dim \ker f + \dim \Im f = \dim V$。故若 $f$ 单射，则 $\Im f\cong V$。对线性变换而言，这说明单射等价于满射。换言之，满秩线性变换乃 $V$ 自同构。
 
-对任意线性空间 $V,W$，只要对 $\hom(V,W)$ 定义如下加法、数乘、零元：$\forall f,g\in \hom(V,W),v\in V,\alpha\in\mathbb F$ 有
+对任意线性空间 $V,W$，只要对 $\hom(V,W)$ 定义如下加法、数乘、零元：$\forall f,g\in \hom(V,W),v\in V,\alpha\in\F$ 有
 \[(f+g)(v):=f(v)+g(v),\quad (\alpha f)(v):=\alpha f(v),\quad 0(v):=0,\]
-则 $\hom(V,W)$ 成为了线性空间。一般考虑线性函数。任意线性函数 $\omega\in V^*:=\hom(V,\mathbb F)$ 称为\textbf{对偶矢量}，称 $V^*$ 为\textbf{对偶空间}。
-比如，行向量空间就是列向量空间的对偶空间。
-考虑从原来的 $V$ 来产生 $V^*$ 的基。方法是，假设 $\{e_\mu\}$ 是 $V$ 的一个基，则定义 $V^*$ 中有一组元素 $\{e^\mu\}$ 满足
+则 $\hom(V,W)$ 成为了线性空间。
+考虑对偶函子 $(\oo)^*:\cate{Vect}(\F)^\mathrm{op}\to \cate{Vect}(\F)$，$V^*=\hom(V,\F)$ 是线性空间，故称为 $V$ 的\textbf{对偶空间}。$\omega\in V^*$ 称为\textbf{对偶矢量}，由于 $\hom(V,\F)\subset\F^V$，也可称\textbf{线性泛函}。
+比如，行向量空间就是列向量空间的对偶空间。线性映射 $f\in\hom(X,Y)$ 诱导出拉回 $f^*\in\hom(Y^*, X^*)$。
+
+下证有限维时 $V\cong V^*$。
+考虑从原来的 $V$ 来产生 $V^*$ 的基。假设 $\{e_\mu\}$ 是 $V$ 的一个基，则定义 $V^*$ 中有一组元素 $\{e^\mu\}$ 满足
 \eq{ e^\mu(e_\nu):=\delta^\mu_\nu,}
 进而由线性性可导出它对 $V$ 任意元素的作用情况，即 $e^\mu(A)=A^\mu$。再证明 $\{e^\mu\}$ 确实是一个基：对任意 $\omega\in V^*$ 设
 \eq{
@@ -64,64 +68,61 @@ e'_\mu=A^\nu{ }_\mu e_\nu,
 }
 则必能展开成 $\omega=\omega_\mu e^\mu$，因为两边作用于任意 $V$ 中元素即可，如 $\omega(e_\nu)=\omega_\mu e^\mu(e_\nu)=\omega_\nu$；显然线性无关：$0=\omega_\mu e^\mu(e_\nu)=\omega_\nu$。这说明 $\dim V^*=\dim V$ 或者 $V\cong V^*$。按此关系给出的 $\{e^\mu\}$ 就称 $\{e_\mu\}$ 的\textbf{对偶基}。
 
-$V,V^*$ 间的同构当然是不唯一的。注意到 $\{e_\mu\}$ 到其对偶基 $\{e^\mu\}$ 的线性映射就是同构，那这会随着 $\{e_\mu\}$ 的不同选取而产生不同的同构。
+$V,V^*$ 间的同构当然不唯一。注意到 $\{e_\mu\}$ 到其对偶基 $\{e^\mu\}$ 的线性映射就是同构，那这会随着 $\{e_\mu\}$ 的不同选取而产生不同的同构。
 若要有充分理由挑选出特殊同构，需另加结构限制之。
-比如度规就建立了 $V,V^*$ 的特殊同构。
+比如我们学过的度规就建立了 $V,V^*$ 的特殊同构。
 
-对偶操作不必继续“套娃”。设 $V^{**}=\hom(V^*,\mathbb F)$，下面说明可给 $V,V^{**}$ 找到同构，它不依赖于基的人为选取。用基底展开后有 $\omega(A)=\omega_\mu A^\mu=A^\mu\omega_\mu$，说明如果认为映射可交换，矢量也可成为对偶矢量的线性函数，只需定义 $i_V:V\to V^{**}$ 使得 $i_V A$ 满足 $i_V A(\omega):=\omega(A)$，
-有时 $i_V A$ 简记作 $A^{**}$。显然 $i_V\in\mathrm{Isom}(V,V^{**})$。定义 $f\in\hom(V,W)$ 的对偶 $f^*\in\hom(W^*, V^*)$ 使得 $\forall\lambda\in W^*,A\in V$ 有
-\eq{
-    (f^*(\lambda))(A)=\lambda(f(A)).
-}
-显然恒等变换 $\mathrm{id}_V\in \operatorname{Aut} V$ 的对偶为 $\mathrm{id}_V^*=\mathrm{id}_{V^*}$；复合映射满足 $(f\circ g)^*=g^*\circ f^*$。进而取逆映射进行复合可知，若 $f$ 是同构则 $f^*$ 也是。
-可证对任意线性 $f$，此同构是自然的：
+然而对偶操作不必继续“套娃”。用基底展开后有 $\omega(A)=\omega_\mu A^\mu=A^\mu\omega_\mu$，这说明对偶矢量与矢量之间有天生的(god-given)乘法。映射像乘法一样可交换，矢量也可成为对偶矢量的线性函数，于是 $V,V^**$ 在某种意义上是一样的。
+具体地说，考虑对偶的复合\footnote{当然，$(\oo)^{**}$ 的准确写法是 $D\circ D^\mathrm{op}$，这里记 $D(\oo)=(\oo)^*$。} $(\oo)^{**}:\cate{Vect}(\F)\to\cate{Vect}(\F)$，则 $V^{**}=\hom(V^*,\F)$。
+为满足“天生乘法”，只需定义 $\eta_V:V\to V^{**}$ 使 $\eta_V A(\omega):=\omega(A)$，这里 $\eta_V A$ 也可记 $A^{**}$。
+对任意线性 $f$，不难检查以下图表
 \[\begin{tikzcd}
-    V \arrow[r, "i_V"] \ar[d, "f"'] & V^{**} \arrow[d, "f^{**}"] \\
-    W \arrow[r, "i_W"] & W^{**} ,
+    V \arrow[r, "\eta_V"] \ar[d, "f"'] & V^{**} \arrow[d, "f^{**}"] \\
+    W \arrow[r, "\eta_W"] & W^{**}
 \end{tikzcd}\]
-故被称为\textbf{自然同构}。$f$ 取决于对基的作用效果，故换言之，自然同构不依赖于基。实践中经常把自然同构直接写成等号，即 $V=V^{* *}$。将二者做认同后，省略同构符号可写成 $\omega(A)=A(\omega)$，数学上常写成 $\langle\omega,A\rangle$，这说明对偶矢量与矢量之间有天生的(god-given)乘法。且可证，不存在 $i_V\in\mathrm{Isom}(V,V^*)$ 使下图对任意线性 $f$ 交换：
+是交换的。可见 $\eta=\{\eta_V\}$ 就是 $\mathrm{id},(\oo)^{**}$ 的自然变换。
+容易看出 $\eta_V:V\to V^{**}$ 总是单射，事实上可证 $\eta$ 是双射当且仅当 $V$ 有限维，遂有 $\eta_V\in\mathrm{Isom}(V,V^{**})$，即自然同构 $V=V^{* *}$。
+注意到 $f$ 取决于对基的作用效果，可见“天生乘法”导致了一种同构，它不依赖于基的人为选取，这便是“自然”的含义。
+认为 $A=A^{**}$ 后可写成 $\omega(A)=A(\omega)$，数学上常写成 $\langle\omega,A\rangle$。
+作为对比，可证不存在 $i_V\in\mathrm{Isom}(V,V^*)$ 使下图
 \[\begin{tikzcd}
     V \arrow[r, "i_V"] \ar[d, "f"'] & V^{*} \\
-    W \arrow[r, "i_W"] & W^{*} \arrow[u, "f^{*}"'],
+    W \arrow[r, "i_W"] & W^{*} \arrow[u, "f^{*}"']
 \end{tikzcd}\]
+对任意线性 $f$ 交换。
 故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。真正有用的是 $V,V^*$，好似两面镜子相互反射。设 $v=v^\mu e_\mu$，自然有 $v^\mu=v^\nu \langle e^\mu,e_\nu\rangle=v(e^\mu)$。
-最后来研究各种分量、基变换的关系。
+
 \begin{theorem}
     若 $V$ 中有一基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则相应的对偶基变换为
 \eq{
 e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 }
-这说明对偶矢量 $\omega=\omega_\mu e^\mu$ 的坐标变换为 $\omega_\mu'=A^\nu{}_\mu\omega_\nu$。
+这说明对偶矢量 $\omega=\omega_\mu e^\mu$ 的坐标变换为 $\omega_\mu'=A^\nu{}_\mu\omega_\nu$。故相对于 $\{e_\mu\}$ 而言可称 $\omega\in V^*$ 为协变矢量。
 \end{theorem}
 
 \begin{proof}
     只需等式两边作用于 $e_\alpha^{\prime}$：
-    \begin{align*}({A}^{-\mathrm{T}})_\nu{}^\mu\langle e^{\nu}, e_\alpha^{\prime}\rangle & =(A^{-\mathrm{T}})_\nu{ }^\mu A^\beta{}_\alpha\langle e^{\nu}, e_\beta\rangle  =(A^\mathrm{T})_\alpha{ }^\beta (A^{-\mathrm{T}})_\nu{ }^\mu \delta_\beta^\nu\\ &=(A^\mathrm{T})_\alpha{ }^\nu (A^{-\mathrm{T}})_\nu{ }^\mu=\delta_\alpha^\mu=\langle e^{\prime \mu}, e_\alpha^{\prime}\rangle,\end{align*}
-    遂见结果相同。
+    \begin{align*}({A}^{-\mathrm{T}})_\nu{}^\mu\langle e^{\nu}, e_\alpha^{\prime}\rangle & =(A^{-\mathrm{T}})_\nu{ }^\mu A^\beta{}_\alpha\langle e^{\nu}, e_\beta\rangle  =(A^\mathrm{T})_\alpha{ }^\beta (A^{-\mathrm{T}})_\nu{ }^\mu \delta_\beta^\nu\\ &=(A^\mathrm{T})_\alpha{ }^\nu (A^{-\mathrm{T}})_\nu{ }^\mu=\delta_\alpha^\mu=\langle e^{\prime \mu}, e_\alpha^{\prime}\rangle,\qedhere\end{align*}
 \end{proof}
 
-% 协变逆变的交换图
-
-与矢量基相同形式变换的称为协变，与矢量基相反形式变换的称为逆变。
-
-% 这种变换形式称为逆变，新量$=$矩阵$\times$旧量。原基底满足 $e_\nu={(A^{-1})}^\mu{}_\nu e^\prime_\mu$，称为协变，旧量$=$矩阵$\times$新量。
-
 \section{张量空间}
-
 \begin{definition}
-    设 $\mathbb F$-线性空间 $\{X_i\}_{i=1}^k,W$。若
+    设 $\F$-线性空间 $\{X_i\}_{i=1}^k,W$。若
     $T:X_1\times\cdots\times X_k\to W$
     对任何 $X_i$ 都线性，则称\textbf{多重线性映射}。常取如下情形：
     \eq{
-        T:\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N}\to \mathbb F,
+        T:\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N}\to \F,
     }
     称为 $V$ 上的一个\textbf{多重线性函数}或\textbf{张量}。如上即 $(k,l)$-张量，构成张量空间
 \eq{
-    \hom(\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N},\mathbb F)=:V^k_l.
+    \hom(\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N},\F)=:V^k_l.
 }
 \end{definition}
+
+%% 检查
+
 \begin{remark}
-    用分号区分上下槽，如 $T(\oo;\oo,\oo)\in V^1_2$ 可输入 $\omega,v_1,v_2$ 得 $T(\omega;v_1,v_2)\in\mathbb F$。$T$ 视为全部槽为空时的简写。
+    用分号区分上下槽，如 $T(\oo;\oo,\oo)\in V^1_2$ 可输入 $\omega,v_1,v_2$ 得 $T(\omega;v_1,v_2)\in\F$。$T$ 视为全部槽为空时的简写。
 \end{remark}
 
 \begin{figure}[ht]
@@ -181,6 +182,8 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
     \end{tikzcd} \]
 这称为张量积的\textbf{泛性质}。换言之，矢量张量积将 $X,Y$ 卡氏积变为其（线性空间）张量积。根据模论的相关定理，可证明 $X\otimes Y$ 一定存在，且同构意义下唯一。线性空间张量积可还原回张量及其张量积，故也是许多数学教材采用的等价定义。
 
+%% 泛性质定义法
+
 \begin{theorem}
     设基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，张量分量的变换律显然为
     \eq{
@@ -193,7 +196,7 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 
 \begin{definition}
     $(k,l)$-张量 $ T $ 的第 $i$ 上标 $(i \leqslant k)$ 与第 $j$ 下标 $(j \leqslant l)$ 的\textbf{缩并}为
-\eq{\c_{j}^{i} T:=T \big(\cdots,\hl{red}{e^{h}},\cdots ; \cdots,\hl[b]{blue}{e_{h}},\cdots\big),}
+\eq{\mathrm{C}_{j}^{i} T:=T \big(\cdots,\hl{red}{e^{h}},\cdots ; \cdots,\hl[b]{blue}{e_{h}},\cdots\big),}
 \hn{-2}{-1}{red}{第 $i$ 上槽}
 \hn[b]{-2}{1}{blue}{第 $j$ 下槽}
 \vspace{-0.1\baselineskip}
@@ -201,13 +204,13 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 \noindent 其中对 $h$ 使用求和约定。缩并结果为 $(k-1,l-1)$-张量，且显然与基选择无关。
 \end{definition}
 
-缩并其实是求迹的映射版本，因此数学家会混记为 $\tr$。如线性变换 $T$ 在任意基底下矩阵的迹 $\tr T$ 就是 $(1,1)$-张量缩并，是基不变的标量。但两种符号的逻辑稍许不同：$\tr$ 是写出缩并后张量类型，$\c$ 是指明所缩指标位置。假设 $T$ 是 $(1,3)$-张量，定义 $S:=\c^1_{2}T$，分量写法是 $S_{ij}=C^{k}{}_{ikj}$，但数学上记作 $S=\tr^0_2 T$。并且 $\tr$ 的用法有时并不唯一，比如 $S_{ij}$ 求迹必须借助升指标得 $g^{ij}S_{ij}$，数学上写作 $\tr_{g}S$。
+缩并其实是求迹的映射版本，因此数学家会混记为 $\tr$。如线性变换 $T$ 在任意基底下矩阵的迹 $\tr T$ 就是 $(1,1)$-张量缩并，是基不变的标量。但两种符号的逻辑稍许不同：$\tr$ 是写出缩并后张量类型，$\c$ 是指明所缩指标位置。假设 $T$ 是 $(1,3)$-张量，定义 $S:=\mathrm{C}_2^1T$，分量写法是 $S_{ij}=T^{k}{}_{ikj}$，但数学上记作 $S=\tr^0_2 T$。并且 $\tr$ 的用法有时并不唯一，比如 $S_{ij}$ 求迹必须借助升指标得 $g^{ij}S_{ij}$，数学上写作 $\tr_{g}S$。
 将分量语言改写为映射语言时，只需注意“先张量积再缩并”可产生各种类型的新张量。可从映射语言直接看出，其结果相当于张量对矢量、对偶矢量的作用。比如，置 $T \in V^k_l,v \in V$，则
 \begin{align*}
-    \c_{\cdots}^{k+1}(T \otimes v)&=T \otimes v(\cdots,e^{\mu} ; \cdots,e_{\mu},\cdots)=T(\cdots;\cdots,e_{\mu},\cdots)v(e^\mu)\\
+    \mathrm{C}_{\cdots}^{k+1}(T \otimes v)&=T \otimes v(\cdots,e^{\mu} ; \cdots,e_{\mu},\cdots)=T(\cdots;\cdots,e_{\mu},\cdots)v(e^\mu)\\
     &=T(\cdots;\cdots,v(e^\mu)e_{\mu},\cdots)=T(\cdots;\cdots,v,\cdots);
 \end{align*}
-同理 $T$ 对 $\omega\in V^*$ 作用其实即 $\c_{l+1}^{\cdots}(T \otimes \omega)$。
+同理 $T$ 对 $\omega\in V^*$ 作用其实即 $\mathrm{C}_{l+1}^{\cdots}(T \otimes \omega)$。
 换言之，作用就是先积后并。
 
 \begin{definition}
@@ -251,7 +254,7 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 \end{definition}
 
 
-专注于 $W=\mathbb F$，则 $f$ 为双线性函数、$f_\flat(\alpha)$ 为对偶矢量、$f_\flat\in\hom(V,V^*)$。
+专注于 $W=\F$，则 $f$ 为双线性函数、$f_\flat(\alpha)$ 为对偶矢量、$f_\flat\in\hom(V,V^*)$。
 双线性函数的分量矩阵称为\textbf{度量矩阵}。不同基的度量矩阵是合同的，而合同变换保秩，故可直接定义 $\rank f$ 为任意度量矩阵的秩。
 
 \begin{theorem}
@@ -262,15 +265,15 @@ $f$ 满秩时称为非退化的。易证充要条件是分量矩阵可逆，或
 \eq{\forall w \in V,\quad f(v,w)=0 \iff v=0.}
 故非退化性等价于 $f_\flat\in\mathrm{Isom}(V,V^*)$。换言之，可规定好某个 $f$ 作为 $V$ 上的额外结构，建立 $V,V^*$ 间的特殊同构。
 
-相对论主要用实线性空间。度规是 $\mathbb F=\R$ 的特例：
+相对论主要用实线性空间。度规是 $\F=\R$ 的特例：
 
 \begin{definition}
-    $V$ 上一个对称、非退化的双线性实函数 g 称为 $V$ 上的一个\textbf{度规}。 $g_\flat:V\to V^*$ 称作\textbf{音乐同构}(musical isomorphism)或\textbf{典范同构}(canonical isomorphism)。度规逆 $g^{-1}:=g^{ij} e_i\otimes e_j$，或用 $\c^2_1(g^{-1}\otimes g)=\mathrm{id}_V$ 定义。
+    $V$ 上一个对称、非退化的双线性实函数 g 称为 $V$ 上的一个\textbf{度规}。 $g_\flat:V\to V^*$ 称作\textbf{音乐同构}(musical isomorphism)或\textbf{典范同构}(canonical isomorphism)。度规逆 $g^{-1}:=g^{ij} e_i\otimes e_j$，或用 $\mathrm{C}_1^2(g^{-1}\otimes g)=\mathrm{id}_V$ 定义。
 \end{definition}
 
 \begin{definition}
     \textbf{升降指标}操作本质为音乐同构，故是相对于某度规而言的。比如 $(1,1)$-张量 $T$ 的降为
-    $\c_1^1(g\otimes T)=T_\flat$。升指标用度规逆，即 $\c_1^1(g^{-1}\otimes T)=T^\sharp$。就矢量、对偶矢量而言，可将音乐同构称为度规对偶：$A\in V$ 的降为 $A_\flat:=g_\flat A$；$\omega\in V^*$ 的升是 $\omega^\sharp:=g^{-1}(\omega,\oo)$。
+    $\mathrm{C}_1^1(g\otimes T)=T_\flat$。升指标用度规逆，即 $\mathrm{C}_1^1(g^{-1}\otimes T)=T^\sharp$。就矢量、对偶矢量而言，可将音乐同构称为度规对偶：$A\in V$ 的降为 $A_\flat:=g_\flat A$；$\omega\in V^*$ 的升是 $\omega^\sharp:=g^{-1}(\omega,\oo)$。
 \end{definition}
 
 \begin{remark}
@@ -326,15 +329,12 @@ $\C$ 也能作为通常度量空间。以拓扑线性空间为对象、连续线
     内积空间上全体连续线性函数之集称为其\textbf{共轭空间}或\textbf{对偶空间}。
 \end{definition}
 \begin{remark}
-    有限维内积空间 $V$ 上的线性函数必连续，故 $\hom(V,\mathbb F)$ 等价于此处定义的对偶空间。
+    有限维内积空间 $V$ 上的线性函数必连续，故 $\hom(V,\F)$ 等价于此处定义的对偶空间。
 \end{remark}
-
-
-
 
 \section{外代数}
 
-本节主要考虑 $\mathbb F=\R$ 及有限维。
+本节主要考虑 $\F=\R$ 及有限维。
 
 \begin{definition}
     $l$ 阶反称协变张量称为 \textbf{$l$ 次形式}，简称 \textbf{$l$-形式}(form)。$V$ 上全体 $l$-形式之集记作 $\Lambda_l(V)$。
@@ -408,7 +408,7 @@ $\{e^\mu\}$的楔积即可作为 $\Lambda_l(V)$ 的基：由于已说明任意 $
 \end{theorem}
 
 \begin{definition}
-    矢量和形式的缩并 $i_v \omega:=\c_1^1 (v\otimes\omega)=\omega(v,\cdots)$ 称为\textbf{内导数}、\textbf{内缩}或\textbf{内乘}(interior product)，分量表述为
+    矢量和形式的缩并 $i_v \omega:=\mathrm{C}_1^1 (v\otimes\omega)=\omega(v,\cdots)$ 称为\textbf{内导数}、\textbf{内缩}或\textbf{内乘}(interior product)，分量表述为
     \eq{
         i_v \omega_{\mu_1\cdots\mu_{k}}:=v^\nu\omega_{\nu\mu_1\cdots\mu_{k}},
     }
@@ -511,7 +511,7 @@ $\varepsilon_{i_1\cdots i_n}$ 下标数与维度一致，故独立分量只有 $
 \[
     \epsilon_{imn}\epsilon^{ijk} A_j B_k=(\delta^j_m\delta^k_n-\delta^k_m\delta^j_n)A_j B_k=2A_{[m} B_{n]}.
 \]
-可记 $\omega=A\wedge B$，$\star\omega=A\times B$（忽略度规升降），这里 $\star$ 称为\textbf{星算子}(star)，则 $A\times B=\star(A\wedge B)$，分量为 $(\star\omega)_k=\epsilon_{ijk} A^{i}B^{j}=\frac{1}{2}\omega^{ij}\epsilon_{ijk}$。
+可记 $\omega=A\wedge B$，$\star\omega=A\times B$，这里忽略度规升降。$\star$ 称\textbf{星算子}(star)，则 $A\times B=\star(A\wedge B)$，分量为 $(\star\omega)_k=\epsilon_{ijk} A^{i}B^{j}=\frac{1}{2}\omega^{ij}\epsilon_{ijk}$。
 可见 2-形式和 1-形式以 Levi-Civita 张量为桥梁存在一种关系。
 一般地，注意 $\dim\Lambda_l(V)=\dim\Lambda_{n-l}(V)$，故 $\Lambda_l(V),\Lambda_{n-l}(V)$ 确实同构。
 \begin{definition}

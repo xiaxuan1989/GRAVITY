@@ -1,23 +1,19 @@
 \chapter{Lie 导数与对称性}\label{appx:Lie-deri}
 
 一般的光滑映射 $\phi$ 仍可诱导其上张量场的变换。给定标量场 $f:N\to\R$，$p\in M$ 变到 $\phi(p)\in N$ 后标量场的值为 $f(\phi(p))$，而我们可将 $\phi(p)$ 处的 $f$ 值直接搬运回 $p$ 处，即定义新标量场 $\phi^* f:M\to\R$ 满足 $\phi^* f(p):=f(\phi(p))$。
-\begin{definition}
-    $\phi^*:C^\infty(M)\to C^\infty(N)$ 称为\textbf{拉回}(pull back)，使 $\phi^* f:=f\circ\phi$。
-\end{definition}
+
+考虑拉回 $\phi^*:C^\infty(M)\to C^\infty(N)$，即 $\phi^* f:=f\circ\phi$。
 
 \begin{theorem}
     易知 $\phi^*$ 是线性映射，且 $\phi^*(fg)=(\phi^* f) (\phi^* g)$。
 \end{theorem}
 
 
-
 类似地，记 $\phi(p)=q$，若 $\phi$ 是同胚，则也可将 $p=\phi^{-1}(q)$ 处的 $f$ 值往前搬至 $q$ 处，即定义 $\phi_* f$ 使 $\phi_* f(q):=f(\phi^{-1}(q))$ 或者 $\phi_* f:=f\circ\phi^{-1}$，故
-\eq{
-    \phi_*=(\phi^{-1})^*\iff \phi^*=(\phi^{-1})_*.
-}
+
 再研究切矢场 $v$。确定一个 $v$ 只需对其作用于任意 $f$ 的结果做出要求。将 $v$ 推前即 $\phi_* v(f):=v(\phi^* f)$。这里未出现 $\phi^{-1}$，可见对一般光滑映射，只能借助切矢场给出：
 \begin{definition}
-    $\phi_*:T_p M\to T_{\phi(p)}N$ 称为\textbf{推前}(push forward)，使 $\phi_* v:=v\circ \phi^*$。
+    $\phi_*:T_p M\to T_{\phi(p)}N$ 称为，使 $\phi_* v:=v\circ \phi^*$。
 \end{definition}
 
 将 $A$ 拉回即 $\phi^* A(f):=A(\phi_* f)$，或直接用 $\phi^*=(\phi^{-1})_*$。对余切矢场 $\omega$ 只需考虑对切矢场 $A$ 作用，同理 $\phi^* \omega:=\omega\circ\phi_*,\phi_* \omega:=\omega\circ\phi^*$。一般地，对任意张量场，其拉回和推前即
