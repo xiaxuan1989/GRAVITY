@@ -19,7 +19,7 @@
 
 \section{拓扑空间}
 
-$2^X$ 的子集称为\textbf{子集族}(collection of subsets)，全体子集族构成 $2^{2^X}$。欲对 $X$ 中每个点挑选⼀族⼦集作为其邻域(neighbourhood)，即邻域族，就是给定映射 $\topo N:X\to 2^{2^X}$ 且 $\topo N(x)\ne \mt$。
+$2^X$ 的子集称为\textbf{子集族}(collection of subsets)，全体子集族构成 $2^{2^X}$。欲对 $X$ 中每个点挑选⼀族⼦集作为邻域(neighbourhood)，就是给定映射 $\topo N:X\to 2^{2^X}$ 且 $\topo N(x)\ne \mt$。
 直观上，邻域只需含有 $x$ 即可，但由于大小任意，可无限接近于 $x$，故有“邻”称。
 若 $A\in \topo N(x)$，则 $x$ 为 $A$ 的内点(interior point)，而 $A$ 中全体内点之集 $A^\circ$ 就是其内部(interior)。
 
@@ -44,6 +44,17 @@ $(X,\topo T)$ 称为 $X$ 关于拓扑 $\topo T$ 的\textbf{拓扑空间}(topolog
 \begin{definition}
     对$x\in X,U\subset X$，若 $\exists O\in\topo{T}$ 使 $x\in O\subset U$，则 $U$ 是 $x$ 的一个\textbf{邻域}。$x$ 的全体邻域构成 $\topo N(x)$。邻域为开则称\textbf{开邻域}，构成 $\topo N(x)\cap\topo T$。
 \end{definition}
+
+\begin{theorem}
+    $\exists U \in\topo N(x)$ 如何 $\iff \exists$ 开集 $O\ni x$ 如何 $\iff \exists V \in\topo N(x)\cap\topo T$ 如何。
+\end{theorem}
+\begin{proof}
+    $\exists U\in\topo N(x)\im \exists O\in\topo T$ 使 $x\in O\subset U\im \exists$ 开集 $O\ni x\im\exists O\in\topo T$ 使 $x\in O\subset O\im \exists V=O \in\topo N(x)\cap\topo T\im\exists U=V\in\topo N(x)\cap\topo T\subset\topo N(x)$。
+\end{proof}
+\begin{remark}
+    凡命题中出现“点存在邻域…”均可换成“点存在开邻域”“包含该点的开集”。
+\end{remark}
+
 %% \setminus or \backslash
 \begin{definition}
     $A\subset X$ 称为\textbf{闭集}，若 $X\backslash A\in\topo{T}$。
@@ -68,7 +79,7 @@ $\topo T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。讨�
 \end{remark}
 
 \begin{definition}
-    \textbf{开映射} $f:X\to Y$ 把开集送到开集：$A\in\topo T_X\im f[A]\in\topo T_Y$。闭映射定义同理。
+    映射 $f:X\to Y$ \textbf{保持}某种性质，就是若 $A\subset X$ 具有这种性质，则 $f[A]$ 也具有。\textbf{开映射}就是保持开的映射。闭映射定义同理。
 \end{definition}
 
 \begin{theorem}
@@ -76,14 +87,16 @@ $\topo T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。讨�
 \end{theorem}
 
 \begin{proof}
-取任意开集 $U$，同胚 $f:U\to f[U]$。因 $f^{-1}$ 连续，开集 $f^{-1}[f[U]] = U$ 的原像 $f[U]$ 也开。同理可证同胚也是闭映射。
+取任意开集 $U$，同胚 $f:U\to f[U]$。因 $f^{-1}$ 连续，开集 $f^{-1}[f[U]] = U$ 的原像 $f[U]$ 也开。同理同胚也是闭映射。
 \end{proof}
 
 \begin{definition}
 置 $(X,\topo T)$ 和 $A\subset X$。
-\textbf{内部}为开集 $A^\circ:=\bigcup_{O\in\topo T\cap 2^A} O$，也即含于 $A$ 的最大开集。
-\textbf{闭包}(closure)为闭集 $\bar{A}:=\bigcap_{X\backslash B\in\topo T,A\subset B} B$，也即包含 $A$ 的最小闭集。
-$\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)。
+\begin{itemize}
+    \item \textbf{内部}为开集 $A^\circ:=\bigcup_{O\in\topo T\cap 2^A} O=\{x: \text{$\exists$ 开集 $O\subset A$ 使 $x\in O$}\}$，也即含于 $A$ 的最大开集。
+    \item \textbf{闭包}(closure)为闭集 $\bar{A}:=\bigcap_{X\backslash B\in\topo T,A\subset B} B=\{x: \text{$\forall$ 闭集 $B\supset A$ 都 $x\in B$}\}$，也即包含 $A$ 的最小闭集。
+    \item $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)。
+\end{itemize}
 \end{definition}
 
 \begin{remark}
@@ -93,39 +106,42 @@ $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)�
 \end{remark}
 
 \begin{theorem}
-    $X\backslash A^\circ=\overline{X\backslash A} , (X\backslash A)^\circ=X\backslash \bar A$。
+    $X\backslash A^\circ=\overline{X\backslash A}$，$(X\backslash A)^\circ=X\backslash \bar A$。
 \end{theorem}
 \begin{proof}
-    根据定义，$A^\circ:=\bigcup_{X\backslash F\in\topo T,X\backslash F\subset A} X\backslash F=X\backslash\bigcap_{X\backslash F\in\topo T,X\backslash A\subset F} F=X\backslash\overline{X\backslash A}$。
+    $A^\circ:=\bigcup_{X\backslash F\in\topo T,X\backslash F\subset A} X\backslash F=X\backslash\bigcap_{X\backslash F\in\topo T,X\backslash A\subset F} F=X\backslash\overline{X\backslash A}$。
     替换即可。
 \end{proof}
 
 \begin{theorem}
-    $A$ 为开集 $\eqto A=A^\circ\eqto\forall x\in A,A\in\topo N(x)\eqto\forall x\in A,\exists U\in\topo N(x)$ 使 $U\subset A$。
+    $A\in\topo T\eqto A=A^\circ\eqto\forall x\in A,A\in\topo N(x)\eqto\forall x\in A,\exists U\in\topo N(x)$ 使 $U\subset A$。
 \end{theorem}
 
 \begin{proof}
-    $A=A^\circ\in\topo T$；反之 $A\in\topo T,A\subset A\im A\subset A^\circ\iff A=A^\circ$。
+    $A\in\topo T,A\subset A\im A\subset A^\circ\iff A=A^\circ$；反之 $A=A^\circ\in\topo T$。
 
-    $A=A^\circ\iff\forall x\in A,\exists O\in\topo T$ 使 $x\in O\subset A\iff\forall x\in A, A\in\topo N(x)$。
-    
-    $\forall x\in A$ 下，$\exists U\in\topo N(x)$ 使 $U\subset A\im \exists O\in\topo T$ 使 $ x\in O\subset U\subset A \im A\in\topo N(x)$；反之 $\exists A\in\topo N(x)$ 使 $A\subset A$。
+    $A=A^\circ\iff\forall x\in A,\exists O\in\topo T$ 使 $x\in O\subset A\iff\forall x\in A, A\in\topo N(x)\im \forall x\in A,\exists U=A\in\topo N(x)$ 使 $U\subset A\im \forall x\in A,\exists O\in\topo T$ 使 $ x\in O\subset U\subset A \im A=A^\circ$。
 \end{proof}
 
 \begin{theorem}
-    $A$ 为闭集 $\iff A=\bar A$
+    $A$ 闭 $\iff A=\bar A$
 \end{theorem}
 \begin{proof}
-    $A$ 为闭集 $\iff X\backslash A=(X\backslash A)^\circ=X\backslash\bar A\iff A=\bar A$。
+    $A$ 闭 $\iff X\backslash A=(X\backslash A)^\circ=X\backslash\bar A\iff A=\bar A$。
 \end{proof}
 
 \begin{theorem}
-    $x\in\bar A\iff\forall U\in\topo N(x),U\cap A\ne\mt$。
+    \textbf{内点}：$x\in A^\circ\iff\exists$ 开集 $O\ni x$ 使 $O\subset A^\circ\subset A$；
+    \textbf{外点}：$x\notin \bar A\iff\exists$ 开集 $O\ni x$ 使 $O\subset X\backslash\bar A\subset X\backslash A$；
+    \textbf{边界点}：$x\in\partial A\iff\forall$ 开集 $O\ni x$ 与 $A,X\backslash A$ 都交。
 \end{theorem}
 \begin{proof}
-    给定 $x\in\bar A$，假设 $\exists U \in\topo N(x),U \cap A=\mt$。则 $\exists O\in\topo T$ 使 $x\in O\subset U\im A\subset X \backslash U\subset X \backslash O$，$X \backslash O$ 为闭集 $\im \bar{A} \subset X \backslash O\iff O \cap \bar{A}=\mt$，矛盾；
-    给定 $\forall U\in\topo N(x),U\cap A\ne\mt$，假设 $x\in X \backslash \bar{A}$。则 $X \backslash \bar{A}\in\topo T\im \exists X \backslash \bar{A}\in\topo N(x),(X \backslash \bar{A}) \cap A=A \backslash \bar{A}=\mt$，矛盾。
+    注意 $A^\circ\in\topo T,X\backslash \bar A = (X\backslash A)^\circ\in\topo T$ 即可。并注意 $O\cap A=\mt\iff O\subset X\backslash A$。
 \end{proof}
+
+\begin{remark}
+    立即可得 $x\in\bar A\iff\forall$ 开集 $O\ni x,O\cap A\ne\mt$。
+\end{remark}
 
 \begin{definition}
 置 $A\subset X$。\textbf{导集}(derived set)为 $A':=\{x \in X:x\in\overline{A\backslash\{x\}}\}$，其元素称为\textbf{聚点}(accumulation point)或\textbf{极限点}。
@@ -148,26 +164,40 @@ $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
 \end{proof}
 
 \begin{theorem}
-    $A$ 为闭 $\iff A'\subset A$。
+    $A$ 闭 $\iff A'\subset A$。
 \end{theorem}
 \begin{proof}
-    $A$ 为闭 $\iff A=\bar A\iff A=A\cup A'\iff A'\subset A$。
+    $A$ 闭 $\iff A=\bar A\iff A=A\cup A'\iff A'\subset A$。
 \end{proof}
 
 \begin{definition}
     设拓扑空间 $X$ 上的映射 $f: X \to Y$，$Y$ 是一个带有零元 $0$ 的集合（$\R,\C$ 或某个拓扑群、向量空间）。那么：
     \begin{itemize}
         \item 零集：$Z(f):=f^{-1}\{0\}=\{x\in X: f(x)=0\}$；
-        \item 非零集(cozero set)：$\operatorname{coz}f:=X\backslash Z(f)=\{x\in X: f(x)\neq 0\}$；
-        \item \textbf{支撑集}(support)：$\supp f:=\overline{\operatorname{coz}f}
+        \item 非零集(cozero set)：$\operatorname{coz}f:=X\backslash Z(f)=\{x\in X: f(x)\ne 0\}$；
+        \item \textbf{支集}(support)：$\supp f:=\overline{\operatorname{coz}f}
   = X\backslash (Z(f))^\circ$。
     \end{itemize}
-    更方便地，要求 $Y$ 是拓扑空间且 $\{0\}$ 是闭集（$Y=\R,\C$ 当然满足），从而可谈及连续 $f$。这样 $Z(f)=f^{-1}\{0\}$ 闭，$\operatorname{coz} f$ 开。
+    更方便地，要求 $Y$ 是拓扑空间且 $\{0\}$ 闭（$Y=\R,\C$ 当然满足），从而可谈及连续 $f$。这样 $Z(f)=f^{-1}\{0\}$ 闭，$\operatorname{coz} f$ 开，$\supp f$ 闭。
 \end{definition}
 
 \begin{theorem}
-     显然 $x\notin \supp f\iff\exists$ 开集 $U\ni x$ 使 $f[U]=\{0\}$。
+     $x\notin \supp f\iff\exists$ 开集 $U\ni x$ 使 $f[U]=\{0\}$。
 \end{theorem}
+\begin{proof}
+    首先 $U\subset Z(f)\iff f[U] \subset \{0\}$。存在元素 $x\in U$，故 $\mt\ne U\subset Z(f)\iff f[U]=\{0\}$，而 $x\in X\backslash\supp f = (Z(f))^\circ \iff \exists$ 开集 $U\ni x$ 使 $U\subset Z(f)$。
+\end{proof}
+\begin{theorem}
+    $\supp f \subset O\subsetneq X\im f[X\backslash O]=\{0\}$。反之需要 $O$ 闭的条件。
+\end{theorem}
+\begin{remark}
+    $\supp f \subset O$ 称为 $f$ 支撑在 $O$ 上。
+\end{remark}
+
+\begin{proof}
+    $\mt\ne X\backslash O\subset (Z(f))^\circ\subset Z(f)$。
+    反之 $\mt \ne X\backslash O\subset Z(f)\xRightarrow{X\backslash O\in\topo T} X\backslash O\subset (Z(f))^\circ$。
+\end{proof}
 
 \begin{definition}
     $S:\N\to X,n\mapsto x_n$ 的值域 $\Im S=\left\{x_n\right\}$ 称为\textbf{序列}或\textbf{点列}。
@@ -193,34 +223,149 @@ $\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
     $(Z,\topo T_Z)$ 称为 $X,Y$ 的\textbf{乘积拓扑空间}(product topological space)。
 \end{definition}
 
-这与 $\R$ 的通常拓扑类似，都是通过囊括空集和“任意并”操作来生成拓扑。这一方法可总结如下。取 $\topo{B} \subset 2^X$，首先它能覆盖整个 $X$：$\bigcup_{U\in\topo{B}}U=X$，其次保持“有限交”性质：对任意有限集 $\{U_i\}\subset\topo{B}$，$\exists\topo{F}\subset \topo{B}$ 使 $\bigcup_{U\in\topo{F}}U=\bigcap_{i} U_i$，就称$\topo{B}$ 为\textbf{拓扑基}。
-$\topo{T}=\left\{\bigcup_{U\in\topo{F}}U:\topo{F}\subset\topo{B}\right\}$ 称为 $\topo{B}$ 生成的拓扑。\textbf{拓扑子基}的元素所有可能的有限交构成拓扑基。
+这与 $\R$ 的通常拓扑类似，都是通过囊括空集和“任意并”操作来生成拓扑。这一方法可总结如下。
+\begin{definition}
+    置 $(X,\topo T)$。
+    $\topo C\subset 2^X$ 称为 $A\subset X$ 的\textbf{覆盖}(cover)，若 $A\subset\bigcup_{O\in\topo C}O$（$A=X$ 时显然取等）。$\topo C\subset\topo T$ 时称\textbf{开覆盖}。
+    $\topo S\subset\topo C$ 是 $\topo C$ 的\textbf{子覆盖}(subcover)，若它也是覆盖。
+\end{definition}
+
+\begin{definition}
+    取 $X$ 的覆盖 $\topo{B}$。若它保持“有限交”性质：对任意 $U_1,U_2\in\topo{B}$，$\exists\topo{F}\subset \topo{B}$ 使 $\bigcup_{U\in\topo{F}}U=U_1\cap U_2$，就称$\topo{B}$ 为\textbf{拓扑基}。可以证明
+$\topo{T}=\left\{\bigcup_{U\in\topo{F}}U:\topo{F}\subset\topo{B}\right\}$ 构成拓扑，称为 $\topo{B}$ 的\textbf{生成拓扑}。\textbf{拓扑子基}的元素所有可能的有限交构成拓扑基。
+\end{definition}
+\begin{theorem}
+    $\topo{B}\subset\topo T$，因而是开覆盖。
+\end{theorem}
+
+拓扑基是挑出⼀部分开集来代表所有开集，类似地也有一种挑出⼀部分邻域来代表所有邻域的办法。
+
+\begin{definition}
+    $x\in X$ 的\textbf{邻域基}或\textbf{局部基} $\topo B_x\subset\topo N(x)$ 满足 $\forall O\in\topo N(x)$，$\exists B\in\topo B_x$ 使 $B\subset O$。
+\end{definition}
 
 许多空间往往都难以直接想象或处理，我们可考虑将它分解为简单直观的部分，再重组回去，就能描述复杂的拓扑空间。
-设 $\tilde X=\{[x]:x\in X\}$ 是 $(X,\topo T)$ 在某个等价关系下的分割或商集(quotient set)。对其规定如下拓扑：映射 $\pi: X \to \tilde X,x\mapsto [x]$ 称为\textbf{自然映射}或\textbf{典范投影}，取 $\tilde{\topo T}=\{U \subset Y:\pi^{-1}(U)\in\topo T\}$，称为\textbf{商拓扑}，$(\tilde X,\tilde{\topo T})$ 称为\textbf{商空间}。可见，$\pi$ 就好比用来粘合拓扑空间的胶水。
+
+\begin{definition}
+    设 $\tilde X=\{[x]:x\in X\}$ 是 $(X,\topo T)$ 在某个等价关系下的分割或商集(quotient set)。
+    对其规定如下拓扑：映射 $\pi: X \to \tilde X,x\mapsto [x]$ 称为\textbf{自然映射}或\textbf{典范投影}，取 $\tilde{\topo T}=\{U \subset Y:\pi^{-1}(U)\in\topo T\}$，称为\textbf{商拓扑}，$(\tilde X,\tilde{\topo T})$ 称为\textbf{商空间}。
+\end{definition}
+可见，$\pi$ 就好比用来粘合拓扑空间的胶水。
 可以证明，设 $\tilde{\topo T}^{\prime}$ 为 $\tilde X$ 上另一个拓扑，且使 $\pi$ 连续，则 $\tilde{\topo T}^{\prime} \subset \tilde{\topo T}$。
+
+\begin{definition}
+    拓扑空间\textbf{局部地}具有某个性质，意指任意点都存在邻域具有这种性质。
+\end{definition}
+
+\section{可数与分离}
+本节目的是给出物理上足够有用的空间，使拓扑性质足够好，不至于太怪异。
+
+在拓扑学中针对一堆研究对象谈它们的可数性时，并不一定是指这些对象的全体可数，因这个要求不是很容易达到。很多时候可数性会定义成：从这堆对象中可以选出可数多个代表来“刻画出”其他所有对象。邻域/拓扑基就是从邻域/开集里面选出来的“代表团”。
+和以后要讲的连通性、紧致性不同，直接检查可数性来证明两个空间不同胚的例子并不多见，可数性对于一些数学技巧（特别是数学归纳法）是否能应用至关重要，所以点集拓扑学中有好几个著名定理，如果去掉可数性的前提条件就证明不出来了。用邻域基、拓扑基可定义出两种\textbf{可数定理}。
+
+\begin{definition}\textbf{第一可数}空间的任意点存在可数邻域基，\textbf{第二可数}空间存在可数拓扑基，各记 $C_1,C_2$。字母 C 来⾃于英语“countable”。
+\end{definition}
+
+\begin{theorem}
+    $C_2$ $\im$ \textbf{Lindel\"of}：任意开覆盖都存在可数子覆盖。
+\end{theorem}
+
+\begin{proof}
+    对任意开覆盖 $\topo U$，对每个基元素 $B$（来自可数基）如果它被某个 $U\in\topo U$ 包含，就挑一个这样的 $U_B$。因为基是可数的，所以被挑出来的 $U_B$ 至多可数；再用“每个点都落在某个基元素里”推出这些 $U_B$ 仍覆盖全空间，于是得到可数子覆盖。
+
+取$C_2$ $X$ 的一个可数基 $\topo B=\{B_n\}_{n\in\mathbb N}$。令 $\topo U$ 为 $X$ 的任意开覆盖。
+对每个 $n$，若存在 $U\in\topo U$ 使得 $B_n\subset U$，则任选一个这样的开集记为 $U_n\in\topo U$；
+若不存在这样的 $U$，则忽略该 $n$（不选取任何东西）。
+
+记所有被选中的开集所成的集合为
+\[
+\topo U':=\{U_n:\ B_n\subset U_n\text{ 且 }U_n\in\topo U\}.
+\]
+由于 $\topo B$ 可数，故 $\topo U'$ 至多可数。
+
+下面证明 $\topo U'$ 覆盖 $X$。任取 $x\in X$，由 $\topo U$ 覆盖，存在 $U\in\topo U$ 使 $x\in U$。
+又由于 $\topo B$ 为基，存在某个基元素 $B_n$ 满足
+\[
+x\in B_n\subset U.
+\]
+由构造知此时 $B_n$ 必会触发选择，于是存在被选中的 $U_n\in\topo U'$ 使得 $B_n\subset U_n$。
+从而 $x\in B_n\subset U_n$，说明 $x$ 落在 $\bigcup\topo U'$ 中。
+因此 $\topo U'$ 是 $\topo U$ 的可数子覆盖，证毕。
+\end{proof}
+
+\begin{theorem}
+    $C_2 \im C_1$。
+\end{theorem}
+
+再讨论分离。分离意指是否可用拓扑结构（开集、连续映射）区分空间中的两个原本不应重叠的部分。按照对“不重叠两部分”的理解不同、区分方法的不同，有很多种不同判定方法和条件，统称\textbf{分离公理}(separation axiom)。
+常用的列举如表 \ref{tab:separation}。字母 T 来⾃于分离公理的德语“das Trennungsaxiom”。
+\begin{table}[ht]
+    \centering
+    \caption{分离公理}
+    \label{tab:separation}
+    \begin{tabular}{lll}
+        \toprule
+        符号 & 别称 & 定义\\
+        \midrule
+        $T_0$ & Kolmogorov & $\forall x \ne y$， $\exists$ 开集 $U$ 使 $(x \in U, y \notin U)\lor (y \in U, x \notin U)$ \\
+        $T_1$ & Fréchet & $\forall x \ne y$， $\exists$ 开集 $U, V$ 使 $(x \in U, y \in V)\land (y \notin U , x \notin V)$ \\
+        $T_2$ & Hausdorff & $\forall x \ne y$， $\exists$ 不交开集 $U, V$ 使 $x \in U, y \in V$ \\
+        $T_3$ & 正则 $^*$ & $T_1$ 并且 $\forall$ 闭集 $F$ 及 $x \notin F$，$\exists$ 不交开集 $U, V$ 使 $x \in U, F \subset V$ \\
+        $T_4$ & 正规 $^*$ & $T_1$ 并且 $\forall$ 不交闭集 $A, B$， $\exists$ 不交开集 $U, V$ 使 $A \subset U, B \subset V$ \\
+        $T_5$ & 完全正规 $^*$ & 任意子空间都 $T_4$ \\
+        \bottomrule
+        \multicolumn{3}{l}{\small $^*$ 正则(regular)、正规(normal)有时专指除开 $T_1$ 的第二个条件。}
+    \end{tabular}
+\end{table}
+
+\begin{theorem}
+    $T_1\iff$ 单点集闭。
+\end{theorem}
+\begin{proof}
+    置 $\{x\}$。$\forall y\ne x$ 即 $y\in X\backslash\{x\}$，$y$ 必有开邻域 $V\notni x$ 即 $V\subset X\backslash\{x\}$，故 $X\backslash\{x\}$ 开。
+\end{proof}
+
+\begin{theorem}
+    $T_5\im T_4\im T_3\xRightarrow{(T_3\Rightarrow T_1)}T_2 \im T_1\im T_0$。
+\end{theorem}
+
+\begin{eg}
+    考虑 $\R^2$ 上直线 $y=0,1$。取两条直线之并，取等价关系 $(x,0) \sim(x,1),x>0$ 来构建商拓扑空间，也就是把两条线的 $x>0$ 部分黏合一起。$(0,0),(0,1)$ 的任意开邻域存在黏合部分 $x>0$，也就没有不交开邻域，因而不是 $T_2$ 空间。
+\end{eg}
+
+\begin{eg}
+    给 $\N_+$ 定义拓扑，开集取 $\mt,\N_+$ 以及 $\{1,2,3,\cdots,n\}$。这个空间既非 $T_2$ 亦非紧致的。
+\end{eg}
+
+\begin{theorem}[收缩(shrink)]
+    $T_3\iff$ 对任意点 $x\in X$ 及其任意邻域 $O$，存在开集 $U$ 使
+$x\in U, \bar U \subset O$。
+
+$T_4\iff$ 对任意闭集 $F\subset X$ 与任意开集 $O\supset F$，存在开集 $U$ 使 $F\subset U, \bar U \subset O$。
+\end{theorem}
 
 \section{度量空间}
 
-我们看到，$\R$ 的距离便可生成一个拓扑基。距离概念的推广自然是在任意集合中，给定满足三角不等式、正定性的对称实函数。开区间也可相应地推广。
+我们看到，$\R$ 的距离便可生成一个拓扑基。距离概念的推广自然是在任意集合中，给定满足三角不等式、正定性的对称实函数。开区间也可相应地推广。实际上，具有应用意义的拓扑空间大多具有距离概念。
 
 \begin{definition}
-    \textbf{度量空间}(metric space)是集合 $X$ 和\textbf{距离函数}（或\textbf{度量}）$d: X \times X \to [0,\infty)$ 的卡氏积，$\forall x,y,z\in X$ 满足：
+    置集合 $X$ 和\textbf{距离}（或\textbf{度量}）$d: X \times X \to [0,\infty)$，$\forall x,y,z\in X$ 满足：
     \begin{itemize}
         \item $d(x,y)=d(y,x)$；
         \item $d(x,y) = 0\eqto x=y$；
         \item $d(x,z) \leqslant d(x,y)+d(y,z)$。（三角不等式）
     \end{itemize}
     $B(x,r)=\{y \in X: d(x, y)<r\}$ 称为以 $x \in X$ 为中心、$r$ 为半径的\textbf{开球}(open ball)。
-    总可用局部性质构造拓扑：全体开球 $\{B(x,\epsilon):x\in X,\epsilon >0\}$ 就是一个拓扑基，其生成拓扑 $\topo T_d$ 就是 $(X,d)$ 的\textbf{度量诱导拓扑}，构成 $(X,d,\topo T_d)$。称 $(X,\topo T_d)$ \textbf{可度量}。
+    全体开球 $\{B(x,\epsilon):x\in X,\epsilon >0\}$ 就是一个拓扑基，其生成拓扑 $\topo T_d$ 就是 $(X,d)$ 的\textbf{度量诱导拓扑}。$(X,d,\topo T_d)$ 称为\textbf{度量空间}(metric space)。存在度量 $d$ 生成的拓扑，称\textbf{可度量}。
 \end{definition}
-
-可度量即存在度量 $d$ 生成 $X$ 的拓扑。
 
 \begin{remark}
     原则上可以有负定的距离，就像度规一样，但这种距离一般不用于诱导拓扑。
-    实际上，具有应用意义的拓扑空间大多都是度量空间。
 \end{remark}
+
+\begin{definition}
+    \textbf{局部可度量}就是 $\forall x\in X$ 都存在开集 $O\ni x$ 可度量。
+\end{definition}
 
 \begin{eg}
     \textbf{离散度量}满足 $d_{0}(x,y)=1$ 若 $x \ne y$。这是一个描述离散拓扑的办法。
@@ -247,6 +392,10 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 任意 $p$-度量等价，诱导出通常拓扑 $\topo T_u$。当然，亦可视作 $\R$ 通常拓扑的乘积拓扑。
 \end{eg}
 
+\begin{theorem}
+    可度量 $\im T_5$。
+\end{theorem}
+
 我们已悉知 $\epsilon$-$\delta$ 语言可视为连续性在通常拓扑的特例。现在再用度量空间重新叙述。
 置 $(X,d_X,\topo T_X),(Y,d_Y,\topo T_Y)$ 和映射 $f:X\to Y$。$f$ 在 $x \in X$ 处对度量诱导拓扑连续，当且仅当 $\forall\epsilon>0,\exists\delta>0$ 使 $B(x,\delta) \subset f^{-1} [B(f(x),\epsilon)]$。
 即 $f^{-1} [B(f(x),\epsilon)]$ 是 $x$ 点邻域。
@@ -254,7 +403,7 @@ d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\
 若 $f$ 在任意点连续，即 $\forall x \in X,\epsilon > 0$，$f^{-1} [B(f(x),\epsilon)]\in\topo T_X$，结合“任意并”性质和逆像的保并性，可知 $\forall U\in\topo T_Y$，$f^{-1}[U]\in\topo T_X$，即 $f$ 连续。
 
 \begin{theorem}
-    开球和 $\R^n$ 同胚。
+    $\R^n$ 开球和 $\R^n$ 同胚。
 \end{theorem}
 \begin{proof}
     不失一般性，考虑单位开球 $B(0,1)$。置 $f:B(0,1)\to \R^n$ 为
@@ -305,28 +454,21 @@ $\R^{n}$ 当然完备。
 \end{remark}
 
 \begin{eg}
-    无穷维希尔伯特空间 $\ell^2$ 是完备的。任意 $\epsilon>0$，$\{e_n\}_{n=1}^\infty$ 构成 $\ell^2$ 的 $\epsilon$-网格，但它是无穷集，不全有界。
+    无穷维 Hilbert 空间 $\ell^2$ 是完备的。任意 $\epsilon>0$，$\{e_n\}_{n=1}^\infty$ 构成 $\ell^2$ 的 $\epsilon$-网格，但它是无穷集，不全有界。
 \end{eg}
 
 %%%
 
 \section{紧致性}
 
-分析学给出了若干等价的实数定理，其中一条是著名的\textbf{Heine-Borel 有限覆盖定理}：若有界闭集能被某开集族覆盖，则可从中找到有限个开集，构成依旧能覆盖的子族。
+分析学给出了若干等价的实数定理，其中一条是著名的\textbf{Heine-Borel 定理}：若有界闭集能被某开集族覆盖，则可从中找到有限个开集，构成依旧能覆盖的子族。
 19 世纪中叶，Dirichlet 在试图严格化函数连续性时，率先用有限覆盖技术，证明了闭区间上的连续实函数一致连续。
 不过他的结果半个世纪后才发表，期间 Heine, Weierstrass 等人各自独立地用类似技术也证明了该结论。Borel 利用这些技术证明了上述的有限覆盖定理。后来 Lebesgue 等人才把它推广到了一般情形。
 有界性是与距离密切相关的，但有限覆盖性只涉及开集。可见关于有界闭集的分析学命题，很多都能延伸到点集拓扑。
 
 \begin{definition}
-    置 $(X,\topo T)$。
-    $\topo C\subset 2^X$ 称为 $A\subset X$ 的\textbf{覆盖}(cover)，若 $A\subset\bigcup_{O\in\topo C}O$。$\topo C\subset\topo T$ 时称\textbf{开覆盖}。
-    $\topo S\subset\topo C$ 是 $\topo C$ 的\textbf{子覆盖}(subcover)，若它也是覆盖。
     $A$ 称\textbf{紧致的}(compact)或\textbf{紧的}，若其任意开覆盖都存在有限子覆盖。
 \end{definition}
-
-\begin{eg}
-    拓扑基当然是 $X$ 的一个开覆盖。
-\end{eg}
 
 \begin{eg}
     实直线上，单点集 $\{x\}\subset X$ 必紧。$\R$、开区间、半开区间非紧。
@@ -347,7 +489,7 @@ $\R^{n}$ 当然完备。
 \end{remark}
 
 \begin{theorem}\label{thm:compactness}
-    度量空间上，紧 $\iff$ 列紧 $\iff$ 全有界 $\wedge$ 闭 $\wedge$ 完备。
+    度量空间上，紧 $\iff$ 列紧 $\iff$ 全有界 $\land$ 闭 $\land$ 完备。
 \end{theorem}
 \begin{proof}
     设 $X$ 是紧的。任意 $x\in X$，$\exists O\in\topo S$ 使 $x\in O$，则 $\topo S$ 是 $x$ 的某邻域的有限子覆盖。任意点列 $\{x_n\}$ 都有极限点 $x$，则 $\exists O\in\topo S$ 使 $x\in O$，因此 $\{x_n\}$ 有收敛子列。
@@ -357,7 +499,7 @@ $\R^{n}$ 当然完备。
 \end{proof}
 
 \begin{eg}[Bolzano-Weierstrass]
-    实直线上，列紧 $\iff$ 有界 $\wedge$ 闭。
+    实直线上，列紧 $\iff$ 有界 $\land$ 闭。
 \end{eg}
 \begin{proof}
     只需说明有界闭 $\iff$ 全有界，完备性自动满足。
@@ -366,107 +508,17 @@ $\R^{n}$ 当然完备。
 \end{proof}
 
 \begin{eg}[Heine-Borel]
-    结合 \ref{thm:compactness} 知，实直线上，紧 $\iff$ 有界 $\wedge$ 闭。
+    结合 \ref{thm:compactness} 知，实直线上，紧 $\iff$ 有界 $\land$ 闭。
 \end{eg}
 %%%
 
-% 可数公理
-
 \begin{definition}
-    \textbf{第二可数}或 $C_2$ 的拓扑空间上存在可数拓扑基。\textbf{Lindel\"of} 的拓扑空间的任意开覆盖都存在可数子覆盖。
+    \textbf{局部紧}是任意点都存在\textbf{邻域}相对紧（闭包紧）。
 \end{definition}
-给出有用的拓扑结构，使点足够稠密但又不至于太怪异，称为几何背景。
-
-\begin{theorem}
-    $C_2$ $\im$ Lindel\"of。
-\end{theorem}
-
-\begin{proof}
-    对任意开覆盖 $\topo U$，对每个基元素 $B$（来自可数基）如果它被某个 $U\in\topo U$ 包含，就挑一个这样的 $U_B$。因为基是可数的，所以被挑出来的 $U_B$ 至多可数；再用“每个点都落在某个基元素里”推出这些 $U_B$ 仍覆盖全空间，于是得到可数子覆盖。
-
-取$C_2$ $X$ 的一个可数基 $\topo B=\{B_n\}_{n\in\mathbb N}$。令 $\topo U$ 为 $X$ 的任意开覆盖。
-对每个 $n$，若存在 $U\in\topo U$ 使得 $B_n\subset U$，则任选一个这样的开集记为 $U_n\in\topo U$；
-若不存在这样的 $U$，则忽略该 $n$（不选取任何东西）。
-
-记所有被选中的开集所成的集合为
-\[
-\topo U':=\{U_n:\ B_n\subset U_n\text{ 且 }U_n\in\topo U\}.
-\]
-由于 $\topo B$ 可数，故 $\topo U'$ 至多可数。
-
-下面证明 $\topo U'$ 覆盖 $X$。任取 $x\in X$，由 $\topo U$ 覆盖，存在 $U\in\topo U$ 使 $x\in U$。
-又由于 $\topo B$ 为基，存在某个基元素 $B_n$ 满足
-\[
-x\in B_n\subset U.
-\]
-由构造知此时 $B_n$ 必会触发选择，于是存在被选中的 $U_n\in\topo U'$ 使得 $B_n\subset U_n$。
-从而 $x\in B_n\subset U_n$，说明 $x$ 落在 $\bigcup\topo U'$ 中。
-因此 $\topo U'$ 是 $\topo U$ 的可数子覆盖，证毕。
-\end{proof}
-
-
-% 分离公理
-
-\begin{definition}
-    拓扑空间 $X$ 称为 $\mathbf{T_2}$ 或 \textbf{Hausdorff 的}，若对任意不同的两点 $x,y \in X$，存在 $x$ 的开邻域 $A$ 与 $y$ 的开邻域 $B$，使得 $A \cap B=\mt$。
-\end{definition}
-
-\begin{theorem}
-    显然度量空间是 $T_2$ 的。
-\end{theorem}
-
-\begin{theorem}
-    $T_2 \im T_1$
-\end{theorem}
-
-这看起来更像我们所期待的。但是，某些略微非 $T_2$ 的空间会很有用。
-\begin{eg}
-    在扭量(twistor)理论中。一个“口袋”(pocket)提供了这样的一个例子。考虑实平面的子集 $X$，由实轴上的区间 $[-1,1]$ 和直线 $y=1$ 上的区间 $[0,1]$ 构成，并且等同如下的点：$(x,0) \approx(x,1),0<x \leqslant 1$ 。这样，点 $(0,0)$ 与 $(0,1)$ 就没有不相交的开邻域。严格说来，我们需要下文中商拓扑的概念。
-\end{eg}
-
-\begin{eg}
-    一个更为地道的非 $T_2$ 空间：考虑正整数组成的空间 $\N_+$，开集取成 $\mt,\N_+$ 以及集合 $\{1,2,3,\cdots,n\}$。这个空间既非 $T_2$ 亦非紧致的。
-\end{eg}
-
-\begin{definition}
-拓扑空间 $X$ 称为 $T_3$，若满足
-\begin{itemize}
-  \item $X$ 是 $T_1$ 空间（单点集闭）；
-  \item \textbf{正则}(regular)：对任意点 $x\in X$ 与任意不含 $x$ 的闭集 $F\subset X$，
-        存在互不相交的开集 $U,V$ 使得
-        \[
-          x\in U,\qquad F\subset V,\qquad U\cap V=\varnothing .
-        \]
-\end{itemize}
-\end{definition}
-$X$ 正则 $\iff$ 对任意 $x\in X$ 与任意包含 $x$ 的开集 $O$，存在开集 $U$ 使得
-$x\in U, \bar U \subset O$
-点与不交闭集可被不交开集分开。
-这就是你在单位分解/bump 函数构造里常看到的“取 $V$ 使 $\overline V\subset U$”那一步。
-
-\begin{definition}[正规空间]\label{def:normal}
-拓扑空间 $X$ 称为\textbf{正规}(normal) $T_4$，若满足
-\begin{itemize}
-  \item $X$ 是 $T_1$ 空间（单点集闭）；
-  \item 对任意两个不交闭集 $F,G\subset X$，存在互不相交的开集 $U,V$ 使得
-  \[
-    F\subset U,\qquad G\subset V,\qquad U\cap V=\varnothing .
-  \]
-\end{itemize}
-\end{definition}
-$X$ 正规 $\iff$ 对任意闭集 $F\subset X$ 与任意开集 $O\supset F$，存在开集 $U$ 使得 $F\subset U, \bar U \subset O$
-（这个等价式常被叫作“正规空间的收缩(open shrinking)性质”。）
-
 
 紧致要求只用有限的开集就能覆盖全集，但这太过严苛。
 可以尝试弱化，即全局上仍可能需无穷个开集，但要求每个点附近只相交有限个开集。
-这样，局部拼接
-
-可以保证，局部定义的无穷和/无穷拼接，在每点附近变成有限和。
-
-局部有限就是让“无穷和 = 局部有限和”，从而一切光滑操作合法。
-
-从而在一般空间中也能将为整体。
+这样无穷和在每点附近仍可转化为对有限项的拼接，便于操作。
 
 %%%
 \begin{definition}
@@ -475,8 +527,7 @@ $X$ 正规 $\iff$ 对任意闭集 $F\subset X$ 与任意开集 $O\supset F$，�
 \end{definition}
 
 \begin{definition}
-覆盖 $\topo V$ 称\textbf{局部有限}(locally finite)，若 $\forall x\in X$，$\exists x$ 的邻域 $O\in\topo N(x)$
-使得 $O$ 只与 $\topo V$ 中有限多个集合相交：$|\{V\in\topo V:\ O\cap V\neq\varnothing\}|<\aleph_0$。
+覆盖 $\topo V$ 称\textbf{局部有限}(locally finite)，若 $\forall x\in X$，$\exists$ $x$ 的邻域只与 $\topo V$ 中有限多个集合相交：$|\{V\in\topo V:\ O\cap V\ne\varnothing, O\in\topo N(x)\}|<\aleph_0$。
 \end{definition}
 
 
@@ -485,40 +536,32 @@ $X$ 正规 $\iff$ 对任意闭集 $F\subset X$ 与任意开集 $O\supset F$，�
 \end{definition}
 %%%
 \begin{remark}
-    更原始的定义是称“任意开覆盖都存在开星加细”：称 $\topo V$ 是覆盖 $\topo U$ 的星加细，对每个 $V\in\topo V$，存在 $U\in\topo U$ 使 $\operatorname{St}(V,\topo V):=\bigcup\{O\in\topo V:\ O\cap V\neq\varnothing\}\subset U$。
+    更原始的定义是称“任意开覆盖都存在开星加细”：称 $\topo V$ 是覆盖 $\topo U$ 的星加细，对每个 $V\in\topo V$，存在 $U\in\topo U$ 使 $\operatorname{St}(V,\topo V):=\bigcup\{O\in\topo V:\ O\cap V\ne\varnothing\}\subset U$。
     但“局部有限的开加细”最实用。
 \end{remark}
-
-``每个开覆盖都有副紧细化''拓扑空间 $X$ 称为\textup{副紧}(paracompact)，若对任意开覆盖 $\topo U$，
-都存在一个\textup{开加细} $\topo V$，使得 $\topo V$ 作为一个拓扑空间（带子空间拓扑）
-是\textup{紧致化可分离/局部有限可加和}——更常用且等价的表述是：$\topo V$ 有一个\textup{局部有限的开加细}。
-
-
-（在流形上，我们常直接引用：流形是$C_2$ $T_2$，从而度量化并且仿紧，
-故任意开覆盖都有局部有限开加细。）
 
 \begin{theorem}[Stone]
     可度量 $\im$ 仿紧。
 \end{theorem}
 \begin{proof}
-    下面对一般度量空间 $(X,d)$ 证明副紧性：任取开覆盖 $\mathcal U$，要构造一个局部有限开细化。
+    下面对一般度量空间 $(X,d)$ 证明副紧性：任取开覆盖 $\topo U$，要构造一个局部有限开细化。
 
-对每个 $x\in X$，选取 $U_x\in\mathcal U$ 使 $x\in U_x$。
+对每个 $x\in X$，选取 $U_x\in\topo U$ 使 $x\in U_x$。
 因为 $U_x$ 开，存在 $r(x)>0$ 使得开球 $B(x,2r(x))\subset U_x$。
 令
 \[
-\mathcal B:=\{B(x,r(x)):\ x\in X\},
+\topo B:=\{B(x,r(x)):\ x\in X\},
 \]
-则 $\mathcal B$ 是 $\mathcal U$ 的开细化（因为 $B(x,r(x))\subset B(x,2r(x))\subset U_x$），但未必局部有限。
+则 $\topo B$ 是 $\topo U$ 的开细化（因为 $B(x,r(x))\subset B(x,2r(x))\subset U_x$），但未必局部有限。
 为此我们把这些球按半径分层：
 
 对每个 $n\in\mathbb N$，定义
 \[
 X_n:=\{x\in X:\ 2^{-(n+1)}<r(x)\le 2^{-n}\},
 \qquad
-\mathcal B_n:=\{B(x,r(x)):\ x\in X_n\}.
+\topo B_n:=\{B(x,r(x)):\ x\in X_n\}.
 \]
-则 $\mathcal B=\bigcup_{n=1}^\infty \mathcal B_n$，且每层的半径都有统一下界 $>2^{-(n+1)}$。
+则 $\topo B=\bigcup_{n=1}^\infty \topo B_n$，且每层的半径都有统一下界 $>2^{-(n+1)}$。
 
 现在对固定的 $n$，在集合 $X_n$ 中取一个\emph{极大}的 $2^{-(n+2)}$-分离子集 $S_n$：
 \[
@@ -533,11 +576,11 @@ d(x,s)<2^{-(n+2)}.
 
 于是对每个 $n$，族
 \[
-\mathcal V_n:=\{B(s,2^{-n}) : s\in S_n\}
+\topo V_n:=\{B(s,2^{-n}) : s\in S_n\}
 \]
 覆盖 $X_n$（因为若 $x\in X_n$，取 $s\in S_n$ 满足 $d(x,s)<2^{-(n+2)}<2^{-n}$）。
 
-\emph{关键：$\mathcal V_n$ 是局部有限的。}
+\emph{关键：$\topo V_n$ 是局部有限的。}
 取任意点 $p\in X$，看球 $B(p,2^{-(n+2)})$。
 若它与很多个 $B(s,2^{-n})$ 相交，则对每个相交的 $s$，有
 \[
@@ -551,73 +594,168 @@ d(p,s)\le 2^{-n}+2^{-(n+2)}<2^{-n+1}.
 
 最后令
 \[
-\mathcal V:=\bigcup_{n=1}^\infty \mathcal V_n.
+\topo V:=\bigcup_{n=1}^\infty \topo V_n.
 \]
-则 $\mathcal V$ 覆盖 $X$（因为 $X=\bigcup_n X_n$，且每个 $X_n$ 被 $\mathcal V_n$ 覆盖），并且是可数并联的局部有限族：
+则 $\topo V$ 覆盖 $X$（因为 $X=\bigcup_n X_n$，且每个 $X_n$ 被 $\topo V_n$ 覆盖），并且是可数并联的局部有限族：
 对任意点 $p$，在每个固定层 $n$ 上只有有限多个集合与某小邻域相交，
-再取更小邻域即可保证跨所有层也只与有限多个相交，从而 $\mathcal V$ 局部有限。
+再取更小邻域即可保证跨所有层也只与有限多个相交，从而 $\topo V$ 局部有限。
 
-还需验证它细化原覆盖 $\mathcal U$：对 $B(s,2^{-n})\in\mathcal V_n$，
+还需验证它细化原覆盖 $\topo U$：对 $B(s,2^{-n})\in\topo V_n$，
 由于 $s\in X_n$，有 $r(s)>2^{-(n+1)}$，从而 $2^{-n}\le 2r(s)$，于是
 \[
-B(s,2^{-n})\subset B(s,2r(s))\subset U_s\in\mathcal U.
+B(s,2^{-n})\subset B(s,2r(s))\subset U_s\in\topo U.
 \]
-故 $\mathcal V$ 是 $\mathcal U$ 的局部有限开细化。
+故 $\topo V$ 是 $\topo U$ 的局部有限开细化。
 因此任意度量空间副紧。
 
 将 $X$ 取为第二步得到可度量化的 $M$，即得 $M$ 副紧，从而仿紧。证毕。
 \end{proof}
 
-很多漂亮的等价刻画需要 $T_2$（常常还要正规）
-例如你前面截图那种“星细化”“存在分割（partition of unity）”“正规性”等等，常见定理会写成
-“paracompact $T_2$ $\Rightarrow$ normal”等。没有 $T_2$，这些结论可能不成立或需要改写。
-在微分几何里通常默认流形是 $T_2$（且$C_2$）
-因此大家谈副紧时，往往默认讨论的是 “paracompact $T_2$ space”，因为这是保证后续工具（bump 函数、单位分解、向量丛的好性质等）顺畅工作的自然语境。
+\section{度量化定理*}
 
 \begin{theorem}
-    仿紧 $\wedge T_2\im T_4$ 
-\end{theorem}
-而正规性正是 Urysohn 引理、Tietze 延拓、以及各种“用函数分离集合”的工具的前提。
-
-二可数流形 $\Rightarrow$ 度量化 $\Rightarrow$ 副紧
-
-副紧 + $T_2$ + 流形 bump 引理 $\Rightarrow$ 单位分解
-
-你要的“任意开覆盖存在单位分解”这件事，严格说依赖的不是纯拓扑副紧，而是“流形 + $T_2$ + 副紧（在流形里通常由$C_2$/度量化推出）”，这样才能保证有足够的 bump 函数和良好细化来做归一化。
-
-
-\begin{theorem}
-    可度量 $\im T_4$。
-\end{theorem}
-
-\begin{theorem}[Urysohn]
-    $C_2\wedge T_3\im$ 可度量
+    $T_2\xRightarrow{\text{仿紧}} T_4$ 
 \end{theorem}
 \begin{proof}
-    %%
+    
 \end{proof}
 
-\begin{theorem}
-    $C_2\wedge\text{可度量}\im T_3$
+\begin{theorem}[Urysohn-Lindel\"of]
+    $T_3\xLeftrightarrow{C_2} T_4\xLeftrightarrow{C_2}$ 可度量
 \end{theorem}
+
+
+\begin{theorem}[Smirnov]
+    $\text{仿紧}\land T_2\land\text{局部可度量}\im$ 可度量
+\end{theorem}
+
+\begin{theorem}[Negata-Smirnov]
+    
+\end{theorem}
+\begin{remark}
+    这是另⼀个经典研究成果。证明⾮常复杂精巧，实际应⽤中也没有很多可以模仿着去做的机会，故略去。
+\end{remark}
+
+
+\begin{theorem}
+    $T_2 \xRightarrow{\text{局部紧}} T_3$
+\end{theorem}
+
+\begin{proof}
+\textbf{局部正规}
+
+而在局部紧 $T_2$ 空间中，总可以把点与不含该点的闭集用互不相交的开集分开，这正是正则性。
+
+具体地，取任意 $x\in M$ 与闭集 $F\subset M$，且 $x\notin F$。
+因为 $F$ 闭，所以 $U_0:=M\setminus F$ 是开且含 $x$。
+由局部紧性，存在开集 $U$ 使得
+\[
+x\in U,\qquad \overline U\ \text{紧},\qquad \overline U\subset U_0.
+\]
+于是 $\overline U\cap F=\varnothing$。
+
+对每个 $y\in F$，由 $T_2$ 性，存在互不相交开集 $U_y\ni x$ 与 $W_y\ni y$。
+注意到 $\overline U$ 是紧集，且 $\{W_y\}_{y\in F}$ 是 $F$ 的开覆盖，
+从而也是 $\overline U\cap F=\varnothing$ 的“无关”——我们改用紧性来做如下操作：
+对每个 $p\in \overline U$，因 $p\notin F$ 且 $F$ 闭，$T_2$ $\Rightarrow$ 可分离，
+故存在开集 $A_p\ni p$ 与开集 $B_p\supset F$ 使得 $A_p\cap (M\setminus B_p)=\varnothing$，
+亦即 $A_p\subset B_p$ 且 $B_p$ 仍是包含 $F$ 的开集。
+于是 $\{A_p\}_{p\in\overline U}$ 覆盖紧集 $\overline U$，
+取有限子覆盖 $A_{p_1},\dots,A_{p_N}$，令
+\[
+V:=\bigcup_{j=1}^N A_{p_j},\qquad W:=\bigcap_{j=1}^N B_{p_j}.
+\]
+则 $V$ 为开且含 $\overline U$，$W$ 为开且含 $F$，并且由于每个 $A_{p_j}\subset B_{p_j}$，
+有 $V\subset W$，从而 $V\cap (M\setminus W)=\varnothing$。
+现在取 $U':=U$（开含 $x$）与 $W':=M\setminus V$（开含 $F$），便得
+\[
+U'\cap W'=\varnothing.
+\]
+于是正则。
+从而 $T_2 \land \text{局部紧}\iff T_2 \land (T_2 \land \text{局部紧}) \im T_1 \land \text{正则} \iff T_3$。
+\end{proof}
+
+\begin{definition}
+    置开覆盖 $\topo P=\{O_i\}$。若函数族 $\{\rho_i\}$ 满足
+    \begin{itemize}
+        \item $0\leqslant\rho_i\leqslant 1$；
+        \item $\rho_i$ 支撑在 $O_i$ 上；
+        \item $\sum_i \rho_i=1$,
+    \end{itemize}
+    则称从属于 $\topo P$ 的一个\textbf{单位分解}(partition of unity)。若 $\rho_i$ 连续则称\textbf{连续单位分解}。
+\end{definition}
+
+\begin{theorem}
+    仿紧 $\land$ $T_2\im$ 任何开覆盖存在从属于它的局部有限的连续单位分解。
+\end{theorem}
+\begin{proof}
+    设开覆盖 $\topo P=\{O_\alpha\}$。
+    由仿紧性，$\topo P$ 存在局部有限开加细 $\{U_\alpha\}$ 满足 $U_\alpha\subset O_\alpha$。
+    
+    （必要时可先取局部有限细化 $\{U_i\}$，再对每个 $U_i$ 选取一个包含它的 $O_{\alpha(i)}$，并重编号。）
+
+    \medskip
+    \noindent\textbf{构造从属于 $\{U_i\}$ 的非负光滑函数族 $\{\varphi_i\}$。}
+    由于 仿紧 $\land$ $T_2\im T_4$。由 $T_4$ 收缩性，对每个 $i$ 可取开集 $V_i$ 使得
+    \[
+        \overline{V_i}\subset U_i.
+    \]
+    由流形上的 bump 函数引理（亦即光滑 Urysohn 引理），存在 $\varphi_i\in C^\infty(M)$ 满足
+    \begin{itemize}
+        \item $0\le \varphi_i\le 1$；
+        \item $\varphi_i\equiv 1$ 于 $\overline{V_i}$；
+        \item $\supp(\varphi_i)\subset U_i$。
+    \end{itemize}
+    特别地，$\varphi_i$ 在 $M\setminus U_i$ 上恒为 $0$，因此也从属于原覆盖：$\supp(\varphi_i)\subset U_i\subset O_i$。
+
+    \medskip
+    \noindent\textbf{归一化。}
+    令
+    \[
+        \Phi(x):=\sum_{i=1}^\infty \varphi_i(x).
+    \]
+    由于 $\{U_i\}$ 局部有限，故对每个 $x\in M$，在某个邻域内仅有限个 $\varphi_i$ 非零，
+    因而上述和在该邻域内是有限和，$\Phi$ 是光滑函数。
+
+    下面证明 $\Phi(x)>0$ 对一切 $x$ 成立。
+    因为 $\{V_i\}$ 仍覆盖 $M$（可在取 $V_i$ 时保证这一点：对每个 $x\in U_i$ 选一个相对紧邻域并并入某个 $V_j$；或等价地先取 $\{V_i\}$ 为 $\{U_i\}$ 的开覆盖并满足 $\overline{V_i}\subset U_i$），
+    所以给定 $x\in M$，存在某个 $k$ 使得 $x\in V_k\subset \overline{V_k}$，从而 $\varphi_k(x)=1$，于是 $\Phi(x)\ge 1$。
+
+    因此可定义
+    \eq{
+        \rho_i(x):=\frac{\varphi_i(x)}{\Phi(x)}.
+    }
+    则 $\rho_i\in C^\infty(M)$，且 $0\le\rho_i\le 1$，并且
+    \[
+        \supp(\rho_i)\subset \supp(\varphi_i)\subset U_i\subset O_i.
+    \]
+    最后，
+    \[
+        \sum_{i=1}^\infty \rho_i(x)=\frac{\sum_i\varphi_i(x)}{\Phi(x)}=1,
+    \]
+    且由于局部有限性，上式在任意点的邻域内都是有限和，因此无收敛性问题。
+    故 $\{\rho_i\}$ 构成从属于 $\topo P$ 的单位分解。
+\end{proof}
 
 
 \section{连通性}
 
 \begin{definition}
-    一个拓扑空间 $X$ 称为\textbf{连通的}，如果它不能写成两个互不相交 的非空开集的并。有用的两条等价说法是: 任何一个从 $X$ 到赋予离散拓扑的两点集合 $\{0,1\}$ 的连续映射都不是满射；连通拓扑空间只有两个既开又闭的子集。
-
-    给定一拓扑空间 $X$，定义一等价关系如下：$x \sim y$ 当且仅当 $x,y$ 属于 $X$ 的同一个连通子空间。则每个等价类称为 $X$ 的一个\textbf{连通分支}
+    拓扑空间 $X$ 称为\textbf{连通的}(connected)，若它不能写成两个互不相交的非空开集之并。
+    定义等价关系如下：$x \sim y$ 当且仅当 $x,y$ 属于 $X$ 的同一个连通子空间。每个等价类称 $X$ 的一个\textbf{连通分支}。
 \end{definition}
+\begin{theorem}
+    连通的两条有用的等价说法：任何一个从 $X$ 到赋予离散拓扑的两点集合 $\{0,1\}$ 的连续映射都不是满射；连通拓扑空间只有两个既开又闭的子集。
+\end{theorem}
 
 \begin{theorem}
-    连续映射保持连通：$f:X\to Y$ 连续时，$A\subset X$ 连通 $\im$ $f[A]$ 连通。
+    连续映射保持连通。
 \end{theorem}
 %% 有问题
 \begin{proof}
 假使 $f[A]$ 不连通，则存在不交非空开集 $U,V\subset Y$ 使
 \[
-f(A)\subset U\cup V,\quad f(A)\cap U\neq\varnothing,\quad f(A)\cap V\neq\varnothing.
+f(A)\subset U\cup V,\quad f(A)\cap U\ne\varnothing,\quad f(A)\cap V\ne\varnothing.
 \]
 于是
 \[
@@ -636,7 +774,7 @@ A = f^{-1}(U)\cap A\ \cup\ f^{-1}(V)\cap A
 \end{definition}
 
 \begin{definition}
-    拓扑空间 $X$ 称为\textbf{路径连通的}(path-connected)或\textbf{弧连通的}(arcwise connected)，如果 $X$ 中的任意两点都可被一条完全在 $X$ 中的路径连接。
+    拓扑空间 $X$ 称为\textbf{路径连通的}(path-connected)或\textbf{弧连通的}(arcwise-connected)，如果 $X$ 中的任意两点都可被一条完全在 $X$ 中的路径连接。类似地有\textbf{局部路径连通}。
 \end{definition}
 
 \begin{eg}
@@ -654,10 +792,6 @@ A = f^{-1}(U)\cap A\ \cup\ f^{-1}(V)\cap A
     进而存在路径 $\gamma:[0,1]\to A$ 连接 $a_0,a_1$，即 $\gamma(0)=a_0,\gamma(1)=a_1$。复合保持连续性，从而 $f\circ\gamma$ 连接 $y_0,y_1$。故 $f[A]$ 路径连通。
 \end{proof}
 
-\begin{definition}
-    拓扑空间的\textbf{局部地}具有某个性质，意指任意点都存在邻域（或开邻域、包含该点的开集）具有这种性质。比如，\textbf{局部路径连通}就是任意点都存在邻域路径连通，即 $\forall x\in X$ 都存在开集 $O\ni x$ 路径连通。类似地有\textbf{局部可度量}。\textbf{局部紧}是任意点都存在\textbf{邻域}相对紧（闭包紧）。
-\end{definition}
-
 \begin{eg}
     $O\in\topo T_u$ 一定局部路径连通：$\forall x\in O$，$\exists U:= B(x,r)\subset O$（从而 $B(x,r)=O\cap B(x,r)\in\topo T_O$）使 $x\in U$ 且 $U$ 路径连通。
 \end{eg}
@@ -667,7 +801,7 @@ A = f^{-1}(U)\cap A\ \cup\ f^{-1}(V)\cap A
 \end{theorem}
 %% 没区分子拓扑
 \begin{proof}
-置 $f:X\to Y$ 连续开。取 $A\subset X$ 局部路径连通。 
+置 $A\subset X$ 局部路径连通、$f:X\to Y$ 连续开。 
 任取 $y\in f[A]$，$\exists x\in X$ 使 $f(x)=y$。故 $\exists U\in\topo T_X$ 使 $x\in U$ 且 $U$ 路径连通，从而 $\exists V:=f[U]\in\topo T_Y$ 使 $y=f(x)\in V$ 且 $V$ 路径连通。
 故 $f[A]$ 局部路径连通。
 \end{proof}
@@ -754,10 +888,10 @@ A\cap B=\varnothing,\qquad A\cup B=[0,1].
 
 
 \begin{theorem}
-    连通 $\wedge$ 局部路径连通 $\im$ 路径连通
+    连通 $\land$ 局部路径连通 $\im$ 路径连通
 \end{theorem}
 \begin{proof}
-    置 $(M,\topo T)$ 连通 $\wedge$ 局部路径连通。
+    置 $(M,\topo T)$ 连通 $\land$ 局部路径连通。
 任取 $p\in M$，记 $C_p:=\{q\in M:\text{存在路径连接 $p,q$}\}$ 为包含 $p$ 的路径连通分支。任取 $q\in C_p$，由于 $M$ 局部路径连通，存在 $q$ 的一个路径连通的开邻域 $V$。对任意 $r\in V$，可将 $p,q$ 的路径与 $V$ 中 $q,r$ 的路径拼接，得到一条从 $p$ 到 $r$ 的路径，因此 $r\in C_p$，从而 $V\subset C_p$，从而 $q$ 是 $C_p$ 的内点，这说明 $C_p$ 是开集。
 
 因此，$M$ 可以表示为若干个互不相交的开路径连通分支的并。若 $M$ 不路径连通，则至少存在两个不同的路径连通分支，从而 $M$ 可分解为两个不交的非空开集，这与 $M$ 的连通性矛盾。

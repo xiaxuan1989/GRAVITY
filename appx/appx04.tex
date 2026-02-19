@@ -4,17 +4,13 @@
 
 \section{微分流形}
 物理背景作为拓扑空间，是无特征且无定形的，其中的点和曲线是不能先验识别或定义的，除非利用坐标系。有用的背景从来不可能真正脱离坐标。
-坐标方法就是一种给背景点连续指定 $\R^n$ 数据的映射。
+坐标方法就是一种给背景点连续指定 $\F^n$ 数据的映射。
 例如，平面上附着不同的坐标空间，一种可存放正交坐标，一种可存放极坐标，从而可赋予某点 $p$ 正交坐标 $(0,1)$，也可赋予极坐标 $(1,\pi/2)$，如图 \ref{fig:coor-chan}。拓扑学的同胚关系可描述坐标的指定，因为同胚具有双向连续性，且两个点不会被分配到同一坐标，从而避免歧义。
-当然，同胚使得许多坐标系能力有限，不能揽下全局。比如，极坐标系不能完整覆盖 $\R^2$，坐标取值为 $V=(0,+\infty)\times(0,2\pi)$。因此常考察开子集。为圆满完成指派任务，整个背景须由若干坐标系拼接，且互相分担对方力所不及之地。
-
-
-
+当然，同胚使得许多坐标系能力有限，不能揽下全局。比如，极坐标系不能完整覆盖 $\R^2$，坐标取值为 $V=(0,+\infty)\times(0,2\pi)$。因此常考察开子集。为圆满完成指派任务，整个背景须由若干坐标系拼接，且互相分担对方力所不及之地。本节主要考虑 $\R^n$。
 
 
 \begin{definition}
     置 $(M,\topo T)$。存在 $n\in\N$，使 $M$ 任意点都存在邻域同胚于 $(\R^n,\topo T_u)$ 某开集，则称其\textbf{局部欧}。
-    等价说法为：$\exists$ $M$ 的开覆盖 $\topo P$ 使 $\forall O\in\topo P$，$\exists$ 同胚 $\psi:O\to V\in\topo T_u$。也可将“$V\in\topo T_u$”改成开球或 $\R^n$。
     $\psi$ 称为\textbf{坐标映射}，$\psi(p)$ 称为 $p$ 的\textbf{坐标}。$O$ 称为\textbf{坐标域}(patch)，$(O,\psi)$ 称为\textbf{坐标系}或\textbf{图}(chart)。相应的坐标系族 $\mathcal A=\{(O,\psi):O\in\topo P\}$ 称为\textbf{图册}(atlas)。$(M,\mathcal A)$ 称为\textbf{局部欧氏空间}。维数为 $\dim M:=n$。当 $\mathcal A$ 自明时简记 $M$。
 \end{definition}
 
@@ -26,7 +22,7 @@
     局部欧的等价说法是任意点存在邻域同胚于开球或 $\R^n$。
 \end{theorem}
 \begin{proof}
-    因为 $\psi(x)$ 的开邻域内一定存在包含该点的开球。再注意开球与 $\R^n$ 同胚。
+    因为 $\psi(x)$ 的邻域内一定存在包含该点的开球。再注意开球与 $\R^n$ 同胚。
 \end{proof}
 
 \begin{figure}[ht]\centering
@@ -41,11 +37,13 @@
 坐标域是某点邻域，故坐标系又称局部坐标系，同胚又称局部同胚。仅用一个坐标域就能覆盖则称\textbf{平凡的}(trivial)，此时可称坐标系是整体坐标系。典型的例子是 $\R^n$ 自身。设 $a=(x^1_a,\cdots,x^n_a)\in\R^n$，恒等映射给出\textbf{自然坐标} $\psi(a)=(x^1(a),\cdots,x^n(a))=a$。
 
 \begin{definition}
-    仿紧、$T_2$ 的局部欧氏空间称为\textbf{拓扑流形}，简记 $M$。将 $\R^n$ 换为 $\C^n$ 就是\textbf{复流形}。
+    仿紧 $T_2$ 局部欧氏空间称为\textbf{拓扑流形}，简记 $M$。将 $\R^n$ 换为 $\C^n$ 就是\textbf{复流形}。
 \end{definition}
 
 \begin{remark}
-    也可用更严苛的条件：$C_2,T_2$。下一节将说明，两种定义都能使拓扑流形可度量。
+    仿紧 $T_2$ 是为了应用单位分解。
+    也可用更严苛的 $C_2,T_2$ 条件。
+    下一节将说明 $C_2\land T_2\land\text{局部欧}\im \text{仿紧}\land T_2\land\text{局部欧} \im \text{可度量}$。
 \end{remark}
 
 \begin{figure}[ht]
@@ -62,7 +60,18 @@
 \end{definition}
 
 \begin{remark}
-    坐标变换可显式地表为 $n$ 个 $n$ 元函数，其 $C^r$ 性由 $\R^n,\C^n$ 分析学给出。
+    坐标变换可显式地表为 $n$ 个 $n$ 元函数，$C^r$ 性由 $\R^n,\C^n$ 分析学给出。$C^0$ 即连续。光滑即任意阶导函数连续，记 $C^\infty$。解析是指任意点可展开为收敛于自身的幂级数，从而一定光滑。由于光滑仍可做到在某点无穷阶平坦，如 $y=\e^{-1/x}$ 于 $x=0$（左侧 $x\leqslant 0$ 连接 $y=0$），因而从该点展开收敛不到自身，即光滑不一定解析。由此可构造实用的\textbf{隆起函数}(bump function)
+    \eq{
+        \Psi(x)=\begin{cases}
+\exp(\frac{1}{x^2-1}), & |x|<1,\\
+0, & |x|\geqslant 1.
+\end{cases}
+    }
+    考虑复变函数 $f(z)=u(z)+\i v(z)$ 对定义域内 $z=x+\i y$ 可导，即 $f'(z):=\lim_{\Delta z\to 0}(f(z+\Delta z)-f(z))/\Delta z$ 需要对任意 $\Delta z=\Delta x+\i\Delta y$ 收敛。只需分别取 $\Delta x,\Delta y=0$ 就有 $\pdv{u}{x}+\i\pdv{v}{x}=\frac{1}{\i}\left(\pdv{u}{y}+\i\pdv{v}{y}\right)$，即 Cauchy-Riemann 条件
+    \eq{
+        \pdv{u}{x} = \pdv{v}{y},\quad \pdv{v}{x} = -\pdv{u}{y}.
+    }
+    因此虽然 $\C,\R^2$ 同胚，但 $\C$ 多出来乘法、线性等结构使复可导要比实可导多出上述条件，从而可证复变函数只需可导（称为全纯）就等价于解析。
 \end{remark}
 
 \begin{eg}
@@ -79,20 +88,24 @@
     \textbf{通常流形}就是指 $(\R^n,\topo T_u)$ 赋以包含自然坐标系的最大光滑图册。
 \end{eg}
 
-综上，将今后常用的 $C^\infty$-拓扑流形之定义总结如下：
-\begin{quote}
+综上，将今后常用的 $C^\infty$-拓扑流形之定义总结为：
+\begin{tcolorbox}
+\begin{definition}
     置 $T_2$ 仿紧空间 $(M,\topo T)$，若 $\exists\topo P\subset\topo T$ 使
     \begin{itemize}
-        \item $M = \bigcup_{O\in\topo P}O$；
-        \item $\forall O\in\topo P$，$\exists$ 同胚 $\psi:O\to V\in\topo T_u$； 
+        \item $\topo P$ 是开覆盖：$M = \bigcup_{O\in\topo P}O$；
+        \item $\forall O\in\topo P$，$\exists$ 同胚 $\psi:O\to V\in\topo T_u$（或开球、$\R^n$）；
         \item $O_\alpha\cap O_\beta\ne\mt$ 时 $\psi_\alpha\circ\psi_\beta^{-1}$ 光滑，
     \end{itemize}
     则称 $\{(O,\psi):O\in\topo P\}$ 为光滑图册。若一个光滑图册 $\mathcal A$ 不真含于任何光滑图册，则称 $(M,\topo T,\mathcal A)$ 为一个\textbf{光滑拓扑流形}，简称\textbf{流形}。
-\end{quote}
-而简言之，
-\begin{quote}
+\end{definition}
+\end{tcolorbox}
+或简言之，
+\begin{center}
+    \tcbox{
     \textbf{流形}是拓扑性质良好的空间，赋有相互光滑变换的一切局部坐标系。
-\end{quote}
+    }
+\end{center}
 
 定量计算流形间的映射，必然使用坐标系，即通过 $\psi'\circ f\circ \psi^{-1}$ 来确定 $f$。
 \begin{definition}
@@ -152,81 +165,41 @@
 
 \section{流形的拓扑性质*}
 
-
-
 \begin{theorem}
-    局部欧 $\im$ 局部路径连通 $\wedge$ 局部紧 $\wedge$ 局部可度量。
+    局部欧 $\im$ 局部路径连通 $\land$ 局部紧 $\land$ 局部可度量。
 \end{theorem}
 
 \begin{proof}
 局部欧氏空间任意点都存在开邻域同胚于 $\R^n$，而同胚保持路径连通性，于是该开邻域也路径连通，因此局部欧 $\im$ 局部路径连通。
-
 
     流形局部同胚于 $\mathbb R^n$，因此每点都有一个的开邻域；
 换言之，$M$ 是\emph{局部紧}的。
 \end{proof}
 
 \begin{theorem}
-    局部欧氏空间上，路径连通 $\iff$ 连通。
+    路径连通 $\xLeftrightarrow{\text{局部欧}}$ 连通。
 \end{theorem}
 \begin{proof}
-    已知路径连通 $\im$ 连通。反之，局部欧 $\wedge$ 连通 $\im$ 局部路径连通 $\wedge$ 连通 $\im$ 路径连通。
+    已知路径连通 $\im$ 连通。反之，局部欧 $\land$ 连通 $\im$ 局部路径连通 $\land$ 连通 $\im$ 路径连通。
 \end{proof}
 
 \begin{theorem}
-    $T_2 \wedge \text{局部紧} \im T_3$
+    拓扑流形可度量。
 \end{theorem}
-
 \begin{proof}
-\textbf{局部正规}
+    定义一：$\text{仿紧} \land T_2 \land \text{局部欧}\im \text{仿紧} \land T_2 \land \text{局部可度量} \xRightarrow{\text{Smirnov}}$ 可度量。
 
-而在局部紧 $T_2$ 空间中，总可以把点与不含该点的闭集用互不相交的开集分开，这正是正则性。
-
-具体地，取任意 $x\in M$ 与闭集 $F\subset M$，且 $x\notin F$。
-因为 $F$ 闭，所以 $U_0:=M\setminus F$ 是开且含 $x$。
-由局部紧性，存在开集 $U$ 使得
-\[
-x\in U,\qquad \overline U\ \text{紧},\qquad \overline U\subset U_0.
-\]
-于是 $\overline U\cap F=\varnothing$。
-
-对每个 $y\in F$，由 $T_2$ 性，存在互不相交开集 $U_y\ni x$ 与 $W_y\ni y$。
-注意到 $\overline U$ 是紧集，且 $\{W_y\}_{y\in F}$ 是 $F$ 的开覆盖，
-从而也是 $\overline U\cap F=\varnothing$ 的“无关”——我们改用紧性来做如下操作：
-对每个 $p\in \overline U$，因 $p\notin F$ 且 $F$ 闭，$T_2$ $\Rightarrow$ 可分离，
-故存在开集 $A_p\ni p$ 与开集 $B_p\supset F$ 使得 $A_p\cap (M\setminus B_p)=\varnothing$，
-亦即 $A_p\subset B_p$ 且 $B_p$ 仍是包含 $F$ 的开集。
-于是 $\{A_p\}_{p\in\overline U}$ 覆盖紧集 $\overline U$，
-取有限子覆盖 $A_{p_1},\dots,A_{p_N}$，令
-\[
-V:=\bigcup_{j=1}^N A_{p_j},\qquad W:=\bigcap_{j=1}^N B_{p_j}.
-\]
-则 $V$ 为开且含 $\overline U$，$W$ 为开且含 $F$，并且由于每个 $A_{p_j}\subset B_{p_j}$，
-有 $V\subset W$，从而 $V\cap (M\setminus W)=\varnothing$。
-现在取 $U':=U$（开含 $x$）与 $W':=M\setminus V$（开含 $F$），便得
-\[
-U'\cap W'=\varnothing.
-\]
-于是正则。
-从而 $T_2 \wedge \text{局部紧}\iff T_2 \wedge (T_2 \wedge \text{局部紧}) \im T_1 \wedge \text{正则} \iff T_3$。
+    定义二：$C_2 \land T_2 \land \text{局部欧} \im C_2 \land T_2 \land \text{局部紧} \im C_2 \land T_3 \xRightarrow{\text{Urysohn}}$ 可度量。
 \end{proof}
-
-拓扑单位分解（连续）：在 $T_2$ + 仿紧 且（通常）局部紧的条件下，能对任意开覆盖构造从属的连续单位分解（用 bump/收缩与局部紧性来做）。
-光滑单位分解（对光滑流形）：仿紧 + $T_2$（再加上光滑结构）保证能做出从属于任意开覆盖的光滑单位分解。
-所以在你问的流形语境里，“仿紧（单位分解）”是可以推出的。
-
+\begin{remark}
+    注意可度量 $\im$ 仿紧，所以其实定义二 $\im$ 定义一。
+\end{remark}
 
 \begin{definition}
-    置开覆盖 $\topo P=\{O_i\}$。若函数族 $\{\rho_i\}$ 满足
-    \begin{itemize}
-        \item $0\leqslant\rho_i\leqslant 1$；
-        \item $\rho_i$ 支撑在 $O_i$ 上：$\supp\rho_i\subset U_i$，$x\notin O_i$ 时 $\rho_i=0$；
-        \item $\sum_i \rho_i=1$,
-    \end{itemize}
-    则称为 $\topo P$ 的一个\textbf{单位分解}(partition of unity)。若在 $O_i$ 上光滑，则称\textbf{光滑单位分解}。
+    若 开覆盖 $\topo P=\{O_i\}$ 的单位分解 $\{\rho_i\}$ 光滑，则称\textbf{光滑单位分解}。
 \end{definition}
 
-\begin{theorem}[Bump 函数引理 / 光滑 Urysohn 引理]\label{thm:smooth_urysohn_bump}
+\begin{theorem}[光滑 Urysohn 引理]\label{thm:smooth_urysohn_bump}
 设 $M$ 为光滑流形，$K\subset U\subset M$，其中 $K$ 为紧集，$U$ 为开集。
 则存在 $\varphi\in C^\infty(M)$ 满足
 \[
@@ -236,6 +209,8 @@ U'\cap W'=\varnothing.
 \end{theorem}
 
 \begin{proof}
+    局部紧且正规
+
 对每个 $x\in K$，取坐标图 $(W_x,\psi_x)$ 使得 $\overline{W_x}\subset U$ 且 $\psi_x(W_x)\subset \mathbb R^n$
 为开球（可取相对紧坐标邻域）。在 $\mathbb R^n$ 中取一个标准 bump 函数
 $b_x\in C^\infty_c(\psi_x(W_x))$，使得 $b_x\equiv 1$ 于一个较小的同心球，
@@ -262,84 +237,8 @@ $\chi(t)=1$ 当 $t\ge 1$（可用一维 bump 函数构造）。
 最后归一化 $\rho_i=\varphi_i/\sum_j\varphi_j$
 
 \begin{theorem}
-    仿紧 $\wedge$ $T_2\im$ 任何开覆盖均存在从属于它的单位分解。
+    仿紧 $\land$ $T_2\land\text{光滑流形}\im$ 任何开覆盖均存在从属于它的光滑单位分解。
 \end{theorem}
-\begin{proof}
-    设 $\topo P=\{O_\alpha\}$ 为 $M$ 的任意开覆盖。欲构造单位分解。
-
-    \medskip
-    \noindent\textbf{将开覆盖可数化并做局部有限细化。}
-    $C_2$ $\im$ Lindel\"of：任意开覆盖都有可数子覆盖。
-    于是存在可数指标集 $I=\mathbb N$ 及开集 $O_i\in\topo P$ 使得 $\{O_i\}_{i\in\mathbb N}$ 仍覆盖 $M$。
-
-    进一步，由于 $M$ 是可数基的 $T_2$ 流形，所以是副紧(paracompact)的，因此每个开覆盖都有\emph{局部有限}的开细化。
-    因而存在局部有限开覆盖 $\{U_i\}_{i\in\mathbb N}$，使得对每个 $i$ 都有
-    \[
-        U_i\subset O_i.
-    \]
-    （必要时可先取局部有限细化 $\{U_i\}$，再对每个 $U_i$ 选取一个包含它的 $O_{\alpha(i)}$，并重编号。）
-
-    \medskip
-    \noindent\textbf{构造从属于 $\{U_i\}$ 的非负光滑函数族 $\{\varphi_i\}$。}
-    由于 $M$ 局部紧且正规(normal)，对每个 $i$ 可取开集 $V_i$ 使得
-    \[
-        \overline{V_i}\subset U_i.
-    \]
-    由流形上的 bump 函数引理（亦即光滑 Urysohn 引理），存在 $\varphi_i\in C^\infty(M)$ 满足
-    \begin{itemize}
-        \item $0\le \varphi_i\le 1$；
-        \item $\varphi_i\equiv 1$ 于 $\overline{V_i}$；
-        \item $\supp(\varphi_i)\subset U_i$。
-    \end{itemize}
-    特别地，$\varphi_i$ 在 $M\setminus U_i$ 上恒为 $0$，因此也从属于原覆盖：$\supp(\varphi_i)\subset U_i\subset O_i$。
-
-    \medskip
-    \noindent\textbf{归一化。}
-    令
-    \[
-        \Phi(x):=\sum_{i=1}^\infty \varphi_i(x).
-    \]
-    由于 $\{U_i\}$ 局部有限，故对每个 $x\in M$，在某个邻域内仅有限个 $\varphi_i$ 非零，
-    因而上述和在该邻域内是有限和，$\Phi$ 是光滑函数。
-
-    下面证明 $\Phi(x)>0$ 对一切 $x$ 成立。
-    因为 $\{V_i\}$ 仍覆盖 $M$（可在取 $V_i$ 时保证这一点：对每个 $x\in U_i$ 选一个相对紧邻域并并入某个 $V_j$；或等价地先取 $\{V_i\}$ 为 $\{U_i\}$ 的开覆盖并满足 $\overline{V_i}\subset U_i$），
-    所以给定 $x\in M$，存在某个 $k$ 使得 $x\in V_k\subset \overline{V_k}$，从而 $\varphi_k(x)=1$，于是 $\Phi(x)\ge 1$。
-
-    因此可定义
-    \eq{
-        \rho_i(x):=\frac{\varphi_i(x)}{\Phi(x)}.
-    }
-    则 $\rho_i\in C^\infty(M)$，且 $0\le\rho_i\le 1$，并且
-    \[
-        \supp(\rho_i)\subset \supp(\varphi_i)\subset U_i\subset O_i.
-    \]
-    最后，
-    \[
-        \sum_{i=1}^\infty \rho_i(x)=\frac{\sum_i\varphi_i(x)}{\Phi(x)}=1,
-    \]
-    且由于局部有限性，上式在任意点的邻域内都是有限和，因此无收敛性问题。
-    故 $\{\rho_i\}$ 构成从属于 $\topo P$ 的单位分解。
-\end{proof}
-
-\begin{theorem}[Smirnov]
-    $\text{仿紧}\wedge T_2\wedge\text{局部可度量}\im$ 可度量
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-\begin{theorem}
-    拓扑流形可度量。
-\end{theorem}
-\begin{proof}
-    定义一：$\text{仿紧} \wedge T_2 \wedge \text{局部欧}\im \text{仿紧} \wedge T_2 \wedge \text{局部可度量} \xRightarrow{\text{Smirnov}}$ 可度量。
-
-    定义二：$C_2 \wedge T_2 \wedge \text{局部欧} \im C_2 \wedge T_3 \xRightarrow{\text{Urysohn}}$ 可度量。
-\end{proof}
-\begin{remark}
-    注意可度量 $\im$ 仿紧，所以其实定义二 $\im$ 定义一。
-\end{remark}
 
 
 %%
@@ -357,19 +256,18 @@ Cartan 最先提出这一思想：用一个具有求导性质的泛函来代指�
 标量场在此处的作用是引出切矢。犹如在电场中放入测试电荷，用静电力研究电场一样，标量场受导数作用出实数，以研究导数自身，而标量场不是关键。
 
 剩下的问题在于需要哪些求导性质。若直接使用偏导符号 $A=A^\mu\pdv{x^\mu}$，实际上仍然使用了坐标语言，因此要将目光转向导数的代数性质。
-若 $f$ 是解析的，可用 $x^i$ 展开为
+若 $f$ 是解析的，展开为
 \[
     f=f(p)+\p_i f(p)(x^i-x^i(p))+ \frac 12\p_i\p_j f(p)(x^i-x^i(p))(x^j-x^j(p))+\cdots.
 \]
 $A=A^\mu\p_\mu$ 是求导操作，至少要考虑到线性性、Leibniz 乘法法则 $A(fg)=g(p)A(f)+f(p)A(g)$。
-首先，线性性的确构成线性空间：可相加，可数乘，还可定义零元 $0(f)=0$。这样 $\{\p_i\}$ 的确线性无关：$A=0\Rightarrow A^i=A^j\p_j(x^i)=A(x^i)=0$，因此 $\{\p_i\}$ 就是基。
-其次，乘法法则给出 $A(1)=A(1\cdot 1)=2A(1)\Rightarrow A(1)=0$，再由线性性知$\forall c\in\R,A(c)=A(c\cdot 1)=c A(1)=0$。
-%%
-从而 $A$ 作用于 $f$ 的确只剩下 $A(f)=A(x^\mu)\p_\mu f(p)$，高阶项为零是因为必然存在 $x^j(p)-x^j(p)=0$。故线性性、乘法法则已经能反求得 $A=A^\mu\p_\mu$。因此这就是我们所需的全部求导代数性质了。
-当然，对无穷级数滥用代数运算是极为危险的，其次也不需要 $f$ 解析，故我们更倾向于考虑有限项相加。
+线性性构成线性空间.
+乘法法则给出 $A(1)=A(1\cdot 1)=2A(1)\Rightarrow A(1)=0$，再由线性性知$\forall c\in\R$，$A(c)=A(c\cdot 1)=c A(1)=0$。
+从而 $A$ 作用于 $f$ 的确只剩下 $A(f)=A(x^\mu)\p_\mu f(p)$，高阶项为零是因为必然存在 $x^j(p)-x^j(p)=0$。可见线性性、乘法法则已能反求得 $A=A^\mu\p_\mu$，故此即所需的全部求导代数性质了。
+当然，对无穷级数滥用代数运算是危险的，其次也不需要 $f$ 解析，我们更倾向于考虑有限项相加。
 
 另一个关键在于，简单谈及 $C^r(M)$ 会忽视 $x^\mu$ 这种不在 $M$ 上的函数。
-为合法地谈及坐标分量 $A(x^\mu)$，应将 $U$ 上函数拓展到 $M$ 上。而只要 $f_1,f_2\in C^r(M)$ 在 $U\in\topo N(p)$ 上相等，则 $p$ 点任意切矢 $A$ 满足 $A(f_1)=A(f_2)$。对此只需置 $f:=f_1-f_2$ 并证明 $A(f)=0$。令 $h$ 在 $M\backslash U$ 上为零但 $h(p)\ne 0$，就可构造零元 $fh=0$，则 $0=A(fh)=h(p)A(f)$ 从而 $A(f)=0$。
+为合法地谈及坐标分量 $A(x^\mu)$，应将 $U$ 上函数拓展到 $M$ 上。而只要 $f_1,f_2\in C^r(M)$ 在 $U\in\topo N(p)$ 上相等，置 $f:=f_1-f_2$，令 $h$ 在 $M\backslash U$ 上为零但 $h(p)\ne 0$，就可构造零元 $fh=0$，则 $0=A(fh)=h(p)A(f)$ 从而 $A(f)=0$，即 $p$ 点任意切矢 $A$ 满足 $A(f_1)=A(f_2)$。
 
 \begin{definition}
     置流形 $M$。设 $V\subset U\subset M$。$f:V\to\R$ 称为 $g:U\to\R$ 在 $V$ 上的\textbf{限制}，若 $\forall p\in V,f(p)=g(p)$。显然限制是唯一的。$g$ 称为 $f$ 在 $U$ 上的一个\textbf{延拓}。
@@ -404,6 +302,9 @@ $A=A^\mu\p_\mu$ 是求导操作，至少要考虑到线性性、Leibniz 乘法�
 \end{theorem}
 
 \begin{proof}
+    可相加，可数乘，还可定义零元 $0(f)=0$。这样 $\{\p_i\}$ 的确线性无关：$A=0\Rightarrow A^i=A^j\p_j(x^i)=A(x^i)=0$，因此 $\{\p_i\}$ 就是基。
+
+
     总存在光滑标量场 $H_i$ 使得 $f(q) =f(p)+(x^i(q)-x^i(p))H_i(q)$，只需定义
 \eq{
     H_i(q):=\left\{\begin{aligned}

@@ -151,13 +151,21 @@
 \usepackage{ragged2e}                       % 允许表格内文字左右对齐的命令
 \newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}} % 左对齐可换行列类型P
 \newcolumntype{X}[1]{>{\RaggedRight\hspace*{0pt}}p{#1}}% 左对齐可换行列类型X
-\usepackage{booktabs}                      % 专业表格线条
+\usepackage{booktabs}                      % 三线表
 
 %=================== 其他 ===================
 \usepackage{comment}                        % 多行注释环境
 \usepackage{xspace}                         % 自定义命令后智能处理空格
 \usepackage{diagbox}                        % 表格中斜线分割单元格
-\usepackage{tcolorbox}                      % 彩色框，常用于定理、示例、注释框等
+\usepackage[most]{tcolorbox}                % 彩色框，常用于定理、示例、注释框等
+\tcbset{colframe=blue,colback=AliceBlue,boxrule=1pt}
+\tcbset{
+  highlight math style={
+    colframe=blue,
+    colback=AliceBlue,
+    boxrule=1pt,
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 自定义 macros
