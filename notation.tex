@@ -9,7 +9,7 @@
 \[X'^\mu=\sum_{\nu=0}^3 A^{\mu}{}_{\nu}X^\nu+ Y^\mu,\]
 其中为了区分行列指标而将矩阵元的指标错开。在因式 $A^{\mu}{}_{\nu}X^\nu$ 中，$\mu$ 是自由指标，$\nu$ 是哑标。不与自由指标冲突的前提下，哑标可任意替换，比如换为 $A^{\mu}{}_{\sigma}X^\sigma$。多个因式之间可以出现重复哑标，因为它们是加法关系，比如用 $(A+B)$ 描述的线性变换：
 \[X'^\mu=\sum_{\nu=0}^3 (A^{\mu}{}_{\nu}+B^{\mu}{}_{\nu})X^\nu=\sum_{\nu=0}^3 A^{\mu}{}_{\nu}X^\nu+\sum_{\nu=0}^3 B^{\mu}{}_{\nu}X^\nu.\]
-$A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\nu}X^\nu$ 都出现 $\nu$。替换哑元后也可不重复，写作 $A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\sigma}X^\sigma$。单个因式可以出现多对哑标，比如，用 $\delta_{ij}$ 表示单位阵元，则 Descartes 系中线元的勾股定理是
+$A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\nu}X^\nu$ 都出现 $\nu$。替换哑元后也可不重复，写作 $A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\sigma}X^\sigma$。单个因式可以出现多对哑标，比如，用 $\delta_{ij}$ 表示单位阵元（称为\textbf{Kronecker 符号}），则 Descartes 系中线元的勾股定理是
 \[\d\ell^2=\d x^2+\d y^2+\d z^2=\sum_{i,j=1}^3\delta_{ij}\d x^i\d x^j=\sum_{i=1}^3\sum_{j=1}^3\delta_{ij}\d x^i\d x^j,\]
 当然，$\d x^2$ 的“2”表示平方而非指标。由乘法的交换、结合及分配律，求和顺序是无所谓的。
 可以看到，\textbf{上标}(upper/raised indices)和\textbf{下标}(lower indices)位置总保持一致，这称为\textbf{指标平衡}。
@@ -24,7 +24,7 @@ $A^{\mu}{}_{\nu}X^\nu,B^{\mu}{}_{\nu}X^\nu$ 都出现 $\nu$。替换哑元后也
 \[
     \d x'^\mu=\pdv{x'^\mu}{x^\nu}\d x^\nu,\quad \pdv{x'^\mu} =\pdv{x^\nu}{x'^\mu} \pdv{x^\nu}. 
 \]
-$({\partial x'^\mu}/{\partial x^\nu})$ 就是分析学里的 \textbf{Jacobi 矩阵}。注意对于 Jacobi 矩阵元，一般不用简记符 $\p_\mu$。
+$({\partial x'^\mu}/{\partial x^\nu})$ 就是分析学里的 \textbf{Jacobi 矩阵}。注意对于 Jacobi 矩阵元，一般不用简记符 $\p_\nu x'^\mu$。
 第二式无非是链式法则，于是催生了梯度 $\p_\mu f$ 的坐标变换规律
 \[
     \p'_\mu f=\pdv{f}{x'^\mu}=\pdv{x^\nu}{x'^\mu}\pdv{f}{x^\nu}=\pdv{x^\nu}{x'^\mu}\p_\nu f.

@@ -12,7 +12,9 @@
 角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。
 或者，注意 $\omega=-\dv*{\theta}{\tau}$，也将发现 $\omega_e/\omega_r=\d\tau|_r/\d\tau|_e=\sqrt{g_{00}|_r/g_{00}|_e}$。故
 \eq{
+\tcbhighmath{
     z:=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1 \xRightarrow{\text{取 Schwarzschild 度规}} \sqrt{\frac{1-2M/r_r}{1-2M/r_e}}-1,
+}
 }
 这称为\textbf{红移量}。$\chi = \sqrt{-\xi_\mu\xi^\mu}$ 称为\textbf{红移因子}。
 若 $r_r>r_e$，则 $z>0$，光将红移，否则蓝移。但这并非因为光爬出引力势阱而消耗能量，只是因为引力钟慢效应。被高处静止观测者测得的频率更低。
@@ -28,34 +30,33 @@
     \caption{\small 轨道进动（离心率和进动角均夸大）}
 \end{wrapfigure}
 
-19 世纪末，水星近日点进动现象被首次观测。毫无干扰的情况下，Newton 理论当然不能解释进动，因此必须要考虑其它因素，如同当年从天王星轨道扰动发现的“笔尖下的行星”海王星那样。由于地球自转轴的进动，从地球上观测水星的进动大部分是参考系的视觉效果，即岁差，我们直接扣除它。其它因素就是其余行星造成的摄动、太阳实际形状以及广义相对论相应。
-
 %% Goldstein《经典力学》第 5-8 章。
 
-先研究摄动。
+19 世纪末，水星近日点进动现象被首次观测。毫无干扰的情况下，Newton 理论当然不能解释进动，因此必须要考虑其它因素，如同当年从天王星轨道扰动发现的“笔尖下的行星”海王星那样。由于地球自转轴的进动，从地球上观测水星的进动大部分是参考系的视觉效果，即岁差，我们直接扣除它。其它因素就是其余行星造成的摄动、太阳实际形状以及广义相对论相应。
+主要研究摄动即可。
 以太阳为参考，水星所处的外引力场写作（取几何制和单位质量）
 \[\bm F(r,t)=\bm F_\odot+\bm F_p=-\frac{M_\odot}{r^3}\bm r-\sum_i\frac{M_i(\bm r-\bm R_i)}{|\bm r-\bm R_i|^3},\]
 前一项是太阳的贡献，后面是各行星的作用总和。现在研究后者。设 $\bm r,\bm R_i$ 夹角 $\theta_i$，则 $d_i=|\bm r-\bm R_i|=R_i^2(t)+r^2-2R_i(t)r\cos\theta_i(t)$。
 忽略其余行星轨道的离心率之影响，即假定做半径 $\bm R_i$ 的圆周运动。设单个行星角速度为 $\omega_i$，将 $\bm F_p$ 在时域上做 Fourier 展开
 \[
-\bm F_p=- \sum_i \sum_{n\in\Z} {{a_n}(r){\e^{\i n{\omega_i}t}}}\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},\quad a_n=\frac{\omega_i}{2\pi}\int_0^{2\pi/\omega_i}{\frac{{M_i\e^{-\i n\omega_i t}\,\d t}}{{R_i^2 + r^2 - 2R_ir\cos \theta_i}}}.
+\bm F_p=- \sum_i \sum_{n\in\Z} {{a_n}(r){\e^{\i n{\omega_i}t}}}\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},\quad a_n=\int_0^{2\pi/\omega_i}\frac{\d t}{2\pi}{\frac{\omega_i M_i\e^{-\i n\omega_i t}}{{R_i^2 + r^2 - 2R_ir\cos \theta_i}}}.
 \]
 只保留最低阶的 $n=0$ 并用$\d\theta_i$ 替换$\omega_i\d t$ 就可使引力势同时间无关，得到近似表达
-\eq{\bm F_p(r) = - \sum_i  \int_0^{2\pi } \frac{M_i\,\d\theta/2\pi}{R_i^2 + r^2 - 2{R_i}r\cos \theta  }\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},}
+\eq{\bm F_p(r) = - \sum_i  \int_0^{2\pi }\frac{\d\theta}{2\pi}\frac{M_i}{R_i^2 + r^2 - 2{R_i}r\cos \theta  }\frac{\bm r-\bm R_i}{|\bm r-\bm R_i|},}
 引入线密度 $\lambda_i=M_i/(2\pi R_i)$，并沿水星初始方向为极轴，在黄道面上建立极坐标系 $(r,\theta)$，便发现上式表明，其余行星对水星的作用相当于 $M_i$ 均匀分布的一个圆环。这符合直觉，毕竟水星的进动极为缓慢，完整进动一周所需时间相较于其它行星周期很长，因此其它行星的作用的确和圆环类似。但对离水星较近的行星（比如金星），二者周期将在同一数量级，因此不便于近似为圆环。可见圆环模型成立条件是 $R_i\gg r$。幸好，除金星外其它行星都离得较远，将金星视作圆环的影响并不致命。问题现在相当于，在太阳引力基础上，计算附加这样一个微扰后行星的进动。
 由圆环对称性，可知作用力与 $\bm r$ 同向，即
 \[
-\bm F_p= \frac{\bm r}{r}\sum_i  \lambda_iR_i\int_0^{2\pi } \frac{\cos\alpha\,\d\theta}{ d_i^2},
+\bm F_p= \frac{\bm r}{r}\sum_i  \lambda_iR_i\int_0^{2\pi }\d{\theta}\frac{\cos\alpha}{ d_i^2},
 \]
 可见其他引力的作用可视作朝外的有心力，我们就可直接讨论分量 $F=F_\odot+F_p$。
 我们希望先计算出 $F_p$ 与 $r$ 的关系，虽无初等表达，但由于该式本身就具条件 $R_i\gg r$，故可近似计算。一个聪明的做法并非按 $r/R_i$ 展开，而是重构模型本身。将 $(r,\theta)$ 平移以使原点与水星重合，记新坐标 $(d,\alpha)$，则 $R_i^2=r^2+d_i^2+2rd_i\cos\alpha$，
 由于 $\alpha=0$ 时 $d_i=R_i-r$，取解 $d_i=-r\cos\alpha+\sqrt{R_i^2-r^2\sin^2\alpha}$。
 由 $R_i\gg r$ 知圆环可近似看作按 $\alpha$ 均匀分布，故 $ R_i\d\theta\approx d_i\d\alpha$，于是
 \begin{align}
-    F_p&=\sum_i \lambda_i \int_0^{2\pi } \frac{R_i\cos\alpha\,\d\theta}{ d_i^2 }\nonumber\\
+    F_p&=\sum_i \lambda_i \int_0^{2\pi } \frac{R_i\cos\alpha}{d_i^2 }\d{\alpha}\nonumber\\
     &\approx\sum_i \lambda_i \int_0^{2\pi } \frac{\cos\alpha\d{\alpha}}{-r\cos\alpha+\sqrt{R_i^2-r^2\sin^2\alpha}}\nonumber\\
     &=\sum_i \lambda_i \int_0^{\pi } \left(\frac{\cos\alpha\d{\alpha}}{-r\cos\alpha+\sqrt{R_i^2-r^2\sin^2\alpha}}-\frac{\cos\alpha\d{\alpha}}{r\cos\alpha+\sqrt{R_i^2-r^2\sin^2\alpha}}\right)\nonumber\\
-    &=2r \int_0^{\pi }\cos^2\alpha\d{\alpha} \sum_i \frac{\lambda_i}{R_i^2-r^2} =\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.
+    &=2r \int_0^{\pi }\cos^2\alpha\d{\alpha} \sum_i \frac{\lambda_i}{R_i^2-r^2} = \tcbhighmath{\pi r\sum_i \frac{\lambda_i}{R_i^2-r^2}.}
 \end{align}
 
 \begin{figure}[t]
@@ -67,7 +68,9 @@
 接下来只以初始位置 $(r_0,0)$ 为极轴方向建立极坐标，以研究水星运动。有心力的形式为
 $\ddot r-\dot\theta^2r=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导致角动量守恒，记 $r^2{\dot \theta}=L$。在力学课学过如何从两式消 $t$ 得 Binet 方程
 \eq{
-\dv[2]{\mu}{\theta}+\mu=-\frac{F}{L^2\mu^2}=J(\mu),\quad \mu=1/r.
+\tcbhighmath{
+    \dv[2]{\mu}{\theta}+\mu=-\frac{F}{L^2\mu^2}=J(\mu),\quad \mu=1/r.
+}
 }
 默认加入微扰前是圆轨道模型，则 $\dv*{\mu}{\theta}=0,F_0=-{L^2}/{r_0^3}$，从而 $\mu_0=J(\mu_0)$。
 然而圆轨道闭合而不一定稳定。稳定即是说，物体运动受到微扰后依然束缚在圆轨道附近。下面寻找稳定条件。在 $\mu_0$ 附近展开 $J(\mu)$，记 $x=\mu-\mu_0$，只保留至一阶可得波动方程
@@ -309,7 +312,7 @@ u(\phi)\simeq \frac{1}{b}\sin\phi+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi
 可见轨迹为双曲线。
 不妨令 $x=1/A$ 使渐近线穿过原点，即 $X=\frac 1A\cosh A\tau$，或者 $X^2-T^2=x^2$。
 由 $U^0=\gamma$ 可知快度为 $\theta=A\tau$。定义\textbf{Rindler 系} $\{t,x\}$ 满足
-\eq{T=x\sinh At,\quad X=x\cosh At\im \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}
+\eq{\tcbhighmath{T=x\sinh At,\quad X=x\cosh At\im \d s^2=-\d T^2+\d X^2=-(Ax)^2\d t^2+\d x^2.}}
 坐标网格即双曲线族和过原点直线族。无交叉项说明 Rindler 系是正交系，故可认为 Rindler 系是按 $A=1/x$ 分布的一系列匀加速观者的共动系。
 
 \begin{figure}[h!]

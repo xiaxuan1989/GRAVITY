@@ -221,10 +221,13 @@
 \renewcommand{\d}{\dd}          % 微分
 \newcommand{\p}{\partial}       % 偏导
 \newcommand{\cd}{\nabla}        % 协变导数
+\newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
+
+% 在 \ExplSyntaxOn 作用域里，字符 _ 的 catcode 会被改成 “字母”（11），不再是数学下标用的 subscript token（8）
+% 也可用 \sb（amsmath 提供，等价于 _，不受 catcode 影响），或 expl3 自带的 \c_math_subscript_token
 
 \usepackage{xparse}
 \ExplSyntaxOn
-
 % 协变微分
 \NewDocumentCommand{\D}{o m}{%
   \IfNoValueTF{#1}
@@ -249,7 +252,6 @@
      { \__Dv_frac:nn { \mathrm{D}^{#2}#3 } { \mathrm{d}#4^{#2} } }
    }
  }
-\newcommand{\DF}{\mathrm{D}_\mathrm{F}}     % Fermi 微分
 \NewDocumentCommand{\DFv}{ s O{1} m g }
  {
   \IfBooleanTF{#1}{\cs_set_eq:NN \__DFv_frac:nn \flatfrac}{\cs_set_eq:NN \__DFv_frac:nn \frac}
