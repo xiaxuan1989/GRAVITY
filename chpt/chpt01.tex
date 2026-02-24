@@ -480,7 +480,7 @@ $P^\mu$ 的模方为 $P^\mu P_\mu=-m^2$，此即\textbf{质壳}(mass-shell)\text
 \]
 最后，考虑粒子系统 $m_n,x^\mu_n$。若无内部相互作用，则
 \[
-S = -\sum_n m_n \int\d{\lambda}(-\eta_{\mu\nu}\dot x^\mu_n\dot x^\nu_n)^{1/2} \xLongrightarrow{\var x_n^\mu} \dv[2]{x^\mu_n}{\lambda} = 0.
+S = -\sum_n m_n \int\d{\lambda}(-\eta_{\mu\nu}\dot x^\mu_n\dot x^\nu_n)^{1/2} \xRightarrow{\var x_n^\mu} \dv[2]{x^\mu_n}{\lambda} = 0.
 \]
 参数 $\lambda$ 是任取的。
 
@@ -1334,7 +1334,7 @@ $\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda 
     \xi_{1}=\pdv{x},\quad \xi_{2}=\pdv{y}.
 }
 其流线是各坐标轴的一系列平行线。
-凭借在对称性上的直觉，可知第三种将对应旋转，而切换到极坐标有 $\d \l^2=\d r^2+r^2\d\phi^2$，的确与 $\phi$ 无关，因此第三种是
+凭借在对称性上的直觉，可知第三种将对应旋转，而切换到极坐标有 $\d \ell^2=\d r^2+r^2\d\phi^2$，的确与 $\phi$ 无关，因此第三种是
 \eq{
     \xi_3=\pdv{\phi}=-y\pdv{x}+x\pdv{y}.
 }
@@ -1817,7 +1817,7 @@ $\omega_{\mu\nu} = 0$ 的参考系称\textbf{无旋的}(irrotational)，$\theta_
 \[\cd_{[\nu} Z_{\mu]} = -\p_{[\nu} h \p_{\mu]}\phi -h \cd_{[\nu} \cd_{\mu]}\phi = -\p_{[\nu} h \p_{\mu]}\phi\im Z_{[\sigma}\cd_{\nu} Z_{\mu]} = h\p_{[\nu} h \p_{(\sigma}\phi \p_{\mu)]}\phi = 0,\]
 反之不一定（不保证 $h>0$）。展开可知
 \eq{
-    Z_{[\sigma}\cd_{\nu} Z_{\mu]} = Z_{[\sigma} B_{\mu\nu]} - Z_{[（\sigma}Z_{\nu} Z_{\mu]} = Z_{[\sigma} B_{[\mu\nu]]} - Z_{[(\sigma}Z_{\nu)} Z_{\mu]} = Z_{[\sigma} \omega_{\mu\nu]}.
+    Z_{[\sigma}\cd_{\nu} Z_{\mu]} = Z_{[\sigma} B_{\mu\nu]} - Z_{[\sigma}Z_{\nu} Z_{\mu]} = Z_{[\sigma} B_{[\mu\nu]]} - Z_{[(\sigma}Z_{\nu)} Z_{\mu]} = Z_{[\sigma} \omega_{\mu\nu]}.
 }
 可见 $\omega_{\mu\nu} = 0$ 推出 $ Z_{[\sigma} \omega_{\mu\nu]} = 0$；$Z_{[\sigma} \omega_{\mu\nu]} = 0$ 推出 $\omega_{\mu\nu} = Z^\sigma Z_{\nu} \omega_{\sigma\mu} + Z^\sigma Z_{\mu} \omega_{\nu\sigma} = 0$，其中注意 $Z^\sigma \omega_{\sigma\mu} = 0$。从而 $\omega_{\mu\nu} = 0\iff Z_{[\sigma}\cd_{\nu} Z_{\mu]} = 0$。$\omega_{\mu\nu} \ne 0$ 推出不存在 $h,\phi$ 使 $Z_\mu = -h\p_\mu \phi$，即有旋参考系不可全局对钟。
 即使不能确定同时面，但仍可能定义空间几何。展开膨胀部分：
