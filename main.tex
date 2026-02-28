@@ -1,4 +1,4 @@
-%!TEX TS-program = xelatex
+% TEX TS-program = xelatex
 %!TEX encoding = UTF-8
 
 % LaTeX source for book ``引力'' in Chinese
@@ -14,7 +14,7 @@
 \input{preamble.tex}                    % 宏包、定义
 
 % 测试编译
-\includeonly{chpt/chpt01.tex}
+\includeonly{appx/appx03.tex}
 
 \begin{document}
     \frontmatter
@@ -38,15 +38,16 @@
     
     %\part{附录}
     \begin{appendices}
-        \include{appx/appx01.tex}   % 范畴学
+        \include{appx/appx01.tex}   % 集合论、范畴学
         \include{appx/appx02.tex}   % 点集拓扑
-        \include{appx/appx03.tex}   % 线性代数
+        \include{appx/appx03.tex}   % 线性代数（差度规、完工）
         \include{appx/appx04.tex}   % 流形
-        \include{appx/appx05.tex}   % 曲率
+        \include{appx/appx05.tex}   % 仿射联络、曲率
         \include{appx/appx06.tex}   % Lie 导数
         \include{appx/appx07.tex}   % 微分形式
         \include{appx/appx08.tex}   % Lie 群
         \include{appx/appx09.tex}   % 丛
+        \include{}
         %% 泛函分析
         % 复几何
         % 旋量
@@ -57,6 +58,10 @@
     \backmatter
     %\printbibliography[heading=bibintoc, title={参考文献}] % 参考文献
 
-    %\addcontentsline{toc}{part}{索引}
+
+    %\cleardoublepage   % 确保当前页面内容输出完毕，并让索引从奇数页(右手侧)开始。单面排版用 \clearpage
+    %\phantomsection    % 必须配合 hyperref 宏包使用，生成正确的 PDF 书签跳转锚点
+    %\addcontentsline{toc}{part}{索引} % 明确指定放入目录的 part 级别
+
     %\printindex
 \end{document}

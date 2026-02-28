@@ -52,7 +52,7 @@
     易证 $\delta^2=0$。
 \end{theorem}
 
-\begin{eg}[矢量分析]
+\begin{example}[矢量分析]
     梯度、旋度、散度、Laplace 算子\footnote{$\d \delta+\delta \d$ 强调为 \textbf{Laplace-de Rham 算子}。闵氏时空 d'Alembert 算符强调为 \textbf{Hodge-Laplace 算子}。}的外微分语言为
     \[\grad f=(\d f)^\sharp,\quad
     \curl\bm A=({\star\d} A_\flat)^\sharp,\quad
@@ -61,9 +61,9 @@
     由此，易从 $\d^2=0$ 证明 $\curl\grad f=\bm 0$和$\div\curl\bm A=0$。
     
     对高维流形，旋度可直接用形式表述而不必 Hodge 对偶，比如四维矢量场 $V^\mu$ 的旋度就是 $2\nabla_{[\mu} V_{\nu]}$，无挠性使它在任意坐标系等价于 $2\p_{[\mu} V_{\nu]}$；二阶反称张量 $F_{\mu\nu}$ 的旋度则记作 $3\nabla_{[\mu}F_{\nu\lambda]}$。
-\end{eg}
+\end{example}
 
-\begin{eg}
+\begin{example}
     电磁张量 $F_{\mu\nu}$ 正是 $\R^{3+1}$ 上的 $2$-形式。定义\textbf{电流密度形式} $J$ 为
 \eq{J=\rho^* U_\flat=-\rho\,\mathrm{d} x^{0}+j_{i} \,\mathrm{d} x^{i},}
 进而 Maxwell 方程组的外微分语言为
@@ -75,7 +75,7 @@
 由 $\d F=0$，一定存在 $1$-形式 $A$ 满足
 \eq{F=\d A.}
 $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 亦满足。但可证明\footnote{具体的外微分语言证明见 \cite{Parrott} 附录二（2.9 节）证明。}存在 $A$ 满足 Lorenz 规范 $\delta A=0$，从而只需求解 $4\pi J=\delta\d A=\square A$，其中 $\square=(\d+\delta)^2$。
-\end{eg}
+\end{example}
 
 \begin{theorem}[Cartan]
     设 $\omega$ 为 $l$-形式，$X$ 为矢量，则
@@ -85,7 +85,31 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     前者称为\textbf{Cartan 同伦式}或\textbf{魔术公式}。
 \end{theorem}
 \begin{proof}
-    
+    用坐标分量即可证明。设 $\omega_{\mu_1\cdots\mu_l}$。
+
+    由 Cartan 魔术公式的定义，需证 $\mathscr L_X\omega=[\d,i_X]\omega=\d i_X\omega+i_X\d\omega$。
+
+    不失一般性，设 $\omega=f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}$，$X=X^\nu\p_\nu$。
+
+    计算左边：
+    \begin{align*}
+        \mathscr L_X\omega&=\mathscr L_X(f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l})\\
+        &=(\mathscr L_X f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge(\mathscr L_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
+        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge\d(i_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
+        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l(-1)^{i-1}\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}.
+    \end{align*}
+
+    计算右边：
+    \begin{align*}
+        \d(i_X\omega)&=\d(i_X f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\,i_X(\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}))\\
+        &=\d(f\sum_{i=1}^l(-1)^{i-1}X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l})\\
+        &=\sum_{i=1}^l(-1)^{i-1}[\d f\wedge X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}+f\,\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}].
+    \end{align*}
+
+    结合 $i_X\d\omega$ 的计算可验证 $\d i_X\omega+i_X\d\omega=\mathscr L_X\omega$。
+
+    第二式由第一式和 $\d^2=0$ 直接得出：
+    \[[\mathscr L_X,\d]=\mathscr L_X\d-\d\mathscr L_X=\d i_X\d+i_X\d\d-\d\d i_X-\d i_X\d=0.\qedhere\]
 \end{proof}
 
 
@@ -111,7 +135,17 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     积分定义与单位分解选取无关。
 \end{theorem}
 \begin{proof}
-    
+    设 $\{\rho_i\}$ 和 $\{\rho'_j\}$ 是 $M$ 的两个单位分解。则
+    \begin{align*}
+        \sum_i\int_{O_i}\rho_i\omega &= \sum_i\int_{O_i}\rho_i\omega\sum_j\rho'_j = \sum_{i,j}\int_{O_i}\rho_i\rho'_j\omega\\
+        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
+    \end{align*}
+    同理
+    \begin{align*}
+        \sum_j\int_{O'_j}\rho'_j\omega &= \sum_j\int_{O'_j}\rho'_j\omega\sum_i\rho_i = \sum_{i,j}\int_{O'_j}\rho_i\rho'_j\omega\\
+        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
+    \end{align*}
+    两式相等，故积分值与单位分解选取无关。
 \end{proof}
 
 函数的积分视为其对偶形式的积分：
@@ -122,9 +156,9 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     }
     其中 $\epsilon$ 为适配体元。
 \end{definition}
-\begin{eg}
+\begin{example}
     时空 $M$ 上的作用量可表为 $S=\int_M\mathcal L$。
-\end{eg}
+\end{example}
 
 \begin{theorem}[广义Stokes 定理]
     $\Omega$ 是 $n$ 维可定向（有界）带边流形，则 $\forall\omega\in\Lambda_{n-1}(M)$ 有
@@ -178,17 +212,19 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     \int_{\partial\R^{n}}\omega=0.
     \]
     每个邻域都有局部坐标系，而内部邻域没有贡献，这样总体的 $\int_\Omega\d\omega$ 就只剩下表面的变化 $\int_{\partial\Omega}\omega$。证明的严格术语将在第四章介绍。
+
+    最后用单位分解。
 \end{proof}
 积分域 $\Omega$ 亦可写作 $\Omega^\circ$，因为 $\int_{\partial\Omega}\d\omega=\int_\Omega \d\d\omega=0$（Poincaré 引理），这里$\d\d\omega=0$ 可看作任意阶形式。当然，我们只定义了同阶形式在同维区域的积分，故此亦可视作规定不同维时积分为零，即如果 $k\neq k'$，则 $k$-形式在 $k'$ 维背景上的积分为零。
 
 可做对照：$\int_{\partial\partial\Omega}\omega=\int_{\partial\Omega} \d\omega=0$，这里不妨设 $\omega$ 为 $(l-2)$-形式场而 $\Omega$ 为 $l$ 维。这对任意 $\omega$ 成立，因而可能性只有 $\partial^2\Omega=\mt$，即边缘本身没有边缘。如何从直观上理解这件事？我们知道默认 $\Omega$ 为任意连通闭集，这应当使连通开集 $\Omega^\circ$ 有界，因而 $\partial\Omega$ 有界，且$\partial^2\Omega=\mt$ 还意味着它无边\footnote{有界无边的流形有时可称\textit{闭流形}（取闭合之意），请注意同闭集等名称区分。}！如此便可确定 $\partial\Omega$ 的内外部，因而有外指法矢的明确含义，故从背景 $M$ 可立即诱导出边界的定向。
 
-\begin{eg}[Green]
+\begin{example}[Green]
     设 $A$ 是 $(\R^2,\delta)$ 上的对偶矢量场，$S$ 是单连通开集，则
     \eq{
     \int_S\left(\pdv{A_2}{x}-\pdv{A_1}{y}\right)\d x\,\d y=\oint_{\partial S} A_1\, \d x+A_2 \,\d y=\oint_{\partial S} A_\ell\,\d\ell.
     }
-\end{eg}
+\end{example}
 \begin{proof}
     置 1-形式 $\omega=A_\mu\mathrm{d} x^\mu$, 则
 \[\mathrm{d} \omega  =\frac{\partial A_\mu}{\partial x^\nu} \mathrm{d} x^\nu \wedge \mathrm{d} x^\mu=\left(\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}\right) \mathrm{d} x \wedge \mathrm{d} y,\]
@@ -243,15 +279,15 @@ $\vec n$ 是曲面的正定向法矢场，
 \end{proof}
 以后可不再区分诱导定向、体元的记号。
 
-\begin{eg}
+\begin{example}
     以 $\{(x^1,\cdots,x^n)|x^n\leqslant 0\}\subset\R^n$ 举例。
 则 $\d x^1 \wedge\cdots\wedge \d x^{n}$ 在超平面 $x^n=0$ 上的一个诱导定向是
 \begin{align*}
     i_{\pdv*{x^n}}(\d x^1 \wedge\cdots\wedge \d x^{n})&=(-1)^{n-1} i_{\pdv*{x^n}}( \d x^{n})\,\d x^1 \wedge\cdots\wedge \d x^{n-1}\\
     &=(-1)^{n-1} \d x^1 \wedge\cdots\wedge \d x^{n-1},
 \end{align*}
-\end{eg}
-\begin{eg}
+\end{example}
+\begin{example}
     以 $\R^3$ 中的 2 维单位球面 $S=\{(x^1,x^2,x^3)|\delta_{ij} x^i x^j=1\}$ 举例，显然存在一个法矢场 $x^i\pdv{x^i}$。则定向 3-形式 $\epsilon =\d x^1\wedge\d x^2\wedge\d x^3$ 的一个诱导 2-形式为
     \begin{align*}
         \tilde\epsilon &=i_{x^i\pdv*{x^i}}(\d x^1\wedge\d x^2\wedge\d x^3)\\
@@ -260,7 +296,7 @@ $\vec n$ 是曲面的正定向法矢场，
     同理 $\R^2$ 给回路的诱导正定就是绕 $z$ 轴右手螺旋（逆时针）。可见这些都与分析学中的习惯一致。
 
     读者还可验证：3 维欧氏度规用球坐标系的对偶坐标基展开后，球面度规确为诱导度规，只需注意球坐标的单位外法矢 $\pdv{r}$。
-\end{eg}
+\end{example}
 
 \begin{theorem}[Gauss]
     设 $M$ 是 $n$ 维定向背景, $N$ 是 $M$ 中的 $n$ 维带边区域, $g$ 是 $M$ 上的度规, $\epsilon$ 是适配体元，$n$ 是 $\partial N$ 的外法矢场，$\tilde\epsilon=i_n \epsilon$ 是诱导体元，$v$ 是 $M$ 上的可导矢量场，则
@@ -311,7 +347,7 @@ $\vec n$ 是曲面的正定向法矢场，
     这里 $\d Z$ 表示 $Z$ 的外微分。
 \end{proof}
 
-\section{对积分求导}
+\section{积分的求导}
 
 \begin{theorem}
     设完备向量场 $v\in\mathfrak X(\R^n)$作用下 $p$维带边闭子流形 $D_0\subseteq\R^n$随时间演化为 $D\subseteq\R^{n+1}$，对同样随时演化的微分形式 $\omega\in\Omega^p(\R^n)\times\R$有 
@@ -328,9 +364,9 @@ $\vec n$ 是曲面的正定向法矢场，
     \begin{align*} \dv{t}\bigg|_{t=0}\int_{D_t}\omega&=\dv{t}\bigg|_{t=0}\int_{D_0}\phi_t^*\omega =\int_{D_0}\dv{t}\bigg|_{t=0}\phi_t^*\omega=\int_{D_0}\mathcal L_X\omega\\ &=\int_{D_0}\d i_X\omega+i_X\d\omega =\int_{\partial D_0}i_v\omega+\int_{D_0}i_v\d_x\omega+\int_{D_0}\frac{\partial\omega}{\partial t}.\qedhere \end{align*}
 \end{proof}
 
-\begin{eg}
+\begin{example}
     在 $\R^3$ 矢量代数中，我们有
     \begin{align*}
         =
     \end{align*}
-\end{eg}
+\end{example}

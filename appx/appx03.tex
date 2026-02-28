@@ -141,6 +141,15 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 多重线性函数还可混合地输入矢量、对偶矢量，就好比售货机可以混合地投入硬币和纸币，只是对应的槽不同。
 比如，$V$ 上的线性变换就是输入矢量且输出矢量，即 $X^\mu=T^\mu{}_\nu Y^\nu$，而矢量是对偶矢量的函数，因此线性变换又可看成矢量和对偶矢量的双线性函数，即 $(1,1)$-张量 $T^\mu{}_\nu$。比如 $\mathrm{id}_V$ 给出 $\delta^i_j A^j=A^i$，而 $\delta^i_j$ 单独看有上下槽。物理上有一例：应力张量涉及某个面上的压力，因此必定要先给定一个面法矢，这样就产生对应的一个作用力。
 
+换言之，分量就是 $g_{ij}:=g(e_i,e_j)$，$(g_{ij})$ 是 $g$ 的一个表示矩阵，也就有 $g(A, B)=g_{\mu\nu} A^\mu B^\nu$。
+ 
+ 这样正交归一系的坐标基就是使 $g(\p_i,\p_j)=\tilde g_{ij}$。
+
+度规可以展开成线性组合，这涉及从矢量的基底构造一种新基底，将运算符记作 $\otimes$，并期望度规能表示成 $g=g_{ij}\d x^i\otimes\d x^j$。为寻找其合理定义，尝试两边作用于切矢，则式左是 $g_{ij}A^i B^j=g_{ij} \d x^i(A)\d x^j(B)$，式右是 $g_{ij}\d x^i\otimes\d x^j(A,B)$，故直接希望 
+$\d x^i\otimes\d x^j(A,B):=\d x^i(A)\d x^j(B)$，即 $\otimes$ 的结果与相应矢量的作用相当于各自分开作用再相乘。
+
+即 $A\otimes B(\omega_1,\omega_2):=A(\omega_1)B(\omega_2)$，这样 的分量是只是简单拼凑 $A^i B^j$。
+
 我们已熟知张量的线性组合、张量积、缩并，下面用映射语言重审之。
 
 \begin{definition}  
@@ -190,9 +199,9 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
     T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} (A^{-1})^{\mu_1}{ }_{\rho_1} \cdots(A^{-1})^{\mu_k}{ }_{\rho_k} A^{\sigma_1}{}_{\nu_1}   \cdots A^{\sigma_l}{}_{\nu_l}.
 }
 \end{theorem}
-\begin{eg}
+\begin{example}
     线性变换 $T$ 的分量变换为 $T'^\mu{}_\nu= (A^{-1})^\mu{}_\rho T^\rho{}_\sigma A^\sigma{}_\nu$，即分量矩阵相似。双线性函数的分量变换为 $f'_{\mu\nu}=(A^\mathrm{T})_\mu{}^\rho f_{\rho\sigma} A^\sigma{}_\nu$，即分量矩阵合同。
-\end{eg}
+\end{example}
 
 \begin{definition}
     $(k,l)$-张量 $ T $ 的第 $i$ 上标 $(i \leqslant k)$ 与第 $j$ 下标 $(j \leqslant l)$ 的\textbf{缩并}为
@@ -226,13 +235,13 @@ e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
 
     $T\in V^0_k$ 的对称、反称部分为
 \eq{
-\S T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sigma T, \quad\A T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,
+\operatorname{S} T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sigma T, \quad\A T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,
 }
 其中 $\sigma T(e_{\mu_1},\cdots,e_{\mu_k})=T(e_{\mu_{\sigma(1)}},\cdots,e_{\mu_{\sigma(k)}})=T_{\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}}$ 是 $T$ 按某一 $\sigma$ 给定的一个分量。其它情形同理。
 \end{definition}
 
 \begin{theorem}
-    易证 $T=\S T\iff T=\sigma T$；$\omega=\A\omega\iff\omega=\sgn\sigma\,\sigma\omega$。
+    易证 $T=\operatorname{S} T\iff T=\sigma T$；$\omega=\A\omega\iff\omega=\sgn\sigma\,\sigma\omega$。
 \end{theorem}
 
 \begin{theorem}
@@ -306,12 +315,12 @@ $f$ 满秩时称为非退化的。易证充要条件是分量矩阵可逆，或
     \begin{theorem}
     对非退化条件中取 $g=f$ 可有：$\forall g\in V,(f,g)=0\im f=0$。
     \end{theorem}
-    \begin{eg}
+    \begin{example}
         对 $C[a, b]$ 定义如下内积就构成内积空间：
     \eq{\label{b11}
     (f, g):=\int_a^b \overline{f(x)} g(x) \d {x}, \quad \forall f, g \in C[a, b].
     }
-\end{eg}
+\end{example}
 
 对于有限维，从任意基 $\{\beta_i\}$ 出发，通过 \textbf{Gram-Schmidt 正交化}：
 \eq{
@@ -377,14 +386,14 @@ $\C$ 也能作为通常度量空间。以拓扑线性空间为对象、连续线
     分量也可写成 $\omega_{\nu_1\cdots\nu_k}\wedge\mu_{\lambda_1\cdots\lambda_l}$。上文是阐述定义动机。显然从此出发可得上文全部结论，故为等价表述。
 \end{remark}
 
-\begin{eg}
+\begin{example}
     取 $n=3,l=2$，则
 \begin{align*}
     \omega&=\omega_{12}e^1\otimes e^2+\omega_{21}e^2\otimes e^1+\omega_{13}e^1\otimes e^3+\omega_{31}e^3\otimes e^1+\omega_{23}e^2\otimes e^3+\omega_{32}e^3\otimes e^2\\
     &=\omega_{12}(e^1\otimes e^2-e^2\otimes e^1)+\omega_{13}(e^1\otimes e^3-e^3\otimes e^1)+\omega_{23}(e^2\otimes e^3-e^3\otimes e^2)\\
     &=\omega_{12}e^1\wedge e^2+\omega_{13}e^1\wedge e^3+\omega_{23}e^2\wedge e^3.
 \end{align*}
-\end{eg}
+\end{example}
 
 $\{e^\mu\}$的楔积即可作为 $\Lambda_l(V)$ 的基：由于已说明任意 $\omega$ 的表出，只需再说明线性无关性，而这是显然的。维度即独立分量数 $\dim\Lambda_l(V)=\binom{n}{l}=\frac{n!}{l!(n-l)!}$，其中 $l\leqslant n$。若 $l>n$，排完任意 $n$ 个指标后，根据抽屉原理，余下指标必存在重复，故所有分量为零，即此时 $\Lambda_l(V)=\{0\}$。通常默认 $0\leqslant l\leqslant n$。
 \begin{theorem}拆到基底可知楔积的运算律有
@@ -397,7 +406,7 @@ $\{e^\mu\}$的楔积即可作为 $\Lambda_l(V)$ 的基：由于已说明任意 $
 \end{theorem}
 
 还可定义\textbf{全对称化}算子 $\mathrm{sym}:V^0_k\to V^0_k$ 和\textbf{全反称化}算子 $\alt:V^0_k\to V^0_k$：
-\[\operatorname{sym} T:=k!\S T=\sum_{\sigma\in S_k} \sigma T,\quad \alt T:=k!\A T=\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,\]
+\[\operatorname{sym} T:=k!\operatorname{S} T=\sum_{\sigma\in S_k} \sigma T,\quad \alt T:=k!\A T=\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,\]
 对其它情形定义类似。置 $f\in V^0_k,g\in V^0_l$，则显然 $\alt(\alt f\otimes\alt g)=k!l!\alt(f\otimes g)$。楔积可表为 $\omega\wedge\mu=\frac{1}{k!l!}\alt(\omega\otimes\mu)$。基的楔积为 $e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{l}}=\alt( e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{l}})$。看上去系数仿佛改变。更有甚者直接将 $\omega\wedge\mu$ 定义为 $\Lambda(\omega\otimes\mu)$ 的形式，使得系数仿佛归一。故查阅不同书籍时请注意分辨。
 
 \begin{theorem}

@@ -21,7 +21,6 @@
 % 字体设置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{
-    amsmath, % 使用 equations
     amsthm,
     amsfonts,
     amssymb,
@@ -29,6 +28,13 @@
     url,
     graphicx
 }
+\usepackage{amsmath} % 使用 equations
+%\usepackage[fleqn]{amsmath} % flush left equations \setlength{\mathindent}{..em}
+\usepackage{xeCJKfntef} % \CJKunderwave
+\usepackage{extarrows}  % \xlongequal
+\usepackage{makecell} % 矩阵内 cell
+% overset 用于联络系数上标（后 Newton 等）
+\newcommand{\oversetmy}[2]{\overset{\mathclap{\scriptscriptstyle #1}}{#2}\vphantom{#2}}
 
 % 英文字体
 \usepackage[no-math]{fontspec}
@@ -103,10 +109,8 @@
 ]{hyperref} %超链接
 \usepackage{bookmark} % 处理超链接的书签
 
-%\usepackage{imakeidx}                   % 索引
-%\makeindex[options= -s index.ist]       % 初始化索引，以便使用 \index 添加条目
-%\newcommand{\idx}[2]{{\index{#2@#1}}}   % 中文注音
-
+\usepackage{imakeidx}                   % 索引
+\makeindex[name=physwords, intoc, options= -s index.ist] % 初始化
 
 %=================== 颜色相关 ===================
 \usepackage[svgnames,dvipsnames]{xcolor}  % 丰富的颜色名支持，自定义颜色
@@ -187,6 +191,9 @@
 \newcommand{\bookauthor}{\@author}           % 作者快捷命令
 \makeatother
 
+\usepackage{enumerate} % 列举格式
+\usepackage{paralist} % 定义的紧凑列表
+
 %================== 名称重定义 ==================
 \renewcommand{\contentsname}{目录}
 \renewcommand{\proofname}{证}
@@ -194,25 +201,29 @@
 \numberwithin{equation}{section} % 公式按章节
 \numberwithin{figure}{chapter}  % 图序按章节
 %================== 定理环境 ====================
-\usepackage{enumerate} % 列举格式
-\usepackage{paralist} % 定义的紧凑列表
-\newtheorem{eg}{\indent 例}[chapter]
-\newtheorem{theorem}{定理}[section]
+\newtheorem{example}{\indent 例}[chapter]
 \newtheorem{definition}{定义}[chapter]
+\newtheorem{theorem}{定理}[section]
 \newtheorem*{remark}{注}
-%================== 环境定义 ==================
+
 \newenvironment{solution}{\begin{proof}[解]}{\end{proof}}
 
+\newtheorem{proposition}{命题}[section]
+\newtheorem{corollary}{推论}[section]
+%\newtheorem{axiom}{公理}[chapter]
+%\newtheorem{lemma}{引理}[section]
+
+\newtheorem{exercise}{\rm \noindent \bfseries 练习 }[chapter]
 
 %================== 数学符号 =================
 %\usepackage{isomath}           % ISO 规范
-\usepackage{bm}                 % boldsymbol \bm
+\usepackage{bm,bbm}             % boldsymbol + mathbbm
 \usepackage{physics}
 %\usepackage{physics2}
 %\usepackage{fixdif} % 微分
 %\usepackage{derivative} % 求导
 %\usephysicsmodule{nabla.legacy} % 矢量场论算子
-\usepackage{mathtools,nccmath}  % amsmath的扩展和改进，增强数学排版能力
+\usepackage{mathtools,nccmath}  % amsmath的扩展和改进，增强数学排版能力。\mathclap 用到 mathtools
 
 \newcommand{\cate}[1]{\ensuremath{\mathsf{#1}}}	% 范畴论字体
 \newcommand{\topo}{\mathscr} % 拓扑字体
@@ -302,7 +313,6 @@
 \newcommand{\diag}{\operatorname{diag}}  % 对角
 \newcommand{\supp}{\operatorname{supp}}  % 支撑
 
-\renewcommand{\S}{\operatorname{S}}     % 对称化
 \newcommand{\A}{\operatorname{A}}       % 反称化
 \newcommand{\alt}{\operatorname{alt}}   % 反称化算子
 
