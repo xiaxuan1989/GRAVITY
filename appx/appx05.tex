@@ -1,246 +1,391 @@
-\chapter{仿射联络及曲率}\label{appx:curvature}
-\section{仿射联络}
+\chapter{流形上的积分学}\label{appx:form}
+
+\section{外微分}
+有了流形上的微分学，自然要有相应的积分学。
+观察 $\R^n$ 上的多元 Riemann 积分，如 $\int P\,\d x+Q\,\d y+R\,\d z,\int P\,\d x\,\d y+Q\,\d y\,\d z+R\,\d z\,\d x$，
+被积内容总按微元的组合来求和，故可视作微分形式，系数则是其坐标分量。如此，积分便可写成 $\int \omega$，微元间的乘法可理解为楔积。
+再研究形式的微分。函数 $f$ 的微分 $\d f$ 给出 1-形式，该操作增添了一个微元。推广到形式的微分无非是作用于形式的系数并添上楔积。
+
 
 \begin{definition}
-    置 $C^{h}$-流形 $M$。
-    \textbf{仿射联络}或\textbf{协变微分}是将 $(k,l)$ 型 $C^{r+1}$-张量场映为 $(k,l+1)$ 型 $C^{r}$-张量场（$h\geqslant r+2$）的线性算符 $\nabla$，满足：
-    \begin{itemize}
-        \item 对张量积有 Leibniz 乘法法则；
-        \item 与缩并对易；
-        \item 对 $C^1$-函数 $f$ 有 $\nabla f=\d f$。
-    \end{itemize}
-    分量记作 $\nabla_\mu T^{\cdots}_{\cdots}$，算符 $\nabla_\mu$ 称为\textbf{协变导数}。$\nabla_X:=\c^1_1(X\otimes\nabla)$ 称为沿矢量场 $X$ 的\textbf{方向导数}。$(M,\nabla)$ 构成\textbf{联络空间}。
+    流形上的形式场称为\textbf{微分形式}（场）。常取对偶坐标基将 $l$-微分形式 $\omega$ 表为
+    \eq{
+    \omega=\sum_{\mu_1<\cdots<\mu_l}\omega_{\mu_1\cdots\mu_l} \d x^{\mu_1}\wedge\cdots\wedge \d x^{\mu_l}=\frac{1}{l!}\omega_{\mu_1\cdots\mu_l} \d x^{\mu_1}\wedge\cdots\wedge \d x^{\mu_l}.
+    }
+    
 \end{definition}
 
-\begin{example}
-    对标量场 $f$，$\nabla_X f=\langle\d f,X\rangle=X(f)$。
-\end{example}
-
 \begin{definition}
-    置联络空间 $(M,\nabla)$ 和矢量基场 $\{e_\mu\}$，\textbf{联络系数}为 $\Gamma^\lambda_{\mu\nu}:=\langle e^\lambda,\nabla_{e_\mu} e_\nu\rangle$。
-    $\Gamma^\lambda_\nu:=\Gamma^\lambda_{\mu\nu} e^\mu$ 称为\textbf{联络 1-形式}。
+    \textbf{外微分}(exterior derivative)是映射 $\d:\Lambda_l(V)\to\Lambda_{l+1}(V)$ 使
+    \eq{
+        \d\omega :=\sum_{\mu_1<\cdots<\mu_l}\d(\omega_{\mu_1\cdots\mu_l})\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
+    }
 \end{definition}
 
 \begin{theorem}
-    $\nabla e_\nu=\Gamma^\lambda_\nu\otimes e_\lambda.$
+    任取坐标系有 $(\d\omega)_{\sigma\mu_1\cdots\mu_l}=(l+1)\omega_{[\mu_1\cdots\mu_l,\sigma]}$。
 \end{theorem}
 
-\begin{theorem}
-    置对矢量场 $Y$ 和坐标系 $\{x\}$。$\nabla Y$ 坐标分量为 $\nabla_\mu Y^\lambda=\p_\mu Y^\lambda+\Gamma^\lambda_{\mu\nu}Y^\nu$。
-\end{theorem}
-\begin{remark}
-    务必注意 $\Gamma^\lambda_{\mu\nu}Y^\nu$ 的缩并顺序。
-\end{remark}
-\begin{proof}置 $\{e_\mu\}$，则
-    \[\nabla(Y^\nu e_\nu)=\d Y^\nu\otimes e_\nu+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda=\p_\mu Y^\lambda\d x^\mu\otimes e_\lambda+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda,\]
-    取 $e_\mu=\p_\mu$ 即可。
+
+
+\begin{proof}由楔积定义知 $e^{\nu_1}\wedge\cdots\wedge e^{\nu_n}(e_{\mu_1},\cdots,e_{\mu_n})=n!\delta_{\mu_1}^{[\nu_1}\cdots\delta_{\mu_n}^{\nu_n]}$，则
+    \begin{align*}
+        \d\omega(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})&=\frac{1}{l!}\omega_{\nu_1\cdots\nu_l,\lambda}\d x^\lambda\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})\\
+        &=\frac{(l+1)!}{l!} \omega_{[\nu_1\cdots\nu_l,\lambda]} \delta_{\sigma}^{\lambda}\delta_{\mu_1}^{\nu_1}\cdots\delta_{\mu_l}^{\nu_l}=(l+1)\omega_{[\mu_1\cdots\mu_l,\sigma]}.\qedhere
+    \end{align*}
 \end{proof}
 
-\begin{theorem}
-    设 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则
-    \begin{align*}
-        \Gamma'^{\gamma}_{\sigma\kappa}&=\langle e'^\gamma,\nabla_{e'_\sigma} e'_\kappa\rangle=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma\langle e^\lambda,\nabla_{e_\mu} (A^\nu{}_\kappa e_\nu)\rangle\\
-    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma(A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+e_\mu(A^\lambda{}_\kappa))\\
-    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+(A^{-1})^\gamma{}_\lambda e'_\sigma(A^\lambda{}_\kappa).
-    \end{align*}
+\begin{theorem}[Leibniz 律]$\omega$ 为 $k$-形式：
+    $\d(\omega\wedge\mu)=\d\omega\wedge\mu+(-1)^k\omega\wedge\d\mu$。
 \end{theorem}
 
-\begin{theorem}
-    流形必存在某个仿射联络，且数量无限多。
+\begin{theorem}[Poincaré 引理] $\d^2=0$.
 \end{theorem}
-
+\begin{proof} $(\d\d\omega)_{\nu\sigma\mu_1\cdots\mu_l}=(l+2)(l+1)\omega_{[[\mu_1\cdots\mu_l,\sigma],\nu]}=(l+2)(l+1)\omega_{[\mu_1\cdots\mu_l,(\sigma\nu)]}=0$。
+\end{proof}
 
 \begin{definition}
-    置联络空间 $(M,\nabla)$ 中 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $H$ 是定义在 $\Im\gamma$ 的 $C^1$-张量场，则 $H$ 对 $\gamma$ 的\textbf{沿线协变导数}为
-\eq{
-\frac{D H}{\d\sigma}:=\nabla_{\dot\gamma} \bar H,
-}
-其中 $\bar H$ 是 $H$ 的任意延拓。若 $D H/\d\sigma=0$，则称 $H$ 沿线\textbf{平行移动}。
+    $l$-形式 $\omega$ 称\textbf{闭的}(closed) $\Leftrightarrow\d\omega=0$；$\omega$ 称\textbf{恰当的}(exact) $\Leftrightarrow \exists (l-1)$-形式 $\mu$ 使 $\omega=\d\mu$。
 \end{definition}
+依 Poincaré 引理，恰当形式必为闭形式。反之欲成立，须要求坐标域$X\subset M$ 第二种 de Rham 上同调 $H^{2}(X;\R)$ 平凡。形象理解为区域是任意的单连通流形，例如 $\R^{n}$、开球及更一般的“星形式”开区域等。对一般流形而言，往往局域 $X$ 内亦成立，即逆命题至少在处处点的邻域上成立。
 
-\begin{example}
-    对标量场 $f$，$D f/\d\sigma=\dv*{f}{\sigma}$。
+\begin{definition}
+    $\delta={\star\d\star}$ 称为\textbf{余微分}(codifferential)，有时也记作 $\d^*$。
+\end{definition}
+\begin{theorem}
+    易证 $\delta^2=0$。
+\end{theorem}
+
+\begin{example}[矢量分析]
+    梯度、旋度、散度、Laplace 算子\footnote{$\d \delta+\delta \d$ 强调为 \textbf{Laplace-de Rham 算子}。闵氏时空 d'Alembert 算符强调为 \textbf{Hodge-Laplace 算子}。}的外微分语言为
+    \[\grad f=(\d f)^\sharp,\quad
+    \curl\bm A=({\star\d} A_\flat)^\sharp,\quad
+    \div\bm A=\delta A_\flat,\quad
+    \nabla^2=\d \delta+\delta \d=(\d+\delta)^2.\]
+    由此，易从 $\d^2=0$ 证明 $\curl\grad f=\bm 0$和$\div\curl\bm A=0$。
+    
+    对高维流形，旋度可直接用形式表述而不必 Hodge 对偶，比如四维矢量场 $V^\mu$ 的旋度就是 $2\nabla_{[\mu} V_{\nu]}$，无挠性使它在任意坐标系等价于 $2\p_{[\mu} V_{\nu]}$；二阶反称张量 $F_{\mu\nu}$ 的旋度则记作 $3\nabla_{[\mu}F_{\nu\lambda]}$。
 \end{example}
 
-按理来说 $\nabla T$ 应取决于附近延拓的情况，因此要求曲线外应也有定义，但沿线协变导数事实上与延拓无关。为行文简洁，不妨设张量 $T$ 为一矢量 $v$。将沿线导数在曲线上一点 $p$ 处按坐标基展开为
-    \[
-    \dv{x^\nu}{t}\nabla_\nu \bar v^\mu|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t}\bar v^\sigma|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t} v^\sigma|_p,
-    \]
-    任意不同延拓 $\bar v,\bar v'$ 实际上给出了同一沿线导数，只需证明
-    \[
-    \dv{\bar v^\mu}{t}=\dv{\bar v'^\mu}{t}.
-    \]
-    上式显然成立，因为任意延拓的 $\bar v^\mu(t)$ 实为领域内的 $\bar v$ 同曲线映射复合的一元函数，该一元函数正是 $v^\mu(t)$。以后凡谈及只在曲线上定义的张量场时，不会讨论协变微分（因为没意义），但可求其沿线导数（沿线导数同延拓无关）。
+\begin{example}
+    电磁张量 $F_{\mu\nu}$ 正是 $\R^{3+1}$ 上的 $2$-形式。\textbf{电流密度形式} $J$ 为
+\eq{J=\rho_0 U_\flat=-\rho \,\mathrm{d} x^{0}+j_{i} \,\mathrm{d} x^{i},}
+$\rho_0$ 为固有电荷密度。进而 Maxwell 方程组的外微分语言为
+\eq{\d F=0,\quad \delta F=4\pi J.}
+可见 $F$ 是闭形式。
+第二式又可表为 $\mathrm{d}F^*=4\pi{\star J}$，其中 $F^*:={\star}F$ 称为\textbf{对偶电磁张量}。
+某系所测电磁场为 $E=F(\oo,\p_0),B=-F^*(\oo,\p_0)$，因而 $F$ 在该系可表为
+\begin{align*}F&= E^{1} \mathrm{d} x^{1} \wedge \mathrm{d} x^{0}+E^{2} \mathrm{d} x^{2} \wedge \mathrm{d} x^{0}+E^{3} \mathrm{d} x^{3} \wedge \mathrm{d} x^{0} \\&+ B^{3} \mathrm{d} x^{1} \wedge \mathrm{d} x^{2}+B^{2} \mathrm{d} x^{3} \wedge \mathrm{d} x^{1}+B^{1} \mathrm{d} x^{2} \wedge \mathrm{d} x^{3}.\end{align*}
+由 $\d F=0$，一定存在 $1$-形式 $A$ 满足
+\eq{F=\d A.}
+$A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 亦满足。但可证明\footnote{具体的外微分语言证明见 \cite{Parrott} 附录二（2.9 节）证明。}存在 $A$ 满足 Lorenz 规范 $\delta A=0$，从而只需求解 $4\pi J=\delta\d A=\square A$，其中 $\square=(\d+\delta)^2$。
+\end{example}
 
-\begin{theorem}
-    置联络空间 $(M,\nabla)$ 和连接 $p,q\in M$ 的某条曲线 $\gamma$，则 $\gamma$上的平行移动构成 $T_p M$ 至 $T_q M$ 的一个同构。
+\begin{theorem}[Cartan]
+    设 $\omega$ 为 $l$-形式，$X$ 为矢量，则
+    \eq{
+        \mathscr L_X=[\d,i_X],\quad [\mathscr L_X,\d]=0.
+    }
+    前者称为\textbf{Cartan 同伦式}或\textbf{魔术公式}。
 \end{theorem}
+\begin{proof}
+    用坐标分量即可证明。设 $\omega_{\mu_1\cdots\mu_l}$。
+
+    由 Cartan 魔术公式的定义，需证 $\mathscr L_X\omega=[\d,i_X]\omega=\d i_X\omega+i_X\d\omega$。
+
+    不失一般性，设 $\omega=f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}$，$X=X^\nu\p_\nu$。
+
+    计算左边：
+    \begin{align*}
+        \mathscr L_X\omega&=\mathscr L_X(f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l})\\
+        &=(\mathscr L_X f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge(\mathscr L_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
+        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge\d(i_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
+        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l(-1)^{i-1}\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}.
+    \end{align*}
+
+    计算右边：
+    \begin{align*}
+        \d(i_X\omega)&=\d(i_X f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\,i_X(\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}))\\
+        &=\d(f\sum_{i=1}^l(-1)^{i-1}X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l})\\
+        &=\sum_{i=1}^l(-1)^{i-1}[\d f\wedge X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}+f\,\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}].
+    \end{align*}
+
+    结合 $i_X\d\omega$ 的计算可验证 $\d i_X\omega+i_X\d\omega=\mathscr L_X\omega$。
+
+    第二式由第一式和 $\d^2=0$ 直接得出：
+    \[[\mathscr L_X,\d]=\mathscr L_X\d-\d\mathscr L_X=\d i_X\d+i_X\d\d-\d\d i_X-\d i_X\d=0.\qedhere\]
+\end{proof}
+
+
+\section{定向、带边流形}
+
 
 \begin{definition}
-    置 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $\nabla_{\dot\gamma} \dot\gamma$ 平行于 $\dot\gamma$，则称 $\gamma$ 为\textbf{测地线}。总可取新参数 $\xi$ 使 $\nabla_{\dv{\xi}} \dv{\xi}=0$，称为\textbf{仿射参数}。
+    连续的非零张量场称\textbf{非退化的}。非退化最高阶形式场称\textbf{体元场}或\textbf{体元}。存在体元的流形称\textbf{可定向的}(orientable)。
 \end{definition}
-\begin{remark}
-    容易验证仿射参数可确定到线性变换 $\xi'=a\xi +b$，$a,b\in\R$。此后谈及测地线均默认仿射参数化。
-\end{remark}
+
+    \begin{example}
+        $\R^3$ 可定向：只需取自然坐标便知存在光滑体元 $\d x\wedge\d y\wedge\d z$。
+    \end{example}
+    \begin{example}
+    M\"obius 环（图 \ref{mobius}）不可定向：若尝试连续指定非零定向，则沿途回到原处时一定会断开，而突然反号不满足连续要求。直观上讲这意味着它作为 2 维曲面却只有一个面，不能区分正反。
+    \end{example}
+
+\begin{definition}
+    类似地，对体元场 $\epsilon_1,\epsilon_2$，若存在标量场 $h>0$ 使 $\epsilon_1=h\epsilon_2$，就说 $\epsilon_1,\epsilon_2$ 等价，由此体元场的等价类称为该流形的定向。
+    选好定向的可定向流形称（已）\textbf{定向的}(oriented)，类似地有正定体元、右手基等概念。
+    若坐标系的坐标基是右手的，则称\textbf{右手系}。
+\end{definition}
+
+\begin{figure}[h!]
+    \centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Curve Lines [id:da7826517172347827] 
+\draw    (3.65,18.88) .. controls (17.2,36.58) and (48,50.16) .. (72.8,51.99) ;
+\draw [shift={(39.71,43.88)}, rotate = 205.45] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.4,-2.1) -- (0,0) -- (8.4,2.1) -- cycle    ;
+%Curve Lines [id:da8566552148207576] 
+\draw    (221.73,12.59) .. controls (241.17,-1.67) and (128.44,8) .. (140.66,18.19) ;
+%Curve Lines [id:da14270801999584393] 
+\draw  [dash pattern={on 3pt off 3pt on 3pt off 3pt}]  (183.2,21.91) .. controls (174,25.58) and (149.2,26.68) .. (140.66,18.19) ;
+%Curve Lines [id:da5926224666835718] 
+\draw  [dash pattern={on 3pt off 3pt on 3pt off 3pt}]  (221.73,12.59) .. controls (206.74,22.26) and (214.4,6.87) .. (183.2,21.91) ;
+%Curve Lines [id:da4918795365326445] 
+\draw    (223.95,9.53) .. controls (217.84,52.82) and (166.2,65.55) .. (140.66,18.19) ;
+%Straight Lines [id:da406966878688231] 
+\draw    (163.2,42.45) -- (149.8,65.67) ;
+\draw [shift={(148.8,67.4)}, rotate = 299.99] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.2,-1.8) -- (0,0) -- (7.2,1.8) -- cycle    ;
+
+\end{tikzpicture}
+    \caption{曲线、曲面的定向}
+\end{figure}
+
+
+现借助坐标系叙述之。在 $M$ 中有一包含 $p$ 的局部坐标系 $(O,\psi;x^i)$，使得 $\psi(p)$ 是坐标原点且 $U\cap D =\{q\in U|x^1(q)\leqslant 0\}$，则称 $D$ 是 $M$ 上的一个\textit{带边区域}，其边界点 $x^1$ 坐标为零。坐标空间里这个区域就称作“\textit{半空间(half-space)}” $\mathbb H^{n}$，有时可记作 $\frac{1}{2}\R^n$。由于边界点失去了一个坐标自由度，因此我们很容易发现 $\partial D$ 是相较于 $D$ 而言“余 1 维(1-codimension)”。考虑到背景和内部都是同维开集，因此说\textit{带边区域不能直接认同为普通开集}，因其在实质上“强行”拼凑了两个不同维度的东西，即内部和边界。
+
+区域定向可在其边界上也诱导出与之相应的定向
+
+\begin{figure}[h!]
+    \centering
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_hask52a3i}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_hask52a3i}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+
+% Pattern Info
  
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_9v4tzcn4d}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_9v4tzcn4d}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-\begin{theorem}
-    切矢平行移动直接给出仿射参数化的测地线。
-\end{theorem}
-\begin{proof}
-取 $\dot\gamma=\dv*{\xi}$，则 ${D \dot\gamma}/{\d \xi}=\nabla_{\dot\gamma} \bar{\dot\gamma}=\nabla_{\dot\gamma} {\dot\gamma}=0$。
-\end{proof}
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
-\begin{theorem}
-    一点及一矢量唯一决定仿射参数化的测地线。
-\end{theorem}
-\begin{proof}
-    仿射参数化的测地线方程在任意坐标系展开为 $U^\nu \nabla_\nu U^\mu=0$，这是二阶常微分方程，由分析学知结论成立。
-\end{proof}
+%Shape: Polygon Curved [id:ds6324304927731197] 
+\draw   (14,85) .. controls (10,122) and (65.25,88.75) .. (74.25,80.25) .. controls (83.25,71.75) and (88.25,58.25) .. (81.25,45.25) .. controls (74.25,32.25) and (36.25,-5.25) .. (16.25,24.75) .. controls (-3.75,54.75) and (18,48) .. (14,85) -- cycle ;
+%Shape: Rectangle [id:dp42790425123431874] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}] (142,117) node[below right]{$\mathbb H^n$} -- (252,117)node[below right]{$\R^n$} -- (252,7) -- (142,7) -- cycle ;
+%Straight Lines [id:da2780621449052143] 
+\draw    (197,117) -- (197,7) ;
+%Curve Lines [id:da11211326883897499] 
+\draw [pattern=_hask52a3i,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}] [dash pattern={on 4.5pt off 4.5pt}]  (197,25) .. controls (167,52) and (161,80) .. (196,97) ;
+%Shape: Polygon Curved [id:ds6020575675206878] 
+\draw  [pattern=_9v4tzcn4d,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}][dash pattern={on 4.5pt off 4.5pt}] (57.25,56.75) .. controls (55.75,74.75) and (65.25,88.75) .. (74.25,80.25) .. controls (83.25,71.75) and (88.25,58.25) .. (81.25,45.25) .. controls (74.25,32.25) and (58.75,38.75) .. (57.25,56.75) -- cycle ;
+%Curve Lines [id:da8087172400108391] 
+\draw [line width=0.75]    (77.25,67.75) .. controls (119.39,104.75) and (169.21,96.84) .. (192.37,74.39) node[near start,sloped,above]{$\psi$};
+\draw [shift={(193.75,73)}, rotate = 133.75] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.4,-2.1) -- (0,0) -- (8.4,2.1) -- cycle    ;
+\end{tikzpicture}
+    \caption{带边区域}
+\end{figure}
+
+\section{广义 Stokes 定理}
+
+考虑 $n$ 维定向流形 $M$。倘若 $n$-形式 $\omega$ 定义在坐标系 $(O,\psi)$，第 $i$ 坐标映射为 $x^i:M\to\R$，则可用 $\R^n$ 上 Riemann 积分简单定义有界集 $A\subset O$ 上 $\omega$ 的积分为 
+\eq{
+    \int_A\omega:=\pm\int_{\psi[A]}(\omega_{1 \cdots n}\circ\psi^{-1})(x)\,\d x^1 \cdots\d x^n,
+}
+其中 $\pm$ 在右手系时取正。由多重积分的变量替换定理、$n$-形式分量变化律知，定义无关坐标选取，但保证 $A\subset O\cap O'$。
+欲将积分域推至 $M$，需要将各局部积分进行缝合。已知单位分解 $\{\rho_i\}$ 满足 $\sum_i\rho_i=1$，因此 $\omega=\omega\sum_i\rho_i=\sum_i\rho_i\omega$。因单个 $\int\rho_i\omega$ 可用坐标系计算，故自然希望整个积分 $\int\omega$ 是 $\sum_i\int\rho_i\omega$。
 
 \begin{definition}
-    置联络空间 $(M,\nabla)$，定义 $(1,2)$ 型 $C^{r-1}$-张量场 $T$ 为\textbf{挠率}，对 $C^r$-矢量场 $X,Y$ 有 $T(X,Y):=\nabla_XY-\nabla_YX-[X,Y].$
+    任选 $M$ 的单位分解 $\{\rho_i\}$。最高阶形式 $\omega$ 在 $M$ 上的积分为
+    \eq{
+        \int_M\omega:=\sum_i\int_{O_i}\rho_i\omega.
+    }
 \end{definition}
-
-\begin{theorem}
-    取坐标系 $\{x\}$，由 $[\partial_\mu,\partial_\nu]=0$ 可知 ${T^\mu}_{\lambda\nu}=2{\Gamma^\mu}_{[\lambda\nu]}$。
-\end{theorem}
-
-\begin{theorem}
-    无挠时，对易子可写作 $[X,Y]=\nabla_XY-\nabla_YX.$
-\end{theorem}
-
-\begin{theorem}
-    无挠性等价于对函数 $f$ 有 $[\nabla,\nabla]f=0$。
-\end{theorem}
-
-\begin{definition}
-    置 $(M,g,\nabla)$。
-    $\nabla g=0$ 称为\textbf{度规适配性}。
-    度规适配的无挠联络称为 \textbf{Levi-Civita 联络}。上式称为与度规 $g$ 的适配性或相容性。
-\end{definition}
-
-\begin{theorem}
-    Levi-Civita 联络存在且唯一。
-\end{theorem}
-\begin{proof}
-    这是因为，给定度规场 $g$，可以用任意微分算符 $\tilde\nabla$ 及差 $C^\lambda{}_{\mu\nu}$ 构造出 $\nabla$ 使得 $\nabla g=0$，利用无挠性可求解$C^\lambda{}_{\mu\nu}$的表达式。不妨用普通微分 $\d$，这样便有 $\Gamma^\lambda_{\mu\nu}$ 同 $g$ 的关系（我们已经学过），而该表达式存在且唯一。
-\end{proof}
-
-\begin{definition}
-    设 4 维光滑流形 $M$ 是单连通的，光滑度规场 $g$ 的号差为 $+2$（Lorentz 度规），$\nabla$ 为 Levi-Civita 联络，则称 $(M,g,\nabla)$ 为\textbf{Lorentz 流形}。
-\end{definition}
-
 \begin{remark}
-    习惯于只简写为 $(M,g)$，甚至是 $M$（无歧义时）。时空的数学模型通常为 Lorentz 流形。
+    实际上，总默认对诱导形式积分：$\int_S\omega=\int_S\tilde\omega$。
+\end{remark}
+\begin{theorem}
+    积分定义与单位分解选取无关。
+\end{theorem}
+\begin{proof}
+    设 $\{\rho_i\}$ 和 $\{\rho'_j\}$ 是 $M$ 的两个单位分解。则
+    \begin{align*}
+        \sum_i\int_{O_i}\rho_i\omega &= \sum_i\int_{O_i}\rho_i\omega\sum_j\rho'_j = \sum_{i,j}\int_{O_i}\rho_i\rho'_j\omega\\
+        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
+    \end{align*}
+    同理
+    \begin{align*}
+        \sum_j\int_{O'_j}\rho'_j\omega &= \sum_j\int_{O'_j}\rho'_j\omega\sum_i\rho_i = \sum_{i,j}\int_{O'_j}\rho_i\rho'_j\omega\\
+        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
+    \end{align*}
+    两式相等，故积分值与单位分解选取无关。
+\end{proof}
+
+
+
+\begin{theorem}[广义Stokes 定理]
+    $\Omega$ 是 $n$ 维可定向（有界）带边流形，则 $\forall\omega\in\Lambda_{n-1}(M)$ 有
+\eq{
+\int_\Omega \d\omega=\int_{\partial\Omega}\omega.
+}
+\end{theorem}
+\begin{remark}
+    该式乃微积分之精髓，联系了边界效应与内部变化，统一了 Newton-Leibniz 定理、Green 公式、Gauss 定理、Stokes 公式等。
 \end{remark}
 
-\begin{theorem}
-    可证具有（至少）$C^1$ 仿射联络的（至少）$C^3$ 连通流形一定仿紧。
-\end{theorem}
 \begin{proof}
-    %%
-    涉及正则邻域（法邻域）的存在性。
-\end{proof}
-
-\begin{definition}
-    矢量 $v$ 沿一曲线的\textbf{Fermi-Walker 导数}定义为
-    \eq{
-    \frac{D_F v}{\d\tau}:=\frac{D v}{\d\tau}+A\langle Z,v\rangle-Z\langle A,v\rangle,
-    }
-    这里 $D$ 在平直时空的惯性坐标系中为 $\d$。函数 $f$ 的费导定义为普通导数 $\d f/\d\tau$。规定其满足 Leibniz 律、线性性和缩并对易性，这样可推出其它张量的费导表达。
-\end{definition}
-
-\section{曲率}
-
-\begin{definition}
-    置联络空间 $(M,\nabla)$ 和 $C^r$-矢量场 $X,Y,Z$。\textbf{黎曼曲率张量}定义为
-    \eq{
-    R(X,Y)Z:=\nabla_X\nabla_Y Z-\nabla_Y\nabla_X Z-\nabla_{[X,Y]}Z.
-    }
-    它是 $(1,3)$ 型 $C^{r-1}$-张量场。分量记作 $R^\rho{}_{\sigma\mu\nu}:=\langle\,e^\rho,R(e_\mu,e_\nu)e_\sigma\rangle$。
-\end{definition}
-
-\begin{theorem}
-    取坐标系 $\{x\}$，曲率分量为
-    \eq{
-    R^\rho{}_{\sigma\mu\nu}=\p_\mu\Gamma^\rho_{\nu\sigma}-\p_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}.
-    }
-\end{theorem}
-
-\begin{definition}
-    \textbf{Ricci 张量}定义为 $\mathrm{Ric}(X,Y):=\mathrm{tr}(Z\mapsto R(Z,X)Y)$，分量为 $R_{\mu\nu}:=R^\rho{}_{\mu\rho\nu}$。
+    一般背景上需要处理一些技术性细节，为此不妨模仿分析学的做法，设想带边区域靠着一个个“微小单位”粘贴出来，这样可供在整体的场上积分，于是问题的关键在于内点邻域、边界点邻域，此二情况分别可以近似于 $\R^n$ 和 $\mathbb H^{n}$，不妨设 $\{(x^1,\cdots,x^n),x^n\geqslant 0\}$。
     
-    \textbf{数量曲率}为 $R:=g^{\mu\nu}R_{\mu\nu}$。
-\end{definition}
-
-\begin{definition}
-    \textbf{Einstein 张量}定义为
-    \eq{
-    G_{\mu\nu}:=R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R.
-    }
-    它是 $(0,2)$ 型对称张量场，满足 $\nabla^\mu G_{\mu\nu}=0$（Bianchi 恒等式的推论）。
-\end{definition}
-
-\begin{theorem}
-    黎曼曲率张量具有以下对称性：
+    我们先从半空间开始。微小邻域总是有界的（理解为背景里存在一个开的球区域包含它），边界点邻域内的坐标总能用 $A=[-R,R]^{n-1}\times[0,R]$ 囊括，这里 $R$ 是有限正数，使得 $(n-1)$-形式 $\omega$ 在 $A$ 边缘及以外为零。将 $\omega$ 展开为
+    \[
+    \omega=\sum_{i=1}^n\omega_i \d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n},
+    \]
+    则
     \begin{align*}
-        R_{\rho\sigma\mu\nu}&=-R_{\sigma\rho\mu\nu},\\
-        R_{\rho\sigma\mu\nu}&=-R_{\rho\sigma\nu\mu},\\
-        R_{\rho\sigma\mu\nu}&=R_{\mu\nu\rho\sigma},\\
-        R_{\rho\sigma\mu\nu}+R_{\rho\mu\nu\sigma}+R_{\rho\nu\sigma\mu}&=0\quad\text{（第一 Bianchi 恒等式）}.
+        \d\omega&=\sum_{i,j=1}^n\pdv{\omega_i}{x^j}\d{x^j}\wedge \d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n}\\
+        &=\sum_{i=1}^n(-1)^{i-1}\pdv{\omega_i}{x^i}\d{x^1}\wedge \cdots \wedge \d{x^n}.
     \end{align*}
-\end{theorem}
+    证明核心仍是读者最为熟知的 Newton-Leibniz 公式。由分析学的 Fubini 定理，
+    \begin{align*}
+        \int_{\mathbb H^{n}}\d\omega&=\sum_{i=1}^n(-1)^{i-1}\int_A\pdv{\omega_i}{x^i}\d{x^1}\wedge \cdots \wedge \d{x^n}\\
+        &=\sum_{i=1}^n(-1)^{i-1}\int_0^R\int_{-R}^{R}\cdots\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^1}\cdots \d{x^n},
+    \end{align*}
+    由于 $\omega$ 在边界处为零，这意味着除 $i=n$ 外任意 $i$ 有 $\displaystyle\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^i}=0$，则最后只剩下第 $n$ 项：
+    \begin{align*}
+        \int_{\mathbb H^{n}}\d\omega&=(-1)^{n-1}\int_0^R\int_{-R}^{R}\cdots\int_{-R}^{R}\pdv{\omega_n}{x^n}\d{x^1}\cdots \d{x^{n}}\\
+        &=(-1)^{n-1}\int_{-R}^{R}\cdots\int_{-R}^{R}\int_0^R\pdv{\omega_n}{x^n}\d{x^n}\d{x^1}\cdots \d{x^{n-1}}\\
+        &=(-1)^{n}\int_{-R}^{R}\cdots\int_{-R}^{R}\omega_n(x^1,\cdots,x^{n-1},0)\d{x^1}\cdots \d{x^{n-1}};
+    \end{align*}
+    记 $\partial\mathbb H^{n}=\{(x^1,\cdots,x^n),x^n=0\}$，则另一方面
+    \[
+    \int_{\partial\mathbb H^{n}}\omega=\sum_{i=1}^n\int_{A\cap\partial\mathbb H^{n}} \omega_i(x^1,\cdots,x^{n-1},0)\d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n},
+    \]
+    $x^n=0$ 意味着没了 $\d{x^n}$，故上式也只剩下
+    \[
+    \int_{\partial\mathbb H^{n}}\omega=\int_{A\cap\partial\mathbb H^{n}} \omega_i(x^1,\cdots,x^{n-1},0)\d{x^1}\wedge \cdots \wedge \d{x^{n-1}},
+    \]
+    考虑到 $n$ 为偶数时，坐标系 $(x^1,\cdots,x^{n-1})$ 正定（否则为负定），二者便是相等的。
 
-\begin{theorem}
-    第二 Bianchi 恒等式：$\nabla_\rho R_{\sigma\mu\nu}^\lambda+\nabla_\sigma R_{\mu\rho\nu}^\lambda+\nabla_\mu R_{\rho\sigma\nu}^\lambda=0$。从而 $\nabla_\mu R^{\mu}{}_{\nu}=\nabla_\nu R-2\nabla^\mu R_{\mu\nu}$。
-\end{theorem}
+    再考虑 $\R^n$，这样 $\omega$ 的邻域就囊括于 $A=[-R,R]^n$ 中，那任意 $i$ 有 $\displaystyle\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^i}=0$，故
+    \[
+    \int_{\R^{n}}\d\omega=0;
+    \]
+    由于 $\R^n$ 没边界，即 $\partial\R^n=\mt$，故
+    \[
+    \int_{\partial\R^{n}}\omega=0.
+    \]
+    每个邻域都有局部坐标系，而内部邻域没有贡献，这样总体的 $\int_\Omega\d\omega$ 就只剩下表面的变化 $\int_{\partial\Omega}\omega$。证明的严格术语将在第四章介绍。
 
-\begin{definition}
-    置联络 1-形式 $\Gamma^\lambda_\nu$，定义\textbf{曲率 2-形式}为
+    最后用单位分解。
+\end{proof}
+积分域 $\Omega$ 亦可写作 $\Omega^\circ$，因为 $\int_{\partial\Omega}\d\omega=\int_\Omega \d\d\omega=0$（Poincaré 引理），这里$\d\d\omega=0$ 可看作任意阶形式。当然，我们只定义了同阶形式在同维区域的积分，故此亦可视作规定不同维时积分为零，即如果 $k\neq k'$，则 $k$-形式在 $k'$ 维背景上的积分为零。
+
+可做对照：$\int_{\partial\partial\Omega}\omega=\int_{\partial\Omega} \d\omega=0$，这里不妨设 $\omega$ 为 $(l-2)$-形式场而 $\Omega$ 为 $l$ 维。这对任意 $\omega$ 成立，因而可能性只有 $\partial^2\Omega=\mt$，即边缘本身没有边缘。如何从直观上理解这件事？我们知道默认 $\Omega$ 为任意连通闭集，这应当使连通开集 $\Omega^\circ$ 有界，因而 $\partial\Omega$ 有界，且$\partial^2\Omega=\mt$ 还意味着它无边\footnote{有界无边的流形有时可称\textit{闭流形}（取闭合之意），请注意同闭集等名称区分。}！如此便可确定 $\partial\Omega$ 的内外部，因而有外指法矢的明确含义，故从背景 $M$ 可立即诱导出边界的定向。
+
+\begin{example}[Green]
+    设 $A$ 是 $(\R^2,\delta)$ 上的对偶矢量场，$S$ 是单连通开集，则
     \eq{
-    \Omega^\lambda_\nu:=\d\Gamma^\lambda_\nu+\Gamma^\lambda_\mu\wedge\Gamma^\mu_\nu.
+    \int_S\left(\pdv{A_2}{x}-\pdv{A_1}{y}\right)\d x\,\d y=\oint_{\partial S} A_1\, \d x+A_2 \,\d y=\oint_{\partial S} A_\ell\,\d\ell.
     }
-    其分量为 $\Omega^\lambda_{\mu\nu}:=\frac{1}{2}R^\lambda_{\rho\mu\nu}\d x^\rho\wedge\d x^\sigma$。
-\end{definition}
+\end{example}
+\begin{proof}
+    置 1-形式 $\omega=A_\mu\mathrm{d} x^\mu$, 则
+\[\mathrm{d} \omega  =\frac{\partial A_\mu}{\partial x^\nu} \mathrm{d} x^\nu \wedge \mathrm{d} x^\mu=\left(\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}\right) \mathrm{d} x \wedge \mathrm{d} y,\]
+第一等式成立。
+选线长 $\ell$ 为 $L$ 的局部坐标，把 $\tilde{\omega}$ 用坐标基展为 $\tilde{\omega}=\tilde{\omega}_1(\ell)\mathrm{d} \ell$, 两边作用于 $\partial / \partial \ell$ 得
+$\tilde{\omega}_1(\ell)=\tilde{\omega}(\partial / \partial \ell)=\omega(\partial / \partial \ell)=A(\partial / \partial \ell)=A_\ell$，
+故 $\tilde{\omega}=A_\ell\, \mathrm{d} \ell$。
+\end{proof}
+\begin{remark}
+    $\int_{\partial S} \tilde{\omega}$ 的积分域是闭合曲线 $\partial S$，至少要用两个坐标域覆盖，因此应先对每个坐标域做局部积分再“缝合”。幸好可这样：设 $L$ 是 $\partial S$ 挖去一点所得，则它用一个坐标域即可覆盖，但挖去一点不影响 Riemann 积分。
+\end{remark}
+
+
+\section{Frobenius 定理}\label{sec:Frobenius}
+
 
 \begin{theorem}
-    曲率 2-形式满足 Cartan 第二结构方程：$\Omega=\d\Gamma+\Gamma\wedge\Gamma$。
-\end{theorem}
-
-
-\section{最大对称时空}
-
-\begin{definition}
-    Killing 矢量场满足 $\nabla_\mu K_\nu + \nabla_\nu K_\mu = 0$。
-\end{definition}
-
-\begin{definition}
-    置 $(M,g)$ 为 Lorentz 流形。若其 Ricci 张量满足 $R_{\mu\nu}=\lambda g_{\mu\nu}$（$\lambda$ 为常数），则称为\textbf{爱因斯坦流形}。
-\end{definition}
-
-\begin{theorem}
-    爱因斯坦流形的数量曲率为常数。
+    超曲面正交(hypersurface orthogonal)，因此无旋参考系又称为超曲面正交参考系。有旋就相应于非超曲面正交。
 \end{theorem}
 \begin{proof}
-    由 $R_{\mu\nu}=\lambda g_{\mu\nu}$ 得 $R=g^{\mu\nu}R_{\mu\nu}=n\lambda$（$n$ 为维数）。
+    首先我们要先明确“超曲面正交”是何含义：对参考系定义域内的任一点 $p$，存在过$p$的一张超曲面 $\Sigma$ 同系内所有观者世界线正交。以 $Z$ 代表参考系的 4-速场，$Z_\flat=g_\flat(Z)$，则接受微分形式的结论：以上表述等价于
+    \eq{
+    Z\wedge\d Z=\A(Z\otimes\nabla Z)=0,
+    }
+    这里 $\d Z$ 表示 $Z$ 的外微分。
 \end{proof}
 
-\begin{definition}
-    置 Lorentz 流形 $(M,g)$。若存在 $r$ 个 Killing 矢量场线性独立，且每点处该 $r$ 个矢量张成的切空间维数为 $r$，则称 $(M,g)$ 具有\textbf{对称性}，这 $r$ 个 Killing 矢量生成 Lie 群 $G$ 作用在 $M$ 上。
-\end{definition}
-
-\begin{definition}
-    若 Lorentz 流形 $(M,g)$ 具有最大对称性，即 Killing 矢量数目为 $\frac{n(n+1)}{2}$，则称为\textbf{最大对称时空}。
-\end{definition}
+\section{积分的求导}
 
 \begin{theorem}
-    最多 Killing 矢量数目为 $\frac{n(n+1)}{2}$。
+    设完备向量场 $v\in\mathfrak X(\R^n)$作用下 $p$维带边闭子流形 $D_0\subseteq\R^n$随时间演化为 $D\subseteq\R^{n+1}$，对同样随时演化的微分形式 $\omega\in\Omega^p(\R^n)\times\R$有 
+ \eq{
+    \dv{t}\int_{D_t}\omega=\int_{D_t}\frac{\partial\omega}{\partial t}+\int_{D_t}i_v\d\omega+\int_{\partial D_t}i_v\omega,
+ }
 \end{theorem}
-
 \begin{proof}
-    这是 $n$ 个分量中 $\frac{n(n+1)}{2}$ 个独立条件的二阶偏微分方程。
-    
-    由唯一性定理，Killing 矢量由其在一点及该点处的一阶导数唯一确定。在一点处，矢量场有 $n$ 个自由度，其 Hessian 矩阵受 Killing 方程约束给出 $\frac{n(n+1)}{2}$ 个独立分量。这些自由度全部用尽后，不可能有更多线性独立的 Killing 矢量场。
+    设 $v$由单参数群 $\psi$给出，设 $\R^{n+1}$上的向量场 $X:=v+\partial_t$由单参数群 $\phi$给出。注意到 $\omega$不含 $\d t$有
+    \eq{
+        i_X\omega=i_v\omega,\quad i_X\d\omega=i_v\d_x\omega+i_{\partial_t}(\dot{\omega}_I\d t\wedge\d x^I)=i_v\d_x\omega+\dot\omega.
+    }
+    则依 Lie导数定义、Cartan公式、Stokes公式有
+    \begin{align*} \dv{t}\bigg|_{t=0}\int_{D_t}\omega&=\dv{t}\bigg|_{t=0}\int_{D_0}\phi_t^*\omega =\int_{D_0}\dv{t}\bigg|_{t=0}\phi_t^*\omega=\int_{D_0}\mathcal L_X\omega\\ &=\int_{D_0}\d i_X\omega+i_X\d\omega =\int_{\partial D_0}i_v\omega+\int_{D_0}i_v\d_x\omega+\int_{D_0}\frac{\partial\omega}{\partial t}. \qedhere \end{align*}
 \end{proof}
 
+\begin{example}
+    在 $\R^3$ 矢量代数中，我们有
+    \begin{align*}
+        =
+    \end{align*}
+\end{example}

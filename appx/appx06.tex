@@ -1,69 +1,246 @@
-\chapter{Lie 导数与对称性}\label{appx:Lie-deri}
+\chapter{仿射联络及曲率}\label{appx:curvature}
+\section{仿射联络}
 
-一般的光滑映射 $\phi$ 仍可诱导其上张量场的变换。给定标量场 $f:N\to\R$，$p\in M$ 变到 $\phi(p)\in N$ 后标量场的值为 $f(\phi(p))$，而我们可将 $\phi(p)$ 处的 $f$ 值直接搬运回 $p$ 处，即定义新标量场 $\phi^* f:M\to\R$ 满足 $\phi^* f(p):=f(\phi(p))$。
-
-考虑拉回 $\phi^*:C^\infty(M)\to C^\infty(N)$，即 $\phi^* f:=f\circ\phi$。
-
-\begin{theorem}
-    易知 $\phi^*$ 是线性映射，且 $\phi^*(fg)=(\phi^* f) (\phi^* g)$。
-\end{theorem}
-
-
-类似地，记 $\phi(p)=q$，若 $\phi$ 是同胚，则也可将 $p=\phi^{-1}(q)$ 处的 $f$ 值往前搬至 $q$ 处，即定义 $\phi_* f$ 使 $\phi_* f(q):=f(\phi^{-1}(q))$ 或者 $\phi_* f:=f\circ\phi^{-1}$，故
-
-再研究切矢场 $v$。确定一个 $v$ 只需对其作用于任意 $f$ 的结果做出要求。将 $v$ 推前即 $\phi_* v(f):=v(\phi^* f)$。这里未出现 $\phi^{-1}$，可见对一般光滑映射，只能借助切矢场给出：
 \begin{definition}
-    $\phi_*:T_p M\to T_{\phi(p)}N$ 称为，使 $\phi_* v:=v\circ \phi^*$。
-\end{definition}
-
-将 $A$ 拉回即 $\phi^* A(f):=A(\phi_* f)$，或直接用 $\phi^*=(\phi^{-1})_*$。对余切矢场 $\omega$ 只需考虑对切矢场 $A$ 作用，同理 $\phi^* \omega:=\omega\circ\phi_*,\phi_* \omega:=\omega\circ\phi^*$。一般地，对任意张量场，其拉回和推前即
-\eq{
-    \phi^* T=T(\phi_*(\oo),\cdots;\phi_*(\oo),\cdots),\quad \phi_* T=T(\phi^*(\oo),\cdots;\phi^*(\oo),\cdots).
-}
-
-
-
-进一步对微分同胚，则称\textbf{单参微分同胚群}。对 $\forall p\in M$，取不同参数 $t$ 的 $\phi_t$ 将其映射至不同点 $\phi_t(p)$，形成一条以 $\phi_0(p)=p$ 为参数零点的光滑曲线 $C_p:\R\to M$，这称为该单参微分同胚群过 $p$ 点的\textbf{轨道}(orbit)。
-
-因此 $M$ 上的单参微分同胚群给出其对应的光滑切矢场。
-
-由于同胚是双射，因此各轨道是不会相交的，因此只要给出各 $p$ 点在其对应轨道的切矢 $\pdv*{t}$，就给出了 $M$ 上的光滑切矢场。
-
-反之是否成立？可以证明，
-
-
-看来 $\forall \sigma\in\R$ 可借用 $V^\mu$ 的积分曲线定义微分同胚 $\phi_\sigma:M\to M$：设过 $p$ 的积分曲线为 $C_p$（且 $C_p(0)=p$），规定 $\phi_\sigma(p):=C_p(\sigma)$，于是似乎得到了单参微分同胚群。然而存在极端情形，某条积分曲线在参数取某些值时像点不存在，比如可人为挖去背景的某些区域，因此只能说 $V^\mu$ 局部地给出单参微分同胚群。准确地，只要 $p\in M$ 存在，总可找到其开邻域 $U\subset M$，使得 $U,\phi_t[U]$ 同胚且满足$\phi_t\phi_s=\phi_{t+s}$，其中参数范围为零的某开邻域 $I\subset\R$。这样我们就把 $\{\phi_t|t\in I\}$ 称为 $p$ 的\textbf{单参微分同胚局部群}。
-
-一般来说总考虑 $U=M$。
-
-
-
-
-
-
-数学上，如果一条曲线处处与该矢量场相切，就称为该矢量场的一条积分曲线。十分显然，因为一点只对应一条积分曲线，倘若对应多条，矢量场于该点的取值便出现多值。可见积分曲线不会相交。
-
-\textbf{参考系}指时空上的一个光滑单位类时矢量场 $\bm Z$。
-参考系的每一积分曲线 $\gamma(\tau)$ 都是类时世界线。
-
-
-
-
-
-所有微分同胚（包括那些不同单参变换的复合，它们不是单参变换）仍将构成群，称为 $M$ 的\textbf{微分同胚群}。一个集合可以是群，也可同时是一个背景，这种群称为 \textbf{Lie 群}。连续变换构成的群就可以用参数代表其坐标系，故实质上 Lie 群，其维数即参数种类，而一个切矢场又给出一种参数，可见微分同胚群是一种无穷维 Lie 群。一个光滑切矢场生成的是微分同胚群的一个\textbf{单参子群}，故又被称为微分同胚群的一个\textbf{无穷小生成元}或\textbf{生成元}。
-
-矢量场 $\xi$ 能局部地给出单参微分同胚群 $\{\phi_t\}$。由 $\phi_t$ 可诱导出一种导数，其目的是为了比较邻近的 $T,\phi_{t*} T$ 或等价的 $\phi_t^*T,T$。
-\begin{definition}
-    张量场沿切矢场 $\xi$ 的 \textbf{Lie 导数}为
-\eq{
-\Lie_\xi T:=\lim_{t\to 0}\frac{\phi_t^* T-T}{t}.
-}
+    置 $C^{h}$-流形 $M$。
+    \textbf{仿射联络}或\textbf{协变微分}是将 $(k,l)$ 型 $C^{r+1}$-张量场映为 $(k,l+1)$ 型 $C^{r}$-张量场（$h\geqslant r+2$）的线性算符 $\nabla$，满足：
+    \begin{itemize}
+        \item 对张量积有 Leibniz 乘法法则；
+        \item 与缩并对易；
+        \item 对 $C^1$-函数 $f$ 有 $\nabla f=\d f$。
+    \end{itemize}
+    分量记作 $\nabla_\mu T^{\cdots}_{\cdots}$，算符 $\nabla_\mu$ 称为\textbf{协变导数}。$\nabla_X:=\c^1_1(X\otimes\nabla)$ 称为沿矢量场 $X$ 的\textbf{方向导数}。$(M,\nabla)$ 构成\textbf{联络空间}。
 \end{definition}
 
 \begin{example}
-    就标量场 $f$ 而言 $\Lie_\xi f=\xi(f)$。
+    对标量场 $f$，$\nabla_X f=\langle\d f,X\rangle=X(f)$。
 \end{example}
 
+\begin{definition}
+    置联络空间 $(M,\nabla)$ 和矢量基场 $\{e_\mu\}$，\textbf{联络系数}为 $\Gamma^\lambda_{\mu\nu}:=\langle e^\lambda,\nabla_{e_\mu} e_\nu\rangle$。
+    $\Gamma^\lambda_\nu:=\Gamma^\lambda_{\mu\nu} e^\mu$ 称为\textbf{联络 1-形式}。
+\end{definition}
 
-定义流形间映射便可谈及微分同胚。微分同胚映射可自然诱导张量丛的映射，故可谈及张量变换的主动、被动观点。所有微分同胚构成微分同胚群。任意光滑矢量场是该群的生成元。显然微分同胚有无穷多生成元，故维数无穷。一个光滑矢量场在群中挑出一个单参子群，称为单参微分同胚局部群（无穷小微分同胚）。若光滑矢量场还有完备性，则给出一个单参微分同胚群。紧致流形上任意矢量场可延拓至完备的。保持度规分量不变的变换对应的微分同胚映射称为等度规映射。诱导此映射的矢量场称为 Killing 矢量。代数定义可从 Lie 导数出发，也可从 Killing 方程出发以跳过 Lie 导数。此定义便告知可用 Killing 矢量场讨论度规（时空）的对称性。
+\begin{theorem}
+    $\nabla e_\nu=\Gamma^\lambda_\nu\otimes e_\lambda.$
+\end{theorem}
+
+\begin{theorem}
+    置对矢量场 $Y$ 和坐标系 $\{x\}$。$\nabla Y$ 坐标分量为 $\nabla_\mu Y^\lambda=\p_\mu Y^\lambda+\Gamma^\lambda_{\mu\nu}Y^\nu$。
+\end{theorem}
+\begin{remark}
+    务必注意 $\Gamma^\lambda_{\mu\nu}Y^\nu$ 的缩并顺序。
+\end{remark}
+\begin{proof}置 $\{e_\mu\}$，则
+    \[\nabla(Y^\nu e_\nu)=\d Y^\nu\otimes e_\nu+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda=\p_\mu Y^\lambda\d x^\mu\otimes e_\lambda+Y^\nu \Gamma^\lambda_{\mu\nu} e^\mu\otimes e_\lambda,\]
+    取 $e_\mu=\p_\mu$ 即可。
+\end{proof}
+
+\begin{theorem}
+    设 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则
+    \begin{align*}
+        \Gamma'^{\gamma}_{\sigma\kappa}&=\langle e'^\gamma,\nabla_{e'_\sigma} e'_\kappa\rangle=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma\langle e^\lambda,\nabla_{e_\mu} (A^\nu{}_\kappa e_\nu)\rangle\\
+    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma(A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+e_\mu(A^\lambda{}_\kappa))\\
+    &=(A^{-1})^\gamma{}_\lambda A^\mu{}_\sigma A^\nu{}_\kappa\Gamma^\lambda_{\mu\nu}+(A^{-1})^\gamma{}_\lambda e'_\sigma(A^\lambda{}_\kappa).
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}
+    流形必存在某个仿射联络，且数量无限多。
+\end{theorem}
+
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$ 中 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $H$ 是定义在 $\Im\gamma$ 的 $C^1$-张量场，则 $H$ 对 $\gamma$ 的\textbf{沿线协变导数}为
+\eq{
+\frac{D H}{\d\sigma}:=\nabla_{\dot\gamma} \bar H,
+}
+其中 $\bar H$ 是 $H$ 的任意延拓。若 $D H/\d\sigma=0$，则称 $H$ 沿线\textbf{平行移动}。
+\end{definition}
+
+\begin{example}
+    对标量场 $f$，$D f/\d\sigma=\dv*{f}{\sigma}$。
+\end{example}
+
+按理来说 $\nabla T$ 应取决于附近延拓的情况，因此要求曲线外应也有定义，但沿线协变导数事实上与延拓无关。为行文简洁，不妨设张量 $T$ 为一矢量 $v$。将沿线导数在曲线上一点 $p$ 处按坐标基展开为
+    \[
+    \dv{x^\nu}{t}\nabla_\nu \bar v^\mu|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t}\bar v^\sigma|_p=\eval{\dv{x^\nu}{t}\pdv{\bar v^\mu}{x^\nu}}_p +\Gamma^\mu_{\nu\sigma}\dv{x^\nu}{t} v^\sigma|_p,
+    \]
+    任意不同延拓 $\bar v,\bar v'$ 实际上给出了同一沿线导数，只需证明
+    \[
+    \dv{\bar v^\mu}{t}=\dv{\bar v'^\mu}{t}.
+    \]
+    上式显然成立，因为任意延拓的 $\bar v^\mu(t)$ 实为领域内的 $\bar v$ 同曲线映射复合的一元函数，该一元函数正是 $v^\mu(t)$。以后凡谈及只在曲线上定义的张量场时，不会讨论协变微分（因为没意义），但可求其沿线导数（沿线导数同延拓无关）。
+
+\begin{theorem}
+    置联络空间 $(M,\nabla)$ 和连接 $p,q\in M$ 的某条曲线 $\gamma$，则 $\gamma$上的平行移动构成 $T_p M$ 至 $T_q M$ 的一个同构。
+\end{theorem}
+
+\begin{definition}
+    置 $C^1$-曲线 $\sigma\mapsto\gamma(\sigma)$。若 $\nabla_{\dot\gamma} \dot\gamma$ 平行于 $\dot\gamma$，则称 $\gamma$ 为\textbf{测地线}。总可取新参数 $\xi$ 使 $\nabla_{\dv{\xi}} \dv{\xi}=0$，称为\textbf{仿射参数}。
+\end{definition}
+\begin{remark}
+    容易验证仿射参数可确定到线性变换 $\xi'=a\xi +b$，$a,b\in\R$。此后谈及测地线均默认仿射参数化。
+\end{remark}
+ 
+
+\begin{theorem}
+    切矢平行移动直接给出仿射参数化的测地线。
+\end{theorem}
+\begin{proof}
+取 $\dot\gamma=\dv*{\xi}$，则 ${D \dot\gamma}/{\d \xi}=\nabla_{\dot\gamma} \bar{\dot\gamma}=\nabla_{\dot\gamma} {\dot\gamma}=0$。
+\end{proof}
+
+\begin{theorem}
+    一点及一矢量唯一决定仿射参数化的测地线。
+\end{theorem}
+\begin{proof}
+    仿射参数化的测地线方程在任意坐标系展开为 $U^\nu \nabla_\nu U^\mu=0$，这是二阶常微分方程，由分析学知结论成立。
+\end{proof}
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$，定义 $(1,2)$ 型 $C^{r-1}$-张量场 $T$ 为\textbf{挠率}，对 $C^r$-矢量场 $X,Y$ 有 $T(X,Y):=\nabla_XY-\nabla_YX-[X,Y].$
+\end{definition}
+
+\begin{theorem}
+    取坐标系 $\{x\}$，由 $[\partial_\mu,\partial_\nu]=0$ 可知 ${T^\mu}_{\lambda\nu}=2{\Gamma^\mu}_{[\lambda\nu]}$。
+\end{theorem}
+
+\begin{theorem}
+    无挠时，对易子可写作 $[X,Y]=\nabla_XY-\nabla_YX.$
+\end{theorem}
+
+\begin{theorem}
+    无挠性等价于对函数 $f$ 有 $[\nabla,\nabla]f=0$。
+\end{theorem}
+
+\begin{definition}
+    置 $(M,g,\nabla)$。
+    $\nabla g=0$ 称为\textbf{度规适配性}。
+    度规适配的无挠联络称为 \textbf{Levi-Civita 联络}。上式称为与度规 $g$ 的适配性或相容性。
+\end{definition}
+
+\begin{theorem}
+    Levi-Civita 联络存在且唯一。
+\end{theorem}
+\begin{proof}
+    这是因为，给定度规场 $g$，可以用任意微分算符 $\tilde\nabla$ 及差 $C^\lambda{}_{\mu\nu}$ 构造出 $\nabla$ 使得 $\nabla g=0$，利用无挠性可求解$C^\lambda{}_{\mu\nu}$的表达式。不妨用普通微分 $\d$，这样便有 $\Gamma^\lambda_{\mu\nu}$ 同 $g$ 的关系（我们已经学过），而该表达式存在且唯一。
+\end{proof}
+
+\begin{definition}
+    设 4 维光滑流形 $M$ 是单连通的，光滑度规场 $g$ 的号差为 $+2$（Lorentz 度规），$\nabla$ 为 Levi-Civita 联络，则称 $(M,g,\nabla)$ 为\textbf{Lorentz 流形}。
+\end{definition}
+
+\begin{remark}
+    习惯于只简写为 $(M,g)$，甚至是 $M$（无歧义时）。时空的数学模型通常为 Lorentz 流形。
+\end{remark}
+
+\begin{theorem}
+    可证具有（至少）$C^1$ 仿射联络的（至少）$C^3$ 连通流形一定仿紧。
+\end{theorem}
+\begin{proof}
+    %%
+    涉及正则邻域（法邻域）的存在性。
+\end{proof}
+
+\begin{definition}
+    矢量 $v$ 沿一曲线的\textbf{Fermi-Walker 导数}定义为
+    \eq{
+    \frac{D_F v}{\d\tau}:=\frac{D v}{\d\tau}+A\langle Z,v\rangle-Z\langle A,v\rangle,
+    }
+    这里 $D$ 在平直时空的惯性坐标系中为 $\d$。函数 $f$ 的费导定义为普通导数 $\d f/\d\tau$。规定其满足 Leibniz 律、线性性和缩并对易性，这样可推出其它张量的费导表达。
+\end{definition}
+
+\section{曲率}
+
+\begin{definition}
+    置联络空间 $(M,\nabla)$ 和 $C^r$-矢量场 $X,Y,Z$。\textbf{黎曼曲率张量}定义为
+    \eq{
+    R(X,Y)Z:=\nabla_X\nabla_Y Z-\nabla_Y\nabla_X Z-\nabla_{[X,Y]}Z.
+    }
+    它是 $(1,3)$ 型 $C^{r-1}$-张量场。分量记作 $R^\rho{}_{\sigma\mu\nu}:=\langle\,e^\rho,R(e_\mu,e_\nu)e_\sigma\rangle$。
+\end{definition}
+
+\begin{theorem}
+    取坐标系 $\{x\}$，曲率分量为
+    \eq{
+    R^\rho{}_{\sigma\mu\nu}=\p_\mu\Gamma^\rho_{\nu\sigma}-\p_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}.
+    }
+\end{theorem}
+
+\begin{definition}
+    \textbf{Ricci 张量}定义为 $\mathrm{Ric}(X,Y):=\mathrm{tr}(Z\mapsto R(Z,X)Y)$，分量为 $R_{\mu\nu}:=R^\rho{}_{\mu\rho\nu}$。
+    
+    \textbf{数量曲率}为 $R:=g^{\mu\nu}R_{\mu\nu}$。
+\end{definition}
+
+\begin{definition}
+    \textbf{Einstein 张量}定义为
+    \eq{
+    G_{\mu\nu}:=R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R.
+    }
+    它是 $(0,2)$ 型对称张量场，满足 $\nabla^\mu G_{\mu\nu}=0$（Bianchi 恒等式的推论）。
+\end{definition}
+
+\begin{theorem}
+    黎曼曲率张量具有以下对称性：
+    \begin{align*}
+        R_{\rho\sigma\mu\nu}&=-R_{\sigma\rho\mu\nu},\\
+        R_{\rho\sigma\mu\nu}&=-R_{\rho\sigma\nu\mu},\\
+        R_{\rho\sigma\mu\nu}&=R_{\mu\nu\rho\sigma},\\
+        R_{\rho\sigma\mu\nu}+R_{\rho\mu\nu\sigma}+R_{\rho\nu\sigma\mu}&=0\quad\text{（第一 Bianchi 恒等式）}.
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}
+    第二 Bianchi 恒等式：$\nabla_\rho R_{\sigma\mu\nu}^\lambda+\nabla_\sigma R_{\mu\rho\nu}^\lambda+\nabla_\mu R_{\rho\sigma\nu}^\lambda=0$。从而 $\nabla_\mu R^{\mu}{}_{\nu}=\nabla_\nu R-2\nabla^\mu R_{\mu\nu}$。
+\end{theorem}
+
+\begin{definition}
+    置联络 1-形式 $\Gamma^\lambda_\nu$，定义\textbf{曲率 2-形式}为
+    \eq{
+    \Omega^\lambda_\nu:=\d\Gamma^\lambda_\nu+\Gamma^\lambda_\mu\wedge\Gamma^\mu_\nu.
+    }
+    其分量为 $\Omega^\lambda_{\mu\nu}:=\frac{1}{2}R^\lambda_{\rho\mu\nu}\d x^\rho\wedge\d x^\sigma$。
+\end{definition}
+
+\begin{theorem}
+    曲率 2-形式满足 Cartan 第二结构方程：$\Omega=\d\Gamma+\Gamma\wedge\Gamma$。
+\end{theorem}
+
+
+\section{最大对称时空}
+
+\begin{definition}
+    Killing 矢量场满足 $\nabla_\mu K_\nu + \nabla_\nu K_\mu = 0$。
+\end{definition}
+
+\begin{definition}
+    置 $(M,g)$ 为 Lorentz 流形。若其 Ricci 张量满足 $R_{\mu\nu}=\lambda g_{\mu\nu}$（$\lambda$ 为常数），则称为\textbf{爱因斯坦流形}。
+\end{definition}
+
+\begin{theorem}
+    爱因斯坦流形的数量曲率为常数。
+\end{theorem}
+\begin{proof}
+    由 $R_{\mu\nu}=\lambda g_{\mu\nu}$ 得 $R=g^{\mu\nu}R_{\mu\nu}=n\lambda$（$n$ 为维数）。
+\end{proof}
+
+\begin{definition}
+    置 Lorentz 流形 $(M,g)$。若存在 $r$ 个 Killing 矢量场线性独立，且每点处该 $r$ 个矢量张成的切空间维数为 $r$，则称 $(M,g)$ 具有\textbf{对称性}，这 $r$ 个 Killing 矢量生成 Lie 群 $G$ 作用在 $M$ 上。
+\end{definition}
+
+\begin{definition}
+    若 Lorentz 流形 $(M,g)$ 具有最大对称性，即 Killing 矢量数目为 $\frac{n(n+1)}{2}$，则称为\textbf{最大对称时空}。
+\end{definition}
+
+\begin{theorem}
+    最多 Killing 矢量数目为 $\frac{n(n+1)}{2}$。
+\end{theorem}
+
+\begin{proof}
+    这是 $n$ 个分量中 $\frac{n(n+1)}{2}$ 个独立条件的二阶偏微分方程。
+    
+    由唯一性定理，Killing 矢量由其在一点及该点处的一阶导数唯一确定。在一点处，矢量场有 $n$ 个自由度，其 Hessian 矩阵受 Killing 方程约束给出 $\frac{n(n+1)}{2}$ 个独立分量。这些自由度全部用尽后，不可能有更多线性独立的 Killing 矢量场。
+\end{proof}
 

@@ -1,20 +1,60 @@
-\chapter{流形上的积分学}\label{appx:form}
 
-\section{外微分}
-有了流形上的微分学，自然要有相应的积分学。
-观察 $\R^n$ 上的多元 Riemann 积分，如 $\int P\,\d x+Q\,\d y+R\,\d z,\int P\,\d x\,\d y+Q\,\d y\,\d z+R\,\d z\,\d x$，
-被积内容总按微元的组合来求和，故可视作微分形式，系数则是其坐标分量。如此，积分便可写成 $\int \omega$，微元间的乘法可理解为楔积。
-再研究形式的微分。函数 $f$ 的微分 $\d f$ 给出 1-形式，该操作增添了一个微元。推广到形式的微分无非是作用于形式的系数并添上楔积。
+\section{度规}
+
 \begin{definition}
-    \textbf{外微分}(exterior derivative)是映射 $\d:\Lambda_l(V)\to\Lambda_{l+1}(V)$ 使
-    \eq{
-        \d\omega :=\sum_{\mu_1<\cdots<\mu_l}\d\omega_{\mu_1\cdots\mu_l}\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
-    }
+    \textbf{度规场}流形上的度规场是指在切丛上指定度规。给背景每一点指定一个度规就形成了\textbf{度规场}。
+
+    只有一个对角元符号不同的不定度规称 \textbf{Lorentz 度规}。对 4 维情况，号差为 $\pm 2$。本书一般选 $+2$，并取 $\eta_{\mu\nu}=\diag(-1,1,1,1)$。
+
+    推广到切丛上，度规场除对称、处处非退化外，还要求号差处处一致。显然度规场的号差与坐标系选择无关。类比线性代数的合同变换，可见总存在坐标系使其分量矩阵为对角归一矩阵。
+\end{definition}
+
+借此定义切空间元素的内积。
+号差将度规分为正定（Riemann 的）、负定和不定。非正定就称伪 Riemann 的。
+
+\begin{definition}
+    分段 $C^1$-曲线 $C:[t_1,t_2]\to M$。
+线长是其上 Riemann 积分泛函（或视作 $\Im C$ 的 Lebesgue 测度）
+    \[L(C)=\int_{t_1}^{t_2} \sqrt{\abs{g\left(\dv{t},\dv{t}\right)}}\d{t},\]
+    这里 $\dv*{t}$ 表示曲线按 $t$ 参数化时的切矢场。
+\end{definition}
+
+固有时需要将切空间的模长概念搬到切丛上来，单位分解搬到时空上来。
+
+\begin{theorem}
+    线长与参数选择无关。
+\end{theorem}
+
+\begin{remark}
+    但没排除
+    一部分使 $\dv*{t}$ 为零元的情形，但还应要求 $[t_1,t_2]$ 中不能有 Lebesgue 测度大于零的区间使像点 $C(t)$ 一致。
+    
+    测度为零区间是允许的，如 $t$ 的鞍点或曲线自交的情形。
+\end{remark}
+     显然，仿射参数使切矢模方恒定，而线长参数还将使其归一为 $g(\dv{\sigma},\dv{\sigma})=\pm 1$。
+
+
+总需先借助一个坐标系才能说清度规分量的定义
+
+\begin{definition}
+    欧氏度规可用自然坐标系写作 $\delta=\delta_{ij}\d x^i\otimes\d x^j$，\textbf{欧氏空间} $\mathbb{E}^n$ 就是 $\R^n$ 配以欧氏度规，记法上可将二者打包成 $(\R^n,\delta)$。
+Descartes 坐标系
+    
+    而闵氏度规是 $\eta=\eta_{\mu\nu}\d x^\mu\otimes\d x^\nu$。
+    \textbf{闵氏时空}就是 $\R^{1,3}:=(\R^4,\eta)$。使 $\eta$ 表为 $\eta_{\mu\nu}$ 的坐标系为 Lorentz 坐标系。
 \end{definition}
 
 \begin{theorem}
-    任取坐标系有 $(\d\omega)_{\sigma\mu_1\cdots\mu_l}=(l+1)\omega_{[\mu_1\cdots\mu_l,\sigma]}$。
+    变换仿射性。
+
+    Descartes 坐标系可包括自然坐标系及其平移、旋转。
+同理，惯性坐标系可包括自然坐标系的平移或“旋转”，用 矩阵 $\Lambda$ 描述“旋转”的部分，换言之，就是使得 $\Lambda$ 为正交矩阵的仿射变换。
 \end{theorem}
+
+
+
+
+定义流形间映射便可谈及微分同胚。微分同胚映射可自然诱导张量丛的映射，故可谈及张量变换的主动、被动观点。所有微分同胚构成微分同胚群。任意光滑矢量场是该群的生成元。显然微分同胚有无穷多生成元，故维数无穷。一个光滑矢量场在群中挑出一个单参子群，称为单参微分同胚局部群（无穷小微分同胚）。若光滑矢量场还有完备性，则给出一个单参微分同胚群。紧致流形上任意矢量场可延拓至完备的。保持度规分量不变的变换对应的微分同胚映射称为等度规映射。诱导此映射的矢量场称为 Killing 矢量。代数定义可从 Lie 导数出发，也可从 Killing 方程出发以跳过 Lie 导数。此定义便告知可用 Killing 矢量场讨论度规（时空）的对称性。
 
 \begin{remark}
     注意 $\omega_{[\mu_1\cdots\mu_l;\sigma]}=\omega_{[\mu_1\cdots\mu_l,\sigma]}$，这说明外微分可用任意无挠联络表为
@@ -23,130 +63,6 @@
     }
     可见外微分定义显然无关于坐标系或无挠联络的选取。
 \end{remark}
-
-\begin{proof}由楔积定义知 $e^{\nu_1}\wedge\cdots\wedge e^{\nu_n}(e_{\mu_1},\cdots,e_{\mu_n})=n!\delta_{\mu_1}^{[\nu_1}\cdots\delta_{\mu_n}^{\nu_n]}$，则
-    \begin{align*}
-        \d\omega(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})&=\frac{1}{l!}\omega_{\nu_1\cdots\nu_l,\lambda}\d x^\lambda\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}(\p_{\sigma},\p_{\mu_1},\cdots,\p_{\mu_l})\\
-        &=\frac{(l+1)!}{l!} \omega_{[\nu_1\cdots\nu_l,\lambda]} \delta_{\sigma}^{\lambda}\delta_{\mu_1}^{\nu_1}\cdots\delta_{\mu_l}^{\nu_l}=(l+1)\omega_{[\mu_1\cdots\mu_l,\sigma]}.\qedhere
-    \end{align*}
-\end{proof}
-
-\begin{theorem}[Leibniz 律]$\omega$ 为 $k$-形式：
-    $\d(\omega\wedge\mu)=\d\omega\wedge\mu+(-1)^k\omega\wedge\d\mu$。
-\end{theorem}
-
-\begin{theorem}[Poincaré 引理] $\d^2=0$.
-\end{theorem}
-\begin{proof} $(\d\d\omega)_{\nu\sigma\mu_1\cdots\mu_l}=(l+2)(l+1)\omega_{[[\mu_1\cdots\mu_l,\sigma],\nu]}=(l+2)(l+1)\omega_{[\mu_1\cdots\mu_l,(\sigma\nu)]}=0$。
-\end{proof}
-
-\begin{definition}
-    $l$-形式 $\omega$ 称\textbf{闭的}(closed) $\Leftrightarrow\d\omega=0$；$\omega$ 称\textbf{恰当的}(exact) $\Leftrightarrow \exists (l-1)$-形式 $\mu$ 使 $\omega=\d\mu$。
-\end{definition}
-依 Poincaré 引理，恰当形式必为闭形式。反之欲成立，须要求坐标域$X\subset M$ 第二种 de Rham 上同调 $H^{2}(X;\R)$ 平凡。形象理解为区域是任意的单连通流形，例如 $\R^{n}$、开球及更一般的“星形式”开区域等。对一般流形而言，往往局域 $X$ 内亦成立，即逆命题至少在处处点的邻域上成立。
-
-\begin{definition}
-    $\delta={\star\d\star}$ 称为\textbf{余微分}(codifferential)，有时也记作 $\d^*$。
-\end{definition}
-\begin{theorem}
-    易证 $\delta^2=0$。
-\end{theorem}
-
-\begin{example}[矢量分析]
-    梯度、旋度、散度、Laplace 算子\footnote{$\d \delta+\delta \d$ 强调为 \textbf{Laplace-de Rham 算子}。闵氏时空 d'Alembert 算符强调为 \textbf{Hodge-Laplace 算子}。}的外微分语言为
-    \[\grad f=(\d f)^\sharp,\quad
-    \curl\bm A=({\star\d} A_\flat)^\sharp,\quad
-    \div\bm A=\delta A_\flat,\quad
-    \nabla^2=\d \delta+\delta \d=(\d+\delta)^2.\]
-    由此，易从 $\d^2=0$ 证明 $\curl\grad f=\bm 0$和$\div\curl\bm A=0$。
-    
-    对高维流形，旋度可直接用形式表述而不必 Hodge 对偶，比如四维矢量场 $V^\mu$ 的旋度就是 $2\nabla_{[\mu} V_{\nu]}$，无挠性使它在任意坐标系等价于 $2\p_{[\mu} V_{\nu]}$；二阶反称张量 $F_{\mu\nu}$ 的旋度则记作 $3\nabla_{[\mu}F_{\nu\lambda]}$。
-\end{example}
-
-\begin{example}
-    电磁张量 $F_{\mu\nu}$ 正是 $\R^{3+1}$ 上的 $2$-形式。定义\textbf{电流密度形式} $J$ 为
-\eq{J=\rho^* U_\flat=-\rho\,\mathrm{d} x^{0}+j_{i} \,\mathrm{d} x^{i},}
-进而 Maxwell 方程组的外微分语言为
-\eq{\d F=0,\quad \delta F=4\pi J.}
-可见 $F$ 是闭形式。
-第二式又可表为 $\mathrm{d}F^*=4\pi{\star J}$，其中 $F^*:={\star}F$ 称为\textbf{对偶电磁张量}。
-某系所测电磁场为 $E=F(\oo,\p_0),B=-F^*(\oo,\p_0)$，因而 $F$ 在该系可表为
-\begin{align*}F&= E^{1} \mathrm{d} x^{1} \wedge \mathrm{d} x^{0}+E^{2} \mathrm{d} x^{2} \wedge \mathrm{d} x^{0}+E^{3} \mathrm{d} x^{3} \wedge \mathrm{d} x^{0} \\&+ B^{3} \mathrm{d} x^{1} \wedge \mathrm{d} x^{2}+B^{2} \mathrm{d} x^{3} \wedge \mathrm{d} x^{1}+B^{1} \mathrm{d} x^{2} \wedge \mathrm{d} x^{3}.\end{align*}
-由 $\d F=0$，一定存在 $1$-形式 $A$ 满足
-\eq{F=\d A.}
-$A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 亦满足。但可证明\footnote{具体的外微分语言证明见 \cite{Parrott} 附录二（2.9 节）证明。}存在 $A$ 满足 Lorenz 规范 $\delta A=0$，从而只需求解 $4\pi J=\delta\d A=\square A$，其中 $\square=(\d+\delta)^2$。
-\end{example}
-
-\begin{theorem}[Cartan]
-    设 $\omega$ 为 $l$-形式，$X$ 为矢量，则
-    \eq{
-        \mathscr L_X=[\d,i_X],\quad [\mathscr L_X,\d]=0.
-    }
-    前者称为\textbf{Cartan 同伦式}或\textbf{魔术公式}。
-\end{theorem}
-\begin{proof}
-    用坐标分量即可证明。设 $\omega_{\mu_1\cdots\mu_l}$。
-
-    由 Cartan 魔术公式的定义，需证 $\mathscr L_X\omega=[\d,i_X]\omega=\d i_X\omega+i_X\d\omega$。
-
-    不失一般性，设 $\omega=f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}$，$X=X^\nu\p_\nu$。
-
-    计算左边：
-    \begin{align*}
-        \mathscr L_X\omega&=\mathscr L_X(f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l})\\
-        &=(\mathscr L_X f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge(\mathscr L_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
-        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l\d x^{\mu_1}\wedge\cdots\wedge\d(i_X\d x^{\mu_i})\wedge\cdots\wedge\d x^{\mu_l}\\
-        &=(X^\nu\p_\nu f)\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\sum_{i=1}^l(-1)^{i-1}\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}.
-    \end{align*}
-
-    计算右边：
-    \begin{align*}
-        \d(i_X\omega)&=\d(i_X f\,\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}+f\,i_X(\d x^{\mu_1}\wedge\cdots\wedge\d x^{\mu_l}))\\
-        &=\d(f\sum_{i=1}^l(-1)^{i-1}X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l})\\
-        &=\sum_{i=1}^l(-1)^{i-1}[\d f\wedge X^{\mu_i}\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}+f\,\d(X^{\mu_i})\wedge\d x^{\mu_1}\wedge\cdots\wedge\widehat{\d x^{\mu_i}}\wedge\cdots\wedge\d x^{\mu_l}].
-    \end{align*}
-
-    结合 $i_X\d\omega$ 的计算可验证 $\d i_X\omega+i_X\d\omega=\mathscr L_X\omega$。
-
-    第二式由第一式和 $\d^2=0$ 直接得出：
-    \[[\mathscr L_X,\d]=\mathscr L_X\d-\d\mathscr L_X=\d i_X\d+i_X\d\d-\d\d i_X-\d i_X\d=0.\qedhere\]
-\end{proof}
-
-
-\section{广义 Stokes 定理}
-
-考虑 $n$ 维定向流形 $M$。倘若 $n$-形式 $\omega$ 定义在坐标系 $(O,\psi)$，第 $i$ 坐标映射为 $x^i:M\to\R$，则可用 $\R^n$ 上 Riemann 积分简单定义有界集 $A\subset O$ 上 $\omega$ 的积分为 
-\eq{
-    \int_A\omega:=\pm\int_{\psi[A]}(\omega_{1 \cdots n}\circ\psi^{-1})(x)\,\d x^1 \cdots\d x^n,
-}
-其中 $\pm$ 在右手系时取正。由多重积分的变量替换定理、$n$-形式分量变化律知，定义无关坐标选取，但保证 $A\subset O\cap O'$。
-欲将积分域推至 $M$，需要将各局部积分进行缝合。已知单位分解 $\{\rho_i\}$ 满足 $\sum_i\rho_i=1$，因此 $\omega=\omega\sum_i\rho_i=\sum_i\rho_i\omega$。因单个 $\int\rho_i\omega$ 可用坐标系计算，故自然希望整个积分 $\int\omega$ 是 $\sum_i\int\rho_i\omega$。
-
-\begin{definition}
-    任选 $M$ 的单位分解 $\{\rho_i\}$。最高阶形式 $\omega$ 在 $M$ 上的积分为
-    \eq{
-        \int_M\omega:=\sum_i\int_{O_i}\rho_i\omega.
-    }
-\end{definition}
-\begin{remark}
-    实际上，总默认对诱导形式积分：$\int_S\omega=\int_S\tilde\omega$。
-\end{remark}
-\begin{theorem}
-    积分定义与单位分解选取无关。
-\end{theorem}
-\begin{proof}
-    设 $\{\rho_i\}$ 和 $\{\rho'_j\}$ 是 $M$ 的两个单位分解。则
-    \begin{align*}
-        \sum_i\int_{O_i}\rho_i\omega &= \sum_i\int_{O_i}\rho_i\omega\sum_j\rho'_j = \sum_{i,j}\int_{O_i}\rho_i\rho'_j\omega\\
-        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
-    \end{align*}
-    同理
-    \begin{align*}
-        \sum_j\int_{O'_j}\rho'_j\omega &= \sum_j\int_{O'_j}\rho'_j\omega\sum_i\rho_i = \sum_{i,j}\int_{O'_j}\rho_i\rho'_j\omega\\
-        &= \sum_{i,j}\int_{O_i\cap O'_j}\rho_i\rho'_j\omega.
-    \end{align*}
-    两式相等，故积分值与单位分解选取无关。
-\end{proof}
 
 函数的积分视为其对偶形式的积分：
 \begin{definition}
@@ -160,82 +76,6 @@ $A$ 正是 $4$-势。$A$ 当然不唯一，因为 $\d^{2}=0$，$A+\mathrm{d} f$ 
     时空 $M$ 上的作用量可表为 $S=\int_M\mathcal L$。
 \end{example}
 
-\begin{theorem}[广义Stokes 定理]
-    $\Omega$ 是 $n$ 维可定向（有界）带边流形，则 $\forall\omega\in\Lambda_{n-1}(M)$ 有
-\eq{
-\int_\Omega \d\omega=\int_{\partial\Omega}\omega.
-}
-\end{theorem}
-\begin{remark}
-    该式乃微积分之精髓，联系了边界效应与内部变化，统一了 Newton-Leibniz 定理、Green 公式、Gauss 定理、Stokes 公式等。
-\end{remark}
-
-\begin{proof}
-    一般背景上需要处理一些技术性细节，为此不妨模仿分析学的做法，设想带边区域靠着一个个“微小单位”粘贴出来，这样可供在整体的场上积分，于是问题的关键在于内点邻域、边界点邻域，此二情况分别可以近似于 $\R^n$ 和 $\mathbb H^{n}$，不妨设 $\{(x^1,\cdots,x^n),x^n\geqslant 0\}$。
-    
-    我们先从半空间开始。微小邻域总是有界的（理解为背景里存在一个开的球区域包含它），边界点邻域内的坐标总能用 $A=[-R,R]^{n-1}\times[0,R]$ 囊括，这里 $R$ 是有限正数，使得 $(n-1)$-形式 $\omega$ 在 $A$ 边缘及以外为零。将 $\omega$ 展开为
-    \[
-    \omega=\sum_{i=1}^n\omega_i \d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n},
-    \]
-    则
-    \begin{align*}
-        \d\omega&=\sum_{i,j=1}^n\pdv{\omega_i}{x^j}\d{x^j}\wedge \d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n}\\
-        &=\sum_{i=1}^n(-1)^{i-1}\pdv{\omega_i}{x^i}\d{x^1}\wedge \cdots \wedge \d{x^n}.
-    \end{align*}
-    证明核心仍是读者最为熟知的 Newton-Leibniz 公式。由分析学的 Fubini 定理，
-    \begin{align*}
-        \int_{\mathbb H^{n}}\d\omega&=\sum_{i=1}^n(-1)^{i-1}\int_A\pdv{\omega_i}{x^i}\d{x^1}\wedge \cdots \wedge \d{x^n}\\
-        &=\sum_{i=1}^n(-1)^{i-1}\int_0^R\int_{-R}^{R}\cdots\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^1}\cdots \d{x^n},
-    \end{align*}
-    由于 $\omega$ 在边界处为零，这意味着除 $i=n$ 外任意 $i$ 有 $\displaystyle\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^i}=0$，则最后只剩下第 $n$ 项：
-    \begin{align*}
-        \int_{\mathbb H^{n}}\d\omega&=(-1)^{n-1}\int_0^R\int_{-R}^{R}\cdots\int_{-R}^{R}\pdv{\omega_n}{x^n}\d{x^1}\cdots \d{x^{n}}\\
-        &=(-1)^{n-1}\int_{-R}^{R}\cdots\int_{-R}^{R}\int_0^R\pdv{\omega_n}{x^n}\d{x^n}\d{x^1}\cdots \d{x^{n-1}}\\
-        &=(-1)^{n}\int_{-R}^{R}\cdots\int_{-R}^{R}\omega_n(x^1,\cdots,x^{n-1},0)\d{x^1}\cdots \d{x^{n-1}};
-    \end{align*}
-    记 $\partial\mathbb H^{n}=\{(x^1,\cdots,x^n),x^n=0\}$，则另一方面
-    \[
-    \int_{\partial\mathbb H^{n}}\omega=\sum_{i=1}^n\int_{A\cap\partial\mathbb H^{n}} \omega_i(x^1,\cdots,x^{n-1},0)\d{x^1}\wedge \cdots \wedge \widehat{\d{x^i}}\wedge \cdots \wedge \d{x^n},
-    \]
-    $x^n=0$ 意味着没了 $\d{x^n}$，故上式也只剩下
-    \[
-    \int_{\partial\mathbb H^{n}}\omega=\int_{A\cap\partial\mathbb H^{n}} \omega_i(x^1,\cdots,x^{n-1},0)\d{x^1}\wedge \cdots \wedge \d{x^{n-1}},
-    \]
-    考虑到 $n$ 为偶数时，坐标系 $(x^1,\cdots,x^{n-1})$ 正定（否则为负定），二者便是相等的。
-
-    再考虑 $\R^n$，这样 $\omega$ 的邻域就囊括于 $A=[-R,R]^n$ 中，那任意 $i$ 有 $\displaystyle\int_{-R}^{R}\pdv{\omega_i}{x^i}\d{x^i}=0$，故
-    \[
-    \int_{\R^{n}}\d\omega=0;
-    \]
-    由于 $\R^n$ 没边界，即 $\partial\R^n=\mt$，故
-    \[
-    \int_{\partial\R^{n}}\omega=0.
-    \]
-    每个邻域都有局部坐标系，而内部邻域没有贡献，这样总体的 $\int_\Omega\d\omega$ 就只剩下表面的变化 $\int_{\partial\Omega}\omega$。证明的严格术语将在第四章介绍。
-
-    最后用单位分解。
-\end{proof}
-积分域 $\Omega$ 亦可写作 $\Omega^\circ$，因为 $\int_{\partial\Omega}\d\omega=\int_\Omega \d\d\omega=0$（Poincaré 引理），这里$\d\d\omega=0$ 可看作任意阶形式。当然，我们只定义了同阶形式在同维区域的积分，故此亦可视作规定不同维时积分为零，即如果 $k\neq k'$，则 $k$-形式在 $k'$ 维背景上的积分为零。
-
-可做对照：$\int_{\partial\partial\Omega}\omega=\int_{\partial\Omega} \d\omega=0$，这里不妨设 $\omega$ 为 $(l-2)$-形式场而 $\Omega$ 为 $l$ 维。这对任意 $\omega$ 成立，因而可能性只有 $\partial^2\Omega=\mt$，即边缘本身没有边缘。如何从直观上理解这件事？我们知道默认 $\Omega$ 为任意连通闭集，这应当使连通开集 $\Omega^\circ$ 有界，因而 $\partial\Omega$ 有界，且$\partial^2\Omega=\mt$ 还意味着它无边\footnote{有界无边的流形有时可称\textit{闭流形}（取闭合之意），请注意同闭集等名称区分。}！如此便可确定 $\partial\Omega$ 的内外部，因而有外指法矢的明确含义，故从背景 $M$ 可立即诱导出边界的定向。
-
-\begin{example}[Green]
-    设 $A$ 是 $(\R^2,\delta)$ 上的对偶矢量场，$S$ 是单连通开集，则
-    \eq{
-    \int_S\left(\pdv{A_2}{x}-\pdv{A_1}{y}\right)\d x\,\d y=\oint_{\partial S} A_1\, \d x+A_2 \,\d y=\oint_{\partial S} A_\ell\,\d\ell.
-    }
-\end{example}
-\begin{proof}
-    置 1-形式 $\omega=A_\mu\mathrm{d} x^\mu$, 则
-\[\mathrm{d} \omega  =\frac{\partial A_\mu}{\partial x^\nu} \mathrm{d} x^\nu \wedge \mathrm{d} x^\mu=\left(\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}\right) \mathrm{d} x \wedge \mathrm{d} y,\]
-第一等式成立。
-选线长 $\ell$ 为 $L$ 的局部坐标，把 $\tilde{\omega}$ 用坐标基展为 $\tilde{\omega}=\tilde{\omega}_1(\ell)\mathrm{d} \ell$, 两边作用于 $\partial / \partial \ell$ 得
-$\tilde{\omega}_1(\ell)=\tilde{\omega}(\partial / \partial \ell)=\omega(\partial / \partial \ell)=A(\partial / \partial \ell)=A_\ell$，
-故 $\tilde{\omega}=A_\ell\, \mathrm{d} \ell$。
-\end{proof}
-\begin{remark}
-    $\int_{\partial S} \tilde{\omega}$ 的积分域是闭合曲线 $\partial S$，至少要用两个坐标域覆盖，因此应先对每个坐标域做局部积分再“缝合”。幸好可这样：设 $L$ 是 $\partial S$ 挖去一点所得，则它用一个坐标域即可覆盖，但挖去一点不影响 Riemann 积分。
-\end{remark}
 
 
 \section{高维 Gauss 定理}
@@ -333,40 +173,31 @@ $\vec n$ 是曲面的正定向法矢场，
 }
 
 
-\section{Frobenius 定理}\label{sec:Frobenius}
 
 
+\section{超曲面}
+
+
+\begin{definition}[切矢和法矢]
+    设 $S$ 是背景 $M$ 上可具有不同维度的子集。将 $S$ 上一点 $q$ 处的矢量称为切矢 $w$，若 $S$ 上存在过 $q$ 的曲线与其相切。用坐标基易验证，$q$ 处所有矢量构成的矢量空间 $V_q$ 与 $M$ 同维，而所有 $w$ 所构成的集合称作切空间，记作 $T_q S$，是 $V_q$ 的矢量子空间。
+
+    可以定义 $q$ 处的法矢 $n$，若对任意切矢 $w$ 有 $\langle n,w\rangle=0$，这里内积取决于 $M$ 所选度规。
+\end{definition}
 \begin{theorem}
-    超曲面正交(hypersurface orthogonal)，因此无旋参考系又称为超曲面正交参考系。有旋就相应于非超曲面正交。
+    当 $S$ 是 $M$ 的余 1 维子空间时，又可以形象地叫做一张，其上一点的任意法矢间只差倍数关系。
 \end{theorem}
+
+
 \begin{proof}
-    首先我们要先明确“超曲面正交”是何含义：对参考系定义域内的任一点 $p$，存在过$p$的一张超曲面 $\Sigma$ 同系内所有观者世界线正交。以 $Z$ 代表参考系的 4-速场，$Z_\flat=g_\flat(Z)$，则接受微分形式的结论：以上表述等价于
-    \eq{
-    Z\wedge\d Z=\A(Z\otimes\nabla Z)=0,
-    }
-    这里 $\d Z$ 表示 $Z$ 的外微分。
+    证明 设 $\left\{e_2, \cdots,e_n\right\}$ 为 $T_q S$ 任一坐标基, 因 $\dim V_q=n, V_q$ 必有与 $\left\{e_2,\cdots,e_n\right\}$ 线性无关的元素, 任取其一并记作 $e_1$, 则 $\left\{e_\mu\mid\mu=1, \cdots, n\right\}$ 为 $V_q$ 的基底。令 $n=e_1$, 则 $\langle n, e_\tau\rangle =g(e_1,e_\tau)=0$，这里 $\tau=2,\cdots,n$，可见 $n$ 为法矢。若存在 $m$ 满足 $\langle m,e_\tau\rangle=0$, 则其在 $\left\{e_\mu\right\}$ 的分量 $m^\tau=0$, 因而只剩下分量 $m^1$，即 $m=m^1\left(e_1\right)^a$ $=m^1n$, 即 $m$ 与 $n$ 只差一因子 $m^1$。
 \end{proof}
 
-\section{积分的求导}
+注意，余维数太多的话，比如三维空间的曲线，其上法矢就没有该性质了，因此选取更为任意。对于超曲面，约定其模长可以使得差别仅体现在“内外方向”上。以后默认取单位法矢，即要求 $\langle n,n\rangle=\pm 1$，正负号来自度规的正负定性。设 $p\in S$ 上的一个局部坐标系 $(U;x^1,\cdots,x^{n})$ 是 $M$ 正定的右手系使得域内点 $x^n\leqslant 0$，则$(U\cap S;x^1,\cdots,x^{n-1})$ 也是 $S$ 的局部坐标系，且 $\pdv{x^n}$ 就是法矢而且是外法矢。
 
-\begin{theorem}
-    设完备向量场 $v\in\mathfrak X(\R^n)$作用下 $p$维带边闭子流形 $D_0\subseteq\R^n$随时间演化为 $D\subseteq\R^{n+1}$，对同样随时演化的微分形式 $\omega\in\Omega^p(\R^n)\times\R$有 
- \eq{
-    \dv{t}\int_{D_t}\omega=\int_{D_t}\frac{\partial\omega}{\partial t}+\int_{D_t}i_v\d\omega+\int_{\partial D_t}i_v\omega,
- }
-\end{theorem}
-\begin{proof}
-    设 $v$由单参数群 $\psi$给出，设 $\R^{n+1}$上的向量场 $X:=v+\partial_t$由单参数群 $\phi$给出。注意到 $\omega$不含 $\d t$有
-    \eq{
-        i_X\omega=i_v\omega,\quad i_X\d\omega=i_v\d_x\omega+i_{\partial_t}(\dot{\omega}_I\d t\wedge\d x^I)=i_v\d_x\omega+\dot\omega.
-    }
-    则依 Lie导数定义、Cartan公式、Stokes公式有
-    \begin{align*} \dv{t}\bigg|_{t=0}\int_{D_t}\omega&=\dv{t}\bigg|_{t=0}\int_{D_0}\phi_t^*\omega =\int_{D_0}\dv{t}\bigg|_{t=0}\phi_t^*\omega=\int_{D_0}\mathcal L_X\omega\\ &=\int_{D_0}\d i_X\omega+i_X\d\omega =\int_{\partial D_0}i_v\omega+\int_{D_0}i_v\d_x\omega+\int_{D_0}\frac{\partial\omega}{\partial t}.\qedhere \end{align*}
-\end{proof}
+对一点 $q$，度规的作用范围是其整个矢量空间 $V_q$，因此类似于切矢，度规也有“切于” $S$ 的部分，那就是只作用于 $T_qS$ 的部分。
 
-\begin{example}
-    在 $\R^3$ 矢量代数中，我们有
-    \begin{align*}
-        =
-    \end{align*}
-\end{example}
+
+此外，任意 $l$-形式也能按相应思路定义其\textbf{诱导形式}，这是有必要的，因为一旦把 $S$ 看作一个独立区域，而非从背景的嵌入视角观察，那么“不切于”的形式都是没有意义的。
+体元、定向也是形式，自然也有其诱导。
+
+
