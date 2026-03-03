@@ -1,49 +1,51 @@
 \chapter{集合论与范畴论}\label{appx:cat}
 \section{集合论}
+集合论乃当代数学基础之正统。
+其范围之广，形式之强，以至数学本身亦堪为数学的研究对象，诸如：何谓证明、命题能否被证明、一致性（无矛盾）等，统称\textbf{元数学}(metamathematics)。实践中基于自然语言的命题等，原则上都能写为某个集合论系统的形式语言，从而为其陈述铸就基础。然而，即便看似单纯的定理，其形式表述往往都极尽繁琐，遑论人工验证。然随符号逻辑、计算机理论与相关技术的突破，形势有所好转，四色定理、素数定理等现已有形式验证。集合论之外的思想（如类型论）对此至少起了简化效果。
+
 读者或已熟悉主要的集合、映射与关系知识，包括差集、交并补运算律、卡氏积(Cartisian product)、指标集、可数性、等价类、划分、幂集、陪域、逆像、双射等概念。我们对部分概念进行复习，并讲述读者或许不熟悉但会用到的知识。
 若对本书未讲到的概念有所遗忘，可查阅任意分析学、代数学教材。
+
 \subsection{ZFC 公理}
 
-\textbf{Russell 佯谬}考虑了所有集合构成的“集合” $\textbf{V}$，利用\textbf{自我指涉}的思想，构造其子“集合” $\{x \in \textbf{V} : x \notin x\}$ 可导出矛盾。现代集合论处理此问题的主流方法是限制概括原理 $\left\{x : x \text{ 满足性质 } P\right\}$ 的应用范围，并在一阶逻辑与合适的公理系统下进行演绎。“集合” $\textbf{V}$ 实非集合，在一般的公理体系中称作\textbf{类}(class)。凡集合都是类，但还存在非集合的类，称作\textbf{真类}。
-
-下面采用广泛使用的\textbf{Zermelo–Fraenkel 公理集合论}，并承认\textbf{选择公理}(axiom of choice)，简称 \textbf{ZFC 系统}。它包括一阶逻辑和若干公理。
-\textbf{一阶逻辑}具有常见的 $\wedge$, $\neg$, $\implies$, $\forall$, $\exists$ 等逻辑联词与量词、括号 $(\;)$、变元 $x, y, z, \ldots$、二元谓词 $=,\in$ 等。可判定一个公式是否合乎语言的规则，例如括号的左右配对，合规者称为合式公式。
+\textbf{Russell 佯谬}考虑了所有集合构成的“集合” $\mathbf{V}$，利用\textbf{自我指涉}的思想，构造其“子集” $\{x \in \mathbf{V} : x \notin x\}$ 可导出矛盾。现代集合论处理此问题的主流方法是限制概括原理 $\left\{x : \text{$x$ 满足性质 $P$}\right\}$ 的应用范围，并在一阶逻辑与合适的公理系统下进行演绎。$\mathbf{V}$ 实非集合，在一般的公理体系中称作\textbf{类}(class)。凡集合都是类，但像 $\mathbf{V}$ 这种非集合的类就称\textbf{真类}(proper class)。
+我们采用广泛使用的\textbf{Zermelo–Fraenkel 公理集合论}，并承认\textbf{选择公理}(axiom of choice)，简称 \textbf{ZFC 系统}。它包括一阶逻辑和若干公理。
+\textbf{一阶逻辑}具有常见的 $\wedge,\neg,\im,\forall,\exists$ 等逻辑联词与量词、括号 $(\;)$、变元 $x, y, z,\ldots$、二元谓词 $=,\in$ 等。可判定一个公式是否合乎语言的规则，例如括号的左右配对，合规者称为合式公式。
 若 $x \in y$ 则称 $x$ 为 $y$ 的元素。ZFC 处理的所有对象 $x,y$ 等都应该理解为集合，集合的元素本身也是集合。
 
-本书在逻辑层面诉诸常识，不采取一阶逻辑的严格形式，仅以数学工作者日用的素朴语言勾勒 ZFC 的公理，后续的形式推导一并省去. 
+严格上 ZFC 系统仅谈论集合。类则在其它常见公理集合论，如 NBG(von Neumann-Bernays-Gödel) 系统。
+对于 ZFC，类只是权宜之计：它只能在元语言的层次理解为满足某一给定性质的所有集合，譬如所有的集合构成一类 $\mathbf{V}$；对类的操作化约为对一阶逻辑中合式公式的操作。ZFC 下我们力求避开真类，但本节不得不予处理，方才能明晰概念.
+
+本书在逻辑层面诉诸常识，不采取一阶逻辑的严格形式，仅以自然语言勾勒 ZFC 公理，后续的形式推导一并省去.
 \begin{enumerate}[\bfseries {A}.1]
-	\item \textbf{外延公理}: 若两集合有相同元素，则两者相等.
+	\item \textbf{外延公理}：若两集合有相同元素，则两者相等.
 
-		空集为 $\mt:=\{u \in X: u \neq u\}$，$X$ 为任意集合。一个近乎无聊的应用是证明 $\mt$ 无关 $X$ 的选取，前提是集合确实存在，这点既可以独立成另一条“存在公理”，也可以划入稍后的无穷公理。
-	\item \textbf{配对公理}: 对任意 $x,y$ 存在集合 $\{x,y\}$，其元素恰好是 $x$ 与 $y$。
+		\textbf{空集}为 $\mt:=\{u \in X: u \neq u\}$，$X$ 为任意集合。可以证明 $\mt$ 无关 $X$ 的选取，前提是集合确实存在，这点既可以独立成另一条“存在公理”，也可以划入稍后的无穷公理。
+	\item \textbf{配对公理}：对任意 $x,y$ 存在集合 $\{x,y\}$，其元素恰好是 $x$ 与 $y$。
 	
-		有序对 $(x,y)$ 可用配对公理来实作：$(x,y) := \{\{x\}, \{x,y\} \}$，由此定义积集 $X \times Y := \{(x,y) : x \in X,\; y \in Y \}$；准此要领可定义有限多集合的积 $X \times Y \times \cdots$。映射 $f: X \to Y$ 等同于其\textbf{图形} $\Gamma_f \subset X \times Y$：$\forall x \in X$，$\Gamma_f \cap (\{x\} \times Y)$ 是独点集，记 $\{f(x)\}$。
-	\item \textbf{分离公理模式}: 设 $P$ 为关于集合的一个性质，$P(u)$ 表示集合 $u$ 满足性质 $P$，则对任意集合 $X$ 存在 $Y = \{u \in X : P(u) \}$。
-	\item \textbf{并集公理}:  任意集合 $X$ 存在相应的并集 $\bigcup X := \{u : \exists v \in X \; \text{ 使得 }\; u \in v\}$。
+		有序对可用配对公理来实作：$(x,y) := \{\{x\},\{x,y\} \}$，从而\textbf{卡氏积} $X \times Y := \{(x,y) : x \in X,\; y \in Y \}$；同理可定义有限卡氏积 $X \times Y \times \cdots$。映射 $f: X \to Y$ 等同于其\textbf{图形} $\Gamma_f \subset X \times Y$：$\forall x \in X$，$\Gamma_f \cap (\{x\} \times Y)$ 是独点集，记 $\{f(x)\}$。
+	\item \textbf{分离公理模式}：设 $P$ 为关于集合的一个\textbf{性质}，$P(u)$ 表示集合 $u$ 满足性质 $P$，则对任意集合 $X$ 存在 $Y = \{u \in X : P(u) \}$。
+	\item \textbf{并集公理}： 任意集合 $X$ 存在相应的并集 $\bigcup X := \{u : \exists v \in X \; \text{ 使得 }\; u \in v\}$。
 	
-		公理中的 $X$ 通常视作一族集合，$\bigcup X$ 也相应地写成 $\bigcup_{v \in X} v$。
-	\item \textbf{幂集公理}: 任意集合 $X$ 的全体子集构成一集合 $2^X := \{u : u \subset X \}$，称为幂集。
-	\item \textbf{无穷公理}: 存在无穷集。更详细地，存在归纳集 $x$ 使 $\mt\in x$，且 $\forall y\in x$，$y \cup \{y\} \in x$，表作
+		$X$ 通常视作一族集合，$\bigcup X$ 要写成 $\bigcup_{v \in X} v$。
+	\item \textbf{幂集公理}：任意集合 $X$ 的全体子集构成一集合 $2^X := \{u : u \subset X \}$，称为\textbf{幂集}。
+	\item \textbf{无穷公理}：存在无穷集。更详细地，存在\textbf{归纳集} $x$ 使 $\mt\in x$，且 $\forall y\in x$，$y \cup \{y\} \in x$，表作
 		$\exists x \bigl[ (\mt \in x) \;\wedge \;\forall y \in x \left(y \cup \{y\} \in x \right)  \bigr]$。
-        预设归纳集存在的用意在于萃取它的子集 $\left\{\mt, \{\mt\}, \{  \mt, \{\mt\}\}, \{  \mt, \{\mt\}, \{  \mt, \{\mt\}\}\}, \ldots \right\}$，将立即看到这正是自然数集 $\N$。
-	\item \textbf{替换公理模式}: 设映射 $F$ 的定义域为 $X$，则存在集合 $\Im F = \{ F(x) : x \in X\}$，称作值域。
+        预设归纳集存在的用意在于萃取它的子集 $\left\{\mt,\{\mt\},\{  \mt,\{\mt\}\},\{  \mt,\{\mt\},\{  \mt,\{\mt\}\}\},\ldots \right\}$，将立即看到这正是自然数集 $\N$。
+	\item \textbf{替换公理模式}：设映射 $F$ 的定义域 $X$，则存在集合 $\Im F = \{ F(x) : x \in X\}$，称作\textbf{值域}。
 	
-		分离和替换公理模式里的性质 $P$ 和映射 $F$ 并非集合论意义下的寻常定义，故无循环论证之虞，它们实际是由一阶逻辑的合式公式定义的: 以映射 $x \mapsto y$ 为例，这可以诠释为一阶逻辑中带有两个自由变元 $x,y$ 的合式公式 $\varphi$，适合于 $\forall x\; \exists! y\; \varphi(x,y)$. 由于对每个 $P$ 或 $F$ 都产生一条相应的公理，它们被称作公理模式.
-	\item \textbf{正则公理}: 任意非空集都含有一个对从属关系 $\in$ 极小的元素.
+		分离、替换公理模式里的性质 $P$、映射 $F$ 并非集合论意义下的寻常定义，它们实际由一阶逻辑的合式公式定义：以映射 $x \mapsto y$ 为例，这可以诠释为一阶逻辑中带有两个自由变元 $x,y$ 的合式公式 $\varphi$，适合于 $\forall x\; \exists! y\; \varphi(x,y)$。由于对每个 $P$ 或 $F$ 都产生一条相应的公理，它们被称作\textbf{公理模式}.
+	\item \textbf{正则公理}：任意非空集都含有一个对从属关系 $\in$ 极小的元素.
 	
-		正则公理的一个重要推论是对于任意集合 $x$，不存在无穷的从属链 $x \ni x_1 \ni x_2 \ni \cdots$，特别地 $x \notin x$. 由之可建立集合的层垒谱系，见 \ref{sec:Grot-universe}.
-	\item \textbf{选择公理}: 设集合 $X$ 的每个元素皆非空 ，则存在函数 $g: X \to \bigcup X$ 使得 $\forall x \in X, \; g(x) \in x$ (称作选择函数)。
+		一个重要推论是对于任意集合 $x$，不存在无穷的从属链 $x \ni x_1 \ni x_2 \ni \cdots$，特别地 $x \notin x$，以规避 Russell 佯谬。由之可建立集合的层垒谱系，见 \ref{sec:Grot-universe}.
+	\item \textbf{选择公理}：设集合 $X$ 的每个元素非空 ，则 $\exists g: X \to \bigcup X$ 使 $\forall x \in X,\; g(x) \in x$，称作\textbf{选择映射}。
 
-		选择公理中的 $X$ 应该设想为一族非空集，选择函数 $g(x) \in x$ 意味着从每个集合 $x \in X$ 中挑出一个元素.
+		选择公理中的 $X$ 应该设想为一族非空集，选择映射 $g(x) \in x$ 意味着从每个集合 $x \in X$ 中挑出一个元素.
 \end{enumerate}
 
-
-严格来说, 在 ZFC 的形式系统内仅谈论集合。\emph{类}的概念则在其它常见的公理集合论如 NBG 系统 (von Neumann--Bernays--Gödel)\index{jihelun!NBG}。
-对于 ZFC 系统, 类只是权宜之计: 它只能在元语言的层次理解为满足某一给定性质的所有集合, 譬如所有的集合构成一类; 对类的操作化约为对一阶逻辑中合式公式的操作. 一般而言 ZFC 系统力求避开真类, 但在本章将不得不予处理.
-
-集合的并 $X \cup Y$, 交 $X \cap Y$, 差 $X \smallsetminus Y$, 积 $X \times Y$ 和子集$X \subset Y$ 等运算, 以及函数等都是派生的概念. 读者想必知之甚详, 故不再赘述.
-由此可进一步构造自然数集 $\N$、整数集 $\Z$、有理数集 $\Q$ 和实数集 $\R$ 等，我们在高等数学、数学分析中已有接触。
-我们将在 \S\ref{sec:order} 回顾集合论里构造 $\Z_{\geq 0}$ 的方式.
+并 $X \cup Y$、交 $X \cap Y$、补集 $X \backslash Y$、积 $X \times Y$ 和子集$X \subset Y$ 等运算，以及映射等都是派生的概念。读者想必知之甚详，故不赘述。$X \subsetneq Y$ 代表 $X \subset Y$ 且 $X \neq Y$，以 $X \sqcup Y$ 代表 $X, Y$ 的无交并。
+由此可进一步构造自然数集 $\N$、整数集 $\Z$、有理数集 $\Q$ 和实数集 $\R$ 等，我们亦已有接触。
+马上将在 \S\ref{sec:order} 回顾构造 $\N$ 的方式.
 
 \begin{theorem}
     置 $f:X\to Y$，任意 $A\subset Y$ 的逆像满足 $f^{-1}[A]=f^{-1}[A\cap\Im f]$。
@@ -57,330 +59,325 @@
     $f[U] \subset V \iff U\subset f^{-1}[V]$。
 \end{theorem}
 
-以下简述商集的概念. 对于任意 $n \geq 1$，集合 $X$ 上的 $n$ 元关系按定义是 $X^n = \underbracket{X \times \cdots \times X}_{n\; \text{项}}$ 的一个子集 $R$. 多数场合考虑的是二元关系，此时以 $xRy$ 表示 $(x,y) \in R$. 满足以下性质的(二元)关系 $\sim$ 称作\emph{等价关系}:反身性、对称性、传递性。
+回忆一下，对 $\forall n \geqslant 1$，集合 $X$ 上的 $n$ 元关系是 $X^n = \underbracket{X \times \cdots \times X}_{n\; \text{项}}$ 的子集 $R$。多数场合考虑的是二元关系，此时以 $xRy$ 表示 $(x,y) \in R$。满足反身性 $x\sim x$、传递性 $x\sim y\sim z$、对称性 $x\sim y\eqto y\sim x$ 的关系 $\sim$ 称\textbf{等价关系}。
+含 $x$ 的\textbf{等价类}为 $[x] := \{y \in X: y \sim x \}$。
+\textbf{商集}(quotient set)为全体等价类 $\tilde X = X/\sim\; := \{[x]:x\in X\}$。
+如此得 $X$ 的无交并分解 $X = \bigcup_{[x] \in \tilde X} [x]$，又称 $X$ 的划分、分割。$x \sim y$ 当且仅当 $x,y$ 属于划分中的同一个子集。易见 $X$ 上的等价关系一一对应于 $X$ 的划分.
 
+\begin{definition}
+    从 $X$ 到 $Y$ 的全体映射构成\textbf{映射集}或\textbf{指数对象} $Y^X$。
+\end{definition}
+\begin{remark}
+	幂集 $2^X$ 就看做 $X\to 2$ 的全体映射。这里 $2$ 代表恰有两个元素的集合。
+\end{remark}
 
-对于 $X$ 上的等价关系 $\sim$ 和任意 $x \in X$，含 $x$ 的等价类记为 $[x] := \{y \in X: y \sim x \}$. \emph{商集}\index{shang@商 (quotient)}定义为全体等价类，亦即 $X/\sim\; := \{[x] : x \in X \}$. 如此得到 $X$ 的无交并分解 (又称 $X$ 的划分) $X = \bigcup_{[x] \in X/\sim} [x]$，而且 $x \sim y$ 当且仅当 $x,y$ 属于划分中的同一个子集. 易见 $X$ 上的等价关系一一对应于 $X$ 的划分.
-
-我们将采用习见的集合论符号，例如 $X \subsetneq Y$ 代表 $X \subset Y$ 且 $X \neq Y$，以 $X \sqcup Y$ 代表 $X$ 和 $Y$ 的无交并，$X^Y$ \index[sym1]{$X^Y$}代表所有函数 $f: Y \to X$ 构成的集合，特别地 $2^X = P(X)$\index[sym1]{$2^X$}，这里 $2$ 代表恰有两个元素的集合. 我们将用 $\{\text{pt}\}$ 表示仅有一个元素的集合. 进一步，对于以某集合 $I$ 为指标的一族集合 $(X_i)_{i \in I}$ 可以定义
+对以某集合 $I$ 为\textbf{指标}或\textbf{索引}的一族集合 $(X_i)_{i \in I}$ 可定义
 \[ \begin{array}{ll}
-	\text{并 } \; \bigcup_{i \in I} X_i, & \text{交} \; \bigcap_{i \in I} X_i, \quad (I \neq \emptyset), \\
+	\text{并 } \; \bigcup_{i \in I} X_i, & \text{交} \; \bigcap_{i \in I} X_i,\quad (I \neq \mt),\\
 	\text{无交并 } \; \bigsqcup_{i \in I} X_i, & \text{积} \; \prod_{i \in I} X_i.
 \end{array}\]
-对应于 $I=\emptyset$ 的并与无交并都是 $\emptyset$，而积是 $\{\emptyset\}$. 空交的合理定义只能是全体集合构成的类 $\textbf{V}$，这在 ZFC 系统内是犯规的.
+可以证明，de Morgan 律对任意指标集都成立。
+对应于 $I=\mt$ 的并与无交并都是 $\mt$，而积是 $\{\mt\}$。空交只能是全体集合构成的类 $\mathbf{V}$，不在 ZFC 系统的讨论范围。
 
-可以证明，de Morgan 律对任意基数的索引集都成立。
+\subsection{序结构与序数}\label{sec:order}
 
-公理集合论是当代数学的正统基础. 它的表述范围之广，形式化程度之高，以至于数学本身也堪成为数学研究的对象，诸如何谓证明，一个命题能否被证明，公理系统的一致性(无矛盾)等等都能被赋予明晰的数学内容，这类研究统称元数学\index{yuanshuxue@元数学 (metamathematics)}. 数学实践中平素基于自然语言的定义和论证等等，``原则上''都能改写为 ZFC 或其他公理集合论里的形式语言，从而为其陈述和验证赋予一套坚实的基础. 幸抑不幸，这种基础长期以来仅仅是一种姿态: 即便对看似单纯的集合论定理，其形式表述往往都极尽繁琐，遑论靠人工来验证乃至于领略. 然而随着符号逻辑，计算机理论与相关技术的持续进展，形势逐渐在起变化. 如四色定理，素数定理，Kepler 猜想等结果现在已有了形式的验证，而形式化方法的应用还不限于数学. 集合论之外的思想 (如类型论) 对此似乎是必要的，至少是起了极大的简化效果. 可以确定的是: 随着理论与技术携手并进，人们对数学基础与数学实践两方面的认知还会不断被改写.
-
-\section{序结构与序数}\label{sec:order}
-按照 Bourbaki 的观点, 序结构连同拓扑和代数结构一道组成了数学结构的三大母体. 以下依序介绍偏序, 全序与良序的概念.
-
-\begin{definition}\label{def:partial-order}\index{pianxuji@偏序集 (partially ordered set/poset)}\index{yuxuji@预序集 (pre-ordered set)}
-	\emph{偏序集}意指资料 $(P, \leq)$, 其中 $P$ 是集合而 $\leq$ 是 $P$ 上的二元关系 (偏序), 满足于
-	\begin{compactdesc}
-		\item[反身性] $\forall x \in P, \; x \leq x$;
-		\item[传递性] $(x \leq y) \wedge (y \leq z) \implies x \leq z$;
-		\item[反称性] $(x \leq y) \wedge (y \leq x) \implies x=y$.
-	\end{compactdesc}
-	仅满足反身性与传递性的结构称为\emph{预序集}. 预序集间满足 $x \leq y \implies f(x) \leq f(y)$ 的映射称为\emph{保序映射}.
-
-	一般用 $x < y$ 表示 $x \leq y$ 且 $x \neq y$. 符号 $\geq$ 和 $>$ 的意义是自明的. 今后谈及偏序集时经常省略其中的关系 $\leq$.
+\begin{definition}
+	仅满足反身性与传递性的结构称为\textbf{预序}(pre-order)，如等价关系。
+	具有反称性 $(x \leqslant y) \land (y \leqslant x) \im x=y$ 的预序关系 $\leqslant$ 称为\textbf{偏序}(partially ordered)，其反身性、传递性可记作 $x \leqslant x$、 $x \leqslant y \leqslant z$。
+	\textbf{偏序集}(poset)意指 $(P,\leqslant)$。
+	预序集间满足 $x \leqslant y \im f(x) \leqslant f(y)$ 的映射称为\textbf{保序映射}。
+	$x < y$ 表示 $x \leqslant y$ 且 $x \neq y$。符号 $\geqslant,>$ 意义自明。
 \end{definition}
 
-设 $P, Q$ 为偏序集, 若映射 $\phi: P \to Q$ 满足 $(x < x') \implies (\phi(x) < \phi(x'))$, 则称 $\phi$ 是严格增的. 若 $\phi: P \to Q$ 是双射而且 $\phi, \phi^{-1}$ 皆保序, 则称 $\phi$ 为偏序集 $P,Q$ 之间的同构. 偏序集的同构类称为\emph{序型}. 偏序集的子集继承了自然的偏序结构.
+设 $P, Q$ 为偏序集，若映射 $\phi: P \to Q$ 满足 $(x < x') \im (\phi(x) < \phi(x'))$，则称 $\phi$ 是严格增的。若双射 $\phi: P \to Q$ 满足 $\phi,\phi^{-1}$ 皆保序，则称 $\phi$ 为偏序集 $P,Q$ 之间的同构。偏序集的同构类称为\textbf{序型}。偏序集的子集继承了自然的偏序结构.
 
-\begin{definition}\label{def:max-sup}\index{jidayuan@极大元 (maximal element)}\index{shangjie@上界 (upper bound), 上确界 (supremum)}\index{xiajie@下界 (lower bound), 下确界 (infimum)}
-	设 $P' \subset P$, 而 $P$ 是预序集,
+\begin{definition}
+	设 $P' \subset P$，而 $P$ 是预序集,
 	\begin{compactitem}
-		\item 称 $x \in P$ 是 $P$ 的极大元, 如果不存在满足 $x < y$ 的元素 $y \in P$;
-		\item 称 $x \in P$ 是 $P'$ 的上界, 如果对每个 $x' \in P'$ 都有 $x' \leq x$;
-		\item 称 $x \in P$ 是 $P'$ 的上确界, 如果 $x$ 是其上界, 而且对每个上界 $y$ 皆有 $x \leq y$.
+		\item 称 $x \in P$ 是 $P$ 的\textbf{极大元}(maximal element)，如果不存在满足 $x < y$ 的元素 $y \in P$;
+		\item 称 $x \in P$ 是 $P'$ 的\textbf{上界}(upper bound)，如果对每个 $x' \in P'$ 都有 $x' \leqslant x$;
+		\item 称 $x \in P$ 是 $P'$ 的\textbf{上确界}(supremum)，如果 $x$ 是其上界，而且对每个上界 $y$ 皆有 $x \leqslant y$.
 	\end{compactitem}
-	同理可以定义极小元, 下界和下确界, 仅须把以上的 $\leq$ 换成 $\geq$. 对于偏序集 $P$, 根据反称性, 其子集 $P'$ 的上确界或下确界若存在则是唯一的, 分别记为 $\sup P'$ 和 $\inf P'$. \index[sym1]{sup@$\sup$}\index[sym1]{inf@$\inf$}
+	把 $\leqslant$ 换成 $\geqslant$ 就有极小元、下界(lower bound)和下确界(infimum)。对偏序集 $P$，根据反称性，其子集 $P'$ 的上确界或下确界若存在则是唯一的，分别记 $\sup P', \inf P'$。
 \end{definition}
 
-\begin{definition}\label{def:filtrant-poset}\index{luguoxuji@滤过偏序集 (filtered poset)}
-	若偏序集 $P$ 非空, 而且对任何 $x,y \in P$ 子集 $\{x,y\}$ 皆有上界, 则称 $P$ 是\emph{滤过序集}.
+\begin{definition}
+	若偏序集 $P$ 非空，而且对任何 $x,y \in P$ 子集 $\{x,y\}$ 皆有上界，则称 $P$ 是\textbf{滤过序集}(filtered poset).
 \end{definition}
 
-\begin{definition}\index{quanxuji@全序集 (totally ordered set)}\index{lian@链 (chain)}
-	若偏序集 $P$ 中的任一对元素 $x,y$ 皆可比大小 (即: 或者 $x \leq y$, 或者 $y \leq x$), 则称 $P$ 为\emph{全序集}. 全序集又称作\emph{线序集}或\emph{链}.
+\begin{definition}
+	若偏序集 $P$ 中任二元素 $x,y$ 皆可比大小（要么 $x \leqslant y$，要么 $y \leqslant x$），则称 $P$ 为\textbf{全序集}(totally ordered set）。全序集又称作\textbf{线序集}或\textbf{链}(chain).
 \end{definition}
-显然全序集皆是滤过的.
+显然全序集皆是滤过的。
+我们偶尔也会谈论一些类上的序或全序，及其上下界等，例如以下将考虑的序数类 $\mathbf{On}$。定义同上.
 
-我们偶尔也会谈论一些类上的序或全序, 及其上界下界等等, 例如以下将考虑的序数类 $\textbf{On}$. 定义同上.
-
-\begin{definition}[G.\ Cantor]\label{def:well-ordered}\index{liangxuji@良序集 (well-ordered set)}
-	全序集 $P$ 如满足下述性质则称作\emph{良序集}: 每个 $P$ 的非空子集都有极小元.
+\begin{definition}[Cantor]
+	全序集 $P$ 如满足下述性质则称作\textbf{良序集}(well-ordered set)：每个 $P$ 的非空子集都有极小元.
 \end{definition}
 
 \begin{example}
-	取任一集合$X$, 则幂集 $P(X)$ 相对于包含关系 $\subset$ 成为滤过偏序集, 但一般不是全序. 后面要构作的非负整数集 $\Z_{\geq 0}$ 和实数集 $\R$ 都具有标准的全序结构; 其中$\Z_{\geq 0}$ 显然是良序集, $\R$ 则不是.
+	取任一集合$X$，则幂集 $2^X$ 相对于包含关系 $\subset$ 成为滤过偏序集，但一般不是全序。后面要构作的 $\N,\R$ 都具有标准的全序结构；其中$\N$ 显然是良序集，$\R$ 则不是.
 \end{example}
 
 \begin{lemma}\label{prop:wellorder-automorphism}
-	设 $P$ 为良序集, 映射 $\phi: P \to P$ 严格增, 则对每个 $x \in P$ 皆有 $\phi(x) \geq x$. 特别地:
+	设 $P$ 为良序集，映射 $\phi: P \to P$ 严格增，则对每个 $x \in P$ 皆有 $\phi(x) \geqslant x$。特别地：
 	\begin{inparaenum}[(i)]
-		\item $P$ 没有非平凡的自同构,
-		\item 对任意 $x \in P$, 不存在从 $P$ 到 $P_{< x} := \{y \in P : y < x \}$ 的同构.
+		\item $P$ 没有非平凡的自同构；
+		\item 对任意 $x \in P$，不存在从 $P$ 到 $P_{< x} := \{y \in P : y < x \}$ 的同构.
 	\end{inparaenum}
 \end{lemma}
-形如 $P_{< x}$ 的子集继承 $P$ 的良序, 称作 $P$ 的一个\emph{前段}.
+形如 $P_{< x}$ 的子集继承 $P$ 的良序，称作 $P$ 的一个\textbf{前段}.
 \begin{proof}
-	假设集合 $P_0 := \{x \in P : \phi(x) < x \}$ 非空, 对任意 $z \in P_0$ 由 $\phi$ 严格增可知 $\phi(\phi(z)) < \phi(z)$, 取 $z$ 为 $P_0$ 的极小元便导致矛盾. 第一个断言得证.
+	假设集合 $P_0 := \{x \in P : \phi(x) < x \}$ 非空，对任意 $z \in P_0$ 由 $\phi$ 严格增可知 $\phi(\phi(z)) < \phi(z)$，取 $z$ 为 $P_0$ 的极小元便导致矛盾。第一个断言得证.
 
-	对于 (i), 代入 $\phi$ 和 $\phi^{-1}$ 以得到 $\forall x \; \phi(x)=x$. 对于 (ii), 一个同构 $\phi: P \to P_{< x}$ 必然是 $P$ 到自身的严格增映射并满足 $\phi(x) < x$, 与之前结果矛盾.
+	对于 (i)，代入 $\phi, \phi^{-1}$ 以得到 $\forall x \; \phi(x)=x$。对于 (ii)，一个同构 $\phi: P \to P_{< x}$ 必然是 $P$ 到自身的严格增映射并满足 $\phi(x) < x$，与之前结果矛盾.
 \end{proof}
 
-序数的原初想法是良序集的序型; 假如循此进路, 则必须视之为类而非集合, 那么谈论序数全体 $\textbf{On}$ 便相当于操作``类的类'', 显然有些棘手. 幸亏我们能从每个良序型中挑出一个标准的良序集, 从而得到更精确的描述, 为此需要 von Neumann 的如下定义.
-\begin{definition}\label{def:ordinal}\index{xushu@序数 (ordinal)}
-	如果一个集合 $\alpha$ 的每个元素都是 $\alpha$ 的子集 (换言之, $\alpha \subset P(\alpha)$), 则称 $\alpha$ 为\emph{传递}的. 若传递集 $\alpha$ 对于 $x < y \stackrel{\text{定义}}{\iff} x \in y$ 成为良序集, 则称 $\alpha$ 为\emph{序数}.
+序数的原初想法是良序集的序型；假若循此进路，则必须视之为类而非集合，则谈论序数全体 $\mathbf{On}$ 便相当于操作“类的类”，显然棘手。幸亏能从每个良序型中挑出一个标准良序集，从而描述更精确，为此需要如下概念：
+\begin{definition}[von Neumann]\label{def:ordinal}
+	若集合 $\alpha$ 的每个元素都是 $\alpha$ 的子集，即 $\alpha \subset 2^\alpha$，则称 $\alpha$ 为\textbf{传递}的。若传递集 $\alpha$ 对于 $x < y \stackrel{\text{定义}}{\iff} x \in y$ 成为良序集，则称 $\alpha$ 为\textbf{序数}(ordinal).
 \end{definition}
 
-显然 $\emptyset$ 是序数. 若 $\alpha$ 是序数, 则 $\alpha \sqcup \{\alpha\}$ 亦然. 序数的完整理论可参阅 \cite[\S 2]{Je03} 或 \cite[第四章]{HY14}, 以下仅摘录部分重要性质. 关于序数与良序型的联系请见命题 \ref{prop:ordinal-ordertype}.
+显然 $\mt$ 是序数。若 $\alpha$ 是序数，则 $\alpha \sqcup \{\alpha\}$ 亦然。序数、良序型的联系见命题 \ref{prop:ordinal-ordertype}.
 
 \begin{lemma}\label{prop:ordinal-property}
-	序数满足下述性质.
+	序数满足下述性质：
 	\begin{compactenum}[(i)]
-		\item 若 $\alpha$ 是序数, $\beta \in \alpha$, 则 $\beta$ 也是序数.
-		\item 对任两个序数 $\alpha, \beta$, 若 $\alpha \subsetneq \beta$ 则 $\alpha \in \beta$.
-		\item 对任两个序数 $\alpha, \beta$, 必有 $\alpha \subset \beta$ 或 $\beta \subset \alpha$.
+		\item 若 $\alpha$ 是序数，$\beta \in \alpha$，则 $\beta$ 也是序数.
+		\item 对任两个序数 $\alpha,\beta$，若 $\alpha \subsetneq \beta$ 则 $\alpha \in \beta$.
+		\item 对任两个序数 $\alpha,\beta$，必有 $\alpha \subset \beta$ 或 $\beta \subset \alpha$.
 	\end{compactenum}
 \end{lemma}
 \begin{proof}
-	先证 (i). 据 $\alpha$ 的传递性可知 $\beta \subset \alpha$, 且 $(\beta, \in)$ 也是良序集. 接着证明 $\beta$ 传递: 设 $\tau \in \beta \subset \alpha$,  仅需证明 $x \in \tau \implies x \in \beta$ 即可. 由于 $\in$ 赋予 $\alpha$ 序结构, 由 $x \in \tau \in \beta$ 可知 $x \in \beta$.
+	对于 (i)，据 $\alpha$ 的传递性可知 $\beta \subset \alpha$，且 $(\beta,\in)$ 也是良序集。接着证明 $\beta$ 传递：设 $\tau \in \beta \subset \alpha$， 仅需证明 $x \in \tau \im x \in \beta$ 即可。由于 $\in$ 赋予 $\alpha$ 序结构，由 $x \in \tau \in \beta$ 可知 $x \in \beta$.
 
-	对于 (ii), 以 $<$ 表示 $\in$ 并令 $\gamma$ 为 $(\beta \smallsetminus \alpha, <)$ 的极小元. 我们断言 $\alpha = \{x \in \beta : x < \gamma \}$, 而后者无非是 $\gamma$. 包含关系 $\supset$ 是显然的. 对于 $\subset$, 给定 $y \in \alpha \subset \beta$, 首先排除 $\gamma = y$; 其次, 由 $\alpha$ 的传递性有 $y \subset \alpha$, 依此排除 $\gamma < y$, 故 $y < \gamma$.
+	对于 (ii)，以 $<$ 表示 $\in$ 并令 $\gamma$ 为 $(\beta \backslash \alpha, <)$ 的极小元。我们断言 $\alpha = \{x \in \beta : x < \gamma \}$，而后者无非是 $\gamma$。包含关系 $\supset$ 是显然的。对于 $\subset$，给定 $y \in \alpha \subset \beta$，首先排除 $\gamma = y$; 其次，由 $\alpha$ 的传递性有 $y \subset \alpha$，依此排除 $\gamma < y$，故 $y < \gamma$.
 
-	对于 (iii), 显见 $\gamma := \alpha \cap \beta$ 也是序数. 我们断言 $\gamma = \alpha$ 或 $\gamma = \beta$ 必居其一, 否则由上述结果可得 $\gamma \in \alpha$, $\gamma \in \beta$, 于是有 $\gamma \in \gamma$, 亦即在偏序集 $(\alpha, \leq)$ 中 $\gamma < \gamma$, 这同 $<$ 的涵义 ($\leq$ 但 $\neq$) 矛盾.
+	对于 (iii)，显见 $\gamma := \alpha \cap \beta$ 也是序数。我们断言 $\gamma = \alpha$ 或 $\gamma = \beta$ 必居其一，否则由上述结果可得 $\gamma \in \alpha$，$\gamma \in \beta$，于是有 $\gamma \in \gamma$，亦即在偏序集 $(\alpha,\leqslant)$ 中 $\gamma < \gamma$，这同 $<$ 的涵义 ($\leqslant$ 但 $\neq$) 矛盾.
 \end{proof}
 
-从引理立得以下直接推论.
 \begin{theorem}\label{prop:On-wellorder}
-	定义 $\textbf{On}$ 为序数构成的类. \index[sym1]{$\textbf{On}$}
+	定义 $\mathbf{On}$ 为序数构成的类。
 	\begin{compactitem}
-		\item 对序数定义 $\beta < \alpha$ 当且仅当 $\beta \in \alpha$, 则这定义了 $\textbf{On}$ 上的一个全序, 而且对任意序数 $\alpha$ 都有 $\alpha = \{ \beta : \beta < \alpha \}$.
-		\item 若 $C$ 是一个由序数构成的类, $C \neq \emptyset$, 则 $\inf C := \bigcap C$ 也是序数, 而且 $\inf C \in C$; 我们有 $\alpha \sqcup \{\alpha\} = \inf\{ \beta: \beta > \alpha \}$.
-		\item 若 $S$ 是一个由序数构成的集合, $S \neq \emptyset$, 则 $\sup S := \bigcup S$ 也是序数.
+		\item 对序数定义 $\beta < \alpha$ 当且仅当 $\beta \in \alpha$，则这定义了 $\mathbf{On}$ 上的一个全序，而且对任意序数 $\alpha$ 都有 $\alpha = \{ \beta : \beta < \alpha \}$.
+		\item 若 $C$ 是一个由序数构成的类，$C \neq \mt$，则 $\inf C := \bigcap C$ 也是序数，而且 $\inf C \in C$; 我们有 $\alpha \sqcup \{\alpha\} = \inf\{ \beta: \beta > \alpha \}$.
+		\item 若 $S$ 是一个由序数构成的集合，$S \neq \mt$，则 $\sup S := \bigcup S$ 也是序数.
 	\end{compactitem}
 \end{theorem}
-由此可知 $\beta < \alpha$ 蕴涵 $\beta$ 是 $\alpha$ 的前段. 性质 $\alpha = \{\beta: \beta < \alpha \}$ 是理解序数构造的钥匙.
+由此可知 $\beta < \alpha$ 蕴涵 $\beta$ 是 $\alpha$ 的前段。性质 $\alpha = \{\beta: \beta < \alpha \}$ 是理解序数构造的钥匙。
+给定序数 $\alpha$，置 $\alpha + 1 := \alpha \sqcup \{\alpha\} > \alpha$，称为 $\alpha$ 的\textbf{后继}; 它是大于 $\alpha$ 的最小序数。若 $\alpha$ 不是任何序数的后继，则不难看出 $\alpha = \sup\{\beta: \beta < \alpha\}$，这样的 $\alpha$ 称为\textbf{极限序数}(limit ordinal)。约定空 $\sup$ 为 $\mt$ 使得“零序数” $\mt$ 是极限序数.
 
-给定序数 $\alpha$, 置 $\alpha + 1 := \alpha \sqcup \{\alpha\} > \alpha$, 称为 $\alpha$ 的\emph{后继}; 它是大于 $\alpha$ 的最小序数. 若 $\alpha$ 不是任何序数的后继, 则不难看出 $\alpha = \sup\{\beta: \beta < \alpha\}$, 这样的 $\alpha$ 称为\emph{极限序数}\index{xushu!极限序数 (limit ordinal)}. 约定空 $\sup$ 为 $\emptyset$ 使得``零序数'' $\emptyset$ 是极限序数.
-
-\begin{proposition}\label{prop:Ord-class}
-	序数类 $\textbf{On}$ 是真类.
+\begin{proposition}[Burali-Forti 佯谬，1897年]\label{prop:Ord-class}
+	序数类 $\mathbf{On}$ 是真类.
 \end{proposition}
 \begin{proof}
-	前述结果表明若 $\textbf{On}$ 是集合, 则 $\sup(\textbf{On})$ 有定义, 而且序数 $\sup(\textbf{On}) + 1$ 将严格大于所有序数, 包括它自己!
-\end{proof}
-这被称为 Burali-Forti 佯谬 (1897年)\index{Burali-Forti 佯谬}, 它面世要早于 Russell 佯谬 (1902年), 尽管后者影响更大.
-
-\begin{example}[无穷序数 $\omega$ 的构造] \index[sym1]{omega@$\omega$}
-	考虑序数 $0 := \emptyset$, 不断取后继得到序数
-	\[ 1 := 0 + 1, \quad 2 := 1+1, \quad 3=2+1, \ldots \]
-	等等. 现在我们着手定义最小的非零极限序数 $\omega$, 这样的序数如存在则必包含所有 $0,1,2, \ldots$, 而且实由它们构成. 首务是证明非零极限序数存在: 回忆无穷公理 \textbf{A.6} 中归纳集的概念, 若 $x$ 是归纳集, 取 $\alpha := \{y \in x : y \subset x, \; y \in \textbf{On} \}$. 按定义直接验证以下性质:
-	\begin{inparaenum}[(a)]
-		\item $\emptyset \in \alpha$ 故 $\alpha$ 非空,
-		\item $\alpha$ 是序数,
-		\item $y \in \alpha \implies y + 1 \in \alpha$, 因此 $\alpha$ 确为极限序数.
-	\end{inparaenum}
-	取序数 $\omega := \inf\{ \text{非零极限序数} \}$ 即所求. 满足 $n < \omega$ 的序数 $n$ 称为\emph{有限序数}.
-
-	在同构意义下, 序数 $\omega = \{n : n=0, 1, \ldots \}$ 不外是我们直觉中的良序集 $\Z_{\geq 0}$; 这也可以看作是从空集出发, 在 ZFC 框架下定义非负整数集的一种手法. 更明确地说, $\omega$ 连同其中元素的后继运算 $n \mapsto n+1$ 满足 Peano 的算术公理 (见 \cite[第零章, \S 2]{DN00}), 而这是我们实际操作整数时所需的全部性质, 定理 \ref{prop:transfinite-induction} 将触及其中关键的一条: 数学归纳法.
-\end{example}
-
-\section{超穷递归及其应用}
-定理 \ref{prop:On-wellorder} 表明真类 $\textbf{On}$ 对 $\leq$ 也有良序性质: 任何由序数构成的类都有极小元. 这立即导向以下结果.
-\begin{theorem}[超穷归纳法]\label{prop:transfinite-induction} \index{chaoqiongguinafa@超穷归纳法 (transfinite induction)}
-	令 $C$ 为一个由序数构成的类. 假设
-	\begin{compactenum}[(i)]
-		\item $0 \in C$,
-		\item $\alpha \in C \implies \alpha+1 \in C$,
-		\item 设 $\alpha$ 为极限序数, 若对每个 $\beta < \alpha$ 皆有 $\beta \in C$, 则 $\alpha \in C$,
-	\end{compactenum}
-	那么 $C = \textbf{On}$. 如果仅考虑小于某 $\theta$ 的序数而非 $\textbf{On}$ 整体, 断言依然成立.
-\end{theorem}
-\begin{proof}
-	设若不然, 取不在 $C$  中的最小序数 $\alpha \neq 0$, 无论它是后继或极限序数都导致矛盾.
+	前述结果表明若 $\mathbf{On}$ 是集合，则 $\sup(\mathbf{On})$ 有定义，而且序数 $\sup(\mathbf{On}) + 1$ 将严格大于所有序数，包括它自己。
 \end{proof}
 \begin{remark}
-	回忆到 $\theta = \{\alpha \in \textbf{On}: \alpha < \theta \}$. 如取 $\theta = \omega$ 则得到经典的数学归纳法, 此时不涉及情况 (iii).
+	它面世早于 Russell 佯谬(1902年)，尽管后者影响更大.
 \end{remark}
 
-定理 \ref{prop:transfinite-induction} 常用以递归地构造一列以序数枚举的数学对象, 它基于某规则 $G$ 如下:
+\begin{example}[von Neumann] 下面构造无穷序数 $\omega$。
+	考虑序数 $0 := \mt$，取后继得序数
+	\[ 1 := 0 + 1,\quad 2 := 1+1,\quad 3=2+1,\ldots \]
+	现在着手定义最小的非零极限序数 $\omega$，这种序数若存在，则必包含所有 $0,1,2,\ldots$，且实由它们构成。首务是证明非零极限序数存在。回忆无穷公理 \textbf{A.6}：若 $x$ 是归纳集，取 $\alpha := \{y \in x : y \subset x,\; y \in \mathbf{On} \}$。直接验证:
+	\begin{inparaenum}[(a)]
+		\item $\mt \in \alpha$ 故 $\alpha\ne\mt$,
+		\item $\alpha$ 是序数,
+		\item $y \in \alpha \im y + 1 \in \alpha$，故 $\alpha$ 确为极限序数.
+	\end{inparaenum}
+	取序数 $\omega := \inf\{ \text{非零极限序数} \}$ 即所求。满足 $n < \omega$ 的序数 $n$ 称为\textbf{有限序数}.
+
+	在同构意义下，序数 $\omega = \{n : n=0, 1,\ldots \}$ 不外是我们直觉中的良序集 $\N$；这也可以看作是从空集出发，在 ZFC 框架下定义 $\N$ 的一种手法。更明确地说，$\omega$ 连同其中元素的后继运算 $n \mapsto n+1$ 满足\textbf{Peano 算术公理}，而这是我们实际操作整数时所需的全部性质，定理 \ref{prop:transfinite-induction} 将触及其中关键的一条：\textbf{数学归纳法}.
+\end{example}
+
+\subsection{超穷递归及其应用}
+定理 \ref{prop:On-wellorder} 表明真类 $\mathbf{On}$ 对 $\leqslant$ 也有良序性质：任何由序数构成的类都有极小元。这立即导致：
+\begin{theorem}[超穷归纳法(transfinite induction)]\label{prop:transfinite-induction}
+	令 $C$ 为一个由序数构成的类。假设
+	\begin{compactenum}[(i)]
+		\item $0 \in C$,
+		\item $\alpha \in C \im \alpha+1 \in C$,
+		\item 设 $\alpha$ 为极限序数，若对每个 $\beta < \alpha$ 皆有 $\beta \in C$，则 $\alpha \in C$,
+	\end{compactenum}
+	那么 $C = \mathbf{On}$。如果仅考虑小于某 $\theta$ 的序数而非 $\mathbf{On}$ 整体，断言依然成立.
+\end{theorem}
+\begin{proof}
+	设若不然，取不在 $C$  中的最小序数 $\alpha \neq 0$，无论它是后继或极限序数都导致矛盾.
+\end{proof}
+\begin{remark}
+	回忆到 $\theta = \{\alpha \in \mathbf{On}: \alpha < \theta \}$。如取 $\theta = \omega$ 则得到数学归纳法，此时不涉及情况 (iii).
+\end{remark}
+
+定理 \ref{prop:transfinite-induction} 常用以递归地构造一列以序数枚举的数学对象，它基于某规则 $G$ 如下:
 \begin{compactdesc}
 	\item[第零项] $a_0 = G(0)$ 给定,
-	\item[后继项] 设 $\alpha = \beta+1$, 已知 $a_\beta$, 则可以确定 $a_\alpha = a_{\beta + 1} = G(a_\beta)$,
-	\item[极限项] 设 $\alpha$ 是极限序数, 已知 $\{a_\beta : \beta < \alpha \}$, 则可以确定 $a_\alpha = G(\{a_\beta : \beta < \alpha \})$.
+	\item[后继项] 设 $\alpha = \beta+1$，已知 $a_\beta$，则可以确定 $a_\alpha = a_{\beta + 1} = G(a_\beta)$,
+	\item[极限项] 设 $\alpha$ 是极限序数，已知 $\{a_\beta : \beta < \alpha \}$，则可以确定 $a_\alpha = G(\{a_\beta : \beta < \alpha \})$.
 \end{compactdesc}
-不难想象这将唯一确定一列集合 $a_\alpha$, 兹改述并证明如下. 考虑函数 $G: \textbf{V} \to \textbf{V}$, 虽然 $\textbf{V}$ 是真类, 然而如早先所述, $G$ 可以诠释为一阶逻辑中的某类公式而不影响以下操作. 引入 $\theta$-列的概念: 这是指函数 $a: \theta \to \textbf{V}$, 亦可理解为形如 $\{a_\alpha : \alpha < \theta \}$ 的列.
+不难想象这将唯一确定一列集合 $a_\alpha$，兹改述并证明如下。考虑映射 $G: \mathbf{V} \to \mathbf{V}$，虽然 $\mathbf{V}$ 是真类，然而如早先所述，$G$ 可以诠释为一阶逻辑中的某类公式而不影响以下操作。引入 $\theta$-列的概念：这是指映射 $a: \theta \to \mathbf{V}$，亦可理解为形如 $\{a_\alpha : \alpha < \theta \}$ 的列.
 
 \begin{theorem}[超穷递归原理]
-	对任意序数 $\theta$, 存在唯一的 $\theta$-列 $a$ 使得 $\alpha < \theta \implies a(\alpha) = G(a|_\alpha)$. 特别地, 存在唯一的函数 $a: \textbf{On} \to \textbf{V}$ 使得对每个序数 $\alpha$ 皆有 $a(\alpha) = G(a|_\alpha)$.
+	对任意序数 $\theta$，存在唯一的 $\theta$-列 $a$ 使得 $\alpha < \theta \Rightarrow a(\alpha) = G(a|_\alpha)$。特别地，存在唯一的映射 $a: \mathbf{On} \to \mathbf{V}$ 使得对每个序数 $\alpha$ 皆有 $a(\alpha) = G(a|_\alpha)$.
 \end{theorem}
-几点说明:
-\begin{inparaenum}[(a)]
-	\item 替换公理模式 \textbf{A.7} 确保函数限制 $a|_\alpha$ 可以按寻常方法等同于集合 $\{ (\beta, a(\beta)) : \beta \in \alpha \}$, 故 $G$ 对之可以取值;
-	\item 我们将函数限制 $a|_0$ 理解为空集 $0$, 故按定义 $a(0) = G(0)$;
-	\item 定理前半段只要求 $G$ 对形如 $\alpha \to \textbf{V}$ 的函数有定义, 其中 $\alpha < \theta$.
+\begin{remark}
+	\begin{inparaenum}[(a)]
+	\item 替换公理模式 \textbf{A.7} 确保映射的\textbf{限制} $a|_\alpha$ 可按寻常方法等同于 $\{ (\beta, a(\beta)) : \beta \in \alpha \}$，故 $G$ 对之可以取值；
+	\item $a|_0$ 理解为空集 $0$，故按定义 $a(0) = G(0)$；
+	\item 定理前半段只要求 $G$ 对形如 $\alpha \to \mathbf{V}$ 的映射有定义，其中 $\alpha < \theta$.
 \end{inparaenum}
+\end{remark}
+
 \begin{proof}
-	第一步, 若 $\theta$-列 $a, a'$ 皆满足所示性质, 我们断言 $\alpha < \theta$ 蕴涵 $a(\alpha) = a'(\alpha)$, 如是则 $a=a'$: 这对 $\alpha=0$ 已知; 设若这对所有 $\beta < \alpha$ 成立, 那么 $a|_\alpha = a'|_\alpha$ 故 $a(\alpha) = a'(\alpha)$; 应用定理 \ref{prop:transfinite-induction} 遂得以上断言.
+	第一步，若 $\theta$-列 $a, a'$ 皆满足所示性质，我们断言 $\alpha < \theta$ 蕴涵 $a(\alpha) = a'(\alpha)$，如是则 $a=a'$：这对 $\alpha=0$ 已知; 设若这对所有 $\beta < \alpha$ 成立，那么 $a|_\alpha = a'|_\alpha$ 故 $a(\alpha) = a'(\alpha)$; 应用定理 \ref{prop:transfinite-induction} 遂得以上断言.
 	
-	第二步是 $\theta$-列 $a$ 的存在性. 当 $\theta=0$ 时为显然. 今设 $\theta > 0$, 并且对任意 $\xi < \theta$, 所求 $\xi$-列 $a[\xi]$ 皆存在, 则由替换公理模式知 $a[\xi]$ 确实是集合间的映射; 由第一步可将诸 $a[\xi]$ 拼接为定义在 $\theta$ 上的函数 $a$ 使得 $a|_\xi = a[\xi]$, 而且使性质 $\alpha < \theta \implies a(\alpha) = G(a|_\alpha)$ 成立, 这是容易的.
+	第二步是 $\theta$-列 $a$ 的存在性。当 $\theta=0$ 时为显然。今设 $\theta > 0$，并且对任意 $\xi < \theta$，所求 $\xi$-列 $a[\xi]$ 皆存在，则由替换公理模式知 $a[\xi]$ 确实是集合间的映射; 由第一步可将诸 $a[\xi]$ 拼接为定义在 $\theta$ 上的映射 $a$ 使得 $a|_\xi = a[\xi]$，而且使性质 $\alpha < \theta \im a(\alpha) = G(a|_\alpha)$ 成立，这是容易的.
 	
-	最后, 由于 $\textbf{On}$ 无极大元, 根据前两步可以唯一地定义 $a: \textbf{On} \to \textbf{V}$.
+	最后，由于 $\mathbf{On}$ 无极大元，根据前两步可以唯一地定义 $a: \mathbf{On} \to \mathbf{V}$.
 \end{proof}
 
-借助超穷递归原理, 能对序数定义类似于非负整数的运算如次. 以下在情形 (iii) 总假设 $\beta$ 是极限序数:
+借助超穷递归原理，能对序数定义类似于自然数的运算如次。以下在情形 (iii) 总假设 $\beta$ 是极限序数:
 \begin{itemize}
-	\item 加法: \begin{inparaenum}[(i)] \item $\alpha + 0 := \alpha$,  \item $\alpha + (\beta + 1) = (\alpha + \beta) + 1$, \item $\alpha + \beta = \sup\{ \alpha + \xi : \xi < \beta\}$. \end{inparaenum}
-	\item 乘法: \begin{inparaenum}[(i)] \item $\alpha \cdot 0 := 0$, \item $\alpha \cdot (\beta + 1) = \alpha \cdot \beta + \alpha$, \item $\alpha \cdot \beta = \sup\{\alpha \cdot \xi : \xi < \beta\}$. \end{inparaenum}
-	\item 指数: \begin{inparaenum}[(i)] \item $\alpha^0 := 1$, \item $\alpha^{\beta + 1} = \alpha^\beta \cdot \alpha$, \item $\alpha^\beta = \sup\{\alpha^\xi : \xi < \beta\}$. \end{inparaenum}
+	\item 加法：\begin{inparaenum}[(i)] \item $\alpha + 0 := \alpha$， \item $\alpha + (\beta + 1) = (\alpha + \beta) + 1$，\item $\alpha + \beta = \sup\{ \alpha + \xi : \xi < \beta\}$。\end{inparaenum}
+	\item 乘法：\begin{inparaenum}[(i)] \item $\alpha \cdot 0 := 0$，\item $\alpha \cdot (\beta + 1) = \alpha \cdot \beta + \alpha$，\item $\alpha \cdot \beta = \sup\{\alpha \cdot \xi : \xi < \beta\}$。\end{inparaenum}
+	\item 指数：\begin{inparaenum}[(i)] \item $\alpha^0 := 1$，\item $\alpha^{\beta + 1} = \alpha^\beta \cdot \alpha$，\item $\alpha^\beta = \sup\{\alpha^\xi : \xi < \beta\}$。\end{inparaenum}
 \end{itemize}
-可以验证序数对加法和乘法都满足结合律, 但一般不满足交换律. 施之于 $\alpha, \beta < \omega$ 便得到非负整数上的加法和乘法 (当然这时必须验证交换律). 至此, 我们已经基于公理集合论为 $\Z_{\geq 0}$ 上的算术奠定了基础, 将之加工为 $\Z$ 及 $\Q$ 则可以说是代数学的任务, 手法是大家熟知的. 一般性的工具将在定义--定理 \ref{def:K-group} 和 \S\ref{sec:comm-ring-intro} 予以介绍.
+可验证序数对加、乘法都有结合律，但一般无交换律。施之于 $\alpha,\beta < \omega$ 便得到 $\N$ 上的加、乘法（这时须验证交换律）。至此，我们已基于集合论为 $\N$ 上的算术奠定了基础，加工为 $\Z,\Q$ 是代数学内容，手法是读者熟知的。当然，这套手法可以推广为更一般的工具，如 K-群、交换环。加工为 $\R$ 则是分析学内容。
 
 \begin{proposition}\label{prop:ordinal-ordertype}
-	对任意良序集 $P$, 存在唯一的序数 $\alpha$ 和良序集之间的同构 $\phi: P \rightiso \alpha$.
+	对任意良序集 $P$，存在唯一的序数 $\alpha$ 和良序集之间的同构 $\phi: P \rightiso \alpha$.
 \end{proposition}
 \begin{proof}
-	序数和同构的唯一性源自引理 \ref{prop:wellorder-automorphism} 和引理 \ref{prop:ordinal-property}. 可设 $P \neq \emptyset$, 并选取 $\mho \notin P$ (易见存在性). 以下将以超穷递归定义一族元素 $a_\alpha \in P \sqcup \{\mho\}$, 其中 $\alpha$ 取遍所有序数. 设 $a_0 := \text{min}(P)$, 并递归地定义
+	序数和同构的唯一性源自引理 \ref{prop:wellorder-automorphism} 和引理 \ref{prop:ordinal-property}。可设 $P \neq \mt$，并选取 $\mho \notin P$ (易见存在性)。以下将以超穷递归定义一族元素 $a_\alpha \in P \sqcup \{\mho\}$，其中 $\alpha$ 取遍所有序数。设 $a_0 := \text{min}(P)$，并递归地定义
 	\[ a_\alpha := \begin{cases}
-		\text{min}\left( P \smallsetminus \{a_\beta : \beta < \alpha \} \right), & \{a_\beta : \beta < \alpha \} \subsetneq P \\
+		\text{min}\left( P \backslash \{a_\beta : \beta < \alpha \} \right), & \{a_\beta : \beta < \alpha \} \subsetneq P \\
 		\mho, & \{a_\beta : \beta < \alpha \} = P.
 	\end{cases}\]
-	由于 $P$ 是集合, 必存在最小的序数 $\theta$ 使得 $a_\theta = \mho$, 否则这将蕴涵单射 $a: \textbf{On} \to P$, 分离公理模式 \textbf{A.3} 确保 $a(\textbf{On}) \subset P$ 是集合, 而替换公理模式 \textbf{A.7} 蕴涵 $\textbf{On} = a^{-1}(a(\textbf{On}))$ 亦是集合, 此与命题 \ref{prop:Ord-class} 矛盾. 可验证 $a_\alpha \mapsto \alpha$ 定义了偏序集的同构 $P \to \{\beta : \beta < \theta\} = \theta$.
+	由于 $P$ 是集合，必存在最小序数 $\theta$ 使 $a_\theta = \mho$，否则这将蕴涵单射 $a: \mathbf{On} \to P$，分离公理模式 \textbf{A.3} 确保 $a(\mathbf{On}) \subset P$ 是集合，而替换公理模式 \textbf{A.7} 蕴涵 $\mathbf{On} = a^{-1}(a(\mathbf{On}))$ 亦是集合，与 \ref{prop:Ord-class} 矛盾。可验证 $a_\alpha \mapsto \alpha$ 定义了偏序集的同构 $P \to \{\beta : \beta < \theta\} = \theta$.
 \end{proof}
 
-以下两个重要结果都依赖于选择公理 \textbf{A.9}. 其中 Zorn 引理是代数学的基本工具之一. 之前的论证技巧还会反复出现.
-\begin{theorem}[Zermelo 良序定理, 1904]\label{prop:wellorder-principle}\index{Zermelo 良序定理}
+
+选择公理 \textbf{A.9} 具有如下两个等价命题。Zorn 引理是代数学的基本工具之一。之前的论证技巧还会反复出现.
+\begin{theorem}[Zermelo 良序定理，1904]\label{prop:wellorder-principle}
 	任意集合 $S$ 都能被赋予良序.
 \end{theorem}
 \begin{proof}
-	我们断言 $S$ 和某个序数 $\theta$ 间存在双射. 选取元素 $\mho \notin S$ 如上. 由选择公理, 可以在 $S$ 的每个子集 $S'$ 里拣选元素 $g(S')$. 设 $a_0 := g(S)$, 并用超穷递归对每个序数 $\alpha$ 定义
+	断言 $S$ 和某个序数 $\theta$ 间存在双射。选取元素 $\mho \notin S$ 如上。由选择公理，可以在 $S$ 的每个子集 $S'$ 里拣选元素 $g(S')$。设 $a_0 := g(S)$，并用超穷递归对每个序数 $\alpha$ 定义
 	\[ a_\alpha := \begin{cases}
-		g \left( S \smallsetminus \{ a_\beta : \beta < \alpha \} \right), & S \neq \{ a_\beta : \beta < \alpha \} \\
+		g \left( S \backslash \{ a_\beta : \beta < \alpha \} \right), & S \neq \{ a_\beta : \beta < \alpha \} \\
 		\mho, & S = \{ a_\beta : \beta < \alpha \}.
 	\end{cases}\]
-	与先前类似, 因 $S$ 是集合, 故可取极小的 $\theta$ 使得 $a_\theta = \mho$, $S = \{a_\beta: \beta < \theta\}$, 后者和序数 $\theta = \{\beta : \beta < \theta \}$ 之间有显然的双射, 于是导出 $S$ 上的良序.
+	与先前类似，因 $S$ 是集合，故可取极小的 $\theta$ 使得 $a_\theta = \mho$，$S = \{a_\beta: \beta < \theta\}$，后者和序数 $\theta = \{\beta : \beta < \theta \}$ 之间有显然的双射，于是导出 $S$ 上的良序.
 \end{proof}
 
-\begin{theorem}[Zorn 引理]\label{prop:Zorn}\index{Zorn 引理}
-	设 $P$ 为非空偏序集, 而且 $P$ 中每个链都有上界, 则 $P$ 含有极大元.
+\begin{theorem}[Zorn 引理]\label{prop:Zorn}
+	若非空偏序集 $P$ 中每个链都有上界，则 $P$ 含有极大元.
 \end{theorem}
 \begin{proof}
-	类似于前一个证明. 假定 $P$ 不含极大元. 任取 $a_0 \in P$, 并用超穷递归对每个序数 $\alpha$ 定义 $a_\alpha \in P$, 使得 $\alpha < \beta \Rightarrow a_\alpha < a_\beta$, 其方法如次: 设对每个 $\beta < \alpha$ 都定义了 $a_\beta$ 如上, 则 $(a_\beta)_{\beta < \alpha}$ 在 $P$ 中成一链. 若 $\alpha$ 是极限序数, 则此链必有上界 $a_\alpha \notin \{ a_\beta \}_{\beta < \alpha}$; 若 $\alpha = \gamma + 1$ 是后继序数, 因 $P$ 无极大元故存在 $a_\alpha \in P$ 使得 $a_\alpha > a_\gamma$. 真类 $\textbf{On}$ 据此可以嵌入 $P$, 仿照命题 \ref{prop:ordinal-ordertype} 的论证导出 $\textbf{On}$ 亦是集合, 矛盾.
+	类似于前一个证明。假定 $P$ 不含极大元。任取 $a_0 \in P$，并用超穷递归对每个序数 $\alpha$ 定义 $a_\alpha \in P$，使得 $\alpha < \beta \Rightarrow a_\alpha < a_\beta$，其方法如次：设对每个 $\beta < \alpha$ 都定义了 $a_\beta$ 如上，则 $(a_\beta)_{\beta < \alpha}$ 在 $P$ 中成一链。若 $\alpha$ 是极限序数，则此链必有上界 $a_\alpha \notin \{ a_\beta \}_{\beta < \alpha}$; 若 $\alpha = \gamma + 1$ 是后继序数，因 $P$ 无极大元故存在 $a_\alpha \in P$ 使得 $a_\alpha > a_\gamma$。真类 $\mathbf{On}$ 据此可以嵌入 $P$，仿照命题 \ref{prop:ordinal-ordertype} 的论证导出 $\mathbf{On}$ 亦是集合，矛盾.
 \end{proof}
-已知选择公理, 良序定理和 Zorn 引理相互等价, 任择一者连同 \textbf{A.1} -- \textbf{A.8} 皆给出 ZFC. 本书以选择公理为出发点.
+选择公理、良序定理和 Zorn 引理任择一者，连同 \textbf{A.1} -- \textbf{A.8} 均给出 ZFC。
 
-\section{基数}\label{sec:cardinal-number}
-基数是描述集合大小的一种标杆, 我们从等势的概念出发, 随后联系到序数.
+\subsection{基数}\label{sec:cardinal-number}
+基数用以描述集合大小。我们从等势的概念出发，随后联系到序数.
 
-\begin{definition}\index{dengshi@等势 (equipollence)}
-	若两集合 $X, Y$ 之间存在双射 $\phi: X \to Y$, 则称 $X, Y$ \emph{等势}.
-
-	等势构成了集合间的等价关系, 集合 $X$ 的等势类记作 $|X|$. 若存在单射 $\phi: X \to Y$, 则记作 $|X| \leq |Y|$.
+\begin{definition}
+	若两集合 $X, Y$ 之间存在双射 $\phi: X \to Y$，则称 $X, Y$ \textbf{等势}(equipollence).
+	等势构成了集合间的等价关系，集合 $X$ 的等势类记作 $|X|$。若存在单射 $\phi: X \to Y$，则记作 $|X| \leqslant |Y|$.
 \end{definition}
 
-关系 $\leq$ 显然只依赖于等势类, 并满足传递性: $|X| \leq |Y|$, $|Y| \leq |Z|$ 蕴涵 $|X| \leq |Z|$. 我们用 $|X| < |Y|$ 表示 $|X| \leq |Y|$, $|X| \neq |Y|$.  以下证明 $\leq $满足反称性, 因而在等势类上定义了偏序.
+关系 $\leqslant$ 显然只依赖于等势类，并满足传递性：$|X| \leqslant |Y|$，$|Y| \leqslant |Z|$ 蕴涵 $|X| \leqslant |Z|$。我们用 $|X| < |Y|$ 表示 $|X| \leqslant |Y|,|X| \neq |Y|$。 以下证明 $\leqslant $满足反称性，因而在等势类上定义了偏序.
 
-\begin{theorem}[Schröder--Bernstein]\label{prop:Schröder-Bernstein}
-	若两集合 $X,Y$ 满足 $|X| \leq |Y|$ 和 $|Y| \leq |X|$, 则 $|X|=|Y|$.
+\begin{theorem}[Schröder-Bernstein]\label{prop:Schröder-Bernstein}
+	若集合 $X,Y$ 满足 $|X| \leqslant |Y|, |Y| \leqslant |X|$，则 $|X|=|Y|$.
 \end{theorem}
 \begin{proof}
-	考虑单射 $f: X \to Y$ 和 $g: Y \to X$. 我们可以在断言中以 $g(Y)$ 代替 $Y$, 从而化约到 $Y \subset X$ 而 $g$ 是包含映射的情形, 即 $f(X) \subset Y \subset X$. 置 $X_0 := X$, $Y_0 := Y$, 我们递归地对所有 $n \in \Z_{\geq 0}$ 定义
-	\begin{align*}
-		X_{n+1} & := f(X_n), \\
-		Y_{n+1} & := f(Y_n).
-	\end{align*}
+	考虑单射 $f: X \to Y, g: Y \to X$。我们可以在断言中以 $g(Y)$ 代替 $Y$，从而化约到 $Y \subset X$ 而 $g$ 是包含映射的情形，即 $f(X) \subset Y \subset X$。置 $X_0 := X,Y_0 := Y$，我们递归地对所有 $n \in \N$ 定义 $X_{n+1} := f(X_n), Y_{n+1} := f(Y_n)$。
 	从而得到一列嵌套的子集
-	\[ \underbracket{X_0}_{=X} \supset \underbracket{Y_0}_{=Y} \supset \cdots \supset X_n \supset Y_n \supset X_{n+1} \supset \cdots . \]
+	\[ \underbracket{X_0}_{=X} \supset \underbracket{Y_0}_{=Y} \supset \cdots \supset X_n \supset Y_n \supset X_{n+1} \supset \cdots .\]
 	定义映射 $\phi: X \to Y$ 如下
 	\[ \phi(x) = \begin{cases}
-		f(x), & \text{如果}\; \exists n \geq 0, \; x \in X_n \smallsetminus Y_n, \\
+		f(x), & \text{如果}\; \exists n \geqslant 0,\; x \in X_n \backslash Y_n,\\
 		x, & \text{其他情形}.
 	\end{cases} \]
 	容易验证 $\phi$ 是良定的双射.
 \end{proof}
 
-许多书籍直接将基数定义为等势类. 一如序数的情形, 本章的进路是为每个等势类指定标准的代表元, 从而将基数理解为一类特别的序数. 在此先回顾等势类的基本运算:
-\begin{compactenum}[(i)]
-	\item $|X|+|Y| = |X \sqcup Y|$,
-	\item $|X| \cdot |Y| = |X \times Y|$, 
-	\item $|X|^{|Y|} = |X^Y|$.
-\end{compactenum}
-推而广之, 设 $(X_i)_{i \in I}$ 为以集合 $I$ 为指标的一族集合, 则可定义基数和
-\begin{gather}\label{eqn:cardinal-infinite-sum}
-	\sum_{i \in I} |X_i| := \left\lvert \bigsqcup_{i \in I} X_i \right\rvert.
+许多书籍直接将基数定义为等势类。一如序数的情形，本章的进路是为每个等势类指定标准的代表元，从而将基数理解为一类特别的序数。在此先回顾等势类的基本运算：
+\begin{inparaenum}[(i)]
+	\item $|X|+|Y| = |X \sqcup Y|$；
+	\item $|X| \cdot |Y| = |X \times Y|$；
+	\item $|X|^{|Y|} = |X^Y|$。
+\end{inparaenum}
+推而广之，设 $(X_i)_{i \in I}$ 为以集合 $I$ 为指标的一族集合，则可定义基数和与积
+\begin{gather}
+	\sum_{i \in I} |X_i| := \left\lvert \bigsqcup_{i \in I} X_i \right\rvert, \quad \prod_{i \in I} |X_i| := \left\lvert \prod_{i \in I} X_i \right\rvert.
 \end{gather}
-与积
-\begin{gather}\label{eqn:cardinal-infinite-prod}
-	\prod_{i \in I} |X_i| := \left\lvert \prod_{i \in I} X_i \right\rvert.
-\end{gather}
-可验证两者都是良定的运算. 关于基数之无穷和与无穷积的进一步讨论可参阅 \cite[pp.52-55]{Je03}.
-
-另外注意到 $2^{|X|} = |P(X)|$. 下述定理是熟知的.
-
+可验证两者都是良定的运算。基数之无穷和与无穷积的进一步讨论从略.
+另外注意到 $2^{|X|} = |2^X|$。下述定理是熟知的.
 \begin{theorem}[Cantor]\label{prop:Cantor}
-	对任意集合 $X$ 皆有 $|P(X)| > |X|$.
+	对任意集合 $X$ 皆有 $|2^X| > |X|$.
 \end{theorem}
 \begin{proof}
-	存在单射 $X \to P(X)$, 然而任何映射 $\phi: X \to P(X)$ 皆非满: 仅需验证集合 $Y := \{x \in X : x \notin \phi(x) \}$ 不在 $\phi$ 的像里.
+	存在单射 $X \to 2^X$，然而任何映射 $\phi: X \to 2^X$ 皆非满：仅需验证集合 $Y := \{x \in X : x \notin \phi(x) \}$ 不在 $\phi$ 的像里.
 \end{proof}
 
-\begin{definition}\index{jishu@基数 (cardinal)}
-	序数 $\kappa$ 称为\emph{基数}, 如果对任意序数 $\lambda < \kappa$ 都有 $|\lambda| < |\kappa|$.
+\begin{definition}
+	序数 $\kappa$ 称为\textbf{基数}(cardinal)，如果对任意序数 $\lambda < \kappa$ 都有 $|\lambda| < |\kappa|$.
 \end{definition}
-换言之, 基数无非是一个等势类中的极小序数. 现在我们用选择公理联系等势类和基数.
+换言之，基数无非是等势类中的极小序数。现在用选择公理联系等势类和基数.
 
 \begin{proposition}
-	对任意集合 $X$, 可取最小的序数 $\alpha(X)$ 使得 $|X|=|\alpha(X)|$. 则 $X \mapsto \alpha(X)$ 给出等势类和基数的一一对应. 特别地, 对任意集合 $X, Y$ 必有 $|X| \leq |Y|$ 或 $|Y| \leq |X|$.
+	对任意集合 $X$，可取最小的序数 $\alpha(X)$ 使得 $|X|=|\alpha(X)|$。则 $X \mapsto \alpha(X)$ 给出等势类和基数的一一对应。特别地，对任意集合 $X, Y$ 必有 $|X| \leqslant |Y|$ 或 $|Y| \leqslant |X|$.
 \end{proposition}
 \begin{proof}
-  序数 $\alpha(X)$ 的存在性源于定理 \ref{prop:wellorder-principle}, 它显然是基数. 其余断言是显然的. 
+  序数 $\alpha(X)$ 的存在性源于定理 \ref{prop:wellorder-principle}，它显然是基数。其余断言是显然的。
 \end{proof}
 
-据此可以谈论一个集合的基数. 不难证明有限序数和 $\omega$ 都是基数. \emph{有限集}是基数为有限序数的集合, \emph{可数集}是基数为 $\omega$ 的集合, 其余称为\emph{不可数集}; 注意到任何无穷集总是包含一份与 $\Z_{\geq 0}$ 等势的子集, 这是因为无穷序数皆包含 $\omega$. 为了符号上方便, 今后我们将经常混同集合的等势类及相应的基数. \index{keshuji@可数集 (countable set)}
+据此可以谈论一个集合的基数。不难证明有限序数和 $\omega$ 都是基数。\textbf{有限集}是基数为有限序数的集合，\textbf{可数集}(countable set)是基数为 $\omega$ 的集合，其余称为\textbf{不可数集}；注意到任何无穷集总是包含一份与 $\N$ 等势的子集，这是因为无穷序数皆包含 $\omega$。为了符号上方便，今后我们将经常混同集合的等势类及相应的基数。
 
 \begin{lemma}\label{prop:cardinal-sup}
-	对任意序数 $\alpha$ 都存在基数 $\kappa > \alpha$. 如果 $S$ 是一个由基数构成的集合, 则 $\sup S$ 也是基数.
+	对任意序数 $\alpha$ 都存在基数 $\kappa > \alpha$。如果 $S$ 是一个由基数构成的集合，则 $\sup S$ 也是基数.
 \end{lemma}
 \begin{proof}
-	一个集合及其子集上所有可能的良序结构形成一个集合, 而 $\textbf{On}$ 是真类, 因此对任意 $X$ 总存在序数 $\theta$ 使得 $|\theta| > |X|$; 取 $X=\alpha$ 便得到第一个断言. 对于第二个断言, 假定存在序数 $\beta < \alpha := \sup S$ 使得 $|\beta| = |\alpha|$. 根据上确界性质, 必存在 $\kappa \in S$ 满足 $\kappa > \beta$, 因此 $|\beta| \leq |\kappa| \leq |\alpha| = |\beta|$, $|\beta|=|\kappa|$, 这与 $\kappa$ 是基数矛盾.
+	一个集合及其子集上所有可能的良序结构形成一个集合，而 $\mathbf{On}$ 是真类，因此对任意 $X$ 总存在序数 $\theta$ 使得 $|\theta| > |X|$; 取 $X=\alpha$ 便得到第一个断言。对于第二个断言，假定存在序数 $\beta < \alpha := \sup S$ 使得 $|\beta| = |\alpha|$。根据上确界性质，必存在 $\kappa \in S$ 满足 $\kappa > \beta$，因此 $|\beta| \leqslant |\kappa| \leqslant |\alpha| = |\beta|,|\beta|=|\kappa|$，这与 $\kappa$ 是基数矛盾.
 \end{proof}
 
-任意无穷集 $\alpha$ 都满足 $|\alpha \sqcup \{\alpha\}| = |\alpha|$ (处理 $\alpha=\Z_{\geq 0}$ 的情形即可), 所以无穷基数必为极限序数. 无穷基数称作 $\aleph$ 数. 引理 \ref{prop:cardinal-sup} 告诉我们如何用序数枚举无穷基数: 递归地定义\index[sym1]{aleph@$\aleph_\alpha$}
+任意无穷集 $\alpha$ 都满足 $|\alpha \sqcup \{\alpha\}| = |\alpha|$ (处理 $\alpha=\N$ 的情形即可)，所以无穷基数必为极限序数。无穷基数称作 $\aleph$ 数。引理 \ref{prop:cardinal-sup} 告诉我们如何用序数枚举无穷基数：递归地定义
 \begin{align*}
-	\aleph_0 & := \omega, \quad \text{这是最小的无穷基数}; \\
+	\aleph_0 & := \omega,\quad \text{这是最小的无穷基数}; \\
 	\aleph_{\alpha+1} & := \text{大于 $\aleph_\alpha$ 的最小基数}; \\
-	\aleph_\alpha & := \sup_{\beta < \alpha} \aleph_\beta, \quad \text{若 $\alpha$ 是极限序数}.
+	\aleph_\alpha & := \sup_{\beta < \alpha} \aleph_\beta,\quad \text{若 $\alpha$ 是极限序数}.
 \end{align*}
-特别地, 基数全体构成一个真类.
+特别地，基数全体构成一个真类.
 
 \begin{example}[Cantor]\label{eg:continuum}
-	我们证明 $|\R| = 2^{\aleph_0}$. 首先留意到 $|\Q|=|\Z_{\geq 0}|=\aleph_0$. Dedekind 分割 $x \mapsto \{r \in \Q: r < x \}$ 给出 $\R \hookrightarrow P(\Q)$, 于是 $|\R| \leq |P(\Q)|=2^{\aleph_0}$. 另一方面, 区间 $[0,1]$ 包含 Cantor 集
-	\[ C := \left\{ \sum_{n=1}^\infty a_n 3^{-n}: \forall n, \; a_n = 0 \;\text{或}\; 2  \right\}, \]
-	形式如上的 $3$ 进制表法是唯一的, 因此 $|\R| \geq |C| = 2^{\aleph_0}$. 应用定理 \ref{prop:Schröder-Bernstein} 即得所求.
+	我们证明 $|\R| = 2^{\aleph_0}$。首先留意到 $|\Q|=|\N|=\aleph_0$。Dedekind 分割 $x \mapsto \{r \in \Q: r < x \}$ 给出 $\R \hookrightarrow 2^\Q)$，于是 $|\R| \leqslant |2^\Q|=2^{\aleph_0}$。另一方面，区间 $[0,1]$ 包含 Cantor 集
+	\[ C := \left\{ \sum_{n=1}^\infty a_n 3^{-n}: \forall n,\; a_n = 0 \;\text{或}\; 2  \right\},\]
+	形式如上的 $3$ 进制表法是唯一的，因此 $|\R| \geqslant |C| = 2^{\aleph_0}$。应用定理 \ref{prop:Schröder-Bernstein} 即得所求.
 \end{example}
 
-集合论中常称实数集为``连续统''. 著名的连续统假设断言 $2^{\aleph_0} = \aleph_1$. 已知若预设 ZFC 公理系统的一致性, 那么无论是连续统假设 (P.\ Cohen, 1963) 或其否定 (K.\ Gödel, 1940) 都无法从 ZFC 的公理推出.
+集合论中常称实数集为“连续统”。时常断言
+\begin{hypothesis}[连续统假设]
+	$2^{\aleph_0} = \aleph_1$。
+\end{hypothesis}
+
+已知若预设 ZFC 系统的一致性，则连续统假设 (P.\ Cohen，1963) 及其否定 (K.\ Gödel，1940) 都无法从 ZFC 公理推出.
 
 \begin{theorem}[$\alpha \times \alpha$ 上的典范良序]\label{prop:Ord2-canonical}
-	真类 $\textbf{On}^2 = \textbf{On} \times \textbf{On}$ 上存在良序 $\prec$ 使得对每个序数 $\alpha$ 皆有 $\textbf{On}^2_{\prec (0, \alpha)} = (\alpha \times \alpha, \prec)$, 称作 $\alpha \times \alpha$ 上的典范良序. 进一步, $(\aleph_\alpha \times \aleph_\alpha, \prec)$ 的序型为 $\aleph_\alpha$; 作为推论, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$.
+	真类 $\mathbf{On}^2 = \mathbf{On} \times \mathbf{On}$ 上存在良序 $\prec$ 使得对每个序数 $\alpha$ 皆有 $\mathbf{On}^2_{\prec (0,\alpha)} = (\alpha \times \alpha,\prec)$，称作 $\alpha \times \alpha$ 上的\textbf{典范良序}。进一步，$(\aleph_\alpha \times \aleph_\alpha,\prec)$ 的序型为 $\aleph_\alpha$; 作为推论，$\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$.
 \end{theorem}
 \begin{proof}
-	在 $\textbf{On}^2$ 上定义 $(\alpha, \beta) \prec (\alpha', \beta')$ 当且仅当
+	在 $\mathbf{On}^2$ 上定义 $(\alpha,\beta) \prec (\alpha',\beta')$ 当且仅当
 	\begin{compactitem}
-		\item $\max\{\alpha, \beta\} < \max\{\alpha', \beta'\}$, 或者
-		\item $\max\{\alpha, \beta\} = \max\{\alpha', \beta'\}$, 此时以字典序比大小 (即先比较第一个分量, 相等则比第二个分量).
+		\item $\max\{\alpha,\beta\} < \max\{\alpha',\beta'\}$，或者
+		\item $\max\{\alpha,\beta\} = \max\{\alpha',\beta'\}$，此时以字典序比大小 (即先比较第一个分量，相等则比第二个分量).
 	\end{compactitem}
-	易见 $\prec$ 是 $\textbf{On}^2$ 上的良序. 而且 $0$ 是最小序数故 $(\alpha', \beta') \prec (0, \alpha) \iff \alpha', \beta' < \alpha$. 于是 $\textbf{On}^2_{\prec (0, \alpha)} = \alpha \times \alpha$.
+	易见 $\prec$ 是 $\mathbf{On}^2$ 上的良序。而且 $0$ 是最小序数故 $(\alpha',\beta') \prec (0,\alpha) \iff \alpha',\beta' < \alpha$。于是 $\mathbf{On}^2_{\prec (0,\alpha)} = \alpha \times \alpha$.
 	
-	如果 $(\aleph_\alpha \times \aleph_\alpha, \prec)$ 的序型为 $\aleph_\alpha$, 那么基数的定义 (一个等势类中的极小序数) 说明 $|\aleph_\alpha \times \aleph_\alpha| = \aleph_\alpha$, 以基数乘法来表示即 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$. 下面就来证明关于序型的断言.
+	如果 $(\aleph_\alpha \times \aleph_\alpha,\prec)$ 的序型为 $\aleph_\alpha$，那么基数的定义 (一个等势类中的极小序数) 说明 $|\aleph_\alpha \times \aleph_\alpha| = \aleph_\alpha$，以基数乘法来表示即 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$。下面就来证明关于序型的断言.
 
-	反设 $\alpha$ 为使得 $(\aleph_\alpha \times \aleph_\alpha, \prec)$ 不同构于 $\aleph_\alpha$ 的最小序数. 此处必有 $\alpha > 0$, 因为 $(\aleph_0 \times \aleph_0, \prec) \simeq \aleph_0$ 由下图给出.
+	反设 $\alpha$ 为使得 $(\aleph_\alpha \times \aleph_\alpha,\prec)$ 不同构于 $\aleph_\alpha$ 的最小序数。此处必有 $\alpha > 0$，因为 $(\aleph_0 \times \aleph_0,\prec) \simeq \aleph_0$ 由下图给出：
 	\begin{center}\begin{tikzpicture}
 		\matrix (A) [matrix of math nodes, row sep=3mm, column sep=4mm] {
 			9 & \cdots & \\
@@ -393,148 +390,135 @@
 		\draw[->] (0,0) -- (1.5, 0) node[right] {$\aleph_0$};
 		\draw[->] (0,0) -- (0, 1.5) node [above] {$\aleph_0$};
 	\end{tikzpicture}\end{center}
-	令序数 $\gamma$ 表 $(\aleph_\alpha \times \aleph_\alpha, \prec)$ 之序型, 并取同构 $f: \gamma \rightiso (\aleph_\alpha \times \aleph_\alpha, \prec)$. 基数的性质给出
-	\[ \gamma \geq |\gamma| = |\aleph_\alpha \times \aleph_\alpha| \geq \aleph_\alpha; \]
-	而 $\alpha$ 的选取蕴涵 $\gamma \neq \aleph_\alpha$, 故 $\gamma > \aleph_\alpha$. 既然 $\aleph_\alpha$ 是 $\gamma$ 的真前段, 限制 $f$ 就得到从 $\aleph_\alpha$ 至 $(\aleph_\alpha \times \aleph_\alpha, \prec)$ 的某个真前段的同构. 根据 $\prec$ 的定义, 存在序数 $\sigma < \aleph_\alpha$ 使得 $f(\aleph_\alpha) \subset \sigma \times \sigma$. 由于 $\aleph_\alpha$ 无穷, $\sigma$ 亦然.
+	令序数 $\gamma$ 表 $(\aleph_\alpha \times \aleph_\alpha,\prec)$ 之序型，并取同构 $f: \gamma \rightiso (\aleph_\alpha \times \aleph_\alpha,\prec)$。基数的性质给出 $\gamma \geqslant |\gamma| = |\aleph_\alpha \times \aleph_\alpha| \geqslant \aleph_\alpha$；
+	而 $\alpha$ 的选取蕴涵 $\gamma \neq \aleph_\alpha$，故 $\gamma > \aleph_\alpha$。既然 $\aleph_\alpha$ 是 $\gamma$ 的真前段，限制 $f$ 就得到从 $\aleph_\alpha$ 至 $(\aleph_\alpha \times \aleph_\alpha,\prec)$ 的某个真前段的同构。根据 $\prec$ 的定义，存在序数 $\sigma < \aleph_\alpha$ 使得 $f(\aleph_\alpha) \subset \sigma \times \sigma$。由于 $\aleph_\alpha$ 无穷，$\sigma$ 亦然.
 	
-	根据基数定义, 存在 $\beta < \alpha$ 使得 $|\sigma| = \aleph_\beta$. 关于 $\alpha$ 的极小性假设蕴涵 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$. 但这么一来
-	\[ \aleph_\alpha = |f(\aleph_\alpha)| \leq |\sigma| \cdot |\sigma| = \aleph_\beta \cdot \aleph_\beta = \aleph_\beta \]
-	遂与 $\beta < \alpha \implies \aleph_\beta < \aleph_\alpha$ 矛盾. 证毕.
+	根据基数定义，存在 $\beta < \alpha$ 使得 $|\sigma| = \aleph_\beta$。关于 $\alpha$ 的极小性假设蕴涵 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$。但如此便 $\aleph_\alpha = |f(\aleph_\alpha)| \leqslant |\sigma| \cdot |\sigma| = \aleph_\beta \cdot \aleph_\beta = \aleph_\beta$，
+	与 $\beta < \alpha \Rightarrow \aleph_\beta < \aleph_\alpha$ 矛盾。
 \end{proof}
 
 \begin{corollary}\label{prop:cardinal-max}
-	对任意非零基数 $\kappa$, $\lambda$, 设其一无穷, 则
+	对任意非零基数 $\kappa,\lambda$，设其一无穷，则
 	\begin{inparaenum}[(i)]
-		\item $\kappa + \lambda = \kappa \cdot \lambda = \max\{\lambda, \kappa\}$;
-		\item 若 $2 \leq \kappa \leq \lambda$, 则 $\kappa^\lambda = 2^\lambda$.
+		\item $\kappa + \lambda = \kappa \cdot \lambda = \max\{\lambda,\kappa\}$;
+		\item 若 $2 \leqslant \kappa \leqslant \lambda$，则 $\kappa^\lambda = 2^\lambda$.
 	\end{inparaenum}
 \end{corollary}
 \begin{proof}
-	先证明 (i). 不妨设 $\lambda$ 无穷而且 $\lambda \geq \kappa > 0$. 基数运算的定义蕴涵
-	\[ \lambda \leq \kappa + \lambda \leq \kappa \cdot \lambda \leq \lambda \cdot \lambda. \]
-	鉴于 Schröder--Bernstein 定理 \ref{prop:Schröder-Bernstein}, 一切化约到证明 $\lambda = \lambda \cdot \lambda$; 为此可将 $\lambda$ 视同于某个 $\aleph_\alpha$ 并应用定理 \ref{prop:Ord2-canonical} 即可. 断言 (ii) 归结为 $2^\lambda \leq \kappa^\lambda \leq (2^{\lambda})^\lambda = 2^{\lambda \cdot \lambda} = 2^\lambda$, 因此时 $\lambda$ 必无穷.
+	先证 (i)。不妨设 $\lambda$ 无穷且 $\lambda \geqslant \kappa > 0$。基数运算的定义蕴涵 $\lambda \leqslant \kappa + \lambda \leqslant \kappa \cdot \lambda \leqslant \lambda \cdot \lambda$。
+	鉴于 \ref{prop:Schröder-Bernstein}，一切化约到证明 $\lambda = \lambda \cdot \lambda$；为此可将 $\lambda$ 视同于某个 $\aleph_\alpha$ 并应用 \ref{prop:Ord2-canonical} 即可。断言 (ii) 归结为 $2^\lambda \leqslant \kappa^\lambda \leqslant (2^{\lambda})^\lambda = 2^{\lambda \cdot \lambda} = 2^\lambda$，因为此时 $\lambda$ 必无穷.
 \end{proof}
 
-正则基数的概念将在 \S\ref{sec:Grot-universe} 派上用场, 不妨这么看: 正则基数是无法由更小的基数拼凑而成的无穷基数. \index{jishu!正则基数 (regular cardinal)}
+正则基数的概念将在 \S\ref{sec:Grot-universe} 派上用场，不妨这么看：正则基数是无法由更小的基数拼凑而成的无穷基数。
 \begin{definition}\label{def:regular-cardinal}
-	一个无穷基数 $\alpha$ 称为\emph{正则基数}, 如果不存在极限序数 $\beta < \alpha$ 和严格增的序数列 $\{ a_\xi : \xi < \beta \}$ 使得 $\sup \{a_\xi : \xi < \beta\} = \alpha$.
+	一个无穷基数 $\alpha$ 称为\textbf{正则基数}(regular cardinal)，如果不存在极限序数 $\beta < \alpha$ 和严格增的序数列 $\{ a_\xi : \xi < \beta \}$ 使得 $\sup \{a_\xi : \xi < \beta\} = \alpha$.
 \end{definition}
 
-作为例子, 以下说明形如 $\aleph_{\gamma+\omega}$ 的基数均非正则, 这里 $\gamma$ 可以是任意序数: 在定义中取 $\beta := \gamma + \omega$ 和 $a_\xi := \aleph_\xi$, 关系 $\alpha := \aleph_\beta > \beta$ 理应是明显的; 而 $\aleph$ 数的定义表明 $\sup \{ a_\xi : \xi < \beta \} = \sup \{ \aleph_{\gamma + n} : n < \omega \} = \aleph_{\gamma+\omega}$.
+作为例子，以下说明形如 $\aleph_{\gamma+\omega}$ 的基数均非正则，这里 $\gamma$ 可以是任意序数：在定义中取 $\beta := \gamma + \omega, a_\xi := \aleph_\xi$，关系 $\alpha := \aleph_\beta > \beta$ 理应是明显的; 而 $\aleph$ 数的定义表明 $\sup \{ a_\xi : \xi < \beta \} = \sup \{ \aleph_{\gamma + n} : n < \omega \} = \aleph_{\gamma+\omega}$.
 
-\subsection{宇宙}\label{sec:Grot-universe}
-关于 Grothendieck 宇宙的第一手材料是 \cite[Exp.\ I, Appendice]{SGA4-1}.
+\subsection{Grothendieck 宇宙}\label{sec:Grot-universe}
 
-\begin{definition}\index{yuzhou@宇宙 (universe)}
-	本书所谓的\emph{宇宙}, 意谓一个满足下述性质的集合 $\mathcal{U}$.
+Grothendieck 试图为棘手的集合论问题建起一道防火墙，亦即，设置一种尽可能大的集合 $\mathcal{U}$，内部可以实行大部分常见的数学操作，而避开真类。
+\begin{definition}[Grothendieck]
+	\textbf{宇宙}(universe)意谓一个满足下述性质的集合 $\mathcal{U}$.
 	\begin{enumerate}[\bfseries {U}.1]
-		\item $u \in \mathcal{U} \implies u \subset \mathcal{U}$, 即: $\mathcal{U}$ 是传递集;
-		\item $u,v \in \mathcal{U} \implies \{u, v\} \in \mathcal{U}$;
-		\item $u \in \mathcal{U} \implies P(u) \in \mathcal{U}$;
-		\item 若 $I \in \mathcal{U}$, 一族集合 $\{u_i : i \in I\}$ 满足 $\forall i, \; u_i \in \mathcal{U}$, 则 $\bigcup_{i \in I} u_i \in \mathcal{U}$;
-		\item $\Z_{\geq 0} \in \mathcal{U}$, 因此: $\emptyset \in \mathcal{U}$ (请回忆 \S\ref{sec:order} 中构造非负整数的方法).
+		\item $u \in \mathcal{U} \im u \subset \mathcal{U}$，即：$\mathcal{U}$ 是传递集;
+		\item $u,v \in \mathcal{U} \im \{u, v\} \in \mathcal{U}$;
+		\item $u \in \mathcal{U} \im 2^u \in \mathcal{U}$;
+		\item 若 $I \in \mathcal{U}$，一族集合 $\{u_i : i \in I\}$ 满足 $\forall i,\; u_i \in \mathcal{U}$，则 $\bigcup_{i \in I} u_i \in \mathcal{U}$;
+		\item $\N \in \mathcal{U}$，因此：$\mt \in \mathcal{U}$（请回忆 \S\ref{sec:order} 中自然数的构造）.
 	\end{enumerate}
-	对于集合 $X$, 若 $X \in \mathcal{U}$ 则称为 $\mathcal{U}$-集; 若 $X$ 和一个 $\mathcal{U}$-集等势, 则称为 $\mathcal{U}$-小集.\index{U-ji@$\mathcal{U}$-集}
+	对于集合 $X$，若 $X \in \mathcal{U}$ 则称为 $\mathcal{U}$-集; 若 $X$ 和一个 $\mathcal{U}$-集等势，则称为 $\mathcal{U}$-小集.
 \end{definition}
 
-给定宇宙 $\mathcal{U}$, 不难验证以下推论:
+给定宇宙 $\mathcal{U}$，不难验证以下推论:
 \begin{itemize}
-	\item $u \subset v \in \mathcal{U} \implies u \in \mathcal{U}$;
-	\item $u \in \mathcal{U} \implies \bigcup u = \bigcup_{x \in u} x  \in \mathcal{U}$;
-	\item $u, v \in \mathcal{U} \implies u \times v \in \mathcal{U}$;
-	\item 若 $I \in \mathcal{U}$, 一族集合 $\{u_i : i \in I\}$ 满足 $\forall i, \; u_i \in \mathcal{U}$, 则 $\prod_{i \in I} u_i \in \mathcal{U}$.
+	\item $u \subset v \in \mathcal{U} \im u \in \mathcal{U}$;
+	\item $u \in \mathcal{U} \im \bigcup u = \bigcup_{x \in u} x  \in \mathcal{U}$;
+	\item $u, v \in \mathcal{U} \im u \times v \in \mathcal{U}$;
+	\item 若 $I \in \mathcal{U}$，一族集合 $\{u_i : i \in I\}$ 满足 $\forall i,\; u_i \in \mathcal{U}$，则 $\prod_{i \in I} u_i \in \mathcal{U}$.
 \end{itemize}
 
-这套概念的神髓在于在 $\mathcal{U}$ 内部可以实行大部分常见的数学操作而不涉及真类, 这就为棘手的集合论问题建起一道防火墙. 然而是否有充分多、充分大的宇宙可资调用则是另一个问题, 为此我们引入以下假设.
+然而是否有充分多、充分大的宇宙可资调用则是另一个问题，为此我们引入以下假设.
 
 \begin{hypothesis}[A.\ Grothendieck]\label{hyp:universe}
-	对任何集合 $X$, 存在宇宙 $\mathcal{U}$ 使得 $X \in \mathcal{U}$.
+	对任何集合 $X$，存在宇宙 $\mathcal{U}$ 使 $X \in \mathcal{U}$.
 \end{hypothesis}
 
-展开相关讨论前, 不妨先勾勒集合的层垒谱系. 以超穷递归定义一族由序数枚举的集合 $V_\alpha$ 如下: \index{jihelun!层垒谱系 (cumulative hierachy)}
-\begin{align*}
-	V_0 & := \emptyset, \\
-	V_{\alpha+1} & := P(V_\alpha), \\
-	V_\alpha & :=\bigcup_{\beta < \alpha} V_\beta, \quad \text{如果 $\alpha$ 是极限序数}.
-\end{align*}
-
-不难验证每个 $V_\alpha$ 都是传递集 (定义 \ref{def:ordinal}), 并包含 $\alpha$ 作为子集, 而且 $\alpha < \beta \implies V_\alpha \subset V_\beta$.
+展开相关讨论前，不妨先勾勒集合的层垒谱系(cumulative hierachy)。以超穷递归定义一族由序数枚举的集合 $V_\alpha$ 如下：
+\[V_0 := \mt;\quad V_{\alpha+1} := 2^{V_\alpha};\quad V_\alpha :=\bigcup_{\beta < \alpha} V_\beta,\quad \text{如果 $\alpha$ 是极限序数}.\]
+不难验证每个 $V_\alpha$ 都是传递集 (定义 \ref{def:ordinal})，并包含 $\alpha$ 作为子集，而且 $\alpha < \beta \Rightarrow V_\alpha \subset V_\beta$.
 
 \begin{proposition}
-	任一集合都属于某个 $V_\alpha$, 其中 $\alpha$ 是序数.
+	任一集合都属于某个 $V_\alpha$，其中 $\alpha$ 是序数.
 \end{proposition}
 \begin{proof}
-	首先证明以下性质: 任何非空的类 $C$ 都有一个相对于 $\in$ 的极小元 $x$. 任取 $S \in C$. 若 $S \cap C = \emptyset$ 则 $S$ 即所求的极小元. 若 $S \cap C \neq \emptyset$, 则存在传递集 $T$ 使得 $T \supset S$, 其递归构造如下:
-	\[ S_0 := S, \quad S_{n+1} := \bigcup S_n, \quad T := \bigcup_{n \in \Z_{\geq 0}} S_n; \]
-	循定义可见 $T$ 是传递的. 令 $X := T \cap C$, 这是非空集故正则公理 \textbf{A.8} 确保 $X$ 中有相对于 $\in$ 的极小元 $x$. 仅须说明 $x$ 相对于 $(C, \in)$ 同样极小: 设若不然, 存在 $y \in x \cap C$, 则 $T$ 传递和 $x \in T$ 将蕴涵 $y \in T \cap C = X$, 与 $x$ 对 $(X, \in)$ 极小相悖.
+	首先证明以下性质：任何非空的类 $C$ 都有一个相对于 $\in$ 的极小元 $x$。任取 $S \in C$。若 $S \cap C = \mt$ 则 $S$ 即所求的极小元。若 $S \cap C \neq \mt$，则存在传递集 $T$ 使得 $T \supset S$，其递归构造如下:
+	\[ S_0 := S,\quad S_{n+1} := \bigcup S_n,\quad T := \bigcup_{n \in \N} S_n; \]
+	循定义可见 $T$ 是传递的。令 $X := T \cap C$，这是非空集故正则公理 \textbf{A.8} 确保 $X$ 中有相对于 $\in$ 的极小元 $x$。仅须说明 $x$ 相对于 $(C,\in)$ 同样极小：设若不然，存在 $y \in x \cap C$，则 $T$ 传递和 $x \in T$ 将蕴涵 $y \in T \cap C = X$，与 $x$ 对 $(X,\in)$ 极小相悖.
 
-	现在取 $C$ 为所有不在任一个 $V_\alpha$ 内的集合构成的类. 假设 $C$ 不空, 应用上述性质可知 $C$ 中存在一个相对于 $\in$ 的极小元 $x$. 因此若 $z \in x$ 则 $z$ 属于某个 $V_\alpha$; 对之取最小的 $\alpha = \alpha(z)$ 使得 $z \in V_\alpha$. 由于 $x$ 是集合, 应用替换公理模式 \textbf{A.7} 知 $\mathcal{O} := \{\alpha(z) : z \in x \}$ 是一个由序数组成之集合, 置 $\theta := \sup \mathcal{O}$. 于是 $x \subset V_\theta$ 故 $x \in V_{\theta+1}$, 矛盾.
+	现在取 $C$ 为所有不在任一个 $V_\alpha$ 内的集合构成的类。假设 $C$ 不空，应用上述性质可知 $C$ 中存在一个相对于 $\in$ 的极小元 $x$。因此若 $z \in x$ 则 $z$ 属于某个 $V_\alpha$; 对之取最小的 $\alpha = \alpha(z)$ 使得 $z \in V_\alpha$。由于 $x$ 是集合，应用替换公理模式 \textbf{A.7} 知 $\mathcal{O} := \{\alpha(z) : z \in x \}$ 是一个由序数组成之集合，置 $\theta := \sup \mathcal{O}$。于是 $x \subset V_\theta$ 故 $x \in V_{\theta+1}$，矛盾.
 \end{proof}
 
-集合 $V_\omega$ 的元素称作遗传有限集, 这些集合皆有限, 这对于一些组合学或计算机方面的应用或许足够, 但很难想象如何在其中开展分析或几何学等理论. 因此 $V_\omega$ 对数学家是远远不够用的. Grothendieck 学派原来的定义不含 $\Z_{\geq 0} \in \mathcal{U}$, 导致 $V_0, V_\omega$ 都是它们意义下的宇宙; 本书的假设排除了这两者.
+集合 $V_\omega$ 的元素称作遗传有限集，这些集合皆有限，这对于一些组合学或计算机方面的应用或许足够，但很难想象如何在其中开展分析或几何学等理论。因此 $V_\omega$ 对数学家是远远不够用的。Grothendieck 学派原来的定义不含 $\N \in \mathcal{U}$，导致 $V_0, V_\omega$ 都是它们意义下的宇宙；\ref{hyp:universe} 排除了这两者.
 
-\begin{definition}\index{jishu!强不可达 (strongly inaccessible)}
-	满足以下性质的基数 $\kappa$ 称为强不可达基数:
+\begin{definition}
+	满足以下性质的基数 $\kappa$ 称为\textbf{强不可达}(strongly inaccessible)基数:
 	\begin{enumerate}[\bfseries {I}.1]
 		\item $\kappa$ 不可数,
 		\item $\kappa$ 是正则基数 (定义 \ref{def:regular-cardinal}),
-		\item 对任意基数 $\lambda$ 皆有 $\lambda < \kappa \implies 2^\lambda < \kappa$.
+		\item 对任意基数 $\lambda$ 皆有 $\lambda < \kappa \im 2^\lambda < \kappa$。可证蕴涵 $\lambda,\nu < \kappa \im \lambda^\nu < \kappa$。
 	\end{enumerate}
 \end{definition}
-可以证明 \textbf{I}.3 蕴涵 $\lambda, \nu < \kappa \implies \lambda^\nu < \kappa$, 见 \cite[p.58]{Je03}. 强不可达基数是现代集合论着力研究的大基数的一员. Bourbaki 在 \cite[Exp. I, Appendice]{SGA4-1} 中证明了以下结果.
-\begin{theorem}
-	宇宙正是层垒谱系中形如 $V_\kappa$ 的成员, 其中 $\kappa$ 是一个强不可达基数.
+强不可达基数是现代集合论着力研究的大基数的一员。
+\begin{theorem}[Bourbaki]
+	宇宙正是层垒谱系中形如 $V_\kappa$ 的成员，其中 $\kappa$ 是一个强不可达基数.
 \end{theorem}
 
-强不可达基数的性质告诉我们: 从 $V_\kappa$ 的元素出发, 在 ZFC 系统内无论怎么操作都不会超出 $V_\kappa$. 假若读者对数理逻辑有些了解, 则可以更精确地说: 对于强不可达基数 $\kappa$, 宇宙 $\mathcal{U} := V_\kappa$ 连同属于关系 $\in$ 构成了 ZFC 的一个\emph{模型} \cite[Lemma 12.13]{Je03}, 相当于在集合论内部虚拟地运行了一套集合论. 不妨这么看: 若把 $V_\kappa$ 的元素看作 ``集合'', 则就模型 $(V_\kappa, \in)$ 观之, ``类''就是 $V_{\kappa+1} = P(V_\kappa)$ 的元素.
+强不可达基数的性质告诉我们：从 $V_\kappa$ 的元素出发，在 ZFC 系统内无论怎么操作都不会超出 $V_\kappa$。假若读者对数理逻辑有些了解，则可以更精确地说：对于强不可达基数 $\kappa$，宇宙 $\mathcal{U} := V_\kappa$ 连同属于关系 $\in$ 构成了 ZFC 的一个\textbf{模型}，相当于在集合论内部虚拟地运行了一套集合论。不妨这么看：若把 $V_\kappa$ 的元素看作 “集合”，则就模型 $(V_\kappa,\in)$ 观之，“类”就是 $V_{\kappa+1} = 2^{V_\kappa}$ 的元素.
 
 \begin{remark}
-	假设 \ref{hyp:universe} 等价于对任意基数 $\lambda$, 存在强不可达基数 $\kappa$ 使得 $\lambda < \kappa$. 这是颇强的要求. 对于大多数的范畴论构造和数学论证, 我们顶多只要求存在某个宇宙 $\mathcal{U}$; 换言之, 日常生活中只需要单个强不可达基数. 这个要求依然有些奢侈, 原因是在 ZFC 系统内无法证明强不可达基数的存在性 \cite[Theorem 12.12]{Je03}.
+	\ref{hyp:universe} 等价于对任意基数 $\lambda$，存在强不可达基数 $\kappa$ 使得 $\lambda < \kappa$。这是颇强的要求。对于大多数的范畴论构造和数学论证，我们顶多只要求存在某个宇宙 $\mathcal{U}$；换言之，日常生活中只需要单个强不可达基数。这个要求依然有些奢侈，原因是在 ZFC 系统内无法证明强不可达基数的存在性.
 \end{remark}
 
-数学工作者究竟需不需要宇宙? 如何看待强不可达基数假设? 这些议题处在数学, 哲学与群体心理学的交界, 请有兴趣的读者移步 \cite{Shu08}.
-
-
+数学究竟需不需要宇宙？如何看待强不可达基数假设? 这些议题处在数学、哲学与群体心理学的交界.
 
 \section{范畴论}
 \subsection{范畴}
-请读者大致回顾至今学习的\textit{所有知识}。我们遇到过各种各样的事物，它们之间又存在着各种联系：从整数之间的大小比较，到集合之间的映射，再到线性空间之间的同构。1940 年代，MacLane 为研究代数拓扑、线性代数中自然同构的问题，试图抽象这一思想，将各个东西及其间的联系，放到一个整体的学说中研究。这些“东西”称为\textbf{对象}(object)，它们之间的关系用箭头(arrow)表示，称为\textbf{态射}(morphism)。
-指定一组对象构成的集合及其间所有态射之集，就给出了一个\textbf{范畴}(category)。
-范畴论将我们熟知的知识进行进一步的抽象封装。
+请读者大致回顾至今学习的\textit{所有知识}。我们遇到过各种各样的事物，它们之间又存在着各种联系：从整数之间的大小比较，到集合之间的映射，再到线性空间之间的同构。1940 年代，MacLane 为研究代数拓扑、线性代数中自然同构的问题，试图抽象这一思想，将各个东西及其间的联系，放到一个整体的学说中研究。这些“东西”称为\textbf{对象}(object)，它们之间的关系用箭头(arrow)表示，称为\textbf{态射}(morphism)。指定一组对象构成的集合及其间所有态射之集，就给出了一个\textbf{范畴}(category)。范畴论将我们熟知的知识进行进一步的抽象封装。
 我们不关心一个集合里具体有什么，而是把每个集合看作一个对象；不关心究竟把某个元素映射至何处，而是把映射单纯地看成箭头，研究集合上任意映射之集。
 如此，全体集合构成\textbf{集合范畴} $\cate{Set}$。
-对象、态射构成的“集合”可以是一般的类。
 我们有了一种更为普适、简洁的视角去看待很多理论。
 
-不仅如此，由于这些理论中的态射都具有相似性质（比如复合函数的结合性），这意味着这些理论实质上有非常紧密的联系待发掘。利用范畴论，就很容易找到不同理论之间的对应，比如欧氏几何和用代数表达图形的解析方法。甚至，可将某个理论的概念套进范畴的模版里，进一步发展原有的理论。
+不仅如此，由于这些理论中的态射都具有相似性质（如复合映射的结合性），继而这些理论实质上有非常紧密的联系待发掘。利用范畴论，便易找寻不同理论之间的对应，如欧氏几何和 Descartes 解析几何。甚至，可将某个理论的概念套进范畴的模版里，进一步发展原有的理论。
 在范畴论里，\textit{关系就是一切}。许多情况下，一个数学对象完全由它与所有其他对象的关系决定。换言之，当且仅当两个对象以同样方式与范畴中的每个对象相关时，两个对象本质上是不可区分的。这是著名的\textbf{米田引理}(Yoneda lemma)的一个推论。这同我们的日常经验相符，你大可通过观察一个人的社交关系来确定其性格；若你发现两个社交媒体账号，其关注和动态高度一致，则有理由推断此二账号同属一人。于是，范畴论可以成为构建一个数学理论的蓝图，被称为\textit{数学的数学}。
 
 剩下的关键在于对态射需设置何种要求。一般希望态射的复合具有结合性，且存在到自身的态射。为保证足够的抽象和普适性，这可以是全部的要求了：
-\begin{definition}
-    设两个类 $\mathrm{Ob},\mathrm{Mor}$，之间配上一对映射
-     $\begin{tikzcd} \mathrm{Mor} \arrow[yshift=-0.5ex, r, "t"'] \arrow[yshift=0.5ex, r, "s"] & \mathrm{Ob} \end{tikzcd}$。
-    将 $\mathrm{Ob}$ 的元素称作\textbf{对象}，$\mathrm{Mor}$ 的元素称为\textbf{态射}。对某个态射 $f\in\mathrm{Mor}$，映射 $s,t$ 的像分别指明其\textbf{来源}(source)和\textbf{目标}(target)，也即域和陪域。
-    对 $X, Y \in \mathrm{Ob}$，记 $\hom(X, Y) := s^{-1}\{X\} \cap t^{-1}\{Y\}\subset\mathrm{Mor}$，称为 $\hom$-集，其元素称为从 $X$ 到 $Y$ 的态射。
-    
-    态射还满足如下要求。对任意对象 $X$ 都存在\textbf{恒等}(identity)\textbf{态射} $\id_X \in \hom(X, X)$。可证同个对象的任意两个恒等态射是相等的，故其实恒等态射是存在且唯一的。对任意 $X, Y, Z \in \mathrm{Ob}$，给定态射间的\textbf{复合}(composition)
+\begin{definition} \textbf{范畴} $\mathcal C=(\Obj,\Mor)$（也记 $\Obj(\mathcal C),\Mor(\mathcal C)$）满足：
+	\begin{enumerate}
+		\item 两个集合 $\Obj,\Mor$ 之间配上一对映射
+     $\begin{tikzcd} \Mor \arrow[yshift=-0.5ex, r, "t"'] \arrow[yshift=0.5ex, r, "s"] & \Obj \end{tikzcd}$。$\Obj$ 的元素称\textbf{对象}，$\Mor$ 的元素称\textbf{态射}。对某个态射 $f\in\Mor$，映射 $s,t$ 的像分别指明其\textbf{来源}(source)和\textbf{目标}(target)。对 $X, Y \in \Obj$，记 $\hom(X, Y) := s^{-1}\{X\} \cap t^{-1}\{Y\}\subset\Mor$，其元素称为从 $X$ 到 $Y$ 的态射。
+		\item 对任意对象 $X$ 都存在\textbf{恒等}(identity) $\id_X \in \hom(X, X)$。
+		\item 对任意 $X, Y, Z \in \Obj$，给定态射间的\textbf{复合}(composition)
         \begin{align*}
-            \circ : \hom(Y, Z) \times \hom(X, Y) & \longrightarrow \hom(X, Z), \\
+            \circ : \hom(Y, Z) \times \hom(X, Y) & \longrightarrow \hom(X, Z),\\
             (f, g) & \longmapsto f \circ g,
         \end{align*}
-        不致混淆时常将 $f \circ g$ 简记为 $fg$，满足
+        满足
         \begin{itemize}
-            \item 结合律，即对任意 $h, g, f \in \mathrm{Mor}$，若复合 $f(gh)$ 和 $(fg)h$ 都有定义，则 $f (g h) = (f g) h$。
+            \item 结合律，即对任意 $h, g, f \in \Mor$，若复合 $f(gh), (fg)h$ 都有定义，则 $f (g h) = (f g) h$。
             故两边可以同写为 $f \circ g \circ h$ 或 $fgh$；
             \item 对任意 $f \in \hom(X,Y)$，有 $f \circ \id_X = f = \id_Y \circ f$。
         \end{itemize}
-    $(\mathrm{Ob},\mathrm{Mor})$ 称为一个\textbf{范畴}。常记 $\mathcal C=(\mathrm{Ob}(\mathcal C),\mathrm{Mor}(\mathcal C))$。
+	\end{enumerate}
 \end{definition}
 
 \begin{remark}
-    $\mathrm{Ob}(\cate{Set})$ 是真类。对象及其态射常记作 $f:X\to Y$ 或 $X\xrightarrow{f} Y$ 的形式。
+	态射常记作 $f:X\to Y$ 或 $X\xrightarrow{f} Y$ 的形式。不致混淆时常将 $f \circ g$ 简记为 $fg$。
+可证同个对象的任意两个恒等态射是相等的，故其实恒等态射是存在且唯一的。
 \end{remark}
 
-图表加箭头是讨论范畴的方便语言。用箭头表达态射，用箭头的头尾衔接表示复合映射。最常用的是\textbf{交换图}(commutative diagram)，“交换”意指箭头的复合殊途同归，如
+图表加箭头是讨论范畴的方便语言。用箭头表达态射，用箭头的头尾衔接表示复合映射。最常用\textbf{交换图}(commutative diagram)。“交换”意指复合箭头殊途同归，如
     \[ \begin{tikzcd}
         X \arrow[r, "f"] \arrow[rd, "h"'] & Y \arrow[d, "g"] \\
         & Z
@@ -542,21 +526,74 @@
         A \arrow[r, "u"] \arrow[d, "x"'] & B \arrow[d, "v"] \\
         C \arrow[r, "y"'] & D
     \end{tikzcd} \]
-的交换性分别等价于 $g f = h$ 和 $v u = y x$。态射的名称若自明或不重要，则常从图中略去。
+的交换性分别等价于 $g f = h, v u = y x$。态射的名称若自明或不重要，则常从图中略去。
+
+用全体集合、映射构建集合范畴 $\cate{Set}$。
+如不约定 Grothendieck 宇宙 $\mathcal{U}$ 而径直考虑所有集合，则会面临各种悖论，因为所有集合的全体并不构成集合。
+NBG 集合论区分类和集，因而 $\Obj(\cate{Set}),\Mor(\cate{Set})$ 是真类，任一个态射集 $\hom_{\cate{Set}}(X,Y)$ 是集合。因而 $\cate{Set}$ 称为\textbf{大范畴}(large category)。
+但在 ZFC 下，$\mathcal U$ 已然极其庞大且足够使用，这样我们相当于框定出\textbf{小范畴}(small category)。
+\begin{definition}\label{def:U-cat}
+  一个范畴 $\mathcal{C}$ 称作是 \textbf{$\mathcal{U}$-范畴}，如果对任意对象 $X, Y$，集合 $\hom_{\mathcal{C}}(X,Y)$ 都是 $\mathcal{U}$-小集。如果态射集 $\Mor(\mathcal{C})$ 也是 $\mathcal{U}$-小集，则称之为 \textbf{$\mathcal{U}$-小范畴}.
+\end{definition}
+\begin{remark}
+	范畴 $\mathcal{C}$ 是 $\mathcal{U}$-小范畴当且仅当它是 $\mathcal{U}$-范畴且 $\Obj(\mathcal{C})$ 是 $\mathcal{U}$-小集。这是因为 $X \mapsto \id_X$ 将 $\Obj(\mathcal{C})$ 嵌入 $\Mor(\mathcal{C})$。
+根据假设 \ref{hyp:universe}，对任意范畴 $\mathcal{C}$，总是可以扩大宇宙 $\mathcal{U}$ 使得 $\mathcal{C}$ 是$\mathcal{U}$-小范畴.
+\end{remark}
+将真类引入范畴论公理会造成不少麻烦，之后要讨论的函子范畴是一个例子。因此宁可引入宇宙并假设所考察的数学对象都是 $\mathcal{U}$-小的.
+
+既已选定宇宙，此后如不另外说明，将略去符号 $\mathcal{U}$ 而将集合、群等理解为 $\mathcal{U}$-集，$\mathcal{U}$-群等。所论的范畴都是 $\mathcal{U}$-范畴。因此，我们默认所谈论的 $\cate{Set}$ 实指 $\mathcal{U}$-范畴 $\cate{Set}_\mathcal{U}$，$Y^X$ 实指 $\hom_{\cate{Set}_\mathcal{U}}(X,Y)$。$\Obj(\cate{Set})$ 指 $\mathcal{U}$ 本身，是一个纯集合。
 
 \begin{definition}
-    对 $X \xrightarrow{f} Y$，若存在 $Y \xrightarrow{g} X$ 使得 $f g = \id_Y,g f = \id_X$，则称 $f$ 是（对象）\textbf{同构}(isomorphism)，而 $g$ 称为 $f$ 的\textbf{逆}，从恒等态射的性质易见逆若存在则唯一，记 $f^{-1}$。称 $X,Y$ \textbf{互为同构}，记作 $X\cong Y$。从 $X$ 到 $Y$ 的同构集记作 $\mathrm{Isom}(X, Y)$。
-
-    $\operatorname{End} X := \hom(X, X)$，$\operatorname{Aut} X := \mathrm{Isom}(X, X)$ 分别称作 $X$ 的\textbf{自同态集}(set of endomorphisms)和\textbf{自同构集}(set of aut)。这些集合在二元运算 $\circ$ 下封闭，或用代数的语言来说：$\operatorname{Aut} X$ 是群，$\operatorname{End} X$ 是幺半群。若忘记其定义可见下节。
+	对象与态射集皆空的范畴 $\mathbf{0}$ 称为\textbf{空范畴}.
 \end{definition}
 
-% 自同构英语
+\begin{definition}
+    对 $X \xrightarrow{f} Y$，若存在 $Y \xrightarrow{g} X$ 使得 $f g = \id_Y,g f = \id_X$，则称 $f$ \textbf{可逆}，是对象间的\textbf{同构}(isomorphism)，记 $f: X \rightiso Y$。$g$ 称为 $f$ 的\textbf{逆}，从恒等态射的性质易见逆若存在则唯一，记 $f^{-1}$。称 $X,Y$ \textbf{互为同构}，记作 $X\cong Y$。从 $X$ 到 $Y$ 的同构集记作 $\mathrm{Isom}(X, Y)$。
+
+    $\operatorname{End} X := \hom(X, X)$，$\operatorname{Aut} X := \mathrm{Isom}(X, X)$ 分别称作 $X$ 的\textbf{自同态集}(set of endomorphisms)和\textbf{自同构集}(set of automorphisms)。这些集合在二元运算 $\circ$ 下封闭，或用代数的语言来说：$\operatorname{Aut} X$ 是群，$\operatorname{End} X$ 是幺半群。若忘记其定义可见下节。
+\end{definition}
+
+\begin{definition}\label{def:subcategory}
+	称 $\mathcal{C}'$ 是 $\mathcal{C}$ 的\textbf{子范畴}(subcategory)，如果
+	\begin{compactenum}[(i)]
+		\item $\Obj(\mathcal{C}') \subset \Obj(\mathcal{C})$；
+		\item $\Mor(\mathcal{C}') \subset \Mor(\mathcal{C})$，并保持恒等态射；
+		\item 来源/目标映射 $\begin{tikzcd} \Mor(\mathcal{C}') \arrow[yshift=-0.5ex, r, "t"'] \arrow[yshift=0.5ex, r, "s"] & \Obj(\mathcal{C}') \end{tikzcd}$ 是由 $\mathcal{C}$ 限制而来的，而且
+		\item $\mathcal{C}'$ 中态射的复合也是由 $\mathcal{C}$ 限制而来的.
+	\end{compactenum}
+	简言之，对任意 $\mathcal{C}'$ 中对象 $X, Y$，有包含关系 $\hom_{\mathcal{C}'}(X, Y) \subset \hom_{\mathcal{C}}(X, Y)$，它与态射的复合兼容。如果 $\hom_{\mathcal{C}'}(X, Y) = \hom_{\mathcal{C}}(X, Y)$ 则称 $\mathcal{C}'$ 是\textbf{全子范畴}(full subcategory).
+\end{definition}
+
+\begin{example}\label{eg:categories}
+	举例若干：
+	\begin{enumerate}
+		\item 预序集等同于任两个对象间至多只有一个态射的范畴。对于预序集 $(P, \leqslant)$，定义范畴使得其对象集为 $P$，而存在态射 $p \to p'$ 当且仅当 $p \leqslant p'$，此时这样的态射唯一。特别地，根据 \S\ref{sec:order} 对有限序数的递归定义，任意 $n \in \N$ 视为序数等同于全序集 $\{0, \ldots, n-1\}$，而 $0$ 等同于 $\mt$。相应的范畴记为 $\mathbf{n}$，其结构可形象表如
+		\[ 0 \to 1 \to \cdots \to (n-1) \qquad \text{（略去恒等态射）}. \]
+		作为特例，$0$ 给出空范畴 $\mathbf{0}$，而 $1$ 给出恰有一个对象和一个态射的范畴 $\mathbf{1}$.
+		\item 带基点(basepoint)的集合范畴 $\cate{Set}_\bullet$ 满足：对象是所有 $(X, x)$，其中 $X$ 是集合而 $x \in X$（基点），从 $(X,x)$ 到 $(Y,y)$ 的态射是满足 $f(x)=y$ 的映射 $f: X \to Y$.
+		\item 给定集合 $S$，定义相应的\textbf{离散范畴} $\cate{Disc}(S)$：其对象集为 $S$ 而态射仅有恒等态射 $\{ \id_x : x \in S \}$.
+	\end{enumerate}
+\end{example}
+
+单射和满射的概念有自然的推广.
+\begin{definition}
+	设 $X, Y$ 为范畴 $\mathcal{C}$ 中的对象, $f: X \to Y$ 为态射.
+	\begin{itemize}
+		\item 称 $f$ 为\textbf{单态射}(monomorphism), 如果对任何对象 $Z$ 和任一对态射 $g, h: Z \to X$ 有 $fg = fh \iff g=h$ (左消去律);
+		\item 称 $f$ 为\textbf{满态射}(epimorphism), 如果对任何对象 $Z$ 和任一对态射 $g, h: Y \to Z$ 有 $gf = hf \iff g=h$ (右消去律).
+	\end{itemize}
+	如存在 $g$ 使得 $gf=\id_X$，则称 $f$ 左可逆而 $g$ 是它的一个左逆(left inverse); 类似地, 若 $fg = \id_Y$ 则称 $f$ 右可逆而 $g$ 是个右逆(right inverse).
+	若 $\mathcal{C}$ 中的所有态射都可逆，则称\textbf{广群}(groupoid).
+\end{definition}
+显然左可逆蕴涵单，而右可逆蕴涵满。态射可逆当且仅当左右可逆。由于广群里的箭头都是同构，它适合用来表述数学对象的分类问题.
+
+在 $\cate{Set}$ 这种常见的范畴中，态射的单性与满性分别等价于集合论意义下的单射和满射，而且既单又满的态射恰好是同构。反例需见附录 \ref{appx:LA}。
 
 给定一个范畴，对象不变但反转所有箭头，则反转后得到的东西仍然是一个范畴，这种对称性也称作\textbf{对偶原理}：
 \begin{definition}
     范畴 $\mathcal{C}$ 的\textbf{反范畴}(opposite category)或\textbf{对偶范畴} $\mathcal{C}^\mathrm{op}$ 定义如下：
     \begin{itemize}
-        \item $\mathrm{Ob}(\mathcal{C}^{\mathrm{op}}) = \mathrm{Ob}(\mathcal{C})$；
+        \item $\Obj(\mathcal{C}^{\mathrm{op}}) = \Obj(\mathcal{C})$；
         \item 对任意对象 $X, Y$，$\hom_{\mathcal{C}^{\mathrm{op}}}(Y, X) := \hom_{\mathcal{C}}(X, Y)$；
         \item 恒等态射同 $\mathcal{C}$：$\id^\mathrm{op}_X:=\id_X$；
         \item 对任意态射 $g \in \hom_{\mathcal{C}^{\mathrm{op}}}(Z, Y), f \in \hom_{\mathcal{C}^{\mathrm{op}}}(Y, X)$，$f \circ^\mathrm{op} g:=gf$。交换图为
@@ -579,19 +616,17 @@ X & Y \arrow[l,"f"'] \\
 \subsection{函子}
 一个范畴往往代表一套理论。研究范畴间的关系可进一步抽象出如下概念：
 \begin{definition}
-    设 $\mathcal{C}', \mathcal{C}$ 为范畴。映射 $F: \mathcal{C}' \to \mathcal{C}$ 称为\textbf{函子}(functor)，包括：
+    设 $\mathcal{C}',\mathcal{C}$ 为范畴。映射 $F: \mathcal{C}' \to \mathcal{C}$ 称为\textbf{函子}(functor)，包括：
     \begin{enumerate}
-        \item 对象间的映射 $F: \mathrm{Ob}(\mathcal C')\to\mathrm{Ob}(\mathcal C)$.
-        \item 态射间的映射 $F: \mathrm{Mor}(\mathcal C')\to \mathrm{Mor}(\mathcal C)$, 使得
+        \item 对象间的映射 $F: \Obj(\mathcal C')\to\Obj(\mathcal C)$.
+        \item 态射间的映射 $F: \Mor(\mathcal C')\to \Mor(\mathcal C)$，使得
             \begin{itemize}
-                \item $F$ 与来源和目标映射相交换 （即 $sF=Fs$, $tF=Ft$），或等价地，对每个 $X, Y \in \mathrm{Ob}(\mathcal{C}')$ 皆有映射 $F: \hom_{\mathcal{C}'}(X, Y) \to \hom_{\mathcal{C}}(F(X), F(Y))$。换言之，$f\in \hom_{\mathcal{C}'}(X, Y)\Rightarrow F(f)\in \hom_{\mathcal{C}}(F(X), F(Y))$；
-                \item $F(g\circ^{\prime} f) = F(g) \circ F(f)$，$F(\id_X) = \id_{F(X)}$。
+                \item $F$ 与来源和目标映射相交换 （即 $sF=Fs,tF=Ft$），或等价地，对每个 $X, Y \in \Obj(\mathcal{C}')$ 皆有映射 $F: \hom_{\mathcal{C}'}(X, Y) \to \hom_{\mathcal{C}}(FX, FY)$。换言之，$f\in \hom_{\mathcal{C}'}(X, Y)\Rightarrow F(f)\in \hom_{\mathcal{C}}(FX, FY)$；（$FX$ 乃 $F(X)$ 之简记）
+                \item $F(g\circ^{\prime} f) = F(g) \circ F(f)$，$F(\id_X) = \id_{FX}$。
             \end{itemize}
     \end{enumerate}
-    对于 $F: \mathcal{C}_1 \to \mathcal{C}_2,G: \mathcal{C}_2 \to \mathcal{C}_3$，\textbf{复合函子} $G \circ F: \mathcal{C}_1 \to \mathcal{C}_3$ 的定义显然是取相应复合映射：$\mathrm{Ob}(\mathcal{C}_1) \xrightarrow{F} \mathrm{Ob}(\mathcal{C}_2) \xrightarrow{G} \mathrm{Ob}(\mathcal{C}_3)$ 和 $\mathrm{Mor}(\mathcal{C}_1) \xrightarrow{F} \mathrm{Mor}(\mathcal{C}_2) \xrightarrow{G} \mathrm{Mor}(\mathcal{C}_3)$。
+    对于 $F: \mathcal{C}_1 \to \mathcal{C}_2,G: \mathcal{C}_2 \to \mathcal{C}_3$，\textbf{复合函子} $G \circ F: \mathcal{C}_1 \to \mathcal{C}_3$ 的定义显然是取相应复合映射：$\Obj(\mathcal{C}_1) \xrightarrow{F} \Obj(\mathcal{C}_2) \xrightarrow{G} \Obj(\mathcal{C}_3), \Mor(\mathcal{C}_1) \xrightarrow{F} \Mor(\mathcal{C}_2) \xrightarrow{G} \Mor(\mathcal{C}_3)$。
 \end{definition}
-
-
 
 \begin{remark}
 	从 $\mathcal{C}'$ 到 $\mathcal{C}$ 和从 $(\mathcal{C}')^\mathrm{op}$ 到 $\mathcal{C}^\mathrm{op}$ 的函子是一回事。为资区分，对于函子 $F: \mathcal{C}' \to \mathcal{C}$，反范畴间的相应函子记为 $F^\mathrm{op}: (\mathcal{C}')^\mathrm{op} \to \mathcal{C}^\mathrm{op}$。
@@ -605,11 +640,11 @@ X \arrow[r,"f"] \arrow[dr,"g\circ^{\prime} f"'] & Y \arrow[d,"g"] \\
 \end{tikzcd}
 \im
 \begin{tikzcd}
-F(X) \arrow[r,"F(f)"] \arrow[dr,"F(g\circ^{\prime} f)"'] & F(Y) \arrow[d,"F(g)"] \\
-& F(Z).
+FX \arrow[r,"F(f)"] \arrow[dr,"F(g\circ^{\prime} f)"'] & FY \arrow[d,"F(g)"] \\
+& FZ.
 \end{tikzcd}
 \]
-$C'$ 的\textbf{逆变函子}是 $(\mathcal{C}')^\text{op}$ 的函子 $F: (\mathcal{C}')^\text{op} \to \mathcal{C}$，图解为
+$C'$ 的\textbf{逆变函子}是 $(\mathcal{C}')^\mathrm{op}$ 的函子 $F: (\mathcal{C}')^\mathrm{op} \to \mathcal{C}$，图解为
 \[
 \begin{tikzcd}
 X \arrow[r,"f"] \arrow[dr,"g\circ^\prime f"'] & Y \arrow[d,"g"] \\
@@ -622,62 +657,296 @@ X & Y \arrow[l,"f"'] \\
 \end{tikzcd}
 \im
 \begin{tikzcd}
-F(X) & F(Y) \arrow[l,"F(f)"'] \\
-& F(Z). \arrow[u,"F(g)"'] \arrow[ul,"F(g\circ^\prime f)"]
+FX & FY \arrow[l,"F(f)"'] \\
+& FZ.\arrow[u,"F(g)"'] \arrow[ul,"F(g\circ^\prime f)"]
 \end{tikzcd}
 \]
-也就是将函子定义中态射的性质改为 $F(Y)\xrightarrow{F(f)} F(X),F(g\circ^\prime f) := F(f) \circ F(g)$。
+也就是将函子定义中态射的性质改为 $FY\xrightarrow{F(f)} FX,F(g\circ^\prime f) := F(f) \circ F(g)$。
 取逆映射进行复合可知，若 $f$ 是同构则 $F(f)$ 也是。
+
+\begin{definition}
+	置函子 $F:  \mathcal{C}' \to \mathcal{C}$，
+	\begin{enumerate}
+		\item 称 $F$ \textbf{本质满}(essentially surjective)，若 $\mathcal{C}$ 中任一对象都同构于某个 $FX$；
+		\item 称 $F$ \textbf{忠实}(faithful)，若对所有 $X, Y \in \Obj(\mathcal{C}')$ 映射 $\hom_{\mathcal{C}'}(X, Y) \to \hom_{\mathcal{C}}(FX, FY) $ 都是单射；
+		\item 称 $F$ \textbf{全}(full)，如果上述映射对所有 $X, Y \in \Obj(\mathcal{C}')$ 都是满射.
+	\end{enumerate}
+\end{definition}
+
+对于任一类含结构的集合 $(X,c)$，其所属范畴 $\mathcal{C}$ 的态射往往不是单纯的集合间映射，而是与结构 $c$ 有关的特殊映射。可定义\textbf{忘却函子}(forgetful functor) $U:\mathcal{C} \to \cate{Set}$：
+\begin{compactitem}
+	\item 对象：$(X,c)\mapsto X$，即忘掉结构 $c$；
+	\item 态射：$f\mapsto f$，因为原范畴的态射当然仍是集合映射，故态射保持不变。
+\end{compactitem}
+这类函子显然忠实而非全。
 
 %% Hom-函子
 
 \subsection{自然变换}
 研究函子间的态射可进一步抽象：
 \begin{definition}
-    函子 $F, G: \mathcal{C}' \to \mathcal{C}$ 之间的\textbf{自然变换}(natural transformation) $\theta$ 是一族态射 $\{\theta_X\}$，其中 $\theta_X \in \hom_{\mathcal{C}}(F(X), G(X))$ 且 $X \in \mathrm{Ob}(\mathcal{C}')$，使得下图对所有 $\mathcal{C}'$ 中的态射 $f: X \to Y$ 交换：
+    函子 $F, G: \mathcal{C}' \to \mathcal{C}$ 之间的\textbf{自然变换}(natural transformation) $\theta$ 是一族态射 $\{\theta_X\}$，其中 $\theta_X \in \hom_{\mathcal{C}}(FX, GX)$ 且 $X \in \Obj(\mathcal{C}')$，使下图
     \begin{equation}\begin{tikzcd}
-        F(X) \arrow[r, "\theta_X"] \ar[d, "F(f)"'] & G(X) \arrow[d, "G(f)"] \\
-        F(Y) \arrow[r, "\theta_Y"] & G(Y) .
+        FX \arrow[r, "\theta_X"] \ar[d, "F(f)"'] & GX \arrow[d, "G(f)"] \\
+        FY \arrow[r, "\theta_Y"] & GY
     \end{tikzcd}\end{equation}
-    $F(X)$ 可简写为 $FX$。
+	对所有 $\mathcal{C}'$ 中的态射 $f: X \to Y$ 交换。
     自然变换写作 $\theta: F \Rightarrow G$，或图解为
     \[ \begin{tikzcd}
         \mathcal{C}' \arrow[bend left=50, r, "F", ""' name=U] \arrow[bend right=50, r, "G"', "" name=D] & \arrow[Rightarrow, to path=(U) -- (D) \tikztonodes, "\theta"] \mathcal{C}.
     \end{tikzcd} \]
-    上述带有双箭头的图表有时也被称为 \textbf{2-胞腔}(2-cell)。这样 $\theta$ 可称为从函子 $F$ 到 $G$ 的态射。
+    上述带有双箭头的图表称\textbf{2-胞腔}(2-cell)。这样 $\theta$ 可称从函子 $F$ 到 $G$ 的态射。
 \end{definition}
 
 
-实用中经常会省略严格的范畴论框架，只说态射 $\theta_X: FX \to GX$ 对变元 $X$ 是\textbf{自然的}或\textbf{典范的}(canonical)，或称满足\textbf{函子性}。对于\textbf{自然同构}。实践中经常把自然同构直接写成等号，即 $F X= G X$。
+实用中经常会省略严格的范畴论框架，只说态射 $\theta_X: FX \to GX$ 对变元 $X$ 是\textbf{自然的}、\textbf{典范的}(canonical)或称满足\textbf{函子性}。实践中经常把\textbf{自然同构}直接写成等号，即 $F X= G X$。
 
-任意函子 $F$ 到自身有恒等态射 $\id_F : F \Rightarrow F$。对于 $\theta: F_1 \Rightarrow F_2$，若 $\psi: F_2 \Rightarrow F_1$ 满足 $\psi \circ \theta = \id_{F_1}$，$\theta \circ \psi = \id_{F_2}$，则称 $\psi$ 是 $\theta$ 的逆。可逆的自然变换称为\textbf{函子同构}。由定义直接看出 $\theta$ 的逆若存在则是唯一的，记作 $\theta^{-1}$，它无非是在范畴中\textit{逐点}取逆：$(\theta^{-1})_X := (\theta_X)^{-1}: F_2 X \to F_1 X$。同理可见 $\theta$ 可逆当且仅当任意 $\theta_X$ 可逆。故函子 $F_1,F_2$ 同构等价于对任意变元 $X$ 有 $F_1 X= F_2 X$。
+\begin{example}
+	置商集 $\tilde X = X/\sim$。$\pi: X \to \tilde X,x\mapsto [x]$ 是自然映射，也称\textbf{典范投影}。理由如下。
+	定义范畴 $\cate{Setoid}$：对象是任意 $(X, \sim)$；态射是保序映射，即 $f: (X, \sim_X) \to (Y, \sim_Y)$ 蕴含 $x \sim_X x' \implies f(x) \sim_Y f(x')$。
+	我们有两个函子：
+	\begin{compactitem}
+		\item 忘却函子 $U: \cate{Setoid} \to \cate{Set}$：$(X, \sim) \mapsto X$；$f \mapsto f$。
+		\item 商函子 $Q: \cate{Setoid} \to \cate{Set}$：$(X, \sim) \mapsto \tilde X$；$f \mapsto \{Q(f): \tilde X \to \tilde Y, [x] \mapsto [f(x)] \}$。
+	\end{compactitem}
+	对每一对象 $(X, \sim)$ 置 $\pi_X: X \to \tilde X$。对任何态射 $f: (X, \sim_X) \to (Y, \sim_Y)$，以下图表交换：
+	\begin{equation}\begin{tikzcd}
+        U(X, \sim) \arrow[r, "\pi_X"] \ar[d, "U(f)"'] & Q(X, \sim) \arrow[d, "Q(f)"] \\
+        U(Y, \sim_Y) \arrow[r, "\pi_Y"] & Q(Y, \sim_Y).
+    \end{tikzcd}\end{equation}
+	证明：$Q(f)\circ\pi_X(x)=Q(f)[x]=[f(x)]=\pi_Y \circ f(x)=\pi_Y \circ U(f)(x)$。
+	因此 $\pi = \{\pi_X\}$ 构成自然变换 $\pi: U \Rightarrow Q$。这意味着映射构造不依赖于特定集合的内部结构，而是与态射的选择一致。
+\end{example}
 
-更深层次的态射纳入到了\textbf{高维范畴论}的领域。
+接着介绍自然变换的常见操作，包括纵横两种复合。
+\begin{itemize}
+	\item 考虑 $\mathcal{C}'$ 到 $\mathcal{C}$ 的三个函子，置 $\theta: F \Rightarrow  G$， $\psi: G \Rightarrow H$. \textbf{纵复合} $\psi \circ \theta$ 的定义是 $\{ \psi_X \circ \theta_X : X \in \Obj(\mathcal{C}') \}$，图解：
+	\[\begin{tikzcd}
+		\mathcal{C}'
+			\arrow[bend left=70, rr, "F", ""' name=U]
+			\arrow[rr, "G" name=MM, ""' name=M]
+			\arrow[bend right=70, rr, "" name=D, "H"'] & &
+		\arrow[Rightarrow, to path=(U) -- (MM) \tikztonodes, "\theta"] \arrow[Rightarrow, to path=(M) -- (D) \tikztonodes, "\psi"] \mathcal{C} 
+	\end{tikzcd} \quad \text{复合为} \quad \begin{tikzcd}
+		\mathcal{C}'
+		\arrow[bend left=50, rr, "F", ""' name=U]
+		\arrow[bend right=50, rr, "" name=D, "H"']
+		& & \arrow[Rightarrow, to path=(U) -- (D) \tikztonodes, "\psi \circ \theta"] \mathcal{C} .
+	\end{tikzcd}\]
+	\item 考虑函子
+	$\begin{tikzcd}
+		\mathcal{C}'' \arrow[bend left=30, r, "F_1"] \arrow[bend right=30, r, "F_2"] & \mathcal{C}' \arrow[bend left=30, r, "G_1"] \arrow[bend right=30, r, "G_2"] & \mathcal{C}
+	\end{tikzcd}$
+	及态射 $\theta: F_1 \Rightarrow F_2, \psi: G_1 \Rightarrow G_2$。今将定义\textbf{横复合} $\psi \circ \theta: G_1 \circ F_1 \Rightarrow G_2 \circ F_2$。首先注意 $\forall X \in \Obj(\mathcal{C}'')$，根据 $\psi$ 的自然性，图表
+	\begin{equation}\label{eqn:horizontal-comp}\begin{tikzcd}
+		G_1 F_1 X \arrow[r, "{\psi_{F_1 X}}"] \arrow[d, "{G_1(\theta_X)}"'] & G_2 F_1 X \arrow[d, "{G_2(\theta_X)}"] \\
+		G_1 F_2 X \arrow[r, "{\psi_{F_2 X}}"'] & G_2 F_2 X
+	\end{tikzcd}\end{equation}
+	交换。对角复合 $\searrow$ 记作 $(\psi \circ \theta)_X : G_1 F_1  X \to G_2 F_2  X$，此即所求的横复合，我们马上会证明它的自然性，读者也可以借机熟悉交换图表的运用。图解：
+	\[ \begin{tikzcd}
+		\mathcal{C}'' \arrow[bend left=50, r, "F_1", ""' name=LU] \arrow[bend right=50, r, "" name=LD, "F_2"'] &
+		\mathcal{C}' \arrow[bend left=50, r, "G_1", ""' name=RU] \arrow[bend right=50, r, "" name=RD, "G_2"'] &
+		\arrow[Rightarrow, to path=(LU) -- (LD) \tikztonodes, "\theta"] \arrow[Rightarrow, to path=(RU) -- (RD) \tikztonodes, "\psi"] \mathcal{C}
+	\end{tikzcd} \quad \text{复合为} \quad \begin{tikzcd}
+		\mathcal{C}''
+		\arrow[bend left=50, rr, "G_1 F_1", ""' name=U]
+		\arrow[bend right=50, rr, "" name=D, "G_2 F_2"']
+		& & \arrow[Rightarrow, to path=(U) -- (D) \tikztonodes, "\psi \circ \theta"] \mathcal{C} .
+	\end{tikzcd} \]
+	横复合有下述特例：
+	\[\begin{tikzcd}
+		\mathcal{C}_1 \arrow[r, "H"] & \mathcal{C}_2 \arrow[bend left=50, r, "F", ""' name=U] \arrow[bend right=50, r, "" name=D, "G"'] & \mathcal{C}_3 \arrow[Rightarrow, to path=(U)--(D) \tikztonodes, "\theta"] \arrow[r, "K"] & \mathcal{C}_4 .
+    \end{tikzcd} \]
+	先看左边：我们将以 $\theta H: FH \Rightarrow GH$ 简记横复合 $\theta \circ \id_{H}$；具体地，$(\theta H)_X = \theta_{HX} : FH X \to GH X$；类似地处理右边：记 $K\theta: KF \Rightarrow KG$ 为横复合 $\id_K \circ \theta$，我们有 $(K\theta)_X = K(\theta_X): KF X \to KG X$.
+\end{itemize}
 
-\begin{definition}
-    从 $X$ 到 $Y$ 的全体映射构成\textbf{映射集}或\textbf{指数对象} $Y^X:=\hom_{\cate{Set}}(X,Y)$。这个记法是注意到 $\hom_{\cate{Set}}(X,Y)$ 的势可以写成 $|Y|^{|X|}$。
+\begin{lemma}\label{prop:naturaltrans-associativity}
+	以上定义的纵横复合 $\{ (\psi \circ \theta)_X \}_X$ 都是函子间的态射，而且各自满足严格结合律 $(\phi \circ \psi) \circ \theta = \phi \circ (\psi \circ \theta)$。纵横复合之间满足下述关系：对于图表
+	\[\begin{tikzcd}
+		\mathcal{C}_1
+		\arrow[bend left=70, rr, ""' name=U]
+		\arrow[rr, "" name=MM, ""' name=M]
+		\arrow[bend right=70, rr, "" name=D] & &
+		\arrow[Rightarrow, to path=(U) -- (MM) \tikztonodes, "\theta"] \arrow[Rightarrow, to path=  (M) -- (D) \tikztonodes, "\psi"] \mathcal{C}_2
+		\arrow[bend left=70, rr, ""' name=V]
+		\arrow[rr, "" name=NN, ""' name=N]
+		\arrow[bend right=70, rr, "" name=E] & &
+		\arrow[Rightarrow, to path=(V) -- (NN) \tikztonodes, "\theta'"] \arrow[Rightarrow, to path=  (N) -- (E) \tikztonodes, "\psi'"] \mathcal{C}_3 ,
+	\end{tikzcd} \]
+	以下的互换律成立
+	\[ ( \psi' \underset{\text{纵}}{\circ} \theta') \underset{\text{横}}{\circ} ( \psi \underset{\text{纵}}{\circ} \theta) = ( \psi' \underset{\text{横}}{\circ} \psi ) \underset{\text{纵}}{\circ} ( \theta' \underset{\text{横}}{\circ} \theta).  \]
+\end{lemma}
+\begin{proof}
+	关于纵复合的断言是简单的，以下证明横复合是函子间的态射。我们沿用之前的符号。对于 $\mathcal{C}''$ 中的态射 $f: X \to Y$， 考虑源于 \eqref{eqn:horizontal-comp} 的图表
+	\[\begin{tikzcd}
+		G_1 F_1  X \arrow[r, "G_1 \theta_X"] \arrow[d, "G_1 F_1 f"'] & G_1 F_2  X \arrow[r, "{\psi_{F_2 X}}"] \arrow[d, "G_1 F_2 f"] & G_2 F_2  X \arrow[d, "G_2 F_2 f"] \\
+		G_1 F_1 (Y) \arrow[r, "{G_1 \theta_Y}"'] & G_1 F_2 (Y) \arrow[r, "{\psi_{F_2 Y}}"'] & G_2 F_2 (Y) .
+	\end{tikzcd} \]
+	按定义，水平方向箭头复合后上下分别是 $(\psi \circ \theta)_X, (\psi \circ \theta)_Y$。因为 $\theta$ 是自然变换而 $G_1$ 是函子，左方块交换；由于 $\psi$ 是自然变换，右方块交换。将箭头分段作复合，可知整个大方块交换，此即 $ \psi \circ \theta$ 所需性质.
+
+	现证明横复合的结合律：考虑函子间的态射
+	\[\begin{tikzcd}
+		\mathcal{C}''' \arrow[bend left=50, r, "F_1", ""' name=LU] \arrow[bend right=50, r, "" name=LD, "F_2"'] &
+		\mathcal{C}'' \arrow[bend left=50, r, "G_1", ""' name=MU] \arrow[bend right=50, r, "" name=MD, "G_2"'] &
+		\mathcal{C}' \arrow[bend left=50, r, "H_1", ""' name=RU] \arrow[bend right=50, r, "" name=RD, "H_2"'] &
+		\arrow[Rightarrow, to path=(LU) -- (LD) \tikztonodes, "\theta"]
+		\arrow[Rightarrow, to path=(MU) -- (MD) \tikztonodes, "\psi"]
+		\arrow[Rightarrow, to path=(RU) -- (RD) \tikztonodes, "\phi"]
+		\mathcal{C} .
+	\end{tikzcd} \]
+	对任意 $X \in \Obj(\mathcal{C}''')$，考虑图表
+	\[\begin{tikzcd}[row sep=small]
+		& & H_1 G_2 F_2 X \arrow[rd] & \\
+		H_1 G_1 F_1 X \arrow[r] & H_1 G_2 F_1 X \arrow[ru] \arrow[rd] & & H_2 G_2 F_2 X . \\
+		& & H_2 G_2 F_1 X \arrow[ru] &
+	\end{tikzcd}\]
+	施 $\phi$ 的自然性于 $G_2 F_1 X \to G_2 F_2 X$ 可知菱形部分交换。按
+	\begin{tikzpicture}[scale=0.5, baseline=(X)]
+		\draw[->] (0,0) -- (1,0) -- (2, 0.5) -- (3, 0);
+		\coordinate (X) at (0,0);
+	\end{tikzpicture}
+	复合给出 $(\phi \circ (\psi \circ \theta))_X$. 按
+	\begin{tikzpicture}[scale=0.5, baseline=(X)]
+		\draw[->] (0,0) -- (1,0) -- (2, -0.5) -- (3, 0);
+		\coordinate (X) at (0, -0.2);
+	\end{tikzpicture}
+	复合则给出 $((\phi \circ \psi) \circ \theta)_X$；这里仍须用上交换图表 \eqref{eqn:horizontal-comp}。结合律证毕。
+	最后一个等式可按图索骥，从略.
+\end{proof}
+
+任意函子 $F$ 到自身有恒等态射 $\id_F : F \Rightarrow F$。对于 $\theta: F_1 \Rightarrow F_2$，若 $\psi: F_2 \Rightarrow F_1$ 满足 $\psi \circ \theta = \id_{F_1}$，$\theta \circ \psi = \id_{F_2}$，则称 $\psi$ 是 $\theta$ 的逆。可逆的自然变换称为\textbf{函子同构}，写作 $\theta: F_1 \xRightarrow{\sim} F_2$。由定义直接看出 $\theta$ 的逆若存在则是唯一的，记作 $\theta^{-1}$，它无非是在范畴中\textit{逐点}取逆：$(\theta^{-1})_X := (\theta_X)^{-1}: F_2 X \rightiso F_1 X$。同理可见 $\theta$ 可逆当且仅当任意 $\theta_X$ 可逆。易见同构的纵横复合仍是同构。故 $F_1,F_2$ 同构等价于对变元 $X$ 有自然同构 $F_1 X= F_2 X$。
+
+\begin{definition}\label{def:cat-equivalence}
+	若一对函子
+	\begin{tikzcd}
+		\mathcal{C}_1 \arrow[bend left=20, r, "F"] & \mathcal{C}_2 \arrow[bend left=20, l, "G"]
+	\end{tikzcd}
+	满足：存在函子同构 $\theta: FG \xRightarrow{\sim} \id_{\mathcal{C}_2}$，$\psi: GF \xRightarrow{\sim} \id_{\mathcal{C}_1}$，则称 $G$ 是 $F$ 的\textbf{拟逆}(quasi-inverse)函子，并称 $F$ 是 $\mathcal{C}_1$ 到 $\mathcal{C}_2$ 的\textbf{等价}(equivalence).
+	若进一步 $FG = \id_{\mathcal{C}_2}, GF = \id_{\mathcal{C}_1}$，则称 $F$ 是\textbf{范畴同构}，而 $G$ 是 $F$ 的\textbf{逆}.
 \end{definition}
+易证等价的复合仍是等价.
 
-\begin{definition}
-hom-函子    
-\end{definition}
-
-
-
-\begin{definition}
-映射 $f:X\to Y$ 诱导出\textbf{拉回}(pull-back)映射 $f^*:\mathbb F^Y\to\mathbb F^X$，它将任意 $Y$ 上函数 $\lambda$ 反向拉回到 $X$ 上（这里将 $f^*(\lambda)$ 简写为 $f^*\lambda$）：
-\eq{
-    f^*\lambda:=\lambda\circ f.
-}
-\textbf{推前}(push-forward) $f_* v:=v\circ f^*$ 将任意 $X$ 上泛函 $v$ 沿 $f$ 推到 $Y$ 上。
-
-集合 $X$ 的\textbf{对偶}是指 $X^*:=\mathbb F^X$，故 $f\in\hom(X,Y)$ 诱导出拉回 $f^*\in\hom(Y^*, X^*)$。
-容易验证 $\id_X^*=\id_{X^*}$ 且 $(f\circ g)^*=g^*\circ f^*$。因此可用 $X\mapsto X^*,f\mapsto f^*$ 构成（逆变）函子 $(\oo)^*: \cate{Set}^\mathrm{op}\to \cate{Set}$，称为\textbf{对偶函子}。
-\end{definition}
+\begin{proposition}
+	若 $G, G'$ 是函子 $F: \mathcal{C}_1 \to \mathcal{C}_2$ 的拟逆，则存在函子的同构 $G \simeq G'$.
+\end{proposition}
+\begin{proof}
+	自然变换的横合成给出 $G \xleftarrow[\sim]{\psi' \circ \id_G} (G'F)G = G'(FG) \xrightarrow[\sim]{\id_{G'} \circ \theta} G'$.
+\end{proof}
 
 \begin{remark}
-    不可逆的 $f$ 只能对泛函定义推前。
-    $f$ 可逆时才能直接对函数 $\lambda:X\to\mathbb F$ 定义 $f_*\lambda:=\lambda\circ f^{-1}$，也即 $f_*:=(f^{-1})^*$，这样也有 $f^*=(f^{-1})_*$。
+	业已对“对象态射”“函子态射/自然变换”定义了逆，其逆若存在则唯一，依此定义何谓对象、函子同构。对于函子亦可定义逆的概念，逆函子若存在则唯一；相较之下，拟逆函子之间则可以差一个同构。实践表明范畴的同构概念不甚实用，等价的概念则处处出现。这体现了范畴论的一条经验准则：在函子层次，同构（如 $\theta: FG \xRightarrow{\sim} \id$）几乎总比严格相等（如 $FG = \id$）来得管用。然而同构也不是任意的，所需的条件一般称为融贯性：以等价为例，读者兴许已经在先前论证中感到拟逆的概念有些松散，\textbf{伴随等价}(adjoint equivalence)则更细化.
 \end{remark}
+
+\subsection{函子范畴}\label{sec:functor-category}
+
+以下所论范畴皆为 $\mathcal{U}$-范畴.
+
+\begin{definition}
+	设 $I$ 为 $\mathcal{U}$-集，而 $\{\mathcal{C}_i : i \in I \}$ 是一族范畴.
+	\begin{itemize}
+		\item 积范畴 $\prod_{i \in I} \mathcal{C}_i$ 满足：
+			\begin{align*}
+				\Obj\left( \prod_{i \in I} \mathcal{C}_i \right) & := \prod_{i \in I} \Obj(\mathcal{C}_i), \\
+				\hom_{\prod_{i \in I} \mathcal{C}_i}( (X_i)_i, (Y_i)_i ) & := \prod_{i \in I} \hom_{\mathcal{C}_i}(X_i, Y_i),
+			\end{align*}
+			其中以 $(X_i)_i$ 表示 $\prod_{i \in I} \Obj(\mathcal{C}_i)$ 的元素。态射的合成是逐个分量定义的.
+		\item 余积（无交并）范畴 $\coprod_{i \in I} \mathcal{C}_i$ 满足：
+			\begin{align*}
+				\Obj\left( \coprod_{i \in I} \mathcal{C}_i \right) & := \coprod_{i \in I} \Obj(\mathcal{C}_i), \\
+				\hom_{\coprod_{i \in I} \mathcal{C}_i}(X_j, X'_k) & :=
+				\begin{cases}
+					\hom_{\mathcal{C}_j}(X_j, X'_k), & j = k, \\
+					\emptyset, & j \neq k;
+				\end{cases}
+			\end{align*}
+			其中对每个 $j \in I$，$X_j, X'_j \in \Obj(\mathcal{C}_j)$。态射的合成是在各个 $\mathcal{C}_i$ 中个别定义的.
+	\end{itemize}
+\end{definition}
+由于 $I$ 已假设是 $\mathcal{U}$-集，我们造出的范畴仍然是 $\mathcal{U}$-范畴；若每个 $\mathcal{C}_i$ 都是 $\mathcal{U}$-小范畴，则它们的积和余积亦然.
+
+我们有一族投影函子 $\Pr_j: \prod_{i \in I} \mathcal{C}_i \to \mathcal{C}_j$，它将 $(X_i)_i$ 映至 $X_j$，在态射层面也是类似地投影到 $j$ 分量。同理定义一族包含函子 $\iota_j: \mathcal{C}_j \to \coprod_{i \in I} \mathcal{C}_i$，将 $\mathcal{C}_j$ 以自明的方式嵌入为全子范畴.
+
+特别地，取 $I$ 为有限集便能定义 $\mathcal{C}_1 \times \cdots \times \mathcal{C}_n, \mathcal{C}_1 \sqcup \cdots \sqcup \mathcal{C}_n$.
+
+\begin{definition}
+	$F: \mathcal{C}_1 \times \mathcal{C}_2 \to \mathcal{C}$ 称\textbf{二元函子}或\textbf{双函子}(bifunctor)。多元函子 $\mathcal{C}_1 \times \cdots \times \mathcal{C}_n \to \mathcal{C}$ 定义类似。
+\end{definition}
+
+\begin{definition}
+		给定范畴 $\mathcal{C}$，则 $(X,Y) \mapsto \hom_{\mathcal{C}}(X, Y)$ 定义了二元函子 $\hom_{\mathcal{C}}: \mathcal{C}^\mathrm{op} \times \mathcal{C}  \to \cate{Set}$，
+	称 \textbf{$\hom$-函子}。
+	$\mathcal{C}$ 中的任一对态射 $f: X' \to X$，$g: Y \to Y'$ 诱导出
+	\begin{align*}
+		\hom_{\mathcal{C}}(X, Y) & \longrightarrow \hom_{\mathcal{C}}(X', Y') \\
+		\phi & \longmapsto g \phi f .
+	\end{align*}
+	$f$ 对 $\phi$ 是\textbf{预复合}(pre-composition)。$g$ 对 $\phi$ 是\textbf{后复合}(post-composition)。
+	\begin{itemize}
+		\item 取 $g$ 恒等，就相当于 $f^*:\hom_{\mathcal{C}}(X, Y) \to \hom_{\mathcal{C}}(X', Y)$ 使 $f^* \phi := \phi f$，这称为 $f$ 的\textbf{拉回}(pull-back)。
+	直观上，它将态射 $\phi$ 的来源 $X$ 反向拉到 $X'$。
+	这对应 $\hom$-函子在第一个变量 $\mathcal{C}^\mathrm{op}$ 上的逆变性。
+		\item 同理，$g_* \phi := g\phi$ 的 $g_*:\hom_{\mathcal{C}}(X, Y) \to \hom_{\mathcal{C}}(X, Y')$ 称\textbf{推前}(push-forward)。
+	直观上，它将态射 $\phi$ 的目标 $Y$ 正向推到为 $Y'$。 
+	这对应 $\hom$-函子第二个变量 $\mathcal{C}$ 上的协变性。
+	\end{itemize}
+\end{definition}
+\begin{remark}
+	易见 $(f_1 f_2)^* = f_2^* f_1^*, (f_1 f_2)_* = (f_1)_* (f_2)_*$。推前亦作\textbf{推出}(push-out)。
+\end{remark}
+
+\begin{definition}
+    给定数域 $\F=\R,\C$。集合 $X$ 上的\textbf{函数}是指 $\F^X$ 的元素、\textbf{泛函}是指 $\F^{\F^X}$ 的元素。$\F^{\F^X}$ 中 $|X|$ 称\textbf{自由度}。
+\end{definition}
+
+\begin{example}
+	以 $\F$ 为目标对象，$\hom(-, \F)$ 是逆变函子，使箭头反转：
+	\begin{compactitem}
+		\item 对象：$X \mapsto X^* := \hom(X, \F)$；（$X$ 上全体函数）
+		\item 态射：$[f:X'\to X] \mapsto [f^*: X^* \to X'^*, \phi\mapsto\phi f]$。
+	\end{compactitem}
+	这称为\textbf{对偶函子}，可记 $(\oo)^*: \mathcal{C}^\mathrm{op}\to \cate{Set}$。
+	也可直接验证逆变性：$f\in\hom(X',X) \mapsto f^*\in\hom(X^*, X'^*)$；$\id_X^*=\id_{X^*}$ 且 $(f  g)^*=g^*  f^*$。
+\end{example}
+
+\begin{example}
+	记 $D(\oo)=(\oo)^*$。为方便考虑 $\mathcal{C}=\cate{Set}$。
+	考虑复合 $DD^\mathrm{op}:\mathcal{C}\to\mathcal{C}$（简写为 $(\oo)^{**}$），称为\textbf{双对偶函子}。
+	$X\mapsto X^{**}=\hom(X^*,\F)$；
+	$f\in\hom(X', X)\mapsto [f^{**}\in\hom(X^{\prime **},X^{**}), v\mapsto v f^*]$。可见双对偶函子确为协变函子。
+	任意 $X'$ 上泛函 $v\in X^{\prime **}$ 推到 $X$ 上。考虑到这一点，$f_* := f^{**}$ 仍称为 $f$ 的推前。
+	
+	$g_*\phi=g\phi$ 变的是 $\phi$ 的目标，是最直接的推前；$f_*v=vf^*$ 变的是 $v$ 的来源，在内部拉回输入变量（$f^*\phi=\phi f$），从而在外部推前整个泛函 $v$，是双对偶带来的推前。
+	若非要将 $f_*v=vf^*$ 改写为 $g_*\phi=g\phi$ 的形式，则可将 $v\in X^{\prime **}$ 对应为 $\phi \in\hom(\F,X')$。
+\end{example}
+
+\begin{remark}
+    不可逆的 $f$ 只能用双对偶函子诱导推前，即只能对泛函定义推前。
+    $f$ 可逆时才能直接对函数 $\lambda:X\to\F$ 定义 $f_*\lambda:=\lambda f^{-1}$，也即 $f_*:=(f^{-1})^*$，这样也有 $f^*=(f^{-1})_*$。
+\end{remark}
+
+\begin{definition}
+	设 $\mathcal{C}_1, \mathcal{C}_2$ 为 $\mathcal{U}$-范畴，定义\textbf{函子范畴}(functor category) $\mathrm{Fct}(\mathcal{C}_1, \mathcal{C}_2)$：对象是 $\mathcal{C}_1$ 到 $\mathcal{C}_2$ 的函子；态射是自然变换 $\theta: F \Rightarrow G$；态射 $\theta: F \Rightarrow G$ 与 $\psi: G \Rightarrow H$ 的合成是自然变换的纵合成 $\psi \circ \theta: F \Rightarrow H$.
+\end{definition}
+此构造解释了为何直接称自然变换是函子间的态射。
+
+\begin{remark}
+	此定义需要一些解释。首先注意到 $\mathrm{Fct}(\mathcal{C}_1, \mathcal{C}_2)$ 的对象和态射都构成集合。对于态射还有更精确的结果：若 $\mathcal{C}_1$ 是 $\mathcal{U}$-小范畴，则 $\mathrm{Fct}(\mathcal{C}_1, \mathcal{C}_2)$ 是 $\mathcal{U}$-范畴，这是因为对任两个 $F, G: \mathcal{C}_1 \to \mathcal{C}_2$，其间的自然变换是集合
+	\[ \prod_{X \in \Obj(\mathcal{C}_1)} \hom_{\mathcal{C}_2} (FX, GX) \]
+	的子集。若 $\mathcal{C}_1$ 是 $\mathcal{U}$-小范畴，则上式为 $\mathcal{U}$-小集.
+	此外还要用到自然变换纵合成的结合律，见引理 \ref{prop:naturaltrans-associativity}.
+\end{remark}
+
+对函子 $F, G : \mathcal{C}_1 \to \mathcal{C}_2$，在反范畴中相应地有 $F^\mathrm{op}, G^\mathrm{op}: \mathcal{C}_1^\mathrm{op} \to \mathcal{C}_2^\mathrm{op}$，易见自然变换 $\varphi: F \Rightarrow G$ 在反范畴中被倒转为 $\varphi^\mathrm{op}: G^\mathrm{op} \to F^\mathrm{op}$，而且 $(\varphi^{\mathrm{op}})^{\mathrm{op}} = \varphi$。摘要如下.
+
+\begin{proposition}\label{prop:op-functor-cat}
+	存在自然同构 $\mathrm{Fct}(\mathcal{C}_1, \mathcal{C}_2)^\mathrm{op} \xRightarrow{\sim} \mathrm{Fct}(\mathcal{C}_1^{\mathrm{op}}, \mathcal{C}_2^{\mathrm{op}})$，它将 $\varphi$ 映至 $\varphi^\mathrm{op}$.
+\end{proposition}
+
+今后用到的多数是 $\mathcal{C}_1$ 为小范畴的情形。有时也把 $\mathrm{Fct}(\mathcal{C}_1, \mathcal{C}_2)$ 写作 $\mathcal{C}_2^{\mathcal{C}_1}$.
+\begin{example}
+	考虑集合 $I \in \mathcal{U}$，取 $\mathcal{I} := \cate{Disc}(I)$ 为相应的离散范畴（例 \ref{eg:categories}），则对任意 $\mathcal{C}$ 皆有范畴同构 $\mathcal{C}^{\mathcal{I}} \simeq \prod_{i \in I} \mathcal{C}$.
+\end{example}
+
+%% 泛性质、伴随
 
 

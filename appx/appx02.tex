@@ -1,919 +1,558 @@
-\chapter{点集拓扑}\label{appx:topo}
+\chapter{线性代数}\label{appx:LA}
 
-18 世纪，Euler 等人发现简单多面体的顶点数 $v$、楞数 $e$、面数 $f$ 总是满足 $v-e+f=2$。
-具体地，简单多面体可连续变化成球面。用投影来模拟这个过程：多面体内应存在一种位置，在此处放一盏灯，各顶点和棱都投影在一个外部球面上，这些棱的投影曲线彼此不穿过。比如凸多面体和某些凹多面体，但像厚球壳那样带腔、像甜甜圈那样带洞的多面体是不行的。
-这种变化还可形象地视作捏橡皮膜(rubber-sheet)，拓扑学因而又称为\textbf{橡皮几何}。的确，自然界存在直觉上形状相似的几何体，为抽象出共性，可试着“揉”它但不撕裂或粘帖，观察是否能得到另一几何体，如从正方体到球体。这种连续变化间的等价性称作\textbf{同胚}(homeomorphism)。$v-e+f$就是一个多面体在同胚下保持不变的量，即\textbf{拓扑不变量}。
-进而我们能将各几何体分门别类，注意力集中于诸如“是否有内外”“是否有洞”“绳上打了几个结”这类问题上的，从而架空距离、面积这些传统几何概念。一个典型例子是，对于理想电路，无论接线长度、方向如何，只要节点不变，电路网络就是等价的。
+\section{线性空间}
 
+带有满足结合律的二元运算的非空集称\textbf{半群}(semigroup)。存在单位元的半群称\textbf{幺半群}(monoid)。元素皆可逆的幺半群正是群。
+\textbf{同态}(homomorphisms)是保持群结构的映射 $f \in \hom(G_1, G_2 ) \Leftrightarrow f (g_1 h_1 )=f (g_1 ) f (h_1 )$。
+单位元和逆元是唯一的，因为假设 $\bar 1',\bar 1$ 是单位元，则 $\bar 1'=\bar 1'\bar 1=\bar 1$；假设 $z,\bar x$ 是 $x$ 的负元，则 $z=z\bar 1=z(x\bar x)=(zx)\bar x=\bar 1\bar x=\bar x$。
+$\cate{Grp}$ 为所有群构成的范畴，对象之间的态射定义为群同态，态射的合成与恒等态射定义与 $\cate{Set}$ 类似。
+
+\textbf{环}(ring)具有两种分别称为加法和乘法的运算，其中加法应构成交换群（Abel 群），乘法应满足结合律，并同加法一起满足分配律。加法单位元称为\textbf{零元}，加法逆元称为\textbf{负元}。不混淆时零元记作 $0$，而 $x$ 的负元记作 $-x$。
+若乘法满足交换律，则称\textbf{交换环}或 \textbf{Abel 环}。存在乘法单位元的环称\textbf{幺环}。非零元在乘法上可逆的环称\textbf{除环}。交换幺除环称为\textbf{域}(field)，常记作空心字符，如 $\mathbb{K}$。称域对其加法、乘法是\textbf{封闭的}。由于零元不可逆，故通常要求域首先至少有零元和乘法单位元。
+环 $R$ 的一个\textbf{双边理想}(2-sided ideal) $I$ 是 $R$ 的一个子环，且满足 
+\[r \in R, a \in I \im r a \in I, a r \in I.\]
+可用显然的方式定义\textbf{左理想}和\textbf{右理想}。
+
+群、环、域都只考虑某个集合的\textbf{内部运算}。我们当然也能考虑另一集合来构造所谓的\textbf{外部运算}。通常我们会在群上，加上一个由环给出的外部运算，这就是某环上的\textbf{模}(module)。
+给定环 $R$，\textbf{左 $R$-模} $X$ 是一个交换群，且带有另一称为外部乘法的运算 $R \times X \rightarrow X$，满足对 $\forall \alpha,\beta \in R, x,y \in X$ 有如下分配律和结合律：
+\[(\alpha+\beta) x=\alpha x+\beta x,\quad \alpha(x+y)=\alpha x+\alpha y,\quad (\alpha\beta)x=\alpha(\beta x).\]
+若 $R$ 是幺环，则还要求其乘法单位元 $1$ 使 $1x=x$。\textbf{右 $R$-模}的定义是显然的。
+
+\textbf{代数}(algebra)首先是幺环 $R$ 上的模 $X$，且要给定另一称为乘积的内部运算，使得 $X$ 自身是环，并对 $\forall \alpha \in R, x,y \in X$ 有 $\alpha(xy)=(\alpha x) y=x(\alpha y)$。可见代数上有五种运算：$R$ 的加法和乘法、$X$ 的加法和乘积、外部乘法。
+
+进而回顾一下，域 $\F$ 上的\textbf{线性空间}其实就是 $\F$-模。由于 $\F$ 是域，选取左模或右模其实无关宏旨。一般取实数域 $\R$ 或复数域 $\C$，相应有实线性空间和复线性空间。显然 $\F$ 自身可以成为 $\F$-线性空间。线性空间的元素称为\textbf{向量}或\textbf{矢量}。其中内部运算称为（逐点）加法，外部运算称为数乘。物理上常称为\textbf{线性叠加原理}，而将矢量画成笔直的箭头。可以看到，$V$ 在赋予某种乘法后是一个代数，可称\textbf{线性代数}，比如内积空间或者张量积空间。当然，线性代数在现在更多指此概念所发展的一套学说。
+
+设线性空间 $V$。某非空 $S\subset V$ 内元素的全体线性组合构成子空间 $\operatorname{span}B$，称为由 $B$ 张成的。若存在线性无关的非空子集 $B$ 使 $\operatorname{span}B=V$，则称 $B$ 是 $V$ 的一个\textbf{基}(basis)或一组\textbf{基矢}(basis vectors)。$|B|<\aleph_0$ 则称 $V$ 是\textbf{有限维的}，可定义维数 $\dim V:=|B|$。易知任意基的元素个数一致，由此维数是良定义的。若 $|B|\geqslant \aleph_0$，也即任意有限矢量组 $\{e_\mu\}_{\mu=1}^n$ 都不构成基，则称 $V$ 是\textbf{无限维的}。典型例子是 $[a, b] \subset \R$ 上连续复函数构成无限维复线性空间 $C[a, b]$，直观上是因为 $[a, b]$ 有无穷多自由度，从而总存在函数不能有限表出。
+映射 $A:V\to V$ 称为 $V$ 上的\textbf{算子}、\textbf{算符}(operator)或\textbf{变换}。
+有限维里有很多结论不能简单推广至无限维，否定这些结论带来了更多“反直觉”的性质。相对论的物理量主要属于有限维。
+
+对 $\F^X$ 定义如下加法、数乘、零元：$\forall f,g\in \F^X,x\in X,\alpha\in\F$ 有
+\[(f+g)(x):=f(x)+g(x),\quad (\alpha f)(x):=\alpha f(x),\quad 0(x):=0,\]
+$\F^X$ 就成了线性空间，且维数为 $|X|$。故泛函等价于线性空间上的函数。$\F^X$ 等势于 $\F^{|X|}$。若 $|X|<\aleph_0$，则 $X$ 上函数即有限数列，$X$ 上泛函相当于 $\F^{|X|}$ 上的多元函数。
+故我们多考虑无穷自由度的泛函，是无穷维线性空间 $\F^X$ 上的函数。
+
+易知 $x\in V$ 可由任意基 $\{e_\mu\}$ 唯一地线性表示，称系数组 $\{k^\mu\}$ 为 $x$ 由 $\{e_\mu\}$ 表出的\textbf{分量}，有限维时写作 $(k^1,\cdots,k^n)^\mathrm{T}$。欲谈及同一矢量在不同基间的分量变换，先要给定基变换。
+设 $\{e_\mu\},\{e'_\mu\}$ 是线性空间 $V$ 上两组不同的基，某矢量 $v\in V$ 在两组基下的分量分别是 $\{v^\mu\},\{v'^\mu\}$。设基矢 $e_\mu^{\prime}$ 在 $\{e_\mu\}$ 下的展开为
+\eq{
+e'_\mu=A^\nu{ }_\mu e_\nu,
+}
+其中 $A$ 也叫过渡矩阵。两个基皆线性无关，故过渡矩阵可逆。于是由 $v'^\mu e'_\mu=v^\nu e_\nu$ 得 $v'^\mu A^\nu{ }_\mu e_\nu=v^\nu e_\nu$，由基的线性无关性知 $v'^\mu A^\nu{ }_\mu =v^\nu$，故
+\eq{
+    v'^\mu=(A^{-1})^\mu{}_\nu v^\nu.
+}
+因此基变换和分量变换是互逆的。故相对于 $\{e_\mu\}$ 而言可称 $v\in V$ 为逆变矢量。
+
+\section{对偶空间}
+
+以 $\F$-线性空间为对象、线性映射为态射，构建\textbf{线性空间范畴} $\cate{Vect}(\F)$。
+类此定义有限维 $f$ 线性空间范畴 $\cate{Vect}_f(\F)$，它是 $\cate{Vect}(\F)$ 的全子范畴。
+
+置 $f\in\hom(V,W)$。线性变换或线性算子即取 $W=V$ 的 $f\in\operatorname{End} V$。$W=\F$ 时称为线性函数。设 $V$ 的一个基 $\{e_\mu\}$，对 $V$ 中任意矢量 $k^\mu e_\mu$ 有 $f(k^\mu e_\mu)=k^\mu f(e_\mu)$。故其实只要知道 $\{e_\mu\}$ 在 $f$ 下的像组 $\{f(e_\mu)\}$，则 $V$ 中任意矢量在 $f$ 下的像就确定了，即线性映射完全由基的作用效果确定。显然 $A\in\hom(U,V),B\in\hom(V,W)$ 的复合也线性，即 $BA\in\hom(U,W)$。
+
+假若 $f$ 还是双射，则 $f\in\mathrm{Isom}(V, W)$ 且 $f^{-1}\in\hom(W,V)$。换言之，$V,W$ 的线性双射为同构。有限维时易证 $U\cong V$ 等价于 $\dim U=\dim V$。易知 $f$ 是单射时，核为 $\ker f:=\{\alpha\in V:f(\alpha)=0\}=\{0\}$；$f$ 是满射时像为 $\Im f=W$。秩为 $\rank f:=\dim \Im f$，可证满足 $\dim \ker f + \dim \Im f = \dim V$。故若 $f$ 单射，则 $\Im f\cong V$。对线性变换而言，这说明单射等价于满射。换言之，满秩线性变换乃 $V$ 自同构。
+
+对任意线性空间 $V,W$，只要对 $\hom(V,W)$ 定义如下加法、数乘、零元：$\forall f,g\in \hom(V,W),v\in V,\alpha\in\F$ 有
+\[(f+g)(v):=f(v)+g(v),\quad (\alpha f)(v):=\alpha f(v),\quad 0(v):=0,\]
+则 $\hom(V,W)$ 成为了线性空间。
+考虑对偶函子 $(\oo)^*:\cate{Vect}(\F)^\mathrm{op}\to \cate{Vect}(\F)$。
+可以验证它是忠实的。
+$V^*=\hom(V,\F)$ 是线性空间，故称为 $V$ 的\textbf{对偶空间}。$\omega\in V^*$ 称为\textbf{对偶矢量}，由于 $\hom(V,\F)\subset\F^V$，也可称\textbf{线性泛函}。
+比如，行线性空间就是列线性空间的对偶空间。线性映射 $f\in\hom(V,W)$ 诱导出拉回 $f^*\in\hom(W^*, V^*)$ 使 $f^*\omega=\omega f$。
+
+下证有限维时 $V\cong V^*$。
+考虑从原来的 $V$ 来产生 $V^*$ 的基。假设 $\{e_\mu\}$ 是 $V$ 的一个基，则定义 $V^*$ 中有一组元素 $\{e^\mu\}$ 满足
+\eq{ e^\mu(e_\nu):=\delta^\mu_\nu,}
+进而由线性性可导出它对 $V$ 任意元素的作用情况，即 $e^\mu(A)=A^\mu$。再证明 $\{e^\mu\}$ 确实是一个基：对任意 $\omega\in V^*$ 设
+\eq{
+    \omega_\mu:=\omega(e_\mu),
+}
+则必能展开成 $\omega=\omega_\mu e^\mu$，因为两边作用于任意 $V$ 中元素即可，如 $\omega(e_\nu)=\omega_\mu e^\mu(e_\nu)=\omega_\nu$；显然线性无关：$0=\omega_\mu e^\mu(e_\nu)=\omega_\nu$。这说明 $\dim V^*=\dim V$ 或者 $V\cong V^*$。按此关系给出的 $\{e^\mu\}$ 就称 $\{e_\mu\}$ 的\textbf{对偶基}。
+
+$V,V^*$ 间的同构当然不唯一。注意到 $\{e_\mu\}$ 到其对偶基 $\{e^\mu\}$ 的线性映射就是同构，那这会随着 $\{e_\mu\}$ 的不同选取而产生不同的同构。
+若要有充分理由挑选出特殊同构，需另加结构限制之。
+比如我们学过的度规就建立了 $V,V^*$ 的特殊同构。
+
+然而对偶操作不必继续“套娃”。用基底展开后有 $\omega(A)=\omega_\mu A^\mu=A^\mu\omega_\mu$，这说明对偶矢量与矢量之间有天生的(god-given)乘法。映射像乘法一样可交换，矢量也可成为对偶矢量的线性函数，于是 $V,V^**$ 在某种意义上是一样的。
+具体地说，考虑双对偶函子 $(\oo)^{**}:\cate{Vect}(\F)\to\cate{Vect}(\F)$，则 $V^{**}=\hom(V^*,\F)$。
+为满足“天生乘法”，只需定义 $\eta_V:V\to V^{**}$ 使 $A\mapsto [\omega\mapsto\omega(A)]$，也即$\eta_V A(\omega):=\omega(A)$。$\eta_V A$ 也可记 $A^{**}$。
+对任意线性 $f:V\to W$，不难检查以下图表
+\[\begin{tikzcd}
+    V \arrow[r, "\eta_V"] \ar[d, "f"'] & V^{**} \arrow[d, "f^{**}"] \\
+    W \arrow[r, "\eta_W"] & W^{**}
+\end{tikzcd}\]
+是交换的。可见 $\eta=\{\eta_V\}$ 就是自然变换 $\id\Rightarrow (\oo)^{**}$。
+容易看出 $\eta_V:V\to V^{**}$ 总是单射，事实上可证 $\eta$ 是双射当且仅当 $V$ 有限维。
+一切限制到全子范畴 $\cate{Vect}_f(\F)$，遂有同构 $\eta_V\in\mathrm{Isom}(V,V^{**})$，即自然同构 $V=V^{* *}$。
+或写作
+\[\eta: \id_{\cate{Vect}_f(\F)} \xRightarrow{\sim} DD^\mathrm{op}.\]
+同一式子在相反范畴中诠释，便是 $\id_{\cate{Vect}_f(\F)^\mathrm{op}} \xRightarrow{\sim} D^\mathrm{op}D$。
+故 $D: \cate{Vect}_f(\F)^\text{op} \to \cate{Vect}_f(\F)$ 是范畴等价，$D^\text{op}: \cate{Vect}_f(\F) \to \cate{Vect}_f(\F)^\text{op}$ 则是其拟逆。
+注意到 $f$ 取决于对基的作用效果，可见“天生乘法”导致了一种同构，它不依赖于基的人为选取，这便是“自然”的含义。
+认为 $A=A^{**}$ 后可写成 $\omega(A)=A(\omega)$，数学上常写成 $\langle\omega,A\rangle$。
+作为对比，可证不存在 $i_V\in\mathrm{Isom}(V,V^*)$ 使下图
+\[\begin{tikzcd}
+    V \arrow[r, "i_V"] \ar[d, "f"'] & V^{*} \\
+    W \arrow[r, "i_W"] & W^{*} \arrow[u, "f^{*}"']
+\end{tikzcd}\]
+对任意线性 $f$ 交换。
+故只有 $V,V^{* *}$ 间才能有自然同构。读者只需取以 $\R$ 为线性空间的特例就可证明。真正有用的是 $V,V^*$，好似两面镜子相互反射。设 $v=v^\mu e_\mu$，自然有 $v^\mu=v^\nu \langle e^\mu,e_\nu\rangle=v(e^\mu)$。
+
+\begin{theorem}
+    若 $V$ 中有一基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，则相应的对偶基变换为
+\eq{
+e^{\prime \mu}=(A^{-\mathrm{T}})_\nu{ }^\mu e^{\nu}=(A^{-1})^\mu{ }_\nu e^{\nu}.
+}
+这说明对偶矢量 $\omega=\omega_\mu e^\mu$ 的坐标变换为 $\omega_\mu'=A^\nu{}_\mu\omega_\nu$。故相对于 $\{e_\mu\}$ 而言可称 $\omega\in V^*$ 为协变矢量。
+\end{theorem}
+
+\begin{proof}
+    $({A}^{-\mathrm{T}})_\nu{}^\mu\langle e^{\nu}, e_\alpha^{\prime}\rangle  =(A^{-\mathrm{T}})_\nu{ }^\mu A^\beta{}_\alpha\langle e^{\nu}, e_\beta\rangle  =(A^\mathrm{T})_\alpha{ }^\beta (A^{-\mathrm{T}})_\nu{ }^\mu \delta_\beta^\nu =(A^\mathrm{T})_\alpha{ }^\nu (A^{-\mathrm{T}})_\nu{ }^\mu=\delta_\alpha^\mu=\langle e^{\prime \mu}, e_\alpha^{\prime}\rangle$。
+\end{proof}
+
+\section{张量空间}
+
+张量与有限个矢量、对偶矢量线性地缩并出标量，因此可用多重线性函数表述。换言之，可直接称多重线性函数为张量，该定义多数情况与等价类 $[T^{\cdots}{}_{\cdots}]$ 表述等价。至少本节谈到张量均指多重线性函数。张量相比矢量、对偶矢量，无非是多出若干输入端口。
+可类比从单元函数拓展到多元函数。
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{fig/appx/Mobius.png}
-    \caption{M\"obius 环}\label{mobius}
+    \includegraphics[width=0.4\textwidth]{fig/appx/vending.jpg}
+    \caption{售货机}
+    \label{fig:vending}
 \end{figure}
-
-必须指出，用橡皮形变来比喻同胚仍有其局限性。一条纸带不经扭曲，可直接首尾连接得到手环，它具有两个面。扭转半周再相连将得到 M\"obius 环，它只有一个面。扭转一周再相连则又恢复为两个面。这个新环与最初的手环同胚，但却不能通过“揉捏”的方式恢复。如果我们注意到曲面的维度比背景空间的低，而只想关注曲面的内禀性质，则两种手环将视为同⼀空间在 $\R^3$ 内的不同表⽰。所谓的“揉捏”法，实质是 $\R^3$ 的⾃同胚。单看⼆者固然可建⽴同胚，但这种同胚⽆法扩张到整个 $\R^3$ 上。换言之，不存在从 $\R^3$ 的自同胚把两种手环映射在一起，这就解释了问题。这警示我们应更为抽象地看待拓扑。
-
-正如上述例子一样，19 世纪末，人们欲抛掉坐标系而寻求一般集合的拓扑理论。为此要回到同胚的特征：拓扑变化的连续性借助于实数上的 $\epsilon$-$\delta$ 语言，故我们应给出一般集合的连续表述。这一时期可以称为拓扑的分析化，孕育出了\textbf{点集拓扑}。可以说此即最普适的拓扑学。构造这一理论花了很长时间，但我们可简述其关键：极限定义用到了实数集上的小于（序结构）和减法（度量结构），这相当于规定哪类子集是某点邻域、开集和闭集。
-因此，拓扑学所研究的对象可以看作脱胎于距离的一种更广义的空间。将这些关键概念抽离出来后，我们就能在拓扑框架下重新得到分析学的定义、命题。现代主流拓扑学正是从这些分析概念出发，一步步走向具象的橡皮几何。
-更为深刻的话题将涉及\textbf{代数拓扑}。这一专题将在关于\textbf{上同调}(cohomology)的部分中得以处理，在讨论拓扑分类、积分理论时 de Rham 上同调比较好用。
-
-\section{拓扑空间}
-
-$2^X$ 的子集称为\textbf{子集族}(collection of subsets)，全体子集族构成 $2^{2^X}$。欲对 $X$ 中每个点挑选⼀族⼦集作为邻域(neighbourhood)，就是给定映射 $\topo N:X\to 2^{2^X}$ 且 $\topo N(x)\ne \mt$。
-直观上，邻域只需含有 $x$ 即可，但由于大小任意，可无限接近于 $x$，故有“邻”称。
-若 $A\in \topo N(x)$，则 $x$ 为 $A$ 的内点(interior point)，而 $A$ 中全体内点之集 $A^\circ$ 就是其内部(interior)。
-
-希望从分析学中抽取邻域的若干性质，但不能太多，因为要普适到能包括不同于通常定义的情形。新表述不能依赖距离概念。关键在于，注意属于、包含等集合术语，已能描绘距离所表达的含义：$x$ 在其任意邻域内；$x$ 的任意两邻域之交也是 $x$ 的邻域；$x$ 的任意邻域的内部也是其邻域；包含 $x$ 某邻域的集合也是其邻域。
-有了邻域，其它概念都好办了：在某全集 $X$ 下，开集(open set)是满足 $A=A^\circ$ 的集合，闭集(closed set)是其补集为开的集合。因此 $\mt,X$ 是既开又闭的。根据 $\epsilon$-$\delta$ 定义，$f:X\to Y$ 在 $x\in X$ 连续，即 $\forall\epsilon>0$ 都 $\exists\delta>0$，使得 $x$ 的 $\delta$ 邻域的像含于 $f(x)$ 的 $\epsilon$ 邻域。
-
-往往直接考察 $f$ 整体的连续性，但邻域毕竟是就某 $x\in X$ 而言的，可预料从开集出发语言将更优雅。非空开集总是某点的某邻域，而邻域的内部必开，故 $f$ 的连续性表述不必出现邻域概念。有两点考虑：$f$ 不一定是满射，但空集可作为 $Y\backslash\Im f$ 的逆像；$f$ 不一定是单射，满足 $f(z)=f(x)$ 的 $z$ 可以很多，但 $f$ 的连续性要求处处连续，因此 $f(x)$ 任意邻域的逆像一定是所有 $z$ 的某邻域之并。综上，$f$ 连续即 $Y$ 中任意开集之逆是 $X$ 的开集。
-
-由于包含邻域之集也是邻域，因此任意开集之并为开；而两邻域之交为邻域，经由归纳法，只能保证有限个开集之交为开；$\mt,X$ 是开的，$x\in X$ 的邻域则是能包含某个含有 $x$ 的开集的集合。这几条性质显然能导出邻域体系，故为等价表述。
-
-\begin{definition}
-$\topo{T}\subset 2^X$ 称为 $X$ 的一个\textbf{拓扑}(topology)，若：
-\begin{itemize}
-    \item $\mt,X \in \topo{T}$；
-    \item $\forall \sigma\subset \topo{T}$，$\bigcup_{U\in\sigma} U\in \topo{T}$；
-    \item $U,V\in\topo{T}\im U\cap V\in\topo{T}$。或等价地对有限集 $\{A_{i}\} \subset \topo{T}$，$\bigcap_{i} A_{i} \in \topo{T}$。
-\end{itemize}
-$\topo{T}$ 的元素称为 $X$ 在 $\topo{T}$ 下的\textbf{开子集}，简称\textbf{开集}。
-$(X,\topo T)$ 称为 $X$ 关于拓扑 $\topo T$ 的\textbf{拓扑空间}(topological space)。拓扑空间的元素称为\textbf{点}(point)。
-\end{definition}
-
-\begin{definition}
-    对$x\in X,U\subset X$，若 $\exists O\in\topo{T}$ 使 $x\in O\subset U$，则 $U$ 是 $x$ 的一个\textbf{邻域}。$x$ 的全体邻域构成 $\topo N(x)$。邻域为开则称\textbf{开邻域}，构成 $\topo N(x)\cap\topo T$。
-\end{definition}
-
-\begin{theorem}
-    $\exists U \in\topo N(x)$ 如何 $\iff \exists$ 开集 $O\ni x$ 如何 $\iff \exists V \in\topo N(x)\cap\topo T$ 如何。
-\end{theorem}
-\begin{proof}
-    $\exists U\in\topo N(x)\im \exists O\in\topo T$ 使 $x\in O\subset U\im \exists$ 开集 $O\ni x\im\exists O\in\topo T$ 使 $x\in O\subset O\im \exists V=O \in\topo N(x)\cap\topo T\im\exists U=V\in\topo N(x)\cap\topo T\subset\topo N(x)$。
-\end{proof}
-\begin{remark}
-    凡命题中出现“点存在邻域…”均可换成“点存在开邻域”“包含该点的开集”。
-\end{remark}
-
-%% \setminus or \backslash
-\begin{definition}
-    $A\subset X$ 称为\textbf{闭集}，若 $X\backslash A\in\topo{T}$。
-\end{definition}
-
-$\topo T$ 的名称若自明或不重要，则拓扑空间常略写为$X$。讨论开集时也常省略全集。De Morgan 律指出：并集之补等于补集之交，因此闭集也能给出拓扑的定义。容易得出等价表述为：$\mt,X$ 是闭的；有限闭集之并为闭；任意闭集之交为闭。
-
-拓扑的选取有很多。若 $\topo T_1\subset\topo T_2$，则称 $\topo T_1$ \textbf{较粗}(coarser)或 $\topo T_2$ \textbf{较细}(finer)。直观上，较细拓扑容纳更多开集，能区分更多点。\textbf{凝聚}(indiscrete)\textbf{拓扑} $\topo T=\{\mt,X\}$ 最粗。\textbf{离散}(discrete)\textbf{拓扑} $\topo T= 2^X$ 最细。
-分析学中，$\mt$ 和能表为开区间之并的集合都是 $\R$ 上开集，构成 $\R$ 的\textbf{通常}(usual)\textbf{拓扑} $\topo T_u$。视 $x,y\in\R$ 的距离为 $|x-y|$，则开区间实质是以 $\frac{x+y}{2}$ 为心的一维球。$(\R,\topo T_u)$ 称为\textbf{实直线}。通常拓扑当然比离散、凝聚拓扑更直观，后者一般用于构造反例。
-
-\begin{definition}
-    对 $(X,\topo T_X),(Y,\topo T_Y)$，$f: X \to Y$ \textbf{连续}，若 $\forall A\in\topo T_Y$，$f^{-1}[A]\in \topo T_X$。以拓扑空间为对象、连续映射为态射可构建\textbf{拓扑空间范畴} $\cate{Top}$。
-\end{definition}
-
-\begin{definition}
-    双向连续的双射称作\textbf{同胚}。显然同胚时拓扑同势，即开集结构等同。
-\end{definition}
-
-\begin{remark}
-    同胚的逆也必须连续。
-    考虑复平面和 $f(x)=\e^{\i x},x\in [0,2\pi)$。则 $\Im f$ 为单位圆周 $|z|=1$。它是连续双射，但逆不连续。而直观上圆周与区间不能同胚。
-\end{remark}
-
-\begin{definition}
-    映射 $f:X\to Y$ \textbf{保持}某种性质，就是若 $A\subset X$ 具有这种性质，则 $f[A]$ 也具有。\textbf{开映射}就是保持开的映射。闭映射定义同理。
-\end{definition}
-
-\begin{theorem}
-    同胚是开映射。
-\end{theorem}
-
-\begin{proof}
-取任意开集 $U$，同胚 $f:U\to f[U]$。因 $f^{-1}$ 连续，开集 $f^{-1}[f[U]] = U$ 的原像 $f[U]$ 也开。同理同胚也是闭映射。
-\end{proof}
-
-\begin{definition}
-置 $(X,\topo T)$ 和 $A\subset X$。
-\begin{itemize}
-    \item \textbf{内部}为开集 $A^\circ:=\bigcup_{O\in\topo T\cap 2^A} O=\{x: \text{$\exists$ 开集 $O\subset A$ 使 $x\in O$}\}$，也即含于 $A$ 的最大开集。
-    \item \textbf{闭包}(closure)为闭集 $\bar{A}:=\bigcap_{X\backslash B\in\topo T,A\subset B} B=\{x: \text{$\forall$ 闭集 $B\supset A$ 都 $x\in B$}\}$，也即包含 $A$ 的最小闭集。
-    \item $\partial A=\bar{A}\backslash A^\circ$ 称为 $A$ 的\textbf{边界}(boundary)。
-\end{itemize}
-\end{definition}
-
-\begin{remark}
-    显然 $A^\circ\subset A\subset \bar A$。$A^\circ\cup\partial A=\bar A$，$A^\circ\cap\partial A=\mt$。
-    
-    $\partial A=\mt\iff A^\circ=A=\bar A\iff A$ 既开又闭。
-\end{remark}
-
-\begin{theorem}
-    $X\backslash A^\circ=\overline{X\backslash A}$，$(X\backslash A)^\circ=X\backslash \bar A$。
-\end{theorem}
-\begin{proof}
-    $A^\circ:=\bigcup_{X\backslash F\in\topo T,X\backslash F\subset A} X\backslash F=X\backslash\bigcap_{X\backslash F\in\topo T,X\backslash A\subset F} F=X\backslash\overline{X\backslash A}$。
-    替换即可。
-\end{proof}
-
-\begin{theorem}
-    $A\in\topo T\eqto A=A^\circ\eqto\forall x\in A,A\in\topo N(x)\eqto\forall x\in A,\exists U\in\topo N(x)$ 使 $U\subset A$。
-\end{theorem}
-
-\begin{proof}
-    $A\in\topo T,A\subset A\im A\subset A^\circ\iff A=A^\circ$；反之 $A=A^\circ\in\topo T$。
-
-    $A=A^\circ\iff\forall x\in A,\exists O\in\topo T$ 使 $x\in O\subset A\iff\forall x\in A, A\in\topo N(x)\im \forall x\in A,\exists U=A\in\topo N(x)$ 使 $U\subset A\im \forall x\in A,\exists O\in\topo T$ 使 $ x\in O\subset U\subset A \im A=A^\circ$。
-\end{proof}
-
-\begin{theorem}
-    $A$ 闭 $\iff A=\bar A$
-\end{theorem}
-\begin{proof}
-    $A$ 闭 $\iff X\backslash A=(X\backslash A)^\circ=X\backslash\bar A\iff A=\bar A$。
-\end{proof}
-
-\begin{theorem}
-    \textbf{内点}：$x\in A^\circ\iff\exists$ 开集 $O\ni x$ 使 $O\subset A^\circ\subset A$；
-    \textbf{外点}：$x\notin \bar A\iff\exists$ 开集 $O\ni x$ 使 $O\subset X\backslash\bar A\subset X\backslash A$；
-    \textbf{边界点}：$x\in\partial A\iff\forall$ 开集 $O\ni x$ 与 $A,X\backslash A$ 都交。
-\end{theorem}
-\begin{proof}
-    注意 $A^\circ\in\topo T,X\backslash \bar A = (X\backslash A)^\circ\in\topo T$ 即可。并注意 $O\cap A=\mt\iff O\subset X\backslash A$。
-\end{proof}
-
-\begin{remark}
-    立即可得 $x\in\bar A\iff\forall$ 开集 $O\ni x,O\cap A\ne\mt$。
-\end{remark}
-
-\begin{definition}
-置 $A\subset X$。\textbf{导集}(derived set)为 $A':=\{x \in X:x\in\overline{A\backslash\{x\}}\}$，其元素称为\textbf{聚点}(accumulation point)或\textbf{极限点}。
-$\bar{A}=X$ 时称 $A$ 在 $X$ 中\textbf{稠密}(dense)。
-\end{definition}
-\begin{remark}
-    $x\in A'\eqto \forall U\in\topo N(x),(U\cap A)\backslash\{x\}=U\cap (A\backslash\{x\})\ne\mt$。$U$ 可等价换为任意含 $x$ 开集。
-\end{remark}
-\begin{example}
-    考虑实直线，$0,1/2,1$ 都是 $[0,1)$ 的聚点。
-\end{example}
-
-\begin{theorem}
-    $\bar A=A\cup A'$。  
-\end{theorem}
-
-\begin{proof}
-    任给 $x\in A'$。$\forall U\in\topo N(x),(U\cap A)\backslash\{x\}\ne\mt\Rightarrow \forall U\in\topo N(x),U\cap A\ne\mt\eqto x\in\bar A$。说明 $A'\subset \bar A$，此 $A\cup A'\subset\bar A$；
-    任给 $x\in\bar A\backslash A'$。$x\in\bar A,x\notin A'\eqto \exists U\in\topo N(x),(U\cap A)\backslash\{x\}=\mt$ 且 $U\cap A\ne\mt\Rightarrow U\cap A=\{x\}\Rightarrow x\in A$。说明 $\bar A\backslash A'\subset A\iff \bar A\subset A\cup A'$。
-\end{proof}
-
-\begin{theorem}
-    $A$ 闭 $\iff A'\subset A$。
-\end{theorem}
-\begin{proof}
-    $A$ 闭 $\iff A=\bar A\iff A=A\cup A'\iff A'\subset A$。
-\end{proof}
-
-\begin{definition}
-    设拓扑空间 $X$ 上的映射 $f: X \to Y$，$Y$ 是一个带有零元 $0$ 的集合（$\R,\C$ 或某个拓扑群、向量空间）。那么：
-    \begin{itemize}
-        \item 零集：$Z(f):=f^{-1}\{0\}=\{x\in X: f(x)=0\}$；
-        \item 非零集(cozero set)：$\operatorname{coz}f:=X\backslash Z(f)=\{x\in X: f(x)\ne 0\}$；
-        \item \textbf{支集}(support)：$\supp f:=\overline{\operatorname{coz}f}
-  = X\backslash (Z(f))^\circ$。
-    \end{itemize}
-    更方便地，要求 $Y$ 是拓扑空间且 $\{0\}$ 闭（$Y=\R,\C$ 当然满足），从而可谈及连续 $f$。这样 $Z(f)=f^{-1}\{0\}$ 闭，$\operatorname{coz} f$ 开，$\supp f$ 闭。
-\end{definition}
-
-\begin{theorem}
-     $x\notin \supp f\iff\exists$ 开集 $U\ni x$ 使 $f[U]=\{0\}$。
-\end{theorem}
-\begin{proof}
-    首先 $U\subset Z(f)\iff f[U] \subset \{0\}$。存在元素 $x\in U$，故 $\mt\ne U\subset Z(f)\iff f[U]=\{0\}$，而 $x\in X\backslash\supp f = (Z(f))^\circ \iff \exists$ 开集 $U\ni x$ 使 $U\subset Z(f)$。
-\end{proof}
-\begin{theorem}
-    $\supp f \subset O\subsetneq X\im f[X\backslash O]=\{0\}$。反之需要 $O$ 闭的条件。
-\end{theorem}
-\begin{remark}
-    $\supp f \subset O$ 称为 $f$ 支撑在 $O$ 上。
-\end{remark}
-
-\begin{proof}
-    $\mt\ne X\backslash O\subset (Z(f))^\circ\subset Z(f)$。
-    反之 $\mt \ne X\backslash O\subset Z(f)\xRightarrow{X\backslash O\in\topo T} X\backslash O\subset (Z(f))^\circ$。
-\end{proof}
-
-\begin{definition}
-    $S:\N\to X,n\mapsto x_n$ 的值域 $\Im S=\left\{x_n\right\}$ 称为\textbf{序列}或\textbf{点列}。
-    若 $\exists x \in X$，$\forall U\in\topo N(x),\exists N\in\N$，使 $n>N\im x_n\in U$，则称 $\{x_n\}$ 有\textbf{极限}或\textbf{收敛}于 $x$。
-\end{definition}
-
-\begin{remark}
-    点列聚点的任意邻域都含点列的无限个点。极限是聚点，但聚点不一定是极限。
-\end{remark}
-
-\begin{definition}
-    在 $(X,\topo T)$ 下，可定义 $A \subset X$ 的\textbf{相对}(relative)\textbf{拓扑}或\textbf{诱导}(induced)\textbf{拓扑} $\topo T_r=\{O \cap A: O\in\topo T\}$。赋予诱导拓扑的子集称为原集的\textbf{拓扑子空间}(topological subspace)。
-\end{definition}
-
-\begin{example}
-    对于实直线和 $A=[0,2]$，在 $\topo T_u$ 的诱导下 $B=(1,2]$ 是 $A$ 中的开集。
-\end{example}
-
-\begin{definition}
-    给定 $(X,\topo T_X),(Y,\topo T_Y)$ 和 $Z=X \times Y$。
-    定义
-    \[\topo T_Z=\{O\subset Z:A\in\topo T_X,B\in\topo T_Y,\text{$O$ 可表为形如 $A\times B$ 的集合之并}\},\]
-    $(Z,\topo T_Z)$ 称为 $X,Y$ 的\textbf{乘积拓扑空间}(product topological space)。
-\end{definition}
-
-这与 $\R$ 的通常拓扑类似，都是通过囊括空集和“任意并”操作来生成拓扑。这一方法可总结如下。
-\begin{definition}
-    置 $(X,\topo T)$。
-    $\topo C\subset 2^X$ 称为 $A\subset X$ 的\textbf{覆盖}(cover)，若 $A\subset\bigcup_{O\in\topo C}O$（$A=X$ 时显然取等）。$\topo C\subset\topo T$ 时称\textbf{开覆盖}。
-    $\topo S\subset\topo C$ 是 $\topo C$ 的\textbf{子覆盖}(subcover)，若它也是覆盖。
-\end{definition}
-
-\begin{definition}
-    取 $X$ 的覆盖 $\topo{B}$。若它保持“有限交”性质：对任意 $U_1,U_2\in\topo{B}$，$\exists\topo{F}\subset \topo{B}$ 使 $\bigcup_{U\in\topo{F}}U=U_1\cap U_2$，就称$\topo{B}$ 为\textbf{拓扑基}。可以证明
-$\topo{T}=\left\{\bigcup_{U\in\topo{F}}U:\topo{F}\subset\topo{B}\right\}$ 构成拓扑，称为 $\topo{B}$ 的\textbf{生成拓扑}。\textbf{拓扑子基}的元素所有可能的有限交构成拓扑基。
-\end{definition}
-\begin{theorem}
-    $\topo{B}\subset\topo T$，因而是开覆盖。
-\end{theorem}
-
-拓扑基是挑出⼀部分开集来代表所有开集，类似地也有一种挑出⼀部分邻域来代表所有邻域的办法。
-
-\begin{definition}
-    $x\in X$ 的\textbf{邻域基}或\textbf{局部基} $\topo B_x\subset\topo N(x)$ 满足 $\forall O\in\topo N(x)$，$\exists B\in\topo B_x$ 使 $B\subset O$。
-\end{definition}
-
-许多空间往往都难以直接想象或处理，我们可考虑将它分解为简单直观的部分，再重组回去，就能描述复杂的拓扑空间。
-
-\begin{definition}
-    设 $\tilde X=\{[x]:x\in X\}$ 是 $(X,\topo T)$ 在某个等价关系下的分割或商集(quotient set)。
-    对其规定如下拓扑：映射 $\pi: X \to \tilde X,x\mapsto [x]$ 称为\textbf{自然映射}或\textbf{典范投影}，取 $\tilde{\topo T}=\{U \subset Y:\pi^{-1}(U)\in\topo T\}$，称为\textbf{商拓扑}，$(\tilde X,\tilde{\topo T})$ 称为\textbf{商空间}。
-\end{definition}
-可见，$\pi$ 就好比用来粘合拓扑空间的胶水。
-可以证明，设 $\tilde{\topo T}^{\prime}$ 为 $\tilde X$ 上另一个拓扑，且使 $\pi$ 连续，则 $\tilde{\topo T}^{\prime} \subset \tilde{\topo T}$。
-
-\begin{definition}
-    拓扑空间\textbf{局部地}具有某个性质，意指任意点都存在邻域具有这种性质。
-\end{definition}
-
-\section{可数与分离}
-本节目的是给出物理上足够有用的空间，使拓扑性质足够好，不至于太怪异。
-
-在拓扑学中针对一堆研究对象谈它们的可数性时，并不一定是指这些对象的全体可数，因这个要求不是很容易达到。很多时候可数性会定义成：从这堆对象中可以选出可数多个代表来“刻画出”其他所有对象。邻域/拓扑基就是从邻域/开集里面选出来的“代表团”。
-和以后要讲的连通性、紧致性不同，直接检查可数性来证明两个空间不同胚的例子并不多见，可数性对于一些数学技巧（特别是数学归纳法）是否能应用至关重要，所以点集拓扑学中有好几个著名定理，如果去掉可数性的前提条件就证明不出来了。用邻域基、拓扑基可定义出两种\textbf{可数定理}。
-
-\begin{definition}\textbf{第一可数}空间的任意点存在可数邻域基，\textbf{第二可数}空间存在可数拓扑基，各记 $C_1,C_2$。字母 C 来⾃于英语“countable”。
-\end{definition}
-
-\begin{theorem}
-    $C_2$ $\im$ \textbf{Lindel\"of}：任意开覆盖都存在可数子覆盖。
-\end{theorem}
-
-\begin{proof}
-    对任意开覆盖 $\topo U$，对每个基元素 $B$（来自可数基）如果它被某个 $U\in\topo U$ 包含，就挑一个这样的 $U_B$。因为基是可数的，所以被挑出来的 $U_B$ 至多可数；再用“每个点都落在某个基元素里”推出这些 $U_B$ 仍覆盖全空间，于是得到可数子覆盖。
-
-取$C_2$ $X$ 的一个可数基 $\topo B=\{B_n\}_{n\in\mathbb N}$。令 $\topo U$ 为 $X$ 的任意开覆盖。
-对每个 $n$，若存在 $U\in\topo U$ 使得 $B_n\subset U$，则任选一个这样的开集记为 $U_n\in\topo U$；
-若不存在这样的 $U$，则忽略该 $n$（不选取任何东西）。
-
-记所有被选中的开集所成的集合为
+如图 \ref{fig:vending}，设想度规 $g$ 是一台具有两个槽(slat)的售货机，往槽中投入足够数量的一元纸币可获得一件商品，比如一听可乐。设某件商品需要两元纸币，则投入过程中，显示屏会不断改变数值以提示用户待支付的剩余金额，直至最终获得商品。这个过程类似于：
 \[
-\topo U':=\{U_n:\ B_n\subset U_n\text{ 且 }U_n\in\topo U\}.
+    g(\oo,\oo)\im g(A,\oo)\in V^*\im g(A,B)\in\R.  
 \]
-由于 $\topo B$ 可数，故 $\topo U'$ 至多可数。
+关键在于，第一步输出的 $g(A,\oo)$ 将和之后输入的矢量 $B$ 线性地作用，最终输出实数，故相当于 $g(A,\oo)\in V^*$。类似地也有 $g(\oo,B)\in V^*$。
+多重线性函数还可混合地输入矢量、对偶矢量，就好比售货机可以混合地投入硬币和纸币，只是对应的槽不同。
+比如，$V$ 上的线性变换就是输入矢量且输出矢量，即 $X^\mu=T^\mu{}_\nu Y^\nu$，而矢量是对偶矢量的函数，因此线性变换又可看成矢量和对偶矢量的双线性函数，即 $(1,1)$-张量 $T^\mu{}_\nu$。比如 $\id_V$ 给出 $\delta^i_j A^j=A^i$，而 $\delta^i_j$ 单独看有上下槽。物理上有一例：应力张量涉及某个面上的压力，因此必定要先给定一个面法矢，这样就产生对应的一个作用力。
 
-下面证明 $\topo U'$ 覆盖 $X$。任取 $x\in X$，由 $\topo U$ 覆盖，存在 $U\in\topo U$ 使 $x\in U$。
-又由于 $\topo B$ 为基，存在某个基元素 $B_n$ 满足
-\[
-x\in B_n\subset U.
-\]
-由构造知此时 $B_n$ 必会触发选择，于是存在被选中的 $U_n\in\topo U'$ 使得 $B_n\subset U_n$。
-从而 $x\in B_n\subset U_n$，说明 $x$ 落在 $\bigcup\topo U'$ 中。
-因此 $\topo U'$ 是 $\topo U$ 的可数子覆盖，证毕。
-\end{proof}
-
-\begin{theorem}
-    $C_2 \im C_1$。
-\end{theorem}
-
-再讨论分离。分离意指是否可用拓扑结构（开集、连续映射）区分空间中的两个原本不应重叠的部分。按照对“不重叠两部分”的理解不同、区分方法的不同，有很多种不同判定方法和条件，统称\textbf{分离公理}(separation axiom)。
-常用的列举如表 \ref{tab:separation}。字母 T 来⾃于分离公理的德语“das Trennungsaxiom”。
-\begin{table}[ht]
-    \centering
-    \caption{分离公理}
-    \label{tab:separation}
-    \begin{tabular}{lll}
-        \toprule
-        符号 & 别称 & 定义\\
-        \midrule
-        $T_0$ & Kolmogorov & $\forall x \ne y$， $\exists$ 开集 $U$ 使 $(x \in U, y \notin U)\lor (y \in U, x \notin U)$ \\
-        $T_1$ & Fréchet & $\forall x \ne y$， $\exists$ 开集 $U, V$ 使 $(x \in U, y \in V)\land (y \notin U , x \notin V)$ \\
-        $T_2$ & Hausdorff & $\forall x \ne y$， $\exists$ 不交开集 $U, V$ 使 $x \in U, y \in V$ \\
-        $T_3$ & 正则 $^*$ & $T_1$ 并且 $\forall$ 闭集 $F$ 及 $x \notin F$，$\exists$ 不交开集 $U, V$ 使 $x \in U, F \subset V$ \\
-        $T_4$ & 正规 $^*$ & $T_1$ 并且 $\forall$ 不交闭集 $A, B$， $\exists$ 不交开集 $U, V$ 使 $A \subset U, B \subset V$ \\
-        $T_5$ & 完全正规 $^*$ & 任意子空间都 $T_4$ \\
-        \bottomrule
-        \multicolumn{3}{l}{\small $^*$ 正则(regular)、正规(normal)有时专指除开 $T_1$ 的第二个条件。}
-    \end{tabular}
-\end{table}
-
-\begin{theorem}
-    $T_1\iff$ 单点集闭。
-\end{theorem}
-\begin{proof}
-    置 $\{x\}$。$\forall y\ne x$ 即 $y\in X\backslash\{x\}$，$y$ 必有开邻域 $V\notni x$ 即 $V\subset X\backslash\{x\}$，故 $X\backslash\{x\}$ 开。
-\end{proof}
-
-\begin{theorem}
-    $T_5\im T_4\im T_3\xRightarrow{(T_3\Rightarrow T_1)}T_2 \im T_1\im T_0$。
-\end{theorem}
-
-\begin{example}
-    考虑 $\R^2$ 上直线 $y=0,1$。取两条直线之并，取等价关系 $(x,0) \sim(x,1),x>0$ 来构建商拓扑空间，也就是把两条线的 $x>0$ 部分黏合一起。$(0,0),(0,1)$ 的任意开邻域存在黏合部分 $x>0$，也就没有不交开邻域，因而不是 $T_2$ 空间。
-\end{example}
-
-\begin{example}
-    给 $\N_+$ 定义拓扑，开集取 $\mt,\N_+$ 以及 $\{1,2,3,\cdots,n\}$。这个空间既非 $T_2$ 亦非紧致的。
-\end{example}
-
-\begin{theorem}[收缩(shrink)]
-    $T_3\iff$ 对任意点 $x\in X$ 及其任意邻域 $O$，存在开集 $U$ 使
-$x\in U, \bar U \subset O$。
-
-$T_4\iff$ 对任意闭集 $F\subset X$ 与任意开集 $O\supset F$，存在开集 $U$ 使 $F\subset U, \bar U \subset O$。
-\end{theorem}
-
-\section{度量空间}
-
-我们看到，$\R$ 的距离便可生成一个拓扑基。距离概念的推广自然是在任意集合中，给定满足三角不等式、正定性的对称实函数。开区间也可相应地推广。实际上，具有应用意义的拓扑空间大多具有距离概念。
+综上，分量就是 $g_{ij}:=g(e_i,e_j)$，$(g_{ij})$ 是 $g$ 的一个表示矩阵，也就有 $g(A, B)=g_{\mu\nu} A^\mu B^\nu$。
+张量可展开成线性组合，这涉及从矢量的基构造张量的基。将运算符记作 $\otimes$，并期望表示 $g=g_{ij} e^i\otimes e^j$。尝试作用于 $A^i,B^j$，则 $g_{ij}A^i B^j=g_{ij} e^i(A)e^j(B)=g_{ij}e^i\otimes e^j(A,B)$，故直接希望 $e^i\otimes e^j(A,B):= e^i(A) e^j(B)$，即 $\otimes$ 的结果与相应矢量的作用相当于各自分开作用再相乘。
+换言之，$A\otimes B(\omega_1,\omega_2):=A(\omega_1)B(\omega_2)$，这样 $A\otimes B$ 的分量是只是简单拼凑 $A^i B^j$。
+此即我们所熟知的张量代数的映射语言。
 
 \begin{definition}
-    置集合 $X$ 和\textbf{距离}（或\textbf{度量}）$d: X \times X \to [0,\infty)$，$\forall x,y,z\in X$ 满足：
-    \begin{itemize}
-        \item $d(x,y)=d(y,x)$；
-        \item $d(x,y) = 0\eqto x=y$；
-        \item $d(x,z) \leqslant d(x,y)+d(y,z)$。（三角不等式）
-    \end{itemize}
-    $B(x,r)=\{y \in X: d(x, y)<r\}$ 称为以 $x \in X$ 为中心、$r$ 为半径的\textbf{开球}(open ball)。
-    全体开球 $\{B(x,\epsilon):x\in X,\epsilon >0\}$ 就是一个拓扑基，其生成拓扑 $\topo T_d$ 就是 $(X,d)$ 的\textbf{度量诱导拓扑}。$(X,d,\topo T_d)$ 称为\textbf{度量空间}(metric space)。存在度量 $d$ 生成的拓扑，称\textbf{可度量}。
-\end{definition}
-
-\begin{remark}
-    原则上可以有负定的距离，就像度规一样，但这种距离一般不用于诱导拓扑。
-\end{remark}
-
-\begin{definition}
-    \textbf{局部可度量}就是 $\forall x\in X$ 都存在开集 $O\ni x$ 可度量。
-\end{definition}
-
-\begin{example}
-    \textbf{离散度量}满足 $d_{0}(x,y)=1$ 若 $x \ne y$。这是一个描述离散拓扑的办法。
-\end{example}
-
-\begin{definition}
-    置度量空间 $X$。度量 $d_{1},d_{2}$ 是\textbf{等价度量}，若 $\exists a,b>0$，使对 $\forall x,y \in X$，有 $a d_{1}(x, y) \leqslant d_{2}(x, y) \leqslant b d_{1}(x, y)$。
-\end{definition}
-
-\begin{remark}
-    显然等价度量诱导出相同拓扑。
-\end{remark}
-
-\begin{example}
-    置 $x=\left(x^1,\cdots,x^{n}\right),y=\left(y^{1},\cdots,y^{n}\right)\in\R^{n}$。$p$-度量为
-\[
-d_{p}(x, y):=\left(\sum_{k=1}^{n}\left|x^{k}-y^{k}\right|^{p}\right)^{1 / p},\quad p \geqslant 1.
-\]
-常取$p=2$，称为\textbf{欧氏度量}。
-$\R$ 的开球即开区间。$\R^2$ 的开球称为\textbf{开圆盘}。极限为
-\[
-d_{\infty}(x,y):=\lim_{p\to\infty}d_{p}(x, y)=\max _{1 \leqslant k \leqslant n}\left\{\left|x^{k}-y^{k}\right|\right\}.
-\]
-任意 $p$-度量等价，诱导出通常拓扑 $\topo T_u$。当然，亦可视作 $\R$ 通常拓扑的乘积拓扑。
-\end{example}
-
-\begin{theorem}
-    可度量 $\im T_5$。
-\end{theorem}
-
-我们已悉知 $\epsilon$-$\delta$ 语言可视为连续性在通常拓扑的特例。现在再用度量空间重新叙述。
-置 $(X,d_X,\topo T_X),(Y,d_Y,\topo T_Y)$ 和映射 $f:X\to Y$。$f$ 在 $x \in X$ 处对度量诱导拓扑连续，当且仅当 $\forall\epsilon>0,\exists\delta>0$ 使 $B(x,\delta) \subset f^{-1} [B(f(x),\epsilon)]$。
-即 $f^{-1} [B(f(x),\epsilon)]$ 是 $x$ 点邻域。
-换言之，$d_X(x,x^{\prime})<\delta\Rightarrow d_Y(f(x),f(x^{\prime}))<\epsilon$。
-若 $f$ 在任意点连续，即 $\forall x \in X,\epsilon > 0$，$f^{-1} [B(f(x),\epsilon)]\in\topo T_X$，结合“任意并”性质和逆像的保并性，可知 $\forall U\in\topo T_Y$，$f^{-1}[U]\in\topo T_X$，即 $f$ 连续。
-
-\begin{theorem}
-    $\R^n$ 开球和 $\R^n$ 同胚。
-\end{theorem}
-\begin{proof}
-    不失一般性，考虑单位开球 $B(0,1)$。置 $f:B(0,1)\to \R^n$ 为
-\eq{\label{eq:B-Rn}
-f(x)=\frac{x}{1-|x|},
-\quad
-f^{-1}(y)=\frac{y}{1+|y|}.
-}
-它是双向连续的双射。
-\end{proof}
-
-对于度量空间，点列 $\left\{x_n\right\}$ 收敛于 $x$ 等价于 $\lim_{n\to\infty}d(x, x_n)=0$。
-点列称为基本列或 Cauchy 列，即$\forall\epsilon>0,\exists N\in\N$使 $k,l>N\Rightarrow d(x_{k},x_{l})<\epsilon$。
-度量空间称为\textbf{完备的}(complete)，若其中任意 Cauchy 列都收敛于其中的点。
-
-%
-
-实直线上闭区间完备，但开区间不完备：只需注意 $\{1/n\}_{n=2}^\infty$ 在 $(0,1)$ 上无极限。
-
-$\R^{n}$ 当然完备。
-一致连续性即 $\forall \epsilon>0,\exists\delta>0$ 
-使 $\forall x_{1},x_{2} \in X$，$d(x_{1},x_{2})<\delta\Rightarrow d(f(x_{1}),f(x_{2}))<\epsilon$。
-注意一致连续要更强：对整个空间要求一致的 $\delta$。
-
-\begin{definition}
-    度量空间 $X$ 的子集称为\textbf{有界的}，若存在开球包含它。否则称\textbf{无界的}。
-\end{definition}
-
-\begin{remark}
-    完备性、有界性都不是拓扑不变性。例如，$(0,1)$ 与实直线同胚，但前者不完备、有界，后者完备、无界。
-\end{remark}
-
-置度量空间 $X$。$f: X \to X$ 称为（严格）\textbf{压缩映射}(contraction)，若 $\exists c\in(0,1)$，使 $\forall x,y \in X$ 且 $x\ne y$，有 $d(f(x),f(y)) \leqslant c d(x,y)$。
-仿照分析学可类似证明 \textbf{Banach 不动点定理}：若度量空间 $X$ 完备，$f$ 为一个压缩映射，则 $f(x)=x$ 的解存在且唯一。这是非线性泛函分析的一个有用工具。
-
-%%%
-
-\begin{definition}
-    \textbf{有限 $\epsilon$-网}(net)是有限集 $\{x_n\}\subset X$，使 $\forall x\in X$，$\exists x_i$ 使 $d(x,x_i)<\epsilon$。换言之，$X\subset\bigcup_{i=1}^n B(x_i,\epsilon)$。
-\end{definition}
-
-\begin{definition}
-    $(X,d)$ 称为\textbf{全有界的}(totally bounded)，若存在任意 $\epsilon>0$ 的有限 $\epsilon$-网。换言之，可被有限多个半径任意小的球覆盖。
-\end{definition}
-
-\begin{remark}
-    全有界 $\im$ 有界。
-\end{remark}
-
-\begin{example}
-    无穷维 Hilbert 空间 $\ell^2$ 是完备的。任意 $\epsilon>0$，$\{e_n\}_{n=1}^\infty$ 构成 $\ell^2$ 的 $\epsilon$-网格，但它是无穷集，不全有界。
-\end{example}
-
-%%%
-
-\section{紧致性}
-
-分析学给出了若干等价的实数定理，其中一条是著名的\textbf{Heine-Borel 定理}：若有界闭集能被某开集族覆盖，则可从中找到有限个开集，构成依旧能覆盖的子族。
-19 世纪中叶，Dirichlet 在试图严格化函数连续性时，率先用有限覆盖技术，证明了闭区间上的连续实函数一致连续。
-不过他的结果半个世纪后才发表，期间 Heine, Weierstrass 等人各自独立地用类似技术也证明了该结论。Borel 利用这些技术证明了上述的有限覆盖定理。后来 Lebesgue 等人才把它推广到了一般情形。
-有界性是与距离密切相关的，但有限覆盖性只涉及开集。可见关于有界闭集的分析学命题，很多都能延伸到点集拓扑。
-
-\begin{definition}
-    $A$ 称\textbf{紧致的}(compact)或\textbf{紧的}，若其任意开覆盖都存在有限子覆盖。
-\end{definition}
-
-\begin{example}
-    实直线上，单点集 $\{x\}\subset X$ 必紧。$\R$、开区间、半开区间非紧。
-\end{example}
-\begin{proof}
-    对 $\{x\}$ 任取开覆盖 $\topo C$，则 $\exists O\in\topo C$ 使 $x\in O$，$\{O\}\subset\topo C$ 是有限集。
-    不妨以 $(0,1]$ 为例，存在开覆盖 $\{(1/n,2):n\in\N\}$ 不具有限子覆盖；其余情形同理。
-\end{proof}
-
-\begin{definition}
-    若 $K\subset X$ 中任何序列都包含收敛子列，则称 $K$ 是\textbf{相对紧的}。若这些子列还收敛于 $K$ 中，则称\textbf{自列紧的}，简称\textbf{列紧}\footnote{列紧在部分书中指相对紧。}。
-\end{definition}
-
-%%%
-\begin{remark}
-    紧 $\im$ 列紧。
-    若空间满足可数基或序列空间性质，两者可能一致。
-\end{remark}
-
-\begin{theorem}\label{thm:compactness}
-    度量空间上，紧 $\iff$ 列紧 $\iff$ 全有界 $\land$ 闭 $\land$ 完备。
-\end{theorem}
-\begin{proof}
-    设 $X$ 是紧的。任意 $x\in X$，$\exists O\in\topo S$ 使 $x\in O$，则 $\topo S$ 是 $x$ 的某邻域的有限子覆盖。任意点列 $\{x_n\}$ 都有极限点 $x$，则 $\exists O\in\topo S$ 使 $x\in O$，因此 $\{x_n\}$ 有收敛子列。
-    反之，若 $X$ 是完备的且有界的，则 $\forall \epsilon>0,\exists x_1,\cdots,x_n\in X$
-    使 $\bigcup_{i=1}^n B(x_i,\epsilon)$ 覆盖 $X$。任意开覆盖 $\topo C$ 都存在 $\epsilon$-覆盖 $\topo S=\{B(x_i,\epsilon):x_i\in X\}$，则 $\topo S$ 是 $\topo C$ 的有限子覆盖。
-    反之，若 $X$ 的任意开覆盖都存在有限子覆盖，则任意点列 $\{x_n\}$ 的极限点 $x$ 都有某开邻域 $O$，使 $\{x_n\}$ 的无限个点都在 $O$ 中，因此 $\{x_n\}$ 有收敛子列。任意有界序列都有收敛子列，因此 $X$ 是完备的。
-\end{proof}
-
-\begin{example}[Bolzano-Weierstrass]
-    实直线上，列紧 $\iff$ 有界 $\land$ 闭。
-\end{example}
-\begin{proof}
-    只需说明有界闭 $\iff$ 全有界，完备性自动满足。
-
-    若 $K\subset \R$ 是紧集。考虑 $K\subset\bigcup_{n\in\N^+}(-n,n)=\R$，紧性使存在 $K\subset \bigcup_{i=1}^m(-n_i,n_i)=(-\max_i{n_i},\max_i{n_i})$，即有界。
-\end{proof}
-
-\begin{example}[Heine-Borel]
-    结合 \ref{thm:compactness} 知，实直线上，紧 $\iff$ 有界 $\land$ 闭。
-\end{example}
-%%%
-
-\begin{definition}
-    \textbf{局部紧}是任意点都存在\textbf{邻域}相对紧（闭包紧）。
-\end{definition}
-
-紧致要求只用有限的开集就能覆盖全集，但这太过严苛。
-可以尝试弱化，即全局上仍可能需无穷个开集，但要求每个点附近只相交有限个开集。
-这样无穷和在每点附近仍可转化为对有限项的拼接，便于操作。
-
-%%%
-\begin{definition}
-置 $X$ 的覆盖 $\topo V,\topo U$，若 $\forall V\in\topo V$ 都 $\exists U\in\topo U$ 使 $V\subset U$，
-则称 $\topo V$ 是 $\topo U$ 的一个\textbf{细化}或\textbf{加细}(refinement)。默认讨论开覆盖，故称\textbf{开加细}。
-\end{definition}
-
-\begin{definition}
-覆盖 $\topo V$ 称\textbf{局部有限}(locally finite)，若 $\forall x\in X$，$\exists$ $x$ 的邻域只与 $\topo V$ 中有限多个集合相交：$|\{V\in\topo V:\ O\cap V\ne\varnothing, O\in\topo N(x)\}|<\aleph_0$。
-\end{definition}
-
-
-\begin{definition}
-    \textbf{仿紧}或\textbf{副紧}(paracompact)的拓扑空间中，任意开覆盖都存在局部有限的开加细。
-\end{definition}
-%%%
-\begin{remark}
-    更原始的定义是称“任意开覆盖都存在开星加细”：称 $\topo V$ 是覆盖 $\topo U$ 的星加细，对每个 $V\in\topo V$，存在 $U\in\topo U$ 使 $\operatorname{St}(V,\topo V):=\bigcup\{O\in\topo V:\ O\cap V\ne\varnothing\}\subset U$。
-    但“局部有限的开加细”最实用。
-\end{remark}
-
-\begin{theorem}[Stone]
-    可度量 $\im$ 仿紧。
-\end{theorem}
-\begin{proof}
-    下面对一般度量空间 $(X,d)$ 证明副紧性：任取开覆盖 $\topo U$，要构造一个局部有限开细化。
-
-对每个 $x\in X$，选取 $U_x\in\topo U$ 使 $x\in U_x$。
-因为 $U_x$ 开，存在 $r(x)>0$ 使得开球 $B(x,2r(x))\subset U_x$。
-令
-\[
-\topo B:=\{B(x,r(x)):\ x\in X\},
-\]
-则 $\topo B$ 是 $\topo U$ 的开细化（因为 $B(x,r(x))\subset B(x,2r(x))\subset U_x$），但未必局部有限。
-为此我们把这些球按半径分层：
-
-对每个 $n\in\mathbb N$，定义
-\[
-X_n:=\{x\in X:\ 2^{-(n+1)}<r(x)\le 2^{-n}\},
-\qquad
-\topo B_n:=\{B(x,r(x)):\ x\in X_n\}.
-\]
-则 $\topo B=\bigcup_{n=1}^\infty \topo B_n$，且每层的半径都有统一下界 $>2^{-(n+1)}$。
-
-现在对固定的 $n$，在集合 $X_n$ 中取一个\emph{极大}的 $2^{-(n+2)}$-分离子集 $S_n$：
-\[
-d(s,s')\ge 2^{-(n+2)}\quad(s\ne s',\ s,s'\in S_n),
-\]
-且 $S_n$ 在 $X_n$ 中关于包含关系极大（Zorn 引理或贪心构造均可保证存在）。
-极大性推出：对任意 $x\in X_n$，存在 $s\in S_n$ 使得
-\[
-d(x,s)<2^{-(n+2)}.
-\]
-否则 $S_n\cup\{x\}$ 仍是分离集，违背极大性。
-
-于是对每个 $n$，族
-\[
-\topo V_n:=\{B(s,2^{-n}) : s\in S_n\}
-\]
-覆盖 $X_n$（因为若 $x\in X_n$，取 $s\in S_n$ 满足 $d(x,s)<2^{-(n+2)}<2^{-n}$）。
-
-\emph{关键：$\topo V_n$ 是局部有限的。}
-取任意点 $p\in X$，看球 $B(p,2^{-(n+2)})$。
-若它与很多个 $B(s,2^{-n})$ 相交，则对每个相交的 $s$，有
-\[
-d(p,s)\le 2^{-n}+2^{-(n+2)}<2^{-n+1}.
-\]
-也就是说所有这些 $s$ 都落在有界集合 $B(p,2^{-n+1})$ 内。
-另一方面，$S_n$ 是 $2^{-(n+2)}$-分离的，故不同的 $s$ 之间至少相距 $2^{-(n+2)}$。
-这迫使在固定半径的球 $B(p,2^{-n+1})$ 中只能容纳\emph{有限}多个这样的 $s$（否则会出现无限多个两两分离点，
-从而可构造出无限多互不相交的小球，矛盾于该大球的“有限装填”，这是度量空间中的标准有界分离集有限性论证）。
-因此 $B(p,2^{-(n+2)})$ 只能与有限多个 $B(s,2^{-n})$ 相交，局部有限性得证。
-
-最后令
-\[
-\topo V:=\bigcup_{n=1}^\infty \topo V_n.
-\]
-则 $\topo V$ 覆盖 $X$（因为 $X=\bigcup_n X_n$，且每个 $X_n$ 被 $\topo V_n$ 覆盖），并且是可数并联的局部有限族：
-对任意点 $p$，在每个固定层 $n$ 上只有有限多个集合与某小邻域相交，
-再取更小邻域即可保证跨所有层也只与有限多个相交，从而 $\topo V$ 局部有限。
-
-还需验证它细化原覆盖 $\topo U$：对 $B(s,2^{-n})\in\topo V_n$，
-由于 $s\in X_n$，有 $r(s)>2^{-(n+1)}$，从而 $2^{-n}\le 2r(s)$，于是
-\[
-B(s,2^{-n})\subset B(s,2r(s))\subset U_s\in\topo U.
-\]
-故 $\topo V$ 是 $\topo U$ 的局部有限开细化。
-因此任意度量空间副紧。
-
-将 $X$ 取为第二步得到可度量化的 $M$，即得 $M$ 副紧，从而仿紧。证毕。
-\end{proof}
-
-\section{度量化定理*}
-
-\begin{theorem}
-    $T_2\xRightarrow{\text{仿紧}} T_4$ 
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-\begin{theorem}[Urysohn-Lindel\"of]
-    $T_3\xLeftrightarrow{C_2} T_4\xLeftrightarrow{C_2}$ 可度量
-\end{theorem}
-
-
-\begin{theorem}[Smirnov]
-    $\text{仿紧}\land T_2\land\text{局部可度量}\im$ 可度量
-\end{theorem}
-
-\begin{theorem}[Negata-Smirnov]
-    
-\end{theorem}
-\begin{remark}
-    这是另⼀个经典研究成果。证明⾮常复杂精巧，实际应⽤中也没有很多可以模仿着去做的机会，故略去。
-\end{remark}
-
-
-\begin{theorem}
-    $T_2 \xRightarrow{\text{局部紧}} T_3$
-\end{theorem}
-
-\begin{proof}
-\textbf{局部正规}
-
-而在局部紧 $T_2$ 空间中，总可以把点与不含该点的闭集用互不相交的开集分开，这正是正则性。
-
-具体地，取任意 $x\in M$ 与闭集 $F\subset M$，且 $x\notin F$。
-因为 $F$ 闭，所以 $U_0:=M\setminus F$ 是开且含 $x$。
-由局部紧性，存在开集 $U$ 使得
-\[
-x\in U,\qquad \overline U\ \text{紧},\qquad \overline U\subset U_0.
-\]
-于是 $\overline U\cap F=\varnothing$。
-
-对每个 $y\in F$，由 $T_2$ 性，存在互不相交开集 $U_y\ni x$ 与 $W_y\ni y$。
-注意到 $\overline U$ 是紧集，且 $\{W_y\}_{y\in F}$ 是 $F$ 的开覆盖，
-从而也是 $\overline U\cap F=\varnothing$ 的“无关”——我们改用紧性来做如下操作：
-对每个 $p\in \overline U$，因 $p\notin F$ 且 $F$ 闭，$T_2$ $\Rightarrow$ 可分离，
-故存在开集 $A_p\ni p$ 与开集 $B_p\supset F$ 使得 $A_p\cap (M\setminus B_p)=\varnothing$，
-亦即 $A_p\subset B_p$ 且 $B_p$ 仍是包含 $F$ 的开集。
-于是 $\{A_p\}_{p\in\overline U}$ 覆盖紧集 $\overline U$，
-取有限子覆盖 $A_{p_1},\dots,A_{p_N}$，令
-\[
-V:=\bigcup_{j=1}^N A_{p_j},\qquad W:=\bigcap_{j=1}^N B_{p_j}.
-\]
-则 $V$ 为开且含 $\overline U$，$W$ 为开且含 $F$，并且由于每个 $A_{p_j}\subset B_{p_j}$，
-有 $V\subset W$，从而 $V\cap (M\setminus W)=\varnothing$。
-现在取 $U':=U$（开含 $x$）与 $W':=M\setminus V$（开含 $F$），便得
-\[
-U'\cap W'=\varnothing.
-\]
-于是正则。
-从而 $T_2 \land \text{局部紧}\iff T_2 \land (T_2 \land \text{局部紧}) \im T_1 \land \text{正则} \iff T_3$。
-\end{proof}
-
-\begin{definition}
-    置开覆盖 $\topo P=\{O_i\}$。若函数族 $\{\rho_i\}$ 满足
-    \begin{itemize}
-        \item $0\leqslant\rho_i\leqslant 1$；
-        \item $\rho_i$ 支撑在 $O_i$ 上；
-        \item $\sum_i \rho_i=1$,
-    \end{itemize}
-    则称从属于 $\topo P$ 的一个\textbf{单位分解}(partition of unity)。若 $\rho_i$ 连续则称\textbf{连续单位分解}。
-\end{definition}
-
-\begin{theorem}
-    仿紧 $\land$ $T_2\im$ 任何开覆盖存在从属于它的局部有限的连续单位分解。
-\end{theorem}
-\begin{proof}
-    设开覆盖 $\topo P=\{O_\alpha\}$。
-    由仿紧性，$\topo P$ 存在局部有限开加细 $\{U_\alpha\}$ 满足 $U_\alpha\subset O_\alpha$。
-    
-    （必要时可先取局部有限细化 $\{U_i\}$，再对每个 $U_i$ 选取一个包含它的 $O_{\alpha(i)}$，并重编号。）
-
-    \medskip
-    \noindent\textbf{构造从属于 $\{U_i\}$ 的非负光滑函数族 $\{\varphi_i\}$。}
-    由于 仿紧 $\land$ $T_2\im T_4$。由 $T_4$ 收缩性，对每个 $i$ 可取开集 $V_i$ 使得
-    \[
-        \overline{V_i}\subset U_i.
-    \]
-    由流形上的 bump 函数引理（亦即光滑 Urysohn 引理），存在 $\varphi_i\in C^\infty(M)$ 满足
-    \begin{itemize}
-        \item $0\le \varphi_i\le 1$；
-        \item $\varphi_i\equiv 1$ 于 $\overline{V_i}$；
-        \item $\supp(\varphi_i)\subset U_i$。
-    \end{itemize}
-    特别地，$\varphi_i$ 在 $M\setminus U_i$ 上恒为 $0$，因此也从属于原覆盖：$\supp(\varphi_i)\subset U_i\subset O_i$。
-
-    \medskip
-    \noindent\textbf{归一化。}
-    令
-    \[
-        \Phi(x):=\sum_{i=1}^\infty \varphi_i(x).
-    \]
-    由于 $\{U_i\}$ 局部有限，故对每个 $x\in M$，在某个邻域内仅有限个 $\varphi_i$ 非零，
-    因而上述和在该邻域内是有限和，$\Phi$ 是光滑函数。
-
-    下面证明 $\Phi(x)>0$ 对一切 $x$ 成立。
-    因为 $\{V_i\}$ 仍覆盖 $M$（可在取 $V_i$ 时保证这一点：对每个 $x\in U_i$ 选一个相对紧邻域并并入某个 $V_j$；或等价地先取 $\{V_i\}$ 为 $\{U_i\}$ 的开覆盖并满足 $\overline{V_i}\subset U_i$），
-    所以给定 $x\in M$，存在某个 $k$ 使得 $x\in V_k\subset \overline{V_k}$，从而 $\varphi_k(x)=1$，于是 $\Phi(x)\ge 1$。
-
-    因此可定义
+    设 $\F$-线性空间 $\{X_i\}_{i=1}^k,W$。若
+    $T:X_1\times\cdots\times X_k\to W$
+    对任何 $X_i$ 都线性，则称\textbf{多重线性映射}。常取如下情形：
     \eq{
-        \rho_i(x):=\frac{\varphi_i(x)}{\Phi(x)}.
+        T:\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N}\to \F,
     }
-    则 $\rho_i\in C^\infty(M)$，且 $0\le\rho_i\le 1$，并且
-    \[
-        \supp(\rho_i)\subset \supp(\varphi_i)\subset U_i\subset O_i.
-    \]
-    最后，
-    \[
-        \sum_{i=1}^\infty \rho_i(x)=\frac{\sum_i\varphi_i(x)}{\Phi(x)}=1,
-    \]
-    且由于局部有限性，上式在任意点的邻域内都是有限和，因此无收敛性问题。
-    故 $\{\rho_i\}$ 构成从属于 $\topo P$ 的单位分解。
-\end{proof}
+    称为 $V$ 上的一个\textbf{多重线性函数}或\textbf{张量}。如上即 $(k,l)$-张量，构成张量空间
+\eq{
+    \hom(\underbrace{V^*\times\cdots\times V^*}_{k\in\N}\times\underbrace{V\times\cdots\times V}_{l\in\N},\F)=:V^k_l.
+}
+    取显然的加法、数乘、零元定义可使 $V^k_l$ 成为线性空间。这些运算即同型张量的线性组合，如 $T+ S+S+0=T+2S$。
+\end{definition}
 
+%% 检查
 
-\section{连通性}
+\begin{remark}
+    用分号区分上下槽，如 $T(\oo;\oo,\oo)\in V^1_2$ 可输入 $\omega,v_1,v_2$ 得 $T(\omega;v_1,v_2)\in\F$。$T$ 视为全部槽为空时的简写。
+\end{remark}
 
 \begin{definition}
-    拓扑空间 $X$ 称为\textbf{连通的}(connected)，若它不能写成两个互不相交的非空开集之并。
-    定义等价关系如下：$x \sim y$ 当且仅当 $x,y$ 属于 $X$ 的同一个连通子空间。每个等价类称 $X$ 的一个\textbf{连通分支}。
+    $(k,l),(k',l')$ 型张量 $T,T'$ 的\textbf{张量积} $T\otimes T'$ 是一个 $(k+k',l+l')$-张量，使得
+\begin{align}
+    &T\otimes T'(\omega^1,\cdots,\omega^k,\omega^{k+1},\cdots,\omega^{k+k'};v_1,\cdots,v_l,v_{l+1},\cdots,v_{l+l'})\nonumber\\
+    :=\ &T(\omega^1,\cdots,\omega^k;v_1,\cdots,v_l)\,T'(\omega^{k+1},\cdots,\omega^{k+k'};v_{l+1},\cdots,v_{l+l'}).
+\end{align}
 \end{definition}
+\begin{remark}
+    张量积有结合律，但一般不满足交换律。
+\end{remark}
+由于 $V^k_l$ 是线性空间，而 $V$ 有限维且 $k,l\in\N$，可讨论其维数：
 \begin{theorem}
-    连通的两条有用的等价说法：任何一个从 $X$ 到赋予离散拓扑的两点集合 $\{0,1\}$ 的连续映射都不是满射；连通拓扑空间只有两个既开又闭的子集。
+    $\dim V^k_l=(\dim V)^{k+l}.$
 \end{theorem}
-
-\begin{theorem}
-    连续映射保持连通。
-\end{theorem}
-%% 有问题
 \begin{proof}
-假使 $f[A]$ 不连通，则存在不交非空开集 $U,V\subset Y$ 使
-\[
-f(A)\subset U\cup V,\quad f(A)\cap U\ne\varnothing,\quad f(A)\cap V\ne\varnothing.
-\]
-于是
-\[
-A = f^{-1}(U)\cap A\ \cup\ f^{-1}(V)\cap A
-\]
-是把 $A$ 分成两个不交的非空开集（因为 $f^{-1}(U), f^{-1}(V)$ 在 $X$ 中开），矛盾。故 $f(A)$ 连通。
+    设 $\{e_\mu\}$。可预料张量总能展为
+    \eq{
+        T={T^{\mu_1\cdots\mu_k}}_{\sigma_1\cdots\sigma_l}e_{\mu_1}\otimes\cdots\otimes e_{\mu_k}\otimes e^{\sigma_1}\otimes\cdots\otimes e^{\sigma_l},
+        }
+其中分量为
+\eq{{T^{\mu_1\cdots\mu_k}}_{\sigma_1\cdots\sigma_l}:=T(e^{\mu_1},\cdots,e^{\mu_k};e_{\sigma_1},\cdots,e_{\sigma_l}),}
+因为基底作用于相应基失的结果为
+    \[e_{\mu_1}\otimes\cdots\otimes e_{\mu_k}\otimes e^{\sigma_1}\otimes\cdots\otimes e^{\sigma_l}(e^{\mu'_1},\cdots,e^{\mu'_k};e_{\sigma'_1},\cdots,e_{\sigma'_l})=\delta^{\mu'_1}_{\mu_1}\cdots\delta^{\mu'_k}_{\mu_k}\delta^{\sigma_1}_{\sigma'_1}\cdots\delta^{\sigma_l}_{\sigma'_l}.\]
+基底显然线性无关。进而 $V_l^k=\mathrm{span}\{e_{\mu_1}\otimes\cdots\otimes e_{\mu_k}\otimes e^{\sigma_1}\otimes\cdots\otimes e^{\sigma_l}\}$。故 $\dim V_l^k=\prod_{i=1}^k\dim V^*\prod_{j=1}^l\dim V=(\dim V)^{k+l}$。
 \end{proof}
 
-\begin{definition}
-    设区间 $I\subset\R$ 和拓扑空间 $X$，连续映射 $C:I\to X$ 称为 $X$ 上的一条（有向）\textbf{曲线}(curve)。
-    $\sigma\in I$ 称为曲线的\textbf{参数}，$\Im C$ 称为\textbf{路径}(path)，不混淆时亦可称曲线。
-\end{definition}
+张量空间实际上被视为\textit{线性空间张量积}的结果，即定义
+    \eq{V^k_l=:\underbrace{V^*\otimes\cdots\otimes V^*}_{k\in\N}\otimes\underbrace{V\otimes\cdots\otimes V}_{l\in\N}.}
+一般地，可定义不同线性空间的张量积为多重线性映射的 hom-集。换言之，矢量张量积是双线性映射 $\otimes:X\times Y\to W$，使得对任意线性空间 $Z$ 和双线性映射 $f: X\times Y\to Z$，都 $\exists!g\in\hom(W,Z)$ 满足 $f=g\circ\otimes$，即下图交换：
+    \[ \begin{tikzcd}[row sep=small]
+        X \times Y \arrow[rd, "f"'] \arrow[r] & X\otimes Y \arrow[d, "\exists!"] \\
+        & Z.
+    \end{tikzcd} \]
+这称为张量积的\textbf{泛性质}。换言之，矢量张量积将 $X,Y$ 卡氏积变为其（线性空间）张量积。根据模论的相关定理，可证明 $X\otimes Y$ 一定存在，且同构意义下唯一。线性空间张量积可还原回张量及其张量积，故也是许多数学教材采用的等价定义。
 
-\begin{definition}
-    $C':I'\to X$ 称为\textbf{重参数化}。严格单调
-\end{definition}
+%% 泛性质定义法
 
-\begin{definition}
-    拓扑空间 $X$ 称为\textbf{路径连通的}(path-connected)或\textbf{弧连通的}(arcwise-connected)，如果 $X$ 中的任意两点都可被一条完全在 $X$ 中的路径连接。类似地有\textbf{局部路径连通}。
-\end{definition}
-
+\begin{theorem}
+    设基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，张量分量的变换律显然为
+    \eq{
+    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} (A^{-1})^{\mu_1}{ }_{\rho_1} \cdots(A^{-1})^{\mu_k}{ }_{\rho_k} A^{\sigma_1}{}_{\nu_1}   \cdots A^{\sigma_l}{}_{\nu_l}.
+}
+\end{theorem}
 \begin{example}
-    开球路径连通，因为对任意两点 $a,b\in B(x,r)$，存在线段
- $(1-t)a+tb,t\in[0,1]$ 都在 $B(x,r)$ 里。
- 由于这里路径为直线，故路径连通甚至升级为了凸性(convex)。
+    线性变换 $T$ 的分量变换为 $T'^\mu{}_\nu= (A^{-1})^\mu{}_\rho T^\rho{}_\sigma A^\sigma{}_\nu$，即分量矩阵相似。双线性函数的分量变换为 $f'_{\mu\nu}=(A^\mathrm{T})_\mu{}^\rho f_{\rho\sigma} A^\sigma{}_\nu$，即分量矩阵合同。
 \end{example}
 
+\begin{definition}
+    $(k,l)$-张量 $ T $ 的第 $i$ 上标 $(i \leqslant k)$ 与第 $j$ 下标 $(j \leqslant l)$ 的\textbf{缩并}为
+\eq{\mathrm{C}_{j}^{i} T:=T \big(\cdots,\hl{red}{e^{h}},\cdots ; \cdots,\hl[b]{blue}{e_{h}},\cdots\big),}
+\hn{-2}{-1}{red}{第 $i$ 上槽}
+\hn[b]{-2}{1}{blue}{第 $j$ 下槽}
+\vspace{-0.1\baselineskip}
+
+\noindent 其中对 $h$ 使用求和约定。缩并结果为 $(k-1,l-1)$-张量，且显然与基选择无关。
+\end{definition}
+
+缩并其实是求迹的映射版本，因此数学家会混记为 $\tr$。如线性变换 $T$ 在任意基底下矩阵的迹 $\tr T$ 就是 $(1,1)$-张量缩并，是基不变的标量。但两种符号的逻辑稍许不同：$\tr$ 是写出缩并后张量类型，$\c$ 是指明所缩指标位置。假设 $T$ 是 $(1,3)$-张量，定义 $S:=\mathrm{C}_2^1T$，分量写法是 $S_{ij}=T^{k}{}_{ikj}$，但数学上记作 $S=\tr^0_2 T$。并且 $\tr$ 的用法有时并不唯一，比如 $S_{ij}$ 求迹必须借助升指标得 $g^{ij}S_{ij}$，数学上写作 $\tr_{g}S$。
+将分量语言改写为映射语言时，只需注意“先张量积再缩并”可产生各种类型的新张量。可从映射语言直接看出，其结果相当于张量对矢量、对偶矢量的作用。比如，置 $T \in V^k_l,v \in V$，则
+\begin{align*}
+    \mathrm{C}_{\cdots}^{k+1}(T \otimes v)&=T \otimes v(\cdots,e^{\mu} ; \cdots,e_{\mu},\cdots)=T(\cdots;\cdots,e_{\mu},\cdots)v(e^\mu)\\
+    &=T(\cdots;\cdots,v(e^\mu)e_{\mu},\cdots)=T(\cdots;\cdots,v,\cdots);
+\end{align*}
+同理 $T$ 对 $\omega\in V^*$ 作用其实即 $\mathrm{C}_{l+1}^{\cdots}(T \otimes \omega)$。
+换言之，作用就是先积后并。
+
+\begin{definition}
+    张量 $T$ 关于某两下槽\textbf{对称}，若 $\forall v,w\in V$ 有
+    \[
+    T(\cdots,v,\cdots,w,\cdots)=T(\cdots,w,\cdots,v,\cdots).
+    \]
+    \textbf{反称}即
+    \[
+    T(\cdots,v,\cdots,w,\cdots)=-T(\cdots,w,\cdots,v,\cdots).
+    \]
+    上槽同理。称多个槽对称或反称，若其中任意两槽对称或反称。若对所有上/下槽，则为\textbf{全对称}、\textbf{全反称}。显然张量的对称性和其分量的对称性一致，且无关基，故可视为等价定义。
+
+    $T\in V^0_k$ 的对称、反称部分为
+\eq{
+\operatorname{S} T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sigma T, \quad\A T:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,
+}
+其中 $\sigma T(e_{\mu_1},\cdots,e_{\mu_k})=T(e_{\mu_{\sigma(1)}},\cdots,e_{\mu_{\sigma(k)}})=T_{\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}}$ 是 $T$ 按某一 $\sigma$ 给定的一个分量。其它情形同理。
+\end{definition}
+
 \begin{theorem}
-    连续映射保持路径连通。
+    易证 $T=\operatorname{S} T\iff T=\sigma T$；$\omega=\A\omega\iff\omega=\sgn\sigma\,\sigma\omega$。
 \end{theorem}
 
-\begin{proof}
-    置 $A\subset X$ 路径连通、$f:X\to Y$ 连续。任取 $y_0,y_1\in f[A]$，则 $\exists a_0,a_1\in A$ 使 $y_0=f(a_0),y_1=f(a_1)$。
-    进而存在路径 $\gamma:[0,1]\to A$ 连接 $a_0,a_1$，即 $\gamma(0)=a_0,\gamma(1)=a_1$。复合保持连续性，从而 $f\circ\gamma$ 连接 $y_0,y_1$。故 $f[A]$ 路径连通。
-\end{proof}
+\begin{theorem}
+    置 $f\in V^0_k,g\in V^0_l$，则 $\A(\A f\otimes g)=\A(f\otimes\A g)=\A(f\otimes g)$。证明思想与第 \ref{sec:tensor} 节的方法一致。
+\end{theorem}
 
-\begin{example}
-    $O\in\topo T_u$ 一定局部路径连通：$\forall x\in O$，$\exists U:= B(x,r)\subset O$（从而 $B(x,r)=O\cap B(x,r)\in\topo T_O$）使 $x\in U$ 且 $U$ 路径连通。
+严格来说，由于不同型张量暂不能相加，故还未得到张量代数。设线性空间族 $\{X_i\}$。将 $X_1\times\cdots\times X_s$ 构造为线性空间，只需给定 $(x_1,\cdots,x_s)\oplus(y_1,\cdots,y_s)=(x_1+y_1,\cdots,x_s+y_s)$ 和 $\lambda(x_1,\cdots,x_s)=(\lambda x_1,\cdots,\lambda x_s)$ 即可。此即线性空间的\textbf{直和}(direct sum)。线性空间改记为 $X_1\oplus\cdots\oplus X_s$，元素改记为 $x_1\oplus\cdots\oplus x_s$。直和可从 $s\in\N$ 推广至可数无穷，但要求 $\bigoplus_{i=1}^\infty x_i$ 中仅有限个 $x_i$ 非零。\textbf{张量代数}定义为
+\eq{
+    V=\bigoplus_{k,l=1}^\infty V^k_l.
+}
+它显然是无穷维线性空间。张量积构成其乘法运算，故容易看出其的确是代数。这种构造类似于二次量子化中 Fock 空间的构造 $V\to\mathscr H$，其中 $\mathscr H$ 是之后要学的单粒子 Hilbert 空间。
+
+\section{内积空间}
+
+仿照售货机例子和前文的降指标概念，可定义：
+
+\begin{definition}
+    设双线性映射 $f:V\times V\to W$。固定 $\alpha\in V$，与 $f$ 配合把 $\beta\in V$ 映到 $f(\alpha,\beta)\in W$ 的线性映射，记\footnote{五线谱的降记号 “$\flat$” 读作“降”(flat)、升记号 “$\sharp$” 读作“升”(sharp)。} $f_\flat(\alpha)=f(\alpha,\oo)$。$f_\flat\in\hom(V,\hom(V,W))$ 称为\textbf{降映射}。
+\end{definition}
+
+
+专注于 $W=\F$，则 $f$ 为双线性函数、$f_\flat(\alpha)$ 为对偶矢量、$f_\flat\in\hom(V,V^*)$。
+双线性函数的分量矩阵称为\textbf{度量矩阵}。不同基的度量矩阵是合同的，而合同变换保秩，故可直接定义 $\rank f$ 为任意度量矩阵的秩。
+
+\begin{theorem}
+    $\rank f=\rank f_\flat$.
+\end{theorem}
+
+$f$ 满秩时称为非退化的。易证充要条件是分量矩阵可逆，或
+\eq{\forall w \in V,\quad f(v,w)=0 \iff v=0.}
+故非退化性等价于 $f_\flat\in\mathrm{Isom}(V,V^*)$。换言之，可规定好某个 $f$ 作为 $V$ 上的额外结构，建立 $V,V^*$ 间的特殊同构。
+
+相对论主要用实线性空间。度规是 $\F=\R$ 的特例：
+
+\begin{definition}
+    $V$ 上一个对称、非退化的双线性实函数 g 称为 $V$ 上的一个\textbf{度规}。 $g_\flat:V\to V^*$ 称作\textbf{音乐同构}(musical isomorphism)。度规逆 $g^{-1}:=g^{ij} e_i\otimes e_j$，或用 $\mathrm{C}_1^2(g^{-1}\otimes g)=\id_V$ 定义。
+\end{definition}
+
+\begin{remark}
+    部分书也把音乐同构称为“典范同构”。但为资区分，分别使用“自由”“音乐”两词而避免“典范”。
+\end{remark}
+
+\begin{definition}
+    \textbf{升降指标}操作本质为音乐同构，故是相对于某度规而言的。比如 $(1,1)$-张量 $T$ 的降为
+    $\mathrm{C}_1^1(g\otimes T)=T_\flat$。升指标用度规逆，即 $\mathrm{C}_1^1(g^{-1}\otimes T)=T^\sharp$。就矢量、对偶矢量而言，可将音乐同构称为\textbf{度规对偶}：$A\in V$ 的降为 $A_\flat:=g_\flat A$；$\omega\in V^*$ 的升是 $\omega^\sharp:=g^{-1}(\omega,\oo)$。
+\end{definition}
+
+\begin{remark}
+    基和对偶基的对应通常不是度规对偶，即 $e^\mu\ne (e_\mu)_\flat, e_\nu\ne (e^\nu)^\sharp$。
+\end{remark}
+
+任意对称矩阵 $f_{ij}$ 总合同于某个对角阵，对应标准二次型，秩正是非零对角元的个数。且还可继续归一化，对应规范二次型。就实对称矩阵而言，对角元（特征值）符号可变：
+\eq{(\tilde f_{ij})=\diag(\pm 1,\cdots,\pm 1,0,\cdots),}
+但正、负或为零的\textit{个数}在合同变换下分别不变。正项个数称正惯性指数，负项个数称负惯性指数。简言之，合同变换保持正负惯性指数，此即代数学的 \textbf{Sylvester 惯性定理}。正负惯性指数之差就是号差，它进而是不变的。
+
+度规的非退化性使其无零特征值，就可迎合物理上时空度规总能变换至 $\eta_{\mu\nu}$ 的要求。
+记负惯性指数 $s$。$s=0$ 时称度规是\textbf{正定的}(positive definite)。$s=\dim V$ 时称\textbf{负定的}(negative definite)。其它皆称\textbf{不定的}(indefinite)，时空度规就是不定的，推广到高维情形时，可依旧按东海岸习惯规定 $(-1,1,\cdots,1)$，西海岸取 $(1,-1,\cdots,-1)$。
+
+使度规表为单位阵的基称为该度规下的\textbf{正交归一基}，即满足 $g(e_i,e_j)=\pm\delta_{ij}$ 的$\{e_{\mu}\}$。当然，数学上内积的定义略有不同。首先对于 $\R$，数学上的内积通常正定：$\langle\alpha,\beta\rangle\geqslant0$，而正定内积必非退化。相对论允许不定度规，因此 $\alpha \in V$ 的模或\textbf{范数} $|\alpha|=\sqrt{|\langle\alpha, \alpha\rangle|}$ 需在根号中加绝对值。有时为与行列式区分写作 $\|\alpha\|$。最常用的写法是 $\alpha^2=\langle\alpha, \alpha\rangle$，允许模方为负。但都有 \textbf{Cauchy-Schwartz 不等式} $|\langle\alpha, \beta\rangle| \leqslant|\alpha \| \beta|$。$n$ 维线性空间在给定正定内积后，就成了 $n$ 维实内积空间，其不仅同构于 $\R^n$，且可在正交归一基，按勾股定理定义夹角、长度等概念，故有时也被称为\textit{欧氏（线性）空间}。其次对于 $\C$，数学通常发展了量子力学的态矢概念：
+\begin{definition}
+    复线性空间 $V$ 称为\textbf{复内积空间}，简称内积空间，若给定内积运算 $(\oo, \oo): V \times V \rightarrow \C$，对任意 $f, g, h \in V$ 和任意 $c,d \in \C$ 满足：
+    
+    （第二槽线性性）$(f, cg+dh)=c(f, g)+d(f, h)$；
+    
+    （交换律）$(f, g)=\overline{(g, f)}$，其中 $\overline{(g, f)}$ 代表复数 $(g, f)$ 的共轭复数；
+    
+    （非退化）$(f, f) \geqslant 0$, 且 $(f, f)=0 \Leftrightarrow f=0$。
+    \end{definition}
+    \begin{remark}
+        数域为 $\R$ 时退为正定内积。只含零元的线性空间也可构成内积空间，但下面只讨论维数大于零的情况。
+    \end{remark}
+    \begin{theorem}
+    非退化条件配以线性性和交换律可得到 $(f+g, h)=(f, h)+(g, h)$ 及 $(c f, g)=\bar{c}(f, g)$。称内积对第一槽有\textbf{共轭线性}。
+    \end{theorem}
+    \begin{theorem}
+    对非退化条件中取 $g=f$ 可有：$\forall g\in V,(f,g)=0\im f=0$。
+    \end{theorem}
+    \begin{example}
+        对 $C[a, b]$ 定义如下内积就构成内积空间：
+    \eq{\label{b11}
+    (f, g):=\int_a^b \overline{f(x)} g(x) \d {x}, \quad \forall f, g \in C[a, b].
+    }
 \end{example}
 
-\begin{theorem}
-    连续开映射保持局部路径连通性。
+对于有限维，从任意基 $\{\beta_i\}$ 出发，通过 \textbf{Gram-Schmidt 正交化}：
+\eq{
+\alpha_1=\beta_1,\quad \alpha_r=\beta_r-\sum_{k=1}^{r-1}\frac{(\alpha_k,\beta_r)}{(\alpha_k,\alpha_k)}\alpha_k,\quad \xi_i=\frac{\alpha_i}{|\alpha_i|},
+}
+总能找到内积空间中的正交归一基 $\{\xi_i\}$，其几何意义是正交投影和作差。这一正交化过程同样能用于寻找度规的正交归一基。
+
+\begin{definition}
+    置内积空间 $V$。对 $f,g\in V$ 的定义通常距离 $d(f, g):=\sqrt{(f-g, f-g)}$，便得到\textbf{度量线性空间}。该度量诱导拓扑之后（见定义 \ref{def:metric_topo}），又成了\textbf{拓扑线性空间}。
+\end{definition}
+
+$\C$ 也能作为通常度量空间。以拓扑线性空间为对象、连续线性映射为态射，可构建\textbf{拓扑线性空间范畴} $\cate{TopVect}(\mathbb C)$。
+
+\begin{definition}
+    内积空间上全体连续线性函数之集称为其\textbf{共轭空间}或\textbf{对偶空间}。
+\end{definition}
+\begin{remark}
+    有限维内积空间 $V$ 上的线性函数必连续，故 $\hom(V,\F)$ 等价于此处定义的对偶空间。
+\end{remark}
+
+\section{外代数}
+
+本节主要考虑 $\F=\R$ 及有限维。
+
+\begin{definition}
+    $l$ 阶反称协变张量称为 \textbf{$l$ 次形式}，简称 \textbf{$l$-形式}(form)。$V$ 上全体 $l$-形式之集记作 $\Lambda_l(V)$。
+\end{definition}
+\begin{remark}
+    全反称即 $\omega=\A\omega=\sgn\sigma\,\sigma\omega$。沿用相应运算，$\Lambda_l(V)$ 显然是 $V^0_l$ 的线性子空间。
+\end{remark}
+
+标量、对偶矢量分别可称 0-形式、1-形式，可以预料 $\Lambda_l(V)$ 有自己的一套体系。张量通过张量积形成张量代数。形式也可通过某个封闭乘法形成所谓的\textbf{外代数}或 \textbf{Grassmann 代数}。但张量积对形式是不封闭的，如 $\omega_{[\mu\nu]}\zeta_{[\alpha\beta]}$ 并非 4-形式。我们需要一种全反称化操作，将张量积变为能保持形式性的乘法。并且，我们欲讨论 $\Lambda_l(V)$ 作为线性空间的维数，在构造基时也必须用保持形式性的乘法。
+
+设 $n:=\dim V$。取对偶基 $\{e^\mu\}$，$l$-形式 $\omega$ 可表为 $\omega_{\mu_1\cdots\mu_l} e^{\mu_1}\otimes\cdots\otimes e^{\mu_l}$。由于反称性，$\omega$ 的独立分量仅在 $(\mu_1\cdots\mu_l)$ 为 $1,\cdots,n$ 的组合时。
+欲讨论基和维数，必须考虑如何只用独立分量表示 $\omega$。且最好每一独立分量只用一次。新乘法记作 $\wedge$，则一般地希望
+\eq{
+\omega=\sum_{\mu_1<\cdots<\mu_l}\omega_{\mu_1\cdots\mu_l} e^{\mu_1}\wedge\cdots\wedge e^{\mu_l}=\frac{1}{l!}\omega_{\mu_1\cdots\mu_l} e^{\mu_1}\wedge\cdots\wedge e^{\mu_l},
+}
+求和下的排序相当于只对指标组合求和；而由反称性，$\wedge$ 对 $e^\mu$ 而言必须有反交换律，故可将求和换成除序因子。由 $\omega_{\mu_1\cdots\mu_l}=\omega_{[\mu_1\cdots\mu_l]}$ 或 $\omega=\A\omega$ 得
+\[
+    \frac{1}{l!}\omega_{\mu_1\cdots\mu_l} e^{\mu_1}\wedge\cdots\wedge e^{\mu_l}=\omega_{\mu_1\cdots\mu_l} \A(e^{\mu_1}\otimes\cdots\otimes e^{\mu_l}),
+\]
+说明希望
+\[e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{l}}:=l!\A(e^{\mu_1}\otimes\cdots\otimes e^{\mu_l})=\sum_{\sigma\in S_l}\sgn\sigma\, e^{\mu_{\sigma(1)}}\otimes\cdots\otimes e^{\mu_{\sigma(l)}}.\]
+另一方面，我们希望新乘法有结合性，这样任意两形式乘法就可以提出系数，而把它们的基凑在一起：
+\[(e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{k}})\wedge( e^{\mu_{k+1}}\wedge\cdots\wedge e^{\mu_{k+l}}):= e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{k+l}}.\]
+式右为
+\[
+(k+l)!\A( e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{k+l}})=(k+l)!\A\big(( e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{k}})\otimes( e^{\mu_{k+1}}\otimes\cdots\otimes e^{\mu_{k+l}})\big),
+\]
+因此考察两个形式之张量积与新乘法的联系：
+\begin{align*}
+    &(k+l)!\A\big(( e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{k}})\otimes( e^{\mu_{k+1}}\wedge\cdots\wedge e^{\mu_{k+l}})\big)\\
+    =\,&(k+l)!\A\big(k!\A( e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{k}})\otimes l!\A( e^{\mu_{k+1}}\otimes\cdots\otimes e^{\mu_{k+l}})\big)\\
+    =\,& k!l!(k+l)!\A\big(e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{k+l}}\big)=k!l!( e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{k}})\wedge( e^{\mu_{k+1}}\wedge\cdots\wedge e^{\mu_{k+l}}).
+\end{align*}
+综上我们给出
+\begin{definition}
+    任意 $k$-形式 $\omega$ 和 $l$-形式 $\mu$ 的\textbf{楔积}(wedge)为如下 $(k+l)$-形式：
+    \eq{\omega\wedge\mu :=\frac{(k+l)!}{k!l!}\A(\omega\otimes\mu),\quad(\omega\wedge\mu)_{\nu_1\cdots\nu_k\lambda_1\cdots\lambda_l}=\frac{(k+l)!}{k!l!}\omega_{[\nu_1\cdots\nu_k}\mu_{\lambda_1\cdots\lambda_l]}.}
+\end{definition}
+\begin{remark}
+    分量也可写成 $\omega_{\nu_1\cdots\nu_k}\wedge\mu_{\lambda_1\cdots\lambda_l}$。上文是阐述定义动机。显然从此出发可得上文全部结论，故为等价表述。
+\end{remark}
+
+\begin{example}
+    取 $n=3,l=2$，则
+\begin{align*}
+    \omega&=\omega_{12}e^1\otimes e^2+\omega_{21}e^2\otimes e^1+\omega_{13}e^1\otimes e^3+\omega_{31}e^3\otimes e^1+\omega_{23}e^2\otimes e^3+\omega_{32}e^3\otimes e^2\\
+    &=\omega_{12}(e^1\otimes e^2-e^2\otimes e^1)+\omega_{13}(e^1\otimes e^3-e^3\otimes e^1)+\omega_{23}(e^2\otimes e^3-e^3\otimes e^2)\\
+    &=\omega_{12}e^1\wedge e^2+\omega_{13}e^1\wedge e^3+\omega_{23}e^2\wedge e^3.
+\end{align*}
+\end{example}
+
+$\{e^\mu\}$的楔积即可作为 $\Lambda_l(V)$ 的基：由于已说明任意 $\omega$ 的表出，只需再说明线性无关性，而这是显然的。维度即独立分量数 $\dim\Lambda_l(V)=\binom{n}{l}=\frac{n!}{l!(n-l)!}$，其中 $l\leqslant n$。若 $l>n$，排完任意 $n$ 个指标后，根据抽屉原理，余下指标必存在重复，故所有分量为零，即此时 $\Lambda_l(V)=\{0\}$。通常默认 $0\leqslant l\leqslant n$。
+\begin{theorem}拆到基底可知楔积的运算律有
+
+    （结合律）$(\omega\wedge\mu)\wedge\nu=\omega\wedge(\mu\wedge\nu)$；
+
+    （分配律）$\omega\wedge(\mu+\nu)=\omega\wedge\mu+\omega\wedge\nu$；
+
+    （交换律）$\omega\wedge\mu=(-1)^{kl}\mu\wedge\omega$。
 \end{theorem}
-%% 没区分子拓扑
-\begin{proof}
-置 $A\subset X$ 局部路径连通、$f:X\to Y$ 连续开。 
-任取 $y\in f[A]$，$\exists x\in X$ 使 $f(x)=y$。故 $\exists U\in\topo T_X$ 使 $x\in U$ 且 $U$ 路径连通，从而 $\exists V:=f[U]\in\topo T_Y$ 使 $y=f(x)\in V$ 且 $V$ 路径连通。
-故 $f[A]$ 局部路径连通。
-\end{proof}
 
-\begin{proof}
-设 $f:X\to Y$ 连续且为开映射，$A\subset X$ 局部路径连通。记 $B=f(A)$，并赋予子空间拓扑。我们证明 $B$ 局部路径连通。
-
-任取 $y\in B$，取 $x\in A$ 使得 $f(x)=y$。令 $O\subset B$ 为 $y$ 的任意开邻域。由于 $B$ 取子空间拓扑，存在 $Y$ 中开集 $U$ 使得
-\[
-O=B\cap U.
-\]
-由连续性知 $f^{-1}(U)$ 在 $X$ 中开，从而
-\[
-f^{-1}(O)=f^{-1}(B\cap U)=f^{-1}(B)\cap f^{-1}(U)\supset A\cap f^{-1}(U)
-\]
-是 $X$ 中的集合；并且因为 $x\in A$ 且 $f(x)\in U$，可知
-\[
-x\in A\cap f^{-1}(U).
-\]
-注意到 $A\cap f^{-1}(U)$ 在 $A$ 的子空间拓扑中是开集，因此它是 $x$ 在 $A$ 中的一个开邻域。
-
-由于 $A$ 局部路径连通，存在 $A$ 中路径连通的开集 $W$ 满足
-\[
-x\in W\subset A\cap f^{-1}(U).
-\]
-于是 $f(W)\subset U$ 且 $f(W)\subset f(A)=B$，从而
-\[
-f(W)\subset B\cap U=O.
-\]
-
-下面说明 $f(W)$ 是 $B$ 中开且路径连通：
-\begin{itemize}
-\item $W$ 在 $A$ 中开，故存在 $X$ 中开集 $G$ 使 $W=A\cap G$。由于 $f$ 为开映射，$f(G)$ 在 $Y$ 中开，从而
-\[
-f(W)\subset f(G),\qquad f(W)=B\cap f(G),
-\]
-因此 $f(W)$ 在 $B$ 中开。
-\item $W$ 路径连通且 $f$ 连续，所以连续像 $f(W)$ 路径连通。
-\end{itemize}
-
-综上，对任意 $y\in B$ 的任意开邻域 $O$，都能找到 $B$ 中开且路径连通的邻域 $f(W)$ 满足
-\[
-y\in f(W)\subset O.
-\]
-故 $B=f(A)$ 局部路径连通。
-\end{proof}
-
-
-\begin{theorem}
-    路径连通 $\im$ 连通。
-\end{theorem}
-%%
-\begin{proof}
-    置 $X$ 路径连通，任取 $x,y\in X$，存在 $\gamma:[0,1]\to X$ 连接。因 $[0,1]$ 连通，故 $\Im\gamma$ 连通。
-
-假使 $X$ 不连通，则存在不交非空开集 $U,V$ 使 $X=U\cup V$。取 $x\in U,y\in V$，则连通集 $\Im\gamma$ 必须完全落在 $U$ 或完全落在 $V$（否则会被 $U,V$ 分割成两个开集，破坏连通），矛盾。
-
-    从而整个空间不可能被分成两个不交的非空开集。
-\end{proof}
-
-\begin{proof}
-    可以，最“直接”的证明就是用**反证法**：
-
-设 $X$ 不连通，则存在不交非空开集 $U,V$ 使得
-\[
-X=U\sqcup V.
-\]
-取 $x\in U,\ y\in V$。假设 $X$ 路径连通，则存在连续路径 $\gamma:[0,1]\to X$，$\gamma(0)=x,\ \gamma(1)=y$。
-
-令
-\[
-A=\gamma^{-1}(U),\qquad B=\gamma^{-1}(V).
-\]
-由于 $\gamma$ 连续且 $U,V$ 开，故 $A,B$ 是 $[0,1]$ 中的开集；又因 $U\cap V=\varnothing$ 且 $U\cup V=X$，得
-\[
-A\cap B=\varnothing,\qquad A\cup B=[0,1].
-\]
-并且 $0\in A$（因为 $\gamma(0)=x\in U$），$1\in B$（因为 $\gamma(1)=y\in V$），所以 $A,B$ 都非空。
-
-这说明 $[0,1]$ 被分成两个不交的非空开集 $A,B$，与 $[0,1]$ 连通矛盾。
-
-因此不存在这样的路径 $\gamma$，即 $X$ 不路径连通。
-\end{proof}
-
+还可定义\textbf{全对称化}算子 $\mathrm{sym}:V^0_k\to V^0_k$ 和\textbf{全反称化}算子 $\alt:V^0_k\to V^0_k$：
+\[\operatorname{sym} T:=k!\operatorname{S} T=\sum_{\sigma\in S_k} \sigma T,\quad \alt T:=k!\A T=\sum_{\sigma\in S_k} \sgn\sigma\,\sigma T,\]
+对其它情形定义类似。置 $f\in V^0_k,g\in V^0_l$，则显然 $\alt(\alt f\otimes\alt g)=k!l!\alt(f\otimes g)$。楔积可表为 $\omega\wedge\mu=\frac{1}{k!l!}\alt(\omega\otimes\mu)$。基的楔积为 $e^{\mu_{1}}\wedge\cdots\wedge e^{\mu_{l}}=\alt( e^{\mu_{1}}\otimes\cdots\otimes e^{\mu_{l}})$。看上去系数仿佛改变。更有甚者直接将 $\omega\wedge\mu$ 定义为 $\Lambda(\omega\otimes\mu)$ 的形式，使得系数仿佛归一。故查阅不同书籍时请注意分辨。
 
 \begin{theorem}
-    连通 $\land$ 局部路径连通 $\im$ 路径连通
+    $n$ 维线性空间上 $n$-形式 $\omega$ 的分量变换律为
+    \begin{align}
+        \omega'_{1\cdots n}&=\omega_{\mu_1\cdots\mu_n} A^{\mu_1}{}_{1} \cdots A^{\mu_n}{}_{n}=\sum_{\sigma\in S_n}\omega_{\sigma(1)\cdots\sigma(n)} A^{\sigma(1)}{}_{1} \cdots A^{\sigma(n)}{}_{n}\nonumber\\&=\omega_{1\cdots n}\sum_{\sigma\in S_n}\sgn\sigma\, A^{\sigma(1)}{}_{1} \cdots A^{\sigma(n)}{}_{n}=\omega_{1\cdots n} \det(A^{\mu}{}_{\nu}).
+    \end{align}
 \end{theorem}
-\begin{proof}
-    置 $(M,\topo T)$ 连通 $\land$ 局部路径连通。
-任取 $p\in M$，记 $C_p:=\{q\in M:\text{存在路径连接 $p,q$}\}$ 为包含 $p$ 的路径连通分支。任取 $q\in C_p$，由于 $M$ 局部路径连通，存在 $q$ 的一个路径连通的开邻域 $V$。对任意 $r\in V$，可将 $p,q$ 的路径与 $V$ 中 $q,r$ 的路径拼接，得到一条从 $p$ 到 $r$ 的路径，因此 $r\in C_p$，从而 $V\subset C_p$，从而 $q$ 是 $C_p$ 的内点，这说明 $C_p$ 是开集。
 
-因此，$M$ 可以表示为若干个互不相交的开路径连通分支的并。若 $M$ 不路径连通，则至少存在两个不同的路径连通分支，从而 $M$ 可分解为两个不交的非空开集，这与 $M$ 的连通性矛盾。
-
-* 同理，其他路径连通分支也都开；而不同路径连通分支两两不交，且并起来是全体 $X$。
-* 若 $X$ 有至少两个路径连通分支 $C_x,C_{x'}$，则
-  \[
-  X=C_x\sqcup (X\backslash C_x)
-  \]
-  是两个不交非空开集的分割，违背连通性。
-
-所以 $X$ 只能有一个路径连通分支，即 $X$ 路径连通。证毕。
+\begin{definition}
+    矢量和形式的缩并 $i_v \omega:=\mathrm{C}_1^1 (v\otimes\omega)=\omega(v,\cdots)$ 称为\textbf{内导数}、\textbf{内缩}或\textbf{内乘}(interior product)，分量表述为
+    \eq{
+        i_v \omega_{\mu_1\cdots\mu_{k}}:=v^\nu\omega_{\nu\mu_1\cdots\mu_{k}},
+    }
+    规定 $0$-形式的内乘为零。
+\end{definition}
+\begin{theorem}设 $k$ 个对偶矢量 $a^i$，则对任意 $v\in V$ 有
+    \eq{i_{v}(a^1\wedge \cdots\wedge a^k)=\sum_{i=1}^k (-1)^{i-1} a^i(v)\,a^1 \wedge \cdots \wedge \widehat{a^i}\wedge \cdots \wedge a^k,}
+    这里 $a^i$ 头顶上的 $\widehat{\text{  }}$ 表示将 $a^i$ 从楔积中删去，读作脱字号(caret)。
+\end{theorem}
+\begin{proof}作用于任意 $v_2,\cdots,v_k\in V$，不妨记 $v_1:=v$，有
+    \begin{align*}
+        i_{v_1}(a^1\wedge \cdots\wedge a^k)(v_2,\cdots,v_k)&=(a^1\wedge \cdots\wedge a^k)(v_1,v_2,\cdots,v_k)\\
+        &=\alt(a^1\otimes\cdots\otimes a^k)(v_1,\cdots,v_k)\\
+        &=\sum_{\sigma\in S_k}\sgn\sigma\, a^1(v_{\sigma(1)})\cdots a^k(v_{\sigma(k)})\\
+        &=\det\left(a^i(v_{j})\right)\\
+        &=\sum_{i=1}^k (-1)^{i+1} a^i(v_1)\det\left(a^\mu(v_{j})\right),
+    \end{align*}
+    这里 $\det\left(a^\mu(v_{j})\right)$ 表示余子式，要求 $1\leqslant\mu\leqslant k,\mu\ne i$ 且 $2\leqslant\mu\leqslant k$。因此余子式就是 $(a^1 \wedge \cdots \wedge \widehat{a^i}\wedge \cdots \wedge a^k)(v_2,\cdots,v_k)$，而 $(-1)^{i+1}=(-1)^{i-1}$。
 \end{proof}
 
-一般总能将非连通集视为有限个连通分支之并，不妨只考虑其中一个连通分支。连通集合称为\textbf{单连通的}，就是说，其中任意形似橡皮圈的闭合曲线（称\textbf{简单闭线}）所围成的任意曲面都含于此集合中。
+类似于张量代数，我们也要考虑 $\Lambda_l(V)$ 的直和空间。置
+\eq{
+    \Lambda(V):=\bigoplus_{l=0}^n \Lambda_l(V).
+}
+易知 $\dim\Lambda(V)=2^n$。元素外积定义为 $x\wedge y=\bigoplus_{s,k=0}^n x_s\wedge x_k$。线性空间 $\Lambda_l(V)$ 配上此乘法就构成外代数。张量代数和外代数的加法都是直和的方式，在数学上属于阶化或分次代数(graded algebra)。
 
-单连通区域总同胚开球。
+\section{张量密度}\label{sec:tensor-density}
 
-%%%
+克氏符因为和张量变换律相差一项而成为赝张量。还存在一类赝张量，它们的变换是多出若干系数。一个典型例子是某基的度规行列式，它并非不变标量。设基变换 $e_\mu^{\prime}=A^\nu{ }_\mu e_\nu$，度规行列式的变换显然为 $g'=g\det^2(A^\mu{}_\nu)$。其实 $1/\det(A^\mu{}_\nu)$ 正对应于 Jacobi 行列式，只是目前是在线性空间中讨论问题。在张量变换式基础上还多出 $\det(A^\mu{}_\nu)$ 因子的量称为\textbf{张量密度}，满足
+\eq{
+    T'^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} J^w (A^{-1})^{\mu_1}{ }_{\rho_1} \cdots(A^{-1})^{\mu_k}{ }_{\rho_k} A^{\sigma_1}{}_{\nu_1} \cdots A^{\sigma_l}{}_{\nu_l},
+}
+其中 $J=1/\det(A^\mu{}_\nu)$，$w$ 称为张量密度的\textbf{权}(weight)。例如，$g$的权为 $-2$。
 
-连通区域的表面正是\textbf{闭曲面}。
-比如，闭曲面总能将 $\R^n$ 分为有界部分（即所包围区域）和无界部分，因此可区分空间的内外。
-一般偏好将法矢取定为朝外，称为\textbf{外指}(outward-pointing)\textbf{法矢}，简称\textbf{外法矢}。
-单连通的表面就称\textbf{简单闭曲面}，简单闭线可视作特殊情形。
-物理学总是关注这种良好对象，比如求分段光滑的简单闭曲面的场通量，而实际上分析学的 Gauss 定理的确适用之。
+举一例很重要的张量密度。某 $\{e_\mu\}$ 的 Levi-Civita 符号为
+\eq{
+    \varepsilon_{i_1\cdots i_n}:=\det(\delta_{i_n}^{j}).
+}
+其中 $\dim V=:n$。显然 $\varepsilon_{i_1\cdots i_n}=\varepsilon_{[i_1\cdots i_n]}$。二维方阵 $(M^{ij})$ 的行列式总可表成
+\eq{\label{eq:det-epsilon}
+    \det(M^{ij})= \varepsilon_{i_1\cdots i_n}M^{i_1 1}\cdots M^{i_n n}.
+}
+$\varepsilon_{i_1\cdots i_n}$ 下标数与维度一致，故独立分量只有 $\varepsilon_{1\cdots n}=1$。
+记基 $\{e'_\nu\}$ 下的 Levi-Civita 符号为 $\varepsilon'_{i_1\cdots i_n}=\varepsilon_{j_1\cdots j_n} A^{j_1}{}_{i_1} \cdots A^{j_n}{}_{i_n} J^w$，只需取 $(i_1\cdots i_n)=(1\cdots n)$ 即可，这样 $1=\varepsilon'_{1\cdots n}=J^{-1} J^w$ 即 $w=1$。
+
+\textit{用赝张量构造张量的办法是利用度规}，而此张量只在正交归一基中表为此赝张量，如协变导数的度规适配性。约定某正交归一基 $\{\zeta_\mu\}$ 是右手的，\textbf{Levi-Civita 张量}为 $\epsilon=\epsilon_{i_1\cdots i_n} e^{i_1}\otimes\cdots\otimes e^{i_n}=\varepsilon_{j_1\cdots j_n} \zeta^{j_1}\otimes\cdots\otimes \zeta^{j_n}$，记 $e_\mu=\Pi^\nu{ }_\mu \zeta_\nu$，则
+\eq{
+    \epsilon_{i_1\cdots i_n}=\varepsilon_{j_1\cdots j_n} \Pi^{j_1}{}_{i_1} \cdots \Pi^{j_n}{}_{i_n}.
+}
+容易验证 $\epsilon_{i_1\cdots i_n}=\epsilon_{[i_1\cdots i_n]}$ 即 $\epsilon$ 是 $n$-形式。
+设 $\tilde J:=1/\det(\Pi^\mu{}_\nu)$，由 \eqref{eq:det-epsilon} 式得 $\epsilon_{1\cdots n}=1/\tilde J$。
+注意 $g=\tilde g\tilde J^{-2}=(-1)^s\tilde J^{-2}$，其中 $s$ 是负惯性指数。则
+\eq{
+    \sgn g=(-1)^s,\quad |g|=\tilde J^{-2}\im \epsilon_{1\cdots n}=1/\tilde J=\sgn\tilde J\sqrt{|g|}.
+}
+由于 $\dim V=n$，故
+\begin{align}
+    \epsilon=\zeta^{1}\wedge\cdots\wedge \zeta^{n}=\sgn\tilde J\sqrt{|g|}e^{1}\wedge\cdots\wedge e^{n},\\
+    \epsilon_{i_1\cdots i_n}=\epsilon(e_{i_1},\cdots,e_{i_n})=\sgn\tilde J\sqrt{|g|}\varepsilon_{i_1\cdots i_n}.
+\end{align}
+若 $\{e_\mu\}$ 是右手基，即 $\tilde J>0$，则 $\epsilon=\sqrt{|g|}e^{1}\wedge\cdots\wedge e^{n}$。
+
+线性空间上的非零最高阶形式称为\textbf{体元}\footnote{实际上基底与微元 $\d x$ 可以等价，见附录 \ref{appx:manifold}。Levi-Civita 张量正是学过的适配体元。}，可以类比平行六面体的体积是三个楞矢量的混合积。
+张量密度的名字以及定义中的 $J$ 正来源于此。
+张量密度的映射语言定义，大意上指与体元有关的多重线性映射，但细节十分繁琐，毫无必要。
+设两体元 $\epsilon_1,\epsilon_2$，若存在 $h>0$ 使 $\epsilon_1=h\epsilon_2$，就说 $\epsilon_1,\epsilon_2$ 给出相同定向；否则相反。
+全体体元之集由此分为两个等价类，每一等价类称为一个\textbf{定向}(orientation)。由 $\epsilon$ 决定的定向表示为 $[\epsilon]$，其代表元称\textbf{定向相容体元}。
+因而事先约定某个右手基，再用 Jacobi 行列式判断 $\{e_\mu\}$ 右手性，就相当于先约定一个定向——规定称为\textbf{正定}，与其相容的体元称\textbf{正定体元}——再判断 $e^{1}\wedge\cdots\wedge e^{n}$ 是否正定。
+可见度规衡量正交归一性，右手性则靠最高阶形式。
+换言之，$g$ 负责\textbf{内积结构}，$[\epsilon]$ 负责\textbf{定向结构}。
+须给 $V$ 约定 $g,\epsilon$ 才能谈及正交归一右手基。
+
+\textbf{上标 Levi-Civita 符号}为
+\eq{
+    \varepsilon^{j_1\cdots j_n}:=g^{i_1 j_1}\cdots g^{i_n j_n}\varepsilon_{i_1\cdots i_n},
+}
+容易验证 $\varepsilon^{j_1\cdots j_n}=\varepsilon^{[j_1\cdots j_n]}$，故只需取 $\varepsilon^{1\cdots n}=\det(g^{\mu\nu})=1/g$。类似地，假设其变换式后可取 $1/g'=\varepsilon^{\prime 1\cdots n}=J^w J(1/g)$，则 $J^2=J^w J$，故权也为 1。
+\textbf{上标 Levi-Civita 张量}就是
+\eq{
+    \epsilon^{j_1\cdots j_n}:=g^{i_1 j_1}\cdots g^{i_n j_n}\epsilon_{i_1\cdots i_n}=\sgn\tilde J\sqrt{|g|}\varepsilon^{j_1\cdots j_n}=\sgn\tilde J\frac{(-1)^s}{\sqrt{|g|}}\frac{\varepsilon^{j_1\cdots j_n}}{1/g}.
+}
+
+此外，还可这样得到 Levi-Civita 符号。\textbf{广义 Kronecker 符号}是指如下张量
+\eq{
+    \delta_{i_1\cdots i_n}^{j_1\cdots j_n}:=n!\delta_{i_1}^{[j_1}\cdots\delta_{i_n}^{j_n]}= \det(\delta_{i_n}^{j_n}).
+}
+进而 $\delta_{i_1}^{[j_1}\cdots\delta_{i_n}^{j_n]}=\delta_{[i_1}^{[j_1}\cdots\delta_{i_n]}^{j_n]}=\delta_{[i_1}^{j_1}\cdots\delta_{i_n]}^{j_n}$ 或 $\delta_{i_1\cdots i_n}^{j_1\cdots j_n}=\delta_{[i_1\cdots i_n]}^{j_1\cdots j_n}$。假设 $\{i_k\},\{j_k\}$ 内均无相同指标（否则为零），可以看出二者互为偶排列时为 $1$，互为奇排列时为 $-1$。这样，取 $j_k=k$ 就可有 $\varepsilon_{i_1\cdots i_n}=\delta_{i_1\cdots i_n}^{1\cdots n}$，但要注意 $\delta_{i_1\cdots i_n}^{1\cdots n}$ 已不再是张量。同理 $\varepsilon^{j_1\cdots j_n}=(1/g)\delta^{j_1\cdots j_n}_{1\cdots n}$。则
+\eq{\epsilon_{i_1\cdots i_n} \epsilon^{j_1\cdots j_n}
+=(-1)^s\delta_{i_1\cdots i_n}^{1\cdots n} \delta^{j_1\cdots j_n}_{1\cdots n}=(-1)^s \delta_{i_1\cdots i_n}^{j_1\cdots j_n}.}
+经常还要涉及到其指标缩并：
+\eq{
+    \delta^{j_{k}j_{k+1}\cdots j_n}_{j_{k}i_{k+1}\cdots i_n}= k \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}\im \delta^{j_1\cdots j_k j_{k+1}\cdots j_n}_{j_1\cdots j_k i_{k+1}\cdots i_n}=  k !  \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}.
+}
+读者可由归纳法证明前者，后者是立即可得的结论。进而
+\eq{
+    \epsilon_{j_1\cdots j_k i_{k+1}\cdots i_n} \epsilon^{j_1\cdots j_k j_{k+1}\cdots j_n}=(-1)^s  k !  \delta^{j_{k+1}\cdots j_n}_{i_{k+1}\cdots i_n}.
+}
+
+我们知道 $\R^3$ 叉乘 $\epsilon^{ijk} A_j B_k$，但在高维中，$\epsilon^{i_1\cdots i_n} A_{i_1} B_{i_2}$ 并不能给出一阶张量。故可尝试丢掉 Levi-Civita 张量来直接定义旋度，但切记要靠缩并消项，即
+\[
+    \epsilon_{imn}\epsilon^{ijk} A_j B_k=(\delta^j_m\delta^k_n-\delta^k_m\delta^j_n)A_j B_k=2A_{[m} B_{n]}.
+\]
+可记 $\omega=A\wedge B$，$\star\omega=A\times B$，这里忽略度规升降。$\star$ 称\textbf{星算子}(star)，则 $A\times B=\star(A\wedge B)$，分量为 $(\star\omega)_k=\epsilon_{ijk} A^{i}B^{j}=\frac{1}{2}\omega^{ij}\epsilon_{ijk}$。
+可见 2-形式和 1-形式以 Levi-Civita 张量为桥梁存在一种关系。
+一般地，注意 $\dim\Lambda_l(V)=\dim\Lambda_{n-l}(V)$，故 $\Lambda_l(V),\Lambda_{n-l}(V)$ 确实同构。
+\begin{definition}
+    $\omega\in\Lambda_l(V)$ 的\textbf{Hodge 对偶形式} $\star\omega\in\dim\Lambda_{n-l}(V)$ 为
+    \eq{
+    (\star\omega)_{\mu_1\cdots\mu_{n-1}}:=\frac{1}{l!}\omega^{\nu_1\cdots\nu_l}\epsilon_{\nu_1\cdots\nu_l\mu_1\cdots\mu_{n-1}},
+    }
+\end{definition}
+
+\begin{theorem}容易证明
+    ${\star}{\star}\omega=(-1)^{s+l(n-l)} \omega$.
+\end{theorem}
+
+\begin{theorem}
+    由$\epsilon_{i_1\cdots i_n}\epsilon^{i_1\cdots i_n}=(-1)^s n!$ 可知等价定义：
+    对正交归一右手基 $\{\zeta_\mu\}$ 有
+    \[\zeta^{1}\wedge\cdots\wedge \zeta^{l}\wedge\star(\zeta^{1}\wedge\cdots\wedge \zeta^{l}):=(-1)^s \zeta^{1}\wedge\cdots\wedge \zeta^{n}.\]
+\end{theorem}
+
+
+
+\section{抽象指标*}
+
+本节所介绍的符号系统，并不广泛用于当代论文和书籍，读者可只做了解。
+
+张量通常用映射语言或分量语言表示。前者优势是直接操作张量，弊端是只能通过上下文明晰其类型，且运算仍然繁琐；后者优势是类型明晰、运算清晰，弊端是使初学者易混淆张量和张量分量，且分量等式的数学形式可以被基的选择改变，从而不代表完整的张量等式。为了强调相对论的几何性质，弄清哪些能代表张量等式是很重要的。
+
+Penrose 首创一种兼顾二者优势的书写系统：仍用类似于分量语言的写法，但指标均为 $a,b,c$ 等拉丁字母（如 $T^a{}_{bc}$），就可表示一个张量。这种指标只代表该张量的类型，称为\textbf{抽象指标}(abstract index)。这样，可以沿用重复指标的写法来表示缩并（如 $T^a{}_a$），且张量积可省略（如 $v^a\omega_b$）。由于沿用分量写法，张量字母应与其抽象指标绑定。因此$\mu_a\omega_b=\omega_b\mu_a$ 但一般 $\mu_a\omega_b\ne\omega_a\mu_b$。
+分量的指标称为\textbf{具体指标}，严格用 $\mu,\nu$ 等拉丁字母书写，除非该指标意指三维情形。具体指标可谈及其取值。现在 $(k,l)$-张量写作
+\[T^{a_1\cdots a_k}{}_{b_1\cdots b_l}=T^{\mu_1\cdots\mu_k}{}_{\sigma_1\cdots\sigma_l}(e_{\mu_1})^{a_1}\cdots(e_{\mu_k})^{a_k} (e^{\sigma_1})_{b_1} \cdots (e^{\sigma_l})_{b_l}.\]
+我们允许抽象、具体指标混同时使用的写法。如 $T(\oo,e_\mu)=T_{ab}(e_\mu)^b$ 可记作 $T_{a\mu}$。
+
+严格来讲，从映射语言或抽象指标得到分量语言，需经展开和缩并过程，并注意 $(e^\mu)_a(e_\mu)^b=\delta_a^b$。比如从 $g_{ab} v^b=v_a$ 得 $g_{\mu\nu} v^\nu=g_{ab} (e_\mu)^a(e_\nu)^b v^c (e^\nu)_c=g_{ab} (e_\mu)^a v^b=v_\mu$。但显然直接把抽象指标替换为具体指标，通常就是分量语言的结果。可见使用抽象指标的意义并不凸显。
+
+抽象指标的另一目的是表示张量等式，然而，欲用抽象指标代替受基影响的分量方程，须探讨“基依赖的张量”这种拗口概念。比如设基底 $\{e_\mu\}$，矢量的协变导数为 $\nabla_\nu V^\mu =\partial_\nu{V^\mu}+\Gamma^\mu_{\nu\sigma}V^\sigma$，其中克氏符可选特殊基而消去。该式在抽象指标下强行写作 $\nabla_b V^a =\partial_b{V^a}+\Gamma^a_{bc}V^c$，这里 $\partial_b{V^a},\Gamma^a_{bc}$ 都解释成“基依赖的张量”。若换成新基 $\{e_\mu'\}$，则 $\partial_b,\Gamma^a_{bc}$ 都得换成对应的 $\partial_b',\Gamma'^a_{bc}$。这样，$\Gamma^\mu_{\nu\sigma}$ 是 $\Gamma^a_{bc}$ 在 $\{e_\mu\}$ 的分量，$\Gamma'^\mu_{\nu\sigma}$ 是 $\Gamma'^a_{bc}$ 在 $\{e'_\mu\}$ 的分量，故 $\Gamma^\mu_{\nu\sigma},\Gamma'^\mu_{\nu\sigma}$ 不属于同一张量的分量，不满足张量变换律。为了避免使用 $\Gamma^a_{bc}$，数学教材向来直接用分量定义克氏符。既然如此，都已放弃这一概念，就更没必要用抽象指标书写受基影响的分量方程。这就是为何当今多数文献没有采用抽象指标。
