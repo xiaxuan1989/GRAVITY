@@ -9,27 +9,27 @@
 
 
 \PassOptionsToPackage{quiet}{fontspec}  % 关闭 fontspec 警告
-\documentclass[draft]{book}             % book 类，draft 快速编译，默认 10.5pt
+\documentclass{book}             % book 类，draft 快速编译，默认 10.5pt
 \input{preamble.tex}                    % 宏包、定义
 
 % 测试编译
 \includeonly{
-    chpt/chpt01.tex,
+    %chpt/chpt01.tex,
     %chpt/chpt02.tex,
     %chpt/chpt03.tex,
     %chpt/chpt04.tex,
     %chpt/chpt05.tex,
     %chpt/chpt06.tex,
     %
-    %appx/appx01.tex,
-    %appx/appx02.tex,
-    %appx/appx03.tex,
-    %appx/appx04.tex,
-    %appx/appx05.tex,
-    %appx/appx06.tex,
-    %appx/appx07.tex,
-    %appx/appx08.tex,
-    %appx/appx09.tex,
+    appx/appx01.tex,
+    appx/appx02.tex,
+    appx/appx03.tex,
+    appx/appx04.tex,
+    appx/appx05.tex,
+    appx/appx06.tex,
+    appx/appx07.tex,
+    appx/appx08.tex,
+    appx/appx09.tex,
 }
 
 \begin{document}
@@ -61,8 +61,8 @@
         \include{appx/appx05.tex}   % 微分形式
         \include{appx/appx06.tex}   % 仿射联络、曲率
         \include{appx/appx07.tex}   % 度规、Killing 矢量
-        \include{appx/appx08.tex}   % Lie 群
-        \include{appx/appx09.tex}   % 丛
+        \include{appx/appx08.tex}   % 丛
+        \include{appx/appx09.tex}   % Lie 群
         %\include{}
         % 泛函分析
         % 复几何

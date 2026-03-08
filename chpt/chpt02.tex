@@ -2,6 +2,103 @@
 
 黑洞是广义相对论提出之后，首个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
 
+\section{球对称度规}
+
+\subsection{Birkhoff 定理}
+
+%% Killing
+
+以一质点为空间坐标原点，观测结果建议\textit{质点引力场呈空间球对称}(spherical symmetry)：存在坐标系 $\{\bar t,\bar r,\theta,\phi\}$，空间部分为正交球坐标系，且变换 $\theta\mapsto -\theta,\phi\mapsto -\phi$ 保持度规形式，则对经纬度只存在 $\d\theta^2,\d\phi^2$ 项；$\Sigma_{\bar t}$ 内任意 $\bar r$ 球面的诱导度规为 $K(\bar t,\bar r)\d\Omega^2$；
+其余分量只与 $\bar t,\bar r$ 有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
+\[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
+然而 $\d\Omega^2$ 系数可无关于坐标时。令 $r^2=K(\bar t,\bar r)$，则 $2r\d r=\pdv{K}{\bar t}\d\bar t+\pdv{K}{\bar r}\d\bar r$，代入
+\begin{align*}
+    \d s^2&=\bar g_{00}\d\bar t^2+\bar g_{11}\left(\frac{2r\d r-\pdv{K}{\bar t}\d\bar t}{\pdv*{K}{\bar r}}\right)^2+2\bar g_{01}\d\bar t\left(\frac{2r\d r-\pdv{K}{\bar t}\d\bar t}{\pdv*{K}{\bar r}}\right)+r^2\d\Omega^2\\
+    &=\left(\bar g_{00}+\bar g_{11}\frac{(\pdv*{K}{\bar t})^2}{(\pdv*{K}{\bar r})^2}-2\bar g_{01}\frac{\pdv*{K}{\bar t}}{\pdv*{K}{\bar r}}\right)\d\bar t^2+\frac{4K\bar g_{11}}{(\pdv*{K}{\bar r})^2}\d r^2\\
+    &+\left(\frac{4r\bar g_{01}}{\pdv*{K}{\bar r}}-\frac{4r\bar g_{11}\pdv{K}{\bar t}}{(\pdv*{K}{\bar r})^2}\right)\d\bar t\,\d r+r^2\d\Omega^2\\
+    &=\tilde g_{00}\d\bar t^2+\tilde g_{11}\d r^2+2\tilde g_{01}\d\bar t\,\d r+r^2\d\Omega^2.
+\end{align*}
+这还不是遥远观者对钟出的坐标系，因为 $\tilde g_{01}\ne 0$。为此设 $C(\bar t,r)$ 使得 $\d\hat t=C(\tilde g_{00}\d\bar t+\tilde g_{01}\d r)$。这等价于 $\pdv{r}(C\tilde g_{00})=\pdv{\bar t}(C\tilde g_{01})$，或者
+\[
+    \pdv{\ln C}{\bar t}=\frac{1}{\tilde g_{01}}\left(\tilde g_{00}\pdv{\ln C}{r}+\pdv{\tilde g_{00}}{r}-\pdv{\tilde g_{01}}{\bar t}\right),
+\]
+上式是关于 $\ln C$ 的简单偏微分方程，只需给定边界函数 $\ln C(0,r)$ 便可积分求解，必存在不唯一的非平凡解。
+代入有
+\begin{align*}
+    \d s^2&=\tilde g_{00}\left(\frac{\d\hat t/C-\tilde g_{01}\d r}{\tilde g_{00}}\right)^2+\tilde g_{11}\d r^2+2\tilde g_{01}\d r\left(\frac{\d\hat t/C-\tilde g_{01}\d r}{\tilde g_{00}}\right)+r^2\d\Omega^2\\
+    &=\frac{\d\hat t^2}{C^2\tilde g_{00}}+\left(\tilde g_{11}-\frac{\tilde g_{01}^2}{\tilde g_{00}}\right)\d r^2+r^2\d\Omega^2=-\e^{2\nu}\d\hat t^2+\e^{2\mu}\d r^2+r^2\d\Omega^2,
+\end{align*}
+其中 $\mu(\hat t,r),\nu(\hat t,r)$ 可以是复函数。
+
+再利用场方程确定分量：质点模型使对 $r\ne 0$ 均满足真空方程 $R_{\mu\nu}=0$。
+使用 $\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu$ 或对 $L=\e^{2\nu}(\dv{\hat t}{\tau})^2-\e^{2\mu}(\dv{r}{\tau})^2-r^2(\dv{\Omega}{\tau})^2$ 变分得
+\begin{align*}
+    & \Gamma_{00}^0=\dot{\nu}, \quad \Gamma_{01}^0=\nu^{\prime}, \quad \Gamma_{11}^0=\e^{2(\mu-\nu)} \dot{\mu}, \\& \Gamma_{00}^1=\e^{2(\nu-\mu)} \nu^{\prime}, \quad \Gamma_{01}^1=\dot{\mu}, \quad \Gamma_{11}^1=\mu^{\prime}, \quad \Gamma_{22}^1=-r \e^{-2 \mu}, \quad \Gamma_{33}^1=-r \e^{-2 \mu} \sin ^2 \theta, \\
+    & \Gamma_{12}^2=\Gamma_{13}^3={1}/{r}, \quad \Gamma_{33}^2=-\sin \theta \cos \theta, \quad \Gamma_{23}^3=\cot \theta.
+\end{align*}
+其中点撇分别代表 $\p_{\hat t},\p_{r}$。
+对 Ricci 张量同样可置
+\[R_{\mu\nu}\d x^\mu\d x^\nu=\p_\sigma\Gamma^\sigma_{\mu\nu}\d x^\mu\d x^\nu-\d^2\ln\sqrt{-g}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa_{\mu\nu}\d x^\mu\d x^\nu-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}\d x^\mu\d x^\nu,\]
+其中 $\sqrt{-g}=\e^{\mu+\nu}r^2\sin\theta$。结果为
+\begin{align*}
+    R_{00} &= -(\ddot\mu+\dot\mu(\dot\mu-\dot\nu))+\e^{2(\nu-\mu)} \left(\nu''+2\nu'/r+\nu'(\nu'-\mu')\right), \\
+    R_{11} &= \e^{2(\mu-\nu)} \left(\ddot\mu+\dot\mu(\dot\mu-\dot\nu)\right)-\nu''+2\mu'/r-\nu'(\nu'-\mu'), \\
+    R_{22} &= \e^{-2\mu} \left(\e^{2\mu}-1+r(\mu'-\nu')\right), \quad R_{33} = R_{22} \sin ^2 \theta,\quad R_{01} = 2\dot\mu/r.
+\end{align*}
+施以真空方程：$R_{01}=0$ 给出 $\dot\mu=0$，从而
+$\nu''+2\nu'/r+\nu'(\nu'-\mu')=0, 
+-\nu''+2\mu'/r-\nu'(\nu'-\mu')=0, 
+\e^{2\mu}-1+r(\mu'-\nu')=0$。
+前两者相加得 $\mu'+\nu'=0$，代入后者有 $(r\e^{-2\mu(r)})'=1$，得
+\[\e^{-2\mu}=1-{2M}/{r},\quad \e^{2\nu}=\e^{f(\hat t)}(1-{2M}/{r}).\]
+其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即有
+\[\d s^2=-\left(1-\frac{2M}{r}\right)\d t^2+\left(1-\frac{2M}{r}\right)^{-1}\d r^2+r^2\d\Omega^2.\]
+现列举分量如下以供查阅：
+\begin{align*}
+    \Gamma_{01}^0&=\frac{M}{r^2}\left(1-\frac{2M}{r}\right)^{-1}, \quad \Gamma_{00}^1=\frac{M}{r^2}\left(1-\frac{2M}{r}\right), \\
+    \Gamma_{11}^1&=-\Gamma_{01}^0,\quad\Gamma_{22}^1=-r(1-{2M}/{r}),\quad\Gamma_{33}^1=\Gamma_{22}^1\sin ^2 \theta, \\
+    \Gamma_{12}^2&=1 / r,\quad\Gamma_{33}^2=-\sin \theta \cos \theta,\quad\Gamma_{13}^3=1 / r,\quad\Gamma_{23}^3=\cot \theta,
+\end{align*}
+以及
+\begin{align*}
+    R_{0101}&=-\frac{2 M}{r^3}, \quad R_{0202}=\frac{M}{r}\left(1-\frac{2M}{r}\right), \quad R_{1212}=-\frac{M}{r}\left(1-\frac{2M}{r}\right)^{-1}, \\
+    R_{0303}&=R_{0202} \sin ^2 \theta, \quad R_{1313}=R_{1212} \sin ^2 \theta, \quad R_{2323}=2 M r \sin ^2 \theta.
+\end{align*}
+
+%% Kill
+
+引力场恒稳，即存在坐标系使 $g_{\mu\nu,0}=0$（时间平移不变性），则称度规\textbf{稳态}(stationary)，相应系称稳态系；存在坐标系使 $g_{\mu\nu,0}=0$ 且 $g_{0i}=0$（时间反演不变性），称度规\textbf{静态}(static)。可见静态必稳态。
+Schwarzschild 最初除了真空、球对称假设外还引入了静态条件\footnote{1915 年 11 月 18 日，Schwarzschild 趁着假期出席了 Einstein 于普鲁士科学院所作关于场方程的首次演讲，随后于一战德国战场上给出该解——这是场方程第一个引力解析解。他于数月后病逝。}，但上述讨论表明真空球对称解必是 Schwarzschild 解，这也称为\textbf{Birkhoff 定理}。
+Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就是指度规在其中形如 $\d s^2=g_{00}\d t^2+K(g_{ij}\d x^i\d x^j)$，则只需取 $r=\rho(1+\frac{M}{2\rho})^2$ 有
+\eq{
+    \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d x^2+\d y^2+\d z^2),
+}
+其中 $\rho=\sqrt{x^2+y^2+z^2}$。
+%% 检查为啥 \rho=\sqrt{x^2+y^2+z^2}，r=\rho(1+\frac{M}{2\rho})^2
+
+%% RN
+
+考虑一个带电质点，观测结果建议 $g_{\mu\nu}$ 呈球对称，电磁场为 $F_{\mu\nu}$，则对于 $r\ne 0$ 有 $T_{\mu\nu} = \frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right)$。这是无迹的，因而 $R_{\mu\nu} = 8\pi T_{\mu\nu}$，直接代入：
+\begin{align*}
+    R_{00} &= -(\ddot\mu+\dot\mu(\dot\mu-\dot\nu))+\e^{2(\nu-\mu)} \left(\nu''+2\nu'/r+\nu'(\nu'-\mu')\right), \\
+    R_{11} &= \e^{2(\mu-\nu)} \left(\ddot\mu+\dot\mu(\dot\mu-\dot\nu)\right)-\nu''+2\mu'/r-\nu'(\nu'-\mu'), \\
+    R_{22} &= \e^{-2\mu} \left(\e^{2\mu}-1+r(\mu'-\nu')\right), \quad R_{33} = R_{22} \sin ^2 \theta,\quad R_{01} = 2\dot\mu/r.
+\end{align*}
+
+\subsection{Reissner-Nordström 解}
+
+%% RN 黑洞
+
+对于遥远观者，$A_{0} = \frac{Q}{r}$，
+
+球对称带电黑洞解称为\textbf{Reissner-Nordström 解}，其度规为
+\eq{
+\tcbhighmath{
+    \d s^2=-\left(1-\frac{2M}{r}+\frac{Q^2}{r^2}\right)\d t^2+\left(1-\frac{2M}{r}+\frac{Q^2}{r^2}\right)^{-1}\d r^2+r^2\d\Omega^2,
+}
+}
+其中 $Q$ 是电荷量。
+
 \section{经典实验验证}
 
 自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为经典的是引力红移、水星进动和星光偏折，它们都与 Schwarzschild 度规有关。
