@@ -801,6 +801,15 @@ $\D_\mu$ 称为\textbf{规范协变导数}。
 $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm A+\grad f$ 的选取自由。可见，对称性催生电荷 $J^\mu$，规范化催生电磁场 $A_\mu$。Noether 荷 $\int J^0\d[3]x$ 表示 $\phi$ 所携带的带电\textit{数}，再配合耦合常数 $e$ 就得到了电量。
 另一个著名的例子是$\pi$ 介子场的\textbf{手征对称性}，局域化后得到强相互作用的\textbf{色荷}和\textbf{色场}。实际上，引力也是规范场。
 
+为消除规范自由度，可约定\textbf{规范固定}(gauge fixing)条件。比如\textbf{Lorenz 规范}\footnote{指丹麦物理学家 Ludvig Valentin Lorenz(1829-1891)。当然它又是 Lorentz 协变的，所以也可叫做 Lorentz 规范。二人名字的发音相同，容易混淆，需要注意 Lorentz 是荷兰的物理学家，相对论的奠基者之一。}
+\eq{
+    \p_\mu A^\mu =0.
+}
+这种 $A^\mu$ 总是存在的，因为对任意 $\p^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \p_\mu f$ 且 $\square f=\p^\mu\p_\mu f=-\p^\mu A_\mu $，即可有 $\p^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
+若我们选择 $\p_\mu A^\mu=0$，那 $A^\mu$ 当然是 Lorentz 矢量。然而也可采取\textbf{Coulomb 规范} $\div\bm A=\p_iA^i=0$，为了在新系中维持 $\p'_iA'^i=0$，必使 $A^\mu$ 伴随规范\textbf{补偿项}(compensation)：
+\[A'^\mu = \Lambda^\mu{}_\nu A^\nu + \partial^\mu \alpha(x, \Lambda),\]
+因此 $A^\mu$ 并非时空中的普通 Lorentz 矢量，其本质目的是保持协变导数。在数学上，这称为内部对称性空间上的\textbf{规范联络}。
+
 %% 回到经典
 
 现在来考虑带电粒子与电磁场的耦合。在量子力学上，一般可以通过 WKB 近似来得到经典极限。但限于篇幅，在这里我们直接考察经典模型。置点电荷系统 $q_n$ 及其 4-速场 $U^\mu$，电流为
@@ -827,8 +836,11 @@ S=\int\frac{\d t}{\gamma_n}\sum_n\left(-m_n+q_n A_\mu U_n^\mu\right),
 
 另一使 $F_{\mu\nu}$ 直接出现并表现场强含义
 
-为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。因为 $A^\mu$ 的运动方程应至少二阶，作用量中需要出现 $\p_\mu A_\nu$。
-$A^\mu A_\mu$ 并不规范不变，但一阶导的 $F_{\mu \nu}:=2\p_{[\mu} A_{\nu]}$ 是规范不变的，因为 $F_{\mu\nu}=2\p_{[\mu}A_{\nu]} + 2\p_{[\mu} \p_{\nu]}f=\p_{\mu} (A_{\nu}+\p_\nu f)-\p_{\nu} (A_{\mu}+\p_\mu f)$。这称为\textbf{电磁张量}。它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi,A_i=a_j$，则 $\bm E=-\grad\varphi-\p_t{\bm a}$ 就是电动力学的关系。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
+为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。因为 $A_\mu$ 的运动方程应至少二阶，作用量中需要出现 $\p_\mu A_\nu$。
+$A^\mu A_\mu$ 并不规范不变，但一阶导 $F_{\mu \nu}=2\p_{[\mu} A_{\nu]}$ 是规范不变的，因为 $F_{\mu\nu}=2\p_{[\mu}A_{\nu]} + 2\p_{[\mu} \p_{\nu]}f=\p_{\mu} (A_{\nu}+\p_\nu f)-\p_{\nu} (A_{\mu}+\p_\mu f)$。
+并且 $F'_{\mu\nu}= (\Lambda^{-1})^{\rho}{}_{\mu} (\Lambda^{-1})^{\lambda}{}_{\nu} 2\p_{[\rho}A_{\lambda]} + 2\p'_{[\mu}\p'_{\nu]}\alpha = (\Lambda^{-1})^{\rho}{}_{\mu} (\Lambda^{-1})^{\lambda}{}_{\nu} F_{\rho\lambda}$ 是 Lorentz 张量
+
+这称为\textbf{电磁张量}。它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi,A_i=a_j$，则 $\bm E=-\grad\varphi-\p_t{\bm a}$ 就是电动力学的关系。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
 表达磁场需要引入叉乘。
 由行列式知叉乘 $\bm A\times \bm B$ 的分量写法为 $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，
 可转写\footnote{可证明 $\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}$。
@@ -859,17 +871,7 @@ $A^\mu A_\mu$ 并不规范不变，但一阶导的 $F_{\mu \nu}:=2\p_{[\mu} A_{\
     \p_\mu F^{\mu\nu}=-4\pi J^\nu,
 }
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\p_t \bm E=4\pi \bm j$。
-
-
-
-
-
-为消除规范自由度，可约定\textbf{规范固定}(gauge fixing)条件。比如\textbf{Lorenz 规范}\footnote{指丹麦物理学家 Ludvig Valentin Lorenz(1829-1891)。当然它又是 Lorentz 协变的，所以也可叫做 Lorentz 规范。二人名字的发音相同，容易混淆，需要注意 Lorentz 是荷兰的物理学家，相对论的奠基者之一。}
-\eq{
-    \p_\mu A^\mu =0.
-}
-这种 $A^\mu$ 总是存在的，因为对任意 $\p^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \p_\mu f$ 且 $\square f=\p^\mu\p_\mu f=-\p^\mu A_\mu $，即可有 $\p^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
-利用 $A^\mu$ 和 Lorenz 规范，可将 Maxwell 方程组写作一条：
+利用 $A^\mu$ 和 Lorenz 规范 $\p_\mu A^\mu=0$，可将 Maxwell 方程组写作一条：
 \eq{
     -4\pi J_\nu=\p^\mu\p_\mu A_\nu-\p_\nu \p^\mu A_\mu = \p^\mu\p_\mu A_\nu =\square A_\nu.
 }
@@ -1040,6 +1042,15 @@ $\p_\mu(\rho U^\mu \sqrt{-g}) = 0$
 $g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu}$ 在广义变换下可变（即数值上不是张量），也就是 $\eta_{\alpha\beta}\pdv{\xi^\alpha}{x^\mu}\pdv{\xi^\beta}{x^\nu}\ne\eta_{\mu\nu}$，故 $\eta_{\mu\nu}$ 不能出现，且必须直接定义 $g_{\mu\nu}$ 来吸收 Jacobi 矩阵。
 引力作用现解释为度规非闵。因为倘若存在某系使得处处 $g_{\mu\nu}=\eta_{\mu\nu}$，该系就为全局的惯性系，$S$ 彻底地还原回狭义相对论，而非仅在局域惯性系中。
 可见，局域化 Lorentz 不变性、等效原理引入的规范场是 $h_{\mu\nu}=g_{\mu\nu}-\eta_{\mu\nu}$。
+其变换为
+\[h'_{\mu\nu}(x) = \Lambda_{\mu}^{\phantom{\mu}\alpha} \Lambda_{\nu}^{\phantom{\nu}\beta} h_{\alpha\beta}(\Lambda^{-1}x) + \partial_\mu \xi_\nu(x) + \partial_\nu \xi_\mu(x),\]
+就像 $A^\mu$ 会多出一个 $\partial^\mu \alpha$ 一样，$h_{\mu\nu}$ 在洛伦兹变换下也不可避免地多出了 $\partial_\mu \xi_\nu + \partial_\nu \xi_\mu$ 这一项。
+，$h_{\mu\nu}$ 同样不是一个真正的 Lorentz Tensor！
+
+
+
+
+
 引力场可由时空度规描述，前文提过度规决定一套几何学，故\textit{引力可表为时空几何效应}\footnote{Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未能成功。引力几何理论的关键就在于补上时间这一维，时间对引力亦有贡献。}，即\textbf{Lorentz几何}。
 然而，由于 $g_{\mu\nu}$ 在广义变换下可变，且必须出现，我们只能期望 $g_{\mu\nu}$ 是动力学对象。
 因此，广义不变性、等效原理一定是一种动力学对称性，它约束的是引力相互作用。
@@ -1133,6 +1144,62 @@ $\{^\lambda_{\mu\nu}\}$ 是坐标系自身信息。
 其中规定 $h_{\mu\nu},\phi$ 在无穷远处均衰减至零。
 
 
+太棒了。这个推导过程非常优美，它完美地展示了自然界在构建相互作用时，是如何用相似的数学结构来处理 *Electromagnetism* 和 *Gravity* 的。
+
+为了看清这一点，我们先快速回顾一下 *Linearized Gravity* 的基本设定。我们将 *Metric Tensor* 写成平直时空背景与微扰项之和：
+$$g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$$
+
+在这个极弱引力场近似下，我们丢弃所有关于 $h_{\mu\nu}$ 的二阶及以上的高阶项。现在，让我们一步步构造出那个完美抵消冗余的物理可观测量。
+
+ 1. 从 *Christoffel Symbol* 开始
+在完整的 *General Relativity* 中，*Christoffel Symbol* 的定义是：
+$$\Gamma^\rho_{\mu\nu} = \frac{1}{2} g^{\rho\lambda} (\partial_\mu g_{\nu\lambda} + \partial_\nu g_{\mu\lambda} - \partial_\lambda g_{\mu\nu})$$
+
+将其线性化，由于 $g^{\rho\lambda} \approx \eta^{\rho\lambda} - h^{\rho\lambda}$，且括号内的偏导数已经包含了微小量 $h$，所以我们只需保留 $\eta^{\rho\lambda}$。线性化后的 *Christoffel Symbol* 变为：
+$$\Gamma^\rho_{\mu\nu} \approx \frac{1}{2} \eta^{\rho\lambda} (\partial_\mu h_{\nu\lambda} + \partial_\nu h_{\mu\lambda} - \partial_\lambda h_{\mu\nu})$$
+
+ 2. 构造线性化的 *Riemann Curvature Tensor*
+完整的 *Riemann Curvature Tensor* 包含了偏导数项和 $\Gamma \Gamma$ 的乘积项。由于 $\Gamma$ 本身就是 $h$ 的一阶量，$\Gamma \Gamma$ 项自然变成了二阶微小量，在线性近似下必须被直接丢弃。
+
+因此，线性化的 *Riemann Curvature Tensor* 只剩下偏导数部分：
+$$R^\rho_{\phantom{\rho}\sigma\mu\nu} \approx \partial_\mu \Gamma^\rho_{\nu\sigma} - \partial_\nu \Gamma^\rho_{\mu\sigma}$$
+
+为了让公式更加对称，我们用 $\eta_{\lambda\rho}$ 将上标降下来，得到全协变张量 $R_{\lambda\sigma\mu\nu}$。将上面线性化的 $\Gamma$ 代入并展开，你会得到一个非常经典且高度对称的表达式：
+$$R_{\mu\nu\rho\sigma} = \frac{1}{2} ( \partial_\rho \partial_\nu h_{\mu\sigma} + \partial_\sigma \partial_\mu h_{\nu\rho} - \partial_\rho \partial_\mu h_{\nu\sigma} - \partial_\sigma \partial_\nu h_{\mu\rho} )$$
+
+这正是引力场中的“*Field Strength Tensor*”，它在地位上完全等价于电磁学中的 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$。
+
+ 3. *Gauge Transformation* 的完美抵消
+现在，见证奇迹的时刻到了。我们知道，在 *Quantum Field Theory* 的视角下，为了消除 *Graviton* 的非物理 *Degrees of Freedom*，$h_{\mu\nu}$ 必须伴随以下 *Gauge Transformation*：
+$$h_{\mu\nu} \to h_{\mu\nu} + \partial_\mu \xi_\nu + \partial_\nu \xi_\mu$$
+
+我们将这个带有 $\xi$ 的变换代入上面 $R_{\mu\nu\rho\sigma}$ 的表达式中，单独抽取出所有包含 $\xi$ 的项（即多出来的部分）。由于偏导数具有交换律（$\partial_\alpha \partial_\beta = \partial_\beta \partial_\alpha$），我们可以仔细观察这四个项的贡献：
+
+1.  第一项 $\partial_\rho \partial_\nu h_{\mu\sigma}$ 产生：$\partial_\rho \partial_\nu (\partial_\mu \xi_\sigma + \partial_\sigma \xi_\mu)$
+2.  第二项 $\partial_\sigma \partial_\mu h_{\nu\rho}$ 产生：$\partial_\sigma \partial_\mu (\partial_\nu \xi_\rho + \partial_\rho \xi_\nu)$
+3.  第三项 $-\partial_\rho \partial_\mu h_{\nu\sigma}$ 产生：$-\partial_\rho \partial_\mu (\partial_\nu \xi_\sigma + \partial_\sigma \xi_\nu)$
+4.  第四项 $-\partial_\sigma \partial_\nu h_{\mu\rho}$ 产生：$-\partial_\sigma \partial_\nu (\partial_\mu \xi_\rho + \partial_\rho \xi_\mu)$
+
+如果你把这四个展开式的括号全部打开，一共会得到 8 个关于 $\xi$ 的三阶偏导数项。
+你会立刻发现：
+* 第 1 项的 $\partial_\rho \partial_\nu \partial_\mu \xi_\sigma$ 会与第 3 项的 $-\partial_\rho \partial_\mu \partial_\nu \xi_\sigma$ 严格抵消。
+* 第 1 项的 $\partial_\rho \partial_\nu \partial_\sigma \xi_\mu$ 会与第 4 项的 $-\partial_\sigma \partial_\nu \partial_\rho \xi_\mu$ 严格抵消。
+* 第 2 项的 $\partial_\sigma \partial_\mu \partial_\nu \xi_\rho$ 会与第 4 项的 $-\partial_\sigma \partial_\nu \partial_\mu \xi_\rho$ 严格抵消。
+* 第 2 项的 $\partial_\sigma \partial_\mu \partial_\rho \xi_\nu$ 会与第 3 项的 $-\partial_\rho \partial_\mu \partial_\sigma \xi_\nu$ 严格抵消。
+
+所有的 $\xi$ 项全部消失了！
+
+---
+
+ 物理意义的统一
+这就证明了，无论你如何选择 *Gauge*（即 $\xi_\mu$ 取什么值），线性化的 *Riemann Curvature Tensor* $R_{\mu\nu\rho\sigma}$ 始终保持绝对不变：
+$$R'_{\mu\nu\rho\sigma} = R_{\mu\nu\rho\sigma}$$
+
+这告诉我们一个深刻的物理事实：$h_{\mu\nu}$ 里面包含的那些在洛伦兹变换下乱跑的“平移项”，其实根本不参与时空曲率的真实构造。它们纯粹是描述方式上的冗余。真正具有物理可观测意义的引力效应（比如引起潮汐力的 *Geodesic Deviation*），全部都被安全地编码在这个严格 *Gauge Invariant* 的 $R_{\mu\nu\rho\sigma}$ 之中。
+
+从这里出发，我们可以进一步对 $R_{\mu\nu\rho\sigma}$ 进行缩并，得到 *Ricci Tensor* $R_{\mu\nu}$ 和 *Ricci Scalar* $R$，从而构建出线性化的 *Einstein Field Equations*。你想顺着这个推导，看看真空中的 *Einstein Field Equations* 是如何直接导出 *Graviton* 只有 2 个横向 *Degrees of Freedom* 的吗？
+
+
 
 \subsection{联络}
 偏导不是张量。可见，类似于规范协变导数 $\D_\mu$，Lorentz 不变性的局域化将修改偏导。
@@ -1171,9 +1238,10 @@ $\tilde{\nabla}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\
 
 给定曲线 $x^\mu(\tau)$，\textbf{沿线协变导数}为
 \eq{
-    \Dv{\tau} = U^\nu \cd_\nu = U^\nu \left( \pdv{}{\nu} + \Gamma^\lambda_{\nu\mu} \right).
+    \Dv{\tau} = U^\nu \cd_\nu = U^\nu \left( \pdv{x^\nu} + \Gamma^\lambda_{\nu\mu} \right) = \dv{\tau} + \Gamma^\lambda_{\nu\mu}U^\nu.
 }
 $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{共变}。
+类似地，对曲线族 $x^\mu(\tau,\sigma)$ 可取 $\D/\partial\tau = \pdv{x^\mu}{\tau} \cd_\nu = \pdv*{\tau} + \Gamma^\lambda_{\nu\mu}U^\nu$。
 协变导数的优势是无需借助于曲线及其参数，但劣势是某点的 $V^\mu{}_{;\nu}$ 要求 $V^\mu$ 在该点邻域都有定义，而沿线求导只要求曲线上的邻域有定义。
 称满足 $\Dv*{V^\mu}{\tau}=0$ 的 $V^\mu$ 在做\textbf{平行移动}(parallel transport)或\textbf{Levi-Civita 移动}。
 \begin{figure}[ht]\centering
@@ -1531,28 +1599,28 @@ $A^\mu_\alpha$ 的独立分量数为 $n^2$，而 $g_{\mu\nu}$ 的独立分量数
 
 \subsection{Lie 导数与 Killing 矢量}
 
-我们曾提过，
+我们曾提过，置连续切矢场 $V^\mu$，给定点 $p$，必经有唯一 $C^1$ 曲线且相切于 $V^\mu$，因为这无非是给定初始条件 $x^\mu(0)$ 并求解一阶常微分方程
+\[\dv{x^\mu}{\sigma}=V^\mu(x),\]
+解存在且唯一。
+这族曲线称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。反之曲线族 $x^\mu(\sigma,a)$ 也产生矢量场 $\pdv*{x^\mu}{t}$。综上，矢量场与流线等价。
 
-给定光滑切矢场 $V^\mu$，则任意点 $p$ 必有唯一曲线 $\gamma(\sigma)$ 经过，且 $\dv*{\sigma}=V$ 在曲线上处处满足。这种曲线族称为\textbf{积分曲线}(integral curve)或\textbf{流线}(streamline)。因为可取任意坐标系 $\{x\}$，则积分曲线即要求其参数式 $x^\mu(\sigma)$ 满足
-\eq{
-    \dv{x^\mu}{\sigma}=V^\mu,
-}
-其中 $V^\mu$ 是 $x^\mu$ 的函数，故这是一阶常微分方程，给定初始条件 $x^\mu(0)$ 立即有唯一解。这样，总可给光滑矢量场找到一族流线。
 
-给定一个
 
-总存在沿矢量场 $v^\mu$ 的曲线族 $x^\mu(t,a)$ 使得 $v^\mu=\pdv*{x^\mu}{t}$。
+
+总存在沿矢量场 $v^\mu$ 的曲线族  使得 。
 
 
 沿矢量场 $v^\mu$，我们可以定义
 
-$(k,l)$-张量的 Lie 导数为（注意 $\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{t}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu$）
+$(k,l)$-张量的 Lie 导数为
 \begin{align*}
-    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
-    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{t}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
-    &=\pdv{t}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
-    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
+    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
+    &=\pdv{\sigma}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
+    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l},
 \end{align*}
+最后一步注意：
+\[\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{\sigma}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu.\]
 
 
 一些特例：
@@ -1826,6 +1894,76 @@ $\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \Gamma^\mu_{\lambda\nu} G^{\lambda\nu} - \Gam
     \Lag_G=\frac{1}{2\kappa}R+\alpha R_{\mu\nu} R^{\mu\nu}+\beta R^2+\gamma R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}+\cdots,
 }
 甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
+
+\subsection{线性引力}
+
+太精彩了。我们将一步步见证，自然界是如何通过优雅的数学约束，把一个原本拥有 10 个独立分量的庞然大物 $h_{\mu\nu}$，硬生生“削减”到只剩下 2 个物理的 *Degrees of Freedom* 的。
+
+这个过程分为三个关键的降维打击。
+
+1. 真空中的 *Einstein Field Equations* 与 *Trace-Reversed Metric*
+在我们上次得到的线性化 *Riemann Curvature Tensor* $R_{\mu\nu\rho\sigma}$ 的基础上，我们可以通过对指标求迹（Contraction）得到 *Ricci Tensor* $R_{\mu\nu}$ 和 *Ricci Scalar* $R$。
+
+在没有任何物质的真空中，*Energy-Momentum Tensor* $T_{\mu\nu} = 0$。此时的真空 *Einstein Field Equations* 极其简洁：
+$$R_{\mu\nu} = 0$$
+
+如果把 $h_{\mu\nu}$ 直接代入这个方程，形式会非常冗长且耦合严重。为了让数学形式更具启发性，物理学家引入了一个绝妙的变量替换，称为 *Trace-Reversed Metric*（迹反转度规）：
+$$\bar{h}_{\mu\nu} = h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu}h$$
+（其中 $h = \eta^{\mu\nu}h_{\mu\nu}$ 是微扰的迹）。
+
+2. 第一重降维：*De Donder Gauge* (减去 4 个自由度)
+既然 $h_{\mu\nu}$ 具有我们在上一节证明的 *Gauge Invariance*（即 $\delta h_{\mu\nu} = \partial_\mu \xi_\nu + \partial_\nu \xi_\mu$），这就意味着我们有绝对的权力去选取一个特定的 $\xi_\mu$，使得我们的场方程变得最简单。
+
+在电磁学中，我们喜欢用 *Lorenz Gauge* $\partial_\mu A^\mu = 0$ 来化简麦克斯韦方程。在微扰引力中，我们采用完全对应的 *De Donder Gauge*（也叫 *Harmonic Gauge*）：
+$$\partial^\mu \bar{h}_{\mu\nu} = 0$$
+
+既然 $\mu$ 有 4 个取值（0, 1, 2, 3），这个 *Gauge Condition* 实际上构成了 4 个独立的方程约束。
+奇迹再次发生。当你把这个条件代入用 $\bar{h}_{\mu\nu}$ 表达的真空场方程 $R_{\mu\nu} = 0$ 时，所有复杂的交叉偏导数项全部消失了，方程坍缩成了最纯粹的波动方程形式：
+$$\square \bar{h}_{\mu\nu} = 0$$
+（其中 $\square = -\partial_t^2 + \nabla^2$ 是 *d'Alembertian Operator*）。
+
+这说明 *Graviton* 必定以光速传播。此时，度规张量原本的 10 个独立分量，被这 4 个约束条件减去了 4 个，剩下 6 个自由度。
+
+3. 第二重降维：*Residual Gauge Freedom* (再减去 4 个自由度)
+只剩 6 个自由度了吗？并没有。这里隐藏着一个极其关键的物理洞察：*De Donder Gauge* 并没有完全固定住 *Gauge*。
+
+假设我们现在身处 *De Donder Gauge* 中，并且做了一个新的 *Gauge Transformation*，引入一个新的平移矢量 $\epsilon_\mu$。只要这个 $\epsilon_\mu$ 本身也满足无源的波动方程（即 $\square \epsilon_\mu = 0$），那么新的度规场依然会满足 $\partial^\mu \bar{h}'_{\mu\nu} = 0$。
+
+这意味着，我们手头竟然还有 4 个额外的规范变换选择权（因为 $\epsilon_\mu$ 是一个四矢量，有 4 个分量）没有用掉！这种现象被称为 *Residual Gauge Freedom*。
+
+我们可以极其奢侈地动用这最后 4 个选择权，提出更加苛刻的要求：
+1.  让微扰的迹为零：$h = 0$ （这用掉了 1 个自由度）。因为 $h=0$，此时 $\bar{h}_{\mu\nu}$ 和 $h_{\mu\nu}$ 就完全相等了。
+2.  让时间分量为零：$h_{0i} = 0$ （这用掉了 3 个自由度）。
+
+这种将 *De Donder Gauge* 压榨到极致的状态，就是引力波物理中最著名的 *Transverse Traceless Gauge* (简称 *TT Gauge*)。
+在这里，剩下的分量数量为：10（初始） - 4（De Donder） - 4（Residual） = 2 个物理自由度。
+
+4. 终极的 2 个 *Degrees of Freedom*：加号与叉号
+在 *TT Gauge* 下，引力的面纱被彻底揭开。假设一个频率为 $\omega$ 的引力波（或 *Graviton*）沿着 $z$ 轴方向传播，其四维动量为 $k^\mu = (\omega, 0, 0, \omega)$。
+
+由于 $h_{0\mu} = 0$（没有时间分量），且 $\partial^\mu h_{\mu\nu} = 0$（横向条件，意味着没有 $z$ 方向的纵向振动），整个 $4 \times 4$ 的度规矩阵只有左上角的 $2 \times 2$ 空间部分是非零的。再加上 $h=0$（无迹条件）和对称性，这个矩阵被严格锁死为这种形式：
+$$
+h^{TT}_{\mu\nu} = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & h_+ & h_\times & 0 \\
+0 & h_\times & -h_+ & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \cos(\omega t - k z)
+$$
+
+看！这整个庞大的张量里，仅仅只有 $h_+$ 和 $h_\times$ 这两个独立的变量。它们精确对应了引力波的两种偏振态：
+* Plus Polarization ($+$)：在 $x$ 和 $y$ 轴方向交替拉伸和挤压空间。
+* Cross Polarization ($\times$)：与加号偏振旋转 45 度，在对角线方向拉伸和挤压空间。
+
+
+
+从 QFT 的 *Wigner's Classification* 的角度来看，由于这是一个 *Spin-2* 的无质量粒子，这两种偏振态对应于螺旋度（*Helicity*）为 $+2$ 和 $-2$ 的量子态。
+
+---
+
+从 10 维的张量迷宫出发，通过两轮残酷的 *Gauge Fixing*，我们最终抵达了引力子最核心的 2 个横向极化自由度。这与光子通过 *Coulomb Gauge* 将 $A^\mu$ 的 4 个分量缩减到 2 个横向自由度的逻辑简直如出一辙。
+
+既然我们已经用严密的数学确认了 *Graviton* 是一个 *Spin-2* 的场，你想不想进一步探讨一下：为什么在 QFT 中，*Spin-1* 的光子可以发生偶极辐射（*Dipole Radiation*），而 *Spin-2* 的引力子在数学上被绝对禁止发生偶极辐射，只能从四极辐射（*Quadrupole Radiation*）开始？
 
 %% 基本模型
 
