@@ -685,21 +685,21 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
 考虑无内部作用体系：
 \eq{
 \tcbhighmath{
-    S = -\int\d{t}\sum_n \frac{m_n}{\gamma_n} = -\int\d[4]x \sum_n m_n \frac{\delta^3(x-x_n)}{U^0} = -\int\d[4]{x} \rho,
+    S = -\int\d{t}\sum_n \frac{m_n}{\gamma_n} = -\int\d[4]x \sum_n  \frac{m_n}{\gamma}\delta^3(x-x_n) = -\int\d[4]{x} \rho,
 }
 }
-其中 $\rho := \sum_n m_n \delta^3(x-x_n)/U^0$。
-取惯性系 $\{x'\}$，由于 $\d t' = \Lambda^0{}_\mu\d x^\mu, U'^0 = \Lambda^0{}_\mu U^\mu$，则 $\delta^3(x'-x'_n)/U'^0 = \int\d t'\delta^4(x'-x'_n)/U'^0 = \int\d t\delta^4(x-x_n)/U^0=\delta^3(x-x_n)/U^0$，因此 $\rho$ 是 Lorentz 标量；或直接从 $S,\d[4]x,m_n$ 不变性看出。
+其中 $\rho := \sum_n m_n \delta^3(x-x_n)/\gamma$。
+取惯性系 $\{x'\}$，由于 $\int\d t/\gamma_n=\int\d t(-\eta_{\mu\nu}\dot x^\mu_n\dot x^\nu_n)^{1/2}$ 不变，则 $\delta^3(x'-x'_n)/\gamma' = \int\d t'\delta^4(x'-x'_n)/\gamma'_n = \int\d t\delta^4(x-x_n)/\gamma_n=\delta^3(x-x_n)/\gamma$，因此 $\rho$ 是 Lorentz 标量；或直接从 $S,\d[4]x,m_n$ 不变性看出。
 
 %%
 计算可得
 \eq{
 \tcbhighmath{
-    J^\mu = \sum_n m_n \delta^3(x-x_n) \frac{U^\mu}{U^0} =\rho U^\mu,\quad T^{\mu\nu} = \sum_n \frac{p^\mu_n p^\nu_n}{E_n} \delta^3(x-x_n) = \rho U^\mu U^\nu.
+    J^\mu = \sum_n \frac{m_nU^\mu}{\gamma} \delta^3(x-x_n) =\rho U^\mu,\quad T^{\mu\nu} = \sum_n \frac{p^\mu_n p^\nu_n}{E_n} \delta^3(x-x_n) = \rho U^\mu U^\nu.
 }
 }
 可见 $\rho = -J^\mu U_\mu$ 正是流体固有系 $U^\mu$ 所测质量密度，称为\textbf{固有质量密度}。因而 $J^\mu$ 是 Lorentz 矢量。
-惯性系 $\{x\}$ 所测质量密度为 $J^0=\rho U^0=\sum_n m_n \delta^3(x-x_n)$，使 $\sum_n m_n = \int\d[3]{x} J^0$。二者关系为 $\rho = J^0/\gamma$。三维流密度为 $J^i = \gamma\rho\dot x^i = \sum_n m_n \delta^3(x-x_n)\dot{x}^i_n$。
+惯性系 $\{x\}$ 所测质量密度为 $J^0=\rho U^0=\gamma\rho =\sum_n m_n \delta^3(x-x_n)$，使 $\sum_n m_n = \int\d[3]{x} J^0$。三维流密度为 $J^i = \gamma\rho\dot x^i = \sum_n m_n \delta^3(x-x_n)\dot{x}^i_n$。
 $\p_\mu J^\mu=\p_\mu(\rho U^\mu)=0$ 即质量守恒。从而 $\p_\mu T^{\mu\nu}=\rho U^\mu\p_\mu U^\nu = 0$，则同样地得到运动方程 $U^\mu_n\p_\mu U^\nu_n=0$。
 
 
@@ -814,7 +814,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 
 现在来考虑带电粒子与电磁场的耦合。在量子力学上，一般可以通过 WKB 近似来得到经典极限。但限于篇幅，在这里我们直接考察经典模型。置点电荷系统 $q_n$ 及其 4-速场 $U^\mu$，电流为
 \eq{
-    J^\mu(x) = \sum_n q_n \delta^3(x-x_n) \frac{U^\mu}{U^0}  = \rho U^\mu,
+    J^\mu(x) = \sum_n q_n \delta^3(x-x_n) \frac{U^\mu}{\gamma}  = \rho U^\mu,
 }
 
 ，同样考虑最小耦合
