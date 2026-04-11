@@ -1,4 +1,255 @@
 
+\subsection{初值问题}
+
+广义相对论也可写成哈密顿正则形式，称为几何动力学 (Geometrodynamics)。为给出正则形式，需对 4 维时空作 1+3 分解（或 3+1 分解，ADM (Arnowitt-Deser-Misner) 分解），即在时空流形中引入一个类空超曲面， $X^{\mu}=X^{\mu}(t,x^{i})$，其中 $(t,x^{i})$ 是 4 维时空的某组坐标，在超曲面上任一点 $(t,x^{i})$ 引入单位法矢 $n^{\mu}$ 和单位切矢
+\[
+V_{i}^{\mu} \coloneqq \pdv{X^{\mu}}{x^{i}} = {X^{\mu}}_{,i} \tag{8.2.1}
+\]
+$(n^{\mu},V_{i}^{\mu})$ 构成一个局部 4 标架，它们满足：
+
+(1) 正交性：单位法矢 $n^{\mu}$ 与单位切矢 $V_{i}^{\mu}$ 正交，即
+\[
+g_{\mu\nu}n^{\mu}V_{i}^{\nu}=0 \tag{8.2.2}
+\]
+
+(2) 类时性：类空超曲面上的单位法矢是类时的，即
+\[
+g_{\mu\nu}n^{\mu}n^{\nu}=-1 \tag{8.2.3}
+\]
+
+(3) 类空超曲面上的度规：类空超曲面上度规是 4 维时空度规在标架的 3 个单位切矢上的投影，即
+\[
+h_{ij}=g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} \tag{8.2.4}
+\]
+由于超曲面上的诱导度规与 4 维流形上的度规有如下关系：
+\[
+h_{\mu\nu}=g_{\mu\nu}+n_{\mu}n_{\nu} \tag{8.2.5}
+\]
+所以，
+\[
+h_{ij} \coloneqq h_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} \tag{8.2.6}
+\]
+对于类空超曲面，我们约定：$i, j$ 取 1, 2, 3。
+
+设超曲面在时空中作连续变形。定义变形矢量 $N^{\mu}$ 为
+\[
+N^{\mu} \coloneqq \pdv{t}X^{\mu}(t,x^{i}) \equiv \dot{X}^{\mu} \tag{8.2.7}
+\]
+它定义了坐标 $t$ 流逝的方向，它在局部 4 标架上可分解为
+\[
+N^{\mu}=Nn^{\mu}+N^{i}V_{i}^{\mu} \tag{8.2.8}
+\]
+通常把类时分量 $N$ 称为时移函数 (lapse function) 或简称为时移，把类空分量 $N^{i}$ 称为位移矢量 (shift vector) 或简称为位移。现在证明时空度规总可写成
+\[
+ds^{2}=-(N^{2}-N_{i}N^{i})dt^{2}+2N_{i}dx^{i}dt+h_{ij}dx^{i}dx^{j} \tag{8.2.9}
+\]
+其中
+\[
+N_{i}=h_{ij}N^{j} \tag{8.2.10}
+\]
+
+\textbf{证明}：4 维时空度规总可以写成
+\[
+ds^{2}=g_{tt}dt^{2}+2g_{it}dx^{i}dt+g_{ij}dx^{i}dx^{j}
+\]
+考虑由超曲面变化给出的时空间隔，
+\[
+g_{\mu\nu}dX^{\mu}dX^{\nu}=g_{\mu\nu}\dot{X}^{\mu}\dot{X}^{\nu}dt^{2}+2g_{\mu\nu}\dot{X}^{\mu}V_{i}^{\nu}dtdx^{i}+g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu}dx^{i}dx^{j}
+\]
+另一方面，这个时空间隔还可写成
+\[
+g_{\mu\nu}dX^{\mu}dX^{\nu}=g_{tt}dt^{2}+2g_{it}dx^{i}dt+g_{ij}dx^{i}dx^{j}
+\]
+比较两式，知
+\[
+g_{ij}=V_{i}^{\mu}V_{j}^{\nu}g_{\mu\nu}=V_{i}^{\mu}V_{j}^{\nu}(h_{\mu\nu}-n_{\mu}n_{\nu})=V_{i}^{\mu}V_{j}^{\nu}h_{\mu\nu}=h_{ij}
+\]
+\[
+\begin{aligned}
+g_{ti} &= \dot{X}^{\mu}V_{i}^{\nu}g_{\mu\nu}=N^{\mu}V_{i}^{\nu}g_{\mu\nu}=g_{\mu\nu}(Nn^{\mu}+N^{j}V_{j}^{\mu})V_{i}^{\nu}=N^{j}g_{\mu\nu}V_{j}^{\mu}V_{i}^{\nu} \\
+&= N^{j}h_{ji}=N_{i}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+g_{tt} &= \dot{X}^{\mu}\dot{X}^{\nu}g_{\mu\nu}=N^{\mu}N^{\nu}g_{\mu\nu}=N^{\mu}N^{\nu}(h_{\mu\nu}-n_{\mu}n_{\nu}) \\
+&= (Nn^{\mu}+N^{i}V_{i}^{\mu})(Nn^{\nu}+N^{j}V_{j}^{\nu})h_{\mu\nu}-N^{2}=N^{i}V_{i}^{\mu}N^{j}V_{j}^{\nu}h_{\mu\nu}-N^{2} \\
+&= N^{i}N_{i}-N^{2}
+\end{aligned} \tag{8.2.11}
+\]
+证毕。
+
+度规 (8.2.9) 式写成矩阵形式是
+\[
+(g_{\mu\nu}) = \begin{pmatrix} -(N^{2}-N_{k}N^{k}) & N_{i} \\ N_{j} & h_{ij} \end{pmatrix} \tag{8.2.12}
+\]
+其行列式为
+\[
+g=(N^{i}N_{i}-N^{2})h-A^{ij}N_{i}N_{j} \tag{8.2.13}
+\]
+其中 $A^{ij}$ 是 $3\times3$ 矩阵，是 $h_{ij}$ 的第 $i$ 行第 $j$ 列的代数余子式，$A^{ij}=hh^{ij}$，将之代入 (8.2.13) 式得
+\[
+g=(N^{i}N_{i}-N^{2})h-hh^{ij}N_{i}N_{j}=-N^{2}h \quad \text{或} \quad \sqrt{-g}=Nh^{1/2} \tag{8.2.14}
+\]
+度规矩阵 (8.2.12) 式的逆为
+\[
+(g^{\mu\nu}) = \begin{pmatrix} -1/N^{2} & N^{i}/N^{2} \\ N^{j}/N^{2} & h^{ij}-N^{i}N^{j}/N^{2} \end{pmatrix} = (h^{\mu\nu}-n^{\mu}n^{\nu}) \tag{8.2.15}
+\]
+后一等号由 (8.2.5) 式得到。由此可得坐标基下单位法矢 $n^{\mu}$ 和 $h^{\mu0}$ 的表达式：
+\[
+n^{\mu}=\left(\frac{1}{N},-\frac{N^{i}}{N}\right), \quad h^{\mu0}=0 \tag{8.2.16}
+\]
+易证，(8.2.16) 式满足 (8.2.3) 式。
+
+由外曲率 (2.12.6) 表达式及李导数的计算规则得
+\[
+K_{\mu\nu}=n_{(\mu;\nu)} \tag{8.2.17}
+\]
+\[
+\begin{aligned}
+K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)}=g_{\lambda(i}{n^{\lambda}}_{,j)}+g_{\lambda(i}\Gamma_{|\kappa|j)}^{\lambda}n^{\kappa}=g_{0(i}{n^{0}}_{,j)}+g_{k(i}{n^{k}}_{,j)}+\frac{1}{2}g_{ij,\kappa}n^{\kappa} \\
+&= -\frac{1}{N}N_{(i,j)}+h_{k(i,j)}\frac{N^{k}}{N}+\frac{1}{2N}h_{ij,t}-\frac{1}{2}h_{ij,k}\frac{N^{k}}{N}=\frac{1}{N}\left(\frac{1}{2}\pdv{h_{ij}}{t}-N_{(i|j)}\right)
+\end{aligned} \tag{8.2.18}
+\]
+其中下标竖线 “$|$” 代表在超曲面内的协变导数，超曲面内的联络系数为
+\[
+{}^{(3)}\Gamma_{ij}^{l}=\frac{1}{2}h^{kl}(h_{ki,j}+h_{kj,i}-h_{ij,k}) \tag{8.2.19}
+\]
+外曲率的迹为
+\[
+K=g^{\mu\nu}n_{(\nu;\mu)}=(h^{\mu\nu}-n^{\mu}n^{\nu})n_{(\nu;\mu)}=h^{\mu\nu}n_{(\nu;\mu)}=h^{ij}n_{(i;j)}=h^{ij}K_{ij} \tag{8.2.20}
+\]
+其中第三个等号用到 $n^{\mu}n_{\mu;\nu}=0$，第四个等号用到 (8.2.16) 式的第二式。
+
+由微分几何中的高斯-科达齐 (Gauss-Codazzi) 关系可推得
+\[
+R={}^{(3)}R+K^{ij}K_{ij}-K^{2}+\text{全微分项} \tag{8.2.21}
+\]
+其中 ${}^{(3)}R$ 是 3 维超曲面内禀曲率的里奇标量。
+
+对于纯引力系统，略去边界项，引力作用量 (8.1.23) 式改写为
+\[
+S_{g}[h_{ij},N,N^{i};\dot{h}_{ij},\dot{N},\dot{N}^{i}] = -\frac{1}{16\pi }\int_{\mathcal{M}=R^{1}\times\Sigma_{3}}d^{4}xh^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda] \tag{8.2.22}
+\]
+引力场的拉氏量密度为
+\[
+\mathcal{L}_{g}=-\frac{1}{16\pi }h^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda] \tag{8.2.23}
+\]
+在作用量 (8.2.23) 式或拉氏量密度中引力场的位形变量是 $h_{ij}, N, N^{i}$，它们的共轭正则动量（取 $c=G=\hbar=1$）定义为
+\[
+\pi_{N}=16\pi \fdv{S_{g}}{\dot{N}}=16\pi \pdv{\mathcal{L}_{g}}{\dot{N}} \tag{8.2.24a}
+\]
+\[
+\pi_{N^{i}}=16\pi \fdv{S_{g}}{\dot{N}^{i}}=16\pi \pdv{\mathcal{L}_{g}}{\dot{N}^{i}} \tag{8.2.24b}
+\]
+\[
+\pi^{ij}=16\pi \fdv{S_{g}}{\dot{h}_{ij}}=16\pi \pdv{\mathcal{L}_{g}}{\dot{h}_{ij}} \tag{8.2.24c}
+\]
+由于作用量 (8.2.23) 式的被积函数中不显含 $\dot{N}$ 和 $\dot{N}^{i}$，所以，
+\[
+\pi_{N}=0, \quad \pi_{N^{i}}=0 \tag{8.2.25}
+\]
+这表明引力系统存在 4 个初级约束。
+\[
+\pi^{ij}=-h^{1/2}N\left(2K^{ij}\pdv{K_{ij}}{\dot{h}_{ij}}-2K\pdv{K}{\dot{h}_{ij}}\right)=-h^{1/2}(K^{ij}-h^{ij}K) \tag{8.2.26}
+\]
+其迹为
+\[
+\pi=h_{ij}\pi^{ij}=2h^{1/2}K \Rightarrow K=\frac{1}{2}h^{-1/2}\pi \tag{8.2.27}
+\]
+由 (8.2.26) 式反解出 $K^{ij}$，并利用 (8.2.27) 式，得
+\[
+K^{ij}=-h^{-1/2}\left(\pi^{ij}-\frac{1}{2}h^{ij}\pi\right) \tag{8.2.28}
+\]
+所以，
+\[
+K^{ij}K_{ij}-K^{2}=\frac{1}{h}\left(\pi^{ij}-\frac{1}{2}h^{ij}\pi\right)\left(\pi_{ij}-\frac{1}{2}h_{ij}\pi\right)-\frac{1}{4h}\pi^{2}=\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right) \tag{8.2.29}
+\]
+\[
+\pi^{ij}K_{ij}=-h^{-1/2}\pi^{ij}\left(\pi_{ij}-\frac{1}{2}h_{ij}\pi\right)=-h^{-1/2}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)
+\]
+由勒让德变换得哈密顿密度，
+\[
+\begin{aligned}
+\mathcal{H}_{g} &= \pi_{N}\dot{N}+\pi_{N^{i}}\dot{N}^{i}+\pi^{ij}\dot{h}_{ij}-16\pi \mathcal{L}_{g} \\
+&= \pi^{ij}\dot{h}_{ij}+h^{1/2}N(K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda) \\
+&= -h^{-1/2}N\left[\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}-h({}^{(3)}R-2\Lambda)\right]+2\pi^{ij}N_{(i|j)} \\
+&= h^{1/2}\left\{-N\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-{}^{(3)}R+2\Lambda\right]+2h^{-1/2}\pi^{ij}N_{(i|j)}\right\} \\
+&= h^{1/2}\left\{-N\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-{}^{(3)}R+2\Lambda\right]-2N_{(i}(h^{-1/2}\pi^{ij})_{|j)}\right\}
+\end{aligned} \tag{8.2.31}
+\]
+其中第三个等号用到 (8.2.18)、(8.2.28) $\sim$ (8.2.30) 式，第四个等号提出了 $h^{1/2}$ 因子。在最后一个等式中已略掉了边界项。初级约束 (8.2.25) 式需在任何时刻都成立，即要求这 4 个约束在演化中保持不变。为此，需有
+\[
+0=\dot{\pi}_{N}=[\pi_{N},\mathcal{H}_{g}]=-\pdv{\mathcal{H}_{g}}{N}=h^{1/2}\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-{}^{(3)}R+2\Lambda\right] \eqqcolon H_{g} \tag{8.2.32}
+\]
+\[
+0=\dot{\pi}_{N^{i}}=[\pi_{N^{i}},\mathcal{H}_{g}]=-\pdv{\mathcal{H}_{g}}{N^{i}}=2(h^{-1/2}\pi^{ij})_{|j} \eqqcolon H_{i} \tag{8.2.33}
+\]
+这 4 个约束是次级约束，分别称为哈密顿约束和动量约束（或微分同胚约束）。哈密顿约束和动量约束还可从作用量 (8.2.22) 式对 $N$ 和 $N^{i}$ 变分后再利用 (8.2.29) 式直接得到
+\[
+16\pi \fdv{S_{g}}{N}=H_{g}=0, \quad 16\pi \fdv{S_{g}}{N^{i}}=H_{i}=0 \tag{8.2.34}
+\]
+在时间演化中，4 个次级约束 (8.2.32)、(8.2.33) 式也应该总保持，故需有
+\[
+0=\dot{H}_{g}=[H_{g},\mathcal{H}_{g}], \quad 0=\dot{H}_{i}=[H_{i},\mathcal{H}_{g}] \tag{8.2.35}
+\]
+可以证明，(8.2.35) 式是 4 个恒等式，不会给出任何新的约束。引力场的动力学方程为
+\[
+\dot{h}_{ij}=[h_{ij},\mathcal{H}_{g}]=\pdv{\mathcal{H}_{g}}{\pi^{ij}}, \quad \dot{\pi}^{ij}=[\pi^{ij},\mathcal{H}_{g}]=-\pdv{\mathcal{H}_{g}}{h_{ij}} \tag{8.2.36}
+\]
+引力场量 $h_{ij}$ 张成一个空间，称为超空间 (superspace)，在这个超空间中可引入超度规（又称为德维特度规，de Witt metric）：
+\[
+G_{ijkl}=\frac{1}{2}h^{-1/2}(h_{ik}h_{jl}+h_{il}h_{jk}-h_{ij}h_{kl}) \tag{8.2.37}
+\]
+于是，哈密顿约束可写成
+\[
+G_{ijkl}\pi^{ij}\pi^{kl}-h^{1/2}({}^{(3)}R-2\Lambda)=0 \tag{8.2.38}
+\]
+
+引力与物质耦合系统的作用量为
+\[
+S_{T}[h_{ij},N,N^{i},\psi;\dot{h}_{ij},\dot{N},\dot{N}^{i},\dot{\psi}] = -\frac{1}{16\pi }\int_{\mathcal{M}=R^{1}\times\Sigma_{3}}d^{4}xh^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R(h)-2\Lambda]+S_{m} \tag{8.2.39}
+\]
+其中 $\psi$ 表示物质场位形变量的集合。要求系统还需满足 4 个次级约束
+\[
+16\pi \fdv{S_{T}}{N}=16\pi \left(\frac{\delta S_{G}}{\delta N}+\frac{\delta S_{m}}{\delta N}\right)=H=0 \tag{8.2.40}
+\]
+\[
+16\pi \fdv{S_{T}}{N^{i}}=16\pi \left(\frac{\delta S_{G}}{\delta N^{i}}+\frac{\delta S_{m}}{\delta N^{i}}\right)=H_{i}=0 \tag{8.2.41}
+\]
+其中
+\[
+\begin{aligned}
+\eval{\fdv{S_{m}}{N}}_{N^{i},h_{ij}} &= 2N\eval{\fdv{S_{m}}{N^{2}}}_{N^{i},h_{ij}} = -2N\fdv{S_{m}}{g_{tt}} \\
+&= -h^{1/2}N^{2}T^{tt}=-h^{1/2}N^{2}g^{t\mu}g^{t\nu}T_{\mu\nu} \\
+&= -h^{1/2}N^{2}(h^{t\mu}-n^{0}n^{\mu})(h^{t\nu}-n^{0}n^{\nu})T_{\mu\nu} \\
+&= -h^{1/2}n^{\mu}n^{\nu}T_{\mu\nu}=-h^{1/2}T_{nn}
+\end{aligned} \tag{8.2.42}
+\]
+\[
+\begin{aligned}
+\eval{\fdv{S_{m}}{N^{i}}}_{N,h_{ij}} &= \fdv{S_{m}}{g_{tt}}\eval{\pdv{g_{tt}}{N^{i}}}_{N,h_{ij}}+2\fdv{S_{m}}{g_{tj}}\eval{\pdv{g_{tj}}{N^{i}}}_{N,h_{ij}} \\
+&= Nh^{1/2}(T^{tt}N_{i}+T^{tj}h_{ji})=Nh^{1/2}(T^{tt}g_{ti}+T^{tj}g_{ji}) \\
+&= Nh^{1/2}T_{i}^{t}
+\end{aligned} \tag{8.2.43}
+\]
+$T_{nn}$ 是能动张量在超曲面的法线方向的分量。于是，引力场与物质场耦合时的哈密顿约束和动量约束分别为
+\[
+h^{1/2}\left\{\frac{1}{h}(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2})-{}^{(3)}R+2\Lambda-16\pi T_{nn}\right\}=0 \tag{8.2.44}
+\]
+\[
+(h^{-1/2}\pi_{i}^{j})_{|j}+8\pi T_{i}^{n}=0 \tag{8.2.45}
+\]
+在得到 (8.2.45) 式时用到
+\[
+\begin{aligned}
+T_{j}^{n} &\coloneqq g_{\mu\nu}n^{\mu}T_{j}^{\nu}=g_{00}n^{0}T_{j}^{0}+g_{i0}n^{i}T_{j}^{0}+g_{0i}n^{0}T_{j}^{i}+g_{ki}n^{k}T_{j}^{i} \\
+&= -(N^{2}-N_{i}N^{i})\frac{1}{N}T_{j}^{0}-N_{i}\frac{N^{i}}{N}T_{j}^{0}+\frac{N_{i}}{N}T_{j}^{i}-h_{ki}\frac{N^{k}}{N}T_{j}^{i} \\
+&= -NT_{j}^{0}
+\end{aligned} \tag{8.2.46}
+\]
+
+
 %% 
 \section{转动}
 
