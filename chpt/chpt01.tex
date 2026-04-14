@@ -3348,59 +3348,7 @@ $\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sig
 
 
 
-\section{Fourier 变换与量子场论}
-\subsection{标量场求解}
 
-$\delta(x)$ 具有两个性质：
-\eq{
-\delta(g(x))=\sum_i \frac{\delta(x-x_i)}{|g'(x_i)|},\quad (2\pi)^n\delta^n(p)=\int\d[n]{x}\e^{\pm\i p_\mu x^\mu}.
-}
-先证前者。对于连续实函数 $g(x)$，若方程 $g(x) = 0$ 具有若干个分立的单根 $x_i$，则注意
-\begin{align*}
-    \int\d{x}f(x)\delta(g(x))&=\sum_i\int_{O_i\ni x_i}\d{x}f(x)\delta(g(x))=\sum_i\int_{O_i\ni x_i}\frac{\d{g}}{|g'(x)|}f(x)\delta(g)\\
-    &=\sum_i\frac{f(x_i)}{|g'(x_i)|} = \int\d{x} f(x)\sum_i\frac{\delta(x-x_i)}{|g'(x_i)|}.
-\end{align*}
-再证后者。$[-L/2,L/2]$ 上良好的函数可展开为 Fourier 级数
-\[f(x)=\sum_{N=-\infty}^\infty \frac{F(p_N)}{L} \e^{\i p_N x},\quad F(p_N)=\int_{-L/2}^{L/2}\d{x}\e^{-\i p_N x}f(x),\]
-其中 $p_N={2\pi N}/{L}$ 称为动量模式，$F(p)$ 是 $f(x)$ 的 Fourier 变换。令 $L\to\infty$，则 $\Delta p=2\pi/L\to 0$，级数化为积分，即 $f(x)=\int \frac{\d p}{2\pi} \e^{\i p x}F(p),F(p)=\int\d{x}\e^{-\i p x}f(x)$。任意 $f(x)$ 以 $\e^{\i px}$ 为基底。
-同理，取 $V=L^n$ 并连续化，可得
-\[f(x)=\int \frac{\d[n]p}{(2\pi)^n} \e^{\i p_\mu x^\mu}F(p),\quad F(p)=\int\d[n]{x}\e^{-\i p_\mu x^\mu}f(x).\]
-注意 $\int \d[n]{p} \e^{\pm\i p_\mu x^\mu}\delta^n(p)=1$，得证。
-
-\[\phi(x) = \int\frac{\d[3]{p}}{(2\pi)^3}\e^{\i \bm p\cdot\bm x}\phi_{\bm p}(t), \quad \phi_{\bm p}(t) = \int\d[3]{x}\e^{-\i \bm p\cdot\bm x} \phi(x).\]
-这里可对任意 $0\leqslant i\leqslant 4$ 个变量做 Fourier 变换，只是三维或四维最方便。代回 $(\square-m^2)\phi=0$：
-\[(\square - m^2)\phi = -\int\frac{\d[3]{p}}{(2\pi)^3}(\ddot\phi_{\bm p}(t) + \phi_{\bm p}(t) (\bm p^2 + m^2) )\e^{\i\bm p\cdot\bm x} = 0,\]
-取四维展开 $\int\frac{\d[4]{p}}{(2\pi)^4}\e^{\i px}\tilde\phi(p)$，代回 $(\square-m^2)\phi=0$：
-\[(-\hat p^2 - m^2)\phi = \int\frac{\d[4]{p}}{(2\pi)^4}\tilde\phi(p)(-\hat p^2 - m^2)\e^{\i px} =\int\frac{\d[4]{p}}{(2\pi)^4}\tilde\phi(p)(-p^2 - m^2)\e^{\i px}=0,\]
-由于对任意 $x$ 都成立，则 $(-p^2-m^2)\tilde\phi(p)=0$。
-因此 $\tilde{\phi}(p)$ 至多在壳时（$p^2 =- m^2$）非零，但积分又是非零的有限值，则它必须正比于一维 $\delta$ 函数：$\tilde{\phi}(p) = 2\pi \delta(p^2 + m^2) f(p)$，其中 $f(p)$ 是复函数，提出 $2\pi$ 只是为了后续常数约化的习惯。
-注意 $p^2+m^2=-(p^0)^2 + E_{\bm p}^2$，其中 $E_{\bm p}=\sqrt{\bm p^2+m^2}>0$。将 $\tilde\phi(p)$ 代入到 $\phi(x)$ 有
-\begin{align*}
-    \phi(x)&=\int\frac{\d[4]{p}}{(2\pi)^3}\e^{\i px} \delta(p^2 + m^2) f(p)= \int_{p^2=-m^2}\frac{\d[3]{p}}{(2\pi)^3}\sum_{p^0=\pm E_{\bm p}}\frac{\e^{\i px}f(p)}{2|p^0|} \\
-    &=\int_{p^2=-m^2}\frac{\d[3]{p}}{(2\pi)^32E_{\bm p}}\left(f(E_{\bm p},\bm p)\phi^+_{\bm p}(x)+f(-E_{\bm p},\bm p)\phi^-_{\bm p}(x)\right),
-\end{align*}
-其中对固定的 $\bm p$，$\phi^\pm_{\bm p}=\e^{\mp\i E_{\bm p}t + \i\bm p\cdot\bm x}$ 是具有正、负能的两个线性独立的平面波解。现在三维积分区域是双曲面 $p^2=-m^2$ 并覆盖两个分支，下面转化到 $p^0>0$ 分支。
-注意 $E_{\bm p}=E_{-\bm p}$，则 $\int \frac{\d[3]{p}}{(2\pi)^32E_{\bm p}}f(\pm E_{\bm p},\bm p)\phi^\pm_{\bm p}$ 在超曲面 $p^2=-m^2$ 上关于 $\bm p\to-\bm p$ 不变。
-将 $p^\mu$ 锁定于 $p^0=E_{\bm p}>0$，这样 $\phi^\pm_{\pm\bm p}=\e^{\pm\i px}$，$f(E_{\bm p},\bm p)=f(p)$，$f(-E_{\bm p},-\bm p)=f(-p)$。
-因此将第二项取 $\bm p\to-\bm p$ 有
-\begin{align*}
-    \phi&=\int_{p^2=-m^2,p^0>0}\frac{\d[3]{p}}{(2\pi)^3 2E_{\bm p}}\left(f(p)\e^{\i px}+f(-p)\e^{-\i px}\right).
-\end{align*}
-通过 $f(\pm E_{\bm p},\pm\bm p),\e^{\pm\i px},\phi$ 的 Lorentz 不变性断言 ${\d[3]{p}}/{E_{\bm p}}$ 不变。
-也可注意，$\d[4]{p}$ 诱导出超曲面上的 Lorentz 不变体元：
-\[
-    \int\d[4]{p}\delta(p^2+m^2)\theta(p^0)= \int\d[3]{p} \sum_{p^0=\pm E_{\bm p}}\frac{\theta(p^0)}{2| p^0|}=\int\frac{\d[3]{p}}{2E_{\bm p}}.
-\]
-这里 $p^2+m^2$ 为标量，$\delta(p^2+m^2)$ 直接不变；由正时性、矢量类时性知 $\sgn(\Lambda^0{}_\mu p^\mu)=\sgn(p^0)$，从而 $\theta(p^0)=\theta(p'^0)$ 也不变。
-
-如果 $\phi$ 是实标量场，复共轭 $\bar\phi=\int \frac{\d[3]{p}}{(2\pi)^32E_{\bm p}}\left(\bar f(p)\e^{-\i px}+ \bar f(-p)\e^{\i px}\right)$ 等于 $\phi$，对比系数知 $\bar f(-p)=f(p)=:a_{\bm p}$，因此
-\eq{
-    \tcbhighmath{\phi=\int_{p^2=-m^2,p^0>0}\frac{\d[3]{p}}{(2\pi)^3 2E_{\bm p}}\left(a_{\bm p}\e^{\i px}+\bar a_{\bm p}\e^{-\i px}\right).}
-}
-
-用 Fourier 分析可证明真空中每个解都是单色平面波的组合。
-同理，$A_\mu(x)=\int a_\mu(k) \e^{\i\theta} \d[4]k$，
-所以 $\square A_\mu = \int a_\mu \e^{\i\theta} \square\theta \d[4]k$，
 
 \end{comment}
 
