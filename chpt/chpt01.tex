@@ -117,16 +117,17 @@ $Q$ 称为\textbf{Noether 荷}。
 
 似乎给定某个 $q(t)$，$L$ 就能用 $t$ 表示，似乎与“不随 $t$ 变”矛盾。这涉及符号混淆。给定 $q(t)$ 谈及的是复合函数 $L(q(t),\dot q(t),\cdots,t) =: L(t)$，通过 $q(t)$ \textbf{隐含} $t$，从而积分。$\dot L$ 实指 $\dv{t}L(t)$，$\pdv*{L}{t}$ 实指 $\pdv{t}L(q,\dot q,\cdots,t)$。$\dot L\ne 0$ 但仍可 $\pdv*{L}{t}=0$。
 
-固定起点 $(q^i_0,t_0)$，考虑任意终点 $(q^i,t)$，我们总能找到一条在壳路径连接二者。终点移动，这条在壳路径随之而动。在壳路径上的 $S$ 就表为了终点的函数 $S(q^i,t)$，称为\textbf{Hamilton 主函数}。这时在终点处做 $\delta q,\delta t$ 就称为\textbf{在壳变分}，但仍与 Noether 变分的代数性质一致。立即有
+固定起点 $(q_0,t_0)$，考虑任意终点 $(q,t)$，我们总能找到一条在壳路径连接二者。终点移动，这条在壳路径随之而动。在壳路径上的 $S$ 就表为了终点的函数 $S(q,t)$，称为\textbf{Hamilton 主函数}。这时在终点处做 $\delta q,\delta t$ 就称为\textbf{在壳变分}，但仍与 Noether 变分的代数性质一致。立即有
 \eq{
     \delta S = p_i \bar\var q^i + L\delta t = p_i \delta q^i - H \delta t,
 }
-其中注意起点处 $\delta t=0,\delta q^i=0$。因此 $p_i=\pdv*{S}{q^i},H=-\pdv*{S}{t}$。$H(t,q^i,\dot q^i)$ 中 $\dot q^i$ 可由 $t,q^i,p_i$ 表出，故有 $S(q^i,t)$ 的一阶非线性偏微分方程，称\textbf{Hamilton-Jacobi 方程}：
+其中注意起点处 $\delta t=0,\delta q^i=0$。因此 $p_i=\pdv*{S}{q^i},H=-\pdv*{S}{t}$。因此对运动（涉及 $p^i,H$）的研究就转化为对 $S$ 的求解。$H(t,q,\dot q)$ 中 $\dot q^i$ 可由 $t,q^i,p_i$ 表出，故 $S(q,t)$ 满足如下一阶非线性偏微分方程，称\textbf{Hamilton-Jacobi 方程}：
 \eq{
 \tcbhighmath{
-    H\left(t,q^i,\pdv{S}{q^i}\right)+\pdv{S}{t}=0.
+    H\left(t,q,\pdv{S}{q}\right)+\pdv{S}{t}=0.
 }
 }
+若 $H$ 为常数，说明 $S$ 关于 $t$ 线性；若还有某个正则动量守恒，比如 $\phi$ 的角动量 $L$，则可写成 $S=-Ht + L\phi + W(q^2,q^3)$，这样就分离了变量，代入上式可拆为若干常微分方程。
 
 \subsection{时空及对钟}
 
@@ -216,8 +217,6 @@ $Q$ 称为\textbf{Noether 荷}。
 外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。这种现象称为\textbf{尺缩效应}或\textbf{长度收缩}。
 进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$ 成立。
 
-\newpage
-
 \begin{figure}[h]
     \centering
     \subfloat[\centering $A,B$ 在 $S$ 中同时]{
@@ -258,8 +257,6 @@ $Q$ 称为\textbf{Noether 荷}。
     \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
     例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
 \end{figure}
-
-\newpage
 
 若间隔类光或类时，则（未来朝向一致的）各惯性系将一致认同两个事件的先后顺序。但对类空间隔，其坐标时差距可在不同惯性系下取任意实数。不同观者对其先后次序各抒己见，故称类空间隔的事件没有\textbf{因果联系}。可见并非所有事件都能涉及因果。
 
@@ -874,10 +871,7 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
     -\int\d[3]{x} T^{0\nu} U_\nu = \sum_n m_n \int\d[3]{x} \delta^3(x-x_n) = \sum_n m_n
 \]
 为固有系 $U^\mu$ 所测总静能，即总质量。但它不是时空平移对称的结果，还不能断言其守恒。
-目前守恒的是总 4-动量内积产生的\textbf{总不变质量}
-\[
-    \Big(-\eta_{\mu\nu}\sum_{n,k} p^\mu_n p^\nu_k\Big)^{1/2} \ne \sum_n m_n.
-\]
+目前守恒的是总 4-动量内积产生的\textbf{总不变质量} $(-\eta_{\mu\nu}\sum_{n,k} p^\mu_n p^\nu_k)^{1/2} \ne \sum_n m_n$。
 $-T^{0\nu} U_\nu = \sum_n m_n \delta^3(x-x_n) = \gamma\rho$ 称为惯性系 $\{x\}$ 所测质量密度。如果标架换为固有系 $U^\mu$，即考虑 $S^{\mu\nu} U_\nu U_\mu = \rho$，可见这就是\textbf{固有质量密度}。类似地，$\rho_N$ 称为\textbf{固有数密度}(number density)。4-流量(flux)或通量为 $N^\mu=\rho_N U^\mu$。
 
 为探究总质量是否守恒，定义\textbf{质量流}或\textbf{固有 4-动量密度}为 Lorentz 矢量
@@ -1532,7 +1526,7 @@ $R$ 只是有效的取法，还可考虑 $R_{\mu\nu} R^{\mu\nu},R_{\mu\nu\sigma\
 
 \subsection{协变导数}
 
-偏导不是张量。可见，类似于规范协变导数 $\D_\mu$，Lorentz 不变性的局域化将修改偏导。若类似于等效原理，我们认为偏导只是某种协变的导数在局域惯性系中的写法，就定义了
+偏导不是张量。等效原理的结果显示，$A^\lambda$ 就是在 $\dv*{U^\lambda}{t}$ 上加 $\{^\lambda_{\mu\nu}\}U^\mu$ 项。若视之为新导数，则类似于规范协变导数 $\D_\mu$，Lorentz 不变性将偏导局域化为新导数。这说明，可以认为偏导只是某种协变的导数在局域惯性系中的写法，就定义了
 \begin{center}
     \tcbox{
     \textbf{Levi-Civita 协变导数}\quad 存在 $\{\xi\}$ 使 $\cd_\mu$ 表为 $\tilde\cd_\alpha=\pdv*{\xi^\alpha}$。
