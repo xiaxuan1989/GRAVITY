@@ -2382,295 +2382,6 @@ $$
 %% 基本模型
 
 
-\section{标量场引力}\label{sec:scalar}
-
-\subsection{标量-张量理论}
-
-1960 年代，Brans 和 Dicke\cite{Brans-Dicke} 提出了一个接近 Mach 原理愿景的引力理论。
-首先注意，在地球的某个自由落体电梯中，等效原理的解释是电梯与乘客加速度一致，而 Mach 原理的解释是乘客的地球引力与星空背景的作用抵消。Newton 理论给出的地球引力为 $a=Gm/r^2$。假设星空背景有某种宇观质量 $M$ 和半径 $R$，并施加相同 $a$，根据量纲分析可知数量级上 $\frac{Gm}{r^2}\sim \frac{Rm}{Mr^2}$（几何制），因此 $\frac{1}{G}\sim\frac{M}{R}$。一种理解是 $\frac{M}{R}$ 由理论给出，而质量分布由广义相对论场方程的某个边界条件给出。还有一种是局部观察的 $G$（或场源质量）是随时空点变化的，其值由附近的质量分布决定。
-假设 $G$ 是某个标量场的函数。首先想到 Ricci 标量，但它含有度规一阶导，随着与场源距离 $r$ 的增大，它比 $1/r$ 减小得还快。这种标量主要由附近质量分布决定，而非远处物质。因此，我们需要一个独立于度规以外的新标量场 $\phi$，但二者都用于描述引力场。假设理论是线性的，则前文表明乘客的惯性力贡献应是引力常数的倒数，即 $\phi\sim\frac{1}{G}$。
-进而自由引力场加上标量场的部分为
-\eq{
-\tcbhighmath{
-    \Lag_G=\frac{1}{16\pi} \left(\phi R-\frac{\omega(\phi)}{\phi}\p_\mu \phi \p^\mu \phi-2\Lambda(\phi)\right),
-}
-}
-其中 $\omega$ 是耦合参数，$\frac{\omega}{\phi}$ 是为了使 $\omega$ 无量纲，并且还引入了$\Lambda(\phi)$ 代表可变的宇宙学常数。这就是\textbf{标量-张量理论}。准确地说，是
-$\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
-可以看到不存在真正的自由引力场，自由引力场实际以耦合项 $\phi R\sqrt{-g}$ 出现，且无法在局域惯性系中退回到 $\phi$，因此一定程度上破坏了等效原理。
-
-先对 $g^{\mu\nu}$ 变分，则
-\begin{align*}
-    16\pi \var(\Lag_G\sqrt{-g})&=\phi\left( G_{\mu\nu} \var g^{\mu\nu}+g^{\mu\nu}\var R_{\mu\nu}\right) \sqrt{-g}+ \Lambda g_{\mu\nu} \var g^{\mu\nu}\sqrt{-g}\\
-&-\frac{\omega}{\phi}\left(\p_\mu\phi \p_\nu\phi-\frac 12 g_{\mu\nu}\p_\lambda \phi \p^\lambda\phi\right)\var g^{\mu\nu}\sqrt{-g},
-\end{align*}
-其中注意 $g^{\mu\nu}\var R_{\mu\nu}=2\cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]})$ 乘了 $\phi$，需进行分部积分：
-\begin{align*}
-    2 \phi \cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]}) &\simeq -2  g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]} \cd_\lambda \phi = 2 g_{\mu\nu}\cd^{[\nu} \delta g^{\lambda]\mu} \cd_\lambda \phi \\
-    &\simeq g_{\mu\nu} \delta g^{\mu\nu}\cd^\lambda \cd_\lambda \phi - \delta g^{\mu\lambda} \cd_\mu\cd_\lambda \phi = (g_{\mu\nu} \square_g \phi - \cd_\mu\cd_\nu \phi) \delta g^{\mu\nu}.
-\end{align*}
-故引入物质场后的结果为
-\eq{
-    \phi G_{\mu \nu}+\Lambda g_{\mu\nu}=8 \pi T_{\mu \nu}+\frac{\omega}{\phi}\left(\p_\mu \phi \p_\nu \phi-\frac{1}{2} g_{\mu \nu} \p_\lambda \phi \p^\lambda \phi\right)+\cd_\mu \cd_\nu \phi-g_{\mu \nu} \square_g \phi,
-}
-并注意其迹为
-\eq{\label{eq:BDtrace}
-    -\phi R+4 \Lambda = 8 \pi T-\frac{\omega}{\phi}\p_\lambda \phi \p^\lambda \phi-3\square_g \phi.
-}
-
-再对 $\phi$ 变分：
-\[16\pi\var(\Lag_G\sqrt{-g})= \left(\left(R-2\dv{\Lambda}{\phi}\right)\var\phi - \frac{1}{\phi}\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}\var\phi - \omega\var(\frac{1}{\phi}\p_\mu \phi \p^\mu \phi)\right) \sqrt{-g},\]
-其中
-\begin{align*}
-    \var(\frac{1}{\phi}\p_\mu \phi \p^\mu \phi) 
-    & = -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi+\frac{2}{\phi} \p^\mu \phi  \p_\mu \var\phi \simeq -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi-2 \cd_\mu\left(\p^\mu \phi \frac{1}{\phi}\right) \var\phi \\
-    & = -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi-\frac{2}{\phi} \square_g \phi \var\phi+\frac{2}{\phi^2} \p^\mu \phi \p_\mu \phi \var\phi \\
-    & = \left(\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi  - \frac{2}{\phi} \square_g \phi \right)\var\phi .
-\end{align*}
-进而
-\[
-    R-2\dv{\Lambda}{\phi}-\frac{1}{\phi}\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}- \frac{\omega}{\phi^2} \p_\mu \phi \p^\mu \phi  + \frac{2\omega}{\phi} \square_g \phi=0.
-\]
-利用 \eqref{eq:BDtrace} 式替换掉 $R$ 可得
-\eq{
-    (3+2\omega) \square_g \phi+4\Lambda-2\phi\dv{\Lambda}{\phi}-\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}=8 \pi T.
-}
-
-具体地，考虑 $\dv*{\omega}{\phi}=0$ 和 $\Lambda=0$，则
-\eq{
-    \Lag_G=\frac{1}{16\pi} \left(\phi R-\omega \phi^{-1} \p_\mu \phi \p^\mu \phi\right),
-}
-进而
-\begin{gather}
-    G_{\mu \nu}=\frac{8 \pi}{\phi} T_{\mu \nu}+\frac{\omega}{\phi^2}\left(\p_\mu \phi \p_\nu \phi-\frac{1}{2} g_{\mu \nu} \p_\lambda \phi \p^\lambda \phi\right)+\frac{1}{\phi}\left(\cd_\mu \cd_\nu \phi-g_{\mu \nu} \square_g \phi\right), \\
-    \square_g\phi=\frac{8 \pi}{3+2 \omega} T.
-\end{gather}
-此即\textbf{Brans-Dicke 理论}。可见若 $\omega\to\infty$，则 $\phi$ 没有贡献，退回广义相对论。
-根据论文 \cite{Bhabra} 的结果，
-从 Schwarzschild 解的角度来看，对于非常大的 $\omega$，那么现有实验精度下，广义相对论和 Brans-Dicke 理论就已不可分辨。既然如此就选择广义相对论。截止到 2003年，
-飞往土星的 Cassini 飞船的 D\"oppler 跟踪(tracking)\cite{Will-thesis}的测量结果为 $\omega>40000$，
-即目前观测还是更倾向于广义相对论。
-
-\subsection{\texorpdfstring{$f(R)$ 理论}{f(R) 理论}}
-
-一个涉及宇宙暴胀的理论是 $f(R)$\textbf{理论}，其中自由引力场的拉氏密度为
-\[\tcbhighmath{\Lag_G=f(R).}\]
-记标量场 $f_R:=\dv*{f(R)}{R}$。变分有
-\begin{align*}
-\delta S_G &= \int\d[4]x\sqrt{-g}\, \left(f_R \delta R -\frac12 f(R) g_{\mu\nu}\delta g^{\mu\nu}\right)\\
-&=  \int\d[4]x\sqrt{-g}\, \bigg(\Big(f_R R_{\mu \nu} -\frac{1}{2} f(R) g_{\mu \nu} \Big) \delta g^{\mu \nu}+2 f_R \cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]})\bigg) \\
-&\simeq \int\d[4]x\sqrt{-g} \left(f_R R_{\mu \nu} -\frac{1}{2} f(R) g_{\mu \nu} +g_{\mu\nu} \square_g f_R - \cd_\mu\cd_\nu f_R\right) \delta g^{\mu\nu},
-\end{align*}
-加上物质场的贡献有
-\eq{
-    f_R R_{\mu \nu}-\frac{1}{2} f(R) g_{\mu \nu}+g_{\mu \nu} \square_g f_R-\cd_\mu \cd_\nu f_R=\kappa T_{\mu\nu}.
-}
-广义相对论相当于 $f(R)=R$ 或 $R-2\Lambda$。
-
-下证在适当条件下，$f(R)$ 的作用实际上相当于引入额外标量场。
-引入辅助场 \(\chi\)，考虑
-\[
-S_G
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
-\Bigl[f(\chi)+f_\chi(\chi)(R-\chi)\Bigr]
-,
-\]
-其中 $f_\chi(\chi):=\dv*{f(\chi)}{\chi}.$
-先对 \(\chi\) 变分：
-\begin{align*}
-    \delta S
-&=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
-\Bigl[f_\chi(\chi)-f_{\chi\chi}(\chi)\chi+f_{\chi\chi}(\chi)(R-\chi)-f_\chi(\chi)\Bigr]\delta\chi\\
-&=\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
-f_{\chi\chi}(\chi)(R-\chi)\,\delta\chi.
-\end{align*}
-故 \(\chi\) 的方程为 $f_{\chi\chi}(\chi)(R-\chi)=0$。
-若 $f_{\chi\chi}(\chi)\neq 0,$
-则必有 $\chi=R$。
-代回 \(S_G\)，立即恢复原来的 \(f(R)\) 作用：
-\[
-S_G\big|_{\chi=R}
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,f(R).
-\]
-因此 \(S_G\) 与原 \(f(R)\) 作用动力学等价。
-
-
-现在定义新标量场 $\phi:=f_\chi(\chi).$
-若 \(f_{\chi\chi}\neq 0\)，则此关系局部可逆，可写作 $\chi=\chi(\phi)$。
-于是定义势能 $V(\phi):=\phi\,\chi(\phi)-f(\chi(\phi))$。
-则原辅助场作用可改写为
-\[
-S_G
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,\bigl[\phi R-V(\phi)\bigr]
-.
-\]
-首先检查标量场方程。
-对 \(\phi\) 变分，
-\[
-\delta S
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
-\bigl(R-V'(\phi)\bigr)\delta\phi,
-\]
-故
-$
-R=V'(\phi)
-$。
-而由
-$
-V(\phi)=\phi\chi(\phi)-f(\chi(\phi))
-$
-可得
-\begin{align*}
-V'(\phi)
-&=
-\chi(\phi)+\phi\,\chi'(\phi)-f_\chi(\chi)\chi'(\phi) =
-\chi(\phi)+\phi\,\chi'(\phi)-\phi\,\chi'(\phi) =
-\chi(\phi).
-\end{align*}
-故标量场方程即
-$
-R=\chi(\phi)
-$，
-这正与前面的辅助场方程 \(\chi=R\) 一致。
-
-其次是度规场方程。
-对 \(g^{\mu\nu}\) 变分，得到
-\[
-\phi R_{\mu\nu}
--\frac12 g_{\mu\nu}(\phi R-V)
-+\bigl(g_{\mu\nu}\Box-\cd_\mu\cd_\nu\bigr)\phi
-=
-\kappa T_{\mu\nu}.
-\]
-整理为
-\[
-\phi G_{\mu\nu}
-+\frac12 V(\phi)g_{\mu\nu}
-+\bigl(g_{\mu\nu}\Box-\cd_\mu\cd_\nu\bigr)\phi
-=
-\kappa T_{\mu\nu}.
-\]
-
-与 Brans--Dicke 理论比较以下。
-一般 Brans--Dicke 型作用写作
-\[
-S_{\mathrm{BD}}
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
-\left[
-\phi R-\frac{\omega(\phi)}{\phi}\cd_\mu\phi\cd^\mu\phi-V(\phi)
-\right].
-\]
-而这里由 \(f(R)\) 得到的作用是
-\[
-S_G
-=
-\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,\bigl[\phi R-V(\phi)\bigr],
-\]
-没有显式动能项(kinetic term)，因此它等价于
-$
-\omega(\phi)=0
-$
-的 Brans--Dicke 型理论，但由于 \(\phi\) 与 \(g_{\mu\nu}\) 的非最小耦合，\(\phi\) 仍然是传播的额外自由度。
-
-考虑迹方程与标量自由度。
-对度规方程取迹，得
-\[
-\phi R-2V+3\Box\phi=\kappa T.
-\]
-再利用标量方程 \(R=V'(\phi)\)，得到
-\[
-3\Box\phi+\phi V'(\phi)-2V(\phi)=\kappa T.
-\]
-这显然是一个二阶微分方程，说明 \(\phi\) 不是代数约束，而是一个真正的额外标量自由度。
-
-综上，在 \(f_{RR}\neq 0\) 的非退化情形下，度规型 \(f(R)\) 引力与一个含有额外标量场 \(\phi=f_R\) 的标量-张量理论等价。该标量场的势能为
-\[
-V(\phi)=\phi R(\phi)-f\bigl(R(\phi)\bigr),
-\]
-故 \(f(R)\) 理论实际上包含了除通常自旋 \(2\) 引力子之外的一个额外自旋 \(0\) 标量自由度。
-
-\section{Kaluza-Klein 理论}
-
-我们不排除更高维时空的存在，将四维时空中的相互作用视作更高维物理的结果。
-Kaluza 最先注意到电磁张量看起来像截断克氏符：引入第五（空间）维度使得 $A_{\mu}=g_{\mu 4}$，假定 $g_{\mu\nu,4}=0$ 则
-\eq{
-    \Gamma^\mu_{\nu 4}=\frac{1}{2}g^{\mu\sigma}\left(2g_{4[\sigma,\nu]}+g_{\sigma\nu,4}\right)=-\frac{1}{2}F^\mu{}_{\nu}.
-}
-其中 $\mu,\nu$ 只取 $0,1,2,3$。假设五维“度规”形如
-\eq{
-    \d\hat s^2=\hat g_{ab}\d x^a\d x^b=g_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2,
-}
-其中 $a,b$ 取 $0,1,2,3,4$。
-也即
-$\hat g_{\mu\nu}=g_{\mu\nu}+\lambda^2 A_{\mu}A_{\nu},\ \hat g_{\mu 4}=\lambda A_\mu,\ \hat g_{44}=1$。
-这一“度规”显然对任意四维变换 $x'^\mu(x^\nu)$ 或平移 $x'^5=x^5+f(x^\nu)$ 不变，但对任意五维变换可变，故并非真正的五维流形上的度规。后者的结果正是规范变换 $A'_\mu=A_\mu-\p_\mu f$。
-换言之，我们将 U(1) 对称性的内部自由度 $\theta$ 解释到了第五维 $x^4$。
-依次计算克氏符、Ricci 张量和 Ricci 标量可得
-\eq{
-    \hat R=R-\frac{\lambda^2}{4}F_{\mu\nu}F^{\mu\nu}.
-}
-这意味着五维几何 $\hat{\Lag}=\hat R$ 可在四维时空下分化出引力和电磁作用，称为\textbf{Kaluza 奇迹}。为求五维度规行列式，只需先对角化。考虑
-$H^\mu{}_{\nu}=\delta^\mu_\nu,\ H^4{}_{\nu}=-\lambda A_\nu,\ H^\mu{}_{4}=0,\ H^4{}_{4}=1$，
-则 $\hat g_{\mu a} H^a{}_{\nu}=g_{\mu\nu},\ \hat g_{\mu a} H^a{}_{4}=\lambda A_\mu,\ \hat g_{4 a} H^a{}_{\nu}=0,\ \hat g_{4 a} H^a{}_{4}=1$。因此 $\hat g=g$。
-但我们需要使对 $x^4$ 的积分收敛。注意 U(1) 变换中 $\theta$ 是周期等效的，因而第五维度对应于某个圆周。因而 U(1) 等效为了 SO(2)。这便是\textbf{紧化}(compactication)思想之源，最先由 Oskar Klein 引进。$g_{\mu\nu,4}=0$ 也称\textbf{圆柱条件}(cylindricity condition)。五维“时空”并非流形，在数学上是\textbf{纤维丛}(fiber bundle)，四维时空作为其\textbf{底流形}而第五维圆圈作为其\textbf{纤维}。假设半径 $L$，则
-\eq{
-\tcbhighmath{
-    \hat S=\frac{1}{16\pi\hat G}\int \hat R \sqrt{-\hat g} \d^5 x=\frac{L}{8\hat G}\int\hat R \sqrt{- g} \d[4]{x},
-}
-}
-Gauss 几何制下取 $\hat G=2\pi L,\lambda=2$ 即得真空 Einstein-Maxwell 作用量。再考虑五维测地线方程 $\ddot x^a+\Gamma^a_{bc}\dot x^b \dot x^c=0$。首先由圆柱条件知守恒量 $\pdv*{\Lag}{\dot x^4}\propto\dot x^4+A_\mu\dot x^\mu$。剩余分量为
-\eq{
-    \ddot x^\lambda+\Gamma^\mu_{bc}\dot x^b \dot x^c=\ddot x^\lambda+\Gamma^\lambda_{\mu\nu}\dot x^\mu \dot x^\nu-F^\lambda{}_\mu\dot x^\mu(\dot x^4+A_\nu\dot x^\nu)=0,
-}
-若用荷质比来确定守恒量，则这正是 Lorentz 力定律 $\dot x^4+A_\nu\dot x^\nu=q/m$。从而经典电磁力、经典引力得到统一。
-带电粒子与中性粒子具有不同运动，这并不违反等效原理，而只是因为它们在 $x^4$ 上有不同初速度。
-
-这一理论当然差强人意。$\hat R_{ab}=0$ 的真正结果为
-\eq{
-    F_{\mu\nu}F^{\mu\nu}=0,\quad \cd_\mu F^{\mu\nu}=0,\quad R_{\mu\nu}=2 F_{\mu\sigma}F_{\nu}{}^{\sigma},
-}
-第三式只是真空 Einstein-Maxwell 方程 $R_{\mu\nu}=8\pi T_{\mu\nu}$ 在第一式成立的特例。第一式源于 $\hat R_{44}=0$。这是因为变分原理并不能保证 $\hat g_{44}=1$ 假设。从而，五维假设显得非常人为。最重要的是，我们始终在讨论经典理论，并未真正考虑量子力学。实际上，强、弱相互作用的概念在 Einstein 逝世后才被彻底确立。
-
-此外还必须解释为何从未发现第五维度。置五维闵氏时空上的复标量场 $\hat\phi$。方便起见考虑无质量，Klein-Gordon 方程为
-\eq{
-    \hat\eta^{ab}\p_a\p_b\hat\phi=0,\quad \hat\phi=\sum_n\phi_n(x^\mu)\e^{\i n x^4/L},
-}
-其中由周期性 $x^4\sim x^4+2\pi L$，可对 $\hat\phi$ 作 Fourier 展开使其与 $x^4$ 的依赖关系更明确。代入展开式得到无穷多个解耦方程，即对 $\hat\phi$ 的无穷多 Fourier 模 $\phi_n$ 均有
-\eq{
-    (\square-m_n^2)\phi_n^2=0,\quad m_n^2={n^2}/{L^2}.
-}
-其中质量项源于 $\p_{44}$。可见五维时空上的无质量标量场会产生 $n=0$ 的四维无质量场\footnote{但仍有 d'Alembert 方程，故内部空间是谐振的或振动模固定。}、$n\ne 0$ 的无穷多有质量场。这种质量称为 Kaluza-Klein 模。
-
-四维闵氏度规在五维上的拓展其实应为 $\d\hat s^2=\eta_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2$，则 $\hat g=g=-1$。因此 $\hat g^{\mu\nu}=\eta^{\mu\nu},\hat g^{\mu 4}=-\lambda A^\mu,\hat g^{44}=1+\lambda^2 A^\mu A_\mu$。
-Klein-Gordon 方程变为
-\[
-    0=\square_{\hat g}\hat\phi=\p_a\left(\hat g^{ab}\p_b \hat\phi\right)=\eta^{\mu\nu}(\p_\mu-\lambda A_\mu\p_4)(\p_\nu-\lambda A_\nu\p_4)\hat\phi+\p_4^2\hat\phi,
-\]
-将 Fourier 分解代入，则对任意 $\phi_n$ 有
-\[
-    \left(\eta^{\mu\nu}\left(\p_\mu-\i\frac{\lambda_n}{L} A_\mu\right)\left(\p_\nu-\i\frac{\lambda_n}{L} A_\nu\right)-m_n^2\right)\phi_n=0,
-\]
-可见非零模不仅有质量，且在规范场 $A_\mu$ 下带电。$\p_\mu-\lambda m_n A_\mu$ 与规范协变导数 $\p_\mu-\i ne A_\mu$ 对比得元电荷 $e=\lambda/L$。还原国际单位有 $e=\hbar\lambda/L$，以及 $\frac{c^4}{16\pi }R-\frac{1}{4\mu_0}$。
-
-$\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g$。
-
-时空各点的额外维蜷缩(curled up)，从而只剩下我们经验中看到的时空本身。
-
-尽管有诸多缺陷，Wheeler 仍表示“几何动力学”拓展到其它相互作用是有希望的。20 世纪末，\textbf{弦论}(string theory)继承了高维几何的衣钵，利用极小对象“弦”部分地得到了广义相对论、量子场论的结果。此外还有企图构建背景无关量子场论的\textbf{圈量子引力}(loop quantum gravity)、研究非交换几何的\textbf{CLCB 理论}，它们皆只部分地回答了量子引力的疑难。目前前沿话题还包括引力同统计物理、信息论的联系，诸如\textbf{熵力理论}、\textbf{黑洞信息学}，以及受场论和凝聚态影响的\textbf{超对称理论}。
-我们以后再详细学习。
-
-引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。这意味着即使各种量子引力理论层出不穷，但以当代技术，仍然很难直接做实验以获取有效数据。目前多用宇宙学观测所得到早期宇宙的数据来筛选理论。“大一统理论”通常指沿标准模型的思路，将强相互作用同电弱作用统一的尝试。狭义上的量子引力理论只涉足引力量子化问题，广义的量子引力理论或许是人们所希望的“万物理论”。
-
-量子引力理论必须一致包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的\textbf{Planck 长度} $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着涨落的特征尺度在 Planck 长度的量级。
-
-%% KK 理论
-
 \section{标架表述}\label{sec:tetrad}
 \begin{comment}
 引力规范理论涉及局域化，但局域化本身并不要求时空无挠。前文用度规和 Levi-Civita 联络表述引力，优点是直接体现等效原理，缺点是局域 Lorentz 对称性被藏在了坐标变换里。若要把引力同 Yang-Mills 型规范理论放在同一语言下，尤其要处理旋量场，就应改用\textbf{标架}(tetrad/vierbein)。
@@ -3397,3 +3108,292 @@ $R_{ij}=:\Lambda_{ij}+S_{ij}$，
 再令 $u_2=u_3=0$ 就有 $\Lambda_{11}=\Lambda_{00}=\gamma, \Lambda_{01}=\Lambda_{01}=-\gamma u_1$，即二维增速变换，常记作 $\Lambda(\theta)$。鉴于此，任意 Lorentz 变换可用 $R_{1},R_{2}\in\mathrm{SO}(3)$ 表为 $R_{1} \Lambda(\theta) R_{2}$ 的形式。
 
 \end{comment}
+
+\section{修改理论}
+
+\subsection{标量-张量理论}\label{sec:scalar}
+
+1960 年代，Brans 和 Dicke\cite{Brans-Dicke} 提出了一个接近 Mach 原理愿景的引力理论。
+首先注意，在地球的某个自由落体电梯中，等效原理的解释是电梯与乘客加速度一致，而 Mach 原理的解释是乘客的地球引力与星空背景的作用抵消。Newton 理论给出的地球引力为 $a=Gm/r^2$。假设星空背景有某种宇观质量 $M$ 和半径 $R$，并施加相同 $a$，根据量纲分析可知数量级上 $\frac{Gm}{r^2}\sim \frac{Rm}{Mr^2}$（几何制），因此 $\frac{1}{G}\sim\frac{M}{R}$。一种理解是 $\frac{M}{R}$ 由理论给出，而质量分布由广义相对论场方程的某个边界条件给出。还有一种是局部观察的 $G$（或场源质量）是随时空点变化的，其值由附近的质量分布决定。
+假设 $G$ 是某个标量场的函数。首先想到 Ricci 标量，但它含有度规一阶导，随着与场源距离 $r$ 的增大，它比 $1/r$ 减小得还快。这种标量主要由附近质量分布决定，而非远处物质。因此，我们需要一个独立于度规以外的新标量场 $\phi$，但二者都用于描述引力场。假设理论是线性的，则前文表明乘客的惯性力贡献应是引力常数的倒数，即 $\phi\sim\frac{1}{G}$。
+进而自由引力场加上标量场的部分为
+\eq{
+\tcbhighmath{
+    \Lag_G=\frac{1}{16\pi} \left(\phi R-\frac{\omega(\phi)}{\phi}\p_\mu \phi \p^\mu \phi-2\Lambda(\phi)\right),
+}
+}
+其中 $\omega$ 是耦合参数，$\frac{\omega}{\phi}$ 是为了使 $\omega$ 无量纲，并且还引入了$\Lambda(\phi)$ 代表可变的宇宙学常数。这就是\textbf{标量-张量理论}。准确地说，是
+$\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
+可以看到不存在真正的自由引力场，自由引力场实际以耦合项 $\phi R\sqrt{-g}$ 出现，且无法在局域惯性系中退回到 $\phi$，因此一定程度上破坏了等效原理。
+
+先对 $g^{\mu\nu}$ 变分，则
+\begin{align*}
+    16\pi \var(\Lag_G\sqrt{-g})&=\phi\left( G_{\mu\nu} \var g^{\mu\nu}+g^{\mu\nu}\var R_{\mu\nu}\right) \sqrt{-g}+ \Lambda g_{\mu\nu} \var g^{\mu\nu}\sqrt{-g}\\
+&-\frac{\omega}{\phi}\left(\p_\mu\phi \p_\nu\phi-\frac 12 g_{\mu\nu}\p_\lambda \phi \p^\lambda\phi\right)\var g^{\mu\nu}\sqrt{-g},
+\end{align*}
+其中注意 $g^{\mu\nu}\var R_{\mu\nu}=2\cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]})$ 乘了 $\phi$，需进行分部积分：
+\begin{align*}
+    2 \phi \cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]}) &\simeq -2  g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]} \cd_\lambda \phi = 2 g_{\mu\nu}\cd^{[\nu} \delta g^{\lambda]\mu} \cd_\lambda \phi \\
+    &\simeq g_{\mu\nu} \delta g^{\mu\nu}\cd^\lambda \cd_\lambda \phi - \delta g^{\mu\lambda} \cd_\mu\cd_\lambda \phi = (g_{\mu\nu} \square_g \phi - \cd_\mu\cd_\nu \phi) \delta g^{\mu\nu}.
+\end{align*}
+故引入物质场后的结果为
+\eq{
+    \phi G_{\mu \nu}+\Lambda g_{\mu\nu}=8 \pi T_{\mu \nu}+\frac{\omega}{\phi}\left(\p_\mu \phi \p_\nu \phi-\frac{1}{2} g_{\mu \nu} \p_\lambda \phi \p^\lambda \phi\right)+\cd_\mu \cd_\nu \phi-g_{\mu \nu} \square_g \phi,
+}
+并注意其迹为
+\eq{\label{eq:BDtrace}
+    -\phi R+4 \Lambda = 8 \pi T-\frac{\omega}{\phi}\p_\lambda \phi \p^\lambda \phi-3\square_g \phi.
+}
+
+再对 $\phi$ 变分：
+\[16\pi\var(\Lag_G\sqrt{-g})= \left(\left(R-2\dv{\Lambda}{\phi}\right)\var\phi - \frac{1}{\phi}\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}\var\phi - \omega\var(\frac{1}{\phi}\p_\mu \phi \p^\mu \phi)\right) \sqrt{-g},\]
+其中
+\begin{align*}
+    \var(\frac{1}{\phi}\p_\mu \phi \p^\mu \phi) 
+    & = -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi+\frac{2}{\phi} \p^\mu \phi  \p_\mu \var\phi \simeq -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi-2 \cd_\mu\left(\p^\mu \phi \frac{1}{\phi}\right) \var\phi \\
+    & = -\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi \var\phi-\frac{2}{\phi} \square_g \phi \var\phi+\frac{2}{\phi^2} \p^\mu \phi \p_\mu \phi \var\phi \\
+    & = \left(\frac{1}{\phi^2} \p_\mu \phi \p^\mu \phi  - \frac{2}{\phi} \square_g \phi \right)\var\phi .
+\end{align*}
+进而
+\[
+    R-2\dv{\Lambda}{\phi}-\frac{1}{\phi}\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}- \frac{\omega}{\phi^2} \p_\mu \phi \p^\mu \phi  + \frac{2\omega}{\phi} \square_g \phi=0.
+\]
+利用 \eqref{eq:BDtrace} 式替换掉 $R$ 可得
+\eq{
+    (3+2\omega) \square_g \phi+4\Lambda-2\phi\dv{\Lambda}{\phi}-\p_\mu \phi \p^\mu \phi\dv{\omega}{\phi}=8 \pi T.
+}
+
+具体地，考虑 $\dv*{\omega}{\phi}=0$ 和 $\Lambda=0$，则
+\eq{
+    \Lag_G=\frac{1}{16\pi} \left(\phi R-\omega \phi^{-1} \p_\mu \phi \p^\mu \phi\right),
+}
+进而
+\begin{gather}
+    G_{\mu \nu}=\frac{8 \pi}{\phi} T_{\mu \nu}+\frac{\omega}{\phi^2}\left(\p_\mu \phi \p_\nu \phi-\frac{1}{2} g_{\mu \nu} \p_\lambda \phi \p^\lambda \phi\right)+\frac{1}{\phi}\left(\cd_\mu \cd_\nu \phi-g_{\mu \nu} \square_g \phi\right), \\
+    \square_g\phi=\frac{8 \pi}{3+2 \omega} T.
+\end{gather}
+此即\textbf{Brans-Dicke 理论}。可见若 $\omega\to\infty$，则 $\phi$ 没有贡献，退回广义相对论。
+根据论文 \cite{Bhabra} 的结果，
+从 Schwarzschild 解的角度来看，对于非常大的 $\omega$，那么现有实验精度下，广义相对论和 Brans-Dicke 理论就已不可分辨。既然如此就选择广义相对论。截止到 2003年，
+飞往土星的 Cassini 飞船的 D\"oppler 跟踪(tracking)\cite{Will-thesis}的测量结果为 $\omega>40000$，
+即目前观测还是更倾向于广义相对论。
+
+%\subsubsection{\texorpdfstring{$f(R)$ 理论}{f(R) 理论}}
+
+一个涉及宇宙暴胀的理论是 $f(R)$\textbf{理论}，其中自由引力场的拉氏密度为
+\[\tcbhighmath{\Lag_G=f(R).}\]
+记标量场 $f_R:=\dv*{f(R)}{R}$。变分有
+\begin{align*}
+\delta S_G &= \int\d[4]x\sqrt{-g}\, \left(f_R \delta R -\frac12 f(R) g_{\mu\nu}\delta g^{\mu\nu}\right)\\
+&=  \int\d[4]x\sqrt{-g}\, \bigg(\Big(f_R R_{\mu \nu} -\frac{1}{2} f(R) g_{\mu \nu} \Big) \delta g^{\mu \nu}+2 f_R \cd_\lambda(g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]})\bigg) \\
+&\simeq \int\d[4]x\sqrt{-g} \left(f_R R_{\mu \nu} -\frac{1}{2} f(R) g_{\mu \nu} +g_{\mu\nu} \square_g f_R - \cd_\mu\cd_\nu f_R\right) \delta g^{\mu\nu},
+\end{align*}
+加上物质场的贡献有
+\eq{
+    f_R R_{\mu \nu}-\frac{1}{2} f(R) g_{\mu \nu}+g_{\mu \nu} \square_g f_R-\cd_\mu \cd_\nu f_R=\kappa T_{\mu\nu}.
+}
+广义相对论相当于 $f(R)=R$ 或 $R-2\Lambda$。
+
+下证在适当条件下，$f(R)$ 的作用实际上相当于引入额外标量场。
+引入辅助场 \(\chi\)，考虑
+\[
+S_G
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
+\Bigl[f(\chi)+f_\chi(\chi)(R-\chi)\Bigr]
+,
+\]
+其中 $f_\chi(\chi):=\dv*{f(\chi)}{\chi}.$
+先对 \(\chi\) 变分：
+\begin{align*}
+    \delta S
+&=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
+\Bigl[f_\chi(\chi)-f_{\chi\chi}(\chi)\chi+f_{\chi\chi}(\chi)(R-\chi)-f_\chi(\chi)\Bigr]\delta\chi\\
+&=\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
+f_{\chi\chi}(\chi)(R-\chi)\,\delta\chi.
+\end{align*}
+故 \(\chi\) 的方程为 $f_{\chi\chi}(\chi)(R-\chi)=0$。
+若 $f_{\chi\chi}(\chi)\neq 0,$
+则必有 $\chi=R$。
+代回 \(S_G\)，立即恢复原来的 \(f(R)\) 作用：
+\[
+S_G\big|_{\chi=R}
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,f(R).
+\]
+因此 \(S_G\) 与原 \(f(R)\) 作用动力学等价。
+
+
+现在定义新标量场 $\phi:=f_\chi(\chi).$
+若 \(f_{\chi\chi}\neq 0\)，则此关系局部可逆，可写作 $\chi=\chi(\phi)$。
+于是定义势能 $V(\phi):=\phi\,\chi(\phi)-f(\chi(\phi))$。
+则原辅助场作用可改写为
+\[
+S_G
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,\bigl[\phi R-V(\phi)\bigr]
+.
+\]
+首先检查标量场方程。
+对 \(\phi\) 变分，
+\[
+\delta S
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
+\bigl(R-V'(\phi)\bigr)\delta\phi,
+\]
+故
+$
+R=V'(\phi)
+$。
+而由
+$
+V(\phi)=\phi\chi(\phi)-f(\chi(\phi))
+$
+可得
+\begin{align*}
+V'(\phi)
+&=
+\chi(\phi)+\phi\,\chi'(\phi)-f_\chi(\chi)\chi'(\phi) =
+\chi(\phi)+\phi\,\chi'(\phi)-\phi\,\chi'(\phi) =
+\chi(\phi).
+\end{align*}
+故标量场方程即
+$
+R=\chi(\phi)
+$，
+这正与前面的辅助场方程 \(\chi=R\) 一致。
+
+其次是度规场方程。
+对 \(g^{\mu\nu}\) 变分，得到
+\[
+\phi R_{\mu\nu}
+-\frac12 g_{\mu\nu}(\phi R-V)
++\bigl(g_{\mu\nu}\Box-\cd_\mu\cd_\nu\bigr)\phi
+=
+\kappa T_{\mu\nu}.
+\]
+整理为
+\[
+\phi G_{\mu\nu}
++\frac12 V(\phi)g_{\mu\nu}
++\bigl(g_{\mu\nu}\Box-\cd_\mu\cd_\nu\bigr)\phi
+=
+\kappa T_{\mu\nu}.
+\]
+
+与 Brans--Dicke 理论比较以下。
+一般 Brans--Dicke 型作用写作
+\[
+S_{\mathrm{BD}}
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
+\left[
+\phi R-\frac{\omega(\phi)}{\phi}\cd_\mu\phi\cd^\mu\phi-V(\phi)
+\right].
+\]
+而这里由 \(f(R)\) 得到的作用是
+\[
+S_G
+=
+\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,\bigl[\phi R-V(\phi)\bigr],
+\]
+没有显式动能项(kinetic term)，因此它等价于
+$
+\omega(\phi)=0
+$
+的 Brans--Dicke 型理论，但由于 \(\phi\) 与 \(g_{\mu\nu}\) 的非最小耦合，\(\phi\) 仍然是传播的额外自由度。
+
+考虑迹方程与标量自由度。
+对度规方程取迹，得
+\[
+\phi R-2V+3\Box\phi=\kappa T.
+\]
+再利用标量方程 \(R=V'(\phi)\)，得到
+\[
+3\Box\phi+\phi V'(\phi)-2V(\phi)=\kappa T.
+\]
+这显然是一个二阶微分方程，说明 \(\phi\) 不是代数约束，而是一个真正的额外标量自由度。
+
+综上，在 \(f_{RR}\neq 0\) 的非退化情形下，度规型 \(f(R)\) 引力与一个含有额外标量场 \(\phi=f_R\) 的标量-张量理论等价。该标量场的势能为
+\[
+V(\phi)=\phi R(\phi)-f\bigl(R(\phi)\bigr),
+\]
+故 \(f(R)\) 理论实际上包含了除通常自旋 \(2\) 引力子之外的一个额外自旋 \(0\) 标量自由度。
+
+\subsection{Kaluza-Klein 理论}
+
+我们不排除更高维时空的存在，将四维时空中的相互作用视作更高维物理的结果。
+Kaluza 最先注意到电磁张量看起来像截断克氏符：引入第五（空间）维度使得 $A_{\mu}=g_{\mu 4}$，假定 $g_{\mu\nu,4}=0$ 则
+\eq{
+    \Gamma^\mu_{\nu 4}=\frac{1}{2}g^{\mu\sigma}\left(2g_{4[\sigma,\nu]}+g_{\sigma\nu,4}\right)=-\frac{1}{2}F^\mu{}_{\nu}.
+}
+其中 $\mu,\nu$ 只取 $0,1,2,3$。假设五维“度规”形如
+\eq{
+    \d\hat s^2=\hat g_{ab}\d x^a\d x^b=g_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2,
+}
+其中 $a,b$ 取 $0,1,2,3,4$。
+也即
+$\hat g_{\mu\nu}=g_{\mu\nu}+\lambda^2 A_{\mu}A_{\nu},\ \hat g_{\mu 4}=\lambda A_\mu,\ \hat g_{44}=1$。
+这一“度规”显然对任意四维变换 $x'^\mu(x^\nu)$ 或平移 $x'^5=x^5+f(x^\nu)$ 不变，但对任意五维变换可变，故并非真正的五维流形上的度规。后者的结果正是规范变换 $A'_\mu=A_\mu-\p_\mu f$。
+换言之，我们将 U(1) 对称性的内部自由度 $\theta$ 解释到了第五维 $x^4$。
+依次计算克氏符、Ricci 张量和 Ricci 标量可得
+\eq{
+    \hat R=R-\frac{\lambda^2}{4}F_{\mu\nu}F^{\mu\nu}.
+}
+这意味着五维几何 $\hat{\Lag}=\hat R$ 可在四维时空下分化出引力和电磁作用，称为\textbf{Kaluza 奇迹}。为求五维度规行列式，只需先对角化。考虑
+$H^\mu{}_{\nu}=\delta^\mu_\nu,\ H^4{}_{\nu}=-\lambda A_\nu,\ H^\mu{}_{4}=0,\ H^4{}_{4}=1$，
+则 $\hat g_{\mu a} H^a{}_{\nu}=g_{\mu\nu},\ \hat g_{\mu a} H^a{}_{4}=\lambda A_\mu,\ \hat g_{4 a} H^a{}_{\nu}=0,\ \hat g_{4 a} H^a{}_{4}=1$。因此 $\hat g=g$。
+但我们需要使对 $x^4$ 的积分收敛。注意 U(1) 变换中 $\theta$ 是周期等效的，因而第五维度对应于某个圆周。因而 U(1) 等效为了 SO(2)。这便是\textbf{紧化}(compactication)思想之源，最先由 Oskar Klein 引进。$g_{\mu\nu,4}=0$ 也称\textbf{圆柱条件}(cylindricity condition)。五维“时空”并非流形，在数学上是\textbf{纤维丛}(fiber bundle)，四维时空作为其\textbf{底流形}而第五维圆圈作为其\textbf{纤维}。假设半径 $L$，则
+\eq{
+\tcbhighmath{
+    \hat S=\frac{1}{16\pi\hat G}\int \hat R \sqrt{-\hat g} \d^5 x=\frac{L}{8\hat G}\int\hat R \sqrt{- g} \d[4]{x},
+}
+}
+Gauss 几何制下取 $\hat G=2\pi L,\lambda=2$ 即得真空 Einstein-Maxwell 作用量。再考虑五维测地线方程 $\ddot x^a+\Gamma^a_{bc}\dot x^b \dot x^c=0$。首先由圆柱条件知守恒量 $\pdv*{\Lag}{\dot x^4}\propto\dot x^4+A_\mu\dot x^\mu$。剩余分量为
+\eq{
+    \ddot x^\lambda+\Gamma^\mu_{bc}\dot x^b \dot x^c=\ddot x^\lambda+\Gamma^\lambda_{\mu\nu}\dot x^\mu \dot x^\nu-F^\lambda{}_\mu\dot x^\mu(\dot x^4+A_\nu\dot x^\nu)=0,
+}
+若用荷质比来确定守恒量，则这正是 Lorentz 力定律 $\dot x^4+A_\nu\dot x^\nu=q/m$。从而经典电磁力、经典引力得到统一。
+带电粒子与中性粒子具有不同运动，这并不违反等效原理，而只是因为它们在 $x^4$ 上有不同初速度。
+
+这一理论当然差强人意。$\hat R_{ab}=0$ 的真正结果为
+\eq{
+    F_{\mu\nu}F^{\mu\nu}=0,\quad \cd_\mu F^{\mu\nu}=0,\quad R_{\mu\nu}=2 F_{\mu\sigma}F_{\nu}{}^{\sigma},
+}
+第三式只是真空 Einstein-Maxwell 方程 $R_{\mu\nu}=8\pi T_{\mu\nu}$ 在第一式成立的特例。第一式源于 $\hat R_{44}=0$。这是因为变分原理并不能保证 $\hat g_{44}=1$ 假设。从而，五维假设显得非常人为。最重要的是，我们始终在讨论经典理论，并未真正考虑量子力学。实际上，强、弱相互作用的概念在 Einstein 逝世后才被彻底确立。
+
+此外还必须解释为何从未发现第五维度。置五维闵氏时空上的复标量场 $\hat\phi$。方便起见考虑无质量，Klein-Gordon 方程为
+\eq{
+    \hat\eta^{ab}\p_a\p_b\hat\phi=0,\quad \hat\phi=\sum_n\phi_n(x^\mu)\e^{\i n x^4/L},
+}
+其中由周期性 $x^4\sim x^4+2\pi L$，可对 $\hat\phi$ 作 Fourier 展开使其与 $x^4$ 的依赖关系更明确。代入展开式得到无穷多个解耦方程，即对 $\hat\phi$ 的无穷多 Fourier 模 $\phi_n$ 均有
+\eq{
+    (\square-m_n^2)\phi_n^2=0,\quad m_n^2={n^2}/{L^2}.
+}
+其中质量项源于 $\p_{44}$。可见五维时空上的无质量标量场会产生 $n=0$ 的四维无质量场\footnote{但仍有 d'Alembert 方程，故内部空间是谐振的或振动模固定。}、$n\ne 0$ 的无穷多有质量场。这种质量称为 Kaluza-Klein 模。
+
+四维闵氏度规在五维上的拓展其实应为 $\d\hat s^2=\eta_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2$，则 $\hat g=g=-1$。因此 $\hat g^{\mu\nu}=\eta^{\mu\nu},\hat g^{\mu 4}=-\lambda A^\mu,\hat g^{44}=1+\lambda^2 A^\mu A_\mu$。
+Klein-Gordon 方程变为
+\[
+    0=\square_{\hat g}\hat\phi=\p_a\left(\hat g^{ab}\p_b \hat\phi\right)=\eta^{\mu\nu}(\p_\mu-\lambda A_\mu\p_4)(\p_\nu-\lambda A_\nu\p_4)\hat\phi+\p_4^2\hat\phi,
+\]
+将 Fourier 分解代入，则对任意 $\phi_n$ 有
+\[
+    \left(\eta^{\mu\nu}\left(\p_\mu-\i\frac{\lambda_n}{L} A_\mu\right)\left(\p_\nu-\i\frac{\lambda_n}{L} A_\nu\right)-m_n^2\right)\phi_n=0,
+\]
+可见非零模不仅有质量，且在规范场 $A_\mu$ 下带电。$\p_\mu-\lambda m_n A_\mu$ 与规范协变导数 $\p_\mu-\i ne A_\mu$ 对比得元电荷 $e=\lambda/L$。还原国际单位有 $e=\hbar\lambda/L$，以及 $\frac{c^4}{16\pi }R-\frac{1}{4\mu_0}$。
+
+$\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g$。
+
+时空各点的额外维蜷缩(curled up)，从而只剩下我们经验中看到的时空本身。
+
+尽管有诸多缺陷，Wheeler 仍表示“几何动力学”拓展到其它相互作用是有希望的。20 世纪末，\textbf{弦论}(string theory)继承了高维几何的衣钵，利用极小对象“弦”部分地得到了广义相对论、量子场论的结果。此外还有企图构建背景无关量子场论的\textbf{圈量子引力}(loop quantum gravity)、研究非交换几何的\textbf{CLCB 理论}，它们皆只部分地回答了量子引力的疑难。目前前沿话题还包括引力同统计物理、信息论的联系，诸如\textbf{熵力理论}、\textbf{黑洞信息学}，以及受场论和凝聚态影响的\textbf{超对称理论}。
+我们以后再详细学习。
+
+引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。这意味着即使各种量子引力理论层出不穷，但以当代技术，仍然很难直接做实验以获取有效数据。目前多用宇宙学观测所得到早期宇宙的数据来筛选理论。“大一统理论”通常指沿标准模型的思路，将强相互作用同电弱作用统一的尝试。狭义上的量子引力理论只涉足引力量子化问题，广义的量子引力理论或许是人们所希望的“万物理论”。
+
+量子引力理论必须一致包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的\textbf{Planck 长度} $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着涨落的特征尺度在 Planck 长度的量级。
+
+%% KK 理论
