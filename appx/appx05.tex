@@ -8,7 +8,7 @@
 
 
 \begin{definition}
-    流形上的形式场称为\textbf{微分形式}（场）。常取对偶坐标基将 $l$-微分形式 $\omega$ 表为
+    流形上的形式场称为\textbf{微分形式}。常取对偶坐标基将 $l$-微分形式 $\omega$ 表为
     \eq{
     \omega=\sum_{\mu_1<\cdots<\mu_l}\omega_{\mu_1\cdots\mu_l} \d x^{\mu_1}\wedge\cdots\wedge \d x^{\mu_l}=\frac{1}{l!}\omega_{\mu_1\cdots\mu_l} \d x^{\mu_1}\wedge\cdots\wedge \d x^{\mu_l}.
     }
@@ -18,7 +18,7 @@
 \begin{definition}
     \textbf{外微分}(exterior derivative)是映射 $\d:\Lambda_l(V)\to\Lambda_{l+1}(V)$ 使
     \eq{
-        \d\omega :=\sum_{\mu_1<\cdots<\mu_l}\d(\omega_{\mu_1\cdots\mu_l})\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
+        \d\omega :=\sum_{\mu_1<\cdots<\mu_l}\d\omega_{\mu_1\cdots\mu_l}\wedge\d x^{\mu_{1}}\wedge\cdots\wedge\d x^{\mu_{l}}=\frac{1}{l!}\d\omega_{\nu_1\cdots\nu_l}\wedge\d x^{\nu_{1}}\wedge\cdots\wedge\d x^{\nu_{l}}.
     }
 \end{definition}
 
@@ -69,8 +69,8 @@
 
 \begin{example}
     电磁张量 $F_{\mu\nu}$ 正是 $\R^{3+1}$ 上的 $2$-形式。\textbf{电流密度形式} $J$ 为
-\eq{J=\rho_0 U_\flat=-\rho \,\mathrm{d} x^{0}+j_{i} \,\mathrm{d} x^{i},}
-$\rho_0$ 为固有电荷密度。进而 Maxwell 方程组的外微分语言为
+\eq{J=\rho U_\flat=-J^0 \,\mathrm{d} x^{0}+J^1 \d{x^1}+J^2 \d{x^2}+J^3 \d{x^3},}
+$\rho$ 为固有电荷密度。进而 Maxwell 方程组的外微分语言为
 \eq{\d F=0,\quad \delta F=4\pi J.}
 可见 $F$ 是闭形式。
 第二式又可表为 $\mathrm{d}F^*=4\pi{\star J}$，其中 $F^*:={\star}F$ 称为\textbf{对偶电磁张量}。
