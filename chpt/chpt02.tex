@@ -8,8 +8,7 @@
 
 %% Killing
 
-以一质点为空间坐标原点，观测结果建议\textit{质点引力场呈空间球对称}(spherical symmetry)：存在坐标系 $\{\bar t,\bar r,\theta,\phi\}$，空间部分为正交球坐标系，且变换 $\theta\mapsto -\theta,\phi\mapsto -\phi$ 保持度规形式，则对经纬度只存在 $\d\theta^2,\d\phi^2$ 项；$\Sigma_{\bar t}$ 内任意 $\bar r$ 球面的诱导度规为 $K(\bar t,\bar r)\d\Omega^2$；
-其余分量只与 $\bar t,\bar r$ 有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
+有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
 \[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
 然而 $\d\Omega^2$ 系数可无关于坐标时。令 $r^2=K(\bar t,\bar r)$，则 $2r\d r=\pdv{K}{\bar t}\d\bar t+\pdv{K}{\bar r}\d\bar r$，代入
 \begin{align*}
@@ -30,7 +29,7 @@
 \end{align*}
 其中 $\mu(\hat t,r),\nu(\hat t,r)$ 可以是复函数。
 
-再利用场方程确定分量：质点模型使对 $r\ne 0$ 均满足真空方程 $R_{\mu\nu}=0$。
+再利用真空方程确定分量。
 使用 $\Gamma^\lambda_{\mu\nu}\d x^\mu\d x^\nu$ 或对 $L=\e^{2\nu}(\dv{\hat t}{\tau})^2-\e^{2\mu}(\dv{r}{\tau})^2-r^2(\dv{\Omega}{\tau})^2$ 变分得
 \begin{align*}
     & \Gamma_{00}^0=\dot{\nu}, \quad \Gamma_{01}^0=\nu^{\prime}, \quad \Gamma_{11}^0=\e^{2(\mu-\nu)} \dot{\mu}, \\& \Gamma_{00}^1=\e^{2(\nu-\mu)} \nu^{\prime}, \quad \Gamma_{01}^1=\dot{\mu}, \quad \Gamma_{11}^1=\mu^{\prime}, \quad \Gamma_{22}^1=-r \e^{-2 \mu}, \quad \Gamma_{33}^1=-r \e^{-2 \mu} \sin ^2 \theta, \\
