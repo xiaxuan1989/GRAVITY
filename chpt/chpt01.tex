@@ -1022,7 +1022,7 @@ Lorenz 规范下无源波动方程 $\square A_\mu = 0$。
 不失一般性，考虑简单平面波 $A_\mu = \Re{C_\mu \e^{\i\theta}}$，其中 $C_\mu\in\C$ 称\textbf{偏振矢}。
 考虑常偏振 $\p_\mu C^\nu = 0$。
 由 $\square A_\mu = 0$ 得 $k^\mu k_\mu = 0,\p_\mu k^\mu=\square\theta=0$，其中 \textbf{4-波矢}为 $k^\mu = \p_\mu\theta$，取积分常数为零则 $\theta = kx = k^\mu x_\mu = -\omega t+\bm k\cdot\bm x \in \R$。
-记角频率 $\omega=k^0$，由 $k^\mu k_\mu=0$ 得 $\omega=|\bm k|$，波长为 $\lambda = \frac{1}{\nu} = \frac{2\pi}{\omega}$。
+记角频率 $\omega=k^0$，由 $k^2:=k^\mu k_\mu=0$ 得 $\omega=|\bm k|$，波长为 $\lambda = \frac{1}{\nu} = \frac{2\pi}{\omega}$。
 并且
 \[
     0=\p_\nu(k^\mu k_\mu) = 2k^\mu\p_\nu \p_\mu \theta =  2k^\mu\p_\mu \p_\nu \theta = 2k^\mu \p_\mu k_\nu.
@@ -1030,7 +1030,9 @@ Lorenz 规范下无源波动方程 $\square A_\mu = 0$。
 因此 $k^\mu$ 走类光测地线，光是一种电磁波。常偏振、波矢的波称\textbf{单色平面波}。
 现实中的电磁波只能近似成为单色平面波。考虑 $A_\mu = \Re{C_\mu \e^{\i\theta}}$ 但 $\p_\mu C_\nu \ll \p_\mu\theta C_\nu$，也即 $C_\mu$ 缓变，$\theta$ 快变，则 $\square A_\mu \approx 0$ 仍然成立。这样的解称为\textbf{准单色平面波}。
 准单色平面波可看做一大群光子的叠加，每个光子具有近似相同的 $k^\mu,C_\mu$。
-光虽不能定义固有时和质量，但可借 de Broglie 关系定义 $p^\mu=\hbar k^\mu$。$\hbar = 1$ 单位制下 $p^\mu,k^\mu$ 不再区分。
+
+%% 
+光虽不能定义固有时和质量，但由能动张量分析知，电磁波的能量、动量正比于频率和 3-波矢。进一步，可借量子理论的 de Broglie 关系定义单个光子的 $p^\mu=\hbar k^\mu$。$\hbar = 1$ 单位制下 $p^\mu,k^\mu$ 不再区分。
 
 设观者、光源各有 4-速 $U^\mu,V^\mu$。光源在发光时测得 $\omega=-k^\mu V_\mu$，观者在接收时测得 $\omega'=-k^\mu U_\mu$。记 $\gamma = - V^\mu U_\mu$，沿 $V^\mu$ 做 3+1 分解 $k^\mu=\omega V^\mu + \bm k^\mu,U^\mu = \gamma V^\mu + \gamma \bm u^\mu$。则
 \[
@@ -1058,10 +1060,38 @@ Lorenz 规范下无源波动方程 $\square A_\mu = 0$。
 可以看到 $\bm E,\bm B$ 的轨迹为椭圆。
 如果 $\bm{\alpha},\bm{\beta}$ 平行，波是平面偏振或线偏振的；如果 $\bm{\alpha} \cdot \bm{\alpha}=\bm{\beta} \cdot \bm{\beta},\bm{\alpha} \cdot \bm{\beta}=0$，波则是圆偏振的。
 
-用 Fourier 分析可证明真空中每个解都是单色平面波的组合。
+对于真空方程这种线性自由方程，通解是单色平面波的 Fourier 叠加，
+\[A_\mu(x)=\int\frac{\d[4]k}{(2\pi)^4} \tilde A_\mu(k) \e^{\i kx},\]
+代回方程 $\square A_\mu = \int\frac{\d[4]k}{(2\pi)^4} \tilde A_\mu(k) (-k^2)\e^{\i kx}=0$，故对每个模式 $k$，系数 $\tilde A_\mu(k)$ 必须集中在光锥 $k^2=0$，即 $\tilde A_\mu(k)=C_\mu(k) \delta(k^2)$，于是
+\eq{
+    A_\mu(x)=
+\int\frac{\d[3]k}{(2\pi)^3 2|\bm k|}
+\left(
+a_\mu(\bm k)\e^{-\i|\bm k|t+\i\bm k\cdot\bm x}
++
+b_\mu(\bm k)\e^{\i|\bm k|t+\i\bm k\cdot\bm x}
+\right).
+}
 
-同理，$A_\mu(x)=\int a_\mu(k) \e^{\i\theta} \d[4]k$，
-所以 $\square A_\mu = \int a_\mu \e^{\i\theta} \square\theta \d[4]k$，
+如果 $A_\mu(x)$ 是实场，还要有现实性条件，例如
+
+\[
+\tilde A_\mu(-k)=\tilde A_\mu(k)^* .
+\]
+
+如果你还在电磁场里加 Lorenz gauge
+
+\[
+\partial^\mu A_\mu=0,
+\]
+
+那么 Fourier 空间还要满足
+
+\[
+k^\mu \tilde A_\mu(k)=0.
+\]
+
+
 
 \section{广义相对论}
 
