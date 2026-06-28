@@ -1060,38 +1060,6 @@ Lorenz 规范下无源波动方程 $\square A_\mu = 0$。
 可以看到 $\bm E,\bm B$ 的轨迹为椭圆。
 如果 $\bm{\alpha},\bm{\beta}$ 平行，波是平面偏振或线偏振的；如果 $\bm{\alpha} \cdot \bm{\alpha}=\bm{\beta} \cdot \bm{\beta},\bm{\alpha} \cdot \bm{\beta}=0$，波则是圆偏振的。
 
-对于真空方程这种线性自由方程，通解是单色平面波的 Fourier 叠加，
-\[A_\mu(x)=\int\frac{\d[4]k}{(2\pi)^4} \tilde A_\mu(k) \e^{\i kx},\]
-代回方程 $\square A_\mu = \int\frac{\d[4]k}{(2\pi)^4} \tilde A_\mu(k) (-k^2)\e^{\i kx}=0$，故对每个模式 $k$，系数 $\tilde A_\mu(k)$ 必须集中在光锥 $k^2=0$，即 $\tilde A_\mu(k)=C_\mu(k) \delta(k^2)$，于是
-\eq{
-    A_\mu(x)=
-\int\frac{\d[3]k}{(2\pi)^3 2|\bm k|}
-\left(
-a_\mu(\bm k)\e^{-\i|\bm k|t+\i\bm k\cdot\bm x}
-+
-b_\mu(\bm k)\e^{\i|\bm k|t+\i\bm k\cdot\bm x}
-\right).
-}
-
-如果 $A_\mu(x)$ 是实场，还要有现实性条件，例如
-
-\[
-\tilde A_\mu(-k)=\tilde A_\mu(k)^* .
-\]
-
-如果你还在电磁场里加 Lorenz gauge
-
-\[
-\partial^\mu A_\mu=0,
-\]
-
-那么 Fourier 空间还要满足
-
-\[
-k^\mu \tilde A_\mu(k)=0.
-\]
-
-
 
 \section{广义相对论}
 
