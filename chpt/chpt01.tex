@@ -818,8 +818,8 @@ $N^{\lambda\mu\nu}=N^{\lambda[\mu\nu]}$ 的求导为 $\p_\lambda N^{\lambda\mu\n
 可见消除不同的边界项会读出不同能动张量。
 选择 $B^{\mu\nu}$ 对应于只要求 $\p_\mu\epsilon=o(1/r^3)$ 而不要求 $\epsilon=o(1/r^3)$。这说明这里所选的局域化 $\epsilon(x)$ 在无穷远渐近为整体 Lorentz 变换。
 
-\subsection{粒子系统}
 
+粒子系统可以用场论表述。
 类似于同时面，空间弦（世界面）、空间质点（世界线）乃至单一事件涉及的积分都可借助 $\delta$ 函数。
 先推广到 $n$ 维：
 \eq{
@@ -896,8 +896,8 @@ $U(\phi)$ 可展为 $\phi$ 的多项式。一次项可通过平移收进新定�
 最简单取法是 $U(\phi)=\frac 12 m^2\phi^2$（$\hbar = 1$），得\textbf{Klein-Gordon 方程} $(\square-m^2)\phi=0$。
 从而 $\Ham = \frac 12 (\dot\phi^2 + (\grad\phi)^2 + m^2\phi^2) \geqslant 0$ 有下界。
 量子力学的成功启发我们考虑一个复标量场 $\phi$。复标量场相当于两个实标量场的组合 $\phi=\frac{1}{\sqrt{2}}(\phi_1+\i \phi_2)$。$\phi,\phi^*$ 线性独立，代表两个相互独立的自由度。
-共轭复数的乘积 $\phi\phi^*$ 为非负实数。故考虑构造：
-\[\Lag_\text{free}=-\p^\mu\phi\p_\mu\phi^*-m^2\phi\phi^* = -\frac 12\p^\mu\phi_1\p_\mu\phi_1 - \frac 12 m^2\phi_1^2 -\frac 12\p^\mu\phi_2\p_\mu\phi_2 - \frac 12 m^2\phi_2^2.\]
+共轭复数的乘积 $\phi^*\phi$ 为非负实数。故考虑构造：
+\[\Lag_\text{free}=-\p^\mu\phi^*\p_\mu\phi-m^2\phi^*\phi = -\frac 12\p^\mu\phi_1\p_\mu\phi_1 - \frac 12 m^2\phi_1^2 -\frac 12\p^\mu\phi_2\p_\mu\phi_2 - \frac 12 m^2\phi_2^2.\]
 二者各自的运动方程为 $(\square-m^2)\phi=(\square-m^2)\phi^*=0$。
 上式不仅 $Z_2$、Lorentz 不变，且在\textbf{U(1) 整体相位变换} $\phi' =\e^{\i \theta} \phi$（从而 $(\phi^*)' = \e^{-\i \theta} \phi^*$）下不变。称为\textbf{U(1) 整体对称性}。$\phi'= \e^{\i q \alpha} \phi$ 的一阶改变为 $\bar\var\phi=\var\phi =\e^{\i q\alpha} \phi-\phi=\i q\alpha \phi,\delta \phi^* =-\i q\alpha \phi^*$。因此 Noether 流为
 \[J^\mu_\text{free} := \frac{1}{\alpha}\left((-\p^\mu\phi^*)\var\phi + (-\p^\mu\phi)\var\phi^*\right) = \i q(\phi^* \p^\mu \phi - \phi\p^\mu \phi^*) =: \i q \phi^*\overleftrightarrow{\p^\mu}\phi.\]
@@ -924,8 +924,8 @@ $\gamma^\mu$ 称为\textbf{Dirac 矩阵}，满足 $\{\gamma^\mu,\gamma^\nu\}:=\g
 可见新作用量相当于将 $\p$ 替换为\textbf{规范协变导数} $\D$。
 考虑替换法来直接构造出（注意 $(\D_\mu \phi)^* = \p_\mu \phi^* - \i q A_\mu \phi^*$）
 \begin{align*}
-    \quad \Lag&=-\D^\mu\phi (\D_\mu \phi)^* - m^2\phi\phi^* = \Lag_\text{free} + \i q \phi^*\overleftrightarrow{\p^\mu}\phi A_\mu - q^2 A^\mu A_\mu \phi\phi^*,\\
-    J^\mu&= \i q \phi^*\overleftrightarrow{\D^\mu}\phi = \i q \phi^*\overleftrightarrow{\p^\mu}\phi - 2 q^2 A^\mu \phi\phi^*.
+    \quad \Lag&=-\D^\mu\phi (\D_\mu \phi)^* - m^2\phi^*\phi = \Lag_\text{free} + \i q \phi^*\overleftrightarrow{\p^\mu}\phi A_\mu - q^2 A^\mu A_\mu \phi^*\phi,\\
+    J^\mu&= \i q \phi^*\overleftrightarrow{\D^\mu}\phi = \i q \phi^*\overleftrightarrow{\p^\mu}\phi - 2 q^2 A^\mu \phi^*\phi.
 \end{align*}
 可以预料作用量并非 $\Lag_\text{free} + J^\mu A_\mu$ 形式，因为 $J^\mu$ 含有 $A_\mu$。但仍然有 $\delta\Lag = J^\mu\delta A_\mu$，作用量可满足局域对称性。
 直观上，因为标量场涉及 $\D^\mu$ 的二次方，因此展开必多出 $A^\mu A_\mu$ 项。旋量场作用量则只含一次方。
@@ -984,7 +984,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 
 %% 回到经典
 
-另一使 $F_{\mu\nu}$ 直接出现并表现场强含义的方法，是考虑经典带电粒子与电磁场的耦合。一般可以通过 WKB 近似或波包法，来求出量子物理量的期望，并 $\hbar\to 0$ 得到经典极限。比如，考虑标量平面波 $\phi = B\e^{\i px}$，$J^\mu_\text{free} = \i q \phi^*\overleftrightarrow{\p^\mu}\phi = 2 q B^2 p^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。可见经典电流密度应形如
+另一使 $F_{\mu\nu}$ 直接出现并表现场强含义的方法，是考虑经典带电粒子与电磁场的耦合。考虑标量平面波 $\phi = B\e^{\i kx}$，$J^\mu_\text{free} = \i q \phi^*\overleftrightarrow{\p^\mu}\phi = 2 q B^2 k^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。可见经典电流密度应形如
 \eq{
     J^\mu = \sum_n q_n \dot x^\mu_n \delta^3(x-x_n) = \rho U^\mu, \quad \rho = \sum_n \frac{q_n}{\gamma_n} \delta^3(x-x_n).
 }
