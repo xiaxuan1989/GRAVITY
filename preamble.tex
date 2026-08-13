@@ -55,13 +55,9 @@
     Scale = 0.9]
 
 % 中文字体
-\usepackage{ctex}
-\xeCJKsetup{AutoFakeBold=true}      % 自动伪粗体
-\setCJKmainfont[
-    BoldFont = FandolSong-Bold,     % 粗体
-    ItalicFont = FandolKai-Regular, % 斜体
-    Mapping = fullwidth-stop        % 全角句点
-]{FandolSong-Regular}
+\usepackage[fontset=none]{ctex}
+\defaultfontfeatures{Mapping=fullwidth-stop}
+\ctexset{fontset=fandol}
 
 % 数学字体
 \usepackage{mathrsfs}               % 花体

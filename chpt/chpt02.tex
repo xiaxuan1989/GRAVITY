@@ -103,6 +103,10 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 
 \subsection{引力红移}
 
+回忆一下。设观者、光源各有 4-速 $U^\mu,V^\mu$。光源在发光时测得 $\omega=-k^\mu V_\mu$，观者在接收时测得 $\omega'=-k^\mu U_\mu$。记 $\gamma = - V^\mu U_\mu$，沿 $V^\mu$ 做 3+1 分解 $k^\mu=\omega V^\mu + \bm k^\mu,U^\mu = \gamma V^\mu + \gamma \bm u^\mu$。则
+\[\omega'=-\gamma (\omega V_\mu + \bm k_\mu) (V^\mu + \bm u^\mu) = \gamma (\omega - \bm k_\mu \bm u^\mu) = \gamma \omega (1 - u \cos \theta),\]
+其中 $u=|\bm u|$，$\theta$ 为（光源系中）$\bm k,\bm u$ 夹角。此即\textbf{相对论 Döppler 效应}，展开级数第一项 $\omega (1 - u \cos \theta)$ 是经典 D\"oppler 效应。
+
 置两个稳态观者，一者为光源 $e$，一者为接收端 $r$。二者 4-速共线于 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，$t$ 为稳态时间。$k^\mu$ 走测地线，知 $k^\mu\xi_\mu$ 沿光路守恒。
 角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。
 或者，注意 $\omega=-\dv*{\theta}{\tau}$，也将发现 $\omega_e/\omega_r=\d\tau|_r/\d\tau|_e=\sqrt{g_{00}|_r/g_{00}|_e}$。故
