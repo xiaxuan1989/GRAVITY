@@ -479,7 +479,7 @@ $p^\mu=\eta^{\mu\nu}p_\nu=m U^\mu$ 称为\textbf{4-动量}。
 惯性系 $\{x\}$ 下 $\delta^\mu_I = e_I^\mu$ 也是一种标架。
 与 $Z^\mu$ 正交的矢量称为 $Z^\mu$ 的\textbf{空间矢量}(spatial vector)。
 $L$ 的 4-速设 $U^\mu$ 关于 $(o,Z)$ 的 \textbf{3+1 分解}为 $U^\mu = A Z^\mu + w^\mu$，其中 $w^\mu$ 是空间矢量，则 $A=-U^\mu Z_\mu = -\eta_{\mu\nu}U^\mu\delta^\nu_0 = U^\mu\delta^0_\mu = U^0$。故 $L$ 在 $(o,Z)$ 所测的 Lorentz 因子为 $\gamma=-U^\mu Z_\mu$。空间分解为 $U^\mu - U^0 Z^\mu = U^\mu + U^\nu Z_\nu Z^\mu$ 可记 $h^\mu{}_\nu U^\nu$，
-\eq{h^\mu{}_\nu:=\delta^\mu_\nu + Z^\mu Z_\nu}
+\eq{\label{eq:projection} h^\mu{}_\nu:=\delta^\mu_\nu + Z^\mu Z_\nu}
 称为\textbf{投影映射}(projection map)。
 $h^\mu{}_\nu U^\nu$ 时间分量为零，空间分量为 $U^i=\gamma\dot x^i$，因此可把 $h^\mu{}_\nu U^\nu/(-U^\mu Z_\mu)$ 作为 $Z^\mu$ 所测 3-速。若 $U^\mu=Z^\mu$，则称 $(o,Z)$ 是 $L$ 在 $o$ 的\textbf{瞬时固有观者}。固有系就是处处设置瞬时固有观者。
 
@@ -818,19 +818,19 @@ $N^\mu$ 沿 $U^\mu$ 分解为 $N^\mu=n U^\mu + j^\mu$，$n=-N^\nu U_\nu$ 是\tex
 同理任意对称张量分解为
 \eq{
 \tcbhighmath{
-T^{\mu\nu}=\varepsilon U^\mu U^\nu+2U^{(\mu}q^{\nu)}+ph^{\mu\nu}+\pi^{\mu\nu},
+T^{\mu\nu}=\varepsilon U^\mu U^\nu+2U^{(\mu}q^{\nu)}+ph^{\mu\nu}+\Pi^{\mu\nu},
 }
 }
-其中 $\varepsilon= (-U_\alpha)(-U_\beta)T^{\alpha\beta} = T^{\mu\nu}U_\mu U_\nu$ 就是\textbf{共动能量密度}；$q^\nu=-U_\alpha h^\nu{}_{\beta}T^{\alpha\beta}$ 就是固有能流密度或热流；剩下 $P^{\mu\nu}=h^\mu{}_{\alpha}h^\nu{}_{\beta}T^{\alpha\beta}$ 是空间张量（任意指标与 $U^\mu$ 缩并为零），而三维对称张量总可迹分解 $ph^{\mu\nu}+\pi^{\mu\nu}$，后者是无迹部分 $\pi^\mu{}_\mu=0$。由$h^{\mu\nu}=\eta^{\nu\lambda}h^\mu{}_\lambda=\eta^{\mu\nu}+U^\mu U^\nu$ 得 $h_{\mu\nu}T^{\mu\nu}=h_{\mu\nu}P^{\mu\nu}=P^\mu{}_\mu=3p$，故 $p=\frac13h_{\mu\nu}T^{\mu\nu}$。
-共动系中 $U^\mu=\delta^\mu_0$，则 $N^0=n$， $q^0=h^{0\mu}=\pi^{0\mu}=0$，$T^{00}=\varepsilon,T^{0i}=q^i,T^{ij}=p\delta^{ij}+\pi^{ij}$，$p=T^i{}_i/3$。
-各向同性就是空间旋转对称，一个三维矩阵要满足各向同性，就等价为正比于单位阵，故 $p h^{\mu\nu}$（共动系表为 $p\delta^{ij}$）就称\textbf{各向同性应力}；各向异性项 $\pi^{\mu\nu}$ 称\textbf{剪切应力}。
+其中 $\varepsilon= (-U_\alpha)(-U_\beta)T^{\alpha\beta} = T^{\mu\nu}U_\mu U_\nu$ 就是\textbf{共动能量密度}；$q^\nu=-U_\alpha h^\nu{}_{\beta}T^{\alpha\beta}$ 就是固有能流密度或热流；剩下 $P^{\mu\nu}=h^\mu{}_{\alpha}h^\nu{}_{\beta}T^{\alpha\beta}$ 是空间张量（任意指标与 $U^\mu$ 缩并为零），而三维对称张量总可迹分解 $ph^{\mu\nu}+\Pi^{\mu\nu}$，后者是无迹部分 $\pi^\mu{}_\mu=0$。由$h^{\mu\nu}=\eta^{\nu\lambda}h^\mu{}_\lambda=\eta^{\mu\nu}+U^\mu U^\nu$ 得 $h_{\mu\nu}T^{\mu\nu}=h_{\mu\nu}P^{\mu\nu}=P^\mu{}_\mu=3p$，故 $p=\frac13h_{\mu\nu}T^{\mu\nu}$。
+共动系中 $U^\mu=\delta^\mu_0$，则 $N^0=n$， $q^0=h^{0\mu}=\Pi^{0\mu}=0$，$T^{00}=\varepsilon,T^{0i}=q^i,T^{ij}=p\delta^{ij}+\Pi^{ij}$，$p=T^i{}_i/3$。
+各向同性就是空间旋转对称，一个三维矩阵要满足各向同性，就等价为正比于单位阵，故 $p h^{\mu\nu}$（共动系表为 $p\delta^{ij}$）就称\textbf{各向同性应力}；各向异性项 $\Pi^{\mu\nu}$ 称\textbf{剪切应力}。
 之后会证明，局域平衡的经典稀薄气体，按照相对论性能量均分定理可得气体状态方程 $p=nk_B T$。
 式右称为\textbf{平衡热力学压强}，标量场 $T$ 是温度，$k_B$ 为 Boltzmann 常数。
 非平衡分布会带来体黏滞(bulk viscosity)，上式不再成立，$p$ 是平衡压强加上体黏滞项 $p=nk_B T+\Pi$。
 
 $U^\mu$ 有两种定义办法。一种是\textbf{Eckart 标架} $U^\mu = N^\mu/\sqrt{-N^\mu N_\mu}$，则 $j^\mu=0$，理解成 $U^\mu$ 跟着整体平均运动走。另一种是 $T^{\mu\nu}$ 的类时本征矢 $T^{\mu\nu}U_\nu=-\varepsilon U^\mu$，此称\textbf{Landau 标架}，则 $q^\mu=0$，理解成 $U^\mu$ 跟着能量整体平均运动走。
 在 Laudau 共动系中 $T^{0i}=q^i=0$。
-若流体满足 $q^\mu=0$ 和（共动系）各向同性 $\pi^{\mu\nu}=0$，则可表为
+若流体满足 $q^\mu=0$ 和（共动系）各向同性 $\Pi^{\mu\nu}=0$，则可表为
 \eq{
     T^{\mu\nu} = \varepsilon U^\mu U^\nu + p h^{\mu\nu} =  \tcbhighmath{(\varepsilon+p)U^\mu U^\nu + p\eta^{\mu\nu}.}
 }
@@ -1008,10 +1008,10 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 施加 Lorentz 变换并考虑规范补偿，则 $\p'_\mu A'_\nu = (\Lambda^{-1})^{\rho}{}_{\mu} (\Lambda^{-1})^{\lambda}{}_{\nu} \p_{\rho}A_{\lambda} + \p'_{\mu}\p'_{\nu}\Omega$,
 故 $\p_\mu A_\nu$ 线性组合的规范不变 Lorentz 张量，必须消除 $\p'_{\mu}\p'_{\nu}\Omega$ 项。这是完全任意的函数，唯一的限制是关于 $\mu,\nu$ 对称，故唯一的办法是施以反称化，即正比于 $\p_{[\mu} A_{\nu]}$。
 考虑 $F_{\mu\nu}=2\p_{[\mu} A_{\nu]}$。这称为\textbf{电磁张量}。
-它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi,A_i=a_j$，则 $\bm E=-\grad\varphi-\p_t{\bm a}$ 就是电动力学的关系。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
+它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi$，则 $\bm E=-\grad\varphi-\p_t{\bm A}$。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
 表达磁场需要引入叉乘。
 由行列式知叉乘 $\bm A\times \bm B$ 的分量写法为 $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，
-可转写\footnote{可证 $\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}$，见 \S\ref{sec:tensor-density}。}为 $B_i=\frac 12 \varepsilon_{ijk}F^{jk}=\varepsilon_{ijk}\p^{[j}A^{k]}=\varepsilon_{ijk}\p^j A^k$，这正是 $\bm B:=\curl\bm a$。
+可转写\footnote{可证 $\varepsilon_{kij} \varepsilon^{kmn} =2\delta_{[i}^{m}\delta_{j]}^{n}=2\delta_{i}^{[m}\delta_{j}^{n]}$，见 \S\ref{sec:tensor-density}。}为 $B_i=\frac 12 \varepsilon_{ijk}F^{jk}=\varepsilon_{ijk}\p^{[j}A^{k]}=\varepsilon_{ijk}\p^j A^k$，这正是 $\bm B=\curl\bm A$。
 总结为
 \eq{
     E_i=F_{i0},\quad B_i=\frac 12 \varepsilon_{ijk}F^{jk}\iff F^{i0}=E^i,\quad F^{ij}=\varepsilon^{ijk}B_k.
@@ -1152,6 +1152,7 @@ $\pdv*{x^\mu}{x'^\nu}$（代替 $\Lambda$）这种绝对对象可变，就应吸
 }
 }
 今后简称张量。张量一定是 Lorentz 张量，反之不然。
+
 坐标变换的链式法则和全微分为
 \[\pdv{\xi^\alpha}=\pdv{x^\mu}{\xi^\alpha}\pdv{x^\mu},\quad \d\xi^\beta = \pdv{\xi^\beta}{x^\mu} \d x^\mu.\]
 这可看做矢量的展开关系。按照 Cartan 语言，$\p_\alpha:=\pdv*{\xi^\alpha}$ 是切矢，称为系 $\{\xi\}$ 的第 $\alpha$ 个\textbf{坐标基矢}。它在系 $\{x\}$ 的 $\mu$ 分量为 $\p_\alpha^\mu:=\pdv*{x^\mu}{\xi^\alpha}$，对应的曲线族参数 $x^\mu(\xi)$ 就是坐标变换。
@@ -1159,7 +1160,6 @@ $\pdv*{x^\mu}{x'^\nu}$（代替 $\Lambda$）这种绝对对象可变，就应吸
 $\pdv*{\xi^\alpha}$ 坐标分量变换为 $\pdv*{x'^\mu}{\xi^\alpha}=\pdv{x'^\mu}{x^\nu}\pdv*{x^\nu}{\xi^\alpha}$。
 注意 $\{x\}$ 的 $0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，变换到另一系 $\{x'\}$ 为 $\pdv*{x'^\mu}{t}$。$\delta^\mu_\nu,\pdv*{x'^\mu}{t}$ 都是张量但 $\delta^\mu_0$ 不是。
 取闵氏度规和惯性系 $\{y\}$，则惯性系 $\{x\}$ 坐标基的内积处处为$\eta_{\mu\nu}\pdv{y^\mu}{x^\alpha}\pdv{y^\nu}{x^\beta}=\eta_{\alpha\beta}$，可见 Poincaré 变换的正交性 $|\Lambda|=1$ 等价为惯性系 $\{x\}$ 的正交归一性。
-
 $\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵可逆性，$\pdv*{\xi^\beta}{x^\mu}$ 与 $\pdv*{x^\mu}{\xi^\alpha}$ 互逆，故 $\d\xi^\beta$ 可称\textbf{对偶坐标基}。Cartan 用多重映射定义张量，从而张量可用坐标基、对偶坐标基展开，等价为变换律语言。可见度规是\textit{指定好的}对称、分量矩阵可逆的 (0,2)-张量，$g_{\mu\nu}\d x^\mu\d x^\nu$ 实质是基底展开。
 考虑任意的坐标变换，线元将保持二次型
 \eq{
@@ -1430,7 +1430,7 @@ R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\m
 \eq{
     \hat T^{\mu\nu} = \sum_n \frac{p^\mu_n p^\nu_n}{E_n\sqrt{-g}} \delta_n.
 }
-无论微观动理如何，宏观能动张量总可沿宏观运动分解，注意最小耦合给出投影 $g_{\mu\nu} + U_\mu U_\nu$，故理想流体也就是
+无论微观动理如何，宏观能动张量总可沿宏观运动分解。按推导 \eqref{eq:projection} 的办法，或直接由最小耦合，可知投影映射仍为 $\delta^\mu_\nu + U^\mu U_\nu$，故理想流体就是
 \eq{
     T^{\mu\nu} = (\varepsilon+p)U^\mu U^\nu + p g^{\mu\nu}.
 }
@@ -1494,7 +1494,7 @@ R_{\mu\nu}^{(2)} = -\frac{1}{2} g^{\alpha\beta} g_{\mu\nu,\alpha\beta} + g^{\alp
 
 双曲性带来两个重要话题。第一是 Cauchy 适定问题，也即动力学问题。\textbf{适定性}是指给定适当的\textbf{初值条件}（某 $\Sigma_t$ 上的 $g_{\mu\nu},g_{\mu\nu,0}$），必存在唯一的解。换言之，给定初值后，研究场方程能否确定时空度规的未来演化。首先由无散性 \eqref{eq:Bianchi} 得
 \[\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \{^\mu_{\lambda\nu}\} G^{\lambda\nu} - \{^\nu_{\lambda\nu}\} G^{\mu\lambda},\]
-这不含度规的三阶及更高阶时间偏导，故 $G^{\mu 0}$ 至多只含 $g_{\mu\nu,0}$，即 $G^{\mu 0} =\kappa T^{\mu 0}$ 只能用以约束初值条件，从而动力学方程只剩 $G^{ij} =\kappa T^{ij}$，以确定 $g_{ij,00}$。剩下 $g_{0\mu,00}$ 由坐标条件确定即可，从而可代数或数值地求解方程。
+这不含度规的三阶及更高阶时间偏导，故 $G^{\mu 0}$ 至多只含 $g_{\mu\nu,0}$，即 $G^{\mu 0} =\kappa T^{\mu 0}$ 只能用以约束初值条件，从而动力学方程只剩 $G^{ij} =\kappa T^{ij}$，以确定 $g_{ij,00}$。剩下 $g_{0\mu,00}$ 由坐标条件确定即可，从而可代数或数值地求解方程。详见 \S\ref{sec:Hamilton}。
 第二是\textbf{引力波}。Einstein 本人在 1918 年就关注到方程的波动性，现在我们也的确在 2017 年实验观测到引力波。遗憾的是非线性方程难以求得一般解。有两条途径。
 一是只去研究渐近平直时空的线性近似，称为\textbf{线性引力论}。
 另一条就是寻求严格的特解，数学天才们在此得到了出色的结果。我们主要关注第一种，因为任何可观测的引力波多半强度很低，线性方程好解。最重要的是，在量子场论中，要赋予基本粒子的概念以精确的含义，只有在远离其它所有物质时才可能。对于可能的\textbf{引力子}(graviton)，这就相当于平直时空弱场。
@@ -1550,13 +1550,13 @@ $t_{\mu\nu}$ 称为\textbf{引力场能动赝张量}。
 当然，弱场时 $h_{\mu\nu}$ 很小，故把 $t_{\mu\nu}$ 包括在 $(T_{\mu\nu} + t_{\mu\nu})$ 里，不会严重影响我们对物理系统能动量的认识。
 赝张量之义是指不广义协变：显然，一点处局域惯性系使 $h,\p h = 0$，换言之 $G_{\mu\nu}=G_{\mu\nu}^{(1)}$，于是 $t_{\mu\nu}=0$。
 但 $t_{\mu\nu}$ 至少是 Lorentz 张量，故 $P^\lambda = \int \d[3]{x} (T^{0\lambda} + t^{0\lambda})$ 对封闭系统是 Lorentz 恒定张量。
-渐近平直给出\footnote{其实可只要求 $h_{\mu\nu}$ 渐近为零，而在离产生引力场的有限源很远的地方，$T_{\mu\nu}$ 约为零，而 $t_{\mu\nu}$ 是 $h^2$ 量级，故 $(T_{\mu\nu} + t_{\mu\nu})$ 限制在有限区域，于是根据场方程我们重新得到 $h_{\mu\nu}=O(r^{-1})$。} $h_{\mu\nu}=O(r^{-1})$，而 $t_{\mu\nu}$ 领头阶就已含 $R^{(2)}_{\mu\nu} \sim h \p^2 h + (\p h)^2$，更高阶无非继续乘 $h$，说明 $t_{\mu\nu}=O(r^{-4})$，于是 $P^\lambda$ 收敛。所以选择渐近平直惯性系很关键，若 $g_{\mu\nu}$ 渐近趋于球坐标度规，那赝张量 $t_{\mu\nu}$ 会使引力场能量密度集中在无穷远。当然，若系统不断产生引力波，尤其是充满全空间时，$h_{\mu\nu}$ 的振荡使一阶导、二阶导都与 $h$ 同级，从而产生无限总能量，甚至 $h_{\mu\nu}$ 的行为也不再是 $r^{-1}$。
+渐近平直给出\footnote{其实可只要求 $h_{\mu\nu}$ 渐近为零，而在离产生引力场的有限源很远的地方，$T_{\mu\nu}$ 约为零，而 $t_{\mu\nu}$ 是 $h^2$ 量级，故 $(T_{\mu\nu} + t_{\mu\nu})$ 限制在有限区域，于是根据场方程我们重新得到 $h_{\mu\nu}=O(r^{-1})$。} $h_{\mu\nu}=O(r^{-1})$，而 $t_{\mu\nu}$ 领头阶就已含 $R^{(2)}_{\mu\nu} \sim h \p^2 h + (\p h)^2$，更高阶无非继续乘 $h$，说明 $t_{\mu\nu}=O(r^{-4})$，于是 $P^\lambda\sim \int \d{r} 4\pi r^2 t^{0\lambda} \sim \int \d r/r^2$ 收敛。所以选择渐近平直惯性系很关键：若 $g_{\mu\nu}$ 渐近趋于平直度规的球坐标系表达，也就是\footnote{注意 $\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。欧氏度规取 $r=R$ 得球面度规 $\d\ell^2_S=R^2\d\Omega^2$。超曲面度规与投影映射的关系见 \S\ref{sec:Gauss}。}
+\eq{
+    \d s^2 = -\d t^2 + \d\ell^2,\quad \d\ell^2=\delta_{ij}\d x^i\d x^j=\d r^2+r^2\d\Omega^2,\quad \d\Omega^2:=\d\theta^2+\sin^2\theta\,\d\phi^2.
+}
+注意 $g_{22,1},g_{33,1}$ 在 $r\to\infty$ 发散，那引力场的赝能量密度 $t_{00}$ 堆积在无穷远。换言之，$t_{\mu\nu}$ 会把球坐标本身愈发显著的非线性变化，混淆为引力场能量。
+当然，若系统不断产生引力波，尤其是充满全空间时，$h_{\mu\nu}$ 的振荡使一阶导、二阶导都与 $h$ 同级，从而产生无限总能量，甚至 $h_{\mu\nu}$ 的行为也不再是 $r^{-1}$。
 总之，引力与电磁作用的重大区别就是荷。电磁作用涉及电荷，电磁场本身不带电荷，故 $A^\mu$ 的源只含 $J^\mu$ 而不包括 $A^\mu$ 自身；引力的荷是能动量，然而电磁场、引力场都携带，$h_{\mu\nu}$ 的源必须包含 $h_{\mu\nu}$ 自身的影响才能守恒。其根源是只有引力有等效原理，催生时空几何。
-
-
-
-
-
 
 
 %% 宇宙学
@@ -1767,20 +1767,15 @@ Lorenz 规范从局域惯性系出发变换为 $\cd^\mu A_\mu =0$，则引力耦
 以上都是$g_{\mu\nu},F_{\mu\nu}$ 的耦合方程。
 同理得光线方程 $k^\mu\cd_\mu k^\nu=0, k_\mu k^\mu = 0$。
 
-最小引力耦合基于等效原理。
 可以看到以上弯曲时空中的电磁学方程，似乎都是将其平直情形做直接替换：
 \[
     \eta_{\mu\nu}\to g_{\mu\nu},\quad\p_\mu\to\cd_\mu,\quad\d\to\D,
 \]
-故许多人将最小引力耦合理解为这种所谓的\textbf{最小替换}(minimal replacement)。必须指出这不一定成立，如 $-4\pi J_\nu=\square_g A_\nu- R^\lambda{}_{\nu} A_\lambda$ 就并非从 $\square A_\mu =-4\pi J_\mu$ 直接替换。
-关键在于二阶及以上的协变导数将带来曲率效应，这不能用任何坐标系消除。能满足广义不变性的方程是很多的，不能冒然只做最小替换而图高枕无忧。企图从局域惯性系转化到一般坐标系的关键在于，导数内所作用的量\textit{全部}是广义不变的张量，显然 $\p^\nu(\p_\nu A_\mu)$ 括号内的 $\p_\nu A_\mu$ 并不满足。在一阶导时，可轻松保证导数作用的量是张量，故最小替换适用。这才是能从最小耦合推出最小替换的实质关键。
-
-也有人将等效原理及其最小耦合理解为：若一个方程在平直情形时成立，则在弯曲情形也成立。这也是不一定的。的确，协变导数在平直时空的惯性系中表为偏导数。但曲率在平直情形直接为零，因此加上曲率额外项的方程也将符合这句话，比如 $\cd_\mu F^{\mu\nu}+\alpha \cd_\mu(F^{\mu\nu}R)=-4 \pi J^\nu$。但等效原理指的是，利用局域惯性系来描述真实引力场，这样才能排除 $\cd_\mu(F^{\mu\nu}R)$。切记，这些张量和协变导数的定义是从局域惯性系中，做广义坐标变换得来。
-
-或许有读者指出，具有曲率项的正确方程（如 $-4\pi J_\nu=\square_g A_\nu- R^\lambda{}_{\nu} A_\lambda$）也并不在局域惯性系中退回狭义相对论。对此，我们进一步指出最不容易混淆的正确理解：将最小耦合应用于一开始的作用量上。因为作用量始终是广义不变的标量，不涉及坐标变换等麻烦的过程，最小耦合只是引入了适配体元 $\sqrt{-g}\d[4]{x}$。故其实并不需要用局域惯性系去讨论一个物理方程，而只需要讨论最原始的作用量。
-
-当然，并不一定要把等效原理、最小耦合奉为教条。
-若在量子理论中非要讨论诸如 $\cd_\mu(F^{\mu\nu}R)$ 的曲率项，可认为是在量子领域适当地放弃等效原理，比如 \S\ref{sec:scalar}。但在经典理论的视角下，这些项的数量级太小，且目前实验精度无法达到，尤其是微弱的曲率，故等效原理仍被默认。总之，包括等效原理在内，最终都要接受实验的考验。
+故许多人将最小引力耦合理解为这种所谓的“\textbf{最小替换}”(minimal replacement)。必须指出这不一定成立，如 $-4\pi J_\nu=\square_g A_\nu- R^\lambda{}_{\nu} A_\lambda$ 就并非从 $\square A_\mu =-4\pi J_\mu$ 直接替换。
+关键在于二阶及以上导数将带来曲率效应，这不能用任何坐标系消除。能满足广义不变性的方程是很多的，不能冒然只做“最小替换”而图高枕无忧。企图从局域惯性系转化到一般坐标系的关键在于，导数内所作用的量\textit{全部}是广义不变的张量，显然 $\p^\nu(\p_\nu A_\mu)$ 括号内的 $\p_\nu A_\mu$ 并不满足。在一阶导时，可轻松保证导数作用的量是张量，故“最小替换”适用。这才是能从最小耦合推出“最小替换”的实质关键。
+也有人将等效原理及最小耦合理解为：若一个方程在平直情形时成立，则在弯曲情形也成立。这也不一定。的确，协变导数在平直时空惯性系中表为偏导数。但曲率在平直情形直接为零，因此任何额外加曲率项的方程也将符合这句话，比如 $\cd_\mu F^{\mu\nu}+\alpha \cd_\mu(F^{\mu\nu}R)=-4 \pi J^\nu$。但等效原理指的是，利用局域惯性系来描述真实引力场，这样才能排除 $\cd_\mu(F^{\mu\nu}R)$。切记，这些张量和协变导数的定义是从局域惯性系中，做广义坐标变换得来。
+或许有读者指出，具有曲率项的正确方程（如 $-4\pi J_\nu=\square_g A_\nu- R^\lambda{}_{\nu} A_\lambda$）也并不在局域惯性系中退回狭义相对论。对此，我们再次强调，一开始本书就给了最不易混淆的正确理解：将最小耦合应用于一开始的作用量上。因为作用量始终是广义不变的标量，不涉及坐标变换等麻烦的过程，最小耦合只是引入了适配体元 $\sqrt{-g}\d[4]{x}$。故其实并不需要用局域惯性系去讨论一个物理方程，而只需要讨论最原始的作用量。
+当然，并不一定要把等效原理、最小耦合奉为教条。若在量子理论中非要讨论诸如 $\cd_\mu(F^{\mu\nu}R)$ 的曲率项，可认为是适当地放弃等效原理，比如 \S\ref{sec:scalar}。但在经典理论的视角下，这些项的数量级太小，且目前实验精度无法达到，尤其是微弱的曲率，故等效原理仍被默认。总之，包括等效原理在内，最终都要接受实验的考验。
 
 $\cd_{(\mu}\xi_{\nu)}=0$ 称为该度规的\textbf{Killing 方程}。满足该方程的矢量场 $\xi^\mu$ 称为\textbf{Killing 矢量场}。它给出 $\bar\var g_{\mu\nu}=-\cd_{(\mu}\xi_{\nu)}=0$，即\textbf{等度规变换}(isometry)。等度规变换所构成的集合称\textbf{等度规群}。
 故直观上，Killing 矢量场表示对称变换的方向，沿着该方向移动度规场仿佛没有变化。这是主动观点。
@@ -1820,7 +1815,6 @@ $x_q=x_p\cos\alpha-y_p\sin\alpha, y_q=x_p\sin\alpha+y_p\cos\alpha$。
 \end{figure}
 
 研究类时线汇 $\mathscr R$ 的潮汐。如图 \ref{fig:geo-devi}。任选一条不自交的光滑曲线，使其上任一切矢都与过该点的观者相交，称为\textbf{横向曲线}。用 $s$ 参数化横向曲线，则与其相交的观者对应了交点参数，即在线汇中挑出了一个\textbf{单参族}，横向曲线沿各观者 4-速便扫出一张 2 维曲面，可称\textbf{世界面}(worldsheet)。设任意坐标系 $\{x\}$，则可表为 $x^\mu(\tau,s)$，其中 $\{\tau,s\}$ 可以视为固有系的子集，当然也可不要求对钟，直接约定某初始的横向曲线 $x^\mu(0,s)$。建立观者 4-速 $Z:=\pdv*{\tau}$。
-类时线汇的固有系下 $\tilde Z^\mu=\delta^\mu_0$，从而 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。
 建立\textbf{偏离矢量}(separation vector) $S:=\pdv*{s}$，它们相当于固有系的坐标基。由链式法则，它们的确逆变。
 取单参族中的一者为\textbf{基准观者}(fiducial observer)，比如 $x^\mu(\tau,0)$，考虑一个邻近观者 $x^\mu(\tau,\Delta s)$，称为\textbf{邻居}(neighbor)。偏离矢量的大小象征基准观者与邻居的间距。
 易展开证明 $Z,S$ 的对易性
@@ -1840,10 +1834,9 @@ $S^\mu$ 的空间投影 $\eta^\lambda=h^\lambda{}_\nu S^\nu=S^\lambda+ Z_\nu S^\
 因为易证 $Z_\lambda\cd_{[\nu}\cd_{\kappa]}Z^\lambda = 0$，但 $Z_\lambda S^\kappa\cd_\kappa A^\lambda = -A^\lambda S^\kappa\cd_\kappa Z_\lambda = -A^\lambda Z^\kappa\cd_\kappa S_\lambda$ 是两个空间矢量的内积。
 故需继续投影。
 尝试展开这里的 $R^\lambda{}_{\mu\nu\kappa}Z^\mu$。计算 $\cd_\nu\cd_\kappa V^\lambda$ 时注意勿先展开内部，将 $\cd_\kappa V^\lambda$ 视作整体以避开对克氏符求导，最后代入无挠性得
- $R^\lambda{}_{\mu\nu\kappa}=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}$，因此它正是 Riemann 张量。这是 Riemann 曲率最自然的物理动机。
-
+ $R^\lambda{}_{\mu\nu\kappa}=-2\Gamma^\lambda_{\mu[\nu,\kappa]}+2\Gamma^\lambda_{\sigma[\nu} \Gamma^\sigma_{\kappa]\mu}$，因此它正是 Riemann 张量。这是 Riemann 曲率最直观的物理动机，类似于 $F_{\mu\nu}$ 在 Lorentz 力中出现。
 第二种办法是用空间矢量 $\eta^\mu$ 求导，但 $Z^\nu\cd_\nu\eta^\sigma$ 不一定是空间矢量：
-$Z^\nu\cd_\nu\eta^\sigma = Z^\nu\cd_\nu(h^\sigma{}_\kappa S^\kappa) = Z^\nu\cd_\nu S^\sigma + 2 Z^{(\sigma} A^{\kappa)} S_\kappa$，其中注意 $Z^\sigma\cd_\sigma h^{\mu\nu} = 2 Z^{(\mu} A^{\nu)}$。
+$Z^\nu\cd_\nu\eta^\sigma = Z^\nu\cd_\nu(h^\sigma{}_\kappa S^\kappa) = Z^\nu\cd_\nu S^\sigma + 2 Z^{(\sigma} A^{\kappa)} S_\kappa$，其中注意 $Z^\sigma\cd_\sigma h^{\mu\nu} = 2 Z^{(\mu} A^{\nu)}$，此处 $h^{\mu\nu} = g^{\nu\sigma}h^\mu{}_\sigma = g^{\mu\nu} + Z^\mu Z^\nu$。
 注意 $2 h^\mu{}_\lambda Z^{(\lambda} A^{\nu)} = Z^\nu A^\mu$，则继续投影为
 \eq{
     h^\mu{}_\sigma Z^\nu\cd_\nu\eta^\sigma = Z^\nu\cd_\nu S^\mu + Z^{\kappa} A^{\mu} S_\kappa = S^\nu\cd_\nu Z^\mu + Z^\sigma S_\sigma Z^\nu \cd_\nu Z^\mu = \eta^\nu\cd_\nu Z^\mu,
@@ -1854,17 +1847,16 @@ $Z^\nu\cd_\nu\eta^\sigma = Z^\nu\cd_\nu(h^\sigma{}_\kappa S^\kappa) = Z^\nu\cd_\
 只考虑引力作用，则物质走类时测地线汇，从而可研究引力潮汐。
 代入 $A^\mu=0$ 有 $Z^\sigma\cd_\sigma h^{\mu\nu}=0$ 且 $\eta^\nu\cd_\nu Z^\mu = Z^\nu\cd_\nu \eta^\mu$。
 从而两种方法是一致的：
-$h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma) = h^\mu{}_\lambda Z^\nu\cd_\nu (Z^\kappa \cd_\kappa S^\lambda) = Z^\nu\cd_\nu (Z^\kappa \cd_\kappa S^\lambda)$，即
+$h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma) = h^\mu{}_\lambda Z^\nu\cd_\nu (Z^\kappa \cd_\kappa S^\lambda) = Z^\nu\cd_\nu (Z^\kappa \cd_\kappa S^\lambda)$，即\textbf{测地偏离}(geodesic deviation)\textbf{方程}
 \eq{
 \tcbhighmath{
     Z^\nu \cd_\nu(Z^\kappa \cd_\kappa S^\lambda) = R^\lambda{}_{\mu\nu\kappa} Z^\mu Z^\nu S^\kappa.
 }
 }
-称为\textbf{测地偏离}(geodesic deviation)\textbf{方程}，解 $S^\lambda$ 有无穷多种，称\textbf{Jacobi 场}。
-曲率表征了潮汐程度。$\eta^\lambda$ 也满足方程，是正交 Jacobi 场，操作性上可这样获得：由 $\dv{\tau}(S^\mu Z_\mu) = S^\mu A_\mu = 0$，故初态用对钟确定出一条正交横向曲线，随后观者持全同钟各自演化，则 Jacobi 场保持正交。
-同时面 $\d\tau = 0$ 是测地线汇的正交族，必有 $\tilde g_{0i} = 0$。
+解 $S^\lambda$ 有无穷多种，称\textbf{Jacobi 场}。曲率表征了潮汐程度。$\eta^\lambda$ 也满足方程，是正交 Jacobi 场，操作性上可这样获得：由 $\dv{\tau}(S^\mu Z_\mu) = S^\mu A_\mu = 0$，故初态用对钟确定一条正交横向曲线，随后观者各自演化，Jacobi 场保持正交。同时面 $\d\tau = 0$ 是测地线汇的正交族。
 
-取测地固有系 $\{\xi\}$ 并设正交 Jacobi 场 $\eta^\mu$，则 $\tilde Z^\mu=\delta^\mu_0$ 且 $\tilde\eta^0=0$。根据定义显然有反称性 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$。
+类时线汇的固有系 $\{\xi\}$ 下 $\tilde Z^\mu=\delta^\mu_0$，从而 $\tilde g_{0 0}=\tilde g_{\mu\nu}\tilde Z^\mu\tilde Z^\nu=-1$ 且对偶为 $\tilde Z_\mu = \tilde g_{\mu0}$。设 Jacobi 场 $\eta^\mu$ 正交，则 $\tilde\eta^0=0$，必有 $\tilde g_{0i} = 0$。
+根据定义显然有反称性 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$。
 则测地偏离方程在该系写作 $\pdv*[2]{\tilde\eta^i}{t}=-\tilde R^i{}_{0 j 0} \tilde\eta^j$。
 再考虑 Newton 极限（弱场且每条测地线低速），故该系成为了闵氏惯性系，进而 $\pdv*[2]{\tilde\eta^i}{t}\approx \tilde\eta^j \pdv{\xi^j}\pdv[2]{\xi^i}{t}=-\tilde\eta^j \pdv{\xi^j}\tilde\p^i\phi$。
 从而 $\tilde R^\sigma{}_{0 \sigma 0}=\tilde R^i{}_{0 i 0} \approx \tilde\p_i\tilde\p^i{\phi}$。
@@ -1872,23 +1864,18 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 
 %% 二阶变分
 
-
-
-
-
 \subsection{黑洞及奇性}\label{sec:bh-sing}
 
-\textit{观测结果建议}理想质点的引力场呈空间球对称(spherical symmetry)：以质点为空间坐标原点，存在某种坐标系 $\{\bar t,\bar r,\theta,\phi\}$，空间部分为正交球坐标系，且变换 $\theta\mapsto -\theta,\phi\mapsto -\phi$ 保持度规形式，则对经纬度只存在 $\d\theta^2,\d\phi^2$ 项；$\Sigma_{\bar t}$ 内任意 $\bar r$ 球面的诱导度规为 $K(\bar t,\bar r)\d\Omega^2$；
-其余分量只与 $\bar t,\bar r$ 有关\footnote{$\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。取 $r=R$ 即得球面度规 $\d\ell^2=R^2\d\Omega^2$。
-$\{r,\theta,\phi\}$ 是球对称的坐标系，但不直接是“球坐标系”。对欧氏度规才可定义球坐标，度规写为 $\d\ell^2=\d r^2+r^2\d\Omega^2$。}：
-\[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2,\quad \d\Omega^2:=\d\theta^2+\sin^2\theta\,\d\phi^2.\]
+\textit{观测结果建议}理想质点的引力场呈空间球对称(spherical symmetry)：以质点为空间坐标原点，存在某种坐标系 $\{\bar t,\bar r,\theta,\phi\}$，在变换 $\theta\mapsto -\theta$ 或 $\phi\mapsto -\phi$ 都保持度规形式（因而 $g_{02}=g_{03}=g_{12}=g_{13}=g_{23}=0$），并且 $\Sigma_{\bar t}$ 内任意 $\bar r$ 球面度规为 $K(\bar t,\bar r)\d\Omega^2$，
+其余分量只与 $\bar t,\bar r$ 有关：
+\[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
 质点满足真空性 $R_{\mu\nu}(r)=0,r\ne 0$，进一步得到\textbf{Schwarzschild 度规}（具体计算见 \S\ref{chpt:BH}）
 \eq{
 \tcbhighmath{
     \d s^2=-\left(1-\frac{2M}{r}\right)\d t^2+\left(1-\frac{2M}{r}\right)^{-1}\d r^2+r^2\d\Omega^2,
 }
 }
-采用的坐标系称为\textbf{Schwarzschild 系}。显然它的确渐近平直。
+采用的坐标系称为\textbf{Schwarzschild 系}。显然它的确渐近平直。此系空间部分是球对称的坐标系，但不直接是球坐标，对欧氏度规才可定义球坐标。
 取 Newton 极限，则引力势 $\phi=-\frac 12(1+g_{00})=-M/r$ 还原回 Newton 引力定律，因而 $M$ 解释为场源质量。
 
 若存在类时 Killing 矢量场（即存在坐标系使 $g_{\mu\nu,0}=0$），则称引力场恒稳或度规\textbf{稳态}(stationary)，适配系称稳态系。
@@ -2026,7 +2013,7 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 
 
 
-\subsection{量子引力}
+\subsection{引力子}
 
 迄今为止，尚无任何完备而自洽的量子引力理论。
 不过，我们能领略一下量子引力理论应当至少是怎样的。
@@ -2042,22 +2029,148 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 \]
 $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面波的结果比较，从而平面波中螺旋度为 $\pm 2$ 的引力子数密度为
 
+\subsection{正则表述}\label{sec:Hamilton}
 
+Wheeler 的几何动力学主要是指广义相对论的\textbf{哈氏正则表述}。首先需要进行时空整体 3+1 分解，也称\textbf{Arnowitt-Deser-Misner(ADM) 分解}，
+需要假设时空有良好因果性质，使得能定义一张类空超曲面 $X^{\mu}=X^{\mu}(t,\bm x)$。对超曲面任一点 $(t,\bm x)$ 赋予类时单位法矢 $n^{\mu}$ 和单位切矢
+\[ V_{i}^{\mu} := \pdv*{X^{\mu}}{x^{i}} = {X^{\mu}}_{,i}, \]
+$(n^{\mu},V_{i}^{\mu})$ 构成时空正交的标架场，满足 $g_{\mu\nu}n^{\mu}V_{i}^{\nu}=0$。
+投影张量\footnote{注意此 $h_{\mu\nu}$ 不是线性扰动。超曲面度规与投影映射的关系见 \S\ref{sec:Gauss}。}为 $h_{\mu\nu}=g_{\mu\nu}+n_{\mu}n_{\nu}$，则时空度规在切向标架的投影为 $\tilde h_{ij} = g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} = h_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu}$。
+也就是 $h_{\mu\nu}$ 在坐标系 $\{X\}$ 的空间值。
+设超曲面在时空中作连续变形。定义\textbf{变形矢量}为
+\[ N^{\mu} := \pdv*{X^{\mu}}{t} \equiv \dot{X}^{\mu}, \]
+它可分解为 $N^{\mu}=Nn^{\mu}+N^{i}V_{i}^{\mu}$。
+通常把类时分量 $N$ 称为\textbf{时移}(lapse)，把类空分量 $N^{i}$ 称为\textbf{位移}(shift)。 
+做坐标变换有
+\begin{align*}
+    \tilde g_{ti} &= N^{\mu}V_{i}^{\nu}g_{\mu\nu} = g_{\mu\nu}(Nn^{\mu}+N^{j}V_{j}^{\mu})V_{i}^{\nu} = N^{j}g_{\mu\nu}V_{j}^{\mu}V_{i}^{\nu} = N^{j}\tilde h_{ji} = N_{i},\\
+    \tilde g_{tt} &= N^{\mu}N^{\nu}g_{\mu\nu} = N^{\mu}N^{\nu}(h_{\mu\nu}-n_{\mu}n_{\nu}) = (Nn^{\mu}+N^{i}V_{i}^{\mu})(Nn^{\nu}+N^{j}V_{j}^{\nu})h_{\mu\nu}-N^{2} \\
+    &= N^{i}V_{i}^{\mu}N^{j}V_{j}^{\nu}h_{\mu\nu}-N^{2} = N^{i}N_{i}-N^{2}.
+\end{align*}
+因此时空度规总可写成
+\eq{ \d s^{2} = -(N^{2}-N_{i}N^{i})\d t^{2} + 2N_{i}\d x^{i}\d t + \tilde h_{ij}\d x^{i}\d x^{j},\quad N_{i} = \tilde h_{ij}N^{j}. }
+以下省略撇号，注意区分。行列式为
+\[ g = (N^{i}N_{i}-N^{2})h - (hh^{ij})N_{i}N_{j} = -N^{2}h, \]
+度规逆为
+\[ (g^{\mu\nu}) = \begin{pmatrix} -1/N^{2} & N^{i}/N^{2} \\ N^{j}/N^{2} & h^{ij}-N^{i}N^{j}/N^{2} \end{pmatrix} = h^{\mu\nu}-n^{\mu}n^{\nu} , \]
+由此可得坐标基下单位法矢 $n^{\mu}$ 和 $h^{\mu0}$ 的表达式：
+\[ n^{\mu} = \left(\frac{1}{N}, -\frac{N^{i}}{N}\right),\quad h^{\mu0} = 0. \]
+由此全时空被一系列类空超曲面分层。
 
-\section{标架表述}\label{sec:tetrad}
-\begin{comment}
-引力规范理论涉及局域化，但局域化本身并不要求时空无挠。前文用度规和 Levi-Civita 联络表述引力，优点是直接体现等效原理，缺点是局域 Lorentz 对称性被藏在了坐标变换里。若要把引力同 Yang-Mills 型规范理论放在同一语言下，尤其要处理旋量场，就应改用\textbf{标架}(tetrad/vierbein)。
+外曲率的定义为 $K_{\mu\nu} = n_{(\mu;\nu)}$，于是
+\begin{align*}
+K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)} = g_{\lambda(i}{n^{\lambda}}_{,j)} + g_{\lambda(i}\Gamma_{j)\kappa}^{\lambda}n^{\kappa} = g_{0(i}{n^{0}}_{,j)} + g_{k(i}{n^{k}}_{,j)} + \frac{1}{2}\pdv{g_{ij}}{x^{\kappa}}n^{\kappa} \\
+&= -\frac{1}{N}N_{(i,j)} + h_{k(i,j)}\frac{N^{k}}{N} + \frac{1}{2N}\pdv{h_{ij}}{t} - \frac{1}{2}\pdv{h_{ij}}{x^{k}}\frac{N^{k}}{N} = \frac{1}{N}\left(\frac{1}{2}\pdv{h_{ij}}{t} - N_{(i|j)}\right),
+\end{align*}
+其中下标竖线“|”代表在超曲面内的协变导数，即\textbf{空间协变导数}，而空间联络系数为
+\[ ^{(3)}\Gamma_{ij}^{l} = \frac{1}{2}h^{kl}(h_{ki,j}+h_{kj,i}-h_{ij,k}). \]
+外曲率的迹为
+\[ K = g^{\mu\nu}n_{(\nu;\mu)} = (h^{\mu\nu}-n^{\mu}n^{\nu})n_{(\nu;\mu)} = h^{\mu\nu}n_{(\nu;\mu)} = h^{ij}n_{(i;j)} = h^{ij}K_{ij}, \]
+其中第三个等号用到 $n^{\mu}n_{\mu;\nu}=0$，第四个等号用到 $h^{\mu 0}=0$。
+由微分几何中的 \textbf{Gauss-Codazzi 关系}可推得
+\[ R = {}^{(3)}R + K^{ij}K_{ij} - K^{2} + \text{全微分项}, \]
+其中 $^{(3)}R$ 是3维超曲面内禀曲率的 Ricci 标量，内禀曲率由空间联络系数按投影法计算。
+因此，引力作用量改写为
+\[ S_G \simeq -\frac{1}{16\pi }\int \d[4]{x}Nh^{1/2} [K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda]. \]
+宗量是 $h_{ij},N,N^{i}$，正则动量的系数约定是
+\[ \Pi_{N} = 16\pi \fdv{S_G}{\dot{N}} = 16\pi \pdv{\Lag_G}{\dot{N}},\quad\Pi_{N^{i}} = 16\pi \pdv{\Lag_G}{\dot{N}^{i}},\quad\Pi^{ij} = 16\pi \pdv{\Lag_G}{\dot{h}_{ij}}. \]
+由于作用量被积函数中不显含 $\dot{N}$ 和 $\dot{N}^{i}$ ，所以 $\Pi_{N}=0=\Pi_{N^{i}}$，这表明引力系统存在4个初级约束。
+\[ \Pi^{ij} = -h^{1/2}N\left(2K^{ij}\pdv{K_{ij}}{\dot{h}_{ij}} - 2K\pdv{K}{\dot{h}_{ij}}\right) = -h^{1/2}(K^{ij}-h^{ij}K), \]
+其迹为
+\[ \Pi = h_{ij}\Pi^{ij} = 2h^{1/2}K \im K = \frac{1}{2}h^{-1/2}\Pi, \]
+反解出 $K^{ij}$，得 $K^{ij} = -h^{-1/2}\left(\Pi^{ij}-\frac{1}{2}h^{ij}\Pi\right)$，所以
+\begin{align}
+    \label{eq:KK-K^2}
+    K^{ij}K_{ij}-K^{2} &= \frac{1}{h}\left(\Pi^{ij}-\frac{1}{2}h^{ij}\Pi\right)\left(\Pi_{ij}-\frac{1}{2}h_{ij}\Pi\right) - \frac{1}{4h}\Pi^{2} = \frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right),\\
+    \Pi^{ij}K_{ij} &= -h^{-1/2}\Pi^{ij}\left(\Pi_{ij}-\frac{1}{2}h_{ij}\Pi\right) = -h^{-1/2}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right).
+\end{align}
+得哈氏密度
+\begin{align*}
+\Ham_G &= \Pi_{N}\dot{N}+\Pi_{N^{i}}\dot{N}^{i}+\Pi^{ij}\dot{h}_{ij}-16\pi \Lag_G \\
+&= \Pi^{ij}\dot{h}_{ij}+h^{1/2}N(K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda) \\
+&= -h^{-1/2}N\left[\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}-h({}^{(3)}R-2\Lambda)\right]+2\Pi^{ij}N_{(i|j)} \\
+&= h^{1/2}\left\{-N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]+2h^{-1/2}\Pi^{ij}N_{(i|j)}\right\} \\
+&\simeq h^{1/2}\left\{-N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]-2N_{(i}(h^{-1/2}\Pi^{ij})_{|j)}\right\}.
+\end{align*}
+第四个等号提出了 $h^{1/2}$ 因子，因为哈氏量是3维空间上的标量\footnote{关于张量密度的讨论见 \S\ref{sec:tensor-density}}。初级约束 $\Pi_{N}=0=\Pi_{N^{i}}$ 需在任何时刻都成立，为此，需有
+\[ 0 = \dot{\Pi}_{N} = [\Pi_{N},\Ham_G] = -\pdv{\Ham_G}{N} = h^{1/2}\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)- {}^{(3)}R+2\Lambda\right] = H_G, \]
+\[ 0 = \dot{\Pi}_{N^{i}} = [\Pi_{N^{i}},\Ham_G] = -\pdv{\Ham_G}{N^{i}} = 2(h^{-1/2}\Pi^{ij})_{|j} =: H_{i}. \]
+这4个约束是次级约束，分别称为\textbf{能量约束}和\textbf{动量约束}(或微分同胚约束)，其中 $[A, B]$ 是 $A$ 与 $B$ 的 Poisson 括号。能量约束和动量约束还可从作用量对 $N$ 和 $N^{i}$ 变分后再利用 \eqref{eq:KK-K^2} 直接得
+\[ 16\pi \fdv{S_G}{N} = H_G = 0, \quad 16\pi \fdv{S_G}{N^{i}} = H_{i} = 0. \]
+在时间演化中，次级约束也应该总保持，故需有
+\[ 0 = \dot{H}_G = [H_G,\Ham_G], \quad 0 = \dot{H}_{i} = [H_{i},\Ham_G]. \]
+可证上式是4个恒等式，不会给出任何新的约束。引力场的动力学方程由此为
+\[ \dot{h}_{ij} = [h_{ij},\Ham_G] = \pdv{\Ham_G}{\Pi^{ij}}, \quad \dot{\Pi}^{ij} = [\Pi^{ij},\Ham_G] = -\pdv{\Ham_G}{h_{ij}}. \]
+引力场量 $h_{ij}$ 张成一个空间，称为\textbf{超空间}(superspace)，这是无穷维空间，在这个超空间中可引入超度规(又称\textbf{de Witt 度规})：
+\[ G_{ijkl} = \frac{1}{2}h^{-1/2}(h_{ik}h_{jl}+h_{il}h_{jk}-h_{ij}h_{kl}), \]
+于是，能量约束可写成
+\[ G_{ijkl}\Pi^{ij}\Pi^{kl} - h^{1/2}(^{(3)}R-2\Lambda) = 0. \]
 
-规定时空指标使用 $\mu,\nu,\lambda$ 等小写希腊字母，标架指标使用 $I,J,K$ 等大写拉丁字母。标架指标由固定的 Minkowski 度规
+引力与物质耦合系统的总作用量为
+\[ S = -\frac{1}{16\pi }\int \d[4]{x}h^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R(h)-2\Lambda] + S_{M}, \]
+其中 $\psi$ 表示物质场位形变量的集合。 初级约束同样满足，它们在时间演化中一直得以保持要求系统还需满足4个次级约束
+\[ 16\pi \fdv{S}{N} = 16\pi \left(\fdv{S_G}{N} + \fdv{S_{M}}{N}\right) = H = 0 \]
+\[ 16\pi \fdv{S}{N^{i}} = 16\pi \left(\fdv{S_G}{N^{i}} + \fdv{S_{M}}{N^{i}}\right) = H_{i} = 0, \]
+其中
+\begin{align*}
+    \eval{\fdv{S_{M}}{N}}_{N^{i},h_{ij}} &= 2N\eval{\fdv{S_{M}}{N^{2}}}_{N^{i},h_{ij}} = -2N\fdv{S_{M}}{g_{tt}} = -h^{1/2}N^{2}T^{tt} = -h^{1/2}N^{2}g^{t\mu}g^{t\nu}T_{\mu\nu} \\
+    &= -h^{1/2}N^{2}(h^{t\mu}-n^{0}n^{\mu})(h^{t\nu}-n^{0}n^{\nu})T_{\mu\nu} = -h^{1/2}n^{\mu}n^{\nu}T_{\mu\nu} = -h^{1/2}T_{nn}, \\
+    \eval{\fdv{S_{M}}{N^{i}}}_{N,h_{ij}} &= \fdv{S_{M}}{g_{tt}}\eval{\pdv{g_{tt}}{N^{i}}}_{N,h_{ij}} + 2\fdv{S_{M}}{g_{tj}}\eval{\pdv{g_{tj}}{N^{i}}}_{N,h_{ij}} \\
+    &= Nh^{1/2}(T^{tt}N_{i}+T^{tj}h_{ji}) = Nh^{1/2}(T^{tt}g_{ti}+T^{tj}g_{ji}) = Nh^{1/2}T_{i}^{t}, 
+\end{align*}
+$T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力场与物质场耦合时的能量约束和动量约束分别为
+\[ h^{1/2}\left\{\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right) - {}^{(3)}R + 2\Lambda - 16\pi T_{nn}\right\} = 0,\quad (h^{-1/2}\Pi_{i}^{j})_{|j} + 8\pi T_{i}^{n} = 0. \]
+第二个式子用到
+\begin{align*}
+    T_{j}^{n} &:= g_{\mu\nu}n^{\mu}T_{j}^{\nu} = g_{00}n^{0}T_{j}^{0} + g_{i0}n^{i}T_{j}^{0} + g_{0i}n^{0}T_{j}^{i} + g_{ki}n^{k}T_{j}^{i} \\
+    &= -(N^{2}-N_{i}N^{i})\frac{1}{N}T_{j}^{0} - N_{i}\frac{N^{i}}{N}T_{j}^{0} + \frac{N_{i}}{N}T_{j}^{i} - h_{ki}\frac{N^{k}}{N}T_{j}^{i} = -NT_{j}^{0}.
+\end{align*}
+进一步，总作用量对 $h_{ij}$ 变分即得经典几何动力学中的演化方程，演化方程可以写成正则的形式，正则共轭量为 $h_{ij}$ 和 $\Pi^{ij}$ 及物质场的正则共轭量。在演化中，这些正则共轭量 $h_{ij}$ 和 $\Pi^{ij}$ 并不独立，必须满足能量约束、动量约束。
+在全时空上，演化方程和约束方程等价于 Einstein 方程组，它们包含了经典几何动力学的全部信息。引力场的正则量子化就是在上述 ADM 分解的基础上，将 Poisson 括号改为量子对易子，将经典约束方程改为量子态所必须满足的量子约束方程。在ADM形式、量子引力中，常取 $16\pi G=c=1$ 单位制，可使方程更简化。
+
+\textbf{初值问题}就是反过来问：在某个类空超曲面 $\Sigma$ 上给定怎样的初始数据，才能唯一地确定一个四维时空的发展？
+初始数据不能任意指定。纯引力场的一组初始数据可取为 $(\Sigma,h_{ij},\Pi^{ij})$。若有物质场，还需同时给出物质场 $\psi$ 及其正则共轭量。它们必须满足能量约束和动量约束。
+若改用外曲率表示初始数据，由 $\Pi^{ij}=-h^{1/2}(K^{ij}-h^{ij}K)$，可把约束等价写作
 \[
-    \eta_{IJ}=\diag(-1,1,1,1)
+    {}^{(3)}R-K^{ij}K_{ij}+K^2-2\Lambda+16\pi T_{nn}=0,\quad (K_i{}^j-\delta_i{}^jK)_{|j}-8\pi T_i^n=0.
 \]
-升降。给定时空点 $p$，在切空间 $T_pM$ 中取一组正交归一基 $\{e_I\}$，并取对偶余基 $\{e^I\}$：
+关键要先在 $\Sigma$ 上解这四个约束方程。
+在真空且 $\Lambda=0$ 时，约束变为
+\[
+    {}^{(3)}R-K^{ij}K_{ij}+K^2=0,\quad
+    (K_i{}^j-\delta_i{}^jK)_{|j}=0.
+\]
+特别地，若取时间对称初值 $K_{ij}=0$，则动量约束自动满足，能量约束退化为
+\[
+    {}^{(3)}R=0.
+\]
+平直初值 $h_{ij}=\delta_{ij},K_{ij}=0$ 就给出平直时空的一组初值；非平凡的标量平坦三维度规则可作为黑洞等引力场初值的出发点。
+更一般地，常把外曲率分解为迹和无迹部分
+\[
+    K_{ij}=A_{ij}+\frac{1}{3}h_{ij}K,\quad h^{ij}A_{ij}=0.
+\]
+于是约束成为
+\[
+    {}^{(3)}R-A^{ij}A_{ij}+\frac{2}{3}K^2-2\Lambda+16\pi T_{nn}=0,\quad (A_i{}^j)_{|j}-\frac{2}{3}K_{|i}-8\pi T_i^n=0.
+\]
+若进一步选取常平均曲率切片 $K=\text{常数}$，且物质动量密度为零，动量约束只要求 $A_{ij}$ 横向无迹。再配合共形分解
+\[
+    h_{ij}=\phi^4\tilde h_{ij},
+\]
+以及 $A_{ij}$ 的相应共形权重，能量约束便成为关于共形因子 $\phi$ 的椭圆型方程。自由指定一部分几何数据，再由约束方程解出剩余部分，这就是 Lichnerowicz-York 共形方法的基本思想。
+给定满足约束的初值后，还需选择时移、位移才能写出具体演化，代表切片方式和空间坐标拖曳方式的选择。这对应规范自由度，因此时移、位移不是新的物理初值。只要物质场方程满足能动量守恒，并且初始面上约束成立，则由 Bianchi 恒等式或等价的约束代数可知约束会沿演化传播，不会在后续时刻重新变成独立条件。
+由前文知，采用谐和坐标可把 Einstein 方程化为拟线性波动方程。对真空或合适的物质模型，\textbf{Choquet-Bruhat 定理}说明：给定满足约束且具有适当光滑性的初始数据，局部存在一个时空发展，且只相差规范自由度。换言之，在微分同胚意义下，这个发展唯一。Choquet-Bruhat-Geroch 定理进一步说明还存在唯一的\textbf{最大 Cauchy 发展}。至于该发展能否延伸到任意远的未来，是否形成奇点或黑洞，则属于全局动力学问题，不能仅由局部适定性保证。
+
+\subsection{标架表述}\label{sec:tetrad}
+
+引力规范理论涉及局域化，但局域化本身并不要求时空无挠。前文用度规和 Levi-Civita 联络表述引力，优点是直接体现等效原理，缺点是局域 Lorentz 对称性被藏在了坐标变换里。若要把引力同 Yang-Mills 型规范理论放在同一语言下，尤其要处理旋量场，就应改用\textbf{标架表述}(tetrad formalism)。
+
+规定时空指标使用 $\mu,\nu,\lambda$ 等小写希腊字母，标架指标使用 $I,J,K$ 等大写拉丁字母。标架指标由固定的闵氏度规 $\eta_{IJ}$ 升降。给定时空点 $p$ 处一组正交归一基 $\{e_I\}$，并取对偶基 $\{e^I\}$：
 \eq{
     e_I=e_I{}^\mu\pdv{x^\mu},\quad e^I=e^I{}_\mu\d x^\mu,\quad
     e_I{}^\mu e^J{}_\mu=\delta_I^J,\quad e_I{}^\mu e^I{}_\nu=\delta^\mu_\nu.
 }
-若这种选择随 $p$ 光滑变化，就称为\textbf{标架场}或\textbf{余标架场}。其正交归一性为
+若这种选择随 $p$ 光滑变化，就称为\textbf{标架场}和\textbf{余标架场}。其正交归一性为
 \eq{
 \tcbhighmath{
     g_{\mu\nu}e_I{}^\mu e_J{}^\nu=\eta_{IJ}\iff
@@ -2087,9 +2200,9 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面�
     =\Lambda^I{}_K\omega_\mu{}^K{}_L(\Lambda^{-1})^L{}_J
     -(\p_\mu\Lambda^I{}_K)(\Lambda^{-1})^K{}_J
 }
-变换。这与电磁势 $A_\mu$ 的规范补偿项完全同构，差别只在于 Lorentz 群非 Abel 群。
+变换。这与电磁势 $A_\mu$ 的规范补偿项完全同构，差别只在于 Lorentz 群非交换群。
 
-标架把“内禀的”Minkowski 空间和时空切空间焊接起来。要求两种导数表述一致，可写作\textbf{标架公设}
+标架把“内禀的”平直空间和时空逆变矢量空间焊接起来。要求两种导数表述一致，可写作\textbf{标架公设}
 \eq{
     0=\mathscr D_\mu e^I{}_\nu:=\p_\mu e^I{}_\nu+\omega_\mu{}^I{}_J e^J{}_\nu-\Gamma^\lambda_{\mu\nu}e^I{}_\lambda,
 }
@@ -2148,10 +2261,7 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面�
 \eq{
     S_{EC}[e,\omega,\Psi]=\frac{1}{2\kappa}\int\d[4]x\,|e|\,e_I{}^\mu e_J{}^\nu R_{\mu\nu}{}^{IJ}(\omega)+S_M[e,\omega,\Psi].
 }
-这里不预先令 $\omega=\omega(e)$。对 $e^I{}_\mu$ 变分得到 Einstein 型方程，对 $\omega_\mu{}^{IJ}$ 变分得到 Cartan 方程。若将物质对标架、自旋联络的变分系数分别记作能动量和自旋流，则后者的内容可概括为
-\[
-    \text{挠率的代数组合}=\kappa\times\text{自旋流}.
-\]
+这里不预先令 $\omega=\omega(e)$。对 $e^I{}_\mu$ 变分得到 Einstein 型方程，对 $\omega_\mu{}^{IJ}$ 变分得到 Cartan 方程。若将物质对标架、自旋联络的变分系数分别记作能动量和自旋流，则后者的内容可概括为：$\textit{挠率的代数组合}=\kappa\times\textit{自旋流}$。
 关键在于它是代数方程，而非波动方程；也就是说，Einstein-Cartan 理论中的挠率通常不独立传播。若物质没有自旋流，例如经典标量场、电磁场或忽略自旋的尘埃，则 Cartan 方程给出 $T^I{}_{\mu\nu}=0$，理论退回广义相对论。若存在 Dirac 场，挠率只在自旋物质内部或接触处非零，并可等效为极短程的自旋--自旋接触相互作用。
 
 这也说明了等效原理在此处的地位。若坚持前文采用的强表述，即所有足够局域的实验都可退回无引力的狭义相对论，则独立挠率会留下自旋耦合，因而不再属于纯粹的 Levi-Civita 几何。若把等效原理只视为无自旋试验质点的普适自由落体规律，则 Einstein-Cartan 理论仍与通常实验相容，并在低能、低自旋密度条件下几乎不可区分于广义相对论。
@@ -2165,203 +2275,6 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面�
 \end{aligned}
 }
 其中 $R_{\alpha\beta\mu\nu}$ 是度规适配有挠联络的 Riemann 曲率。它仍反称于前一对指标 $\alpha,\beta$ 和后一对指标 $\mu,\nu$，但通常不再具有无挠情形下的前后对换对称和第一 Bianchi 对称；Ricci 张量仍按 $R_{\alpha\beta}=R^\mu{}_{\alpha\mu\beta}$ 定义，且一般不再对称。以上指标升降均使用 $g_{\mu\nu}$。这些高阶项体现的是有效场论意义下的可能修正；在本章其余部分若无特别声明，仍回到无挠 Levi-Civita 几何。
-\end{comment}
-
-\section{哈氏表述}
-\begin{comment}
-\subsection{3+1 分解}
-
-Wheeler 的几何动力学主要是指广义相对论的 Hamilton 正则表述。3+1 分解也称为\textbf{Arnowitt-Deser-Misner(ADM) 分解}。
-在时空中引入一个类空超曲面 $X^{\mu}=X^{\mu}(t,x^{i})$，其中 $(t,x^{i})$ 是某个时空坐标，在超曲面上任一点 $(t,x^{i})$ 引入单位法矢 $n^{\mu}$ 和单位切矢
-\[ V_{i}^{\mu} := \pdv{X^{\mu}}{x^{i}} = {X^{\mu}}_{,i}, \]
-$(n^{\mu},V_{i}^{\mu})$ 构成一个局部4标架，它们满足：
-(1) 正交性：单位法矢 $n^{\mu}$ 与单位切矢 $V_{i}^{\mu}$ 正交，即
-\[ g_{\mu\nu}n^{\mu}V_{i}^{\nu}=0; \]
-(2) 类时性：类空超曲面上的单位法矢是类时的，即
-\[ g_{\mu\nu}n^{\mu}n^{\nu}=-1 \]
-(3) 类空超曲面上的度规：类空超曲面上度规是4维时空度规在标架的3个单位切矢上的投影，即
-\[ h_{ij}=g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} \]
-由于超曲面上的诱导度规与4维流形上的度规有如下关系：
-\[ h_{\mu\nu}=g_{\mu\nu}+n_{\mu}n_{\nu} \]
-所以，对于类空超曲面，我们约定：i,j取1,2,3.
-\[ h_{ij} := h_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} \]
-
-如图 8.2.1所示,设超曲面在时空中作连续变形。定义变形矢量 $N^{\mu}$ 为
-\[ N^{\mu} := \pdv{X^{\mu}(t,x^{i})}{t} \equiv \dot{X}^{\mu}, \]
-它定义了坐标 $t$ 流逝的方向,它在局部4标架上可分解为
-\[ N^{\mu}=Nn^{\mu}+N^{i}V_{i}^{\mu} \]
-
-①此处给定一个超曲面的方法与 \S 2.12中的方法有所不同,在那里，$f(x^{\mu})=C$ 就定义一个超曲面。在这里，$X$ 不是常数,而是4个时空点的函数,作为超曲面的坐标。
-
-通常把类时分量 $N$ 称为时移函数(lapse function)或简称为时移,把类空分量 $N^{i}$ 称为位移矢量(shift vector)或简称为位移。 现在证明时空度规总可写成
-\[ ds^{2} = -(N^{2}-N_{i}N^{i})dt^{2} + 2N_{i}dx^{i}dt + h_{ij}dx^{i}dx^{j}, \]
-其中
-\[ N_{i} = h_{ij}N^{j}. \]
-
-证明 4维时空度规总可以写成
-\[ ds^{2} = g_{tt}dt^{2} + 2g_{it}dx^{i}dt + g_{ij}dx^{i}dx^{j}, \]
-考虑如图 8.2.1所示的由超曲面变化给出的时空间隔,
-\[ g_{\mu\nu}dX^{\mu}dX^{\nu} = g_{\mu\nu}\dot{X}^{\mu}\dot{X}^{\nu}dt^{2} + 2g_{\mu\nu}\dot{X}^{\mu}V_{i}^{\nu}dtdx^{i} + g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu}dx^{i}dx^{j} \]
-另一方面,这个时空间隔还可写成
-\[ g_{\mu\nu}dX^{\mu}dX^{\nu} = g_{tt}dt^{2} + 2g_{it}dx^{i}dt + g_{ij}dx^{i}dx^{j}, \]
-比较两式,知
-\[ g_{ij} = V_{i}^{\mu}V_{j}^{\nu}g_{\mu\nu} = V_{i}^{\mu}V_{j}^{\nu}(h_{\mu\nu}-n_{\mu}n_{\nu}) = V_{i}^{\mu}V_{j}^{\nu}h_{\mu\nu} = h_{ij} \]
-\[ g_{ti} = \dot{X}^{\mu}V_{i}^{\nu}g_{\mu\nu} = N^{\mu}V_{i}^{\nu}g_{\mu\nu} = g_{\mu\nu}(Nn^{\mu}+N^{j}V_{j}^{\mu})V_{i}^{\nu} = N^{j}g_{\mu\nu}V_{j}^{\mu}V_{i}^{\nu} = N^{j}h_{ji} = N_{i}, \]
-\[ g_{tt} = \dot{X}^{\mu}\dot{X}^{\nu}g_{\mu\nu} = N^{\mu}N^{\nu}g_{\mu\nu} = N^{\mu}N^{\nu}(h_{\mu\nu}-n_{\mu}n_{\nu}) = (Nn^{\mu}+N^{i}V_{i}^{\mu})(Nn^{\nu}+N^{j}V_{j}^{\nu})h_{\mu\nu}-N^{2} = N^{i}V_{i}^{\mu}N^{j}V_{j}^{\nu}h_{\mu\nu}-N^{2} = N^{i}N_{i}-N^{2}. \]
-证毕。
-
-度规(8.2.9)式写成矩阵形式是
-\[ (g_{\mu\nu}) = \begin{pmatrix} -(N^{2}-N_{k}N^{k}) & N_{i} \\ N_{j} & h_{ij} \end{pmatrix} \]
-其行列式为
-\[ g = (N^{i}N_{i}-N^{2})h - A^{ij}N_{i}N_{j}, \]
-其中 $A^{ij}$ 是 $3\times3$ 矩阵,是 $h_{ij}$ 的第 $i$ 行第 $j$ 列的代数余子式，$A^{ij}=hh^{ij}$,将之代入(8.2.13)式得
-\[ g = (N^{i}N_{i}-N^{2})h - hh^{ij}N_{i}N_{j} = -N^{2}h \quad \text{或} \quad \sqrt{-g}=Nh^{1/2}. \]
-度规矩阵(8.2.12)式的逆为
-\[ (g^{\mu\nu}) = \begin{pmatrix} -1/N^{2} & N^{i}/N^{2} \\ N^{j}/N^{2} & h^{ij}-N^{i}N^{j}/N^{2} \end{pmatrix} = (h^{\mu\nu}-n^{\mu}n^{\nu}), \]
-后一等号由(8.2.5)式得到。由此可得坐标基下单位法矢 $n^{\mu}$ 和 $h^{\mu0}$ 的表达式：
-\[ n^{\mu} = \left(\frac{1}{N}, -\frac{N^{i}}{N}\right) \]
-\[ h^{\mu0} = 0. \]
-易证,(8.2.16)式满足(8.2.3)式。
-
-由于由外曲率(2.12.6)表达式及李导数的计算规则得
-\begin{align*}
-K_{\mu\nu} &= n_{(\mu;\nu)}, \\
-K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)} = g_{\lambda(i}{n^{\lambda}}_{,j)} + g_{\lambda(i}\Gamma_{|\kappa|j)}^{\lambda}n^{\kappa} = g_{0(i}{n^{0}}_{,j)} + g_{k(i}{n^{k}}_{,j)} + \frac{1}{2}\pdv{g_{ij}}{x^{\kappa}}n^{\kappa} \\
-&= -\frac{1}{N}N_{(i,j)} + h_{k(i,j)}\frac{N^{k}}{N} + \frac{1}{2N}\pdv{h_{ij}}{t} - \frac{1}{2}\pdv{h_{ij}}{x^{k}}\frac{N^{k}}{N} = \frac{1}{N}\left(\frac{1}{2}\pdv{h_{ij}}{t} - N_{(i|j)}\right),
-\end{align*}
-其中下标竖线“|”代表在超曲面内的协变导数，即\textbf{空间协变导数}，超曲面内的联络系数为
-\[ ^{(3)}\Gamma_{ij}^{l} = \frac{1}{2}h^{kl}(h_{ki,j}+h_{kj,i}-h_{ij,k}). \]
-
-外曲率的迹为
-\[ K = g^{\mu\nu}n_{(\nu;\mu)} = (h^{\mu\nu}-n^{\mu}n^{\nu})n_{(\nu;\mu)} = h^{\mu\nu}n_{(\nu;\mu)} = h^{ij}n_{(i;j)} = h^{ij}K_{ij}, \]
-其中第三个等号用到 $n^{\mu}n_{\mu;\nu}=0$,第四个等号用到(8.2.16)式的第二式。
-由微分几何中的高斯-科达齐(Gauss-Codazzi)关系可推得
-\[ R = ^{(3)}R + K^{ij}K_{ij} - K^{2} + \text{全微分项}, \]
-其中 $^{(3)}R$ 是3维超曲面内禀曲率的里奇标量,内禀曲率由联络系数(8.2.19)式按(2.8.4)式计算。
-
-\subsection{正则表述}
-
-对于纯引力系统,略去边界项,引力作用量(8.1.23)式改写为
-\[ S_{g}[h_{ij},N,N^{i};\dot{h}_{ij},\dot{N},\dot{N}^{i}] = -\frac{1}{16\pi }\int_{\mathcal{M}=\mathbb{R}^{1}\times\Sigma_{3}}d^{4}xh^{1/2}N[K^{ij}K_{ij}-K^{2}+^{(3)}R-2\Lambda]. \]
-引力场的拉氏量密度为
-\[ \mathcal{L}_{g} = -\frac{1}{16\pi }h^{1/2}N[K^{ij}K_{ij}-K^{2}+^{(3)}R-2\Lambda] \]
-在作用量(8.2.23)式或拉氏量密度中引力场的位形变量是 $h_{ij},N,N^{i}$ 它们的共轭正则动量(取 $c=G=\hbar=1$) 定义为
-\[ \pi_{N} = 16\pi \fdv{S_{g}}{\dot{N}} = 16\pi \pdv{\mathcal{L}_{g}}{\dot{N}}. \]
-\[ \pi_{N^{i}} = 16\pi \fdv{S_{g}}{\dot{N}^{i}} = 16\pi \pdv{\mathcal{L}_{g}}{\dot{N}^{i}}. \]
-\[ \pi^{ij} = 16\pi \fdv{S_{g}}{\dot{h}_{ij}} = 16\pi \pdv{\mathcal{L}_{g}}{\dot{h}_{ij}}. \]
-由于作用量(8.2.23)式的被积函数中不显含 $\dot{N}$ 和 $\dot{N}^{i}$ ,所以,
-\[ \pi_{N}=0, \quad \pi_{N^{i}}=0, \]
-这表明引力系统存在4个初级约束。
-\[ \pi^{ij} = -h^{1/2}N\left(2K^{ij}\pdv{K_{ij}}{\dot{h}_{ij}} - 2K\pdv{K}{\dot{h}_{ij}}\right) = -h^{1/2}(K^{ij}-h^{ij}K). \]
-其迹为
-\[ \pi = h_{ij}\pi^{ij} = 2h^{1/2}K \im K = \frac{1}{2}h^{-1/2}\pi, \]
-由(8.2.26)式反解出 $K^{ij}$,并利用(8.2.27)式,得
-\[ K^{ij} = -h^{-1/2}\left(\pi^{ij}-\frac{1}{2}h^{ij}\pi\right), \]
-所以,
-\[ K^{ij}K_{ij}-K^{2} = \frac{1}{h}\left(\pi^{ij}-\frac{1}{2}h^{ij}\pi\right)\left(\pi_{ij}-\frac{1}{2}h_{ij}\pi\right) - \frac{1}{4h}\pi^{2} = \frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right) \]
-\[ \pi^{ij}K_{ij} = -h^{-1/2}\pi^{ij}\left(\pi_{ij}-\frac{1}{2}h_{ij}\pi\right) = -h^{-1/2}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right) \]
-由勒让德变换得哈密顿密度,
-\[ \mathcal{H}_{g} = \pi_{N}\dot{N} + \pi_{N^{i}}\dot{N}^{i} + \pi^{ij}\dot{h}_{ij} - 16\pi \mathcal{L}_{g} \]
-\[ = \pi^{ij}\dot{h}_{ij} + h^{1/2}N(K^{ij}K_{ij}-K^{2}+^{(3)}R-2\Lambda) \]
-\[ = -h^{-1/2}N\left[\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}-h(^{(3)}R-2\Lambda)\right] + 2\pi^{ij}N_{(i|j)} \]
-\[ = h^{1/2}\left\{-N\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-^{(3)}R+2\Lambda\right] + 2h^{-1/2}\pi^{ij}N_{(i|j)}\right\} \]
-\[ = h^{1/2}\left\{-N\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-^{(3)}R+2\Lambda\right] - 2N_{(i}(h^{-1/2}\pi^{ij})_{|j)}\right\} \]
-其中第三个等号用到(8.2.18)、(8.2.28)~(8.2.30)式,第四个等号提出了 $h^{1/2}$ 因子,这是因为哈密顿量是3维空间上的标量,哈密顿密度是3维空间上的标量密度;在最后一个等式中已略掉了边界项。 初级约束(8.2.25)式需在任何时刻都成立,即要求这4个约束在演化中保持不变。为此,需有
-\[ 0 = \dot{\pi}_{N} = [\pi_{N},\mathcal{H}_{g}] = -\pdv{\mathcal{H}_{g}}{N} = h^{1/2}\left[\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-^{(3)}R+2\Lambda\right] =: H_{g}, \]
-\[ 0 = \dot{\pi}_{N^{i}} = [\pi_{N^{i}},\mathcal{H}_{g}] = -\pdv{\mathcal{H}_{g}}{N^{i}} = 2(h^{-1/2}\pi^{ij})_{|j} =: H_{i}. \]
-这4个约束是次级约束,分别称为哈密顿约束和动量约束(或微分同胚约束),其中 $[A, B]$ 是 $A$ 与 $B$ 的泊松括号。 哈密顿约束和动量约束还可从作用量(8.2.22)式对 $N$ 和 $N^{i}$ 变分后再利用(8.2.29)式直接得到
-\[ 16\pi \fdv{S_{g}}{N} = H_{g} = 0, \quad 16\pi \fdv{S_{g}}{N^{i}} = H_{i} = 0, \]
-在时间演化中,4个次级约束(8.2.32)、(8.2.33)式也应该总保持,故需有
-\[ 0 = \dot{H}_{g} = [H_{g},\mathcal{H}_{g}], \quad 0 = \dot{H}_{i} = [H_{i},\mathcal{H}_{g}]. \]
-可以证明,(8.2.35)式是4个恒等式,不会给出任何新的约束。引力场的动力学方程为
-\[ \dot{h}_{ij} = [h_{ij},\mathcal{H}_{g}] = \pdv{\mathcal{H}_{g}}{\pi^{ij}}, \quad \dot{\pi}^{ij} = [\pi^{ij},\mathcal{H}_{g}] = -\pdv{\mathcal{H}_{g}}{h_{ij}}. \]
-引力场量 $h_{ij}$ 张成一个空间,称为超空间(与超对称、超弦理论无关),这是一个无穷维空间,在这个超空间中可引入超度规(又称为 de Witt 度规)：
-\[ G_{ijkl} = \frac{1}{2}h^{-1/2}(h_{ik}h_{jl}+h_{il}h_{jk}-h_{ij}h_{kl}), \]
-于是,哈密度约束可写成
-\[ G_{ijkl}\pi^{ij}\pi^{kl} - h^{1/2}(^{(3)}R-2\Lambda) = 0. \]
-
-引力与物质耦合系统的作用量为
-\[ S_{T}[h_{ij},N,N^{i},\psi;\dot{h}_{ij},\dot{N},\dot{N}^{i},\dot{\psi}] = -\frac{1}{16\pi }\int_{\mathcal{M}=\mathbb{R}^{1}\times\Sigma_{3}}d^{4}xh^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R(h)-2\Lambda] + S_{m}, \]
-其中 $\psi$ 表示物质场位形变量的集合。 初级约束(8.2.25)式同样满足,它们在时间演化中一直得以保持要求系统还需满足4个次级约束
-\[ 16\pi \fdv{S_{T}}{N} = 16\pi \left(\fdv{S_{g}}{N} + \fdv{S_{m}}{N}\right) = H = 0 \]
-\[ 16\pi \fdv{S_{T}}{N^{i}} = 16\pi \left(\fdv{S_{g}}{N^{i}} + \fdv{S_{m}}{N^{i}}\right) = H_{i} = 0, \]
-其中
-\begin{align*}
-    \eval{\fdv{S_{m}}{N}}_{N^{i},h_{ij}} &= 2N\eval{\fdv{S_{m}}{N^{2}}}_{N^{i},h_{ij}} = -2N\fdv{S_{m}}{g_{tt}} = -h^{1/2}N^{2}T^{tt} = -h^{1/2}N^{2}g^{t\mu}g^{t\nu}T_{\mu\nu} \\
-    &= -h^{1/2}N^{2}(h^{t\mu}-n^{0}n^{\mu})(h^{t\nu}-n^{0}n^{\nu})T_{\mu\nu} = -h^{1/2}n^{\mu}n^{\nu}T_{\mu\nu} = -h^{1/2}T_{nn}, \\
-    \eval{\fdv{S_{m}}{N^{i}}}_{N,h_{ij}} &= \fdv{S_{m}}{g_{tt}}\eval{\pdv{g_{tt}}{N^{i}}}_{N,h_{ij}} + 2\fdv{S_{m}}{g_{tj}}\eval{\pdv{g_{tj}}{N^{i}}}_{N,h_{ij}} \\
-    &= Nh^{1/2}(T^{tt}N_{i}+T^{tj}h_{ji}) = Nh^{1/2}(T^{tt}g_{ti}+T^{tj}g_{ji}) = Nh^{1/2}T_{i}^{t}, 
-\end{align*}
-$T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是,引力场与物质场耦合时的哈密顿约束和动量约束分别为
-\[ h^{1/2}\left\{\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right) - ^{(3)}R + 2\Lambda - 16\pi T_{nn}\right\} = 0, \]
-在得到(8.2.45)式时用到
-\[ (h^{-1/2}\pi_{i}^{j})_{|j} + 8\pi T_{i}^{n} = 0. \]
-\begin{align*}
-    T_{j}^{n} &:= g_{\mu\nu}n^{\mu}T_{j}^{\nu} = g_{00}n^{0}T_{j}^{0} + g_{i0}n^{i}T_{j}^{0} + g_{0i}n^{0}T_{j}^{i} + g_{ki}n^{k}T_{j}^{i} \\
-    &= -(N^{2}-N_{i}N^{i})\frac{1}{N}T_{j}^{0} - N_{i}\frac{N^{i}}{N}T_{j}^{0} + \frac{N_{i}}{N}T_{j}^{i} - h_{ki}\frac{N^{k}}{N}T_{j}^{i} = -NT_{j}^{0}.
-\end{align*}
-进一步,总作用量对 $h_{ij}$ 变分即得经典几何动力学中的演化方程,演化方程可以写成正则的形式,正则共轭量为 $h_{ij}$ 和 $\pi^{ij}$ 及物质场的正则共轭量。 在演化中,这些正则共轭量 $h_{ij}$ 和 $\pi^{ij}$ 并不独立,必须满足两个约束方程——(8.2.44)和(8.2.45)式。
-在流形 $\mathcal{M}=\mathbb{R}\times\Sigma_{3}$ 上,演化方程和约束方程等价于爱因斯坦引力场方程组,它们包含了经典几何动力学的全部信息。 引力场的正则量子化就是在上述1+3分解的基础上,将泊松括号改为量子对易子,将经典约束方程改为量子态所必须满足的量子约束方程。 顺便提一句,在ADM形式、量子引力等中,常取 $16\pi G=c=1$(而不是 $G=c=1$),可使问题更简化。
-
-\subsection{初值问题}
-
-上一小节已经看到,在 3+1 分解后,Einstein 方程分成两类：一类是 $h_{ij}$ 与 $\pi^{ij}$ 的演化方程,另一类是哈密顿约束和动量约束。所谓\textbf{初值问题}就是反过来问：在某个三维流形 $\Sigma_3$ 上给定怎样的初始数据,才能唯一地确定一个四维时空的发展？
-
-初始数据不能任意给出。对纯引力场而言,一组初始数据可取为
-\[
-    (\Sigma_3,h_{ij},\pi^{ij}),
-\]
-其中 $h_{ij}$ 是 $\Sigma_3$ 上的 Riemann 度规,而 $\pi^{ij}$ 是它的共轭动量。若有物质场,还需同时给出物质场 $\psi$ 及其正则共轭量。它们必须满足上一小节所得的约束
-\[
-    h^{1/2}\left\{\frac{1}{h}\left(\pi^{ij}\pi_{ij}-\frac{1}{2}\pi^{2}\right)-{}^{(3)}R+2\Lambda-16\pi T_{nn}\right\}=0,
-\]
-\[
-    (h^{-1/2}\pi_{i}^{j})_{|j}+8\pi T_{i}^{n}=0.
-\]
-这里 $\pi=h_{ij}\pi^{ij}$,竖线仍表示由 $h_{ij}$ 决定的三维协变导数。若改用外曲率表示初始数据,由
-\[
-    \pi^{ij}=-h^{1/2}(K^{ij}-h^{ij}K)
-\]
-可把约束等价写作
-\[
-    {}^{(3)}R-K^{ij}K_{ij}+K^2-2\Lambda+16\pi T_{nn}=0,
-\]
-\[
-    (K_i{}^j-\delta_i{}^jK)_{|j}-8\pi T_i^n=0.
-\]
-因此,初值问题的核心不是任意指定 $h_{ij}$ 和 $K_{ij}$,而是先在 $\Sigma_3$ 上解这四个约束方程。
-
-在真空且 $\Lambda=0$ 时,约束变为
-\[
-    {}^{(3)}R-K^{ij}K_{ij}+K^2=0,\quad
-    (K_i{}^j-\delta_i{}^jK)_{|j}=0.
-\]
-特别地,若取时间对称初值 $K_{ij}=0$,则动量约束自动满足,哈密顿约束退化为
-\[
-    {}^{(3)}R=0.
-\]
-平直初值 $h_{ij}=\delta_{ij},K_{ij}=0$ 就给出 Minkowski 时空的一组初值；非平凡的标量平坦三维度规则可作为黑洞等引力场初值的出发点。
-
-更一般地,常把外曲率分解为迹和无迹部分
-\[
-    K_{ij}=A_{ij}+\frac{1}{3}h_{ij}K,\quad h^{ij}A_{ij}=0.
-\]
-于是约束成为
-\[
-    {}^{(3)}R-A^{ij}A_{ij}+\frac{2}{3}K^2-2\Lambda+16\pi T_{nn}=0,
-\]
-\[
-    (A_i{}^j)_{|j}-\frac{2}{3}K_{|i}-8\pi T_i^n=0.
-\]
-若进一步选取常平均曲率切片 $K=\text{常数}$,且物质动量密度为零,动量约束只要求 $A_{ij}$ 横向无迹。再配合共形分解
-\[
-    h_{ij}=\phi^4\tilde h_{ij},
-\]
-以及 $A_{ij}$ 的相应共形权重,哈密顿约束便成为关于共形因子 $\phi$ 的椭圆型方程。这就是 Lichnerowicz-York 共形方法的基本思想：自由指定一部分几何数据,再由约束方程解出剩余部分。
-
-给定满足约束的初值后,还需选择时移 $N$ 和位移 $N^i$ 才能写出具体演化。它们不是新的物理初值,而是切片方式和空间坐标拖曳方式的选择。不同的 $N,N^i$ 通常描述同一个四维几何的不同坐标表述。只要物质场方程满足能动量守恒,并且初始面上约束成立,则由 Bianchi 恒等式或等价的约束代数可知约束会沿演化传播,不会在后续时刻重新变成独立条件。
-
-严格地说,广义相对论的 Cauchy 适定性通常在固定规范后证明,例如采用谐和坐标把 Einstein 方程化为拟线性波动方程。对真空或合适的物质模型,Choquet-Bruhat 定理说明：给定满足约束且具有适当光滑性的初始数据,局部存在一个时空发展；在微分同胚意义下,这个发展唯一。进一步的 Choquet-Bruhat-Geroch 结果说明还存在唯一的最大 Cauchy 发展。这里的“唯一”必须模去坐标变换,这正是广义协变性在初值问题中的体现。至于该发展能否延伸到任意远的未来,是否形成奇点或黑洞,则属于全局动力学问题,不能仅由局部适定性保证。
 
 \section{参考系理论}
 \subsection{类时线汇的形变}
@@ -2468,7 +2381,7 @@ h_{\mu\alpha} h_{\nu\beta}
 Einstein 转盘模型就是一例。置闵氏时空及惯性柱坐标系 $\{t,r,\varphi,z\}$。设圆盘置于 $z=0$ 平面，盘心位于空间原点，且以角速率 $\omega$ 旋转。转盘系 $\mathscr R$ 中任一观者 $\gamma(\tau)$ 可表 $t=\gamma\tau,\varphi=\omega\gamma\tau$，其中 $\gamma=1/\sqrt{1-\omega^2r^2}$；$r,z$ 为常数。
 只当 $\omega r<1$ 时这条曲线才能表示类时观者，故取转盘系定义域为开集 $r<1/\omega$。由此知 $Z^0=\gamma,Z^2=\gamma\omega$。柱坐标下闵氏度规为 $\d s^2=-\d t^2+\d r^2+r^2\d\varphi^2+\d z^2$，则 $Z_0=-\gamma,Z_2=\gamma\omega r^2$。易得非零克氏符有 $\Gamma^1_{22}=-r,\Gamma^2_{12}=\Gamma^2_{21}=1/r$。非零 $\cd_\mu Z_{\nu}$ 有 $Z_{0;1}=-\gamma^3\omega^2 r, Z_{1;2}=-\gamma\omega r, Z_{2;1}=\gamma^3\omega r$。综上加速度为 $A^1=-\gamma^2\omega^2 r$。因此 $A_1 Z_0 = \gamma^3\omega^2 r,A_1 Z_2 = -\gamma^3\omega^3 r^3$。$B_{10}=-B_{01}=\gamma^3\omega^2 r, B_{12}=-B_{21}=-\gamma^3\omega r$。故 $\omega_{\mu\nu}=B_{[\mu\nu]} = B_{\mu\nu}$ 非零，$\theta_{\mu\nu}=B_{(\mu\nu)}=0$。该系为刚性有旋系，从而不可全局对钟。但仍可有空间几何。取共动坐标系：$\theta=\varphi-\omega t$，其余照旧，则
 \[\d s^2 = -(1-\omega^2r^2)\d t^2+\d r^2+r^2\d\theta^2+2\omega r^2\d t\d\theta+\d z^2,\]
-诱导度规为 $\d\ell^2 = \d r^2+\frac{r^2}{1-\omega^2 r^2}\d\theta^2+\d z^2$。
+令 $\d t=0$ 得 $\d\ell^2 = \d r^2+\frac{r^2}{1-\omega^2 r^2}\d\theta^2+\d z^2$。
 圆盘边缘 $r=R,z=0$，从而积分得周长 ${2\pi R}/\sqrt{1-\omega^2 R^2}$。可见空间几何非欧性使周长与直径比率不再为 $\pi$。
 
 \begin{wrapfigure}{l}{0.25\textwidth}\centering
@@ -2486,289 +2399,6 @@ Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清�
 共动观者测量圆周时将尺子沿切向（尺长远短于周长从而圆弧近似直线），尺长在惯性系看来缩短为 $\sqrt{1-\omega^2R^2}$ 倍。故在惯性系看来，固有系用较短的尺子测出更长的周长。
 
 %%
-
-\section{速成附录*}
-
-本节提供物理上最小可用的数学附录，保证直观且简洁。
-
-\subsection{Gauss 定理}
-
-%%
-
-对作用量的变分涉及边界项。高维 Gauss 定理指出，散度的体积分可以转化为表面积分：
-\eq{
-\label{eq:Gauss}
-\int_\Omega \d[4]x\sqrt{-g}\,\cd_\lambda V^\lambda=\int_\Omega \d[4]{x} \p_\lambda(\sqrt{-g}V^\lambda) = \int_{\p\Omega} \d{\Sigma}_\lambda V^\lambda,
-}
-其中 $\d{\Sigma}_\lambda$ 为 $\p\Omega$ 诱导体元。证明见 \S\ref{appx:form}。因此一旦边界上 $V^\lambda = 0$，则这个边界项积分为零。
-
-为理解这个公式，需要理解超曲面的诱导体元。
-将 $g_{\mu\nu}$ 的作用对象限制于时空的嵌入子集 $\Omega$ 上，即对任意 $\Omega$ 的切矢场 $w_1,w_2$ 均有 $\tilde g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，就得到了度规的限制(restriction) $\tilde g_{\mu\nu}$，称\textbf{诱导度规}(induced metric)。换言之，总约定子集中的长度总用背景度规衡量。
-考虑超曲面，对任意切矢 $w^\mu$ 满足 $n_\mu w^\mu = 0$ 的背景余切矢 $n_\mu$ 称为\textbf{法余矢}，$n^\mu = g^{\mu\nu}n_\nu$ 称为\textbf{法矢}。总可取系 $\{\hat x\}$ 使 $\hat t=C$ 坐标面即为超曲面，换言之超曲面方程为 $\hat t(x^0,\cdots,x^3)=C$ 或 $\d\hat t=0$。为了看出梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$ 就是法余矢，因为对任意曲面切矢 $T^\mu$ 总可在曲面上找到 $x^\mu(\lambda)$ 使 $T^\mu=\dv*{x^\mu}{\lambda}$，进而 $T^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
-取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，这里 $\pm 1 = \sgn(\p_\mu\hat t \p^\mu\hat t)$，从而 $n^\mu n_\mu = \pm 1$。
-设线性无关分解 $V^\mu = A n^\mu + B T^\mu$。这里可看出法余矢之间只相差倍数关系，因为一旦 $B\ne 0$，则 $V_\mu w^\mu = B T_\mu w^\mu\ne 0$。
-显然 $A=\pm V^\nu n_\nu$。投影 $h^\mu{}_\nu V^\nu=BT^\mu=V^\mu \mp  (V^\nu n_\nu)  n^\mu = (\delta^\mu_\nu \mp n^\mu n_\nu)V^\nu$。最简单地，可选
-\eq{
-    h_{\mu\nu} := g_{\mu\nu} \mp n_\mu n_\nu\im h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu.
-}
-可验证 $h_{\mu\nu}$ 就是一个诱导度规。从而 $n^\mu$ 的投影映射为 $g^{\mu\sigma}h_{\sigma\nu}$。
-
-代入 $\Gamma_{ \sigma\mu}^\sigma=\p_\mu\ln\sqrt{-g}$ 有
-\eq{\label{eq:Rmn=lnSqrtG}
-    R_{\mu\nu}=\Gamma^\sigma_{\mu\nu,\sigma}-(\ln\sqrt{-g})_{,\mu\nu}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa_{\mu\nu}-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}.
-}
-
-%% 坐标基
-
- $h_{\alpha\beta}n^\alpha V^\beta = 0$。
-
-假设系 $\{x\}$ 使得超曲面为 $\d t=0$，则 $n_\mu = \pdv{t}{x^\mu}$
-
-
-在系 $\{x\}$ 中 $\pdv{x^\mu}{x^\alpha}=\delta^\mu_\alpha$，则 $h_{0\nu} = 0$，即用该系表示度规为 $\d s^2=\pm\d t^2+h_{ij}\d x^i\d x^j$，即令 $t=C$（$\d t=0$）自动截取得 $h_{ij}$。此系下也有 $g=\pm h,h=\det(h_{ij})$。
-球度规
-与 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 结果一致。
-
-$=\pm n_\lambda \sqrt{|h|}\d[3]{x}$
-
-\subsection{曲率的性质}\label{sec:curvature}
-
-我们预先\textit{规定}欧氏空间是平直的，以它为基准可判断某条线、某张面的弯曲。考虑一个球面，其上任意切矢沿自身平移所得测地线即过球心的大圆。设从赤道某两处垂直延伸两条大圆弧，它们的间距逐渐缩短并交于极点。在一张平面上，初态平行的直线不可能改变间距。矢量平行移动就是相对于路径各处邻域平移，然而考虑将扇形围成圆锥面，矢量沿着包含尖端的环路平行移动后，与原矢量不重合，而直观上尖端处有曲率，故曲率非零时，平行移动结果往往与路径有关。
-由球面诱导度规可计算球面曲率不为零。
-可见度规在非欧或非闵时，内禀曲率非零而使测地间隔变化。但内禀曲率其实只由度规和坐标系计算而来，甚至无需嵌入某个高维背景来定义度规和曲率——对于四维时空，我们就只能抛弃嵌入思想来想象它。内禀曲率只反应内禀的弯曲程度而与曲面本身无关：球面在内禀意义下弯曲，但圆柱面在内禀意义下平直（借柱坐标发现诱导度规平直），尽管它在直观上弯曲。数学上，描述圆柱面这种对象的弯曲程度就需要嵌入思想，称为\textbf{外}(extrinsic)\textbf{曲率}。一个直观理解是，凡能连续地展平的曲面，尽管外曲率可不为零，但内禀曲率为零；真正不可连续展平的曲面内禀曲率、外曲率都非零。读者可观察纸塑地球仪是如何尝试将平面纸张大致贴合球面的。
-
-只需默认无挠性并运用取局域惯性系的技巧（$\tilde R^\lambda{}_{\mu\nu\kappa}=-2\tilde \Gamma^\lambda_{\mu[\nu,\kappa]}$），就可证明曲率具有若干性质：
-\begin{itemize}
-    \item $2\cd_{[\nu}\cd_{\kappa]} \omega_\mu = - R^\lambda{}_{\mu\nu\kappa} \omega_\lambda$，因为无挠性导致 $\cd_{[\nu}\cd_{\kappa]}(V^\mu \omega_\mu)=0$。
-    \item ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$，根据定义即知；
-    \item ${R^\lambda}_{[\mu\nu\kappa]}=0$，\textbf{Ricci 循环恒等式}(cyclic identities)。
-\end{itemize}
-同理可证：
-\begin{itemize}
-    \item $R_{\lambda\kappa\mu\nu}=R_{[\lambda\kappa]\mu\nu}$；
-    \item $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$，前对指标和后对指标的对称性；
-    \item $R^\lambda{}_{ \mu [\sigma\nu ; \kappa]}=0$，\textbf{Bianchi 微分恒等式}。
-\end{itemize}
-由 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$ 知 Ricci 恒等式还可写作 $R^\lambda{}_{\mu\nu\kappa}+R^\lambda{}_{\nu\kappa\mu}+R^\lambda{}_{\kappa\mu\nu}=0$。若存在相同指标，则总与另三条性质重复，故常考虑指标各不相同的非平凡 Ricci 恒等式。类似地 Bianchi 恒等式还可写作 $R^\lambda{}_{ \mu \sigma\nu ; \kappa}+R^\lambda{}_{ \mu \nu\kappa;\sigma}+R^\lambda{}_{ \mu \kappa\sigma;\nu}=0$。
-对其缩并 $\lambda,\sigma$ 再用 $g^{\mu\kappa}$ 升指标，且注意 $g^{\mu\kappa} R_{\lambda \mu\nu\kappa}=g^{\mu\kappa} R_{\mu\lambda\kappa \nu}=R^{\kappa}{}_{\lambda\kappa \nu}=R_{\lambda\nu}$，则 $\cd^{\mu} R_{\mu\nu}+ \cd^\lambda R_{\lambda\nu}-\p_\nu R=0\Rightarrow\cd^{\mu} R_{\mu\nu}=\frac 12\p_\nu R$，即
-\eq{\label{eq:Bianchi}
-    \cd^\mu\left(R_{\mu\nu} - \frac12 g_{\mu\nu} R\right) = 0.
-}
-
-直观上，$n$ 维时空的 Riemann 曲率的分量有 $n^4$ 之多，但以上性质使其分量往往重复或为零。
-将 $(R_{\mu\nu\lambda\kappa})$ 划分为整体以 $A=\mu\nu$ 和 $B=\lambda\kappa$ 为行列指标的对称矩阵 $(R_{AB})$，由于 $A$ 或 $B$ 内部有反称性，因此 $A$ 或 $B$ 各有 $N=\binom{n}{2}$ 种取法，再由 $A,B$ 间的对称性得总共 $\binom{N+1}{2}$ 个独立分量。最后考虑 Ricci 恒等式。一种约束就会消去一个独立自由度，故最终 Riemann 曲率的独立分量数为 $\binom{N+1}{2}-\binom{n}{4}={n^2(n^2-1)}/{12}$。$n=4$ 时即 20。
-
-可用缩并将 Riemann 曲率进行压缩从而保留有用数据。由反称性知
-$R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种缩并是平凡的：$R^\sigma{}_{\mu\nu\sigma}=-R^\sigma{}_{\mu\sigma\nu}=-R_{\mu\nu}$，以及 $R^\sigma{}_{\sigma\mu\nu}=g^{\lambda\sigma}R_{\lambda\sigma\mu\nu}=g^{(\lambda\sigma)}R_{[\lambda\sigma]\mu\nu}=0$。可见初步缩并的唯一有用结果是 Ricci 曲率。
-根据 $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$ 有 $R_{\mu\nu}=g^{\sigma\lambda}R_{\sigma\mu\lambda\nu}=g^{\sigma\lambda}R_{\lambda\nu\sigma\mu}=R_{\nu\mu}$，
-或直接从 \eqref{eq:Rmn=lnSqrtG} 看出。
-
-即使真空 $R_{\mu\nu}=0$，也可以 $R_{\lambda\mu\nu\kappa}\ne 0$。这是因为 $R_{\mu\nu}$ 是 $R_{\lambda\mu\nu\kappa}$ 的迹，但无迹部分 $C_{\alpha\mu\nu\beta}$ 本就满足 $C^\lambda{}_{\mu\lambda\kappa}=0$，自然不受物质影响。尝试具体的迹分解。
-通过反证法易得无迹部分唯一，故可先设置试解，再确定待定系数。
-无迹部分需要保持相同的指标对称性，考虑 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - X(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + Y R g_{\alpha[\nu} g_{\beta]\mu}$。要求 $g^{\alpha\nu}C_{\alpha\mu\nu\beta} = R_{\mu\beta} - X((n-2)R_{\mu\beta}+g_{\mu\beta} R) + Y(n-1)R_{\mu\beta} = 0$ 可确定 $X,Y$，有
-\eq{
-    C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
-}
-这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
-能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda},C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
-
-%% 最大对称空间
-
-
-需要注意，在高维空间中也总存在\textbf{测地系}\footnote{数学上，这说明 Gauss 假设总能导出高维几何的局部平直性。}使得 $g_{\mu\nu}=\eta_{\mu\nu}$ 且 $g_{\mu\nu,\lambda}=0$。注意这并不显然，我们在四维时空中是用等效原理理解它的。考虑 $x^\mu(x')$ 形式的光滑函数（而非反之）以迎合度规的协变变换。
-以某点 $p$ 为某系 $\{x\}$ 原点，并不妨设变换不改原点，则总能展为
-\eq{
-    x^\mu= \pdv{x^\mu}{x'^\alpha}x'^\alpha+ \frac 12 \pdv{x^\mu}{x'^\alpha}{x'^\beta} x'^\alpha x'^\beta + \frac 16 \frac{\p^3 x^\mu}{\p x'^\alpha \p x'^\beta \p x'^\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.
-}
-将偏导系数简记 $A^\mu_\alpha,B^\mu_{\alpha\beta},C^\mu_{\alpha\beta\gamma}$ 等。
-$A^\mu_\alpha$ 的独立分量数为 $n^2$，而 $g_{\mu\nu}$ 的独立分量数为 $\binom {n+1}{2}=\frac{n(n+1)}{2}$。由 $2n\geqslant n+1$，$A^\mu_\alpha$ 能自由调节所有的 $g_{\mu\nu}$ 至 $\eta_{\mu\nu}$。进而，为排除掉 $g_{\mu\nu}$ 的改变使 $g_{\mu\nu,\lambda}$ 改变的那部分干扰，要考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}$ 的坐标变换。只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 即可：
-\[x^\mu=x'^\mu+\frac 12 B^\mu_{\alpha\beta} x'^\alpha x'^\beta +\cdots.\]
-注意 $B^\mu_{\alpha\beta}=B^\mu_{(\alpha\beta)}$，则独立分量数为 $n\binom {n+1}{2}$，而 $g_{\mu\nu,\lambda}$ 的独立分量数为 $\binom {n+1}{2}n$，二者相等，则 $B^\mu_{\alpha\beta}$ 恰好能自由调节所有的 $g_{\mu\nu,\lambda}$ 至零。进而地，在某测地坐标 $\{\xi\}$ 基础上，总能找到无限多测地坐标，它们形如
-\eq{
-    \zeta=\xi^\mu_0+\Lambda^\mu{}_\alpha\xi^\alpha+\frac 16 C^\mu_{\alpha\beta\gamma}\xi^\alpha \xi^\beta \xi^\gamma+\cdots,
-}
-其中$\xi^\mu_0,\Lambda^\mu{}_\alpha$ 等无关于 $\xi^\alpha$，
-即只要求 $A^\mu_\alpha$ 是 Poincaré 变换且 $B^\mu_{\alpha\beta}=0$，从而保持测地系性质。
-
-情况在二阶时发生改变。为排除掉 $g_{\mu\nu},g_{\mu\nu,\lambda}$ 改变所带来的干扰，考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}, g'_{\mu\nu,\lambda}=g_{\mu\nu,\lambda}$ 的坐标变换，只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 且 $B^\mu_{\alpha\beta}=0$：
-\[x^\mu=x'^\mu + \frac 16 C^\mu_{\alpha\beta\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.\]
-而 $C^\mu_{\alpha\beta\gamma}=C^\mu_{(\alpha\beta\gamma)}$，独立分量数为 $n\binom {n+2}{3}$，而 $g_{\mu\nu,\lambda\kappa}=g_{(\mu\nu),(\lambda\kappa)}$，独立分量数为 ${\binom {n+1}{2}}^2$。可见，$C^\mu_{\alpha\beta\gamma}$ 最多只能自由调节 $n\binom {n+2}{3}$ 种 $g_{\mu\nu,\lambda\kappa}$，并剩下
-\eq{
-    {\binom {n+1}{2}}^2-n\binom {n+2}{3}=\frac{n^2(n^2-1)}{12}.
-}
-因此总存在 ${n^2(n^2-1)}/{12}$ 种不受 $C^\mu_{\alpha\beta\gamma}$ 选择的影响的 $g_{\mu\nu,\lambda\kappa}$（或线性组合）。
-若我们想构造基于 $g_{\mu\nu,\lambda\kappa}$ 的张量，我们只能使用这些进行线性组合，因为张量变换律只包括 $A^\mu_\alpha=\delta^\mu_\alpha$ 而不涉及 $C^\mu_{\alpha\beta\gamma}$。这样当所构造的张量非零时，不会消除掉所有的 $g_{\mu\nu,\lambda\kappa}$。
-Riemann 曲率恰好具有 ${n^2(n^2-1)}/{12}$ 个独立分量，用完了所有可用的 $g_{\mu\nu,\lambda\kappa}$。正如前文所述，能用 $g_{\mu\nu,\lambda\kappa}$ 线性构造出的张量有且仅有 Riemann 曲率。
-
-%% 最大对称
-
-\subsection{Lie 导数}
-
-%%
-
-沿矢量场 $v^\mu$，我们可以定义
-
-$(k,l)$-张量的 Lie 导数为
-\begin{align*}
-    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
-    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
-    &=\pdv{\sigma}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
-    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l},
-\end{align*}
-最后一步注意：
-\[\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{\sigma}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu.\]
-
-
-一些特例：
-$\Lie_\xi f = \xi^\mu\p_\mu f = \pdv*{f}{t}$。
-
-对易子 $[X,Y]^\mu=$
-
-
-\eq{
-    Z^\nu\cd_\nu S^\mu=S^\nu\cd_\nu Z^\mu.
-}
-即 $Z^\mu,S^\mu$ 是对易的：$\Lie_Z S^\mu = [Z,S]^\mu = 0$。
-
-像交换性、坐标系为闭合回路 
-
-$\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu$。$\Lie_\xi g_{\mu\nu}=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}$
-
-\eq{\Lie_\xi g_{\mu\nu}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)}=0,}
-
-
-如果仿照等度规变换那样，满足
-\eq{\tilde T_{\mu\nu}(x)=g_{\mu\nu}(x)\Longleftrightarrow T_{\mu \nu}(x)=\pdv{\tilde x^{ \rho}}{x^\mu} \pdv{\tilde x^{ \sigma}}{x^\nu} \tilde T_{\rho \sigma}(\tilde x),}
-能保持 $T'_{\mu\nu}=T_{\mu\nu}$ 不变的特殊变换称为
-因此对任意张量 $\Phi$
-\eq{
-    \bar\var \Phi = \delta\Phi - \epsilon\xi^\lambda\p_\lambda\Phi = -\epsilon \Lie_\xi \Phi.
-}
-
-显然 Killing 矢量场的常系数线性组合还是 Killing 矢量场，所以等度规群可对应于全体 Killing 矢量场所构成的线性空间。于是，我们只要找到一组基底即可，即最大的一组线性独立的 Killing 矢量场。
-
-可证 $n$ 维空间的独立 Killing 矢量场的总数最多为 $\binom{n+1}{2}=\frac{n(n+1)}2$，细节待。
-
-具有这一数目的空间称为\textbf{最大对称空间}。对于最大对称空间可轻松找到 Killing 矢量场，之后验证即可。
-
-有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。
-
-先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\p_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。
-
-由于系数与坐标有关，因此 $\xi_3$ 独立于 $\xi_1,\xi_2$。
-
-对于 $\mathbb E^3$，很明显 6 种独立 Killing 矢量场对应3种平移、3种平面旋转。
-
-对于 $\R^{1,3}$，10 种独立 Killing 矢量场对应 4 种平移和 6 种平面旋转，其中平面旋转分为3 种空间旋转、3 种时空伪旋转，进而复合出任意 Poincaré 变换。
-
-%% 最大对称
-
-\subsection{一般仿射联络}\label{sec:connection}
-
-仿射联络满足如下自然的需求：
-\begin{itemize}
-    \item 能保持广义张量性；
-    \item 规定 $\cd_\nu f = \p_\nu f$。
-    \item 它应当具有 Leibniz 规则和线性性；
-    \item 显然希望“先缩并再求导”、“先求导再缩并”结果一致。
-\end{itemize}
-设 $\{\xi\}$ 中它表为 $\tilde\cd_\mu$，保持张量性就是对任意 $(k,l)$-张量有
-\[T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\tilde\cd_\kappa\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l},\]
-代入以
-\[
-\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}},
-\]
-其中注意 $T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}$ 的指标是固定的，不带有 $\xi$ 系的指标，是张量在坐标系下的具体分量，因此对 $\tilde\cd_\kappa $ 而言是普通的标量函数：
-\[\tilde\cd_\kappa T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} = \pdv{\xi^\kappa} T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}.\]
-定义联络系数为
-\eq{
-    \Gamma^\lambda_{\mu\nu} := \pdv{x^\lambda}{\xi^\alpha}\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu} \iff\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu}=\Gamma^\lambda_{\mu\nu}\pdv{\xi^\alpha}{x^\lambda},
-}
-从而
-\eq{\label{eq:cov-tens}
-    T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
-}
-联络系数是赝张量：
-\begin{align*}
-\Gamma_{\mu \nu}^{\prime \lambda} &= \pdv{x^{\prime \lambda}}{\xi^\alpha} \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{\xi^\alpha}{x^{\prime \nu}}\right) = \left(\pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha}\right) \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{x^\sigma}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma}\right) \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left[ \left(\pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}}\right) \pdv{\xi^\alpha}{x^\sigma} + \pdv{x^\sigma}{x^{\prime \nu}} \left(\pdv{x^\tau}{x^{\prime \mu}} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma}\right) \right] \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left( \pdv{x^\sigma}{x^{\prime \mu}}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma} \right) + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \left( \pdv{x^\rho}{\xi^\alpha} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma} \right) \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{x^{\prime \mu}}{x^{\prime \nu}} + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \Gamma_{\tau \sigma}^\rho.
-\end{align*}
-其中注意 $\pdv*{x^\sigma}{x^{\prime \nu}}$ 是 $x,x'$ 的关系，无关于 $\xi$，因此
-$\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sigma}{x^{\prime \nu}}$。
-
-
-\begin{figure}[ht]\centering
-\includegraphics[width=.6\textwidth]{fig/chpt01/covar-deri.pdf}
-    \caption{图中 $\Delta\tau$ 等差值均夸大}
-\end{figure}
-考察其直观图像将有所裨益。如图设某曲线 $x^\nu(\tau)$ 上 $p$ 为参数零点，而邻近点 $q$ 的参数记作 $\Delta\tau$（可正可负）。若矢量场 $ V$ 至少在 $p,q$ 线段上有定义，便可讨论 $p$ 处沿线导数算符。设矢量场在 $p,q$ 分别取值 $ V|_p, V|_q$，则
-\[\eval{\dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}\]
-是直接比较 $V|_q,V|_p$，但二者隶属不同切空间，差值 $\d V$ 意义不明。这是 $\d V^\mu/\d\tau$ 不协变的直观理解。欲画出 $\d V$，需将矢量照搬至同一点作差。不妨考虑 $q$ 点。图中 $q$ 点的 $V|_p$ 为照搬结果，故 $\d V$ 标注如图。另一方面，
-\[\eval{\Dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}+\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \lim_{\Delta\tau\to 0} \frac{\Delta x^\lambda}{\Delta\tau}=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_{p\to q}}{\Delta\tau},\]
-其中 $V^\mu|_{p\to q}=V^\mu|_p-\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \Delta x^\lambda$。
-可见 $\Dv*{V^\mu}{\tau}$ 是求 $V|_q$ 与 $q$ 处新矢量 $V|_{p\to q}$ 之差。这样 $\D V$ 表为如图。$\delta V$ 为 $V|_{p\to q}, V|_p$ 之差。由上式或图示知 $\delta V^\mu = \d V^\mu-\D V^\mu=-\Gamma^\mu_{\sigma\nu}V^\sigma\d x^\nu$，这便是克氏符项所给出的修正。$V|_{p\to q}$ 其实就是平移移动的结果。为看出这一点，只需令 $V$ 自己就处处按这种方式移动，则 $\Dv*{V^\mu}{\tau}=0$。
-一点处全体切矢构成该点\textbf{切空间}(tangent space)。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
-切矢场是给各时空点赋予其相应的切矢，一个切矢是绑定于一点的，故任意两点 $p,q$ 处各自的切矢本无关联。然而给定某 $p,q$ 间之曲线，可通过矢量的平行移动，将两个切空间联系起来。所以 $\cd_\nu$ 称为联络。
-
-
-
-
-
-\end{comment}
-
-\subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
-\begin{comment}
-
-    本节旨在补上任意 Lorentz 变换的代数证明。由于重点只在矩阵的行列指标，故本节将上标都写作下标以简化运算。
-根据相对性原理，对 $\Lambda$ 的分类同样适用于相应 $\Lambda^{-1}$。当然，亦可直接证明之。注意 $|\Lambda^{-1}|=|\Lambda|^{-1}$，我们只需证明 $(\Lambda^{-1})_{00}=\Lambda_{00}$。
-用 $\Lambda$ 表示 $\Lambda^{-1}$ 就是 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$。
-取其 $\sigma=\lambda=0$ 就有 $(\Lambda^{-1})_{00}=\Lambda_{00}=(\Lambda^\mathrm{T})_{00}$。
-
-
-
-下面用 $\{x\}\{x'\}$ 的相对速度表示 Lorentz 变换。
-我们说 $S'$ 系相对于 $S$ 的速度是 $u_i=\dv*{x_i}{t}$，是指 $S'$ 任意的相对静止的世界线在 $S$ 下测得的速度分量都是 $u_i$。显然这等价于研究 $S'$ 系的空间原点运动。反之，设 $S$ 系的空间原点在 $S'$ 下测得 $u'_i=\dv*{x'_i}{t'}$。先考虑 $S'$ 的空间原点，其世界线始终满足 $\d x'_i=0$，则 $\d x_\lambda=(\Lambda^{-1})_{\lambda 0}\d x'_0$，故 $\Lambda_{00}=(\Lambda^{-1})_{00}=\dv*{t}{t'},(\Lambda^{-1})_{i0}=u_i\dv*{t}{t'}$，
-据式 \eqref{eq:Lorentz} 有 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}(\Lambda^{-1})_{\nu\lambda}={\eta}_{\sigma\lambda}$（显然 $\Lambda^{-1}$ 也是 Lorentz 变换）。
-取 $\sigma=\lambda=0$ 有 $(\Lambda_{00})^2=1+\delta_{ij}(\Lambda^{-1})_{i0}(\Lambda^{-1})_{j0}$。
-    再结合正时条件有 $\Lambda_{00}=(\Lambda^{-1})_{00}=\gamma$，以及 $(\Lambda^{-1})_{i0}=\gamma u_i$，其中 $u:=\sqrt{u_i u_i}$。再考虑 $S$ 的空间原点，类似地有 $\Lambda_{00}=\dv*{t'}{t},\Lambda_{i0}=u'_i \dv*{t'}{t}=\gamma u'_i$，
-以及
-\[u'_iu'_i=u_i u_i=u^2.\]
-这看似是显然的，但现在要作为经过证明的结论。
-不过，这是用 $u'_i$ 表示 $\Lambda$，固然渴望用 $u_i$ 直接表示。对 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$ 其余 $\sigma,\lambda$ 讨论有 $(\Lambda^{-1})_{i0}=-\Lambda_{0i},(\Lambda^{-1})_{0i} =-\Lambda_{i0}$，
-以及 $(\Lambda^{-1})_{ij}=(\Lambda^\mathrm{T})_{ij}$。
-可得 $\Lambda_{0i}=(\Lambda^\mathrm{T})_{i0}=-\gamma u_i$。
-还差 $\Lambda_{i0},\Lambda_{ij}$。尝试用 $u_i$ 表示 $u'_i$。取 \eqref{eq:Lorentz} 式 $\sigma=0,\lambda=k$（反之亦可），有
-\eq{\label{eq:Au'=u}
-    \delta_{ij}\Lambda_{i0}\Lambda_{jk}=\Lambda_{00}\Lambda_{0k}\im \Lambda_{jk} u'_j=-\gamma u_k.
-}
-同理取 $\eta_{\mu\nu}\Lambda_{\sigma\mu}\Lambda_{\lambda\nu}={\eta}_{\sigma\lambda}$ 的 $\sigma=0,\lambda=k$ 有
-\eq{\label{eq:Au=u'}
-    \Lambda_{kj} u_j=-\gamma u'_k.
-}
-故只需关注 $\Lambda_{ij}$。更直观的表示可利用 $R\in\mathrm{SO}(3)$。若两坐标系仅差一个旋转变换，则仍相对静止，相对论的动力学效应不会体现。增速变换即指这类相对速度可朝任意方向的 Lorentz 变换，但保持空间坐标轴平行。二维特殊情形保持 $y'=y,z'=z$。增速变换是“时空旋转”，故任意 Lorentz 变换应可表为一个增速变换和一个空间旋转的复合（因此不一定有 $u_i=-u'_i$）。为找到 $R$，注意总可假设
-$R_{ij}=:\Lambda_{ij}+S_{ij}$，
-其中 $\Lambda_{ij}$ 的符号取正是为迎合固有条件。由定义，$R_{ij}$ 满足
-\eq{
-    \delta_{ik} R_{ij} R_{kl}=\delta_{jl},\quad R_{ij} u_j=-u'_i,\quad R_{ij} u'_i=-u_j.
-}
-取 \eqref{eq:Lorentz} 式 $\sigma=j,\lambda=l$ 有 $\delta_{ik}\Lambda_{ij}\Lambda_{kl}=\delta_{jl}+ \gamma^2 u_j u_l$，
-结合式 \eqref{eq:Au'=u},\eqref{eq:Au=u'} 以及上式，经过一些繁琐计算后可得 $S_{ij}=\frac{\gamma-1}{u^2}u'_i u_j$，综上任意 Lorentz 变换可表为
-\eq{
-\tcbhighmath{
-    \Lambda_{00}=\gamma,\quad\Lambda_{0i}=-\gamma u_i,\quad\Lambda_{i0}=-\gamma R_{ij} u_j,\quad \Lambda_{ij}=R_{ij}+\frac{\gamma-1}{u^2}  R_{ik} u_k u_j.
-}
-}
-取 $R_{ij}=\delta_{ij}$ 就可得任意增速变换
-\eq{
-\tcbhighmath{
-    \Lambda_{00}=\gamma,\quad \Lambda_{0i}=\Lambda_{i0}=-\gamma u_i,\quad \Lambda_{ij}=\delta_{ij}+\frac{\gamma-1}{u^2}u_iu_j.
-}
-}
-再令 $u_2=u_3=0$ 就有 $\Lambda_{11}=\Lambda_{00}=\gamma, \Lambda_{01}=\Lambda_{01}=-\gamma u_1$，即二维增速变换，常记作 $\Lambda(\theta)$。鉴于此，任意 Lorentz 变换可用 $R_{1},R_{2}\in\mathrm{SO}(3)$ 表为 $R_{1} \Lambda(\theta) R_{2}$ 的形式。
-
-\end{comment}
 
 \section{修改理论}
 
@@ -3049,3 +2679,267 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 时空各点的额外维蜷缩(curled up)，从而只剩下我们经验中看到的时空本身。
 
 %% KK 理论
+
+\section{速成附录*}
+
+本节提供物理上最小可用的数学附录，保证直观且简洁。
+
+\subsection{Gauss 定理}\label{sec:Gauss}
+
+背景的嵌入子集中的长度总用背景度规衡量。
+考虑超曲面 $\Sigma:f(t,\bm x)=C$，总可取系 $\{\hat x\}$ 使 $\hat t=f=C$ 坐标面即为超曲面。度规变换为 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu=\hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$，令 $\hat t=C$（使 $\d\hat t=0$）后剩下的度规 $\d s^2_\Sigma= \hat g_{ij}(C)\d\hat x^i\d\hat x^j$ 称\textbf{诱导度规}(induced metric)。
+比如欧氏度规 $\d\ell^2=\d r^2+r^2\d\Omega^2$ 诱导出球面度规 $\d\ell^2_S=R^2\d\Omega^2$。
+诱导度规本质上是将 $g_{\mu\nu}$ 的作用对象限制(restrict)于 $\Sigma$ 的结果，即对任意 $\Sigma$ 的切矢场 $w_1,w_2$ 均有 $\bar g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，若约定 $\bar g_{\mu\nu}$ 只对 $\Sigma$ 作用，那它就是诱导度规。然而，给定一个限制，其延拓无穷多。换言之，若 $\bar g_{\mu\nu}$ 仍然看作背景度规，则满足上式的 $\bar g_{\mu\nu}$ 的形式当然无穷多。
+可找到最方便的延拓。超曲面总有法矢场。
+类空超曲面的法矢类时，类时超曲面的法矢类空。类光超曲面的法矢类光，暂不讨论。取单位法矢 $n^\mu n_\mu = \pm 1$，按推导 \eqref{eq:projection} 的办法可知投影映射为 $h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu$，则 $h_{\mu\nu} = g_{\mu\nu} \mp n_\mu n_\nu$。满足 $\bar g_{\alpha\beta}n^\alpha = 0$ 这一漂亮性质的解只有 $\bar g_{\mu\nu} = h_{\mu\nu}$，故称为诱导度规的\textbf{标准延拓}。
+对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是对偶法矢，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
+取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，于是 $\d s^2= \hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu = (1/\hat g^{00})\d\hat t^2+\hat h_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$。
+如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，这称为\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
+
+对作用量的变分涉及边界项。高维 Gauss 定理指出，散度的体积分可以转化为表面积分：
+\eq{
+\label{eq:Gauss}
+\int_\Omega \d[4]x\sqrt{-g}\,\cd_\lambda V^\lambda=\int_\Omega \d[4]{x} \p_\lambda(\sqrt{-g}V^\lambda) = \int_{\p\Omega} \d{\Sigma}_\lambda V^\lambda,
+}
+其中 $\d{\Sigma}_\lambda$ 为 $\p\Omega$ 诱导体元。证明见 \S\ref{appx:form}。因此一旦边界上 $V^\lambda = 0$，则这个边界项积分为零。
+
+代入 $\Gamma_{ \sigma\mu}^\sigma=\p_\mu\ln\sqrt{-g}$ 有
+\eq{\label{eq:Rmn=lnSqrtG}
+    R_{\mu\nu}=\Gamma^\sigma_{\mu\nu,\sigma}-(\ln\sqrt{-g})_{,\mu\nu}+(\ln\sqrt{-g})_{,\kappa}\Gamma^\kappa_{\mu\nu}-\Gamma^\kappa_{\sigma\mu}\Gamma^\sigma_{\kappa\nu}.
+}
+
+$=\pm n_\lambda \sqrt{|h|}\d[3]{x}$
+
+%%
+
+\subsection{曲率的性质}\label{sec:curvature}
+
+我们预先\textit{规定}欧氏空间是平直的，以它为基准可判断某条线、某张面的弯曲。考虑一个球面，其上任意切矢沿自身平移所得测地线即过球心的大圆。设从赤道某两处垂直延伸两条大圆弧，它们的间距逐渐缩短并交于极点。在一张平面上，初态平行的直线不可能改变间距。矢量平行移动就是相对于路径各处邻域平移，然而考虑将扇形围成圆锥面，矢量沿着包含尖端的环路平行移动后，与原矢量不重合，而直观上尖端处有曲率，故曲率非零时，平行移动结果往往与路径有关。
+由球面度规可计算球面曲率不为零。
+可见度规在非欧或非闵时，内禀曲率非零而使测地间隔变化。但内禀曲率其实只由度规和坐标系计算而来，甚至无需嵌入某个高维背景来定义度规和曲率——对于四维时空，我们就只能抛弃嵌入思想来想象它。内禀曲率只反应内禀的弯曲程度而与曲面本身无关：球面在内禀意义下弯曲，但圆柱面在内禀意义下平直（借柱坐标发现柱面度规平直），尽管它在直观上弯曲。数学上，描述圆柱面这种对象的弯曲程度就需要嵌入思想，称为\textbf{外}(extrinsic)\textbf{曲率}。一个直观理解是，凡能连续地展平的曲面，尽管外曲率可不为零，但内禀曲率为零；真正不可连续展平的曲面内禀曲率、外曲率都非零。读者可观察纸塑地球仪是如何尝试将平面纸张大致贴合球面的。
+
+只需默认无挠性并运用取局域惯性系的技巧（$\tilde R^\lambda{}_{\mu\nu\kappa}=-2\tilde \Gamma^\lambda_{\mu[\nu,\kappa]}$），就可证明曲率具有若干性质：
+\begin{itemize}
+    \item $2\cd_{[\nu}\cd_{\kappa]} \omega_\mu = - R^\lambda{}_{\mu\nu\kappa} \omega_\lambda$，因为无挠性导致 $\cd_{[\nu}\cd_{\kappa]}(V^\mu \omega_\mu)=0$。
+    \item ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$，根据定义即知；
+    \item ${R^\lambda}_{[\mu\nu\kappa]}=0$，\textbf{Ricci 循环恒等式}(cyclic identities)。
+\end{itemize}
+同理可证：
+\begin{itemize}
+    \item $R_{\lambda\kappa\mu\nu}=R_{[\lambda\kappa]\mu\nu}$；
+    \item $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$，前对指标和后对指标的对称性；
+    \item $R^\lambda{}_{ \mu [\sigma\nu ; \kappa]}=0$，\textbf{Bianchi 微分恒等式}。
+\end{itemize}
+由 ${R^\lambda}_{\mu\nu\kappa}={R^\lambda}_{\mu[\nu\kappa]}$ 知 Ricci 恒等式还可写作 $R^\lambda{}_{\mu\nu\kappa}+R^\lambda{}_{\nu\kappa\mu}+R^\lambda{}_{\kappa\mu\nu}=0$。若存在相同指标，则总与另三条性质重复，故常考虑指标各不相同的非平凡 Ricci 恒等式。类似地 Bianchi 恒等式还可写作 $R^\lambda{}_{ \mu \sigma\nu ; \kappa}+R^\lambda{}_{ \mu \nu\kappa;\sigma}+R^\lambda{}_{ \mu \kappa\sigma;\nu}=0$。
+对其缩并 $\lambda,\sigma$ 再用 $g^{\mu\kappa}$ 升指标，且注意 $g^{\mu\kappa} R_{\lambda \mu\nu\kappa}=g^{\mu\kappa} R_{\mu\lambda\kappa \nu}=R^{\kappa}{}_{\lambda\kappa \nu}=R_{\lambda\nu}$，则 $\cd^{\mu} R_{\mu\nu}+ \cd^\lambda R_{\lambda\nu}-\p_\nu R=0\Rightarrow\cd^{\mu} R_{\mu\nu}=\frac 12\p_\nu R$，即
+\eq{\label{eq:Bianchi}
+    \cd^\mu\left(R_{\mu\nu} - \frac12 g_{\mu\nu} R\right) = 0.
+}
+
+直观上，$n$ 维时空的 Riemann 曲率的分量有 $n^4$ 之多，但以上性质使其分量往往重复或为零。
+将 $(R_{\mu\nu\lambda\kappa})$ 划分为整体以 $A=\mu\nu$ 和 $B=\lambda\kappa$ 为行列指标的对称矩阵 $(R_{AB})$，由于 $A$ 或 $B$ 内部有反称性，因此 $A$ 或 $B$ 各有 $N=\binom{n}{2}$ 种取法，再由 $A,B$ 间的对称性得总共 $\binom{N+1}{2}$ 个独立分量。最后考虑 Ricci 恒等式。一种约束就会消去一个独立自由度，故最终 Riemann 曲率的独立分量数为 $\binom{N+1}{2}-\binom{n}{4}={n^2(n^2-1)}/{12}$。$n=4$ 时即 20。
+
+可用缩并将 Riemann 曲率进行压缩从而保留有用数据。由反称性知
+$R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种缩并是平凡的：$R^\sigma{}_{\mu\nu\sigma}=-R^\sigma{}_{\mu\sigma\nu}=-R_{\mu\nu}$，以及 $R^\sigma{}_{\sigma\mu\nu}=g^{\lambda\sigma}R_{\lambda\sigma\mu\nu}=g^{(\lambda\sigma)}R_{[\lambda\sigma]\mu\nu}=0$。可见初步缩并的唯一有用结果是 Ricci 曲率。
+根据 $R_{\mu\nu\lambda\kappa}=R_{\lambda\kappa\mu\nu}$ 有 $R_{\mu\nu}=g^{\sigma\lambda}R_{\sigma\mu\lambda\nu}=g^{\sigma\lambda}R_{\lambda\nu\sigma\mu}=R_{\nu\mu}$，
+或直接从 \eqref{eq:Rmn=lnSqrtG} 看出。
+
+即使真空 $R_{\mu\nu}=0$，也可以 $R_{\lambda\mu\nu\kappa}\ne 0$。这是因为 $R_{\mu\nu}$ 是 $R_{\lambda\mu\nu\kappa}$ 的迹，但无迹部分 $C_{\alpha\mu\nu\beta}$ 本就满足 $C^\lambda{}_{\mu\lambda\kappa}=0$，自然不受物质影响。尝试具体的迹分解。
+通过反证法易得无迹部分唯一，故可先设置试解，再确定待定系数。
+无迹部分需要保持相同的指标对称性，考虑 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - X(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + Y R g_{\alpha[\nu} g_{\beta]\mu}$。要求 $g^{\alpha\nu}C_{\alpha\mu\nu\beta} = R_{\mu\beta} - X((n-2)R_{\mu\beta}+g_{\mu\beta} R) + Y(n-1)R_{\mu\beta} = 0$ 可确定 $X,Y$，有
+\eq{
+    C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
+}
+这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
+能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda},C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
+
+%% 最大对称空间
+
+
+需要注意，在高维空间中也总存在\textbf{测地系}\footnote{数学上，这说明 Gauss 假设总能导出高维几何的局部平直性。}使得 $g_{\mu\nu}=\eta_{\mu\nu}$ 且 $g_{\mu\nu,\lambda}=0$。注意这并不显然，我们在四维时空中是用等效原理理解它的。考虑 $x^\mu(x')$ 形式的光滑函数（而非反之）以迎合度规的协变变换。
+以某点 $p$ 为某系 $\{x\}$ 原点，并不妨设变换不改原点，则总能展为
+\eq{
+    x^\mu= \pdv{x^\mu}{x'^\alpha}x'^\alpha+ \frac 12 \pdv{x^\mu}{x'^\alpha}{x'^\beta} x'^\alpha x'^\beta + \frac 16 \frac{\p^3 x^\mu}{\p x'^\alpha \p x'^\beta \p x'^\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.
+}
+将偏导系数简记 $A^\mu_\alpha,B^\mu_{\alpha\beta},C^\mu_{\alpha\beta\gamma}$ 等。
+$A^\mu_\alpha$ 的独立分量数为 $n^2$，而 $g_{\mu\nu}$ 的独立分量数为 $\binom {n+1}{2}=\frac{n(n+1)}{2}$。由 $2n\geqslant n+1$，$A^\mu_\alpha$ 能自由调节所有的 $g_{\mu\nu}$ 至 $\eta_{\mu\nu}$。进而，为排除掉 $g_{\mu\nu}$ 的改变使 $g_{\mu\nu,\lambda}$ 改变的那部分干扰，要考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}$ 的坐标变换。只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 即可：
+\[x^\mu=x'^\mu+\frac 12 B^\mu_{\alpha\beta} x'^\alpha x'^\beta +\cdots.\]
+注意 $B^\mu_{\alpha\beta}=B^\mu_{(\alpha\beta)}$，则独立分量数为 $n\binom {n+1}{2}$，而 $g_{\mu\nu,\lambda}$ 的独立分量数为 $\binom {n+1}{2}n$，二者相等，则 $B^\mu_{\alpha\beta}$ 恰好能自由调节所有的 $g_{\mu\nu,\lambda}$ 至零。进而地，在某测地坐标 $\{\xi\}$ 基础上，总能找到无限多测地坐标，它们形如
+\eq{
+    \zeta=\xi^\mu_0+\Lambda^\mu{}_\alpha\xi^\alpha+\frac 16 C^\mu_{\alpha\beta\gamma}\xi^\alpha \xi^\beta \xi^\gamma+\cdots,
+}
+其中$\xi^\mu_0,\Lambda^\mu{}_\alpha$ 等无关于 $\xi^\alpha$，
+即只要求 $A^\mu_\alpha$ 是 Poincaré 变换且 $B^\mu_{\alpha\beta}=0$，从而保持测地系性质。
+
+情况在二阶时发生改变。为排除掉 $g_{\mu\nu},g_{\mu\nu,\lambda}$ 改变所带来的干扰，考虑能在 $p$ 点保持 $g'_{\mu\nu}= g_{\mu\nu}, g'_{\mu\nu,\lambda}=g_{\mu\nu,\lambda}$ 的坐标变换，只需取 $A^\mu_\alpha=\delta^\mu_\alpha$ 且 $B^\mu_{\alpha\beta}=0$：
+\[x^\mu=x'^\mu + \frac 16 C^\mu_{\alpha\beta\gamma} x'^\alpha x'^\beta x'^\gamma+\cdots.\]
+而 $C^\mu_{\alpha\beta\gamma}=C^\mu_{(\alpha\beta\gamma)}$，独立分量数为 $n\binom {n+2}{3}$，而 $g_{\mu\nu,\lambda\kappa}=g_{(\mu\nu),(\lambda\kappa)}$，独立分量数为 ${\binom {n+1}{2}}^2$。可见，$C^\mu_{\alpha\beta\gamma}$ 最多只能自由调节 $n\binom {n+2}{3}$ 种 $g_{\mu\nu,\lambda\kappa}$，并剩下
+\eq{
+    {\binom {n+1}{2}}^2-n\binom {n+2}{3}=\frac{n^2(n^2-1)}{12}.
+}
+因此总存在 ${n^2(n^2-1)}/{12}$ 种不受 $C^\mu_{\alpha\beta\gamma}$ 选择的影响的 $g_{\mu\nu,\lambda\kappa}$（或线性组合）。
+若我们想构造基于 $g_{\mu\nu,\lambda\kappa}$ 的张量，我们只能使用这些进行线性组合，因为张量变换律只包括 $A^\mu_\alpha=\delta^\mu_\alpha$ 而不涉及 $C^\mu_{\alpha\beta\gamma}$。这样当所构造的张量非零时，不会消除掉所有的 $g_{\mu\nu,\lambda\kappa}$。
+Riemann 曲率恰好具有 ${n^2(n^2-1)}/{12}$ 个独立分量，用完了所有可用的 $g_{\mu\nu,\lambda\kappa}$。正如前文所述，能用 $g_{\mu\nu,\lambda\kappa}$ 线性构造出的张量有且仅有 Riemann 曲率。
+
+%% 最大对称
+
+\subsection{Lie 导数}
+
+%%
+
+沿矢量场 $v^\mu$，我们可以定义
+
+$(k,l)$-张量的 Lie 导数为
+\begin{align*}
+    \Lie_\xi T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}&=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}\\
+    &=\pdv{x^{\mu_1}}{\tilde{x}^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\tilde{x}^{\alpha_k}}\pdv{\tilde{x}^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\tilde{x}^{\beta_l}}{x^{\nu_l}}\pdv{\sigma}( T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\tilde{x}^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\tilde{x}^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\tilde{x}^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\tilde{x}^{\beta_l}})\\
+    &=\pdv{\sigma}T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{i=1}^k \pdv{x^{\mu_i}}{x^{\sigma}}{t} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \pdv{x^{\sigma}}{x^{\nu_i}}{t} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}\\
+    &=\xi^\lambda T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}-\sum_{i=1}^k \xi^{\mu_i}{}_{,\sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l} + \sum_{j=1}^l \xi^{\sigma}{}_{,\nu_i} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l},
+\end{align*}
+最后一步注意：
+\[\pdv{x^{\mu}}{\tilde{x}^{\alpha}}\pdv{\sigma}\pdv{\tilde x^{\alpha}}{x^{\sigma}} = - \pdv{\tilde x^{\alpha}}{x^{\sigma}}\pdv{x^{\mu}}{\tilde{x}^{\alpha}}{t} = - \pdv{x^{\mu}}{x^{\sigma}}{t}=\p_\sigma\xi^\mu.\]
+
+
+一些特例：
+$\Lie_\xi f = \xi^\mu\p_\mu f = \pdv*{f}{t}$。
+
+对易子 $[X,Y]^\mu=$
+
+
+\eq{
+    Z^\nu\cd_\nu S^\mu=S^\nu\cd_\nu Z^\mu.
+}
+即 $Z^\mu,S^\mu$ 是对易的：$\Lie_Z S^\mu = [Z,S]^\mu = 0$。
+
+像交换性、坐标系为闭合回路 
+
+$\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda \xi^\mu - T^{\mu\lambda}\p_\lambda \xi^\nu$。$\Lie_\xi g_{\mu\nu}=\xi^\lambda \p_\lambda g_{\mu\nu}+\p_\mu \xi^\rho g_{\rho \nu}+\p_\nu\xi^\sigma g_{\mu\sigma}$
+
+\eq{\Lie_\xi g_{\mu\nu}=-2\xi_\lambda \Gamma^\lambda_{\mu\nu}+\p_{(\mu}\xi_{\nu)} =\cd_{(\mu}\xi_{\nu)}=0,}
+
+
+如果仿照等度规变换那样，满足
+\eq{\tilde T_{\mu\nu}(x)=g_{\mu\nu}(x)\Longleftrightarrow T_{\mu \nu}(x)=\pdv{\tilde x^{ \rho}}{x^\mu} \pdv{\tilde x^{ \sigma}}{x^\nu} \tilde T_{\rho \sigma}(\tilde x),}
+能保持 $T'_{\mu\nu}=T_{\mu\nu}$ 不变的特殊变换称为
+因此对任意张量 $\Phi$
+\eq{
+    \bar\var \Phi = \delta\Phi - \epsilon\xi^\lambda\p_\lambda\Phi = -\epsilon \Lie_\xi \Phi.
+}
+
+显然 Killing 矢量场的常系数线性组合还是 Killing 矢量场，所以等度规群可对应于全体 Killing 矢量场所构成的线性空间。于是，我们只要找到一组基底即可，即最大的一组线性独立的 Killing 矢量场。
+
+可证 $n$ 维空间的独立 Killing 矢量场的总数最多为 $\binom{n+1}{2}=\frac{n(n+1)}2$，细节待。
+
+具有这一数目的空间称为\textbf{最大对称空间}。对于最大对称空间可轻松找到 Killing 矢量场，之后验证即可。
+
+有理由相信简单的 $\mathbb{E}^n, \R^{1,3}$ 等具有最大对称性。
+
+先以 $\mathbb{E}^2$ 为例。用某自然坐标系，Killing 方程即 $\p_{(\mu}\xi_{\nu)}=0$，独立解个数为 3。
+
+由于系数与坐标有关，因此 $\xi_3$ 独立于 $\xi_1,\xi_2$。
+
+对于 $\mathbb E^3$，很明显 6 种独立 Killing 矢量场对应3种平移、3种平面旋转。
+
+对于 $\R^{1,3}$，10 种独立 Killing 矢量场对应 4 种平移和 6 种平面旋转，其中平面旋转分为3 种空间旋转、3 种时空伪旋转，进而复合出任意 Poincaré 变换。
+
+%% 最大对称
+
+%% Hamiltonian
+
+\subsection{一般仿射联络}\label{sec:connection}
+
+仿射联络满足如下自然的需求：
+\begin{itemize}
+    \item 能保持广义张量性；
+    \item 规定 $\cd_\nu f = \p_\nu f$。
+    \item 它应当具有 Leibniz 规则和线性性；
+    \item 显然希望“先缩并再求导”、“先求导再缩并”结果一致。
+\end{itemize}
+设 $\{\xi\}$ 中它表为 $\tilde\cd_\mu$，保持张量性就是对任意 $(k,l)$-张量有
+\[T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\tilde\cd_\kappa\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l},\]
+代入以
+\[
+\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}},
+\]
+其中注意 $T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}$ 的指标是固定的，不带有 $\xi$ 系的指标，是张量在坐标系下的具体分量，因此对 $\tilde\cd_\kappa $ 而言是普通的标量函数：
+\[\tilde\cd_\kappa T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} = \pdv{\xi^\kappa} T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}.\]
+定义联络系数为
+\eq{
+    \Gamma^\lambda_{\mu\nu} := \pdv{x^\lambda}{\xi^\alpha}\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu} \iff\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu}=\Gamma^\lambda_{\mu\nu}\pdv{\xi^\alpha}{x^\lambda},
+}
+从而
+\eq{\label{eq:cov-tens}
+    T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+}
+联络系数是赝张量：
+\begin{align*}
+\Gamma_{\mu \nu}^{\prime \lambda} &= \pdv{x^{\prime \lambda}}{\xi^\alpha} \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{\xi^\alpha}{x^{\prime \nu}}\right) = \left(\pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha}\right) \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{x^\sigma}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma}\right) \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left[ \left(\pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}}\right) \pdv{\xi^\alpha}{x^\sigma} + \pdv{x^\sigma}{x^{\prime \nu}} \left(\pdv{x^\tau}{x^{\prime \mu}} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma}\right) \right] \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left( \pdv{x^\sigma}{x^{\prime \mu}}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma} \right) + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \left( \pdv{x^\rho}{\xi^\alpha} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma} \right) \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{x^{\prime \mu}}{x^{\prime \nu}} + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \Gamma_{\tau \sigma}^\rho.
+\end{align*}
+其中注意 $\pdv*{x^\sigma}{x^{\prime \nu}}$ 是 $x,x'$ 的关系，无关于 $\xi$，因此
+$\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sigma}{x^{\prime \nu}}$。
+
+
+\begin{figure}[ht]\centering
+\includegraphics[width=.6\textwidth]{fig/chpt01/covar-deri.pdf}
+    \caption{图中 $\Delta\tau$ 等差值均夸大}
+\end{figure}
+考察其直观图像将有所裨益。如图设某曲线 $x^\nu(\tau)$ 上 $p$ 为参数零点，而邻近点 $q$ 的参数记作 $\Delta\tau$（可正可负）。若矢量场 $ V$ 至少在 $p,q$ 线段上有定义，便可讨论 $p$ 处沿线导数算符。设矢量场在 $p,q$ 分别取值 $ V|_p, V|_q$，则
+\[\eval{\dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}\]
+是直接比较 $V|_q,V|_p$，但二者隶属不同切空间，差值 $\d V$ 意义不明。这是 $\d V^\mu/\d\tau$ 不协变的直观理解。欲画出 $\d V$，需将矢量照搬至同一点作差。不妨考虑 $q$ 点。图中 $q$ 点的 $V|_p$ 为照搬结果，故 $\d V$ 标注如图。另一方面，
+\[\eval{\Dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}+\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \lim_{\Delta\tau\to 0} \frac{\Delta x^\lambda}{\Delta\tau}=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_{p\to q}}{\Delta\tau},\]
+其中 $V^\mu|_{p\to q}=V^\mu|_p-\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \Delta x^\lambda$。
+可见 $\Dv*{V^\mu}{\tau}$ 是求 $V|_q$ 与 $q$ 处新矢量 $V|_{p\to q}$ 之差。这样 $\D V$ 表为如图。$\delta V$ 为 $V|_{p\to q}, V|_p$ 之差。由上式或图示知 $\delta V^\mu = \d V^\mu-\D V^\mu=-\Gamma^\mu_{\sigma\nu}V^\sigma\d x^\nu$，这便是克氏符项所给出的修正。$V|_{p\to q}$ 其实就是平移移动的结果。为看出这一点，只需令 $V$ 自己就处处按这种方式移动，则 $\Dv*{V^\mu}{\tau}=0$。
+一点处全体切矢构成该点\textbf{切空间}(tangent space)。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
+切矢场是给各时空点赋予其相应的切矢，一个切矢是绑定于一点的，故任意两点 $p,q$ 处各自的切矢本无关联。然而给定某 $p,q$ 间之曲线，可通过矢量的平行移动，将两个切空间联系起来。所以 $\cd_\nu$ 称为联络。
+
+\subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
+
+    本节旨在补上任意 Lorentz 变换的代数证明。由于重点只在矩阵的行列指标，故本节将上标都写作下标以简化运算。
+根据相对性原理，对 $\Lambda$ 的分类同样适用于相应 $\Lambda^{-1}$。当然，亦可直接证明之。注意 $|\Lambda^{-1}|=|\Lambda|^{-1}$，我们只需证明 $(\Lambda^{-1})_{00}=\Lambda_{00}$。
+用 $\Lambda$ 表示 $\Lambda^{-1}$ 就是 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$。
+取其 $\sigma=\lambda=0$ 就有 $(\Lambda^{-1})_{00}=\Lambda_{00}=(\Lambda^\mathrm{T})_{00}$。
+
+
+
+下面用 $\{x\}\{x'\}$ 的相对速度表示 Lorentz 变换。
+我们说 $S'$ 系相对于 $S$ 的速度是 $u_i=\dv*{x_i}{t}$，是指 $S'$ 任意的相对静止的世界线在 $S$ 下测得的速度分量都是 $u_i$。显然这等价于研究 $S'$ 系的空间原点运动。反之，设 $S$ 系的空间原点在 $S'$ 下测得 $u'_i=\dv*{x'_i}{t'}$。先考虑 $S'$ 的空间原点，其世界线始终满足 $\d x'_i=0$，则 $\d x_\lambda=(\Lambda^{-1})_{\lambda 0}\d x'_0$，故 $\Lambda_{00}=(\Lambda^{-1})_{00}=\dv*{t}{t'},(\Lambda^{-1})_{i0}=u_i\dv*{t}{t'}$，
+据式 \eqref{eq:Lorentz} 有 $\eta_{\mu\nu}(\Lambda^{-1})_{\mu\sigma}(\Lambda^{-1})_{\nu\lambda}={\eta}_{\sigma\lambda}$（显然 $\Lambda^{-1}$ 也是 Lorentz 变换）。
+取 $\sigma=\lambda=0$ 有 $(\Lambda_{00})^2=1+\delta_{ij}(\Lambda^{-1})_{i0}(\Lambda^{-1})_{j0}$。
+    再结合正时条件有 $\Lambda_{00}=(\Lambda^{-1})_{00}=\gamma$，以及 $(\Lambda^{-1})_{i0}=\gamma u_i$，其中 $u:=\sqrt{u_i u_i}$。再考虑 $S$ 的空间原点，类似地有 $\Lambda_{00}=\dv*{t'}{t},\Lambda_{i0}=u'_i \dv*{t'}{t}=\gamma u'_i$，
+以及
+\[u'_iu'_i=u_i u_i=u^2.\]
+这看似是显然的，但现在要作为经过证明的结论。
+不过，这是用 $u'_i$ 表示 $\Lambda$，固然渴望用 $u_i$ 直接表示。对 $(\Lambda^{-1})_{\lambda\sigma}=\eta_{\mu\sigma}\Lambda_{\mu\nu}\eta_{\nu\lambda}$ 其余 $\sigma,\lambda$ 讨论有 $(\Lambda^{-1})_{i0}=-\Lambda_{0i},(\Lambda^{-1})_{0i} =-\Lambda_{i0}$，
+以及 $(\Lambda^{-1})_{ij}=(\Lambda^\mathrm{T})_{ij}$。
+可得 $\Lambda_{0i}=(\Lambda^\mathrm{T})_{i0}=-\gamma u_i$。
+还差 $\Lambda_{i0},\Lambda_{ij}$。尝试用 $u_i$ 表示 $u'_i$。取 \eqref{eq:Lorentz} 式 $\sigma=0,\lambda=k$（反之亦可），有
+\eq{\label{eq:Au'=u}
+    \delta_{ij}\Lambda_{i0}\Lambda_{jk}=\Lambda_{00}\Lambda_{0k}\im \Lambda_{jk} u'_j=-\gamma u_k.
+}
+同理取 $\eta_{\mu\nu}\Lambda_{\sigma\mu}\Lambda_{\lambda\nu}={\eta}_{\sigma\lambda}$ 的 $\sigma=0,\lambda=k$ 有
+\eq{\label{eq:Au=u'}
+    \Lambda_{kj} u_j=-\gamma u'_k.
+}
+故只需关注 $\Lambda_{ij}$。更直观的表示可利用 $R\in\mathrm{SO}(3)$。若两坐标系仅差一个旋转变换，则仍相对静止，相对论的动力学效应不会体现。增速变换即指这类相对速度可朝任意方向的 Lorentz 变换，但保持空间坐标轴平行。二维特殊情形保持 $y'=y,z'=z$。增速变换是“时空旋转”，故任意 Lorentz 变换应可表为一个增速变换和一个空间旋转的复合（因此不一定有 $u_i=-u'_i$）。为找到 $R$，注意总可假设
+$R_{ij}=:\Lambda_{ij}+S_{ij}$，
+其中 $\Lambda_{ij}$ 的符号取正是为迎合固有条件。由定义，$R_{ij}$ 满足
+\eq{
+    \delta_{ik} R_{ij} R_{kl}=\delta_{jl},\quad R_{ij} u_j=-u'_i,\quad R_{ij} u'_i=-u_j.
+}
+取 \eqref{eq:Lorentz} 式 $\sigma=j,\lambda=l$ 有 $\delta_{ik}\Lambda_{ij}\Lambda_{kl}=\delta_{jl}+ \gamma^2 u_j u_l$，
+结合 \eqref{eq:Au'=u},\eqref{eq:Au=u'} 以及上式，经过一些繁琐计算后可得 $S_{ij}=\frac{\gamma-1}{u^2}u'_i u_j$，综上任意 Lorentz 变换可表为
+\eq{
+\tcbhighmath{
+    \Lambda_{00}=\gamma,\quad\Lambda_{0i}=-\gamma u_i,\quad\Lambda_{i0}=-\gamma R_{ij} u_j,\quad \Lambda_{ij}=R_{ij}+\frac{\gamma-1}{u^2}  R_{ik} u_k u_j.
+}
+}
+取 $R_{ij}=\delta_{ij}$ 就可得任意增速变换
+\eq{
+\tcbhighmath{
+    \Lambda_{00}=\gamma,\quad \Lambda_{0i}=\Lambda_{i0}=-\gamma u_i,\quad \Lambda_{ij}=\delta_{ij}+\frac{\gamma-1}{u^2}u_iu_j.
+}
+}
+再令 $u_2=u_3=0$ 就有 $\Lambda_{11}=\Lambda_{00}=\gamma, \Lambda_{01}=\Lambda_{01}=-\gamma u_1$，即二维增速变换，常记作 $\Lambda(\theta)$。鉴于此，任意 Lorentz 变换可用 $R_{1},R_{2}\in\mathrm{SO}(3)$ 表为 $R_{1} \Lambda(\theta) R_{2}$ 的形式。
