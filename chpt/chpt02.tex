@@ -2,9 +2,7 @@
 
 黑洞是广义相对论提出之后，首个也是最重要的研究课题。百年来围绕着黑洞的研究，使我们对相对论、引力、量子场论、统计物理都有了崭新的认识。
 
-\section{球对称度规}
-
-\subsection{Birkhoff 定理}
+\section{Birkhoff 定理}
 
 取球坐标 $x^\mu=(\bar t,\bar r,\theta,\phi)$，并以 $A,B=0,1$ 和 $i,j=2,3$ 分别表示 $\bar t,\bar r$ 与 $\theta,\phi$ 两组指标。球对称性是指旋转群 $\mathrm{SO}(3)$ 在每个 $(\bar t,\bar r)$ 不变的 2-球面上等距作用，其三个 Killing 矢量场可取为
 \[
@@ -91,8 +89,6 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
     \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d x^2+\d y^2+\d z^2).
 }
 注意，$\rho$ 是各向同性径向坐标，并非面积半径 $r$；事件视界 $r=2M$ 对应 $\rho=M/2$，静态外部区域对应 $\rho>M/2$。
-
-\subsection{Reissner-Nordström 解}
 
 考虑球对称带电体。在源外 $r\ne0$ 处，方程为无源 Einstein--Maxwell 方程
 \[
@@ -352,99 +348,60 @@ u(\phi)\simeq \frac{1}{b}\sin\phi+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi
     \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
 \end{figure}
 
-双曲线的渐近线相当于原点处的光锥 $C_N$。对匀加速观者而言，信息不能从光锥另一侧逾越过来。
-故也称\textbf{Rindler 视界}。
-右加速观者和左加速观者不能相互交流，故可看作两个独立的时空区域。
+每条 $x=\text{常数}$ 的世界线都是以 $T=\pm X$ 为渐近线的双曲线。这两条类光直线构成匀加速观者的因果边界，称为\textbf{Rindler 视界}。右楔区 $X>|T|$ 与左楔区 $X<-|T|$ 中的任意两点均类空分离，故其中的观者不能相互通信。
 
-Schwarzschild 系下，视界具有坐标奇性。
-我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。
-而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是\textbf{延拓}(extend)时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。
-换言之，通过变换坐标，可以期望让 Schwarzschild 度规式越过视界自然地延拓到内部。则原先的定义域就是这个更大时空的\textbf{子时空}。想尽办法延拓，直至一个可以证明不能再延拓的结果，称之为\textbf{最大延拓}(maximal extension)。
-这就是用坐标系延拓时空。通俗地说，本身或延拓后无限延伸的测地线称为\textbf{完备的}(complete)。只有那种根本不能再继续延伸的测地线，才能叫\textbf{不完备}(incomplete)。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
+Rindler 度规的行列式 $g=-A^2x^2$ 在 $x=0$ 处为零，但闵氏时空处处平直，并无曲率奇性。事实上，坐标变换的 Jacobi 行列式为 $\pdv{(T,X)}{(t,x)}=Ax$，恰在 $x=0$ 失去可逆性；奇性来自坐标系而非时空。Schwarzschild 坐标在 $r=2M$ 处也有类似问题，因而可先借 Rindler 系说明如何越过坐标边界。
 
-我们可以类比这里 Rindler 系与惯性系的关系。闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和惯性系的相对地位，就像是 Schwarzschild 系和延拓后坐标系的相对地位。
+若时空 $(\mathcal M,g)$ 可等距嵌入更大的时空 $(\widetilde{\mathcal M},\tilde g)$，且其像为真子集，就称后者是前者的\textbf{延拓}(extension)；不能再作这种延拓的时空称为\textbf{最大延拓}(maximal extension)。坐标变换本身不会增加时空点，但新坐标若使度规在原边界处保持非退化，便可将其定义域继续扩大，从而显露出原坐标域的延拓。
 
-可求出内、外向光线族分别为
-\[
-t=-\ln x+C_1,\quad t=\ln x+C_2.
-\]
+\textbf{测地完备性}(geodesic completeness)是另一概念：若每条最大测地线的仿射参数均可取遍 $\R$，时空便是测地完备的。测地线在有限仿射参数处中止，可能只是因为坐标域或时空区域取得太小；若延拓后可以继续，则原来的不完备并非真实奇性。若时空已不可延拓而仍有不完备测地线，才表明存在不能用换坐标补入的时空奇性。
 
-因此上述光线族其实“对应于”闵氏时空里的类光测地线族
-\[
-T=-X+C_1,\quad T=X+C_2.
-\]
-
-仿照这一思想，欲视类光测地线族为坐标网格（称为\textbf{类光坐标}）。
-
-将双曲线、射线视作坐标线而衍生出 Rindler 坐标系，在 Rindler 图  里，这是在令
-\eq{
-v=t+\ln x,\quad u=t-\ln x.
-}
-度规表为 $\d s^2=-\e^{v-u}\d v\d u$。
-
-而在闵氏图里是令
-\eq{
-V=T+X,\quad U=T-X,
-}
-或
-\eq{
-T=\frac{V+U}{2},\quad X=\frac{V-U}{2},
-}
-这有双曲函数的形式，而 $T,X$ 与 $t,x$ 的变换正是双曲函数，
-
-故易知如下指数式
-\eq{
-V=\e^v>0,\quad U=-\e^{-u}<0.
-}
-度规现表为 $\d s^2=-\d V\d U$，不存在任何坐标奇性。
+现以类光测地线作为坐标线。令 $\d s^2=0$，得 $\d t=\pm\d x/(Ax)$。相应地定义 Rindler 类光坐标 $u,v$ 及闵氏类光坐标 $U,V$：
+\begin{align*}
+    v&=t+\frac{1}{A}\ln(Ax),&u&=t-\frac{1}{A}\ln(Ax),\\
+    V&=T+X=\frac{1}{A}\e^{Av},&U&=T-X=-\frac{1}{A}\e^{-Au}.
+\end{align*}
+于是 $\d s^2=-\e^{A(v-u)}\d v\,\d u=-\d V\,\d U$，并有 $T=(V+U)/2$、$X=(V-U)/2$。前一表达仍在 $x\to0$ 时退化，后一表达则在 $U=0$ 或 $V=0$ 处保持光滑。
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/rindler.pdf}
-    \caption{消除 Rindler 系的坐标奇性}
+    \caption{Rindler 坐标域及其闵氏延拓}
     \label{fig:rindlerIM}
 \end{figure}
-如图 \ref{fig:rindlerIM} 所示，则从直观上，闵氏时空图就像是把 Rindler 图 里竖直的 $x=0$ 从 $t=0$ 处向右“掰弯”成如光锥面一般的 Rindler 视界 $T^2=X^2$，即 $VU=0$，由上式知 $V,U$ 轴正方向如图 \ref{fig:rindlerIM}。图中蓝色双曲线代表等 $r$ 线，红色射线代表等 $t$ 线。可见，从 Rindler 图到闵氏图经历了如下过程：
-\[
-(t,x)\to(v,u)\to(V,U)\to(T,X).
-\]
-依葫芦画瓢地寻找延拓坐标系。
+如图 \ref{fig:rindlerIM}，等 $x$ 线在闵氏图中是双曲线，等 $t$ 线是过原点的射线。指数关系只给出 $U<0,V>0$，即右 Rindler 楔区；$U=0$ 与 $V=0$ 正是两支视界。由于度规 $-\d V\,\d U$ 不要求这些符号限制，可令 $U,V$ 独立取遍 $\R$，从而把坐标域延拓为整个闵氏时空。若只在原变换中补入 $x<0$，所得仅是左楔区，仍会遗漏未来、过去两个类时楔区。
 
-然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的延拓。
-
-
-若给 Rindler 图补上 $x<0$ 的部分
-
-当然，仍有微妙区别：在 Rindler 图   中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
+Rindler 图中，类光测地线趋近视界时有 $|t|\to\infty$，但其闵氏仿射参数 $U$ 或 $V$ 有限，故原坐标域内的测地线并不完备；闵氏延拓使它们自然穿过视界继续延伸。整个过程可概括为 $(t,x)\to(u,v)\to(U,V)\to(T,X)$。下文对 Schwarzschild 视界的处理遵循同一思路：先以类光线建立坐标，再消去视界处发散的坐标尺度。
 
 \subsection{Eddington 系}
 
-$t=-r_*+C$，且为了 $r=0$ 时 $r_*=0$，可取
+仍记 $f(r)=1-2M/r$。径向光线满足 $\d\Omega=0=\d s^2$，故 $\d t/\d r=\pm f^{-1}$。定义\textbf{乌龟坐标}(tortoise coordinate) $r_*$ 使 $\d r_*=\d r/f$，并选取积分常数使 $r\to0$ 时 $r_*\to0$，即
 \eq{
-    r_*=r+2M\ln\abs{\frac{r}{2M}-1}.
+    r_*=r+2M\ln\abs{\frac{r}{2M}-1},
 }
+内、外向光线因而分别满足 $t=-r_*+C$、$t=r_*+C$。当 $r\to2M$ 时 $r_*\to-\infty$，有限的径向区间被拉伸为无限坐标距离，这正是“乌龟”之名的含义，
 类比 Zeno 悖论\footnote{古希腊哲学家 Zeno 描述了类似效应：运动员 Achilles 欲同一只乌龟赛跑，且乌龟起点先于他若干路程 $L$。按通常的时间 $t$ 来说，他的速度 $v_1$ 快于乌龟的 $v_2$，明显在有限时间 $t=L/(v_1-v_2)$ 内超过乌龟。但设想这样计时：他欲超过乌龟，必须先追至乌龟的起点，但一旦如此，乌龟又能前进若干步，这样便有新的起点等着他，如此这般有无穷多这样的起点，则他“永远”也赶不上乌龟。这种计时方法称为 Achilles 时或 Zeno 时，记作 $t'$。令 $t',t$ 皆起于零。当 $t=L/v_1$ 时，Achilles 到达乌龟在 $t'=0$ 时的起点， $t'$ 加一，以此类推有
 \[t=\sum_{i=0}^{t'-1} \frac{L}{v_1}\left(\frac{v_2}{v_1}\right)^{i}=\frac{L}{v_1-v_2}\bigg(1-\bigg(\frac{v_2}{v_1}\bigg)^{t'}\bigg)\im t'=\frac{1}{\ln(v_2/v_1)}\ln\left(1-\frac{v_2-v_1}{L}t\right),\]
-其中将 $t'\in\N$ 自然延拓至 $t'\in\R_+$。可见 $t'$ 在 $t=L/(v_2-v_1)$ 发散，因此按 $t'$ 衡量他永不超过乌龟。}，
-可称\textbf{乌龟坐标}(tortoise coordinates)。数学中的 Lambert 函数定义为满足 $x=y\e^y,y\geqslant -1$ 的$y=\operatorname{W}(x)$。用它可解出 $r=2M(1+\operatorname{W}(\pm\e^{r_*/2M-1}))$，正负号对应 $\sgn(r-2M)$。
-注意 $\d r_*={\d r}/{(1-2M/r)}$，从而度规表为 $\d s^2=(1-2M/r)\left(-\d t^2+\d r_*^2\right)$，奇性消除了。关键在于，新坐标系给视界赋予发散坐标，就可将度规奇性隐藏起来。
+其中将 $t'\in\N$ 自然延拓至 $t'\in\R_+$。可见 $t'$ 在 $t=L/(v_2-v_1)$ 发散，因此按 $t'$ 衡量他永不超过乌龟。}。
+若需反解，取满足 $y\e^y=x$、$y\geqslant-1$ 的 Lambert 函数 $\operatorname W$，有 $r=2M[1+\operatorname W(\pm\e^{r_*/2M-1})]$，正、负号分别对应视界外、内。
 
-但这个变换还不够，因为行列式 $g$ 在 $r=2M$ 为零。
+在 $(t,r_*)$ 中，度规虽可写成 $\d s^2=f(-\d t^2+\d r_*^2)+r^2\d\Omega^2$，但其行列式为 $g=-f^2r^4\sin^2\theta$，仍在视界处退化；$r_*$ 只是把视界移至坐标无穷远，并未完成延拓。为穿过视界，须保留有限的 $r$ 并同时改变时间坐标。
 
-时间也需要变换。
+先取\textbf{超前类光坐标} $v=t+r_*$，则 $\d t=\d v-\d r/f$，代回得
+\eq{
+    \d s^2=-f\,\d v^2+2\d v\,\d r+r^2\d\Omega^2.
+}
+这称为\textbf{超前 Eddington--Finkelstein 系}。其度规分量在 $r=2M$ 处均有限，且 $g=-r^4\sin^2\theta$ 不退化，故可由外部自然延拓至 $0<r<2M$；$r=0$ 的曲率奇性则仍然存在。径向类光线中，内向族满足 $v=\text{常数}$，可直接穿过未来视界；外向族满足 $\d r/\d v=f/2$，在视界处与之相切。交叉项 $g_{vr}=1>0$ 因而对应黑洞的未来演化方向。
 
-变换 $x'=x+(r_*-r)$ 在 $r<2M$ 时 $x'<x$，故称\textbf{超前}(advanced)变换，而 $x'=x-(r_*-r)$在 $r<2M$ 时 $x'>x$，故称\textbf{推迟}(retarded)变换。
+同理，取\textbf{推迟类光坐标} $u=t-r_*$ 得
+\[
+    \d s^2=-f\,\d u^2-2\d u\,\d r+r^2\d\Omega^2.
+\]
+此即推迟 Eddington--Finkelstein 系：外向光线满足 $u=\text{常数}$，坐标正则于过去视界，描述超前系的时间反演。可见两套坐标各自越过一支视界，而后文的 Kruskal 系将同时正则化两支视界。
 
-该坐标系称为\textbf{超前 Eddington–Finkelstein 系}，简称 Eddington 系。
+\subsection{Novikov 坐标*}
 
-$g_{01}\geqslant 0$ 符合黑洞演化的方向。
-
-现在度规分量在视界处收敛，且 $g\ne 0$，这才算消去奇性。
-
-\subsection{Novikov 系}
-
-沿测地线汇建立固有系，自然也就消除奇性。
-
+沿测地线汇建立固有系也可自然地消除奇性。
 考虑测地线汇从 $t = 0 = \tau$ 释放，每一线用 $r_m$ 标记，新系为 $(\tau,r_m)$。由 $Z^\mu Z_\mu = -1$ 可知
 \[\d\tau=-Z_0(r_m)\d t-Z_1(r,r_m)\d r=\sqrt{1-\frac{2M}{r_m}}\d t+\frac{\sqrt{2M/{r}-2M/{r_m}}}{1-{2M}/{r}}\d r.\]
 $r = r_m\cos^2\frac{\eta}{2},\tau = -(\eta+\sin\eta){r_m^{3/2}}/{\sqrt{8M}}$ 确定了变换 $r(\tau,r_m)$。
@@ -472,265 +429,1155 @@ $r_m$ 称\textbf{Novikov 径向坐标}。可以看到的确 $\tilde g_{00}=-1,\t
 
 \subsection{Kruskal 系}
 
+超前、推迟 Eddington--Finkelstein 系各自只正则化一支视界，并以时空交叉项换取消除坐标奇性。若要同时越过两支视界且保持径向度规对角，可仿照 Rindler 延拓，对两个类光坐标一齐作指数变换。
 
-
-在超前 Eddington 系中，时间对角项在 $r=2M$ 为零，为消除奇性，只能借由超前变换所产生的非零时空交叉项，但我们并不想要交叉项。可见，必须使 $T,X$ 坐标的时间对角项非零。
-
-
-回到 Schwarzschild 系。不妨先研究 $r>2M$。$v,u$ 从类光测地线族产生，注意 $t=\pm\left(r+2M\ln|r-2M|\right)+C$ 与 $t=\pm r_*$ 相差常数，因此内、外向族分别给出
-\eq{
-v=t+r_*,\quad u=t-r_*.
-}
-由于 $r_*$ 作了超前变换，因此前者称\textbf{超前类光坐标}，后者称\textbf{推迟类光坐标}。可见对 Rindler 时空来说其乌龟坐标是 $x_*=\ln x$，读者很容易验证这一点。度规在 $v,u$ 下表为
+先在外部区域 $r>2M$ 考虑 $v=t+r_*$、$u=t-r_*$。Schwarzschild 度规的径向部分为 $\d s_{(2)}^2=-f\,\d v\,\d u$。引入待定常数 $\beta>0$，令
 \[
-\d s^2=-(1-2M/r)\d v\d u,
+    V=\e^{\beta v}>0,\qquad U=-\e^{-\beta u}<0,
 \]
-沿用 $V,U$ 的指数形式但预留待定常数（只可与 $M$ 有关）以使最终的时间对角项非零\footnote{有种做法是填上 $1/\beta=4M$ 因子以约去指数求导出的系数，这样度规 \eqref{eq:kruskal} 中 ${32M^3}/{r}$ 变为 $2M/r$。}：
-\eq{
-V=\e^{\beta v}>0,\quad U=-\e^{-\beta u}<0.
-}
-只预留一个是考虑到对称性。进而度规表为
+则 $\d s_{(2)}^2=-\beta^{-2}f\e^{\beta(u-v)}\d V\,\d U$。因 $u-v=-2r_*$，有
 \[
-\d s^2=-\beta^{-2} (1-2M/r) \e^{\beta(u-v)} \d V\d U,
+    \e^{\beta(u-v)}
+    =\e^{-2\beta r}\left(\frac{r}{2M}-1\right)^{-4\beta M}.
 \]
-考虑到 $T,X$ 系只是 $V,U$ 系的旋转，我们可将其定义沿用至此，则 $-\d V\d U=-\d T^2+\d X^2$，进而保证无交叉项。现在的目标就是约掉 $(1-2M/r)$ 通分后所含因子 $(r-2M)$。这份任务只能交由 $\e^{\beta(u-v)}$，我们就要用 $r$ 表示它（由稳态条件可预料无 $t$）。注意 $u-v=-2r_*$，代入 $r_*$ 定义有
+要消去 $f=(r-2M)/r$ 在视界处的一阶零点，必须取 $\beta=1/(4M)$。于是
 \[
-\e^{\beta(u-v)}=\e^{-2\beta r}\left(\frac{2M}{r-2M}\right)^{4\beta M},
+    \d s_{(2)}^2=-\frac{32M^3}{r}\e^{-r/2M}\d V\,\d U.
 \]
-说明应取 $\beta=1/4M$，则
-\[
-\d s^2=-\frac{32M^3}{r}\e^{-r/2M}\d V\d U=\frac{32M^3}{r}\e^{-r/2M}(-\d T^2+\d X^2).
-\]
-这里仍留有一个不能消除的时空奇点 $r=0$，与 Rindler 情况有所不同。综上，还原另外两个空间维度后，Schwarzschild 度规就表为
+再定义 $T=(V+U)/2$、$X=(V-U)/2$，则 $-\d V\,\d U=-\d T^2+\d X^2$。还原角向部分便得\textbf{Kruskal 度规}
 \eq{\label{eq:kruskal}
-\d s^2=\frac{32M^3}{r}\e^{-r/2M}(-\d T^2+\d X^2)+r^2\d\Omega^2,
+    \d s^2=\frac{32M^3}{r}\e^{-r/2M}(-\d T^2+\d X^2)+r^2\d\Omega^2.
 }
-这里 $r$ 视作 $T,X$ 的函数，易知
-\eq{
-X^2-T^2=-VU=\e^{(v-u)/4M}=\left(\frac{r}{2M}-1\right)\e^{r/2M},
+其系数在 $r=2M$ 处有限且非零，故两支视界都不再是坐标奇点。
+
+在外部区域，变换还可写成
+\[
+    T=\e^{r/4M}\sqrt{\frac{r}{2M}-1}\sinh\frac{t}{4M},\qquad
+    X=\e^{r/4M}\sqrt{\frac{r}{2M}-1}\cosh\frac{t}{4M}.
+\]
+因此等 $r$ 线是双曲线，等 $t$ 线是过原点的射线。由坐标定义又有
+\eq{\label{eq:kruskal-r}
+    X^2-T^2=-UV
+    =\left(\frac{r}{2M}-1\right)\e^{r/2M}.
 }
-可用 Lambert 函数将其表为
+故 $r$ 是 $T,X$ 的函数；以 Lambert 函数反解即
 \eq{\label{eq:r=T,X}
-r=2M\operatorname{W}\left(\frac{X^2-T^2}{\e}\right)+2M.
+    r=2M\left[1+\operatorname W\left(\frac{X^2-T^2}{\e}\right)\right].
 }
-这个坐标系称为\textbf{Kruskal 系}。
-
-又是一个既能消除奇性又能保持 $g_{01}=0$ 的坐标系。
-
-我们再次按 $T,X$ 正交绘制 2 维时空图。$(-\d T^2+\d X^2)$ 形式的保留使类光测地线斜率仍为 $\pm 1$。实际上，像这样给原度规乘以一个正因子就称为\textbf{Weyl 重标度}(rescaling)变换，简称 Weyl 变换，它能保留时空结构，故又称为\textbf{共形}(conformal)变换。
+径向二维度规只是二维 Minkowski 度规乘上正函数，因而在 $T$--$X$ 图中类光线斜率仍为 $\pm1$。这里仅有径向二维部分共形平直，并不意味着完整四维 Schwarzschild 时空共形平直。
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt02/kruskal.pdf}
-    \caption{Kruskal 延拓}
+    \caption{Kruskal 延拓及其四个区域}
     \label{fig:kruskal}
 \end{figure}
-从图 \ref{fig:kruskal} 上可见，Kruskal 系也会“掰弯” Schwarzschild 时空的视界 $r=2M$，使之变为光锥面 $VU=0$。易知各坐标的取值分布同图 \ref{fig:rindlerIM} 相似。然而，我们只考虑了 $r>2M$ 的情况，在图上标记为开区域\textbf{A 区}，对应 $V>0,U<0$。那 $r<2M$ 呢？Schwarzschild 系的 $r>2M$ 和 $r<2M$ 借超前 Eddington 系消除 $r=2M$ 坐标奇性。
-从图上看，从 A 区任意点出发的内向类光线一定坠向 $V$ 正半轴，说明其代表事件视界，故可记作 $\H_V^+$。Kruskal 系也能消除坐标奇性，我们可越过视界来到上方，这里 $V,U>0$，说明我们自然地拓宽了 $V,U$ 的定义。为使 $U$ 为正，应定义
-\eq{
-V=\e^{v/4M}>0,\quad U=\e^{-u/4M}>0,
-}
-可验证度规仍表为 \eqref{eq:kruskal} 式。这里等 $r$ 线应无限延伸，因为等 $t$ 线从 $U$ 正半轴至 $V$ 正半轴遍历了所有 $t$ 值。一系列等 $r$ 线至多扫至时空奇点 $r=0\eqto T^2-X^2=1$ 而无法越过，所扫区域里的任意类时、类光线确实都坠入奇点，说明其代表黑洞，称为\textbf{B 区}。可见，超前 Eddington 系覆盖了 $\mathrm{A}\cup\H_V^+\cup\mathrm{B}$，即整个 Schwarzschild 时空。奇点及其外部红色区域不属于时空。综上，A,B 区的坐标变换可整合为
-\eq{
-V=\e^{(r_*+t)/4M},\quad U=-\sgn(r-2M)\e^{(r_*-t)/4M}.
-}
-进而变换至 $T,X$ 可整合为
-\eq{\begin{aligned}
-    T&=\frac{\e^{r/4M}}{2}\sqrt{\abs{\frac{r}{2M}-1}} \left(\e^{t/4M}-\sgn(r-2M)\e^{t/4M}\right),\\
-    X&=\frac{\e^{r/4M}}{2}\sqrt{\abs{\frac{r}{2M}-1}} \left(\e^{t/4M}+\sgn(r-2M)\e^{t/4M}\right).
-\end{aligned}}
-其仍形如双曲函数。若从 $T,X$ 做逆变换，易知 $r$ 仍满足 \eqref{eq:r=T,X} 式，而 $t$ 表为
-\eq{
-t=2M\ln\frac{X+T}{|X-T|},
-}
-形如反双曲正切函数。
+式 \eqref{eq:kruskal-r} 在视界内仍有光滑实解，因此可解除 $U<0,V>0$ 的限制。由 $r>0$ 得 Kruskal 坐标域 $X^2-T^2>-1$，它被 $U=0$ 与 $V=0$ 两条视界分成图 \ref{fig:kruskal} 所示四区：右侧 \textbf{A 区}满足 $U<0,V>0$，是原 Schwarzschild 外部；上方 \textbf{B 区}满足 $U>0,V>0$，是黑洞内部；左侧 \textbf{A$'$ 区}满足 $U>0,V<0$，是第二个渐近平直外部；下方 \textbf{W 区}满足 $U<0,V<0$，是白洞内部。
 
+超前 Eddington--Finkelstein 系保持 $V>0$ 而允许 $U$ 变号，故覆盖 $\mathrm A\cup\mathcal H_V^+\cup\mathrm B$；其中可统一写成 $V=\e^{(t+r_*)/4M}$、$U=-\sgn(r-2M)\e^{(r_*-t)/4M}$。相反，推迟系保持 $U<0$ 而允许 $V$ 变号，覆盖 $\mathrm A\cup\mathcal H_U^-\cup\mathrm W$。Kruskal 系则令 $U,V$ 独立变化，从而同时包含四个区域及四支视界。离开视界后，Schwarzschild 时间可由 $t=2M\ln|V/U|$ 恢复。
 
+B 区中所有指向未来的类时、类光曲线最终都到达 $r=0$；W 区是其时间反演，因果曲线只能从其中穿出。A 与 A$'$ 都渐近平直，却彼此无因果联系。在 $T=0$ 的空间切片上，两外部区域由 Einstein--Rosen 桥连接，其最小面积球面位于 $U=V=0$、$r=2M$，称为\textbf{喉}(throat)或\textbf{分叉球面}(bifurcation sphere)；该桥不可穿越。
 
-，但即使如此也不能越过点 $r=0$，
+边界 $r=0$ 对应 $T^2-X^2=1$。此处曲率不变量 $R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}=48M^2/r^6$ 发散，不能再以光滑坐标延拓。除此之外，区域 $X^2-T^2>-1$ 已无有限坐标边界，故所得时空称为 Schwarzschild 解的\textbf{最大解析延拓}，简称\textbf{Kruskal 延拓}。
 
-直观上是因为我们已经覆盖了整个 $r>0$，而 $r<0$ 无意义。本节末会讲清延拓方法。
-
-
-
-
-
-这里第一步是转化至子时空
-
-
-
-因而内外可视作独立区域
-
-只限于 $r>0$
-
-
-该式表明 Schwarzschild 度规可定义在一个比原来大得多的时空上，称其 \textbf{Kruskal 延拓}。
-
-，我们无法再继续延拓下去，因此 Kruskal 延拓是 Schwarzschild 时空的最大延拓。
-
-2 维 Kruskal 延拓只是 $\R^2$ 的一个蝴蝶状子集
-
-
-因而我们又称 Kruskal 延拓是\textbf{共形平直}的。
-
-
-
-将 Kruskal 延拓分为 4 个开区域，从右边开始，逆时针依次标记为 I,II,III,IV 区（后二者也有称 I$'$,II$'$ 的）。
-
-
-
-其它 3 个区皆为 A 区延拓结果
-
-
-
-可以预料，若对 Schwarzschild 系坐标时 $t$ 做推迟变换，即得超前 Eddington 系的时间反演坐标，故称\textbf{推迟 Eddington 系}，它描述的就是黑洞的反演：物质从视界穿出，物理现象朝着与黑洞性质相反的方向进行。从图上看，IV 区沿类时方向可以走向 A 区。物理学家将 IV 区打趣地称为\textbf{白洞}(white hole)，简称 \textbf{W 区}。
-同理\textbf{白洞视界}记 $\H_V^-,\H_U^-$。可见，推迟 Eddington 系覆盖了 $\mathrm{A}\cup\H_U^-\cup\mathrm{W}$。
-最后还有一个 III 区，从度规上看，其也是一个渐近平直视界外时空，而它亦可从 W 区穿出而坠入 B 区，鉴于相似性又称 III 区为 \textbf{A$'$ 区}，然而此二区域不可能有任何信息交流，即无因果联系，因为从 A 出发的任意类时或类光线都不能进入 A$'$，反之亦然。于是物理学家戏称 A$'$ 为另一独立的“宇宙”，二者互为\textbf{平行宇宙}(parallel universes)。如果硬要说二者有“擦边性”的瓜葛，那只能在原点 $V,U=0$ 处。还原另二空间维度，它就是一个半径 $r=2M$ 的 2 维球面，称为\textbf{虫洞}(wormhole)、\textbf{喉}(throat)或\textbf{分叉点}(bifurcation)，以代表两个“宇宙”唯一可能但却不能通过的道路。这些概念是在全时空为真空的前提下所得，其物理实在性还须另做讨论。从初值问题的角度考虑，整个时空存在的可能性很小。
+上述白洞、第二外部区域及 Einstein--Rosen 桥属于永恒真空 Schwarzschild 解的整体结构。由恒星坍缩形成的实际黑洞一般只包含一个外部区域与未来黑洞区域，并不产生完整的白洞和第二外部区域。
 
 \subsection{Penrose 图}
 
+Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐标处。若只关心因果结构，可再作共形变换，将整个时空压缩到有限图形中。具体说，在物理时空 $(\mathcal M,g)$ 上取正函数 $\Omega$，令 $\tilde g=\Omega^2g$；由于 $\tilde g_{\mu\nu}k^\mu k^\nu=\Omega^2g_{\mu\nu}k^\mu k^\nu$，类光方向及光锥均不改变。若 $\Omega$ 在扩大的流形边界上趋于零，而 $\tilde g$ 可光滑延伸至该边界，就称所得构造为\textbf{共形紧化}(conformal compactification)，其有限图示称为\textbf{Penrose 图}。
+
+球对称时空的 Penrose 图只画 $(t,r)$ 所张成的径向二维商空间，每个内部点实际代表一个对称 2-球。对 Kruskal 类光坐标作
+\[
+    \hat U=\arctan U,\qquad \hat V=\arctan V,\qquad
+    \mathcal T=\frac{\hat V+\hat U}{2},\qquad
+    \mathcal X=\frac{\hat V-\hat U}{2},
+\]
+则 $\hat U,\hat V\in(-\pi/2,\pi/2)$，原来无界的 $U,V$ 被压入有限区间。径向度规变为某个正函数乘以 $-\d\hat V\,\d\hat U=-\d\mathcal T^2+\d\mathcal X^2$，故略去该共形因子后，径向类光线仍处处与坐标轴成 $45^\circ$。
+
+由式 \eqref{eq:kruskal-r}，物理区域满足 $UV<1$。在 B 区的奇性 $UV=1$ 上，$\arctan U+\arctan V=\pi/2$，故 $\mathcal T=\pi/4$；W 区同理给出 $\mathcal T=-\pi/4$。于是两支 $r=0$ 奇性成为水平类空边界，而 $U=0$、$V=0$ 两支视界仍为对角线。无穷远则被压到外侧四条类光边和六个端点。
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.45]
+        % conformal infinities
+        \draw[thick] (-1,1)--(-2,0)--(-1,-1);
+        \draw[thick] (1,1)--(2,0)--(1,-1);
+        % horizons
+        \draw[blue!65!black,thick] (-1,-1)--(0,0)--(1,1);
+        \draw[blue!65!black,thick] (1,-1)--(0,0)--(-1,1);
+        % singularities
+        \draw[red!75!black,thick,decorate,decoration={zigzag,amplitude=1.2pt,segment length=5pt}] (-1,1)--(1,1);
+        \draw[red!75!black,thick,decorate,decoration={zigzag,amplitude=1.2pt,segment length=5pt}] (-1,-1)--(1,-1);
+        % regions
+        \node at (1.15,0) {$\mathrm A$};
+        \node at (-1.15,0) {$\mathrm A'$};
+        \node at (0,.53) {$\mathrm B$};
+        \node at (0,-.53) {$\mathrm W$};
+        % infinities
+        \node[rotate=-45] at (1.56,.56) {$\mathscr I^+$};
+        \node[rotate=45] at (1.56,-.56) {$\mathscr I^-$};
+        \node[rotate=45] at (-1.56,.56) {$\mathscr I^+$};
+        \node[rotate=-45] at (-1.56,-.56) {$\mathscr I^-$};
+        \node[right] at (2.02,0) {$i^0$};
+        \node[left] at (-2.02,0) {$i^0$};
+        \node[above right] at (1,1) {$i^+$};
+        \node[above left] at (-1,1) {$i^+$};
+        \node[below right] at (1,-1) {$i^-$};
+        \node[below left] at (-1,-1) {$i^-$};
+        % horizons and singularities
+        \node[blue!65!black,rotate=45,below] at (.47,.47) {$\mathcal H^+$};
+        \node[blue!65!black,rotate=-45,above] at (.47,-.47) {$\mathcal H^-$};
+        \node[red!75!black,above] at (0,1.03) {$r=0$};
+        \node[red!75!black,below] at (0,-1.03) {$r=0$};
+        \fill (0,0) circle(1pt);
+        \node[below right] at (0,0) {$r=2M$};
+        \draw[->] (2.35,-.35)--(2.35,.35) node[above] {未来};
+    \end{tikzpicture}
+    \caption{最大延拓 Schwarzschild 时空的 Penrose 图。蓝线是视界，红色波线是曲率奇性。}
+    \label{fig:sch-penrose}
+\end{figure}
+
+图 \ref{fig:sch-penrose} 中，$\mathscr I^+$、$\mathscr I^-$ 分别称为\textbf{未来、过去类光无穷远}(future/past null infinity)，是出射、入射类光线的理想端点；$i^+$、$i^-$ 是类时世界线的未来、过去端点，称为\textbf{类时无穷远}；$i^0$ 是类空曲线趋向的\textbf{类空无穷远}。A 与 A$'$ 各有一套这样的渐近边界，反映两个渐近平直外部区域。
+
+这些无穷远点是共形延拓所附加的理想边界，并不属于物理时空。$r=0$ 也不属于时空，但原因不同：它是曲率发散的真实奇性，不能作为光滑共形边界补入。视界 $\mathcal H^\pm$ 则是时空内部的正则类光超曲面，只是在图上恰好构成不同区域的分界。
+
+Penrose 图使事件视界的整体性质尤为清楚：相对于某一外部区域的 $\mathscr I^+$，能把因果信号送至该类光无穷远的事件构成其因果过去；这一集合的边界就是未来事件视界 $\mathcal H^+$。因此视界不能只凭某处的曲率或局域测量确定，而依赖整个时空的未来。B 区中未来不可延的类时、类光测地线终止于上方奇性，不能到达任一 $\mathscr I^+$；W 区则只能向外发出因果线。
+
+共形紧化保留的是光锥、因果先后和边界类型，并不保留距离、固有时或曲率大小。图上有限的线段完全可能代表无限仿射距离。对于由坍缩形成的黑洞，W 区与 A$'$ 区不再出现；其 Penrose 图将在未来视界左侧以星体内部取代，这也说明永恒 Schwarzschild 图描述的是理想化的整体真空解。
+
 \subsection{嵌入图与虫洞}
-绘制虫洞的一个形象方法就是用嵌入图。
+
+Penrose 图强调因果结构，另一种互补的图示则强调某个空间切片的内禀几何。固定 Schwarzschild 时间，并在球对称空间中取赤道面 $\theta=\pi/2$，其诱导度规为
+\[
+    \d \ell^2=\frac{\d r^2}{1-2M/r}+r^2\d\varphi^2,
+    \qquad r\geqslant 2M.
+\]
+为了把这张弯曲的二维曲面画出来，设它等距嵌入 Euclidean 三维空间。以 $(r,\varphi,z)$ 为柱坐标，并令曲面由 $z=z(r)$ 给出，则曲面上的线元是
+\[
+    \d \ell_E^2=\left[1+\left(\dv{z}{r}\right)^2\right]\d r^2+r^2\d\varphi^2.
+\]
+逐项比较两式可得
+\[
+    \dv{z}{r}=\pm\sqrt{\frac{2M}{r-2M}},\qquad
+    z=\pm2\sqrt{2M(r-2M)},
+\]
+其中已选择 $z=0$ 对应 $r=2M$。等价地，$r=2M+z^2/(8M)$；这张旋转曲面称为\textbf{Flamm 抛物面}(Flamm paraboloid)。远处 $\dv*{z}{r}\to0$，曲面渐近平坦；在 $r=2M$ 处斜率发散，形成最窄的圆周。
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[x=1cm,y=.58cm]
+        \draw[->,gray!70] (0,-4.6)--(0,4.65)
+            node[above] {嵌入方向 $z$};
+        \fill[blue!9]
+            plot[domain=-4:4,samples=80] ({1.2+.1*\x*\x},{\x})
+            -- plot[domain=4:-4,samples=80] ({-1.2-.1*\x*\x},{\x}) -- cycle;
+        \foreach \zz in {-4,-3,-2,-1,1,2,3,4}{
+            \pgfmathsetmacro{\rr}{1.2+.1*\zz*\zz}
+            \pgfmathsetmacro{\er}{.13*\rr}
+            \draw[blue!35] (0,\zz) ellipse ({\rr} and {\er});
+        }
+        \draw[blue!65!black,thick]
+            plot[domain=-4:4,samples=80] ({1.2+.1*\x*\x},{\x});
+        \draw[blue!65!black,thick]
+            plot[domain=-4:4,samples=80] ({-1.2-.1*\x*\x},{\x});
+        \draw[black!75,thick] (0,0) ellipse (1.2 and .16);
+        \draw[->] (3,.65)--(1.18,.08) node[pos=0,left] {喉 $r=2M$};
+        \node[fill=white,inner sep=1pt] at (0,3.25) {$\mathrm A$};
+        \node[fill=white,inner sep=1pt] at (0,-3.25) {$\mathrm A'$};
+    \end{tikzpicture}
+    \caption{Schwarzschild 等时赤道面的嵌入图。上下两端分别代表两个渐近平直外部，黑色圆周是喉的赤道。}
+    \label{fig:flamm-paraboloid}
+\end{figure}
+
+嵌入坐标 $z$ 只是作图用的辅助量，并非新的物理空间方向。视界处的发散也只是 $z(r)$ 表示不便；从喉部量起的固有径向距离为
+\[
+    l(r)=\pm\int_{2M}^{r}\frac{\d\bar r}{\sqrt{1-2M/\bar r}}
+    =\pm\left[\sqrt{r(r-2M)}+2M\ln\frac{\sqrt r+\sqrt{r-2M}}{\sqrt{2M}}\right].
+\]
+取正、负号分别得到 A 与 A$'$ 两个外部区域。以 $l$ 为坐标时，完整等时空间的度规可写成 $\d\ell^2=\d l^2+r^2(l)\d\Omega^2$；$r(l)=r(-l)$ 在 $l=0$ 取得光滑最小值 $2M$，而 $l\to\pm\infty$ 给出两个渐近平直端。因此该空间切片的拓扑为 $\mathbb R\times S^2$，连接两端的部分称为\textbf{Einstein--Rosen 桥}，也是最早的\textbf{虫洞}(wormhole)实例。图 \ref{fig:flamm-paraboloid} 只嵌入了其中的赤道面；黑色圆周在完整三维切片中实际是面积为 $16\pi M^2$ 的喉球面。
+
+空间上连通并不意味着可以在时空中穿行。这里的喉球面正是未来、过去视界相交的分叉球面；由图 \ref{fig:sch-penrose} 可见，从 A 区出发的未来因果曲线若穿过未来视界，便进入 B 区并终止于 $r=0$，不可能到达 A$'$。故 Schwarzschild 的 Einstein--Rosen 桥是\textbf{不可穿越虫洞}(non-traversable wormhole)。嵌入图没有时间方向和光锥，单凭其漏斗形状无法判断这一因果性质。
+
+这一点也可由一般静态球对称虫洞的写法看出：
+\[
+    \d s^2=-\e^{2\Phi(r)}\d t^2
+    +\frac{\d r^2}{1-b(r)/r}+r^2\d\Omega^2.
+\]
+$b(r)$ 称为\textbf{形状函数}(shape function)，喉半径 $r_0$ 满足 $b(r_0)=r_0$；赤道面的嵌入方程为 $\dv*{z}{r}=\pm\sqrt{b/(r-b)}$。曲面在喉部向外张开还要求 $b'(r_0)<1$。若要可穿越，红移函数 $\Phi$ 必须处处有限，使 $\e^{2\Phi}$ 不出现视界。Schwarzschild 情形虽有 $b=2M$，却有 $\e^{2\Phi}=1-2M/r$，恰在喉部为零，因而不满足可穿越条件。
+
+在经典 Einstein 方程下，若 $\Phi$ 在喉部正则，场方程还给出
+\[
+    8\pi(\rho+p_r)\big|_{r_0}=\frac{b'(r_0)-1}{r_0^2}<0,
+\]
+其中 $\rho$ 与 $p_r$ 是静止观者测得的能量密度和径向压强。于是径向类光方向上的零能量条件在喉部遭到破坏；维持静态可穿越虫洞通常需要所谓的\textbf{奇异物质}(exotic matter)。这项结论涉及完整时空度规，而不仅是某张嵌入图。
+
+最后，嵌入图依赖空间切片的选择，并非时空本身唯一不变的画像。例如 Gullstrand--Painlevé 坐标的等时空间是平直的，便没有上述漏斗形状；但事件视界与因果关系并未因此消失。因此嵌入图适合展示指定切片上的距离和喉部几何，Penrose 图才负责展示虫洞能否穿越。
 
 
 \section{引力坍缩}\label{sec:collapse}
 
-星体演化
+静态 Schwarzschild 解说明真空黑洞可以存在，却没有说明它怎样从普通物质形成。恒星失去支撑后持续收缩，密度与时空曲率随之增大，这一动力学过程称为\textbf{引力坍缩}(gravitational collapse)。坍缩并不必然产生黑洞：质量较小的星体可以形成白矮星或中子星，外层物质也可能在爆发中被抛出。只有当剩余物质不能建立新的稳定平衡，并收缩到形成陷获区域时，黑洞才会出现。
 
-这些问题花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。
+\subsection{从静力平衡到持续坍缩}
 
-人们现在普遍认为星体\textbf{引力坍缩}(gravitational collapse)的末日归宿就是黑洞。
+球对称理想流体的静态平衡由 Tolman--Oppenheimer--Volkoff 方程控制。在几何单位制中，令 $m(r)$ 为半径 $r$ 内的质量、$\rho$ 为能量密度、$p$ 为压强，则
+\[
+    \dv{m}{r}=4\pi r^2\rho,\qquad
+    \dv{p}{r}=-\frac{(\rho+p)(m+4\pi r^3p)}{r(r-2m)}.
+\]
+给定状态方程 $p=p(\rho)$ 与中心密度后，可以向外积分至 $p=0$ 的星体表面。沿一族平衡解增大中心密度时，稳定性通常会在某个转折点改变；若总质量超过相应物态所能支撑的范围，压强梯度便不足以抵抗引力，星体开始动力学坍缩。这里的临界质量依赖状态方程、温度、自转和物质损失，不能只由 Schwarzschild 半径一个量决定。
 
-进入黑洞的测地线会在有限固有时内碰上奇点而“断掉”，不可无限制地延伸下去，称作\textbf{不可延测地线}(inextendible geodesic)。接近奇点的宏观观者会被差距强烈的潮汐力撕碎。
+球对称星体的表面半径记作 $R(\tau)$。表面之外是真空，故由 Birkhoff 定理，外部度规在整个球对称运动过程中仍是质量参数为 $M$ 的 Schwarzschild 度规；时间依赖集中在星体内部以及表面在该外部几何中的运动。自由下落的表面可在有限固有时内越过 $R=2M$。用外部 Schwarzschild 时间描述时，表面却只在 $t\to\infty$ 时趋近 $2M$，同时其发出的光越来越红、到达间隔越来越长。这只是 Schwarzschild 坐标在视界上的退化，并不表示坍缩在物理上停止。
 
-这种病态性质与高度的球对称性有关。Penrose 在 1965 年给出的\textbf{奇性定理}(singularity theorem)中指出，耦合适当的物质并附加某些条件后，一定会出现不可延测地线，因而就产生了这么个奇点。奇性定理给出了两个重要猜想(conjecture)或者假设(hypothesis)。第一个是\textbf{弱宇宙监督}(weak cosmic censorship)假设: 对于适当的物质方程组和一般物理意义的初始条件，奇点一定限制在黑洞区域内而“看不见”; 第二个是\textbf{强宇宙监督}(strong cosmic censorship)假设：解的奇性一定与其延拓遇到局部阻碍有关。后一个假设保证了动力学问题的唯一解必定是初始数据产生的经典时空，即\textbf{经典决定性原理}(Classical Newtonian determinism)。如果抛弃条件的一般性，则这两个假设都不成立。Christodoulou 做出过标量场方程组的球对称解，其中的奇点就不在黑洞区域内，这样的时空就称作包含了\textbf{裸}(naked)奇点。裸奇点很容易构造出来，比如直接令 $m<0$，但此时就不允许\textbf{渐近平直的 Cauchy 面}了，因而可能不太符合咱们的物理常识。这件事与所谓的\textbf{正能量定理}(positive mass theorem)有关.
+\subsection{Oppenheimer--Snyder 模型}
 
+最简单的精确模型把星体理想化为均匀、无压的尘埃球。尘埃粒子沿类时测地线运动，内部是闭的 FLRW 度规的一部分：
+\[
+    \d s^2=-\d\tau^2+a^2(\tau)
+    \left(\d\chi^2+\sin^2\chi\,\d\Omega^2\right),
+    \qquad 0\leqslant\chi\leqslant\chi_b.
+\]
+$\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。尘埃密度满足 $\rho a^3=\text{常数}$，Friedmann 方程为
+\[
+    \dot a^2=\frac{8\pi}{3}\rho a^2-1.
+\]
+若尘埃球在最大半径 $a_{\max}$ 处从静止开始坍缩，可引入参数 $0\leqslant\eta\leqslant\pi$，写成
+\[
+    a(\eta)=\frac{a_{\max}}{2}(1+\cos\eta),\qquad
+    \tau(\eta)=\frac{a_{\max}}{2}(\eta+\sin\eta).
+\]
+因此 $a$ 在固有时 $\tau_s=\pi a_{\max}/2$ 变为零。这个模型中所有尘埃壳层同时到达 $R=0$，密度和曲率发散，形成类空奇性。
+
+把内部解与外部 Schwarzschild 解在星体表面匹配，得到守恒的总质量
+\[
+    M=\frac{4\pi}{3}\rho R^3
+     =\frac{a_{\max}}{2}\sin^3\chi_b.
+\]
+表面越过其 Schwarzschild 半径的条件 $R=2M$ 给出
+\[
+    \eta_H=\pi-2\chi_b\qquad(0<\chi_b<\pi/2),
+\]
+显然发生在 $\eta=\pi$ 的奇性之前。Oppenheimer--Snyder 模型忽略了压强、密度梯度、自转和辐射，却清楚展示了一个关键事实：正则初始数据可以在有限固有时内演化出视界和奇性，外部则始终保持 Schwarzschild 形式。
+
+\subsection{陷获面与视界的形成}
+
+考虑球对称时空中的一个对称 2-球，其面积为 $A=4\pi r^2$。沿两支未来指向类光法向量 $k_+^\mu,k_-^\mu$ 发出的光线束，其面积膨胀率为
+\[
+    \theta_\pm=\frac{1}{A}\dv{A}{\lambda_\pm}
+    =\frac{2}{r}k_\pm^a\nabla_a r.
+\]
+在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{边缘外陷获面}(marginally outer trapped surface)。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}(apparent horizon)。
+
+球对称情形可用 Misner--Sharp 质量 $m$ 将这个条件写得更直观：
+\[
+    1-\frac{2m}{r}=g^{ab}\nabla_a r\nabla_b r,
+\]
+其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，边缘球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故边缘条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
+
+表观视界是准局域概念，可以由某一时刻的几何求出，但其位置依赖空间切片。事件视界则由整个时空定义：
+\[
+    \mathcal B=\mathcal M\setminus J^-(\mathscr I^+),\qquad
+    \mathcal H^+=\partial J^-(\mathscr I^+),
+\]
+其中 $\mathcal B$ 是黑洞区。要判断一束光最终能否到达 $\mathscr I^+$，原则上必须知道时空的全部未来。因此事件视界可以穿过局部曲率有限、尚未出现陷获面的区域。在球对称坍缩图中，它从正则中心发出，穿过星体表面后成为外部的 $r=2M$ 类光超曲面。
+
+\begin{center}
+\begin{minipage}{.82\textwidth}
+    \centering
+    \begin{tikzpicture}[x=1.8cm,y=1.8cm]
+        % matter region
+        \fill[blue!8]
+            (0,-2)--(0,.7)
+            --(.36,.892)
+            .. controls (.42,.80) and (.48,.67) .. (.55,.55)
+            .. controls (.64,.38) and (.75,.12) .. (.82,-.10)
+            .. controls (1.05,-.70) and (.65,-1.65) .. (0,-2)--cycle;
+        % conformal boundary and regular centre
+        \draw[thick] (0,-2)--(2.5,.5)--(1.5,1.5);
+        \draw[thick] (0,-2)--(0,.7);
+        % singularity
+        \draw[red!75!black,thick,decorate,
+            decoration={zigzag,amplitude=1.2pt,segment length=5pt}]
+            (0,.7)--(1.5,1.5);
+        % stellar surface
+        \draw[blue!70!black,thick]
+            (0,-2)
+            .. controls (.65,-1.65) and (1.05,-.70) .. (.82,-.10)
+            .. controls (.75,.12) and (.64,.38) .. (.55,.55)
+            .. controls (.48,.67) and (.42,.80) .. (.36,.892);
+        % event and apparent horizons
+        \draw[blue!60!black,very thick] (0,0)--(1.5,1.5);
+        \draw[orange!85!black,thick,dashed] (0,.7)--(.55,.55);
+        % labels
+        \node[rotate=45,below] at (1.80,-.20) {$\mathscr I^-$};
+        \node[rotate=-45,above] at (2.02,.98) {$\mathscr I^+$};
+        \node[below left] at (0,-2) {$i^-$};
+        \node[right] at (2.52,.5) {$i^0$};
+        \node[above right] at (1.5,1.5) {$i^+$};
+        \node[red!75!black,above,rotate=28] at (.69,1.15) {$r=0$ 奇性};
+        \node[blue!60!black,rotate=45,below] at (1.12,1.12) {$\mathcal H^+$};
+        \node[orange!85!black,below] at (.22,.56) {表观视界};
+        \draw[->,blue!70!black] (1.28,-.55)--(.83,-.13)
+            node[pos=0,right] {星体表面};
+        \node at (.31,-.63) {物质};
+        \node at (1.47,.09) {真空外部};
+        \node[left,rotate=90] at (-.04,-.67) {正则中心 $r=0$};
+        \node at (.72,.70) {陷获区};
+        \fill (0,0) circle(1pt);
+    \end{tikzpicture}
+    \captionof{figure}{球对称恒星坍缩的 Penrose 图示意。事件视界在正则中心产生，穿出星体后延伸到未来类时无穷远；表观视界在物质内部与它一般并不重合。}
+    \label{fig:collapse-penrose}
+\end{minipage}
+\end{center}
+
+图 \ref{fig:collapse-penrose} 与永恒 Schwarzschild 图的差别是物理性的：这里没有白洞区、第二外部区域或分叉球面。事件视界形成以前，中心是普通的正则时间轴；事件视界形成以后，边缘外陷获面才在更晚的切片上出现，两者之间可以存在尚未陷获的黑洞区。图上的事件视界不是物质表面，穿越它的自由下落观者也不会遇到局域奇性；真正的曲率奇性位于其未来。
+
+\subsection{奇性定理与宇宙监督}
+
+尘埃模型中的 $a=0$ 奇性可能令人怀疑是均匀、无压等理想化假设造成的。Penrose 奇性定理说明结论远为稳健。其一个代表性版本是：若时空具有非紧 Cauchy 面并包含闭合未来陷获面，且所有类光矢量都满足
+\[
+    R_{\mu\nu}k^\mu k^\nu\geqslant0,
+\]
+则时空中至少存在一条未来不完备的类光测地线。由 Einstein 方程，这个\textbf{类光收敛条件}(null convergence condition)对应于物质的类光能量条件 $T_{\mu\nu}k^\mu k^\nu\geqslant0$。Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
+
+这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。Schwarzschild 坍缩给出曲率发散且隐藏在视界后的例子，但更一般的结局需要附加假设。
+
+\textbf{弱宇宙监督}(weak cosmic censorship)猜想大意是：由适当物质和一般的正则、渐近平直初始数据产生的奇性不会暴露给未来类光无穷远，因而远方观者看不到\textbf{裸奇性}(naked singularity)。\textbf{强宇宙监督}(strong cosmic censorship)则要求一般初始数据的最大 Cauchy 发展在适当正则性类别中不可再延拓，使初始数据保持对物理时空的决定性。二者关注的问题不同：弱形式保护远方观者，强形式保护全局决定论。
+
+这些猜想尚不是对所有物质模型都成立的普适定理，其准确陈述还依赖“一般性”、渐近条件以及允许延拓的可微阶数。某些高度对称或精细调节的初始数据确实能产生裸奇性，但这未必反驳强调一般初始数据的版本。负质量 Schwarzschild 解也不是由满足通常正能量条件的正则恒星初始数据坍缩得到，故不能直接当作宇宙监督的反例。
+
+真实坍缩还伴随压强、激波、磁场、自转、物质抛射和引力辐射。若坍缩后形成孤立的旋转黑洞，外部扰动通常向无穷远辐射或落入视界，几何趋向由质量和角动量描述的 Kerr 黑洞。尽管内部结构远比尘埃模型复杂，陷获面的形成、事件视界的整体定义以及测地线不完备，仍构成理解黑洞产生的基本框架。
 
 \section{后 Newton 理论}
 
-广义相对论在太阳系尺度上通常处于\textbf{弱场、慢速}极限：引力势满足
-$U/c^2\ll 1$，天体与探针的典型速度满足 $v/c\ll 1$。在这种情况下，可将时空度规与物质方程按小参数
+Einstein 方程是非线性的，精确解却只在高度对称的情形容易得到。对于孤立的弱引力系统，若典型速度 $v\ll c$，且正值 Newton 势 $U$ 满足 $U/c^2\ll1$，便可在保留引力非线性的同时作 $1/c$ 渐近展开。这称为\textbf{后 Newton 展开}(post-Newtonian expansion, PN expansion)。对引力束缚系统，维里关系给出统一的小参数 $\epsilon\sim v^2/c^2\sim U/c^2\sim GM/(rc^2)\ll1$。Newton 理论是 0PN，较之小 $\epsilon^n$ 的修正称为 $n$PN；半整数阶可由自旋、辐射尾项或耗散效应产生。后 Newton 展开不是简单的线性化：例如 $U^2/c^4$ 是 1PN 动力学所必需的非线性项。以下约定 $x^0=ct$，并保留 $c$ 以标明阶次；系统论述可参见 Weinberg\cite{Weinberg}。
+
+\subsection{计数规则与逐次解法}
+
+取源的典型尺度为 $R$。空间导数为 $\partial_i=O(R^{-1})$，缓慢运动则给出 $c^{-1}\partial_t=O(\epsilon^{1/2}\partial_i)$。物质的应力--能量张量相应满足 $T^{0i}/T^{00}=O(\epsilon^{1/2})$、$T^{ij}/T^{00}=O(\epsilon)$。度规各分量并非从同一阶开始：$g_{00}+1=O(\epsilon)$、$g_{0i}=O(\epsilon^{3/2})$、$g_{ij}-\delta_{ij}=O(\epsilon)$。要求运动方程达到 1PN 精度时，须分别求出 $g_{00}$ 至 $O(c^{-4})$、$g_{0i}$ 至 $O(c^{-3})$、$g_{ij}$ 至 $O(c^{-2})$。
+
+若源的特征角频率为 $\Omega$，辐射波长约为 $\lambda\sim c/\Omega$。在\textbf{近区}(near zone) $R\ll\lambda$ 内，源的变化时间远长于光行时，推迟势可按 $R/\lambda\sim v/c$ 展开。选定坐标规范后，将度规、物质变量与 Einstein 方程同时按 $1/c$ 排列；低阶方程的解作为高阶方程的源，如此逐次求解。坐标条件在这里不可省略，因为度规系数和坐标加速度都随规范改变，只有进动角、钟的频率比等可观测量不依赖这种选择。
+
+\subsection{势函数与 1PN 度规}
+
+质量密度 $\rho$ 的最低阶势及质量流势定义为
 \[
-\epsilon \sim \frac{v^2}{c^2}\sim \frac{U}{c^2}\sim \frac{GM}{rc^2}
+    U(t,\mathbf x)=G\int\frac{\rho(t,\mathbf x')}{|\mathbf x-\mathbf x'|}\d^3x',\qquad
+    U_i(t,\mathbf x)=G\int\frac{\rho(t,\mathbf x')v_i(t,\mathbf x')}{|\mathbf x-\mathbf x'|}\d^3x'.
 \]
-作渐近展开，这便是后 Newton（post-Newtonian, PN）展开。其思想是：以 Minkowski 度规 $\eta_{\mu\nu}$ 为零阶，
-写
+因此 $\nabla^2U=-4\pi G\rho$、$\nabla^2U_i=-4\pi G\rho v_i$。这里约定 $U>0$；点质量给出 $U=GM/r$，故 Newton 加速度是 $\nabla U=-GM\mathbf n/r^2$，其中 $\mathbf n=\mathbf x/r$。
+
+在调和坐标中，一般缓慢运动源的最低几阶具有结构
 \[
-g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu},\qquad |h_{\mu\nu}|\ll 1,
+    g_{00}=-1+\frac{2U}{c^2}+O(c^{-4}),\qquad
+    g_{0i}=-\frac{4U_i}{c^3}+O(c^{-5}),\qquad
+    g_{ij}=\left(1+\frac{2U}{c^2}\right)\delta_{ij}+O(c^{-4}).
 \]
-并按 $\epsilon$ 的阶数系统地保留项。由于 $v/c$ 与 $U/c^2$ 在引力束缚系统中通常同阶（维里定理意义下），
-可用统一的记号对动力学与场方程同时展开。
-
-\subsection{展开阶次与记号}
-
-对任意量 $Q$，我们以 $Q=Q^{(0)}+Q^{(2)}+Q^{(3)}+Q^{(4)}+\cdots$ 表示
-其 PN 展开，其中上标 $(n)$ 表示相对阶次 $O(c^{-n})$。典型计数规则为
+$g_{00}$ 的 $O(c^{-4})$ 部分除 $U^2$ 外，还含由动能、内能、压强及引力自能产生的势，不能对一般物质源一概略去。若源是静止点质量，外部真空区没有这些物质势；在各向同性坐标中，所需度规简化为
 \[
-\partial_t \sim \frac{v}{r},\qquad \partial_i \sim \frac{1}{r},\qquad
-v \sim O(c^{-1}),\qquad U \sim O(c^{0})\cdot O(c^2)\,O(c^{-2}).
+    g_{00}=-1+\frac{2U}{c^2}-\frac{2U^2}{c^4}+O(c^{-6}),\qquad
+    g_{0i}=0,\qquad
+    g_{ij}=\left(1+\frac{2U}{c^2}\right)\delta_{ij}+O(c^{-4}),
+    \quad U=\frac{GM}{r}.
 \]
-更直观地说，$U/c^2$ 与 $v^2/c^2$ 都视为 $O(c^{-2})$ 的小量。
+这正是 Schwarzschild 度规在各向同性半径下的弱场展开。与质量流有关的 $g_{0i}$ 称为引力磁部分；它在静态球对称外场消失，却在转动天体或多体系统中产生拖曳效应。
 
-\subsection{1PN 度规（GR 情形）}
+\subsection{二体运动与近日点进动}
 
-在合适的坐标条件（如调和规范）下，广义相对论的 1PN 近似可写成
+1PN 理论已经超出“测试粒子绕固定中心”的近似。设两体质量为 $m_1,m_2$，总质量 $m=m_1+m_2$，对称质量比 $\eta=m_1m_2/m^2\leqslant1/4$；再令 $\mathbf x=\mathbf x_1-\mathbf x_2$、$r=|\mathbf x|$、$\mathbf n=\mathbf x/r$、$\mathbf v=\dot{\mathbf x}$ 及 $\dot r=\mathbf n\cdot\mathbf v$。在质心系的调和坐标中，Einstein--Infeld--Hoffmann 方程化为
 \[
-g_{00}=-1+\frac{2U}{c^2}-\frac{2U^2}{c^4}+O(c^{-6}),
+\begin{split}
+    \ddot{\mathbf x}={}&-\frac{Gm}{r^2}\mathbf n
+    +\frac{Gm}{c^2r^2}\bigg\{
+       \left[(4+2\eta)\frac{Gm}{r}-(1+3\eta)v^2
+       +\frac{3}{2}\eta\dot r^2\right]\mathbf n \\
+       &\hspace{42mm}+(4-2\eta)\dot r\,\mathbf v\bigg\}
+    +O(c^{-4}).
+\end{split}
 \]
+取 $m_1/m_2\to0$、$m\to M$，即 $\eta\to0$，便得到测试粒子在 Schwarzschild 外场中的 1PN 加速度。上式的具体形式依赖坐标；由它算出的轨道不变量则不依赖坐标选择。
+
+对束缚轨道，1PN 修正破坏了 Newton 椭圆的闭合性。以 Newton 阶半长轴 $a$ 和离心率 $e$ 表示，每个径向周期的近心点进动为 $\Delta\phi_{\rm prec}=6\pi Gm/[a(1-e^2)c^2]+O(c^{-4})$。测试质量极限 $m\to M$ 恰与前面由精确 Schwarzschild 测地线得到的结果一致；这里则说明同一公式在 1PN 阶也适用于质量可比的二体相对运动。
+
+\subsection{参数化后 Newton 形式}
+
+PN 是在给定引力理论内逐阶求解，\textbf{参数化后 Newton 形式}(PPN formalism) 则把一类度规引力理论写成统一的弱场参数族，以便直接比较实验\cite{Will18,Will-thesis}。对于静态球对称源，标准 PPN 坐标中的有关部分为
 \[
-g_{0i}=-\frac{4V_i}{c^3}+O(c^{-5}),
+    g_{00}=-1+\frac{2U}{c^2}-2\beta\frac{U^2}{c^4}+O(c^{-6}),\qquad
+    g_{ij}=\left(1+2\gamma\frac{U}{c^2}\right)\delta_{ij}+O(c^{-4}).
 \]
+$\gamma$ 衡量单位静质量所产生的空间曲率，$\beta$ 衡量引力场叠加的非线性；广义相对论给出 $\gamma=\beta=1$。其余 PPN 参数描述优选参考系、动量守恒破坏等可能效应，在静态球对称问题中不出现。
+
+PPN 近日点进动为
 \[
-g_{ij}=\delta_{ij}\left(1+\frac{2U}{c^2}\right)+O(c^{-4}),
+    \Delta\phi_{\rm prec}=\frac{6\pi GM}{a(1-e^2)c^2}
+    \left(\frac{2+2\gamma-\beta}{3}\right)+O(c^{-4}).
 \]
-其中 $U$ 是 Newton 引力势，$V_i$ 是与质量流相关的矢势。对由质量密度 $\rho$ 与速度场 $v^i$ 描述的源，
-其满足的泊松方程形式为
+因此近日点进动约束 $2+2\gamma-\beta$，弱场光线偏折 $\Delta\theta=2(1+\gamma)GM/(bc^2)$ 与 Shapiro 延迟则主要约束 $\gamma$。不同实验测量不同参数组合，才能排除只在某一观测上偶然符合广义相对论的理论。
+
+\subsection{高阶结构与适用范围}
+
+太阳系轨道的 $GM/(rc^2)$ 约为 $10^{-8}$；水星处约为 $2.5\times10^{-8}$，故 1PN 已给出主导相对论进动。精密历表还须同时拟合太阳多极矩、其他天体摄动、自转引起的 Lense--Thirring 效应及更高 PN 项，这些效应的物理来源不应混为一个“相对论修正”。
+
+对非自旋二体，最低几阶保守修正依次为 1PN、2PN 等整数阶；自旋--轨道和自旋--自旋耦合分别从 1.5PN、2PN 开始。引力波带走能量和角动量，使运动方程首次在 2.5PN 出现耗散的\textbf{辐射反作用}(radiation reaction)。紧致双星早期旋近仍可用 PN 理论描述：虽然黑洞或中子星内部并非弱场，外部轨道只要满足 $Gm/(rc^2)\ll1$、$v/c\ll1$，其内部结构在低阶主要吸收到质量和自旋中；潮汐等有限尺度效应在更高阶才显现。
+
+PN 级数在近区有效，却不能直接一致地延伸到波区；计算引力波时须将近区解与满足无入射辐射条件的远区多极展开匹配。随着双星接近并合，$v/c$ 与 $Gm/(rc^2)$ 不再很小，截断级数逐渐失准，必须改用重求和方法、黑洞微扰或数值相对论。另须区分\textbf{后 Minkowski 展开}(post-Minkowskian expansion)：后者按 $G$ 展开而不要求低速，PN 则按 $1/c$ 展开并允许在每一阶保留引力的非线性。
+
+\section{KN 黑洞}\label{sec:KN}
+
+前述 Schwarzschild 与 Reissner--Nordstr\"om 解都是非旋转的，后者只是在前者的基础上加入电荷，而实际天体还可具有角动量。在四维、渐近平直的 Einstein--Maxwell 理论中，描述稳态旋转带电黑洞的精确解是 \textbf{Kerr--Newman 解}，简称 KN 解。本节继续采用 $G=c=1$，不考虑磁单极；其三个参量将分别解释为质量 $M$、角动量 $J$ 和电荷 $Q$。
+
+\subsection{轴对称度规}
+
+稳态轴对称时空具有两个对易 Killing 矢量
 \[
-\nabla^2 U=-4\pi G\rho,\qquad
-\nabla^2 V_i=-4\pi G\rho v_i,
+    \xi=\p_t,\qquad \psi=\p_\phi,
+    \qquad [\xi,\psi]=0,
 \]
-并配以远处 $U,V_i\to 0$ 的边界条件。对点质量 $M$ 且源近似静止的情形，
-$V_i$ 可忽略，且
+其中 $\xi$ 在无穷远取单位时间平移，$\psi$ 的轨道以 $2\pi$ 为周期，并在旋转轴上退化为零。对于满足正交传递性（又称圆性条件）的 Einstein--Maxwell 解，可选取适配坐标 $(t,\phi,x^1,x^2)$，使度规写成
 \[
-U(\mathbf{x})=\frac{GM}{r},\qquad r=|\mathbf{x}|.
+    \d s^2=g_{tt}\d t^2+2g_{t\phi}\d t\,\d\phi+g_{\phi\phi}\d\phi^2
+    +h_{AB}\d x^A\d x^B,
 \]
+所有系数只依赖 $x^1,x^2$。进一步可在二维轨道空间中选取正交坐标，将 $h_{AB}$ 对角化。这里的 $g_{t\phi}$ 是旋转的关键：它使局域惯性系相对于无穷远发生拖曳。一般含任意物质的轴对称度规未必满足圆性条件，故不能仅凭对称性就删去所有 $t,x^A$ 与 $\phi,x^A$ 交叉项。
 
-\subsection{1PN 运动方程（测试粒子绕中心场）}
-
-令测试粒子的坐标为 $\mathbf{x}(t)$、速度为 $\mathbf{v}=\dot{\mathbf{x}}$。
-在中心质量 $M$ 的静态外场中，保留到 1PN 阶，粒子的加速度可写为
+保持 $x^A$ 不变、以角速度 $\Omega=\d\phi/\d t$ 运动的稳态观者具有 4-速度 $u=u^t(\xi+\Omega\psi)$。其类时条件为
 \[
-\ddot{\mathbf{x}}
-=-\nabla U
-+\frac{1}{c^2}\mathbf{A}_{\rm 1PN}
-+O(c^{-4}),
+    g_{tt}+2\Omega g_{t\phi}+\Omega^2g_{\phi\phi}<0,
 \]
-其中（对 $U=GM/r$）
+这将在下文同时刻画能层中的拖曳和视界上的共同角速度。
+
+\subsection{Kerr--Newman 度规}
+
+取 Boyer--Lindquist 坐标 $(t,r,\theta,\phi)$，定义
+\begin{equation}\label{eq:kn-functions}
+    \Sigma=r^2+a^2\cos^2\theta,\qquad
+    \Delta=r^2-2Mr+a^2+Q^2,
+\end{equation}
+则 Kerr--Newman 度规为
+\begin{equation}\label{eq:kn-metric}
+\begin{split}
+    \d s^2={}&-\frac{\Delta}{\Sigma}
+       (\d t-a\sin^2\theta\,\d\phi)^2
+       +\frac{\sin^2\theta}{\Sigma}
+       \bigl[(r^2+a^2)\d\phi-a\d t\bigr]^2\\
+       &+\frac{\Sigma}{\Delta}\d r^2+\Sigma\d\theta^2 .
+\end{split}
+\end{equation}
+与前文 $A_t\sim Q/r$ 的约定相容，电磁势可取为
+\begin{equation}\label{eq:kn-potential}
+    A=\frac{Qr}{\Sigma}
+       (\d t-a\sin^2\theta\,\d\phi),
+    \qquad F=\d A .
+\end{equation}
+电势的整体正负可吸收到 $Q$ 的定义中，度规则只依赖 $Q^2$。展开 \eqref{eq:kn-metric} 的 $t,\phi$ 部分并记
 \[
-\mathbf{A}_{\rm 1PN}
-= -\nabla U\,(v^2-4U)
-+4(\mathbf{v}\cdot\nabla U)\mathbf{v}.
+    \mathcal A=(r^2+a^2)^2-a^2\Delta\sin^2\theta,
 \]
-该式等价于对 Schwarzschild 测地线在弱场慢速极限下的展开，因而 1PN 理论可视为
-将 ``精确'' 的 Schwarzschild 结果按 $GM/(rc^2)$ 截断至最低非平凡阶。
+有
+\begin{equation}\label{eq:kn-components}
+\begin{split}
+    g_{tt}&=-\left(1-\frac{2Mr-Q^2}{\Sigma}\right),\\
+    g_{t\phi}&=-\frac{a(2Mr-Q^2)\sin^2\theta}{\Sigma},\\
+    g_{\phi\phi}&=\frac{\mathcal A\sin^2\theta}{\Sigma},qquad
+    \det(g_{\mu\nu})=-\Sigma^2\sin^2\theta .
+\end{split}
+\end{equation}
 
-\subsection{轨道方程与近日点进动}
-
-在平面轨道中引入 $u(\phi)=1/r(\phi)$。由 1PN 方程可推出 Binet 型方程
-\eq{
-u''+u=\frac{GM}{h^2}+3\frac{GM}{c^2}u^2,
-}
-其中 $h=r^2\dot{\phi}$ 是单位质量角动量（以坐标时间 $t$ 为参数亦可定义等价的常量形式）。
-零阶解为 Newton 椭圆轨道
+在 $r\to\infty$ 时，$g_{tt}=-1+2M/r+O(r^{-2})$、$g_{t\phi}=-2Ma\sin^2\theta/r+O(r^{-2})$ 且 $A_t=Q/r+O(r^{-3})$，故 ADM 质量、角动量与电荷分别为
 \[
-u_0(\phi)=\frac{GM}{h^2}\bigl(1+e\cos\phi\bigr).
+    M,\qquad J=Ma,\qquad Q.
 \]
-将 $3(GM/c^2)u^2$ 视作微扰可得近日点每绕行一周的进动量
-\eq{
-\Delta\phi_{\rm prec}
-\simeq \frac{6\pi GM}{a(1-e^2)c^2},
-}
-其中 $a$ 为半长轴、$e$ 为偏心率，且使用了 $p=a(1-e^2)=h^2/(GM)$。
+$a$ 因而是单位质量角动量。置 $Q=0$ 得 Kerr 解，置 $a=0$ 得 Reissner--Nordstr\"om 解，再置 $a=Q=0$ 便退化为 Schwarzschild 解。Boyer--Lindquist 坐标中的 $r$ 不是面积半径；$r=\text{常数}$ 的二维曲面一般也不是圆球。
 
-\subsection{PPN 形式与可检验的参数}
+由 $g^{rr}=\Delta/\Sigma$，$\Delta$ 的零点是候选类光超曲面：
+\begin{equation}\label{eq:kn-horizons}
+    r_\pm=M\pm\sqrt{M^2-a^2-Q^2}.
+\end{equation}
+当 $M^2>a^2+Q^2$ 时有两支不同的根，$r_+$ 是外事件视界，$r_-$ 是内 Cauchy 视界；这称为\textbf{亚极端}情形。当 $M^2=a^2+Q^2$ 时两根合并为 $r=M$，得到\textbf{极端}黑洞，其视界退化且外部空间切片具有无限长的喉。当 $M^2<a^2+Q^2$ 时 $\Delta$ 无实根，环奇性暴露给无穷远，所得超极端解不是黑洞。
 
-更一般地，在不预设场方程必须来自 GR 的前提下，可用参数化后 Newton（PPN）框架
-对弱场度规作最一般的、与实验可比较的展开。对静态球对称源，其关键参数是 $\gamma$ 与 $\beta$：
+$\Sigma/\Delta$ 在 $r=r_\pm$ 发散只是 Boyer--Lindquist 坐标奇性。引入内落坐标
+\begin{equation}\label{eq:kn-ingoing}
+    \d v=\d t+\frac{r^2+a^2}{\Delta}\d r,
+    \qquad
+    \d\tilde\phi=\d\phi+\frac{a}{\Delta}\d r,
+\end{equation}
+度规便可光滑穿过未来外视界；电磁势中出现的纯 $r$ 项也可由规范变换消去。对亚极端精确解继续作解析延拓，可依次穿过外视界与内视界，并在避开 $\Sigma=0$ 时穿过 $r=0$ 圆盘进入 $r<0$ 区域，继而出现更多渐近平直区域。其径向因果块与亚极端 Reissner--Nordstr\"om 时空同样形成无限链，但 KN 时空不是球对称的：把角方向全部压掉的二维 Penrose 图只能表示这一块结构，不能显示环奇性和穿过圆盘时对 $\theta$ 的依赖。
+
+在最大解析延拓中，$r=r_-$ 是 Cauchy 视界：越过它以后的场不再由某个外部 Cauchy 面上的数据唯一决定。来自外部的微小入射与出射扰动会在此产生无限蓝移；因此理想 KN 解的光滑内视界对扰动不稳定，坍缩黑洞的实际内部一般不会保持上述规则的无限链式结构。
+
+KN 测地线虽不再具有球对称性，却仍因隐藏对称性而完全可分离。对中性测地线记守恒量 $E=-p_t$、$L=p_\phi$，并令 $\epsilon=1$ 表示单位质量类时测地线、$\epsilon=0$ 表示类光测地线。Hamilton--Jacobi 方程给出 Carter 常数 $\mathcal C$；若
 \[
-g_{00}=-1+\frac{2U}{c^2}-2\beta\frac{U^2}{c^4}+O(c^{-6}),\qquad
-g_{ij}=\delta_{ij}\left(1+2\gamma\frac{U}{c^2}\right)+O(c^{-4}).
+    \mathcal P(r)=E(r^2+a^2)-aL,
 \]
-在该框架下，近日点进动的主导修正可写为
-\eq{
-\Delta\phi_{\rm prec}
-\simeq \frac{6\pi GM}{a(1-e^2)c^2}\cdot\frac{2+2\gamma-\beta}{3}.
-}
-广义相对论给出 $\beta=\gamma=1$，于是恢复上一小节的结果。
-因此，行星近日点进动可直接约束组合参数 $2+2\gamma-\beta$；
-与光线偏折（约束 $\gamma$）以及 Shapiro 延迟（同样主要约束 $\gamma$）等实验一起，
-可对引力理论的弱场极限做高精度检验。
+则一阶方程可写成
+\begin{align}
+    \Sigma^2\dot r^2&=\mathcal P^2
+      -\Delta\bigl[\epsilon r^2+(L-aE)^2+\mathcal C\bigr],\label{eq:kn-radial}\\
+    \Sigma^2\dot\theta^2&=\mathcal C-\cos^2\theta
+      \left[a^2(\epsilon-E^2)+\frac{L^2}{\sin^2\theta}\right],\label{eq:kn-angular}\\
+    \Sigma\dot t&=a(L-aE\sin^2\theta)
+      +\frac{r^2+a^2}{\Delta}\mathcal P,\qquad
+    \Sigma\dot\phi=\frac{L}{\sin^2\theta}-aE
+      +\frac{a}{\Delta}\mathcal P .\label{eq:kn-tphi}
+\end{align}
+点表示对固有时或仿射参数求导。$\mathcal C$ 控制纬向运动；赤道测地线可取 $\mathcal C=0$。式 \eqref{eq:kn-radial} 与 \eqref{eq:kn-angular} 将允许运动区分别化为两个一维有效势问题，也是研究光子轨道、黑洞阴影和粒子俘获的起点。
 
-\subsection{适用范围与更高阶修正}
+\subsection{视界、静止极限与能层}
 
-1PN 近似控制在 $O(c^{-2})$。对太阳系而言，
-$\epsilon\sim GM_\odot/(a c^2)\lesssim 10^{-8}$，因此 1PN 已足以描述
-水星进动的主导相对论效应。若需考虑更高精度，可继续纳入 2PN（$O(c^{-4})$）、
-自旋-轨道耦合（Lense--Thirring）、四极矩（$J_2$）与其他天体摄动等效应；
-这些在数据分析中通常作为独立项与 1PN 结果叠加并拟合。
+真正的曲率奇性位于
+\[
+    \Sigma=0\quad\Longleftrightarrow\quad r=0,
+    \quad\theta=\frac{\pi}{2}.
+\]
+在 Kerr--Schild 空间坐标中它对应 $x^2+y^2=a^2,z=0$ 的环，故称为\textbf{环奇性}(ring singularity)。$r=0$ 的其余部分只是坐标圆盘，可以解析穿过；这与 Schwarzschild 中整个 $r=0$ 边界均为奇性截然不同。
 
+外视界的类光生成元是两个 Killing 矢量的线性组合
+\begin{equation}\label{eq:kn-generator}
+    \chi=\xi+\Omega_H\psi,
+    \qquad \Omega_H=\frac{a}{r_+^2+a^2}.
+\end{equation}
+$\chi$ 在 $r=r_+$ 上为类光，故外视界是 Killing 视界；$\Omega_H$ 与 $\theta$ 无关，表示整个视界像刚体一样以同一角速度旋转。其空间截面的面积为
+\begin{equation}\label{eq:kn-area}
+    A_H=4\pi(r_+^2+a^2).
+\end{equation}
+坐标变换 \eqref{eq:kn-ingoing} 表明视界处曲率正则，而 $\Sigma=0$ 处的曲率不变量发散，二者不可混同。
 
-%% (post-Newtonian theory)
+另一方面，稳态 Killing 矢量 $\xi=\p_t$ 的范数在 $g_{tt}=0$ 处改变符号。外支为
+\begin{equation}\label{eq:kn-static-limit}
+    r_{\rm s}(\theta)=M+
+       \sqrt{M^2-Q^2-a^2\cos^2\theta},
+\end{equation}
+称为\textbf{外静止极限面}(outer stationary-limit surface)。在旋转轴上 $r_{\rm s}=r_+$，在其他纬度则 $r_{\rm s}>r_+$。夹在 $r_+$ 与 $r_{\rm s}(\theta)$ 之间的区域称为\textbf{能层}(ergoregion)。其中 $\xi$ 是类空的，保持 $r,\theta,\phi$ 全部不变的“静止”世界线不可能为类时；任何物体都必须随黑洞作某种程度的同向旋转。
 
+对静止发射者而言，红移因子 $\sqrt{-g_{tt}}$ 在 $r=r_{\rm s}$ 趋于零，所以静止极限面也常称为\textbf{无限红移面}。不过旋转时一般稳态观者沿 $\xi+\Omega\psi$ 而非 $\xi$ 运动，其红移还依赖 $\Omega$ 与光子的角动量；因此无限红移面不是事件视界。允许的稳态角速度范围由
+\begin{equation}\label{eq:kn-omega-range}
+    \Omega_-<\Omega<\Omega_+,
+    \qquad
+    \Omega_\pm=\frac{-g_{t\phi}\pm
+      \sqrt{g_{t\phi}^2-g_{tt}g_{\phi\phi}}}{g_{\phi\phi}}
+\end{equation}
+给出。由于 $g_{t\phi}^2-g_{tt}g_{\phi\phi}=\Delta\sin^2\theta$，趋近外视界时两个根合并为 $\Omega_H$。
 
-\section{轴对称时空}
-    \subsection{旋转黑洞}
-Kerr 
-    KN 度规
+\subsection{闭合类时线}
 
-黑洞无毛
+轴向 Killing 矢量 $\psi=\p_\phi$ 的轨道因 $\phi\sim\phi+2\pi$ 而闭合，其范数正是 $g_{\phi\phi}$。一旦某处 $g_{\phi\phi}<0$，固定 $t,r,\theta$ 而绕 $\phi$ 一周的曲线便成为\textbf{闭合类时线}(closed timelike curve, CTC)。例如在赤道面上
+\begin{equation}\label{eq:kn-ctc}
+    g_{\phi\phi}\big|_{\theta=\pi/2}
+      =r^2+a^2+\frac{2Ma^2}{r}-\frac{a^2Q^2}{r^2}.
+\end{equation}
+对 $Q\ne0$，最后一项使环奇性附近出现 $g_{\phi\phi}<0$ 的区域；在 Kerr 极限 $Q=0$ 中，相应区域主要出现在穿过圆盘后的负 $r$ 一侧。
 
-\section{黑洞热力学}
-\subsection{孤立视界}
-\subsection{类光 Raychaudhuri 方程}
-\subsection{信息论}
+亚极端黑洞外部 $r>r_+$ 满足 $g_{\phi\phi}>0$，所以这些显式 CTC 被事件视界乃至内视界遮蔽，并不意味着外部观者可以利用 KN 黑洞回到自己的过去。超极端解没有视界，奇性与因果病态可能裸露，这也是 $M^2<a^2+Q^2$ 不被视作规则黑洞的重要原因。即使在理想最大延拓中，Cauchy 视界的不稳定性也提示负 $r$ 区域和其中的 CTC 不应被直接当作真实坍缩内部的可靠预言。
+
+\subsection{局域非转动观者}
+
+在外部取固定 $r,\theta$ 的观者，并要求其轴向角动量为零：
+\[
+    u_\phi=g_{t\phi}u^t+g_{\phi\phi}u^\phi=0.
+\]
+则其相对于无穷远的角速度并不为零，而是
+\begin{equation}\label{eq:kn-zamo-omega}
+    \omega=\frac{\d\phi}{\d t}
+      =-\frac{g_{t\phi}}{g_{\phi\phi}}
+      =\frac{a(2Mr-Q^2)}{\mathcal A}.
+\end{equation}
+这种观者称为\textbf{零角动量观者}(zero-angular-momentum observer, ZAMO)，也称为\textbf{局域非转动观者}。后一个名称表示其空间标架不相对于局域惯性罗盘旋转，并非说它相对于无穷远的 $\phi$ 坐标静止。
+
+归一化后，ZAMO 的 4-速度为
+\begin{equation}\label{eq:kn-zamo}
+    n=\alpha^{-1}(\p_t+\omega\p_\phi),
+    \qquad
+    \alpha=\sqrt{\frac{\Delta\Sigma}{\mathcal A}}.
+\end{equation}
+$\alpha$ 是 Boyer--Lindquist 时间切片的时移。远处 $\omega\sim2J/r^3$，给出弱场的 Lense--Thirring 拖曳；趋近外视界时 $\omega\to\Omega_H$、$\alpha\to0$。因此任何贴近视界而保持 $r,\theta$ 不变的观者都被迫以 $\Omega_H$ 共转，同时需要无限大的加速度；ZAMO 本身不能作为类时观者停在视界上。
+
+\subsection{Penrose 过程}
+
+稳态与轴对称性使中性粒子的
+\[
+    E=-p_\mu\xi^\mu=-p_t,
+    \qquad L=p_\mu\psi^\mu=p_\phi
+\]
+沿测地线守恒。在能层外，$\xi$ 为未来类时，任意未来因果粒子必有 $E>0$；在能层内 $\xi$ 变为类空，遂允许相对于无穷远具有 $E<0$ 的未来因果轨道。这并非粒子在局域标架中具有负能量，而是 Killing 能量的符号发生了变化。
+
+设能量为 $E_0$ 的粒子进入能层并裂变为两部分，其中一部分以 $E_1<0$ 落入黑洞，另一部分逃向无穷远。由 4-动量守恒，逃逸粒子的能量为
+\[
+    E_2=E_0-E_1>E_0.
+\]
+多出的能量来自黑洞的转动，这就是\textbf{Penrose 过程}。负能量碎片的角动量必须大体与黑洞自旋反向；对穿过未来视界的中性粒子，由 $-p\cdot\chi\geqslant0$ 还得到
+\begin{equation}\label{eq:kn-horizon-inequality}
+    E-\Omega_H L\geqslant0.
+\end{equation}
+因而黑洞吸收该碎片时 $\delta M=E<0$、$\delta J=L<0$，并满足 $\delta M-\Omega_H\delta J\geqslant0$。
+
+定义\textbf{不可约质量}
+\begin{equation}\label{eq:kn-irreducible-mass}
+    M_{\rm irr}=\sqrt{\frac{A_H}{16\pi}}
+      =\frac12\sqrt{r_+^2+a^2},
+\end{equation}
+则 KN 参量满足 Christodoulou--Ruffini 关系
+\begin{equation}\label{eq:kn-cr-formula}
+    M^2=\left(M_{\rm irr}+\frac{Q^2}{4M_{\rm irr}}\right)^2
+       +\frac{J^2}{4M_{\rm irr}^2}.
+\end{equation}
+在满足通常能量条件的经典过程中，视界面积因而 $M_{\rm irr}$ 不能减小，可提取的是式 \eqref{eq:kn-cr-formula} 中的转动能与适当条件下的电磁能。对极端 Kerr 黑洞，理想单次裂变的最大增益约为入射能量的 $20.7\%$；若以一系列近可逆过程逐渐去旋，理论上最多可提取初始质量的 $1-1/\sqrt2\simeq29\%$。天体物理中更有效的电磁提能机制虽不等同于原始 Penrose 裂变，其几何根源同样是能层和视界旋转。
+
+\subsection{黑洞无毛}
+
+“黑洞无毛”是若干唯一性定理的概括，而不是单独一条不附条件的定理。在四维 Einstein--Maxwell 理论中，若时空渐近平直、稳态，域外区规则且具有适当的全局条件，并假定连通的非退化事件视界以及定理所需的解析性或相应正则性，则黑洞外部由 $M,J,Q$ 唯一确定，即与某个 Kerr--Newman 解等距。若允许磁单极，还须再加入磁荷 $P$，并将许多公式中的 $Q^2$ 换成 $Q^2+P^2$。
+
+“无毛”并不是说外场没有高阶多极矩，而是说这些多极矩不是独立参量。以适当的质量多极矩 $M_\ell$、流多极矩 $S_\ell$ 以及电、磁多极矩 $Q_\ell,P_\ell$ 表示，KN 解满足
+\begin{equation}\label{eq:kn-multipoles}
+    M_\ell+\mathrm{i}S_\ell=M(\mathrm{i}a)^\ell,
+    \qquad
+    Q_\ell+\mathrm{i}P_\ell=Q(\mathrm{i}a)^\ell .
+\end{equation}
+例如 $M_0=M$、$S_1=J$、$M_2=-Ma^2$；一旦测得 $M,J,Q$，所有更高矩都已固定。这使观测黑洞四极矩成为检验 Kerr--Newman 几何的重要思路。
+
+唯一性定理也不自动证明任意坍缩解必在晚时趋于 KN 解。后者还涉及辐射衰减、视界稳定性和物质清空等动力学问题。若改变渐近条件、加入外部物质，或改用含额外标量场、非 Abel 规范场及高曲率项的引力理论，黑洞可以具有额外参量甚至真正的“毛”。因此无毛结论必须连同其理论、边界条件和正则性假设一起使用。
+
+\section{黑洞热力学}\label{sec:bh-thermodynamics}
+
+黑洞在经典理论中是单向的因果边界，却具有一套与热力学惊人平行的定律：视界面积对应熵，表面引力对应温度，质量则对应能量。这种对应并非纯粹形式上的类比。量子场论预言黑洞以 Hawking 温度辐射，而其熵正比于视界面积，因而将引力、量子理论和统计物理联系在一起。本节仍取 $G=c=k_B=1$，但保留 $\hbar$，以区分经典结论与量子结论。
+
+\subsection{传统框架及其局限}
+
+传统讨论以渐近平直的稳态时空和事件视界为核心：Killing 对称性给出质量、角动量、表面引力等守恒量，Raychaudhuri 方程导出面积不减定理，而相邻稳态解之间满足第一定律。这一框架最适合 Kerr--Newman 黑洞及其微扰，并自然导向“面积像熵、表面引力像温度”的四定律。Hawking 辐射进一步赋予二者真实的温度与熵，使经典黑洞力学成为半经典黑洞热力学。
+
+不过，事件视界 $\mathcal H^+=\partial J^-(\mathscr I^+)$ 是\textbf{遥感的}(teleological)：必须知道时空的完整未来才能判定它的位置。它可以为响应将来才落入的物质而在局部真空甚至平直区域中提前扩张，因此面积增量不能普遍解释为当时穿过事件视界的局域能流。它还依赖未来类光无穷远，在空间紧致时空中不能照搬；在数值演化中，也无法只由一个时刻的初始数据立即找到。
+
+稳态假设同样过强：黑洞附近已经平衡时，远处仍可能存在物质或引力辐射；传统第一定律还把无穷远定义的 $M,J$ 与视界上的 $\kappa,\Omega_H$ 混在一起，难以单独描述“黑洞自身”的能量收支。表观视界虽能由单个空间切片求得，却依赖切片选择。由此需要一组层次分明的准局域概念：表观视界用于逐时刻定位，弱孤立视界描述局域平衡，动力学视界描述吸积和并合中的有限通量。
+
+\subsection{Killing 视界与表面引力}
+
+对稳态黑洞，事件视界通常同时是某个 Killing 矢量 $\chi^a$ 的 Killing 视界。也就是说，$\chi^a$ 在视界上既与视界相切又为类光，并生成其类光母线。对 Kerr--Newman 黑洞，式 \eqref{eq:kn-generator} 已给出 $\chi=\xi+\Omega_H\psi$。沿视界生成元的参数一般不是仿射参数，而满足
+\begin{equation}\label{eq:surface-gravity-def}
+    \chi^b\nabla_b\chi^a=\kappa\chi^a,
+    \qquad
+    \nabla_a(\chi^b\chi_b)=-2\kappa\chi_a
+    \quad\text{于 }\mathcal H^+ .
+\end{equation}
+比例系数 $\kappa$ 称为\textbf{表面引力}(surface gravity)。在渐近平直时空中，把 $\xi$ 归一化为无穷远处的单位时间平移便固定了 $\chi$ 的尺度，因而也固定了 $\kappa$。对亚极端 Kerr--Newman 黑洞，
+\begin{equation}\label{eq:kn-thermo-potentials}
+    \kappa=\frac{r_+-r_-}{2(r_+^2+a^2)},\qquad
+    \Omega_H=\frac{a}{r_+^2+a^2},\qquad
+    \Phi_H=\frac{Qr_+}{r_+^2+a^2}.
+\end{equation}
+这里 $\Phi_H$ 是视界生成元所测得的电势与无穷远电势之差，其符号随电磁势和电荷的约定一起改变。极端极限 $r_+=r_-$ 给出 $\kappa=0$。
+
+表面引力也可由贴近视界且沿 $\chi$ 运动的稳态观者理解。令 $V=\sqrt{-\chi^2}$，则这类观者的固有加速度在视界处发散，但按 Killing 时间红移后的量 $Va$ 趋于有限极限 $\kappa$；$\chi$ 的尺度仍由无穷远的时间平移固定。因此 $\kappa$ 是红移后的“视界加速度”，而不是自由落体观者在视界处测得的局域力。
+
+在 Einstein--Maxwell 理论并满足适当能量条件时，稳态 Killing 视界上的 $\kappa$ 为常数，这就是黑洞力学的\textbf{第零定律}。其证明本质上利用 Killing 恒等式、场方程以及视界生成元无膨胀、无剪切的性质；它与平衡态温度在整个系统中均匀的热力学第零定律相对应。
+
+\subsection{类光测地线汇与 Raychaudhuri 方程}
+
+视界面积的演化由类光测地线汇控制。设 $k^a$ 是仿射参数为 $\lambda$ 的类光测地矢量，即 $k^b\nabla_bk^a=0$。另取辅助类光矢量 $n^a$，使 $k\cdot n=-1$，则垂直于二者的二维屏空间度规为 $q_{ab}=g_{ab}+k_an_b+n_ak_b$。将 $\nabla_bk_a$ 投影到屏空间，得到
+\begin{equation}\label{eq:null-congruence-decomposition}
+    B_{ab}=q_a{}^cq_b{}^d\nabla_dk_c
+      =\frac12\theta q_{ab}+\sigma_{ab}+\omega_{ab},
+\end{equation}
+其中 $\theta=q^{ab}B_{ab}$ 是膨胀，$\sigma_{ab}=B_{(ab)}-\theta q_{ab}/2$ 是剪切，$\omega_{ab}=B_{[ab]}$ 是旋量。若 $\d A$ 是随线汇搬运的微小截面积元，则 $\dv{\ln\d A}{\lambda}=\theta$；所以 $\theta$ 直接量度光束截面积的相对变化率。四维时空中的类光 Raychaudhuri 方程为
+\begin{equation}\label{eq:null-raychaudhuri}
+    \dv{\theta}{\lambda}
+    =-\frac12\theta^2-\sigma_{ab}\sigma^{ab}
+      +\omega_{ab}\omega^{ab}-R_{ab}k^ak^b .
+\end{equation}
+
+若线汇无旋且物质满足\textbf{类光能量条件} $T_{ab}k^ak^b\geqslant0$，Einstein 方程与式 \eqref{eq:null-raychaudhuri} 给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。因此一旦 $\theta(\lambda_0)<0$，不迟于 $\lambda-\lambda_0=2/|\theta(\lambda_0)|$，$\theta$ 就趋于负无穷并形成焦散或共轭点。这一\textbf{聚焦结论}是面积定理与奇性定理的共同局域基础。
+
+\subsection{类光超曲面上的 Raychaudhuri 方程}
+
+设 $\mathcal N$ 是局部由 $u=\mathrm{const.}$ 定义的类光超曲面。它的类光法协矢可写为 $\ell_a=f\nabla_a u$；升指标后 $\ell^a$ 又切于 $\mathcal N$，其积分曲线正是超曲面的生成元。取横截面上的另一未来类光法矢 $n^a$ 并令 $\ell\cdot n=-1$，则
+\[
+    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
+    \qquad
+    \Theta^{(\ell)}_{ab}=q_a{}^cq_b{}^d\nabla_c\ell_d
+       =\frac12\theta_{(\ell)}q_{ab}+\sigma^{(\ell)}_{ab}.
+\]
+由于 $\ell_a$ 与某族超曲面正交，Frobenius 定理保证其旋量恒为零。一般的法矢参数并非仿射参数，而满足 $\ell^b\nabla_b\ell^a=\kappa_{(\ell)}\ell^a$；于是类光超曲面上的 Raychaudhuri 方程为
+\begin{equation}\label{eq:null-raychaudhuri-nonaffine}
+    \mathcal L_\ell\theta_{(\ell)}
+    =\kappa_{(\ell)}\theta_{(\ell)}
+      -\frac12\theta_{(\ell)}^2
+      -\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
+      -8\pi T_{ab}\ell^a\ell^b,
+\end{equation}
+其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^a\ell_a=0$ 不作贡献。在重标度 $\ell^a\mapsto f\ell^a$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{ab}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为边缘陷获面”不变。
+
+事件视界是无未来端点的非时序边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\mathcal L_\ell\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
+\begin{equation}\label{eq:hawking-area-theorem}
+    A_2\geqslant A_1
+\end{equation}
+对任意前后两个事件视界截面成立。这是经典结论，依赖能量条件和整体因果假设；Hawking 辐射中的负能流会破坏其经典前提，使蒸发黑洞的面积可以减小。
+
+\subsection{黑洞力学四定律}
+
+对相邻的稳态 Kerr--Newman 解作变分，可得黑洞力学\textbf{第一定律}
+\begin{equation}\label{eq:bh-first-law}
+    \delta M=\frac{\kappa}{8\pi}\,\delta A_H
+       +\Omega_H\,\delta J+\Phi_H\,\delta Q .
+\end{equation}
+$\Omega_H$ 和 $\Phi_H$ 分别是角动量与电荷的化学势。该式既可看作稳态解空间中的参数恒等式，也有“物理过程”版本：少量物质和辐射落入黑洞、扰动最终衰减后，能量、角动量和电荷通量引起的面积变化仍满足同一关系。对有限的稳态 KN 解，还存在 Smarr 关系
+\begin{equation}\label{eq:bh-smarr}
+    M=\frac{\kappa A_H}{4\pi}+2\Omega_HJ+\Phi_HQ,
+\end{equation}
+它可由尺度齐次性或 Komar 积分推出，不能简单地由第一定律把微分符号删去得到。
+
+四条定律可概括如下。第零定律说平衡视界上的 $\kappa$ 为常数；第一定律是式 \eqref{eq:bh-first-law}；第二定律即经典面积不减定理；第三定律的不可达表述则说，不能用满足适当正则性和能量条件的有限物理过程把非极端黑洞降到 $\kappa=0$。最后一条必须连同其过程假设理解，不能仅凭极端 KN 解本身存在就判为错误。
+
+在量子效应尚未引入时，$\kappa$ 与 $A_H$ 只是分别类似温度与熵的几何量：经典黑洞不发射热辐射，面积定理又依赖能量条件而不是统计力学。因此以上结论严格说是\textbf{黑洞力学定律}。Hawking 辐射给出 $T_H$，第一定律随即固定 $S_{\rm BH}$，这才把形式类比提升为\textbf{黑洞热力学定律}。对于动力学视界，下文得到的是有限过程中的几何通量和平衡律；是否、以及怎样把它解释成远离平衡态的温度和熵，仍须另加半经典与统计物理输入。
+
+\subsection{Hawking 辐射与 Bekenstein--Hawking 熵}
+
+在形成黑洞的坍缩背景上量子化物质场时，抵达未来类光无穷远的出射模在向过去追溯时会受到指数红移。正、负频率模因此发生混合，使无穷远观者看到近似热谱。对稳态黑洞，其温度为
+\begin{equation}\label{eq:hawking-temperature}
+    T_H=\frac{\hbar\kappa}{2\pi}.
+\end{equation}
+同一结果也可由 Euclidean 方法看出：视界附近的二维度规具有 Rindler 形式，令 $t=-\mathrm{i}\tau$ 后，要消除 Euclidean 截面原点处的锥形奇性，必须令 $\tau$ 具有周期 $2\pi/\kappa$；这正对应逆温度 $\beta=\hbar/T_H$。
+
+无穷远处的谱并非理想黑体谱，因为波在离开黑洞时还要穿过由时空曲率产生的有效势垒。各角动量模的透射率称为\textbf{灰体因子}(greybody factor)。旋转或带电黑洞的辐射还含有化学势 $\Omega_H$ 和 $\Phi_H$；正频玻色模在 $0<\omega<m\Omega_H+q\Phi_H/\hbar$ 的范围内表现出超辐射放大。温度为零的极端极限需要单独处理，不能把非极端态的晚时推导不加分析地直接取极限。
+
+将式 \eqref{eq:hawking-temperature} 与第一定律比较，便确定黑洞熵为
+\begin{equation}\label{eq:bek-hawking-entropy}
+    S_{\rm BH}=\frac{A_H}{4\hbar}.
+\end{equation}
+这就是\textbf{Bekenstein--Hawking 熵}。面积而不是体积控制熵，是量子引力最重要的线索之一。对 Schwarzschild 黑洞，$A_H=16\pi M^2$ 且 $\kappa=1/(4M)$，所以
+\begin{equation}\label{eq:schwarzschild-thermo}
+    T_H=\frac{\hbar}{8\pi M},\qquad
+    S_{\rm BH}=\frac{4\pi M^2}{\hbar},\qquad
+    C=\dv{M}{T_H}=-\frac{8\pi M^2}{\hbar}.
+\end{equation}
+负热容表示孤立黑洞越辐射越热。在渐近平直真空中，其功率量级为 $P\sim\hbar/M^2$，寿命量级为 $t_{\rm evap}\sim M^3/\hbar$；数值系数取决于可辐射粒子种类和灰体因子。负热容也说明渐近平直黑洞不能像普通物质那样与无限大热库形成稳定正则系综；若置于有限空腔或 AdS 时空，稳定性则可能改变。
+
+\subsection{广义第二定律}
+
+若把普通熵携带进黑洞，外部可见物质的熵会下降。Bekenstein 的关键提议是把视界熵计入总账，定义\textbf{广义熵}
+\begin{equation}\label{eq:generalized-entropy}
+    S_{\rm gen}=\frac{A_H}{4\hbar}+S_{\rm out},
+\end{equation}
+其中 $S_{\rm out}$ 是视界外量子场的熵。\textbf{广义第二定律}断言在适用的半经典过程中 $\Delta S_{\rm gen}\geqslant0$。物质落入时 $S_{\rm out}$ 可减小，但面积项增加；Hawking 蒸发时面积项减小，辐射熵则增加。二者共同取代单独的经典面积定理。
+
+$S_{\rm out}$ 的纠缠熵在视界附近含紫外发散，面积项所用的 Newton 常数也随重整化尺度变化；两部分分别依赖正则化方案，而适当重整化后的 $S_{\rm gen}$ 才具有物理意义。半经典展开还允许对面积律加入对数项等量子修正，但在 $A_H\gg\hbar$ 时，式 \eqref{eq:bek-hawking-entropy} 是主导项。
+
+\subsection{陷获面与表观视界}
+
+事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个闭合类空 2-曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^a,n^a$，并归一化为 $\ell\cdot n=-1$。其诱导度规与两支类光膨胀为
+\begin{equation}\label{eq:null-expansions}
+    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
+    \qquad
+    \theta_{(\ell)}=q^{ab}\nabla_a\ell_b,
+    \qquad
+    \theta_{(n)}=q^{ab}\nabla_an_b.
+\end{equation}
+若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连“外发”光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{边缘外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}。
+
+表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
+
+\subsection{非膨胀、弱孤立与孤立视界}
+
+为了描述“黑洞本身已平衡、远处仍可有辐射”的情形，可用局域视界取代全局 Killing 视界。第一层结构是\textbf{非膨胀视界}(non-expanding horizon, NEH)：$\Delta$ 是拓扑为 $S^2\times\mathbb R$ 的类光超曲面，其退化内禀度规为 $q_{ab}$，任一未来类光法矢 $\ell^a$ 都满足 $\theta_{(\ell)}=0$，并要求场方程及适当的主导能量条件在 $\Delta$ 上成立。Raychaudhuri 方程随即给出
+\[
+    \sigma^{(\ell)}_{ab}=0,\qquad
+    T_{ab}\ell^a\ell^b=0,\qquad
+    \mathcal L_\ell q_{ab}=0.
+\]
+所以各截面面积相同，内禀度规沿生成元不变，也没有物质或引力辐射穿过 $\Delta$。
+
+NEH 上的时空联络诱导出唯一的无挠内禀联络 $\mathcal D_a$。取仅相差正常数倍的法矢等价类 $[\ell]=\{c\ell:c>0\}$，并以
+\[
+    \mathcal D_a\ell^b=\omega_a\ell^b
+\]
+定义法丛联络 1-形式 $\omega_a$。若进一步要求
+\begin{equation}\label{eq:wih-condition}
+    [\mathcal L_\ell,\mathcal D_a]\ell^b=0,
+    \qquad\text{等价地}\qquad
+    \mathcal L_\ell\omega_a=0,
+\end{equation}
+则 $(\Delta,[\ell])$ 称为\textbf{弱孤立视界}(weakly isolated horizon, WIH)。其表面引力为 $\kappa_{(\ell)}=\ell^a\omega_a$。在视界上 $\iota_\ell\d\omega=0$，故由 Cartan 恒等式 $\mathcal L_\ell\omega=\d\kappa_{(\ell)}+\iota_\ell\d\omega$ 与式 \eqref{eq:wih-condition} 得 $\d\kappa_{(\ell)}=0$；这就是不依赖外部全局稳态的\textbf{第零定律}。重标度 $\ell\mapsto c\ell$ 会令 $\kappa_{(\ell)}\mapsto c\kappa_{(\ell)}$，但不破坏其在视界上的常值性。
+
+若把式 \eqref{eq:wih-condition} 加强为
+\[
+    [\mathcal L_\ell,\mathcal D_a]X^b=0
+    \quad\text{对任意切于 }\Delta\text{ 的 }X^a,
+\]
+就得到\textbf{孤立视界}(isolated horizon, IH)：不仅 $q_{ab}$ 和 $\mathcal D_a\ell^b$，整个内禀联络都沿 $\ell^a$ 不变。这里的“孤立”是视界内禀几何的对称性，并不要求 $\ell^a$ 延拓为邻域乃至全时空的 Killing 场。IH 的对称保持 $(q_{ab},\mathcal D_a,[\ell])$，WIH 的对称保持 $(q_{ab},\omega_a,[\ell])$。球形截面上由此有三类：I 型球对称，对称群为四维；II 型轴对称，对称群为二维；III 型除生成元方向外无连续对称，对称群为一维。
+
+在 Hamilton 框架中，允许的视界时间演化存在，当且仅当相应的视界能量满足
+\begin{equation}\label{eq:isolated-horizon-first-law}
+    \delta E_\Delta=\frac{\kappa_{(\ell)}}{8\pi}\delta A_\Delta
+      +\Omega_\Delta\delta J_\Delta+\Phi_\Delta\delta Q_\Delta .
+\end{equation}
+这给出 WIH 的\textbf{第一定律}，其中各量均可在视界上准局域定义。不过没有无穷远归一化时，$E_\Delta$ 和 $\kappa_{(\ell)}$ 并非自动唯一；必须连同所选的视界时间演化一起固定。
+
+\subsection{动力学视界}
+
+正在吸积或并合的黑洞不能由非膨胀视界描述。\textbf{动力学视界}(dynamical horizon, DH)是可由闭合 MOTS 分层的类空 3-曲面 $H$，每片 $S$ 满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$。因为 $H$ 是类空的，物质和引力辐射可以穿过它；在通常能量条件下，其叶片面积沿外向方向严格增加，并在通量消失时趋向类光的孤立视界。以下取 $\Lambda=0$ 且叶片拓扑为 $S^2$。
+
+令 $\hat\tau^a$ 是 $H$ 的未来单位类时法矢，$h_{ab}=g_{ab}+\hat\tau_a\hat\tau_b$ 是 $H$ 的三维诱导度规，$K_{ab}=h_a{}^ch_b{}^d\nabla_c\hat\tau_d$ 是外曲率。再令 $\hat r^a$ 为 $H$ 内垂直于叶片的外向单位法矢，$q_{ab}=h_{ab}-\hat r_a\hat r_b$ 为 $S$ 的二维度规，$\widetilde K_{ab}=q_a{}^cq_b{}^dD_c\hat r_d$ 为 $S\subset H$ 的外曲率。固定
+\[
+    \ell^a=\hat\tau^a+\hat r^a,\qquad
+    n^a=\hat\tau^a-\hat r^a,\qquad
+    \ell\cdot n=-2,
+\]
+则分层条件与几何量的关系为
+\begin{equation}\label{eq:dh-foliation-geometry}
+    \theta_{(\ell)}=q^{ab}(K_{ab}+\widetilde K_{ab})=0,
+    \qquad
+    \theta_{(n)}=q^{ab}(K_{ab}-\widetilde K_{ab})<0.
+\end{equation}
+特别地，$\widetilde K=q^{ab}D_a\hat r_b=-\theta_{(n)}/2>0$，所以叶片面积沿 $\hat r^a$ 增加。三维数据 $(h_{ab},K_{ab})$ 还满足 Hamilton 与动量约束
+\begin{equation}\label{eq:dh-constraints}
+    {}^{(3)}R+K^2-K_{ab}K^{ab}
+       =16\pi T_{ab}\hat\tau^a\hat\tau^b,
+    \qquad
+    D_b(K^{ab}-Kh^{ab})
+       =8\pi T^{bc}\hat\tau_c h^a{}_b .
+\end{equation}
+正是这些约束经 $2+1$ 分解后产生下列通量平衡律。
+
+令叶片面积为 $A=4\pi R^2$，$N_R=|D R|$、$\xi^a_{(R)}=N_R\ell^a$，并定义 $\zeta_a=q_a{}^b\hat r^c\nabla_c\ell_b$。两个叶片之间的\textbf{面积平衡定律}为
+\begin{equation}\label{eq:dynamical-horizon-balance}
+\begin{split}
+    \frac{R_2-R_1}{2}={}&
+    \int_{\Delta H}T_{ab}\hat\tau^a\xi^b_{(R)}\,\d^3V\\
+    &+\frac{1}{16\pi}\int_{\Delta H}N_R
+      \left(\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
+      +2\zeta_a\zeta^a\right)\d^3V .
+\end{split}
+\end{equation}
+第一项是物质能流，第二项是由剪切和横向法丛几何产生的非负引力能流。在无转动情形取 $E_H=R/2$、$\kappa_{\rm eff}=1/(2R)$，式 \eqref{eq:dynamical-horizon-balance} 的无穷小形式就是
+\begin{equation}\label{eq:dh-nonrotating-first-law}
+    \d E_H=\frac{\kappa_{\rm eff}}{8\pi}\d A ,
+\end{equation}
+即角动量为零的第一定律。
+
+若叶片具有轴向矢量 $\varphi^a$，可定义准局域角动量
+\begin{equation}\label{eq:dh-angular-momentum}
+    J_S^{(\varphi)}
+      =-\frac{1}{8\pi}\oint_S K_{ab}\varphi^a\hat r^b\,\d^2V .
+\end{equation}
+记 $P^{ab}=K^{ab}-Kh^{ab}$，动量约束给出\textbf{角动量平衡方程}
+\begin{equation}\label{eq:dh-angular-momentum-balance}
+\begin{split}
+    J_{S_2}^{(\varphi)}-J_{S_1}^{(\varphi)}
+      ={}&-\int_{\Delta H}T_{ab}\hat\tau^a\varphi^b\,\d^3V\\
+       &-\frac{1}{16\pi}\int_{\Delta H}
+          P^{ab}\mathcal L_\varphi h_{ab}\,\d^3V .
+\end{split}
+\end{equation}
+右边两项分别是物质与引力的角动量通量；若 $\varphi^a$ 是整个三维度规 $h_{ab}$ 的精确 Killing 场，第二项为零。
+
+为显示有限过程的第一定律，先忽略电荷并选取与 Kerr 关系相容的视界能量与势
+\[
+    E_H(R,J)=\frac{\sqrt{R^4+4J^2}}{2R},\qquad
+    \kappa_{\rm eff}=\frac{R^4-4J^2}
+      {2R^3\sqrt{R^4+4J^2}},\qquad
+    \Omega_{\rm eff}=\frac{2J}{R\sqrt{R^4+4J^2}}.
+\]
+于是相邻叶片满足 $\d E_H=\kappa_{\rm eff}\d A/(8\pi)+\Omega_{\rm eff}\d J$。令 $r^0(R)$ 满足 $\dv*{r^0}{R}=2R\kappa_{\rm eff}$，并记 $N_{r^0}=|D r^0|$；沿 $\Delta H$ 积分则得到
+\begin{equation}\label{eq:dh-integral-first-law}
+\begin{split}
+    E_H(S_2)-E_H(S_1)
+      &=
+      \int_{S_1}^{S_2}
+      \left(\frac{\kappa_{\rm eff}}{8\pi}\d A
+      +\Omega_{\rm eff}\d J\right)\\
+      &=\int_{\Delta H}T_{ab}\hat\tau^at^b\,\d^3V
+      +\frac{1}{16\pi}\int_{\Delta H}N_{r^0}
+        \left(\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
+        +2\zeta_a\zeta^a\right)\d^3V ,
+\end{split}
+\end{equation}
+其中 $t^a=N_{r^0}\ell^a+\Omega_{\rm eff}\varphi^a$，$N_{r^0}$ 由上述 $\kappa_{\rm eff}$ 固定。式 \eqref{eq:dh-integral-first-law} 是允许初末叶片相距有限的\textbf{第一定律积分形式}；它描述同一时空中的真实通量过程，而不是相邻稳态解之间的参数变分。带电情形还需加入 $\Phi_{\rm eff}\d Q$ 及相应的电磁能流。
+
+\subsection{信息论、量子与黑洞}
+
+量子信息论用密度算符 $\rho$ 描述一个系统，并以 von Neumann 熵
+\[
+    S(\rho)=-\Tr(\rho\ln\rho)
+\]
+量度其与未观测自由度的纠缠。封闭系统的幺正演化保持全系统的精细熵；但对子系统取偏迹后，约化态可以是混态并具有非零熵。因此讨论“信息是否丢失”时，必须区分整个引力系统、外部辐射和黑洞内部，也要区分精细纠缠熵与忽略微观关联后的粗粒化热力学熵。
+
+Hawking 的原始半经典计算给出的晚时辐射近似热化；每个外部 Hawking 量子都与视界内的伙伴纠缠。若黑洞完全蒸发，而外部辐射中只留下热关联，一个初始纯态似乎会演化为混态，与封闭量子系统的幺正演化冲突。这就是\textbf{黑洞信息问题}，也是黑洞热力学从宏观平衡律走向\textbf{黑洞信息学}的核心问题。
+
+若演化幺正，收集到的 Hawking 辐射熵应先增长，在蒸发过程的中段达到最大值，再下降至零；这条预期曲线称为 Page 曲线。固定背景上的局域半经典计算却让外部辐射不断与内部伙伴纠缠，因而只得到持续上升的熵。两者的冲突表明，在蒸发后期不能同时坚持半经典局域性、光滑视界和无残余信息丢失等全部假设。
+
+引力路径积分中的\textbf{岛公式}为辐射区域 $R$ 的熵给出
+\begin{equation}\label{eq:island-formula}
+    S(R)=\min_I\underset{\partial I}{\operatorname{ext}}
+    \left[\frac{\operatorname{Area}(\partial I)}{4\hbar}
+      +S_{\rm matter}(R\cup I)\right],
+\end{equation}
+其中 $I$ 是可纳入辐射纠缠楔的“岛”。在许多可控模型中，早期由无岛鞍点主导，晚期则由含岛鞍点主导，从而重现 Page 曲线。这说明半经典引力已经编码了保持总熵有限的重要机制，但它本身并未提供任意四维坍缩中微观信息如何被解码的完整动力学图景。黑洞熵的微观态计数、视界局域性以及蒸发终态仍是量子引力理论必须共同回答的问题。
+
 
 \section{dS 与 AdS 时空}\label{sec:dS}
+
+含宇宙学常数的真空 Einstein 方程并不只允许平直解。正宇宙学常数给出 de Sitter 时空，负宇宙学常数给出 anti-de Sitter 时空；它们分别简称 dS 与 AdS。两者的局域曲率都极其简单，却有完全不同的共形边界和因果结构，因而也是理解宇宙学视界、黑洞热力学及全息思想的基本背景。
+
+\subsection{常曲率空间}
+
+四维无物质场方程为
+\begin{equation}\label{eq:einstein-lambda-vacuum}
+    R_{\mu\nu}-\frac12 R g_{\mu\nu}+\Lambda g_{\mu\nu}=0.
+\end{equation}
+取迹后得到 $R=4\Lambda$，再代回原式即有 $R_{\mu\nu}=\Lambda g_{\mu\nu}$。不过，Ricci 张量与度规成比例只说明时空是 Einstein 空间，尚不自动保证其截面曲率处处相同；dS 与 AdS 还满足更强的最大对称性。定义曲率半径 $L>0$ 及符号 $\epsilon$ 为
+\[
+    \Lambda=\epsilon\frac{3}{L^2},\qquad
+    \epsilon=+1\ \text{对应 dS},\qquad
+    \epsilon=-1\ \text{对应 AdS},
+\]
+则其完整曲率张量为
+\begin{equation}\label{eq:maximally-symmetric-curvature}
+    R_{\mu\nu\rho\sigma}
+      =\frac{\epsilon}{L^2}
+       \left(g_{\mu\rho}g_{\nu\sigma}-g_{\mu\sigma}g_{\nu\rho}\right),
+    \qquad
+    R_{\mu\nu}=\frac{3\epsilon}{L^2}g_{\mu\nu},
+    \qquad
+    R=\frac{12\epsilon}{L^2}.
+\end{equation}
+因此 Weyl 张量为零，且
+\[
+    R_{\mu\nu}R^{\mu\nu}=\frac{36}{L^4},\qquad
+    R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}=\frac{24}{L^4}.
+\]
+这些不变量处处有限，故 dS、AdS 的坐标边界都不能仅凭曲率发散判作奇性。
+
+四维最大对称时空具有 $4\times5/2=10$ 个独立 Killing 矢量。Minkowski、dS 与 AdS 分别是零、正、负常曲率的 Lorentz 时空；忽略离散分支与万有覆盖的差别，其等距群分别为 Poincar\'e 群 $ISO(1,3)$、$SO(1,4)$ 与 $SO(2,3)$。若把宇宙学常数移到方程右侧，它等效于
+\[
+    T^{(\Lambda)}_{\mu\nu}=-\frac{\Lambda}{8\pi}g_{\mu\nu},
+    \qquad
+    \rho_\Lambda=\frac{\Lambda}{8\pi},\qquad
+    p_\Lambda=-\rho_\Lambda,
+\]
+即状态方程 $p=-\rho$ 的 Lorentz 不变真空能。
+
+\subsection{dS 时空}
+
+在五维平直空间 $\mathbb R^{1,4}$ 中取度规
+$\d s_5^2=-(\d X^0)^2+\sum_{A=1}^4(\d X^A)^2$。单叶双曲面
+\begin{equation}\label{eq:dS-embedding}
+    -(X^0)^2+\sum_{A=1}^4(X^A)^2=L^2
+\end{equation}
+的诱导度规就是四维 \textbf{de Sitter 时空}。令 $n^A$ 是单位 3-球上的坐标，即 $\sum_A(n^A)^2=1$，并取
+\[
+    X^0=L\sinh(T/L),\qquad
+    X^A=L\cosh(T/L)n^A,
+\]
+便得到覆盖整个双曲面的全局坐标
+\begin{equation}\label{eq:dS-global}
+    \d s^2=-\d T^2+L^2\cosh^2(T/L)\,\d\Omega_3^2,
+    \qquad -\infty<T<\infty.
+\end{equation}
+每个 $T$ 常数面都是 $S^3$，故整体拓扑为 $\mathbb R\times S^3$。该坐标把 dS 写成闭合 FLRW 宇宙：空间先收缩，在 $T=0$ 达到最小半径 $L$，再重新膨胀。这只是所选分层的表现，并不破坏时空本身的最大对称性。
+
+为看清因果结构，定义全局共形时间
+\[
+    \tan\eta=\sinh(T/L),\qquad
+    -\frac\pi2<\eta<\frac\pi2.
+\]
+将 $\d\Omega_3^2=\d\chi^2+\sin^2\chi\,\d\Omega^2$ 写成极坐标形式后，式 \eqref{eq:dS-global} 成为
+\begin{equation}\label{eq:dS-conformal}
+    \d s^2=\frac{L^2}{\cos^2\eta}
+      \left(-\d\eta^2+\d\chi^2+\sin^2\chi\,\d\Omega^2\right),
+    \qquad 0\leqslant\chi\leqslant\pi.
+\end{equation}
+去掉共形因子后，径向光线满足 $\d\chi=\pm\d\eta$。过去与未来无穷远 $\mathscr I^-$、$\mathscr I^+$ 分别位于 $\eta=-\pi/2$、$\eta=\pi/2$，都是类空边界；这与渐近平直时空的类光无穷远截然不同。
+
+图 \ref{fig:dS-penrose} 显示，一个从 $\mathscr I^-$ 延伸到 $\mathscr I^+$ 的观者不能与整个 dS 时空交换信号。相对于 $\chi=0$ 的观者 $\gamma$，其过去、未来宇宙学视界在球对称商空间中围出一个静态区域。相应的嵌入坐标变换为
+\[
+    X^0=\sqrt{L^2-r^2}\sinh(t/L),\qquad
+    X^4=\sqrt{L^2-r^2}\cosh(t/L),\qquad
+    (X^1,X^2,X^3)=r\bm n,
+\]
+静态坐标下的度规为
+\begin{equation}\label{eq:dS-static}
+    \d s^2=-\left(1-\frac{r^2}{L^2}\right)\d t^2
+      +\left(1-\frac{r^2}{L^2}\right)^{-1}\d r^2+r^2\d\Omega^2,
+    \qquad 0\leqslant r<L.
+\end{equation}
+$r=L$ 是静态 Killing 矢量 $\partial_t$ 的 Killing 视界，并非曲率奇性。它的表面引力、Gibbons--Hawking 温度和视界熵分别为
+\begin{equation}\label{eq:dS-thermodynamics}
+    \kappa_{\rm dS}=\frac1L,
+    \qquad T_{\rm dS}=\frac{\hbar}{2\pi L},
+    \qquad S_{\rm dS}=\frac{4\pi L^2}{4\hbar}=\frac{\pi L^2}{\hbar}.
+\end{equation}
+这里的视界依赖观者：换一条测地观者世界线会改变静态区域的位置，但不会改变其半径和热力学量。
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.15]
+        \fill[blue!6] (0,0)--(1.5,1.5)--(0,3)--cycle;
+        \draw[gray!65] (0,0)--(3,3);
+        \draw[gray!65] (3,0)--(0,3);
+        \draw[blue!65!black,thick] (0,0)--(1.5,1.5)--(0,3);
+        \draw[red!70!black,thick] (0,0)--(3,0);
+        \draw[red!70!black,thick] (0,3)--(3,3);
+        \draw[thick] (0,0)--(0,3);
+        \draw[thick] (3,0)--(3,3);
+        \node[red!70!black,below] at (1.5,0) {$\mathscr I^-$};
+        \node[red!70!black,above] at (1.5,3) {$\mathscr I^+$};
+        \node[left] at (0,2.2) {$\gamma$};
+        \node[right] at (3,1.5) {对跖轴};
+        \node[blue!65!black,rotate=45,above] at (.72,.72) {$\mathcal H^-$};
+        \node[blue!65!black,rotate=-45,above] at (.72,2.28) {$\mathcal H^+$};
+        \node at (.43,1.5) {静态区域};
+        \fill (1.5,1.5) circle(1pt);
+        \draw[->] (4.05,1.15)--(4.05,1.85) node[above] {未来};
+    \end{tikzpicture}
+    \caption{dS 时空的径向 Penrose 图。竖边 $\chi=0,\pi$ 是正则极轴而非无穷远；蓝线围出观者 $\gamma$ 的静态区域。}
+    \label{fig:dS-penrose}
+\end{figure}
+
+dS 还可写成空间平直的膨胀坐标
+\begin{equation}\label{eq:dS-flat-slicing}
+    \d s^2=-\d\tau^2+\e^{2\tau/L}\d\bm x^2
+      =\frac{L^2}{\eta_{\rm f}^2}
+       \left(-\d\eta_{\rm f}^2+\d\bm x^2\right),
+    \qquad \eta_{\rm f}=-L\e^{-\tau/L}<0.
+\end{equation}
+此时 Hubble 参数恒为 $H=1/L$。这套坐标只覆盖完整 dS 的一个膨胀半部；$\tau\to-\infty$ 的坐标边界不是式 \eqref{eq:dS-embedding} 上的曲率奇性。
+
+\subsection{再谈事件视界和粒子视界}
+
+宇宙学中常把事件视界与粒子视界并列讨论。考虑共动观者位于 $\chi=0$ 的 FLRW 度规
+\begin{equation}\label{eq:flrw-conformal-radial}
+    \d s^2=a^2(\eta)
+      \left[-\d\eta^2+\d\chi^2+S_k^2(\chi)\d\Omega^2\right],
+    \qquad \d\eta=\frac{\d t}{a(t)},
+\end{equation}
+其中 $S_k(\chi)=\sin\chi,\chi,\sinh\chi$ 分别对应 $k=+1,0,-1$。径向光线仍满足 $\d\chi=\pm\d\eta$。若该宇宙学区域的初、末时刻为 $t_i,t_f$，则时刻 $t$ 的两个共动视界尺度为
+\begin{equation}\label{eq:particle-event-horizon}
+    \chi_{\rm p}(t)=\int_{t_i}^{t}\frac{\d t'}{a(t')}
+      =\eta(t)-\eta_i,
+    \qquad
+    \chi_{\rm e}(t)=\int_t^{t_f}\frac{\d t'}{a(t')}
+      =\eta_f-\eta(t).
+\end{equation}
+第一式给出\textbf{粒子视界}(particle horizon)：超出它的共动源自初始边界以来还没有足够时间把信号送到观者。第二式给出\textbf{宇宙学事件视界}(cosmological event horizon)：现在从更远处发出的信号即使等待到时空的未来端点也不能到达观者。相应积分发散时，该类非平凡视界便不存在；在闭合空间中还须把结果与空间的最大共动距离比较。
+
+粒子视界依赖所选择的初始边界或宇宙学模型，回答的是“至今已经看见什么”；事件视界则依赖完整未来，回答的是“最终还能看见什么”。后者与黑洞事件视界一样具有遥感性，不能由某一时刻的局域测量独立确定。在空间平直的 FLRW 描述中，Hubble 半径 $H^{-1}$ 只是退行速度等于光速的瞬时尺度，一般既不是粒子视界也不是事件视界。
+
+对式 \eqref{eq:dS-flat-slicing} 的永恒膨胀区域，$a(\tau)=\e^{H\tau}$ 且未来端点为 $\tau_f=+\infty$，所以
+\[
+    \chi_{\rm e}(\tau)=\frac{\e^{-H\tau}}{H},
+    \qquad D_{\rm e}=a(\tau)\chi_{\rm e}(\tau)=H^{-1}=L.
+\]
+故 dS 的事件视界恰与 Hubble 半径重合；这是指数膨胀的特殊性质。若从有限初始时刻开始考察，粒子视界也随初始面的选取而出现。完整全局 dS 中，静态观者同时具有图 \ref{fig:dS-penrose} 所示的过去与未来宇宙学视界。
+
+\subsection{Schwarzschild-dS 时空}
+
+含宇宙学常数的 Birkhoff 定理给出的球对称真空解称为 \textbf{Schwarzschild--de Sitter 时空}或 Kottler 时空：
+\begin{equation}\label{eq:schwarzschild-dS}
+    \d s^2=-f(r)\d t^2+\frac{\d r^2}{f(r)}+r^2\d\Omega^2,
+    \qquad
+    f(r)=1-\frac{2M}{r}-\frac{r^2}{L^2},
+    \qquad L^2=\frac3\Lambda.
+\end{equation}
+当 $M=0$ 时它退化为 dS 静态坐标；当 $\Lambda\to0$ 时，宇宙学视界移向无穷远并恢复 Schwarzschild 解。
+
+若
+\begin{equation}\label{eq:sdS-horizon-condition}
+    0<9M^2\Lambda<1,
+\end{equation}
+则 $f(r)=0$ 有两个正根 $r_b<r_c$。$r_b$ 是黑洞视界，$r_c$ 是宇宙学视界，而 $r_b<r<r_c$ 是 $\partial_t$ 为类时的静态区域。小 $M/L$ 极限下
+\[
+    r_b=2M+O(M^3/L^2),\qquad
+    r_c=L-M+O(M^2/L).
+\]
+两个视界重合的极限满足
+\[
+    9M^2\Lambda=1,\qquad r_b=r_c=\frac1{\sqrt\Lambda}=3M,
+\]
+称为 \textbf{Nariai 极限}。此时原静态坐标区间缩并；适当放大两视界之间的区域后得到 $\mathrm{dS}_2\times S^2$，而不是简单地把 $r_b=r_c$ 代入后丢弃该区域。
+
+在式 \eqref{eq:schwarzschild-dS} 所选的 Killing 时间归一化下，任一非退化视界 $r_h$ 的表面引力为
+\begin{equation}\label{eq:sdS-surface-gravity}
+    \kappa_h=\frac12|f'(r_h)|
+      =\left|\frac{M}{r_h^2}-\frac{r_h}{L^2}\right|,
+    \qquad T_h=\frac{\hbar\kappa_h}{2\pi}.
+\end{equation}
+一般有 $\kappa_b\ne\kappa_c$，所以同一静态区域的两个视界具有不同温度，不能用一个 Euclidean 时间周期同时消除两端的锥形奇性。又因该时空没有渐近平直无穷远，$\partial_t$ 缺少由无穷远单位观者给出的唯一归一化；讨论绝对温度时必须明确所用的静态观者或归一化约定。
+
+$M$ 所产生的 Weyl 曲率使
+\begin{equation}\label{eq:sdS-kretschmann}
+    R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+      =\frac{48M^2}{r^6}+\frac{8\Lambda^2}{3}.
+\end{equation}
+因此两支视界都只是坐标奇性，而 $r=0$ 仍是真实曲率奇性。最大延拓包含黑洞、白洞、静态区域和越过宇宙学视界的动力学区域，并沿空间方向形成重复的因果块；它没有渐近平直时空的 $i^0$ 与 $\mathscr I^\pm$，其 dS 型过去、未来共形边界是类空的。
+
+\subsection{AdS 时空}
+
+在五维平直空间 $\mathbb R^{2,3}$ 中取
+\[
+    \d s_5^2=-(\d X^{-1})^2-(\d X^0)^2
+      +(\d X^1)^2+(\d X^2)^2+(\d X^3)^2.
+\]
+双曲面
+\begin{equation}\label{eq:AdS-embedding}
+    -(X^{-1})^2-(X^0)^2+\sum_{i=1}^3(X^i)^2=-L^2
+\end{equation}
+的诱导度规是四维 \textbf{anti-de Sitter 时空}。取
+\[
+    X^{-1}=L\cosh\rho\cos\tau,\qquad
+    X^0=L\cosh\rho\sin\tau,
+    \qquad X^i=L\sinh\rho\,n^i,
+\]
+其中 $\bm n\in S^2$，可得
+\begin{equation}\label{eq:AdS-global-rho}
+    \d s^2=L^2\left(-\cosh^2\rho\,\d\tau^2
+      +\d\rho^2+\sinh^2\rho\,\d\Omega^2\right).
+\end{equation}
+嵌入坐标使 $\tau$ 具有周期 $2\pi$，故原双曲面上固定 $\rho,\bm n$ 的曲线是闭合类时线。物理上通常取其\textbf{万有覆盖}，把 $\tau$ 展开为 $\mathbb R$；下文所谓 AdS 均指这个无闭合类时线的覆盖空间。
+
+令 $t=L\tau$、$r=L\sinh\rho$，则全局度规化为
+\begin{equation}\label{eq:AdS-global-static}
+    \d s^2=-\left(1+\frac{r^2}{L^2}\right)\d t^2
+      +\left(1+\frac{r^2}{L^2}\right)^{-1}\d r^2+r^2\d\Omega^2.
+\end{equation}
+与 dS 静态形式相比，符号的改变使 $\partial_t$ 在所有有限 $r$ 上都为类时，因此纯 AdS 没有宇宙学视界。再令 $r=L\tan\chi$，$0\leqslant\chi<\pi/2$，便有
+\begin{equation}\label{eq:AdS-conformal}
+    \d s^2=\frac{L^2}{\cos^2\chi}
+      \left(-\d\tau^2+\d\chi^2+\sin^2\chi\,\d\Omega^2\right).
+\end{equation}
+共形边界位于 $\chi=\pi/2$，其共形度规为 $-\d\tau^2+\d\Omega^2$，拓扑是 $\mathbb R\times S^2$。它是\textbf{类时边界}：径向光线满足 $\d\chi=\pm\d\tau$，从中心到边界只需全局坐标时间 $\Delta\tau=\pi/2$，尽管边界在物理度规下仍位于无限空间距离处。
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.1]
+        \fill[orange!5] (0,0)--(2,0)--(2,5)--(0,5)--cycle;
+        \draw[dashed] (0,0)--(2,0);
+        \draw[dashed] (0,5)--(2,5);
+        \draw[thick] (0,0)--(0,5);
+        \draw[red!70!black,very thick] (2,0)--(2,5);
+        \draw[blue!65!black,thick,->] (0,.5)--(2,2.5);
+        \draw[blue!65!black,thick,->] (2,2.5)--(0,4.5);
+        \node[left] at (0,2.5) {$r=0$};
+        \node[right,red!70!black] at (2,2.5) {$\mathscr I$};
+        \node[below] at (1,0) {图示截断};
+        \node[above] at (1,5) {图示截断};
+        \draw[->] (2.65,2.05)--(2.65,2.95) node[above] {未来};
+    \end{tikzpicture}
+    \caption{万有覆盖 AdS 的径向 Penrose 图。右侧是类时共形边界；上下虚线只表示无限全局时间的图示截断。蓝色径向光线可在有限全局坐标时间内抵达边界并返回。}
+    \label{fig:AdS-penrose}
+\end{figure}
+
+图 \ref{fig:AdS-penrose} 也说明 AdS 不是整体双曲时空。任取一个无边界的类空切片，总能有因果信号从类时共形边界进入而不与该切片相交，所以初值本身不能唯一决定未来；还必须在 $\mathscr I$ 指定反射、透明或其他适当边界条件。AdS 的“盒状”性质正来自信号可抵达边界并在反射条件下返回，而不是来自有限的物理空间体积。
+
+另一套常用坐标是 Poincar\'e 坐标：
+\begin{equation}\label{eq:AdS-poincare}
+    \d s^2=\frac{L^2}{z^2}
+      \left(\d z^2-\d t^2+\d x^2+\d y^2\right),
+    \qquad z>0.
+\end{equation}
+$z=0$ 是共形边界的一部分，其代表度规为三维 Minkowski 度规；$z\to\infty$ 是 Poincar\'e 视界。两者都不是曲率奇性，这套坐标只覆盖全局 AdS 的一个区域。AdS 等距群 $SO(2,3)$ 在边界上恰表现为三维时空的共形群，这是 AdS/CFT 对应的几何起点。
+
+最后，负宇宙学常数也显著改变黑洞热力学。四维 Schwarzschild--AdS 解为
+\begin{equation}\label{eq:schwarzschild-AdS}
+    f(r)=1-\frac{2M}{r}+\frac{r^2}{L^2},
+    \qquad
+    T_H=\frac{\hbar}{4\pi r_h}
+      \left(1+\frac{3r_h^2}{L^2}\right),
+\end{equation}
+其中 $r_h$ 是 $f(r_h)=0$ 的唯一正根。$r_h<L/\sqrt3$ 的小黑洞具有负热容，而 $r_h>L/\sqrt3$ 的大黑洞具有正热容，可以与 AdS 边界条件所形成的热库稳定平衡；在正则系综中还会出现热 AdS 与大黑洞之间的 Hawking--Page 相变。由此可见，$\Lambda$ 的符号不仅改变局域曲率，也决定无穷远的类型、视界结构以及允许的热力学系综。
