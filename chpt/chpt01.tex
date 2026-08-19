@@ -814,7 +814,7 @@ $N^{\lambda\mu\nu}=N^{\lambda[\mu\nu]}$ 的求导为 $\p_\lambda N^{\lambda\mu\n
 
 连续介质模型包括如岩石的刚性(rigid)物质，即固体(solid)，亦包括如气体、液体的可流物质，即流体。考察任意微小界面，两侧的流体微元可互相挤压、拉伸，固体若欲保持坚硬，不能有沿界面方向的相对滑动。流体中，阻碍滑动的切应力远小于垂直于界面的正应力。相对论宇观下，正应力显著大到连固体也会流动，便难有固体与流体之别，都统一在流体描述下。
 流体描述是大量粒子离散系统的连续极限，对微观量进行系综平均或粗粒化，就得到宏观量。常用对称能动张量 $T^{\mu\nu}$、\textbf{粒子数流}(flux) $N^\mu$、Euler 4-速 $U^\mu$。先不具体定义，看作三种任意对象，仅要求 $T^{\mu\nu}$ 对称、$U^\mu$ 归一。
-$N^\mu$ 沿 $U^\mu$ 分解为 $N^\mu=n U^\mu + j^\mu$，$n=-N^\nu U_\nu$ 是\textbf{共动数密度}，$j^\mu=h^\mu{}_\nu N^\nu$ 称扩散流。
+$N^\mu$ 沿 $U^\mu$ 分解为 $N^\mu=n U^\mu + \bm N^\mu$，$n=-N^\nu U_\nu$ 是\textbf{共动数密度}，$\bm N^\mu=h^\mu{}_\nu N^\nu$ 称扩散流。
 同理任意对称张量分解为
 \eq{
 \tcbhighmath{
@@ -828,14 +828,14 @@ T^{\mu\nu}=\varepsilon U^\mu U^\nu+2U^{(\mu}q^{\nu)}+ph^{\mu\nu}+\Pi^{\mu\nu},
 式右称为\textbf{平衡热力学压强}，标量场 $T$ 是温度，$k_B$ 为 Boltzmann 常数。
 非平衡分布会带来体黏滞(bulk viscosity)，上式不再成立，$p$ 是平衡压强加上体黏滞项 $p=nk_B T+\Pi$。
 
-$U^\mu$ 有两种定义办法。一种是\textbf{Eckart 标架} $U^\mu = N^\mu/\sqrt{-N^\mu N_\mu}$，则 $j^\mu=0$，理解成 $U^\mu$ 跟着整体平均运动走。另一种是 $T^{\mu\nu}$ 的类时本征矢 $T^{\mu\nu}U_\nu=-\varepsilon U^\mu$，此称\textbf{Landau 标架}，则 $q^\mu=0$，理解成 $U^\mu$ 跟着能量整体平均运动走。
+$U^\mu$ 有两种定义办法。一种是\textbf{Eckart 标架} $U^\mu = N^\mu/\sqrt{-N^\mu N_\mu}$，则 $\bm N^\mu=0$，理解成 $U^\mu$ 跟着整体平均运动走。另一种是 $T^{\mu\nu}$ 的类时本征矢 $T^{\mu\nu}U_\nu=-\varepsilon U^\mu$，此称\textbf{Landau 标架}，则 $q^\mu=0$，理解成 $U^\mu$ 跟着能量整体平均运动走。
 在 Laudau 共动系中 $T^{0i}=q^i=0$。
 若流体满足 $q^\mu=0$ 和（共动系）各向同性 $\Pi^{\mu\nu}=0$，则可表为
 \eq{
     T^{\mu\nu} = \varepsilon U^\mu U^\nu + p h^{\mu\nu} =  \tcbhighmath{(\varepsilon+p)U^\mu U^\nu + p\eta^{\mu\nu}.}
 }
 原则上总可取 Laudau 标架使 $q^\mu=0$，故比较微妙。
-将下述情况称为“无热流”：若流体的确能定义 $N^\mu$，则不仅 $q^\mu=0$，还要求 $j^\mu=0$，于是两种标架等价；若不能定义，比如光子气，仅要求取 Laudau 标架使 $q^\mu=0$ 即可。
+将下述情况称为“无热流”：若流体的确能定义 $N^\mu$，则不仅 $q^\mu=0$，还要求 $\bm N^\mu=0$，于是两种标架等价；若不能定义，比如光子气，仅要求取 Laudau 标架使 $q^\mu=0$ 即可。
 无热流、无体黏滞的各向同性流体称为\textbf{理想流体}(perfect fluid)。
 只要满足这三个条件就是理想流体，能动张量就会形如上式，与其具体微观实现无关。
 无应力、无热流流体（即无压强理想流体）称为\textbf{尘埃}(dust)，能动张量表为 $T^{\mu\nu}=\varepsilon U^\mu U^\nu$。
@@ -876,7 +876,7 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
 \eq{
     \hat N^\mu := \sum_n \frac{p_n^\mu}{E_n} \delta_n = \sum_n\int\d{\tau_n} u^\mu_n\delta^4_n.
 }
-时间分量 $\hat N^0=\sum_n \delta_n$ 是 $\{x\}$ 系所测\textbf{微观数密度}；三维部分为 $\hat{\bm N}=\sum_n \delta_n\dot{\bm x}_n$。
+时间分量 $\hat N^0=\sum_n \delta_n$ 是 $\{x\}$ 系所测\textbf{微观数密度}；微观扩散流为 $\hat{\bm N}=\sum_n \delta_n\dot{\bm x}_n$。
 用 $\ev{}$ 表示系综平均\footnote{满足线性性，于是求和与 $\ev{}$ 可交换。若求和来自于缩并，由于 $\eta_{\mu\nu}$ 不是随机变量，所以仍可交换。}，得到宏观 Lorentz 张量 $T^{\mu\nu} = \ev{\hat T^{\mu\nu}}, N^\mu = \ev{\hat N^\mu}$。
 说明\textit{在共动系中}（注意共动系只是 $U^\mu$，仍然 $\gamma_n\ne 1$）
 \[

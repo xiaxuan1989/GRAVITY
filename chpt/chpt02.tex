@@ -6,9 +6,30 @@
 
 \subsection{Birkhoff 定理}
 
-%% Killing
-
-有关\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
+取球坐标 $x^\mu=(\bar t,\bar r,\theta,\phi)$，并以 $A,B=0,1$ 和 $i,j=2,3$ 分别表示 $\bar t,\bar r$ 与 $\theta,\phi$ 两组指标。球对称性是指旋转群 $\mathrm{SO}(3)$ 在每个 $(\bar t,\bar r)$ 不变的 2-球面上等距作用，其三个 Killing 矢量场可取为
+\[
+    \xi_{(1)}=\p_\phi,\qquad
+    \xi_{(2)}=-\cos\phi\,\p_\theta+\cot\theta\sin\phi\,\p_\phi,\qquad
+    \xi_{(3)}=\sin\phi\,\p_\theta+\cot\theta\cos\phi\,\p_\phi.
+\]
+它们分别满足 Killing 方程
+\[
+    0=(\Lie_{\xi_{(a)}}g)_{\mu\nu}
+    =\xi_{(a)}^\lambda\p_\lambda g_{\mu\nu}
+    +g_{\lambda\nu}\p_\mu\xi_{(a)}^\lambda
+    +g_{\mu\lambda}\p_\nu\xi_{(a)}^\lambda
+    =\cd_\mu\xi^{(a)}_\nu+\cd_\nu\xi^{(a)}_\mu.
+\]
+首先代入 $\xi_{(1)}$ 得 $\p_\phi g_{\mu\nu}=0$。再将 $\xi_{(2)},\xi_{(3)}$ 代入，并分别比较 $\sin\phi,\cos\phi$ 的系数，$AB,Ai,ij$ 分量依次给出
+\[
+    \p_\theta g_{AB}=0,\qquad
+    g_{A2}=g_{A3}=0,\qquad
+    \p_\theta g_{22}=0,\qquad
+    g_{23}=0,\qquad
+    g_{33}=g_{22}\sin^2\theta.
+\]
+故只有 $g_{00},g_{01},g_{11},g_{22},g_{33}$ 可能非零；前三者及 $g_{22}$ 对 $\theta,\phi$ 的导数均为零。记 $\bar g_{AB}(\bar t,\bar r)=g_{AB}$、$g_{22}=K(\bar t,\bar r)$，则 $g_{33}=K(\bar t,\bar r)\sin^2\theta$。
+于是得到\footnote{此形式在数学上属于\textbf{扭曲积}(warped product)：度规可分离为 2 维和 $(n-2)$ 维部分：$g_{ab}(x^0,x^1)\d x^a\d x^b+K(x^0,x^1)\hat g_{ij}(x^2,\cdots,x^{n-1})\d x^i\d x^j$，其中 $ab$ 取 $0,1$；$ij$ 取 $2,\cdots,n-1$。}：
 \[\d s^2=\bar g_{00}\d\bar t^2+\bar g_{11}\d\bar r^2+2\bar g_{01}\d\bar t\,\d\bar r+K\d\Omega^2.\]
 然而 $\d\Omega^2$ 系数可无关于坐标时。令 $r^2=K(\bar t,\bar r)$，则 $2r\d r=\pdv{K}{\bar t}\d\bar t+\pdv{K}{\bar r}\d\bar r$，代入
 \begin{align*}
@@ -50,7 +71,7 @@ $\nu''+2\nu'/r+\nu'(\nu'-\mu')=0,
 \e^{2\mu}-1+r(\mu'-\nu')=0$。
 前两者相加得 $\mu'+\nu'=0$，代入后者有 $(r\e^{-2\mu(r)})'=1$，得
 \[\e^{-2\mu}=1-{2M}/{r},\quad \e^{2\nu}=\e^{f(\hat t)}(1-{2M}/{r}).\]
-其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即有
+其中 $M$ 是常数，$f(\hat t)$ 关于 $r$ 为常数。只需取 $\d t=\e^{f(\hat t)}\d\hat t$ 即有 Schwarzschild 解
 \[\d s^2=-\left(1-\frac{2M}{r}\right)\d t^2+\left(1-\frac{2M}{r}\right)^{-1}\d r^2+r^2\d\Omega^2.\]
 现列举分量如下以供查阅：
 \begin{align*}
@@ -64,38 +85,53 @@ $\nu''+2\nu'/r+\nu'(\nu'-\mu')=0,
     R_{0303}&=R_{0202} \sin ^2 \theta, \quad R_{1313}=R_{1212} \sin ^2 \theta, \quad R_{2323}=2 M r \sin ^2 \theta.
 \end{align*}
 
-%% Kill
-
 Schwarzschild 最初除了真空、球对称假设外还引入了静态条件\footnote{1915 年 11 月 18 日，Schwarzschild 趁着假期出席了 Einstein 于普鲁士科学院所作关于场方程的首次演讲，随后于一战德国战场上给出该解——这是场方程第一个引力解析解。他于数月后病逝。}，但上述讨论表明真空球对称解必是 Schwarzschild 解，这也称为\textbf{Birkhoff 定理}。
-Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就是指度规在其中形如 $\d s^2=g_{00}\d t^2+K(g_{ij}\d x^i\d x^j)$，则只需取 $r=\rho(1+\frac{M}{2\rho})^2$ 有
+Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就是指度规在其中形如 $\d s^2=g_{00}(\rho)\d t^2+K(\rho)\delta_{ij}\d x^i\d x^j$，其中 $\rho=\sqrt{x^2+y^2+z^2}$。只需取 $r=\rho(1+\frac{M}{2\rho})^2$ 有
 \eq{
-    \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d x^2+\d y^2+\d z^2),
+    \d s^2=-\left(\frac{1-M/2\rho}{1+M/2\rho}\right)^2\d t^2+\left(1+\frac{M}{2\rho}\right)^4(\d x^2+\d y^2+\d z^2).
 }
-其中 $\rho=\sqrt{x^2+y^2+z^2}$。
-%% 检查为啥 \rho=\sqrt{x^2+y^2+z^2}，r=\rho(1+\frac{M}{2\rho})^2
-
-%% RN
-
-考虑一个带电质点，观测结果建议 $g_{\mu\nu}$ 呈球对称，电磁场为 $F_{\mu\nu}$，则对于 $r\ne 0$ 有 $T_{\mu\nu} = \frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right)$。这是无迹的，因而 $R_{\mu\nu} = 8\pi T_{\mu\nu}$，直接代入：
-\begin{align*}
-    R_{00} &= -(\ddot\mu+\dot\mu(\dot\mu-\dot\nu))+\e^{2(\nu-\mu)} \left(\nu''+2\nu'/r+\nu'(\nu'-\mu')\right), \\
-    R_{11} &= \e^{2(\mu-\nu)} \left(\ddot\mu+\dot\mu(\dot\mu-\dot\nu)\right)-\nu''+2\mu'/r-\nu'(\nu'-\mu'), \\
-    R_{22} &= \e^{-2\mu} \left(\e^{2\mu}-1+r(\mu'-\nu')\right), \quad R_{33} = R_{22} \sin ^2 \theta,\quad R_{01} = 2\dot\mu/r.
-\end{align*}
+注意，$\rho$ 是各向同性径向坐标，并非面积半径 $r$；事件视界 $r=2M$ 对应 $\rho=M/2$，静态外部区域对应 $\rho>M/2$。
 
 \subsection{Reissner-Nordström 解}
 
-%% RN 黑洞
-
-对于遥远观者，$A_{0} = \frac{Q}{r}$，
-
-球对称带电黑洞解称为\textbf{Reissner-Nordström 解}，其度规为
+考虑球对称带电体。在源外 $r\ne0$ 处，方程为无源 Einstein--Maxwell 方程
+\[
+    \cd_\mu F^{\mu\nu}=0,\qquad R_{\mu\nu}=8\pi T_{\mu\nu},\qquad
+    T_{\mu\nu}=\frac{1}{4\pi}\left(F_{\mu\sigma}F_\nu{}^\sigma-\frac14g_{\mu\nu}F_{\sigma\lambda}F^{\sigma\lambda}\right).
+\]
+其中第二式利用了 $T^\mu{}_\mu=0$。沿用上节的球对称度规 $\d s^2=-\e^{2\nu(\hat t,r)}\d\hat t^2+\e^{2\mu(\hat t,r)}\d r^2+r^2\d\Omega^2$，
+并且不考虑磁单极，则 $F_{01}$ 是电磁场唯一可能非零的独立分量。注意 $\sqrt{-g}=\e^{\mu+\nu}r^2\sin\theta$，Maxwell 方程的 $\nu=0,1$ 分量分别给出
+\[
+    \p_r\left(r^2\e^{-\mu-\nu}F_{01}\right)=0,\quad
+    \p_{\hat t}\left(r^2\e^{-\mu-\nu}F_{01}\right)=0\im
+    F_{01}=\frac{Q}{r^2}\e^{\mu+\nu},\quad F_{\sigma\lambda}F^{\sigma\lambda}=-\frac{2Q^2}{r^4},
+\]
+其中 $Q$ 是常数。代入能动张量得
+\[
+    8\pi T_{00}=\frac{Q^2}{r^4}\e^{2\nu},\quad
+    8\pi T_{11}=-\frac{Q^2}{r^4}\e^{2\mu},\quad
+    8\pi T_{22}=\frac{Q^2}{r^2},\quad
+    T_{33}=T_{22}\sin^2\theta,\quad T_{01}=0.
+\]
+再利用上节算得的 Ricci 张量。$R_{01}=0$ 给出 $\dot\mu=0$，从而 $R_{00}=8\pi T_{00},R_{11}=8\pi T_{11},R_{22}=8\pi T_{22}$ 分别化为
+\begin{align*}
+    \nu''+2\nu'/r+\nu'(\nu'-\mu')&=\frac{Q^2}{r^4}\e^{2\mu},\\
+    -\nu''+2\mu'/r-\nu'(\nu'-\mu')&=-\frac{Q^2}{r^4}\e^{2\mu},\\
+    \e^{-2\mu}\left(\e^{2\mu}-1+r(\mu'-\nu')\right)&=\frac{Q^2}{r^2}.
+\end{align*}
+前两者相加仍得 $\mu'+\nu'=0$，故 $\nu(\hat t,r)=-\mu(r)+h(\hat t)$。代入第三式有
+\[
+    \left(r\e^{-2\mu(r)}\right)'=1-\frac{Q^2}{r^2},\qquad
+    \e^{-2\mu}=1-\frac{2M}{r}+\frac{Q^2}{r^2},
+\]
+其中将另一积分常数写作 $-2M$，代回前两式亦满足。取 $\d t=\e^{h(\hat t)}\d\hat t$ 消去 $h(\hat t)$，在新坐标下 $F_{01}=Q/r^2$。再取 $A_1=0$ 且令 $A_0$ 在无穷远为零，则 $F_{01}=-\p_rA_0$ 给出 $A_0=Q/r$，因而 $Q$ 解释为中心天体的电荷。
+于是得\textbf{Reissner-Nordström 解}
 \eq{
 \tcbhighmath{
     \d s^2=-\left(1-\frac{2M}{r}+\frac{Q^2}{r^2}\right)\d t^2+\left(1-\frac{2M}{r}+\frac{Q^2}{r^2}\right)^{-1}\d r^2+r^2\d\Omega^2,
 }
 }
-其中 $Q$ 是电荷量。
+以描述球对称带电黑洞。
 
 \section{经典实验验证}
 
@@ -112,7 +148,7 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 或者，注意 $\omega=-\dv*{\theta}{\tau}$，也将发现 $\omega_e/\omega_r=\d\tau|_r/\d\tau|_e=\sqrt{g_{00}|_r/g_{00}|_e}$。故
 \eq{
 \tcbhighmath{
-    z:=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1 \xRightarrow{\text{取 Schwarzschild 度规}} \sqrt{\frac{1-2M/r_r}{1-2M/r_e}}-1,
+    z:=\frac{\lambda_r}{\lambda_e}-1=\sqrt{\frac{\xi_\mu\xi^\mu |_r}{\xi_\mu\xi^\mu |_e}}-1 \xRightarrow{\text{Schwarzschild}} \sqrt{\frac{1-2M/r_r}{1-2M/r_e}}-1,
 }
 }
 这称为\textbf{红移量}。$\chi = \sqrt{-\xi_\mu\xi^\mu}$ 称为\textbf{红移因子}。
@@ -186,13 +222,11 @@ $\ddot r-\dot\theta^2r=F(r), 2\dot r\dot\theta+\ddot\theta r=0$。第二式导�
 \eq{
 \frac{2\pi}{\Delta\theta}=\sqrt{3+\frac{r_0}{F_0} F'(r_0)}\im\Delta \theta=2\pi\sqrt{\frac{F_{\odot}(r_0)+F_p(r_0)}{F_\odot(r_0)+3F_p(r_0)+r_0F_p'(r_0)}}.
 }
-其中代入了\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。} $F=F_{\odot}+F_p$。$\Delta\theta$ 的含义就是一次微扰振荡周期
+其中代入了\footnote{为更便于计算，还可注意 $F_p(r_0)\approx r_0 F_p^{\prime}(r_0) \ll |F_\odot(r_0)|$，则展至 $F_p(r_0) / F_\odot(r_0)$ 和 $F_p^{\prime}(r_0) / F_\odot(r_0)$ 的一阶。} $F=F_{\odot}+F_p$。$\Delta\theta$ 的含义就是一次微扰振荡周期所扫过的角度，也称近点周期(anomalistic period)，对当前近圆轨道 $r\simeq r_0$ 为
 \[
-T_r=\frac{\Delta\theta}{\dot\theta}=\frac{\Delta\theta r_0^2}{L}=\Delta\theta\sqrt{-\frac{F_0}{r_0}}
+T_r=\frac{\Delta\theta}{\dot\theta}=\frac{\Delta\theta r_0^2}{L}=\Delta\theta\sqrt{-\frac{r_0}{F_0}}.
 \]
-所扫过的角度。可见只有 $F_\odot$ 时使 $\Delta\theta=2\pi$，相当于又回到原位而无进动。而一旦错开，一次周期内就出现了进动。进动率为 $\omega=(\Delta\theta-2\pi)/T$，
-式中 $T$ 为水星公转周期，一般取恒星年(sidereal year)\footnote{某行星的恒星年是太阳在黄道上的视位置相对遥远恒星变化一周所经历时间，也相当于该行星相对于遥远恒星公转一周所经历的时间。千禧年时地球恒星年的平均长度为 365.25636 天。回归年(tropical year)是太阳的平黄经变化一周所经历时间。由于太阳视运动非均匀，选取不同的起点会得到不同的长度。若选取春分点作为基准，太阳从春分点出发运行一周再次回到春分点的时间为春分点年。千禧年时回归年的平均长度为 365.24219 天。恒星年比回归年要长 20 分 24.5 秒，这个差异正是地球造成的岁差。}，或甚至是 $T_r$，再不济用 Kepler 第二定律计算亦可。
-
+可见只有 $F_\odot$ 时使 $\Delta\theta=2\pi$，相当于又回到原位而无摄动。一旦错开，一次周期内就出现摄动。摄动率为 $\varpi=(\Delta\theta-2\pi)/T_r$。由于 $\delta = \Delta\theta - 2\pi,|\delta|\ll 1$，因此 $T_r=T_\phi(1+\delta/2\pi)$，这里 $T_\phi = 2\pi/\dot\theta$ 是恒星年(sidereal year)\footnote{也称方位角(azimuthal)周期、未摄动零阶周期。某行星的恒星年是太阳在黄道上的视位置相对遥远恒星变化一周所经历时间，也相当于该行星相对于遥远恒星公转一周所经历的时间。千禧年时地球恒星年的平均长度为 365.25636 天。回归年(tropical year)是太阳的平黄经变化一周所经历时间。由于太阳视运动非均匀，选取不同的起点会得到不同的长度。若选取移动春分点作为基准，太阳从春分点出发运行一周再次回到春分点的时间为春分点年。千禧年时回归年的平均长度为 365.24219 天。恒星年比回归年要长 20 分 24.5 秒，这个差异正是地球造成的岁差。}，从而 $\delta/T_r=\delta/T_\phi+O(\delta^2)$，故在一阶摄动的意义下分母的 $T_r$ 可替换为 $T_\phi$。
 \begin{table}[htbp]
 \centering
 \caption{行星数据与计算结果}
@@ -204,7 +238,7 @@ $\boldsymbol{\lambda r_0/(R^2 - r_0^2)}$ &
 $\boldsymbol{\lambda r_0 (R^2 + r_0^2)/(R^2 - r_0^2)^2}$ \\
  &  & ($10^{24}$ kg) & ($10^{11}$ m) & ($10^{12}$ kg m$^{-1}$) & (kg m$^{-2}$) & (kg m$^{-2}$) \\
 \midrule
-1 & 水星 & 0.3332 & 0.5791 & $\cdots$ & $\cdots$ & $\cdots$ \\
+1 & 水星 & 0.3332 & 0.57909 & $\cdots$ & $\cdots$ & $\cdots$ \\
 2 & 金星 & 4.870  & 1.082  & 7.163  & 49.65 & 89.51 \\
 3 & 地球 & 5.976  & 1.496  & 6.358  & 19.35 & 26.17 \\
 4 & 火星 & 0.6421 & 2.279  & 0.4484 & 0.5345 & 0.6083 \\
@@ -214,189 +248,53 @@ $\boldsymbol{\lambda r_0 (R^2 + r_0^2)/(R^2 - r_0^2)^2}$ \\
 \end{tabular}
 }
 \end{table}
-
+还原国际单位制，由于 $GM_\odot\approx 1.3271244\times10^{20}\,\mathrm{m^3\,s^{-2}}$，水星恒星年为 $T_\phi=2\pi\sqrt{{r_0^3}/{GM_\odot}}=87.969\,\text{天}$。
 代入数据知 $r_0F_p'(r_0)\approx 1.088 \times 10^{16}\,\mathrm{N}$。
 而 $F_p(r_0)\approx 7.587 \times 10^{15}\,\mathrm{N}, F_\odot(r_0)\approx -1.318 \times 10^{22}\,\mathrm{N}$。
-$\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\omega\approx{\pi(1.977\times 10^{-6})}/{87.969\,\text{天}}\approx 532''/\text{世纪}$，
+$\Delta \theta\approx 2\pi(1+9.884\times 10^{-7})$。于是 $\varpi\approx{\pi(1.977\times 10^{-6})}/{87.969\,\text{天}}\approx 532''/\text{世纪}$，
 仍与观测值 $575''$/世纪相差 $43''$/世纪。
 
 再考虑广义相对论效应。为此我们要讨论在球对称度规中的测地线。给定初始条件 $(p,Z^\mu)$。易知，总能找到\footnote{设 $p$ 任意位置。先将极点平移至 $p$，此时 $\theta=0$。由于稳态观者一定不是测地线，所以 $Z^i\ne 0$。若 $Z^i$ 垂直于球面，则一定有 $\dv{\theta}{\tau}=0$。否则可绕极轴旋转（经度平移）使本初子午线与 $Z^i$ 的球面投影相切，从而 $\dv{\theta}{\tau}=0$。再将本初子午线（绕经纬度原点）旋转为赤道使得 $\theta=\pi/2$。}球坐标系使 $p$ 处 $\theta=\pi/2$ 且 $\dv{\theta}{\tau}=0$。$x^\lambda = \theta$ 的测地线方程为 $\ddot\theta+\frac{2}{r}\dot r\dot\theta-\sin\theta\cos\theta\dot\phi^2=0$（这里求导是对任意参数），可见 $\theta\equiv\pi/2$ 满足该方程和初始条件，由解的唯一性知质点运动的 $\theta$ 恒定。
 
-Killing 矢量 $\pdv*{x^\mu}{t}$ 给出了（单位质量）能量守恒 $E = \left(1-\frac{2M}{r}\right)\dv{t}{\tau}$。
-$\pdv*{x^\mu}{\phi}$ 也是 Killing 矢量，给出了赤道平面的（单位质量）角动量守恒
-\eq{
-    L = \pdv{x^\mu}{\phi} Z_\mu = r^2 \dv{\phi}{\tau}.
-}
-继续利用四速度归一化条件 $Z^\mu Z_\mu=-1$。在 Schwarzschild 度规
-\[
-\dd s^2=-\left(1-\frac{2M}{r}\right)\dd t^2+\left(1-\frac{2M}{r}\right)^{-1}\dd r^2+r^2(\dd\theta^2+\sin^2\theta,\dd\phi^2)
-\]
-及赤道面 $\theta=\pi/2$ 上，有
-\[
--1
-= -\left(1-\frac{2M}{r}\right)\dot t^{,2}
-+\left(1-\frac{2M}{r}\right)^{-1}\dot r^{,2}
-+r^2\dot\phi^{,2},
-\qquad (\dot{}\equiv \dv{}{\tau}).
-\]
-代入守恒量
-\[
-E=\left(1-\frac{2M}{r}\right)\dot t,\qquad L=r^2\dot\phi,
-\]
-得到径向方程（单位质量）
-\eq{
-\dot r^{,2}
-=E^2-\left(1-\frac{2M}{r}\right)\left(1+\frac{L^2}{r^2}\right)
-=:E^2-V_{\rm eff}(r).
-}
-这可视为一维“能量守恒”的形式，其中
-\[
-V_{\rm eff}(r)=\left(1-\frac{2M}{r}\right)\left(1+\frac{L^2}{r^2}\right)
-\]
-为有效势。为研究轨道形状，将参数从 $\tau$ 改写为 $\phi$。由 $\dot\phi=L/r^2$ 可得
-\[
-\dv{r}{\tau}=\dv{r}{\phi}\dv{\phi}{\tau}=\frac{L}{r^2}\dv{r}{\phi}.
-\]
-令 $u(\phi)=1/r(\phi)$，则 $\dv{r}{\phi}=-(1/u^2)u'$（$ '\equiv \dv{}{\phi}$），于是
-\[
-\dot r^{,2}=L^2 (u')^2 .
-\]
-将其代回径向方程，并用 $r=1/u$ 化简，得
+记 $f(r)=1-2M/r$，并以点表示对固有时 $\tau$ 求导。稳态与轴对称 Killing 矢量分别给出单位质量能量、角动量守恒：$E=-\pdv*{x^\mu}{t}Z_\mu=f\dot t$，$L=\pdv*{x^\mu}{\phi}Z_\mu=r^2\dot\phi$。在赤道面上，四速度归一化条件为 $-1=-f\dot t^2+f^{-1}\dot r^2+r^2\dot\phi^2$，代入 $E,L$ 得径向方程 $\dot r^2=E^2-f(1+L^2/r^2)=:E^2-V_{\rm eff}(r)$，其中 $V_{\rm eff}=f(1+L^2/r^2)$ 是有效势。
+
+为研究轨道形状，改用 $\phi$ 参数。令 $u(\phi)=1/r(\phi)$，并以撇表示对 $\phi$ 求导；由 $\dot\phi=L/r^2$ 得 $\dot r=-Lu'$。代回径向方程有
 \eq{
 L^2(u')^2
 =E^2-\Bigl(1-2Mu\Bigr)\Bigl(1+L^2u^2\Bigr)
 = (E^2-1)+2Mu-L^2u^2+2ML^2u^3.
 }
-对 $\phi$ 再求导并整理（可等价地从上式对 $\phi$ 微分并消去 $E$），得到轨道的 Binet 方程
-\eq{
-u''+u=\frac{M}{L^2}+3Mu^2.
-}
-零阶项 $\frac{M}{L^2}$ 对应 Newton 引力，给出 Kepler 椭圆
-\eq{
-u_0(\phi)=\frac{M}{L^2}\bigl(1+e\cos\phi\bigr),
-}
-其中 $|e|<1$ 为离心率。半通径为 $\frac{L^2}{M}$，
+对 $\phi$ 求导并约去 $2L^2u'$，即得 Binet 方程 $u''+u=M/L^2+3Mu^2$。舍去相对论修正 $3Mu^2$ 就是 Newton 情形，其椭圆解为 $u_0=p^{-1}(1+e\cos\phi)$，其中 $p=L^2/M$ 是半通径，$|e|<1$ 是离心率。
 
+现置 $u=u_0+\delta u$。保留首阶相对论修正，得
+\[
+\delta u''+\delta u=\frac{3M}{p^2}\left(1+2e\cos\phi+e^2\cos^2\phi\right).
+\]
+右端的共振项为 $6Me\cos\phi/p^2$，相应特解为 $3Me\phi\sin\phi/p^2$。另一方面，将零阶解的相位换成 $(1-\delta)\phi$，展至 $\delta$ 一阶便产生 $e\delta\phi\sin\phi/p$；比较二者得 $\delta=3M/p=3M^2/L^2$。故径向周期满足 $(1-\delta)\Delta\phi=2\pi$，每绕行一周的近日点进动为 $\Delta\phi_{\rm prec}=\Delta\phi-2\pi\simeq2\pi\delta=6\pi M/p$。
 
-$3Mu^2$ 是广义相对论的最低阶修正项。我们研究在椭圆上附加扰动 $3Mu^2$ 所导致的轨道进动。
-将 $u=u_0+\delta u$ 代入方程并忽略 $(\delta u)^2$，得
-\[
-\delta u''+\delta u=3M u_0^2
-=3M\left(\frac{M}{L^2}\right)^2\bigl(1+2e\cos\phi+e^2\cos^2\phi\bigr).
-\]
-右端包含 $\cos\phi$ 的共振项，会导致“近似频率”偏移。等价地，可用一阶“频率修正”的试探解写成
-\eq{
-u(\phi)\simeq \frac{M}{L^2}\Bigl[1+e\cos\bigl((1-\delta)\phi\bigr)\Bigr],
-}
-其中 $\delta\ll 1$。把该形式代回 $u''+u=\frac{M}{L^2}+3Mu^2$，保留到一阶并比较 $\cos\bigl((1-\delta)\phi\bigr)$ 的系数，可得
-\eq{
-\delta=\frac{3M^2}{L^2}.
-}
-因此径向变量的周期不再对应 $\Delta\phi=2\pi$，而是
-\[
-(1-\delta)\Delta\phi=2\pi
-\quad\im\quad
-\Delta\phi\simeq 2\pi(1+\delta),
-\]
-于是近日点每绕行一周的超前量（进动角）为 $\Delta\phi_{\rm prec}=\Delta\phi-2\pi \simeq 2\pi\delta={6\pi M^2}/{L^2}$。
-注意半通径为 $L^2/M=a(1-e^2)$，$a$ 为半长轴。用 $M\mapsto GM/c^2$ 恢复国际单位可得
-\eq{
-\Delta\phi_{\rm prec}\simeq \frac{6\pi GM}{c^2a(1-e^2)}.
-}
-将 $a$ 近似为水星轨道平均半径，代入太阳质量，可得约 $43''$/世纪的进动量。
+又因 $p=a(1-e^2)$，其中 $a$ 是半长轴，令 $M\mapsto GM/c^2$ 恢复国际单位，便有 $\Delta\phi_{\rm prec}\simeq6\pi GM/[c^2a(1-e^2)]$。代入水星轨道半长轴和太阳质量，得进动约 $43''$/世纪。
 
 %%
 
 \subsection{星光偏折}
 
-如果我们考虑星体附近的光线，一路走向测地线方程，所描述的轨迹曲线可以作为\textbf{引力透镜}(gravitational lensing)的定量解释。
+星体附近的光线因引力偏离直线，由此形成\textbf{引力透镜}(gravitational lensing)。现计算 Schwarzschild 时空中的弱场偏折角。
 
-考虑光线在 Schwarzschild 时空中的传播。光子沿零测地线运动，因此满足
-\[
-\dd s^2=0.
-\]
-在赤道面 $\theta=\pi/2$ 上，Schwarzschild 度规为
-\[
-\dd s^2=-\left(1-\frac{2M}{r}\right)\dd t^2+\left(1-\frac{2M}{r}\right)^{-1}\dd r^2+r^2\dd\phi^2.
-\]
-同样由于时空具有静态与轴对称 Killing 矢量，沿光线存在守恒量（此处用仿射参数 $\lambda$，并记 $\,\dot{}=\dv{}{\lambda}$）：
-\[
-E=\left(1-\frac{2M}{r}\right)\dot t,\qquad L=r^2\dot\phi.
-\]
-对零测地线使用约束条件 $g_{\mu\nu}\dot x^\mu\dot x^\nu=0$，得
-\[
-0=-\left(1-\frac{2M}{r}\right)\dot t^{\,2}+\left(1-\frac{2M}{r}\right)^{-1}\dot r^{\,2}+r^2\dot\phi^{\,2}.
-\]
-代入 $\dot t=E/(1-2M/r)$ 与 $\dot\phi=L/r^2$，化简得到径向方程
-\[
-\dot r^{\,2}=E^2-\left(1-\frac{2M}{r}\right)\frac{L^2}{r^2}.
-\]
-引入冲量参数（impact parameter）
-\[
-b:=\frac{L}{E},
-\]
-并将参数改为 $\phi$。由 $\dot\phi=L/r^2$，
-\[
-\dv{r}{\lambda}=\dv{r}{\phi}\dv{\phi}{\lambda}=\frac{L}{r^2}\dv{r}{\phi}.
-\]
-令 $u(\phi)=1/r(\phi)$，则 $\dv{r}{\phi}=-(1/u^2)u'$，从而
-\[
-\dot r^{\,2}=L^2(u')^2.
-\]
-将其代回径向方程并除以 $E^2$，得到
-\eq{
-(u')^2=\frac{1}{b^2}-u^2+2Mu^3.
-}
-对 $\phi$ 求导并整理（在 $u'\neq 0$ 的开区间内），得光线轨道方程
-\eq{
-u''+u=3Mu^2.
-}
+仍记 $f(r)=1-2M/r$，取赤道面 $\theta=\pi/2$，并以点表示对仿射参数 $\lambda$ 求导。稳态与轴对称 Killing 矢量给出 $E=f\dot t$、$L=r^2\dot\phi$；零测地约束 $g_{\mu\nu}\dot x^\mu\dot x^\nu=0$ 则给出 $\dot r^2=E^2-fL^2/r^2$。定义碰撞参数 $b=L/E$，再令 $u(\phi)=1/r(\phi)$。由 $\dot\phi=L/r^2$ 仍有 $\dot r=-Lu'$，故 $(u')^2=b^{-2}-u^2+2Mu^3$。对 $\phi$ 求导即得光线的 Binet 方程 $u''+u=3Mu^2$。
 
-下面在弱场条件 $M/b\ll 1$ 下作一阶近似。设无引力时的解为
-\[
-u_0(\phi)=\frac{1}{b}\sin\phi,
-\]
-其对应一条直线轨迹，且在最近距离处 $\phi=\pi/2$，有 $r_{\min}=b$。写 $u=u_0+\delta u$，忽略 $(\delta u)^2$，则线性化方程为
+在弱场条件 $M/b\ll1$ 下，无引力轨道为 $u_0=b^{-1}\sin\phi$，表示一条在 $\phi=\pi/2$ 处与中心相距 $b$ 的直线。置 $u=u_0+\delta u$ 并保留 $M/b$ 首阶，得
 \[
 \delta u''+\delta u=3M u_0^2=\frac{3M}{b^2}\sin^2\phi=\frac{3M}{2b^2}\left(1-\cos2\phi\right).
 \]
-取一组特解
-\[
-\delta u_p(\phi)=\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi,
-\]
-因此
+取特解 $\delta u=3M/(2b^2)+M\cos2\phi/(2b^2)$，便有
 \[
 u(\phi)\simeq \frac{1}{b}\sin\phi+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi
 \]
-（齐次解对应平移与重新定义 $b$，可通过对称边界条件吸收，不影响一阶偏折角）。
+其中齐次解只改变轨道的相位和 $b$，已由对称边界条件吸收。
 
-现在计算偏折角。远离中心天体时 $r\to\infty$，即 $u\to 0$。设入射与出射的渐近方向分别对应
-\[
-\phi\to -\alpha,\qquad \phi\to \pi+\alpha,
-\]
-其中 $\alpha$ 为小量；无引力时 $\alpha=0$。用 $\phi=-\alpha$ 代入 $u(\phi)=0$ 并在 $\alpha\ll 1$、$M/b\ll 1$ 下展开：
-\[
-0\simeq \frac{1}{b}\sin(-\alpha)+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos(-2\alpha)
-\simeq -\frac{\alpha}{b}+\frac{3M}{2b^2}+\frac{M}{2b^2},
-\]
-从而
-\[
-\alpha\simeq \frac{2M}{b}.
-\]
-总偏折角为入射与出射方向之差相对直线的偏离量
-\[
-\Delta\phi_{\rm def}=2\alpha\simeq \frac{4M}{b}.
-\]
-恢复物理单位（此前取 $G=c=1$，用 $M\mapsto GM/c^2$），得到
-\eq{
-\Delta\phi_{\rm def}\simeq \frac{4GM}{c^2 b}.
-}
+远离中心天体时 $u\to0$。将入射与出射的渐近方向分别写作 $\phi=-\alpha$、$\phi=\pi+\alpha$，其中 $\alpha\ll1$。取 $\phi=-\alpha$ 代入上式，得 $0\simeq-\alpha/b+2M/b^2$，即 $\alpha\simeq2M/b$；出射端由对称性给出相同偏折。故总偏折角为 $\Delta\phi_{\rm def}=2\alpha\simeq4M/b$。令 $M\mapsto GM/c^2$ 还原国际单位，即 $\Delta\phi_{\rm def}\simeq4GM/(c^2b)$。
 
-对太阳边缘掠过的星光，$b$ 近似取太阳半径 $R_\odot$，于是
-\[
-\Delta\phi_{\rm def}\simeq \frac{4GM_\odot}{c^2 R_\odot}\approx 1.75''.
-\]
-这一定量结果是广义相对论的经典检验之一：偏折角是牛顿引力（若仅将光视作以 $c$ 运动的粒子并作等效计算）给出的 $2GM/(c^2b)$ 的两倍，其“多出来的一倍”来自空间弯曲效应。
+对掠过太阳边缘的星光可取 $b\simeq R_\odot$，因而 $\Delta\phi_{\rm def}\simeq4GM_\odot/(c^2R_\odot)\approx1.75''$。若仅将光视作速率为 $c$ 的 Newton 粒子，则只得 $2GM/(c^2b)$；广义相对论的另一半偏折反映了空间曲率的贡献。
 
 
 \section{时空延拓}
@@ -454,28 +352,31 @@ u(\phi)\simeq \frac{1}{b}\sin\phi+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi
     \caption{\small 欧氏空间中向心加速率恒为 $a$、匀速率 $v=1$ 转动的质点将走 $X^2+Y^2=R^2$ 且 $a=1/R$，弧长为 $\ell=R\theta$。从而预料，物体在加速率恒定时经伪转动走 $X^2-T^2=x^2$ 且 $A=1/x$，固有时为 $\tau=x\theta$。若观者按 $A=1/x$ 分布，则在共动系看来间距恒定，因为 $\d t = 0$ 时 $\d s^2 = \d x^2$。但若各观者 $A$ 一致，则双曲线成平移关系，间距不恒定，不同于 Newton 力学。}
 \end{figure}
 
-双曲线的渐近线相当于原点处的光锥 $C_N$。故对匀加速观者而言，信息不能从光锥另一侧逾越过来
+双曲线的渐近线相当于原点处的光锥 $C_N$。对匀加速观者而言，信息不能从光锥另一侧逾越过来。
+故也称\textbf{Rindler 视界}。
+右加速观者和左加速观者不能相互交流，故可看作两个独立的时空区域。
 
-故称\textbf{Rindler 视界}。
+Schwarzschild 系下，视界具有坐标奇性。
+我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。
+而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是\textbf{延拓}(extend)时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。
+换言之，通过变换坐标，可以期望让 Schwarzschild 度规式越过视界自然地延拓到内部。则原先的定义域就是这个更大时空的\textbf{子时空}。想尽办法延拓，直至一个可以证明不能再延拓的结果，称之为\textbf{最大延拓}(maximal extension)。
+这就是用坐标系延拓时空。通俗地说，本身或延拓后无限延伸的测地线称为\textbf{完备的}(complete)。只有那种根本不能再继续延伸的测地线，才能叫\textbf{不完备}(incomplete)。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
 
-同理求出内、外向族分别为
+我们可以类比这里 Rindler 系与惯性系的关系。闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和惯性系的相对地位，就像是 Schwarzschild 系和延拓后坐标系的相对地位。
+
+可求出内、外向光线族分别为
 \[
 t=-\ln x+C_1,\quad t=\ln x+C_2.
 \]
-故可绘制如下图 。
 
-注意，闵氏度规在 Rindler 系是有奇性的，因为其行列式 $g=-x^2$ 在 $x=0$ 处为零。可见，Rindler 系和闵氏系的相对地位，就像是 Schwarzschild 系或 Eddington 系和“更好”坐标系的相对地位。
-
-
-
-因此上述类光测地线族其实“对应于”闵氏时空里的类光测地线族
+因此上述光线族其实“对应于”闵氏时空里的类光测地线族
 \[
 T=-X+C_1,\quad T=X+C_2.
 \]
 
 仿照这一思想，欲视类光测地线族为坐标网格（称为\textbf{类光坐标}）。
 
-第  节中将双曲线、射线视作坐标线而衍生出 Rindler 坐标系，在 Rindler 图  里，这是在令
+将双曲线、射线视作坐标线而衍生出 Rindler 坐标系，在 Rindler 图  里，这是在令
 \eq{
 v=t+\ln x,\quad u=t-\ln x.
 }
@@ -507,7 +408,14 @@ V=\e^v>0,\quad U=-\e^{-u}<0.
 \[
 (t,x)\to(v,u)\to(V,U)\to(T,X).
 \]
-依葫芦画瓢地寻找“更好”坐标系。
+依葫芦画瓢地寻找延拓坐标系。
+
+然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的延拓。
+
+
+若给 Rindler 图补上 $x<0$ 的部分
+
+当然，仍有微妙区别：在 Rindler 图   中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
 
 \subsection{Eddington 系}
 
@@ -539,7 +447,7 @@ $g_{01}\geqslant 0$ 符合黑洞演化的方向。
 
 考虑测地线汇从 $t = 0 = \tau$ 释放，每一线用 $r_m$ 标记，新系为 $(\tau,r_m)$。由 $Z^\mu Z_\mu = -1$ 可知
 \[\d\tau=-Z_0(r_m)\d t-Z_1(r,r_m)\d r=\sqrt{1-\frac{2M}{r_m}}\d t+\frac{\sqrt{2M/{r}-2M/{r_m}}}{1-{2M}/{r}}\d r.\]
-$r = r_m\cos^2\frac{\eta}{2},\tau = -\frac{r_m^{3/2}}{\sqrt{8M}} (\eta+\sin\eta)$ 确定了变换 $r(\tau,r_m)$
+$r = r_m\cos^2\frac{\eta}{2},\tau = -(\eta+\sin\eta){r_m^{3/2}}/{\sqrt{8M}}$ 确定了变换 $r(\tau,r_m)$。
 记变换 $\d r = \pdv{r}{\tau}\d\tau + \pdv{r}{r_m}\d r_m$，由测地线 $\tau$ 轴 $\d\r_m = 0$ 可知 $\pdv{r}{\tau} = Z^1(r,r_m)$，从而 $-Z^1(r,r_m)\d\tau+\d r=\cos^2\frac{\eta}{2}\d r_m$。依次做 $t\to\tau,r\to r_m$ 变换有
 \[\d s^2 = -\d\tau^2+\left(\frac{-Z^1(r,r_m)\d\tau+\d r}{Z_0(r_m)}\right)^2+r^2\d\Omega^2= -\d\tau^2+\frac{\cos^4({\eta}/{2})\d r_m^2}{1-2M/r_m}+r^2\d\Omega^2.\]
 其中加上了没动过的空间部分。$\eta(\tau,r_m)$ 表明这是非稳态系，直观上落体者当然感受到变化的引力场。
@@ -638,31 +546,10 @@ t=2M\ln\frac{X+T}{|X-T|},
 
 
 
-
-使度规式  越过视界而自然地\textbf{延拓}(extend)至内部，但即使如此也不能越过点 $r=0$，
+，但即使如此也不能越过点 $r=0$，
 
 直观上是因为我们已经覆盖了整个 $r>0$，而 $r<0$ 无意义。本节末会讲清延拓方法。
 
-
-
-
-考虑到右加速观者和左加速观者不能相互交流，故可看作两个独立区域。
-
-
-
-然而上图   只覆盖了闵氏时空图右边的类空区域。因此闵氏时空可以看作“Rindler 时空”（即 $x>0$ 部分）的\textbf{延拓}。前文多次提及延拓这个词，通俗来讲，我们总想使坐标系尽可能覆盖得更广、更完整，且消除坐标奇性。而一旦变换坐标，甚至有可能推广新坐标的定义域，也就是延拓时空本身，且延拓后的时空还能包含坐标奇点，因为这时已无奇性。综上所述，无论 Schwarzschild 系   还是超前 Eddington 系 ，二者所对应的时空或许只是某个更大时空的\textbf{子时空}。为此可想办法延拓它，直至一个可以证明不能再延拓的结果，称之为\textbf{最大延拓}(maximal extension)。
-
-
-
-若给 Rindler 图补上 $x<0$ 的部分
-
-
-
-
-当然，仍有微妙区别：在 Rindler 图   中类光测地线无限延伸，而在闵氏图 \ref{fig:rindlerIM} 里这堆类光线并非如此。然而，使其延伸是很简单的：$V,U$ 可不按指数定义而自然延拓至整个 $\R^2$。
-
-
-这就是用坐标系延拓时空。形象地说，本身或延拓后无限延伸的测地线称为\textbf{完备的}(complete)。只有那种根本不能再继续延伸的测地线，才能叫\textbf{不完备}(incomplete)。可见，不完备测地线表征了时空本身的不可延拓性（一旦延拓了就能完备），这时碰上的就并非坐标奇性了，而是实实在在的时空奇性，正如奇点那样。
 
 
 
