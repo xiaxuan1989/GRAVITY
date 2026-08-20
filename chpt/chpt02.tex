@@ -129,15 +129,15 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 }
 以描述球对称带电黑洞。
 
-\section{经典实验验证}
+\section{三大实验验证}
 
-自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为经典的是引力红移、水星进动和星光偏折，它们都与 Schwarzschild 度规有关。
+自 Einstein 论文发表以来，对广义相对论的若干实验验证相继提出，其中最为著名的是引力红移、水星进动和星光偏折，它们都与 Schwarzschild 度规有关。
 
 \subsection{引力红移}
 
 回忆一下。设观者、光源各有 4-速 $U^\mu,V^\mu$。光源在发光时测得 $\omega=-k^\mu V_\mu$，观者在接收时测得 $\omega'=-k^\mu U_\mu$。记 $\gamma = - V^\mu U_\mu$，沿 $V^\mu$ 做 3+1 分解 $k^\mu=\omega V^\mu + \bm k^\mu,U^\mu = \gamma V^\mu + \gamma \bm u^\mu$。则
 \[\omega'=-\gamma (\omega V_\mu + \bm k_\mu) (V^\mu + \bm u^\mu) = \gamma (\omega - \bm k_\mu \bm u^\mu) = \gamma \omega (1 - u \cos \theta),\]
-其中 $u=|\bm u|$，$\theta$ 为（光源系中）$\bm k,\bm u$ 夹角。此即\textbf{相对论 Döppler 效应}，展开级数第一项 $\omega (1 - u \cos \theta)$ 是经典 D\"oppler 效应。
+其中 $u=|\bm u|$，$\theta$ 为（光源系中）$\bm k,\bm u$ 夹角。此即\textbf{相对论 Döppler 效应}，展开级数第一项 $\omega (1 - u \cos \theta)$ 是非相对论 D\"oppler 效应。
 
 置两个稳态观者，一者为光源 $e$，一者为接收端 $r$。二者 4-速共线于 Killing 矢量 $\xi^\mu = \pdv*{x^\mu}{t}$，$t$ 为稳态时间。$k^\mu$ 走测地线，知 $k^\mu\xi_\mu$ 沿光路守恒。
 角频率为 $\omega=-k_\mu U^\mu=-k_\mu\xi^\mu/\sqrt{-\xi_\mu \xi^\mu}$，而波长为 $\lambda = 2\pi/\omega$。若 $\{x\}$ 的坐标时就是稳态时间，$\xi^\mu=\delta^\mu_0$，则 $\xi_\mu\xi^\mu=g_{00}$。
@@ -731,7 +731,11 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 
 图 \ref{fig:collapse-penrose} 与永恒 Schwarzschild 图的差别是物理性的：这里没有白洞区、第二外部区域或分叉球面。事件视界形成以前，中心是普通的正则时间轴；事件视界形成以后，边缘外陷获面才在更晚的切片上出现，两者之间可以存在尚未陷获的黑洞区。图上的事件视界不是物质表面，穿越它的自由下落观者也不会遇到局域奇性；真正的曲率奇性位于其未来。
 
-\subsection{奇性定理与宇宙监督}
+\subsection{类光聚焦引理}
+
+%%引用第一章
+
+\subsection{Penrose 奇性定理}
 
 尘埃模型中的 $a=0$ 奇性可能令人怀疑是均匀、无压等理想化假设造成的。Penrose 奇性定理说明结论远为稳健。其一个代表性版本是：若时空具有非紧 Cauchy 面并包含闭合未来陷获面，且所有类光矢量都满足
 \[
@@ -741,86 +745,13 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 
 这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。Schwarzschild 坍缩给出曲率发散且隐藏在视界后的例子，但更一般的结局需要附加假设。
 
+\subsection{宇宙监督}
+
 \textbf{弱宇宙监督}(weak cosmic censorship)猜想大意是：由适当物质和一般的正则、渐近平直初始数据产生的奇性不会暴露给未来类光无穷远，因而远方观者看不到\textbf{裸奇性}(naked singularity)。\textbf{强宇宙监督}(strong cosmic censorship)则要求一般初始数据的最大 Cauchy 发展在适当正则性类别中不可再延拓，使初始数据保持对物理时空的决定性。二者关注的问题不同：弱形式保护远方观者，强形式保护全局决定论。
 
 这些猜想尚不是对所有物质模型都成立的普适定理，其准确陈述还依赖“一般性”、渐近条件以及允许延拓的可微阶数。某些高度对称或精细调节的初始数据确实能产生裸奇性，但这未必反驳强调一般初始数据的版本。负质量 Schwarzschild 解也不是由满足通常正能量条件的正则恒星初始数据坍缩得到，故不能直接当作宇宙监督的反例。
 
 真实坍缩还伴随压强、激波、磁场、自转、物质抛射和引力辐射。若坍缩后形成孤立的旋转黑洞，外部扰动通常向无穷远辐射或落入视界，几何趋向由质量和角动量描述的 Kerr 黑洞。尽管内部结构远比尘埃模型复杂，陷获面的形成、事件视界的整体定义以及测地线不完备，仍构成理解黑洞产生的基本框架。
-
-\section{后 Newton 理论}
-
-Einstein 方程是非线性的，精确解却只在高度对称的情形容易得到。对于孤立的弱引力系统，若典型速度 $v\ll c$，且正值 Newton 势 $U$ 满足 $U/c^2\ll1$，便可在保留引力非线性的同时作 $1/c$ 渐近展开。这称为\textbf{后 Newton 展开}(post-Newtonian expansion, PN expansion)。对引力束缚系统，维里关系给出统一的小参数 $\epsilon\sim v^2/c^2\sim U/c^2\sim GM/(rc^2)\ll1$。Newton 理论是 0PN，较之小 $\epsilon^n$ 的修正称为 $n$PN；半整数阶可由自旋、辐射尾项或耗散效应产生。后 Newton 展开不是简单的线性化：例如 $U^2/c^4$ 是 1PN 动力学所必需的非线性项。以下约定 $x^0=ct$，并保留 $c$ 以标明阶次；系统论述可参见 Weinberg\cite{Weinberg}。
-
-\subsection{计数规则与逐次解法}
-
-取源的典型尺度为 $R$。空间导数为 $\partial_i=O(R^{-1})$，缓慢运动则给出 $c^{-1}\partial_t=O(\epsilon^{1/2}\partial_i)$。物质的应力--能量张量相应满足 $T^{0i}/T^{00}=O(\epsilon^{1/2})$、$T^{ij}/T^{00}=O(\epsilon)$。度规各分量并非从同一阶开始：$g_{00}+1=O(\epsilon)$、$g_{0i}=O(\epsilon^{3/2})$、$g_{ij}-\delta_{ij}=O(\epsilon)$。要求运动方程达到 1PN 精度时，须分别求出 $g_{00}$ 至 $O(c^{-4})$、$g_{0i}$ 至 $O(c^{-3})$、$g_{ij}$ 至 $O(c^{-2})$。
-
-若源的特征角频率为 $\Omega$，辐射波长约为 $\lambda\sim c/\Omega$。在\textbf{近区}(near zone) $R\ll\lambda$ 内，源的变化时间远长于光行时，推迟势可按 $R/\lambda\sim v/c$ 展开。选定坐标规范后，将度规、物质变量与 Einstein 方程同时按 $1/c$ 排列；低阶方程的解作为高阶方程的源，如此逐次求解。坐标条件在这里不可省略，因为度规系数和坐标加速度都随规范改变，只有进动角、钟的频率比等可观测量不依赖这种选择。
-
-\subsection{势函数与 1PN 度规}
-
-质量密度 $\rho$ 的最低阶势及质量流势定义为
-\[
-    U(t,\mathbf x)=G\int\frac{\rho(t,\mathbf x')}{|\mathbf x-\mathbf x'|}\d^3x',\qquad
-    U_i(t,\mathbf x)=G\int\frac{\rho(t,\mathbf x')v_i(t,\mathbf x')}{|\mathbf x-\mathbf x'|}\d^3x'.
-\]
-因此 $\nabla^2U=-4\pi G\rho$、$\nabla^2U_i=-4\pi G\rho v_i$。这里约定 $U>0$；点质量给出 $U=GM/r$，故 Newton 加速度是 $\nabla U=-GM\mathbf n/r^2$，其中 $\mathbf n=\mathbf x/r$。
-
-在调和坐标中，一般缓慢运动源的最低几阶具有结构
-\[
-    g_{00}=-1+\frac{2U}{c^2}+O(c^{-4}),\qquad
-    g_{0i}=-\frac{4U_i}{c^3}+O(c^{-5}),\qquad
-    g_{ij}=\left(1+\frac{2U}{c^2}\right)\delta_{ij}+O(c^{-4}).
-\]
-$g_{00}$ 的 $O(c^{-4})$ 部分除 $U^2$ 外，还含由动能、内能、压强及引力自能产生的势，不能对一般物质源一概略去。若源是静止点质量，外部真空区没有这些物质势；在各向同性坐标中，所需度规简化为
-\[
-    g_{00}=-1+\frac{2U}{c^2}-\frac{2U^2}{c^4}+O(c^{-6}),\qquad
-    g_{0i}=0,\qquad
-    g_{ij}=\left(1+\frac{2U}{c^2}\right)\delta_{ij}+O(c^{-4}),
-    \quad U=\frac{GM}{r}.
-\]
-这正是 Schwarzschild 度规在各向同性半径下的弱场展开。与质量流有关的 $g_{0i}$ 称为引力磁部分；它在静态球对称外场消失，却在转动天体或多体系统中产生拖曳效应。
-
-\subsection{二体运动与近日点进动}
-
-1PN 理论已经超出“测试粒子绕固定中心”的近似。设两体质量为 $m_1,m_2$，总质量 $m=m_1+m_2$，对称质量比 $\eta=m_1m_2/m^2\leqslant1/4$；再令 $\mathbf x=\mathbf x_1-\mathbf x_2$、$r=|\mathbf x|$、$\mathbf n=\mathbf x/r$、$\mathbf v=\dot{\mathbf x}$ 及 $\dot r=\mathbf n\cdot\mathbf v$。在质心系的调和坐标中，Einstein--Infeld--Hoffmann 方程化为
-\[
-\begin{split}
-    \ddot{\mathbf x}={}&-\frac{Gm}{r^2}\mathbf n
-    +\frac{Gm}{c^2r^2}\bigg\{
-       \left[(4+2\eta)\frac{Gm}{r}-(1+3\eta)v^2
-       +\frac{3}{2}\eta\dot r^2\right]\mathbf n \\
-       &\hspace{42mm}+(4-2\eta)\dot r\,\mathbf v\bigg\}
-    +O(c^{-4}).
-\end{split}
-\]
-取 $m_1/m_2\to0$、$m\to M$，即 $\eta\to0$，便得到测试粒子在 Schwarzschild 外场中的 1PN 加速度。上式的具体形式依赖坐标；由它算出的轨道不变量则不依赖坐标选择。
-
-对束缚轨道，1PN 修正破坏了 Newton 椭圆的闭合性。以 Newton 阶半长轴 $a$ 和离心率 $e$ 表示，每个径向周期的近心点进动为 $\Delta\phi_{\rm prec}=6\pi Gm/[a(1-e^2)c^2]+O(c^{-4})$。测试质量极限 $m\to M$ 恰与前面由精确 Schwarzschild 测地线得到的结果一致；这里则说明同一公式在 1PN 阶也适用于质量可比的二体相对运动。
-
-\subsection{参数化后 Newton 形式}
-
-PN 是在给定引力理论内逐阶求解，\textbf{参数化后 Newton 形式}(PPN formalism) 则把一类度规引力理论写成统一的弱场参数族，以便直接比较实验\cite{Will18,Will-thesis}。对于静态球对称源，标准 PPN 坐标中的有关部分为
-\[
-    g_{00}=-1+\frac{2U}{c^2}-2\beta\frac{U^2}{c^4}+O(c^{-6}),\qquad
-    g_{ij}=\left(1+2\gamma\frac{U}{c^2}\right)\delta_{ij}+O(c^{-4}).
-\]
-$\gamma$ 衡量单位静质量所产生的空间曲率，$\beta$ 衡量引力场叠加的非线性；广义相对论给出 $\gamma=\beta=1$。其余 PPN 参数描述优选参考系、动量守恒破坏等可能效应，在静态球对称问题中不出现。
-
-PPN 近日点进动为
-\[
-    \Delta\phi_{\rm prec}=\frac{6\pi GM}{a(1-e^2)c^2}
-    \left(\frac{2+2\gamma-\beta}{3}\right)+O(c^{-4}).
-\]
-因此近日点进动约束 $2+2\gamma-\beta$，弱场光线偏折 $\Delta\theta=2(1+\gamma)GM/(bc^2)$ 与 Shapiro 延迟则主要约束 $\gamma$。不同实验测量不同参数组合，才能排除只在某一观测上偶然符合广义相对论的理论。
-
-\subsection{高阶结构与适用范围}
-
-太阳系轨道的 $GM/(rc^2)$ 约为 $10^{-8}$；水星处约为 $2.5\times10^{-8}$，故 1PN 已给出主导相对论进动。精密历表还须同时拟合太阳多极矩、其他天体摄动、自转引起的 Lense--Thirring 效应及更高 PN 项，这些效应的物理来源不应混为一个“相对论修正”。
-
-对非自旋二体，最低几阶保守修正依次为 1PN、2PN 等整数阶；自旋--轨道和自旋--自旋耦合分别从 1.5PN、2PN 开始。引力波带走能量和角动量，使运动方程首次在 2.5PN 出现耗散的\textbf{辐射反作用}(radiation reaction)。紧致双星早期旋近仍可用 PN 理论描述：虽然黑洞或中子星内部并非弱场，外部轨道只要满足 $Gm/(rc^2)\ll1$、$v/c\ll1$，其内部结构在低阶主要吸收到质量和自旋中；潮汐等有限尺度效应在更高阶才显现。
-
-PN 级数在近区有效，却不能直接一致地延伸到波区；计算引力波时须将近区解与满足无入射辐射条件的远区多极展开匹配。随着双星接近并合，$v/c$ 与 $Gm/(rc^2)$ 不再很小，截断级数逐渐失准，必须改用重求和方法、黑洞微扰或数值相对论。另须区分\textbf{后 Minkowski 展开}(post-Minkowskian expansion)：后者按 $G$ 展开而不要求低速，PN 则按 $1/c$ 展开并允许在每一阶保留引力的非线性。
 
 \section{KN 黑洞}\label{sec:KN}
 
@@ -878,7 +809,7 @@ PN 级数在近区有效，却不能直接一致地延伸到波区；计算引�
 \begin{split}
     g_{tt}&=-\left(1-\frac{2Mr-Q^2}{\Sigma}\right),\\
     g_{t\phi}&=-\frac{a(2Mr-Q^2)\sin^2\theta}{\Sigma},\\
-    g_{\phi\phi}&=\frac{\mathcal A\sin^2\theta}{\Sigma},qquad
+    g_{\phi\phi}&=\frac{\mathcal A\sin^2\theta}{\Sigma},\qquad
     \det(g_{\mu\nu})=-\Sigma^2\sin^2\theta .
 \end{split}
 \end{equation}
