@@ -573,7 +573,7 @@ Cartan 率先注意到，逆变矢量场总相切于一族曲线，反之也可�
         T_{\mu_1\cdots\mu_k}=T_{[\mu_1\cdots\mu_k]}\im T_{(\mu_1\cdots\mu_k)}=0.\]
 \end{enumerate}
 
-\subsection{定域场拉氏理论}
+\subsection{定域场拉氏理论}\label{sec:Lag-Noe}
 
 粒子间的相互作用会使各粒子动量、能量变化，为保持总和守恒，须设想粒子将其传递给周遭弥漫着的某种媒介，这就是场。于是有了最自然的图像：粒子作为\textbf{源}，与场接触作用，再由场接触作用于另一粒子。接触作用强度涉及粒子的\textbf{荷}(charge)。
 设想一种\textbf{试验粒子}(test particle)，忽略其体积、形变及自旋，最重要地是忽略其自场对外场之干扰，就能测量受力来研究外场。每单位荷的场力即\textbf{场强}(strength)，通常无关于试验粒子，往往又能表为某个\textbf{势}(potential)之导数。
@@ -2399,6 +2399,48 @@ Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清�
 共动观者测量圆周时将尺子沿切向（尺长远短于周长从而圆弧近似直线），尺长在惯性系看来缩短为 $\sqrt{1-\omega^2R^2}$ 倍。故在惯性系看来，固有系用较短的尺子测出更长的周长。
 
 %%
+
+%% 瞬时观测
+
+\subsection{自转}
+
+本节讨论矢量沿线的转动。因而讨论观者的\textbf{自转}时，其实是指沿观者世界线 $x^\mu(\tau)$ 处处建立瞬时观者，也即补全完整的 $e_0^\mu=Z^\mu$ 的正交归一标架 $\{e_I(\tau)\}$，然后讨论空间标架的转动。因此原则上参考系不止是类时线汇（4-速场），还要包括连续指定的空间标架，组成 4 维标架场。虽然所有坐标系都能对应标架场（取坐标基即可），但不一定能对应观者标架场（因为 $e_0^\mu$ 不一定类时）；反之，不是所有标架场都能对应坐标系。
+
+\begin{wrapfigure}{l}{.35\textwidth}
+    \includegraphics[width=.3\textwidth]{fig/chpt01/frame.pdf}
+    \caption{右手标架}
+\end{wrapfigure}
+
+Newton 力学的空间转动运动为 $\dot{\bm w}=\bm\omega\times\bm w$，分量写法为 $\dot{w}^i = -\Omega^{ik}w_k$，其中 $\Omega^{ik}:=\omega_{j}\varepsilon^{jik} = -\varepsilon^{ijk}\omega_{j}$。
+类比之，若存在反称 $\Omega_{\mu\nu}$ 使得类时世界线上的矢量 $V^\mu$ 满足
+\eq{
+\Dv*{V^\mu}{\tau}=-\Omega^{\mu\nu} V_\nu,
+}
+则称 $V^\mu$ 以角速度 $\Omega_{\mu\nu}$ \textbf{转动}。
+$\Omega_{\mu\nu}$ 的选取具有规范自由度，假设 $\Omega_{\mu\nu}'=\Omega_{\mu\nu}+L_{\mu\nu}$ 也满足上式，这无非是要求 $L^{\mu\nu}V_\nu=0$ 而已。类比 Newton 力学中，叠加 $\bm\omega'=\bm\omega+\bm\lambda$ 无非要求 $\bm\lambda\times\bm w =\bm 0$，即转轴 $\bm\lambda$ 与 $\bm w$ 重合，矢量 $\bm w$ 绕自身转相当于不转。
+因此我们看到，严格来说无转动是指 $\Dv*{V^\mu}{\tau}=0$，但在规范自由意义下总可选择 $\Omega_{\mu\nu}=0$。
+费移矢量（比如4-速 $Z^\mu$）的角速度为 $\tilde\Omega^{\mu\nu} := 2A^{[\mu}Z^{\nu]}$，只发生在 $Z^\mu,A^\mu$ 平面。如果规范意义下 $\Omega^{\mu\nu}=\tilde\Omega^{\mu\nu}$，就称\textbf{时空伪转动}。
+取固有标架，$\Omega_{\mu\nu}$ 有独立的三个时空分量 $\Omega_{0i}$ 和三个空间分量 $\Omega_{ij}$。
+对于时空伪转动，$\Omega^{0i}=\tilde\Omega^{0i} = - A^i,\Omega^{ij}=\tilde\Omega^{ij}=0$。
+满足 $\Omega^{0i}=0$ 的 $\Omega_{\mu\nu}$ 则称\textbf{空间转动}。$\tilde\Omega^{\mu\nu}=0$ 等价于 $A^\mu=0$。
+
+考察非零空间矢量 $w^\mu$ 的转动，取固有系以 $e_1^\mu=w^\mu/\sqrt{w^\nu w_\nu}$ 为第一空间轴，于是 $w^\mu=(0,w,0,0)$。于是 $\Dv*{w^\mu}{\tau}=-\Omega^{\mu\nu}w_\nu$ 给出 $L^{\mu\nu}w_\nu=0$，即 $L^{\mu1}=0$，因而 $\Omega^{01},\Omega^{12},\Omega^{13}$ 彻底确定，没有规范自由。$\Omega^{02},\Omega^{03},\Omega^{23}$ 均可任意选取。
+另一方面，$Z_\mu w^\mu=0$ 沿线恒定给出 $0=A_\mu w^\mu-Z_\mu\Omega^{\mu\nu}w_\nu$，即 $0=(A^1+\Omega^{01})w$，故 $\Omega^{01}=-A^1=\tilde\Omega^{01}$。定义 $\hat\Omega_{\mu\nu}:=\Omega_{\mu\nu}-\tilde\Omega_{\mu\nu}$，则 $\hat\Omega^{01}=0$。再选取 $\Omega^{02}=\tilde\Omega^{02}, \Omega^{03}=\tilde\Omega^{03}$ 便有 $\hat\Omega^{0i}=0$。
+又因 $\tilde\Omega^{ij}=0$，所以 $\hat\Omega^{ij}=\Omega^{ij}$。故在此规范下$\hat\Omega_{\mu\nu}$ 是纯空间反称张量，且 $\DFv*{w^\mu}{\tau}=-\hat\Omega^{\mu\nu}w_\nu$，所描述的正是 $w^\mu$ 相对于费移标架的空间转动。
+$w^\mu$ 费移就是无空间转动 $\hat\Omega^{\mu\nu}=0$，$\hat\Omega_{ij}=\omega^k\varepsilon_{kij}$ 给出空间角速度。
+余下任意的 $\Omega^{23}$ 则表示单凭一个矢量 $e_1^\mu$ 无法判定绕其自身方向的转动。
+总之，\textit{标架沿线费移的观者就是无自转观者}。进一步可分析测地线方程的克氏符与转动的关系，故严格来说，自由落体观者还应要求无自转。无引力时，这就是要求惯性观者无自转。从而避开科氏惯性力之干扰，施加等效原理。
+
+\begin{figure}[ht]\centering
+    \subfloat[\centering Cynthia]{\includegraphics[height=.3\textwidth]{fig/chpt01/eggchair.jpg}}
+    \subfloat[\centering Taylor]{\includegraphics[height=.5\textwidth]{fig/chpt01/spinning_chair.pdf}}
+    \caption{\small 设 Cynthia、Taylor 两人坐在地面的两把椅子上：Cynthia 坐底座固定的蛋壳椅；Taylor 坐底座静置的办公椅且不停自转。二者世界线都走直线，但 Taylor 不能作为惯性观者。}
+\end{figure}
+
+现在可把 $\tilde\Omega^{\mu\nu}=2A^{[\mu}Z^{\nu]}$ 与 boost 变换联系起来。取观者固有标架，沿非测地世界线前进 $\d\tau$ 后，时间轴变为 $Z^\mu(\tau+\d\tau)=Z^\mu+A^\mu\d\tau+O(\d\tau^2)$。由于 $Z_\mu A^\mu=0$，把旧时间轴推到新时间轴的 Lorentz 变换只作用于 $Z^\mu,A^\mu$ 张成的时空平面，因而在一阶近似下是纯粹的无穷小 boost 变换；在瞬时固有系中，其快度增量为 $\d\vartheta^i=A^i\d\tau$。
+\S\ref{sec:Lag-Noe} 讲过，无穷小变换是与恒等变换只相差参数一阶的变换；按这里对标架采用的主动变换约定，费移标架满足 $e_I^\mu(\tau+\d\tau)=[\delta^\mu_\nu-\tilde\Omega^\mu{}_\nu\d\tau]e_I{}^\nu(\tau)+O(\d\tau^2)$，出现在一阶项里的矩阵就是生成元。
+此处 $-\tilde\Omega^\mu{}_\nu$ 只有时空分量，在固有系中正是三个 boost 生成元 $\Sigma_{0i}$ 的线性组合，而不含空间转动生成元 $\Sigma_{ij}$。因此时空伪转动就是加速度引起的瞬时 boost，费移则是在相邻瞬时静止系之间不断施行这种纯 boost 而不额外加入瞬时空间转动。
+$\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积变换则形如 $\mathcal P\exp[-\int\tilde\Omega\,\d\tau]$。若加速度方向不断改变，不同时刻的 boost 一般不对易，其有限累积仍可产生\textbf{Thomas-Wigner 转动}，这与每一步均无额外空间转动并不矛盾。
 
 \section{因果结构}\label{sec:causal}
 
