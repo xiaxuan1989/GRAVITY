@@ -352,10 +352,6 @@ u(\phi)\simeq \frac{1}{b}\sin\phi+\frac{3M}{2b^2}+\frac{M}{2b^2}\cos2\phi
 
 Rindler 度规的行列式 $g=-A^2x^2$ 在 $x=0$ 处为零，但闵氏时空处处平直，并无曲率奇性。事实上，坐标变换的 Jacobi 行列式为 $\pdv{(T,X)}{(t,x)}=Ax$，恰在 $x=0$ 失去可逆性；奇性来自坐标系而非时空。Schwarzschild 坐标在 $r=2M$ 处也有类似问题，因而可先借 Rindler 系说明如何越过坐标边界。
 
-若时空 $(\mathcal M,g)$ 可等距嵌入更大的时空 $(\widetilde{\mathcal M},\tilde g)$，且其像为真子集，就称后者是前者的\textbf{延拓}(extension)；不能再作这种延拓的时空称为\textbf{最大延拓}(maximal extension)。坐标变换本身不会增加时空点，但新坐标若使度规在原边界处保持非退化，便可将其定义域继续扩大，从而显露出原坐标域的延拓。
-
-\textbf{测地完备性}(geodesic completeness)是另一概念：若每条最大测地线的仿射参数均可取遍 $\R$，时空便是测地完备的。测地线在有限仿射参数处中止，可能只是因为坐标域或时空区域取得太小；若延拓后可以继续，则原来的不完备并非真实奇性。若时空已不可延拓而仍有不完备测地线，才表明存在不能用换坐标补入的时空奇性。
-
 现以类光测地线作为坐标线。令 $\d s^2=0$，得 $\d t=\pm\d x/(Ax)$。相应地定义 Rindler 类光坐标 $u,v$ 及闵氏类光坐标 $U,V$：
 \begin{align*}
     v&=t+\frac{1}{A}\ln(Ax),&u&=t-\frac{1}{A}\ln(Ax),\\
@@ -483,7 +479,7 @@ B 区中所有指向未来的类时、类光曲线最终都到达 $r=0$；W 区�
 
 \subsection{Penrose 图}
 
-Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐标处。若只关心因果结构，可再作共形变换，将整个时空压缩到有限图形中。具体说，在物理时空 $(\mathcal M,g)$ 上取正函数 $\Omega$，令 $\tilde g=\Omega^2g$；由于 $\tilde g_{\mu\nu}k^\mu k^\nu=\Omega^2g_{\mu\nu}k^\mu k^\nu$，类光方向及光锥均不改变。若 $\Omega$ 在扩大的流形边界上趋于零，而 $\tilde g$ 可光滑延伸至该边界，就称所得构造为\textbf{共形紧化}(conformal compactification)，其有限图示称为\textbf{Penrose 图}。
+Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐标处。若只关心因果结构，可再作共形变换，将整个时空压缩到有限图形中。具体说，在物理时空 $(M,g)$ 上取正函数 $\Omega$，令 $\tilde g=\Omega^2g$；由于 $\tilde g_{\mu\nu}k^\mu k^\nu=\Omega^2g_{\mu\nu}k^\mu k^\nu$，类光方向及光锥均不改变。若 $\Omega$ 在扩大的流形边界上趋于零，而 $\tilde g$ 可光滑延伸至该边界，就称所得构造为\textbf{共形紧化}(conformal compactification)，其有限图示称为\textbf{Penrose 图}。
 
 球对称时空的 Penrose 图只画 $(t,r)$ 所张成的径向二维商空间，每个内部点实际代表一个对称 2-球。对 Kruskal 类光坐标作
 \[
@@ -675,7 +671,7 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 
 表观视界是准局域概念，可以由某一时刻的几何求出，但其位置依赖空间切片。事件视界则由整个时空定义：
 \[
-    \mathcal B=\mathcal M\setminus J^-(\mathscr I^+),\qquad
+    \mathcal B=M\setminus J^-(\mathscr I^+),\qquad
     \mathcal H^+=\partial J^-(\mathscr I^+),
 \]
 其中 $\mathcal B$ 是黑洞区。要判断一束光最终能否到达 $\mathscr I^+$，原则上必须知道时空的全部未来。因此事件视界可以穿过局部曲率有限、尚未出现陷获面的区域。在球对称坍缩图中，它从正则中心发出，穿过星体表面后成为外部的 $r=2M$ 类光超曲面。

@@ -475,7 +475,7 @@ $p^\mu=\eta^{\mu\nu}p_\nu=m U^\mu$ 称为\textbf{4-动量}。
 模方为 $A^\mu A_\mu=\gamma^4 \ddot{x}^i\ddot{x}_i+\gamma^6(\dot{x}^i \ddot{x}_i)^2$。
 固有系中 $\dot{x}^i=0$，故 4-加速等于固有系 3-加速。
 
-设质点走世界线 $L$。对它的物理量取坐标分量，相当于用坐标系测量，但若只关心 $o\in L$，实际上可用当时当地测量，而无需参考系和坐标系。设穿过 $o$ 的任意观者 $G$，$o$ 处具有 4-速 $Z^\mu$。$(o,Z)$ 称为一个\textbf{瞬时观者}。原则上还可配备完整的正交归一的矢量 $\{e_I\}_{I=0}^3$，称为\textbf{标架}(tetrad)。
+设质点走世界线 $L$。对它的物理量取坐标分量，相当于用坐标系测量，但若只关心 $o\in L$，实际上可用当时当地测量，而无需参考系和坐标系。设穿过 $o$ 的任意观者 $G$，$o$ 处具有 4-速 $Z^\mu$。$(o,Z)$ 称为一个\textbf{瞬时观者}(instantaneous observer)。原则上还可配备完整的正交归一的矢量 $\{e_I\}_{I=0}^3$，称为\textbf{标架}(tetrad)。
 惯性系 $\{x\}$ 下 $\delta^\mu_I = e_I^\mu$ 也是一种标架。
 与 $Z^\mu$ 正交的矢量称为 $Z^\mu$ 的\textbf{空间矢量}(spatial vector)。
 $L$ 的 4-速设 $U^\mu$ 关于 $(o,Z)$ 的 \textbf{3+1 分解}为 $U^\mu = A Z^\mu + w^\mu$，其中 $w^\mu$ 是空间矢量，则 $A=-U^\mu Z_\mu = -\eta_{\mu\nu}U^\mu\delta^\nu_0 = U^\mu\delta^0_\mu = U^0$。故 $L$ 在 $(o,Z)$ 所测的 Lorentz 因子为 $\gamma=-U^\mu Z_\mu$。空间分解为 $U^\mu - U^0 Z^\mu = U^\mu + U^\nu Z_\nu Z^\mu$ 可记 $h^\mu{}_\nu U^\nu$，
@@ -1188,7 +1188,7 @@ $\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵�
 为了满足不变性，尝试用度规吸收掉行列式。
 记度规在 $\{x\}$ 系的行列式是 $g:=\det(g_{\mu\nu})$。对上式取行列式有
 \[g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\det(\pdv{\xi^\alpha}{x^\mu})^{2},\]
-可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差）。由坐标变换固有性（或只关心绝对值），
+可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差 $\pm 2$）。由坐标变换固有性（或只关心绝对值），
 \eq{
     S=\int\d[4]{\xi} \Lag = \int\d[4]{x} \det(\pdv{\xi^\alpha}{x^\mu}) \Lag = \int\d[4]x\sqrt{-g}\,\Lag.
 }
@@ -1237,10 +1237,8 @@ $g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu
 理解子系统必须且可以使用孤立系统，否则讨论任何客体时都须考虑整个宇宙的作用，结果一事无成。}。
 研究时坐标系可取为与场源共动，比如地面系或某个遥远观者所尽可能构造的坐标系。
 注意孤立系统各不影响，因而所关心场源的外引力场很弱，则该系近似为惯性系的余地很大。
-并且，当远离所关心的孤立系统时，引力场是\textbf{渐弱的}，即任取某种距离 $r$（如欧氏距离）后有 $g_{\mu\nu}=\eta_{\mu\nu}+O(r^{-1})$。
-当然，也可直接考虑的场源质量较小。
-这样 $h_{\mu\nu}$ 为小量（或记 $|h_{\mu\nu}|\ll 1$）。
-这称为\textbf{线性近似}。我们能在 $\eta_{\mu\nu}$ 的惯性系下将引力近似解释为 $h_{\mu\nu}$。
+并且，当远离所关心的孤立系统时，引力场是\textbf{渐弱的}，比如场源质量较小，这样 $h_{\mu\nu}=g_{\mu\nu}-\eta_{\mu\nu}$ 为小量，记 $|h_{\mu\nu}|\ll 1$。
+此称\textbf{线性近似}。我们能在 $\eta_{\mu\nu}$ 的惯性系下将引力近似解释为 $h_{\mu\nu}$。
 度规逆满足 $g^{\mu\nu}g_{\nu\lambda}=\delta^\mu_\lambda$，假设 $g^{\mu\nu} = \eta^{\mu\nu} + k^{\mu\nu}$。记 $h^{\mu\nu} := \eta^{\alpha\mu}\eta^{\beta\nu}h_{\alpha\beta}$，
 代入有 $k^{\mu\nu} = -h^{\mu\nu} + O(h^2)$，因此一阶上 $g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu}$。由于所考虑的物理量 $T^{\cdots}$ 几乎使用 $h_{\mu\nu}$ 构造，属于 $O(h)$，因此升降指标 $g_{\mu\nu} T^{\nu\cdots} = \eta_{\mu\nu} T^{\nu\cdots} + O(h^2)$，即相当于用 $\eta_{\mu\nu}$ 升降。这包括 $h_{\mu\nu}$ 自身的升降，当然例外也正是 $g^{\mu\nu} \ne \eta^{\alpha\mu}\eta^{\beta\nu}g_{\alpha\beta}$。
 考虑无穷小变换 $\delta x^\mu=x'^\mu-x^\mu=\epsilon^\mu(x)$（主动观点的单参微分同胚），则（以下均省略 $O(\epsilon^2)$）
@@ -1490,7 +1488,7 @@ R_{\mu\nu}^{(2)} = -\frac{1}{2} g^{\alpha\beta} g_{\mu\nu,\alpha\beta} + g^{\alp
 \eq{
     g^{\alpha\beta} \p_\alpha \p_\beta g_{\mu\nu} = N_{\mu\nu}(g, \p g) + 2\kappa\left(T_{\mu\nu}-\frac12 g_{\mu\nu}T\right),\quad N_{\mu\nu} := 2Q_{\mu\nu}.
 }
-偏微分方程常见类型有椭圆型方程（如 Poisson 方程）、抛物型方程（如热传导方程）和双曲型方程（如波动方程）。考虑到 Lorentz 度规的号差，上述方程组则属于\textbf{拟线性}(quasilinear)\textbf{波动方程}。
+偏微分方程常见类型有椭圆型方程（如 Poisson 方程）、抛物型方程（如热传导方程）和双曲型方程（如波动方程）。考虑到度规号差，上述方程组则属于\textbf{拟线性}(quasilinear)\textbf{波动方程}。
 
 双曲性带来两个重要话题。第一是 Cauchy 适定问题，也即动力学问题。\textbf{适定性}是指给定适当的\textbf{初值条件}（某 $\Sigma_t$ 上的 $g_{\mu\nu},g_{\mu\nu,0}$），必存在唯一的解。换言之，给定初值后，研究场方程能否确定时空度规的未来演化。首先由无散性 \eqref{eq:Bianchi} 得
 \[\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \{^\mu_{\lambda\nu}\} G^{\lambda\nu} - \{^\nu_{\lambda\nu}\} G^{\mu\lambda},\]
@@ -1550,7 +1548,8 @@ $t_{\mu\nu}$ 称为\textbf{引力场能动赝张量}。
 当然，弱场时 $h_{\mu\nu}$ 很小，故把 $t_{\mu\nu}$ 包括在 $(T_{\mu\nu} + t_{\mu\nu})$ 里，不会严重影响我们对物理系统能动量的认识。
 赝张量之义是指不广义协变：显然，一点处局域惯性系使 $h,\p h = 0$，换言之 $G_{\mu\nu}=G_{\mu\nu}^{(1)}$，于是 $t_{\mu\nu}=0$。
 但 $t_{\mu\nu}$ 至少是 Lorentz 张量，故 $P^\lambda = \int \d[3]{x} (T^{0\lambda} + t^{0\lambda})$ 对封闭系统是 Lorentz 恒定张量。
-渐近平直给出\footnote{其实可只要求 $h_{\mu\nu}$ 渐近为零，而在离产生引力场的有限源很远的地方，$T_{\mu\nu}$ 约为零，而 $t_{\mu\nu}$ 是 $h^2$ 量级，故 $(T_{\mu\nu} + t_{\mu\nu})$ 限制在有限区域，于是根据场方程我们重新得到 $h_{\mu\nu}=O(r^{-1})$。} $h_{\mu\nu}=O(r^{-1})$，而 $t_{\mu\nu}$ 领头阶就已含 $R^{(2)}_{\mu\nu} \sim h \p^2 h + (\p h)^2$，更高阶无非继续乘 $h$，说明 $t_{\mu\nu}=O(r^{-4})$，于是 $P^\lambda\sim \int \d{r} 4\pi r^2 t^{0\lambda} \sim \int \d r/r^2$ 收敛。所以选择渐近平直惯性系很关键：若 $g_{\mu\nu}$ 渐近趋于平直度规的球坐标系表达，也就是\footnote{注意 $\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。欧氏度规取 $r=R$ 得球面度规 $\d\ell^2_S=R^2\d\Omega^2$。超曲面度规与投影映射的关系见 \S\ref{sec:Gauss}。}
+渐近平直给出 $h_{\mu\nu}$ 渐近为零，在离产生引力场的有限源很远的地方 $T_{\mu\nu}$ 约为零，而 $t_{\mu\nu}$ 是 $h^2$ 量级，故 $(T_{\mu\nu} + t_{\mu\nu})$ 限制在有限区域。即任取某种距离 $r$，如欧氏距离 $r^2=x^2+y^2+z^2$。于是根据场方程得 $h_{\mu\nu}=O(r^{-1})$。
+而 $t_{\mu\nu}$ 领头阶就已含 $R^{(2)}_{\mu\nu} \sim h \p^2 h + (\p h)^2$，更高阶无非继续乘 $h$，说明 $t_{\mu\nu}=O(r^{-4})$，于是 $P^\lambda\sim \int \d{r} 4\pi r^2 t^{0\lambda} \sim \int \d r/r^2$ 收敛。所以选择渐近平直惯性系很关键：若 $g_{\mu\nu}$ 渐近趋于平直度规的球坐标系表达，也就是\footnote{注意 $\Omega$ 不是立体角(solid angle)，立体角满足的是 $\d\Omega=\sin\theta \d\theta\d\phi$。欧氏度规取 $r=R$ 得球面度规 $\d\ell^2_S=R^2\d\Omega^2$。超曲面度规与投影映射的关系见 \S\ref{sec:Gauss}。}
 \eq{
     \d s^2 = -\d t^2 + \d\ell^2,\quad \d\ell^2=\delta_{ij}\d x^i\d x^j=\d r^2+r^2\d\Omega^2,\quad \d\Omega^2:=\d\theta^2+\sin^2\theta\,\d\phi^2.
 }
@@ -1588,7 +1587,7 @@ $R$ 只是有效的取法，还可考虑 $R_{\mu\nu} R^{\mu\nu},R_{\mu\nu\sigma\
 人们逐渐意识到，目前的理论都是某种尚未发掘的基本规律的低能情形。
 现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
 
-广义相对论有诸多自身缺陷，比如 \S\ref{sec:bh-sing} 所示的奇异性，故必然需要修改。经典的修改方案称为\textbf{修改理论}。
+广义相对论有诸多自身缺陷，比如 \S\ref{sec:bh}、\S\ref{sec:Hawking} 所示，故必然需要修改。经典的修改方案称为\textbf{修改理论}。
 而物质的量子理论如此成功，其余相互作用都得以描述，我们更多希望借鉴量子理论，称为\textbf{量子修正引力理论}，简称\textbf{量子引力}。
 这一努力是艰难的。首先，引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。另一方面，一个量子引力理论，当然要包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的 Planck 长度 $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着时空涨落的特征尺度在 Planck 长度的量级。不必说，以当代实验技术难以观测。
 这意味着我们失去了部分准绳，那么各种量子引力理论层出不穷便也正常。目前多用极端天体、早期宇宙学观测所获数据来筛选理论。
@@ -1864,7 +1863,7 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 
 %% 二阶变分
 
-\subsection{黑洞及奇性}\label{sec:bh-sing}
+\subsection{黑洞}\label{sec:bh}
 
 \textit{观测结果建议}理想质点的引力场呈空间球对称(spherical symmetry)：以质点为空间坐标原点，存在某种坐标系 $\{\bar t,\bar r,\theta,\phi\}$，在变换 $\theta\mapsto -\theta$ 或 $\phi\mapsto -\phi$ 都保持度规形式（因而 $g_{02}=g_{03}=g_{12}=g_{13}=g_{23}=0$），并且 $\Sigma_{\bar t}$ 内任意 $\bar r$ 球面度规为 $K(\bar t,\bar r)\d\Omega^2$，
 其余分量只与 $\bar t,\bar r$ 有关：
@@ -1883,7 +1882,7 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 故等价说法是存在\textbf{超曲面正交}类时 Killing 矢量场。
 Schwarzschild 度规显然静态，取 $\xi = \pdv*{t}$ 即可。
 
-此解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散，即行列式 $g$ 为零。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
+此解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散，即行列式 $g$ 为零。奇性发生的时空区域称为\textbf{奇异处}，俗称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。更详细的定义在 \S\ref{sec:causal} 讨论。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
 
 观测结果建议自由落体\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
 假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(-g_{00}|_{r_0})^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
@@ -1896,9 +1895,10 @@ Schwarzschild 度规显然静态，取 $\xi = \pdv*{t}$ 即可。
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
 Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
-计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$，在 $r=2M$ 有意义，在 $r=0$ 发散，故两处的奇性体现出区别。
-既然曲率在 $r=2M$ 处并不奇异，就有可能找到坐标系使度规分量不发散。这种奇性称为\textbf{坐标奇性}或\textbf{假奇性}，可尝试消除。
-$r=0$ 的奇性称\textbf{时空奇性}或\textbf{真奇性}，因为曲率发散与坐标系无关。此点称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。
+计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$，在 $r=2M$ 有意义，在 $r=0$ 发散，故两奇点有区别。
+既然曲率在 $r=2M$ 处并不奇异，就有可能找到坐标系使度规分量不发散。这种奇点称为\textbf{坐标奇点}或\textbf{假奇点}，可尝试消除。
+$r=0$ 的奇点称\textbf{时空奇点}或\textbf{真奇点}，因为曲率发散与坐标系无关。
+视界或内部的曲率可能很大，现实观者会被潮汐力撕扯至毙命，此称\textbf{面条化}。
 
 由球对称性，只需研究 2 维 $\d s^2=-\left(1-{2M}/{r}\right)\,\text d t^2+\left(1-{2M}/{r}\right)^{-1}\text d r^2$。
 于 $(0,r_0)$ 释放自由落体质点 $Z^\mu$，初态 $Z^\mu(r_0)=(1-2M/r_0)^{-1/2}\delta^\mu_0$。
@@ -2011,7 +2011,7 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
     h_{ij}^{\mathrm{TT}}(t,\bm x)\simeq \frac{2}{r}\,\ddot Q_{ij}^{\mathrm{TT}}(t-r).
 }
 
-
+%%
 
 \subsection{引力子}
 
@@ -2028,6 +2028,8 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
     T^{\mu\nu} = \frac{p^\mu p^\nu}{\hbar\omega} \mathscr N,
 \]
 $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面波的结果比较，从而平面波中螺旋度为 $\pm 2$ 的引力子数密度为
+
+%%
 
 \subsection{正则表述}\label{sec:Hamilton}
 
@@ -2412,7 +2414,7 @@ Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清�
 \end{wrapfigure}
 
 Newton 力学的空间转动运动为 $\dot{\bm w}=\bm\omega\times\bm w$，分量写法为 $\dot{w}^i = -\Omega^{ik}w_k$，其中 $\Omega^{ik}:=\omega_{j}\varepsilon^{jik} = -\varepsilon^{ijk}\omega_{j}$。
-类比之，若存在反称 $\Omega_{\mu\nu}$ 使得类时世界线上的矢量 $V^\mu$ 满足
+类比之，若存在反称 $\Omega_{\mu\nu}$ 使得类时线上的矢量 $V^\mu$ 满足
 \eq{
 \Dv*{V^\mu}{\tau}=-\Omega^{\mu\nu} V_\nu,
 }
@@ -2450,104 +2452,64 @@ $\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积�
 %共轭点的几何直观；
 %能量条件和奇性定理提纲。
 
-正则
+以度规为未知量的 Einstein 方程作为局域微分方程，并不能决定时空的整体拓扑性质。这个观点花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。经典广义相对论预设 4 维流形 $M$ 和其上的 Lorentz 度规 $g_{\mu\nu}$，合称\textbf{Lorentz 流形} $(M,g)$，可简记 $M$，作为时空的数学模型。闵氏时空记作 $(\R^4,\eta)=:\R^{1,3}$。
+这里就看出微妙之处：平直性只要求 Riemann 曲率为零，即度规为闵氏，但背景不一定 $\R^4$。圆柱面的内禀曲率就可为零，故甚至可建立圆柱面时空上的狭义相对论。
 
-若曲线 $\gamma$ 上任意点切矢是指向未来的类时或类光矢量（含零元），该线就成为了指向未来因果线(future directed causal curve)。其他定义类似。
+\subsection{奇性}
 
-因果线之所以要包含类光情况，是因为因果关系亦可按光速传递并影响，比如在光缆中传递的信号。然而相对论限制告诉我们，要想借助具有质量的载体传递信息，速度就是小于光速的。
-\begin{definition}[未来]
-    时空点 $p$ 的时序未来(chronological future)定义为集合 $I^+(p)$，其元素 $q$ 满足：存在从$p$ 到 $q$ 的类时世界线。因果未来(causal future) $J^+(p)$ 只需再包括类光情况（含零元）。相应的过去集合符号将 $+$ 改为 $-$。
-\end{definition}
-\begin{definition}[因果菱形]
-    从 $p$ 到 $q$ 的因果菱形(causal diamond)或因果核 $D_p^q$ 是指 $J^+(p)\cap J^-(q)$。
-\end{definition}
+在其他理论中，物理量的发散只是其自身的奇性。但在广义相对论中，度规兼具着物理场和背景时空场的双重身份。时空模型如果选用 Lorentz 流形，按定义本来就应该配好度规，因此奇点 $O\subset M$ 虽然在 $M$ 上，但是否应归纳给“时空”就成了微妙的问题。坚持这个模型，只能将时空定义为 $(M\backslash O,g)$，那奇点当然不在时空中。
+所以我们看到，奇性至少说明存在被删去的区域 $O$，戏称窟窿或洞，但这又要如何判断？
 
-\begin{theorem}
-    从 $p$ 到 $q$ 的所有指向未来因果线在时空中扫出的区域含于 $D_p^q$ 。
-\end{theorem}
-\begin{proof}
-    假设 $p,q$ 间存在并不完全落在 $D_p^q$中的因果线，不落在 $D_p^q$ 的点仍同 $p,q$ 间存在因果线，因而又属于 $J^+(p),J^-(q)$，矛盾。
-\end{proof}
-要想完全仅用可导曲线扫出 $D_p^q$ 是不可能的，因为很明显 $\partial D_p^q$ 就是不可导的，但它确实似乎是一条物理经验上“允许”的路径，尽管这样拐角处加速度得“无穷大”才可使速度突变\footnote{这种“碰撞”理想模型的加速度符合 \textit{Dirac $\delta$ 分布}。}。在现实情况中，实际刚体的分子微扰将反而使近似宏观现象可导，甚至是光滑的，因而很多情况下可直接假定模型具有极其优良的性质，只不过这不太符合数学家的癖好。少数情况，如讨论时空奇点时，则有必要讨论许多极端情形。下面给出 Penrose 所发明的一个有用概念：
-\begin{definition}[旅程]
-    一个旅程(trip)或旅途就是一条“分段类时测地线”，即由有限段的测地世界线连接而成的连续曲线。这样连接点处允许不可导。“分段因果测地线”称为因果旅程。
-\end{definition}
-可以证明，如果用分段的类时测地线替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的\footnote{早期证明由 Penrose 给出，一旦在补充少量知识后，证明将非常通俗。}。此后要想讨论一般的类时世界线，就可直接替代为旅程（指向未来因果线对应替换为因果旅程），这将大大地简化各类话题的数学细节。总之，可导曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
+Misner, Hawking, Penrose 等人提出如下办法。
+时空上的曲线是世界线。曲线是参数化的连续映射 $\gamma:I\to M$，取值范围 $I\subset\R$ 称为参数区间。对测地线 $\gamma$，方程 $T^\mu\nabla_\mu T^\nu=0$ 给出仿射参数 $\lambda$，故总可默认测地线做了仿射参数化 $\gamma(\lambda)$。
+一条类时测地线段，只经历有限的固有时，也就是它的区间 $I\ne \R$ 有限，这只是因为还没进行延伸。许多时候，区间有限的测地线总可进行延伸，技术上只需按测地线方程继续朝两头演化即可。对于一条测地线 $\gamma:I\to M$，如果不存在更长 $I'\supsetneq I$ 的测地线 $\gamma'$ 使 $\forall \lambda\in I$ 有 $\gamma'(\lambda)=\gamma(\lambda)$，则说明 $\gamma$ 已不可无限制延伸，称\textbf{不可延}(inextendible)或\textbf{最大}(maximal)测地线。尽可能延伸后，区间仍不能成为 $\R$，这才说明的确可能存在奇性。
+仿射参数区间不是 $\R$ 的最大测地线称\textbf{不完备}(incomplete)测地线。存在不完备测地线，时空便\textbf{测地不完备}，否则称\textbf{测地完备}。
+我们已看到，黑洞的内向测地线可以穿过 $r=2M$，但会在有限仿射参数内到达 $r=0$ 而消失，这条线即使延伸，仿射参数仍不可取遍 $\R$。
+然而，可人为制造不完备性，比如挖去原点 $M=\R^4\backslash\{0\}$，那 $(M,\eta)$ 当然测地不完备，却不愿意称之“奇异”，因为 $M$ 只要稍微扩展一下就可以补成 $\R^4$，$(\R^4,g)$ 是无奇性的闵氏时空。
 
-时空
+因此我们要加上一个限制，也就是时空本身也不能扩展。设流形 $(M,g),(N,h)$，$\dim M=m,\dim N=n$。映射 $\phi:M\to N$，可取各自坐标系写作 $y^\mu=\phi^\mu(x)$。Jacobi 矩阵 $J=(\pdv*{\phi^\alpha}{x^\mu})$ 是 $n\times m$ 矩阵，因而秩 $\rank J\leqslant\min(n,m)$。若处处 $\rank J=m$，可确保不会有降维压扁，称 $\phi$ 为\textbf{浸入}(immersion)，这也使 $m\leqslant n$。若浸入 $\phi$ 诱导出的 $\phi:M\to\phi[M]$ 是双向连续的双射（即同胚），可确保不发生奇怪粘连，则称\textbf{嵌入}(embedding)，记 $M\hookrightarrow N$。若进一步有
+\eq{
+    g_{\mu\nu}(x) = h_{\alpha\beta}(\phi(x)) \pdv{\phi^\alpha}{x^\mu}\pdv{\phi^\beta}{x^\nu} \iff h_{\alpha\beta}(y)\d y^\alpha\d y^\beta = g_{\mu\nu}(x)\d x^\mu\d x^\nu,
+}
+则称\textbf{等距嵌入}，这样能保持 $M,\phi[M]$ 几何结构一致。
+若时空 $(M,g)$ 可按 $\phi$ 等距嵌入于 $(\widetilde{M},\tilde g)$，且 $\phi[M]\subsetneq\widetilde{M}$，就称后者是前者的\textbf{延拓}(extension)。
+不存在延拓的时空称\textbf{不可延拓}或\textbf{最大延拓}。由于类空线不是任何粒子的世界线，因而就算存在不完备类空测地线，时空仍然谈不上奇异。如此，
+\begin{center}
+    \tcbox{
+        \textbf{奇性} \quad 不可延拓时空中，存在不完备的因果测地线。
+    }
+\end{center}
+测地线在有限仿射参数处中止，可能只是因为时空区域取得太小。在延拓后，原本看似不可延的测地线可以继续延伸，则原时空的不完备性并非真实奇性。同理，坐标奇性是人为选择坐标系造成的。
+寻找坐标系来消除坐标奇性时，坐标变换本身不增加时空点，但新坐标系可能使度规在坐标奇点不再发散，便可将坐标覆盖域扩大，从而延拓时空。若时空已不可延拓而仍有不完备测地线，才表明存在无法用坐标变换填补的时空奇点。
 
+这一定义仍不完美。
+不加“不可延拓”限制，则存在 $\R^4\backslash\{0\}$ 这种人为构造但不应称奇异的例子。加了限制，又会漏掉这样一种奇异：Geroch 构造了一种不可延拓的因果测地完备时空，但存在非测地的最大类时线，其固有时有限、4-加速大小有界。
+并且，测地不完备本就不是判断洞的完美办法，因为存在没有洞的测地不完备时空。但除此之外，上述定义仍然好用，最关键的是便于我们判断哪些条件会导致奇点。
 
-参考系要求时空至少在某一开域 $U$ 的时间定向性：
+很多奇异现象与曲率发散有关。但如果这种曲率发散只在无限远发生，仍然不应视作奇异时空。因此必须强调要沿不完备测地线趋于奇点，来观察曲率。
+用曲率张量、度规和协变导数来构造\textbf{标量多项式}(scalar polynomial, s.p.)，若存在一个标量多项式，沿不完备测地线发散，称为\textbf{s.p. 曲率奇性}。沿测地线平移的标架场称为\textbf{平移基底}(parallelly propagated basis)，若曲率、协变导数在任意平移基底的存在发散分量，则称\textbf{p.p. 曲率奇性}。s.p. 曲率奇性蕴含 p.p. 曲率奇性，反之不然。
+不存在曲率奇性的时空仍可能测地不完备（奇异）。
 
-规定参考系矢量场指向未来
+\subsection{时间定向}
 
-取号差 $+2$。取一 Lorentz 流形 $(M,\bm g)$ 及其切丛 $TM$。对某点 $p\in M$，若矢量 $\bm v$ 的模方 $\bm v \cdot \bm v$ 为正、负或零，那就分别称为\textbf{类空}、\textbf{类时}或\textbf{类光}矢量。所有类光矢量之集 $C_N$ 构成 $T_p M$ 的子集，称为\textbf{光锥}。
+逆变矢量也称切矢，事件 $p\in M$ 处全体切矢构成该点\textbf{切空间}(tangent space) $T_p M$。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}(covector)。\textbf{余切空间}可记 $T_p^* M$。
+某点的光锥是指类光矢量之集 $C_p \subset T_p M$。我们曾说过，类时和非零类光矢量分为两类，一类指向未来，一类指向过去。指向未来矢量之集称\textbf{指向未来部分} $\tilde F_p\subset T_p M$，指向过去矢量之集 $\tilde P_p$ 称\textbf{指向过去部分}。未来光锥是表面 $C_p^+=\p\tilde F_p$，过去光锥则是 $C_p^-=\p\tilde P_p$。
+孤立讨论 $T_p M$ 固然可任意指定 $C_p^+$（或 $\tilde F_p$），但在讨论全时空时，物理上期望这种指定在从一个时空点到另一时空点的过渡中连续，这叫做\textbf{时间定向}(time orient)。但并非所有流形都能做到这一点：
+考虑圆柱面 $S^1\times\R$，设度规这样给定：沿着任意 $S^1$ 一圈，其上光锥将均匀地旋转 $180^\circ$。这样便无法连续指定 $\tilde F$，因为若尝试按此指定，则一定存在某母线 $\R$ 上的 $\tilde F$ 有 $180^\circ$ 的突变。
+这样的流形就没有时空的物理意义。
+如果流形存在连续类时矢量场，就可把其在每点的值所在部分指定为 $\tilde F$，进而使得指定是连续的；反之也可证，\textbf{时间可定向}(time orientable)流形必存在连续类时矢量场，但证明从略。于是，“存在连续类时矢量场”等价于时间可定向性。
+谈及时空其实总默认是时间可定向 Lorentz 流形，并认为是\textbf{已作时间定向的}(time oriented)。
+时空的未来光锥场构成\textbf{时空因果结构}。等价地，可研究类光测地线族。
+可以看到，此前称呼的观者、类时线总是默认 4-速归一且指向未来，但准确称呼是指向未来类时线。
+指向未来因果线中可以存在零矢量。
+因此参考系要求时空至少在某一开域的时间定向性。
 
-指向未来矢量所构成的子集 $\tilde F_p\subset T_p\R^{1,3}$ 称\textbf{指向未来部分}，另一部分 $\tilde P_p$ 同理称\textbf{指向过去部分}。
-
-任一事件 $p$ 的全体非零类时和类光矢量可分为此二大类，然而无论弯曲还是平直，一点的切空间当然不受影响，因此弯曲 Lorentz 流形中任一点的非零类时、类光矢量的集合也可类似地分为两大部分。
-
-只孤立地讨论 Lorentz 流形一点 $p$ 固然可任意指定，但在讨论全时空时，物理上有理由期望这种指定在从一个时空点到另一时空点的过渡中是连续的。
-
-当然，并非所有 Lorentz 流形都能做到这一点：
-    \begin{example}
-        考虑用圆柱面 $S^1\times\R$ 表示时空，设度规这样给定：沿着任意 $S^1$ 一圈，其上光锥将均匀地旋转 $180^\circ$。这样便无法连续地指定$\tilde F$，因为若尝试按此指定，则一定存在某母线 $\R$ 上的 $\tilde F$ 有 $180^\circ$ 的突变。不妨认为这样的 Lorentz 流形没有物理意义。
-    \end{example}
-\begin{definition}
-    能连续地指定未来光锥的 Lorentz 流形叫\textbf{时间可定向的}(time orientable) Lorentz 流形。
-\end{definition}
-\begin{theorem}
-    存在连续类时矢量场的 Lorentz 流形等价于时间可定向 Lorentz 流形。
-\end{theorem}
-\begin{proof}
-    充分性上，设 Lorentz 流形存在一个连续的类时矢量场，就可把其在每点的值所在部分指定为指向未来部分，进而使得指定是连续的。必要性证明需要其它数学知识，且可见 Penrose(1972)。
-\end{proof}
-
-
-注意，谈到物理上合理的时空一般还要求时间可定向条件，并认为每一时空点都已作了这样的连续指定，也就是\textit{时间定向的(time oriented)}，即只要可定向，那么已规定好了的就是时间定向的。不过考虑到有时玩具模型也会在称呼上用“时空”，因此 Lorentz 流形的定义不必太苛刻。若严苛一点就是：
-    \begin{definition}
-        \textbf{时空}通常强调是\textbf{时间定向时空}，即已做时间定向的时间可定向 Lorentz 流形。
-    \end{definition}
-    类时矢量场结合度规可确定出光锥，因此时间定向又可用 $C_N$ 场表示。换句话说，每一点的（未来）光锥决定了时空结构（准确说是因果结构）。一点光锥称局部的，而光锥场就称整体的。因此大尺度宇观结构需要研究其上光锥场。
-
-    有一个重要的例子：
-    \begin{example}
-        \textbf{闵氏时空}是 $(\R^4,\upeta)$（记作 $\R^{3+1}$），其中 $\R^4$ 是指在 4 维实空间基础上，赋予了通常拓扑 $\mathcal T_u$ 和最大非怪异图册 $\{(O_\alpha,\psi_\alpha)\}$ 的光滑流形；$\upeta$ 称为\textbf{闵氏度规场}，其定义是：$\R^4$ 的自然坐标系 $\{x^\mu\}$（这当然是 $\{(O_\alpha,\psi_\alpha)\}$ 中的一个图）在切丛里导出的坐标基底场，应使 $\upeta$ 场的分量在 $\R^4$ 上处处等于 $\eta_{\mu\nu}$，即
-        \eq{
-            \upeta=\eta_{\mu\nu}\d x^\mu\otimes\d x^\nu.
-        }
-    \end{example}
-
-
-
-    排除怪异图册是为排除那些在物理上不太可能的微分结构（如怪异 $\R^4$）。通常说的平直时空是指 $\R^{3+1}$。但“平直性”$\iff$ Riemann 内禀曲率张量为零张量，因此严格来说平直时空只要求配上 $\upeta$，无关于时空背景 $M$。
-
-\begin{definition}
-    \textbf{世界线}指 $(M,g)$ 上的曲线或路径\footnote{注意，虽然狭义相对性原理限制了我们只在惯性系讨论物理，但现代理论认为狭相的研究背景就是 $\R^{3+1}$，因此可用现代几何语言讨论非惯性运动（进而非惯性系），即任意世界线。在一般的时空上更是可以谈及，且结合广义协变性，甚至是任意坐标系。毕竟坐标是对物理定律描述的冗余，类似于规范不变（但不同）。}。
-\end{definition}
-
-下面研究所谓的类时世界线。指向未来的切矢总满足 $\dv*{t}\cdot\bm e_0<0$，其实亦即 $\text dx^0/\text d t>0$，我们一般默认类时世界线上参数是这样选择的（显然能使参数单调）。准确来说，还要规定参数是均匀的，即保持切矢模长。这种参数称为仿射参数。甚至可以保证切矢归一：设 $C: I \rightarrow M$ 是类空或类时线（类光线线长总为零，不必讨论），则线上任一点 $C(t')$ 的切矢 $\dv*{t'}$ 的模长是 $t'$ 的函数。任意指定线上一点 $C\left(t_0\right)$ 作为线长测量零点，则 $[t_0,t]$ 对应曲线段的线长 $L=\int_{t_0}^t\sqrt{|g(\partial_{t'},\partial_{t'})|}\mathrm{d} t^{\prime}$ 是关于 $t$ 的函数。$L$ 本身也可充当该线的参数，称为\textit{线长参数}。由 $\mathrm{d} L=\sqrt{|g(\partial_{t'},\partial_{t'})|}\mathrm{d} t^{\prime}$ 可知，线长参数给出的切矢有单位长。
-
-\begin{definition}
-    若一段类时线的切矢均指向未来，且其参数为线长参数，则称为\textbf{类时世界线}（或\textbf{指向未来类时线}）。在物理上，它的像与某个质点历程中的全部事件之集等同。
-\end{definition}
-\begin{definition}
-    一段类时世界线的线长称为该过程\textbf{所经历的固有时}。对 $\left[\xi_{0},\xi_{1}\right]$ 中的任意 $\xi$，考虑类时世界线 $\alpha$ 从 $\alpha\left(\xi_{0}\right)$ 到 $\alpha(\xi)$ 所经历的固有时
-    \eq{\tau(\xi)=\int_{\xi_{0}}^{\xi} \sqrt{-g(\partial_\zeta,\partial_\zeta)} \mathrm{d} \zeta,}
-    则 $\tau={\tau}(\xi)$ 总存在逆函数 $\xi=\xi(\tau)$，所以 $\alpha$ 可用 $\tau$ 来参数化。该参数正是类时世界线的线长参数，故又称\textbf{固有时参数}。
-\end{definition}
-观者（其世界线类时）所配备的标准钟的读数是固有时的物理性定义，无论零点如何，任意两读数的差总是等于此过程的线长。
-
-
-
-
-\subsection{可定向性}
-
-\subsection{因果线}
-
-\subsection{因果条件}
-
-
+时空点 $p$ 的\textbf{时序未来}(time-ordered future)或\textbf{编时未来}(chronological future)定义为
+\eq{
+    I^+(p) := \{q\in M:\text{存在从$p$ 到 $q$ 的指向未来类时线}\}.
+}
+\textbf{因果未来} $J^+(p)$ 只需改成因果线。相应的过去集合符号将 $+$ 改为 $-$。
+从 $p$ 到 $q$ 的\textbf{因果菱形}(causal diamond)或\textbf{因果核}是指 $D_p^q:=J^+(p)\cap J^-(q)$。
 
 \begin{figure}[h!]\centering
     \begin{tikzpicture}[scale=1.5]
@@ -2555,11 +2517,12 @@ $\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积�
     \draw[dashed] (1,0) arc [start angle=0, end angle=180, x radius=1, y radius=0.13];
     \draw (1,0) arc [start angle=0, end angle=-180, x radius=1, y radius=0.13];
     \end{tikzpicture}
-    \caption{3 维平直时空的因果菱形。可见其形似一颗“钻石”，而其 2 维截面为“菱形”状（准确说呈平行四边形）。英语世界皆以“diamond”代之。}
+    \caption{闵氏时空的因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
 \end{figure}
 
+任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但想完全仅用可导曲线扫出 $D_p^q$ 是不可能的，很明显 $\partial D_p^q$ 就不可导。
+分段测地线是由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。可以证明，如果用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的\footnote{早期证明由 Penrose 给出，一旦在补充少量知识后，证明将非常通俗。}。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，可导曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
 
-\subsection{共轭点}
 
 \begin{wrapfigure}{l}{.3\textwidth}
     \centering
@@ -2567,22 +2530,20 @@ $\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积�
     \caption{共轭点}
 \end{wrapfigure}
 
-如图，球面的南北极 $\mathbf N,\mathbf S$ 间存在无数等长测地线。从 $\mathbf S$ 出发到 $D$ 的测地线可以是 $\mathbf S A \mathbf N D$。但其长度甚至并非极小。
+两点之间的测地线可能有无数条，这影响着线长是否极大或极小。
+如图，球面置球面度规，南北极 $\mathbf N,\mathbf S$ 间存在无数等长测地线。从 $\mathbf S$ 出发到 $D$ 的测地线可以是 $\mathbf S A \mathbf N D$，其长度并非极小，因为可构造一条长度更小的邻近线段。
+取 $\mathbf S A\mathbf N$ 的邻近测地线 $\mathbf S a\mathbf N$，
+
+\textbf{不可延因果线}
+
+\endinput
+
+正则
 
 
-测地线, 其长度却并非极小, 因其非常邻近的曲线 $s b \cup \gamma$ 比它还短. 测地线 sand 的长度之所以不是极小, 关键在于线上有北极点 $n$, 它与南极点 $s$ “共轭” , 即存在从 $s$ 到 $n$ 的与测地线 $\gamma_1$ “无限邻近” 的测地线 $\gamma_2$ ( “共轭点对” 的准确定义见选读 7-6-3). 
-
-可以证明, 测地线长度取极小值的充要条件是线上不存在共轭点对. 欧氏空间当然没有共轭点对, 因此两点之间直线(段)最短.
+\subsection{因果条件}
 
 
-曲线 $s b \cup \gamma$ 在 $b$ 点不可微, 严格说应在 $b$ 点附近对它 “磨光”, 磨光后的曲线的长度与 $s b \cup \gamma$ 的长度 “要多接近有多接近”.
-
-
-
-地线. 再讨论一般时空. 设 $C$ 是 $p, q$ 间长度极大的类时线，则由定理 3-3-6 可知它是测地线. 然而反过来却未必，因为定理 3-3-6 只保证 $p, q$ 间的类时测地线长取极值, 不保证它是极大 (当然, 由于类光曲线长度为零, 它肯定也不是极小. ). 可以证明，任意时空中类时测地线长为极大的充要条件是线上不存在共轭点对. 
-
-
- 对任意时空中有类时联系的两点: (1)两点间的最长线是类时测地线; (2)两点间的类时测地线未必是最长线(对闵氏时空一定是); (3)两点间没有最短类时线.
 
 
 Cauchy 发展
@@ -2624,7 +2585,7 @@ Cauchy 动力学
     \mathrm{DEC}:\ \rho\geqslant\abs{p}.
 \]
 
-\subsection{Hawking 定理}
+\subsection{Hawking 定理}\label{sec:Hawking}
 
 \section{修改理论}
 
@@ -2918,7 +2879,7 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 诱导度规本质上是将 $g_{\mu\nu}$ 的作用对象限制(restrict)于 $\Sigma$ 的结果，即对任意 $\Sigma$ 的切矢场 $w_1,w_2$ 均有 $\bar g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，若约定 $\bar g_{\mu\nu}$ 只对 $\Sigma$ 作用，那它就是诱导度规。然而，给定一个限制，其延拓无穷多。换言之，若 $\bar g_{\mu\nu}$ 仍然看作背景度规，则满足上式的 $\bar g_{\mu\nu}$ 的形式当然无穷多。
 可找到最方便的延拓。超曲面总有法矢场。
 类空超曲面的法矢类时，类时超曲面的法矢类空。类光超曲面的法矢类光，暂不讨论。取单位法矢 $n^\mu n_\mu = \pm 1$，按推导 \eqref{eq:projection} 的办法可知投影映射为 $h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu$，则 $h_{\mu\nu} = g_{\mu\nu} \mp n_\mu n_\nu$。满足 $\bar g_{\alpha\beta}n^\alpha = 0$ 这一漂亮性质的解只有 $\bar g_{\mu\nu} = h_{\mu\nu}$，故称为诱导度规的\textbf{标准延拓}。
-对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是对偶法矢，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
+对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是\textbf{法余矢}，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
 取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，于是 $\d s^2= \hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu = (1/\hat g^{00})\d\hat t^2+\hat h_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$。
 如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，这称为\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
 
@@ -3118,7 +3079,6 @@ $\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sig
 \[\eval{\Dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}+\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \lim_{\Delta\tau\to 0} \frac{\Delta x^\lambda}{\Delta\tau}=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_{p\to q}}{\Delta\tau},\]
 其中 $V^\mu|_{p\to q}=V^\mu|_p-\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \Delta x^\lambda$。
 可见 $\Dv*{V^\mu}{\tau}$ 是求 $V|_q$ 与 $q$ 处新矢量 $V|_{p\to q}$ 之差。这样 $\D V$ 表为如图。$\delta V$ 为 $V|_{p\to q}, V|_p$ 之差。由上式或图示知 $\delta V^\mu = \d V^\mu-\D V^\mu=-\Gamma^\mu_{\sigma\nu}V^\sigma\d x^\nu$，这便是克氏符项所给出的修正。$V|_{p\to q}$ 其实就是平移移动的结果。为看出这一点，只需令 $V$ 自己就处处按这种方式移动，则 $\Dv*{V^\mu}{\tau}=0$。
-一点处全体切矢构成该点\textbf{切空间}(tangent space)。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}。
 切矢场是给各时空点赋予其相应的切矢，一个切矢是绑定于一点的，故任意两点 $p,q$ 处各自的切矢本无关联。然而给定某 $p,q$ 间之曲线，可通过矢量的平行移动，将两个切空间联系起来。所以 $\cd_\nu$ 称为联络。
 
 \subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
