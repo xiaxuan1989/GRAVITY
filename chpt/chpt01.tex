@@ -1863,6 +1863,41 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 
 %% 二阶变分
 
+现在将 $S=\int\sqrt{-g_{\mu\nu}\d x^\mu\d x^\nu}$ 的变分，看成\textit{任取}类时单参族 $x^\mu(\tau,s)$ 并考察 $s=0$ 处导数。
+仍固定端点 $\tau=p,q$，则 $S^\mu|_p=S^\mu|_q=0$，因此参数 $\tau$ 不能成为单参族中所有线的固有时，只约定是测地解 $x^\mu(\tau,0)$ 的固有时。
+记线元密度 $\ell:=\sqrt{-Z^\mu Z_\mu}$，只在求导后代入 $s=0$，此时 $\ell=1$。
+再简记 $\nabla_Z:=Z^\mu\nabla_\mu,\nabla_S:=S^\mu\nabla_\mu$。Levi-Civita 联络下 $\nabla_SZ=\nabla_ZS$ 则 $\pdv*{\ell}{s}=\nabla_S\ell=-Z_\mu\nabla_ZS^\mu/\ell$，于是
+\begin{align*}
+    \eval{\pdv{\ell}{s}}_{s=0}&=-Z_\mu\nabla_ZS^\mu,\quad
+    \eval{\pdv[2]{\ell}{s}}_{s=0}
+    =-(\nabla_ZS^\mu)(\nabla_ZS_\mu)-(Z_\mu\nabla_ZS^\mu)^2-Z_\mu\nabla_S\nabla_SZ^\mu;\\
+    \eval{\dv{S}{s}}_{s=0} &= \int_p^q\d{\tau}\eval{\pdv{\ell}{s}}_{s=0} = -\eval{S_\mu Z^\mu}_p^q+\int_p^q\d\tau\,S_\mu \nabla_Z Z^\mu=\int_p^q\d\tau\,S_\mu \nabla_Z Z^\mu.
+\end{align*}
+它对任意 $S^\mu$ 为零，当且仅当 $\nabla_Z Z=0$。极值情况尚须考察二阶导数。
+置 $B^\mu:=\nabla_SS^\mu$。协变导数换序及 Riemann 张量的对称性给出
+\eq{
+    Z_\mu\nabla_S\nabla_SZ^\mu
+    =Z_\mu\nabla_ZB^\mu+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa.
+}
+固定端点使 $B^\mu|_p=B^\mu|_q=0$，而基准线满足 $\nabla_ZZ=0$，故 $Z_\mu\nabla_ZB^\mu$ 的积分是为零的边界项。于是
+\eq{
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\nabla_ZS^\mu)(\nabla_ZS_\mu)
+    +(Z_\mu\nabla_ZS^\mu)^2+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa\right].
+}
+做 3+1 分解 $S^\mu=\eta^\mu+fZ^\mu$，其中 $f=-S^\mu Z_\mu$。沿测地线有 $\nabla_ZS^\mu=\nabla_Z\eta^\mu+\p_\tau f Z^\mu$ 和 $Z_\mu\nabla_ZS^\mu=-\p_\tau f$，故前两项中的 $(\p_\tau f)^2$ 正好抵消；曲率项中的类时部分则由 Riemann 张量的反称性消失。综上，二阶结果只依赖横向变分，并可写成\textbf{指标型}(index form)
+\eq{
+\tcbhighmath{
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\nabla_Z\eta^\mu)(\nabla_Z\eta_\mu)
+    +\eta_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu\eta^\kappa\right].
+}
+}
+空间度规正定，故充分短的测地线段上，导数项压过有限的曲率项，于是上式小于零，类时测地线局域地使固有时极大。
+但对充分长的线段则要具体讨论。分部积分并利用端点处 $\eta^\mu=0$，可得
+\eq{
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\,\eta_\mu\left(-\nabla_Z \nabla_Z \eta^\mu+R^\mu{}_{\alpha\nu\beta}Z^\alpha Z^\nu\eta^\beta\right).
+}
+括号为零正是测地偏离方程。因此，若存在非零 Jacobi 场在 $p$ 与 $r$ 同时为零，则称 $r$ 是 $p$ 沿 $\gamma$ 的\textbf{共轭点}(conjugate point)。共轭点尚未出现时，积分正定，$\gamma$ 在邻近类时线中严格极大（重参数化除外）；若终点恰为首个共轭点，则存在上式为零的方向，二阶变分不能判定严格极值；若共轭点已落在 $p,q$ 之间，则可构造上式大于零的变分，$\gamma$ 不再使固有时极大。可见潮汐造成的测地线聚焦，正是类时测地线失去极大性的机制。
+
 \subsection{黑洞}\label{sec:bh}
 
 \textit{观测结果建议}理想质点的引力场呈空间球对称(spherical symmetry)：以质点为空间坐标原点，存在某种坐标系 $\{\bar t,\bar r,\theta,\phi\}$，在变换 $\theta\mapsto -\theta$ 或 $\phi\mapsto -\phi$ 都保持度规形式（因而 $g_{02}=g_{03}=g_{12}=g_{13}=g_{23}=0$），并且 $\Sigma_{\bar t}$ 内任意 $\bar r$ 球面度规为 $K(\bar t,\bar r)\d\Omega^2$，
