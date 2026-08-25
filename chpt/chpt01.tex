@@ -1493,7 +1493,7 @@ R_{\mu\nu}^{(2)} = -\frac{1}{2} g^{\alpha\beta} g_{\mu\nu,\alpha\beta} + g^{\alp
 }
 偏微分方程常见类型有椭圆型方程（如 Poisson 方程）、抛物型方程（如热传导方程）和双曲型方程（如波动方程）。考虑到度规号差，上述方程组则属于\textbf{拟线性}(quasilinear)\textbf{波动方程}。
 
-双曲性带来两个重要话题。第一是 Cauchy 适定问题，也即动力学问题。\textbf{适定性}是指给定适当的\textbf{初值条件}（某 $\Sigma_t$ 上的 $g_{\mu\nu},g_{\mu\nu,0}$），必存在唯一的解。换言之，给定初值后，研究场方程能否确定时空度规的未来演化。首先由无散性 \eqref{eq:Bianchi} 得
+双曲性带来两个重要话题。第一是适定问题，也即 Cauchy 动力学。\textbf{适定性}是指给定适当的\textbf{初值条件}（某 $\Sigma_t$ 上的 $g_{\mu\nu},g_{\mu\nu,0}$），必存在唯一的解。换言之，给定初值后，研究场方程能否确定时空度规的未来演化。首先由无散性 \eqref{eq:Bianchi} 得
 \[\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \{^\mu_{\lambda\nu}\} G^{\lambda\nu} - \{^\nu_{\lambda\nu}\} G^{\mu\lambda},\]
 这不含度规的三阶及更高阶时间偏导，故 $G^{\mu 0}$ 至多只含 $g_{\mu\nu,0}$，即 $G^{\mu 0} =\kappa T^{\mu 0}$ 只能用以约束初值条件，从而动力学方程只剩 $G^{ij} =\kappa T^{ij}$，以确定 $g_{ij,00}$。剩下 $g_{0\mu,00}$ 由坐标条件确定即可，从而可代数或数值地求解方程。详见 \S\ref{sec:Hamilton}。
 第二是\textbf{引力波}。Einstein 本人在 1918 年就关注到方程的波动性，现在我们也的确在 2017 年实验观测到引力波。遗憾的是非线性方程难以求得一般解。有两条途径。
@@ -2079,6 +2079,10 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面�
 
 %%
 
+\subsection{渐近平直时空}
+%共性变换
+%引力能量非定域性
+
 \subsection{正则表述}\label{sec:Hamilton}
 
 Wheeler 的几何动力学主要是指广义相对论的\textbf{哈氏正则表述}。首先需要进行时空整体 3+1 分解，也称\textbf{Arnowitt-Deser-Misner(ADM) 分解}，
@@ -2327,7 +2331,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
 其中 $R_{\alpha\beta\mu\nu}$ 是度规适配有挠联络的 Riemann 曲率。它仍反称于前一对指标 $\alpha,\beta$ 和后一对指标 $\mu,\nu$，但通常不再具有无挠情形下的前后对换对称和第一 Bianchi 对称；Ricci 张量仍按 $R_{\alpha\beta}=R^\mu{}_{\alpha\mu\beta}$ 定义，且一般不再对称。以上指标升降均使用 $g_{\mu\nu}$。这些高阶项体现的是有效场论意义下的可能修正；在本章其余部分若无特别声明，仍回到无挠 Levi-Civita 几何。
 
 \section{参考系理论}
-\subsection{类时线汇的形变}
+\subsection{类时线汇的形变}\label{sec:timelike}
 
 任意矢量 $V^\mu$ 有沿线汇的协变导数 $Z^\nu\cd_\nu V^\mu$。但若只想衡量其相对于固有系的变化，我们需要一种新的沿线导数。做法非常简单。将 $V^\mu$ 分解为 $h^\mu{}_\nu V^\nu- Z^\mu Z_\nu V^\nu$，分别求沿线协变导数，投影到各自的时轴和空间上，再合并即可
 \begin{align}
@@ -2495,12 +2499,7 @@ $\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积�
 
 \section{因果结构}\label{sec:causal}
 
-%时间定向；
-%\(I^\pm,J^\pm\) 与因果菱形；
-%Cauchy 发展与整体双曲性；
-%能量条件和奇性定理提纲。
-
-以度规为未知量的 Einstein 方程作为局域微分方程，并不能决定时空的整体拓扑性质。这个观点花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。经典广义相对论预设 4 维流形和其上的 Lorentz 度规，合称\textbf{Lorentz 流形} $(M,g)$，作为时空的数学模型。闵氏时空记作 $(\R^4,\eta)=:\R^{1,3}$。
+以度规为未知量的 Einstein 方程作为局域微分方程，并不能决定时空的整体拓扑性质。这个观点花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的\footnote{\S\ref{sec:manifold} 对本章所需的数学细节有快速补充。}。经典广义相对论预设 4 维流形和其上的 Lorentz 度规，合称\textbf{Lorentz 流形} $(M,g)$，作为时空的数学模型。闵氏时空记作 $(\R^4,\eta)=:\R^{1,3}$。
 这里就看出微妙之处：平直性只要求 Riemann 曲率为零，即度规为闵氏，但背景不一定 $\R^4$。圆柱面的内禀曲率就可为零，故甚至可建立圆柱面时空上的狭义相对论。
 
 在其他理论中，物理量的发散只是其自身的奇性。但在广义相对论中，度规兼具着物理场和背景时空场的双重身份。时空模型如果选用 Lorentz 流形，按定义本来就应该配好度规，因此奇点 $O\subset M$ 虽然在 $M$ 上，但是否应归纳给“时空”就成了微妙的问题。坚持这个模型，只能将时空定义为 $(M\backslash O,g)$，那奇点当然不在时空中。
@@ -2533,7 +2532,7 @@ Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延�
 用曲率张量、度规和协变导数来构造\textbf{标量多项式}(scalar polynomial, s.p.)，若存在一个标量多项式，沿不完备测地线发散，称为\textbf{s.p. 曲率奇性}。沿测地线平移的标架场称为\textbf{平移基底}(parallelly propagated basis)，若曲率、协变导数在任意平移基底的存在发散分量，则称\textbf{p.p. 曲率奇性}。s.p. 曲率奇性蕴含 p.p. 曲率奇性，反之不然。
 不存在曲率奇性的时空仍可能测地不完备（奇异）。
 
-\subsection{时间定向}
+\subsection{因果线}
 
 点 $p$ 的\textbf{因果锥}是指类时、类光矢量之集 $C_p$。指向未来矢量之集称\textbf{未来因果锥} $C_p^+$，指向过去矢量之集 $C_p^-$ 称\textbf{过去因果锥}。未来光锥是表面 $\p C_p^+$，过去光锥则是 $\p C_p^-$。如此有 $C_p=C_p^+\cup C_p^-\cup\{0\}$。当然，零矢量属于 $C_p^\pm$ 与否只是习惯问题，无伤大雅。\textbf{类时锥}是内部 $C_p^\circ$。
 孤立讨论点 $p$ 矢量固然可任意指定 $C_p^+$，但在讨论全时空时，物理上期望这种指定在从一个时空点到另一时空点的过渡中连续，这叫做\textbf{时间定向}(time orient)。但并非所有流形都能做到这一点：
@@ -2546,11 +2545,11 @@ Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延�
 可以看到，此前称呼的观者、类时线总是默认 4-速连续（$C^1$ 曲线）、归一且指向未来，但准确称呼是指向未来类时线。
 指向未来因果线中可以存在零矢量。
 因此参考系要求时空至少在某一开域的时间定向性。
-时空点 $p$ 的\textbf{时序未来}(time-ordered future)或\textbf{编时未来}(chronological future)定义为
+时空点 $p$、集合 $S\subset M$ 的\textbf{时序未来}(time-ordered future)或\textbf{编时未来}(chronological future)定义为
 \eq{
-    I^+(p) := \{q\in M:\text{存在从$p$ 到 $q$ 的指向未来类时线}\}.
+    I^+(p) := \{q\in M:\text{存在从$p$ 到 $q$ 的指向未来类时线}\},\quad I^+(S) := \bigcup_{p\in S}I^+(p).
 }
-\textbf{因果未来} $J^+(p)$ 只需改成因果线。相应的过去集合符号将 $+$ 改为 $-$。
+\textbf{因果未来} $J^+(p),J^+(S)$ 只需改成因果线。相应的过去集合符号将 $+$ 改为 $-$。
 从 $p$ 到 $q$ 的\textbf{因果菱形}(causal diamond)或\textbf{因果核}是指 $D_p^q:=J^+(p)\cap J^-(q)$。
 \begin{figure}[h!]\centering
     \begin{tikzpicture}[scale=1.5]
@@ -2569,35 +2568,70 @@ $N$ 内任两点间都存在 $N$ 内唯一测地线，此称\textbf{凸邻域}(c
 凸邻域、法邻域之间不互推。Whitehead 证明了总存在\textbf{凸法邻域}，故二者性质都可用到：开邻域内任两点，都有域内唯一测地线，且无共轭点。显然，凸法邻域对域内任点都是凸法邻域。
 可见对于 Lorentz 流形，凸法邻域内的因果结构与闵氏空间中的邻域一样，故也称\textbf{局部闵氏邻域}。
 
+因果传递性如下：
 \begin{itemize}
     \item $r\in I^+(q), q\in I^+(p) \Rightarrow r\in I^+(p)$；
     \item $r\in J^+(q), q\in I^+(p) \Rightarrow r\in I^+(p)$；
     \item $r\in I^+(q), q\in J^+(p) \Rightarrow r\in I^+(p)$。
 \end{itemize}
+证明的关键是如下局部事实：在凸法邻域内，一段指向未来类时测地线与一段指向未来因果测地线首尾相接，不论类时段在前还是在后，都可把折角稍微推开为连接原首尾点的类时线。事实上，在折角处取局域惯性系，设两段切矢分别为 $u^\mu,v^\mu$，其中一者类时、另一者因果。未来因果锥是凸锥，类时锥又是其内部，故 $u^\mu+v^\mu$ 指向未来类时；由连续性，充分短的折线可在凸法邻域内改成类时线。称此为\textbf{推开}(push-up)。
+
+对第一式，分别取从 $p$ 到 $q$、从 $q$ 到 $r$ 的类时旅程，首尾拼接仍是类时旅程，故 $r\in I^+(p)$。
+对第二式，取从 $p$ 到 $q$ 的类时旅程和从 $q$ 到 $r$ 的因果旅程。将后者细分为 $q=q_0,q_1,\ldots,q_n=r$，使每段 $q_iq_{i+1}$ 都含于某凸法邻域。已知存在从 $p$ 到 $q_i$ 的类时旅程时，在其末段上取充分靠近 $q_i$ 的点 $a$；局部推开把 $aq_iq_{i+1}$ 改成类时线，故存在从 $p$ 到 $q_{i+1}$ 的类时旅程。由 $i=0$ 逐次归纳至 $n$，即得 $r\in I^+(p)$。
+第三式同理反向归纳。将从 $p$ 到 $q$ 的因果旅程细分为 $p=q_0,q_1,\ldots,q_n=q$。已知存在从 $q_i$ 到 $r$ 的类时旅程时，在其首段取充分靠近 $q_i$ 的点 $b$；局部推开把 $q_{i-1}q_ib$ 改成类时线，故存在从 $q_{i-1}$ 到 $r$ 的类时旅程。由 $i=n$ 逐次退至 $0$，便得 $r\in I^+(p)$。
+
+时空子集 $A\subset M$ 称为\textbf{非编时集}(achronal set)，若其中不存在可由类时线相连的两点，即对任意 $p,q\in A$ 都有 $q\notin I^+(p)$。记 $I^\pm(A):=\bigcup_{p\in A}I^\pm(p)$，则此定义等价于 $I^+(A)\cap A=\mt$，也等价于 $I^-(A)\cap A=\mt$。
+
+设指向未来因果线 $\gamma:I\to M$，参数沿未来方向递增，并记 $b:=\sup I$。若 $p\in M$ 满足：对 $p$ 的任意开邻域 $O$，都存在 $t_0\in I$，使所有 $t\in I,t>t_0$ 都有 $\gamma(t)\in O$，则称 $p$ 是 $\gamma$ 的\textbf{未来端点}(future endpoint)。等价地，$\lim_{t\to b}\gamma(t)=p$；这要求曲线尾段趋于 $p$，不只是以 $p$ 为聚点。
+$M$ 的拓扑性质给出任意指向未来因果线至多有一个未来端点。
+因果线的未来端点可以不在线上。
+无未来端点的指向未来因果线称为\textbf{未来不可延因果线}。同理有过去不可延因果线。
+原则上，落入奇点的因果线的未来端点就是奇点，但奇点不在时空上，因此仍然未来不可延。
+
+若一条非恒值曲线首尾相接，便称为\textbf{闭合线}。闭合类时线使观者能够回到自身过去，闭合因果线还包括闭合类光线。为逐级排除这类反常，规定如下。
+\begin{enumerate}
+    \item 若不存在闭合类时线，则称时空满足\textbf{编时条件}(chronology condition)。等价地，任意 $p\in M$ 都有 $p\notin I^+(p)$。
+    \item 若不存在非恒值闭合因果线，则称时空满足\textbf{因果条件}(causality condition)。由于恒值因果线使 $p\in J^\pm(p)$，准确的等价写法是 $J^+(p)\cap J^-(p)=\{p\}$。
+    \item 若任意 $p$ 的任意开邻域 $O$ 都含有开邻域 $V\ni p$，使任何因果线与 $V$ 的交集连通，则称时空满足\textbf{强因果条件}(strong causality condition)。换言之，因果线一旦离开 $V$，便不能再进入 $V$；这不仅排除闭合因果线，还排除任意逼近闭合的因果线。
+    \item 对两个时间定向相容的 Lorentz 度规，若每个非零 $g$-因果矢量都是 $\hat g$-类时矢量，就说 $\hat g$ 的因果锥严格宽于 $g$，记作 $g\prec\hat g$。若存在因果度规 $\hat g$ 使 $g\prec\hat g$，则称 $(M,g)$ 满足\textbf{稳定因果条件}(stable causality condition)。也就是说，将光锥处处稍微张宽后，仍不产生闭合因果线。
+\end{enumerate}
+稳定因果还等价于存在\textbf{时间函数} $t:M\to\R$，使其沿每条指向未来的非恒值因果线严格递增；并总可取光滑 $t$，使 $\nabla_\mu t$ 处处类时。四者依次满足“稳定因果 $\Rightarrow$ 强因果 $\Rightarrow$ 因果 $\Rightarrow$ 编时”，反向一般不成立。
+
+设 $A\subset M$ 是非编时集。若以 $p$ 为未来端点的每条过去不可延因果线都与 $A$ 相交，则称 $p$ 受 $A$ 上资料决定。全体这种点构成 $A$ 的\textbf{未来依赖域}(future domain of dependence)
+\eq{
+    D^+(A):=\{p\in M:\text{以 $p$ 为未来端点的每条过去不可延因果线都与 $A$ 相交}\}.
+}
+换言之，追溯到 $p$ 的任何因果影响都必须穿过 $A$，故 $A$ 上的初值足以决定 $D^+(A)$ 中的物理。
+
+\subsection{整体双曲}
+
+将未来依赖域的定义作时间反演，即得\textbf{过去依赖域} $D^-(A)$；再记总依赖域 $D(A):=D^+(A)\cup D^-(A)$。若非编时闭集 $\Sigma$ 满足 $D(\Sigma)=M$，则称 $\Sigma$ 是时空的\textbf{Cauchy 面}(Cauchy surface)。等价地，每条双向不可延类时线都与 $\Sigma$ 恰交一次：“至少一次”保证整条世界线的资料受 $\Sigma$ 控制，“至多一次”则来自非编时性。因此，Cauchy 面可视为不遗漏任何因果历史的完整初值面。
+
+非编时闭集未必处处像完整的空间切片，还可能带有可被因果线绕过的缺口。为精确描述它，记 $I^\pm(p;O)$ 为只允许曲线落在开集 $O$ 内时定义的时序未来、过去。若 $p\in A$ 的任意开邻域 $O$ 中，都存在 $q\in I^-(p;O)$、$r\in I^+(p;O)$，使 $q$ 到 $r$ 可由一条完全落在 $O\backslash A$ 内的类时线连接，则称 $p$ 是非编时闭集 $A$ 的\textbf{边缘}(edge)，全体边缘点记作 $\operatorname{edge}(A)$。直观上，任意放大 $p$ 附近，都能找到一条类时线从 $A$ 的局部过去绕到局部未来而不穿过 $A$。若 $\operatorname{edge}(A)=\mt$，则 $A$ 无边缘；无边缘的非编时闭集局部上是连续超曲面。
+
+$D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未来边界
+\eq{
+    H^+(A):=\overline{D^+(A)}\backslash I^-(D^+(A))
+}
+称为\textbf{未来 Cauchy 视界}(future Cauchy horizon)。
+这里去掉 $I^-(D^+(A))$，是因为其中的点之后仍有 $D^+(A)$ 内的点，尚未处在依赖域的最未来端。故 $H^+(A)$ 是由可决定区域过渡到不可决定区域的界面；越过它后，存在不与 $A$ 相交的过去不可延因果线，$A$ 上的资料便不再充分。时间反演给出过去 Cauchy 视界 $H^-(A)$。
+
+若时空存在 Cauchy 面，就称其为\textbf{整体双曲时空}(globally hyperbolic spacetime)。这个条件也称\textbf{整体双曲条件}(global hyperbolicity condition)。此定义正好表达全局决定性：可在一张初值面上给定资料，而时空中没有因果历史从该面旁逸。特别地，Cauchy 面 $\Sigma$ 满足 $D(\Sigma)=M$，因而不存在由它产生的 Cauchy 视界。
+
+整体双曲性也有不预设初值面的纯因果刻画。整体双曲等价于强因果且任意因果菱形紧致。紧致性排除因果线在有限的因果菱形内逃向无穷远或缺失边界，强因果性则排除任意逼近闭合的往复。实际上，强因果条件在这里可弱化为因果条件。
+反之，挖去一个时空点的闵氏时空仍满足强因果，但某些因果菱形因缺失该点而不再紧致，故不整体双曲，也不存在 Cauchy 面。
+因此整体双曲必然蕴含强因果；事实上它还蕴含稳定因果。
+
+整体双曲时空还存在光滑 Cauchy 时间函数 $t$，其梯度处处类时，因此必满足稳定因果条件。
+反之不成立。例如从闵氏时空挖去一点后，坐标时间仍是时间函数，故稳定因果；但某些因果菱形因趋向被挖去的点而不紧，因而不整体双曲，也不存在 Cauchy 面。
+
+上文的 $D(\Sigma)$ 是在\textit{给定时空中}寻找受 $\Sigma$ 控制的区域。Cauchy 发展则反过来从抽象初始资料构造时空。Einstein 方程的双曲型与适定问题已在 \S\ref{sec:Einstein} 讨论，ADM 初值约束、演化方程及存在唯一性见 \S\ref{sec:Hamilton}，此处只说明其整体含义。
+
+设三维流形 $\Sigma$ 上给定一组满足约束的初始资料 $\mathcal D=(\Sigma,h_{ij},K_{ij};\text{物质资料})$。若时空 $(M,g)$ 满足 Einstein--物质场方程，且存在嵌入 $\iota:\Sigma\hookrightarrow M$，使 $\iota(\Sigma)$ 是 $M$ 的 Cauchy 面，并使其诱导度规、外曲率及物质资料恰为 $\mathcal D$，则称三元组 $(M,g,\iota)$ 是 $\mathcal D$ 的一个\textbf{Cauchy 发展}(Cauchy development)。因此 Cauchy 发展本身必整体双曲；只取 $\iota(\Sigma)$ 附近所得者称为\textbf{局部 Cauchy 发展}。
+
+设 $(M,g,\iota)$ 与 $(M',g',\iota')$ 是同一初始资料的两个 Cauchy 发展。若存在保时间定向的等距嵌入 $\phi:M\hookrightarrow M'$，满足 $\phi\circ\iota=\iota'$，则称后者延拓前者。不能再作真延拓的 Cauchy 发展称为\textbf{最大 Cauchy 发展}(maximal Cauchy development)。这里“最大”只相对于仍以 $\Sigma$ 为 Cauchy 面的发展；它仍可能嵌入更大的时空，但在这种延拓中 $\Sigma$ 不再是 Cauchy 面，越过 Cauchy 视界后的区域也不再由 $\mathcal D$ 唯一决定。
 
 
-
-\textbf{不可延因果线}
-
-\endinput
-
-正则
-
-
-\subsection{因果条件}
-
-
-
-
-Cauchy 发展
-
-\subsection{整体双曲时空}
-
-渐近平直时空的共性变换
-
-引力能量非定域性
-
-Cauchy 动力学
 
 \subsection{能量条件}
 为排除能量密度或能流过于反常的物质，需对能动张量所作的局域限制，称\textbf{能量条件}。对任意类光矢 $k^\mu$，若
@@ -2628,7 +2662,147 @@ Cauchy 动力学
     \mathrm{DEC}:\ \rho\geqslant\abs{p}.
 \]
 
+%能量条件和奇性定理提纲。
+
 \subsection{Hawking 定理}\label{sec:Hawking}
+
+\noindent \textbf{类时奇性定理}(Hawking, 1966)：设 $(M,g)$ 是四维 Lorentz 时空。若：
+\begin{enumerate}
+    \item 整体双曲，从而存在光滑类空 Cauchy 面 $\Sigma$；
+    \item 对任意类时 $U^\mu$ 有\textbf{强汇聚条件}或\textbf{类时收敛条件} $R_{\mu\nu}U^\mu U^\nu \geqslant 0$，说明引力是吸引的；Einstein 方程成立时对应于强能量条件；
+    \item 取 $\Sigma$ 的未来指向单位法矢 $n^\mu$，外曲率的迹（平均曲率）即正交线汇的膨胀 $K:=h^{\mu\nu}\nabla_\mu n_\nu=\nabla_\mu n^\mu$，并存在常数 $K_0>0$，使 $\Sigma$ 上处处有 $K\geqslant K_0$。
+    \item 膨胀：进一步要求平均曲率满足 $K \geqslant K_0 > 0$。
+\end{enumerate}
+则任意从 $\Sigma$ 向过去延伸的类时线，其固有时长度不超过有限上界 $3/K_0$，故时空\textbf{过去类时测地不完备}。
+
+这里的 $3$ 是空间维数，一般 $(n+1)$ 维时空中的上界为 $n/K_0$。若 $\Sigma$ 紧致，则只需要求 $K>0$，其连续性便自动给出某个一致下界 $K_0$。
+时间反演同样成立：若未来法矢满足 $K\leqslant-K_0<0$，即 $\Sigma$ 向未来一致收缩，则时空未来类时测地不完备。故定理并不预设均匀各向同性，只要求某张完整初值面具有一致膨胀或收缩，并以强能量条件保证引力聚焦。
+“奇性”的严格结论仍只是存在有限固有时的不可延类时测地线；定理既不把奇点加入 $M$，也不保证曲率标量发散。
+
+下面证明之。由 $\Sigma$ 向过去发出单位法测地线汇，取指向过去的切矢 $Z^\mu=-n^\mu$，并令固有时参数 $\tau$ 向过去递增。该线汇与 $\Sigma$ 正交，故涡量为零；其初始膨胀为 $\theta_0=-K\leqslant-K_0$。类时收敛条件和空间剪切的正定性代入 \S\ref{sec:timelike} 的 Raychaudhuri 方程得
+\eq{
+    \dv{\theta}{\tau}\leqslant-\frac13\theta^2
+    \quad\im\quad
+    \theta(\tau)\leqslant\frac{3\theta_0}{3+\theta_0\tau}.
+}
+因此不迟于 $\tau=-3/\theta_0\leqslant3/K_0$，$\theta$ 趋于负无穷。由于随线汇搬运的微小空间体积元 $\mathcal V$ 满足 $\dv*{\ln\mathcal V}{\tau}=\theta$，此时 $\mathcal V$ 缩为零，邻近法测地线聚焦。等价地，存在初值切于 $\Sigma$ 的非零 Jacobi 场在该点消失。相当于时空点时这称为共轭点，不过这里是相对于 $\Sigma$，可称\textbf{焦点}(focal point)。
+
+再证固有时上界。反设存在从 $\Sigma$ 向过去的类时线段到达 $p$，其长度大于 $3/K_0$。整体双曲性保证在 $p$ 与 $\Sigma$ 之间存在一条固有时最长的类时线 $\gamma$，且其长度不短于原线。初端可在 $\Sigma$ 上自由移动，一阶变分的边界项遂要求 $\gamma$ 正交于 $\Sigma$；内部一阶变分又要求它是测地线。因此 $\gamma$ 正是上述法测地线之一，并在到达 $p$ 前已经经过一个 $\Sigma$-焦点。
+
+然而，经过焦点后，Jacobi 场给出二阶变分的零方向；把变分稍推至焦点之后，便得到固有时更长的邻近类时线。这正是 \S\ref{sec:tidal} 所述共轭点破坏极大性的超曲面版本。故含有焦点的法测地线不可能继续保持从 $\Sigma$ 出发的固有时极大，与 $\gamma$ 的最长性矛盾。于是从 $\Sigma$ 向过去的任意类时线长度都不超过 $3/K_0$。
+
+最后，若时空过去类时测地完备，则从 $\Sigma$ 任取一条过去指向单位法测地线，都可按固有时延伸到任意大的 $\tau$，从而产生长度超过 $3/K_0$ 的类时线，矛盾。因此时空过去类时测地不完备。将时间指向全部反转，即得 $K\leqslant-K_0$ 时的未来不完备结论。
+
+\subsection{迅捷性}\label{sec:promptness}
+
+类时线可用固有时比较，极大者是测地线；但任意类光线的固有时都是零，故不存在相同的极值判据。Witten 为此提出\textbf{迅捷性}(promptness)，以因果先后而非数值长度表示“最早到达”。以下默认因果线指向未来，时间反演结论同理。设因果线 $\ell$ 从 $q$ 到 $p$。若不存在另一条从 $q$ 出发的因果线到达某个 $p'\in I^-(p)$，则称 $\ell$ \textbf{迅捷}。换言之，已知 $p\in J^+(q)$ 时，$\ell:q\to p\text{ 迅捷}\iff J^+(q)\cap I^-(p)=\mt\iff p\in\partial J^+(q)$。
+这里“更早”并不依赖坐标时：$p'\in I^-(p)$ 表示从 $p'$ 可沿类时线到达 $p$，故任何观者都会同意 $p'$ 先于 $p$。若能先到 $p'$，再稍向未来延伸便可到达任意靠近 $p$、但仍在其过去的点。
+
+上述边界判据十分直观。若存在 $p'\in J^+(q)\cap I^-(p)$，推开性质给出 $p\in I^+(q)$，故 $p$ 位于 $J^+(q)$ 内部；反之，若 $p$ 是内点，则在其充分小的局部闵氏邻域中，总有一个稍早于 $p$ 的点仍属于 $J^+(q)$。所以边界上的信号正是从 $q$ 能够最早到达的信号。
+
+迅捷路径必为类光测地线。若其某段类时，或含有不共线的类光折角，则可在局部闵氏邻域内圆滑折角并推入类时锥，从而得到更早到达的因果线。进一步，一段类光测地线迅捷，当且仅当其像集非编时：若线上两点可由类时线连接，替换其间线段再作推开即可提前到达；若原线非迅捷，则从较早终点继续以类时线到达 $p$，推开后又说明 $q,p$ 可由类时线连接。因此迅捷性正是类光版的“最优路径”。
+
+在强因果时空中，每条类光测地线都有充分短的迅捷初段。事实上，可先取一个凸法邻域保证域内两点间只有相应的类光测地线，再由强因果性缩小邻域，使连接其中两点的因果线不能离开后重入；若存在闭合类时线，该结论则可失败。迅捷部分总是初段：一旦存在一条较早到达的竞争路线，把它与原测地线一同向未来延伸，原线以后便始终非迅捷。引力透镜所成的多个像正可如此理解，只有最早到达的像可能迅捷。
+
+迅捷性也受共轭点控制。设类光测地线 $\ell$ 从 $q$ 出发，若存在非零横向 Jacobi 场，在 $q$ 与 $q'\in\ell$ 同时为零，则称 $q'$ 是 $q$ 沿 $\ell$ 的类光共轭点。这里只要求 Jacobi 场给出一阶类光测地变分，不必真有一条精确连接 $q,q'$ 的有限邻近测地线：提前到达的效应始于二阶，一阶满足测地线方程已足以决定该阶结论。将 $qq'$ 段作此变分后接回 $q'$ 之后的原线，便产生折角；对折角圆滑化并推入类时锥，再把新线向未来延续在原线稍过去的一侧，就能稍早到达。因此，$\ell$ 一旦越过首个共轭点便不再迅捷。终点恰为首个共轭点时只是临界情形，迅捷性可保持到该点，却不能越过它。
+
+一个直观例子是 $M=\R\times S^2$，度规为 $\d s^2=-\d t^2+R^2\d\Omega^2$。类光测地线在 $S^2$ 上的投影是大圆；它经半周到达对跖点时出现首个共轭点，继续越过后，沿大圆反向行走即能更早到达同一目的地。
+
+没有共轭点只是迅捷的必要条件，并非充分条件。即使局部二阶变分没有失稳，也可能有一条并非 $\ell$ 的邻近变形、而是绕经远处的因果线更早到达，这正是全局引力透镜效应。若 $\ell$ 的迅捷初段有未来端点，该临界点称为\textbf{类光截点}(null cut point)；在截点本身迅捷性可仍保持，越过它后则必然失去。截点可由首个共轭点产生，也可由另一条迅捷类光测地线与 $\ell$ 相遇产生。
+
+还可把起点推广为任意集合 $W\subset M$：从 $W$ 到 $p$ 的因果线称为迅捷，若不存在从 $W$ 到 $I^-(p)$ 的因果线，亦即 $J^+(W)\cap I^-(p)=\mt$。若 $W$ 是类空子流形，迅捷线除须为非编时类光测地线外，还必须从 $W$ 正交射出；否则略微移动起点便能取得“抢跑”优势。类光线与类空子流形正交要求 $W$ 的余维至少为二；余维为二时，每点恰有两支未来类光法方向。若 $W$ 还是具有内外之分的闭曲面，它们才相应称为内向、外向。
+
+迅捷性依赖于所选的初始集。若余维二的闭类空子流形 $W$ 是类空超曲面片 $Z$ 的边界，则从 $Z$ 到 $p\notin Z$ 的迅捷线必从 $W$ 出发：若从 $Z$ 内部出发，迅捷性将要求它与余维一的 $Z$ 正交，但类空超曲面不存在类光法向量。反之，一条线相对 $W$ 迅捷，未必相对 $Z$ 迅捷，因为竞争路线还可从 $Z$ 的其他点出发。
+
+相应地，若一族从 $W$ 正交射出的类光测地线存在非零 Jacobi 场，其初值切于 $W$、保持正交条件并在 $q'$ 消失，则称 $q'$ 为 $W$ 的\textbf{焦点}。将这条测地线延伸过焦点后，同样可由变分、折角圆滑化和推开构造更早到达的因果线，故它不再迅捷。这是点共轭概念的子流形版本；焦点不存在仍只是迅捷的必要条件。
+
+现在便可准确理解传统说法。按前文允许恒值因果线的约定，$W\subset J^+(W)$。若上述 $W$ 还紧致且时空整体双曲，则 $J^+(W)$ 闭合。事实上，对任意 $p_i\in J^+(W)$ 且 $p_i\to p$，可选 $q_i\in W$ 及从 $q_i$ 到 $p_i$ 的因果线；$W$ 的紧致性给出 $q_i$ 的收敛子列，整体双曲性再给出连接其极限与 $p$ 的极限因果线，故 $p\in J^+(W)$。因此每个 $p\in\partial J^+(W)$ 都可由 $W$ 上某点沿因果线到达，而这条线必然迅捷。
+所以 $\partial J^+(W)$ 由从 $W$ 正交射出的迅捷类光测地线段生成，生成元可以到达焦点或类光截点，但一旦越过便失去迅捷性，离开边界而进入 $J^+(W)$ 内部。边界本身非编时，因为若其两点可由类时线连接，较晚一点就应是 $J^+(W)$ 的内点。若边界两点由因果线相连，该线则必须是完全留在边界中的类光测地线；任何类时段或折角都能经推开使较晚端点变为内点。
+
+\subsection{陷获面与表观视界}
+
+考虑球对称时空中的一个对称 2-球，其面积为 $A=4\pi r^2$。沿两支未来指向类光法向量 $k_+^\mu,k_-^\mu$ 发出的光线束，其面积膨胀率为
+\[
+    \theta_\pm=\frac{1}{A}\dv{A}{\lambda_\pm}
+    =\frac{2}{r}k_\pm^a\nabla_a r.
+\]
+在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{边缘外陷获面}(marginally outer trapped surface)。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}(apparent horizon)。
+
+球对称情形可用 Misner--Sharp 质量 $m$ 将这个条件写得更直观：
+\[
+    1-\frac{2m}{r}=g^{ab}\nabla_a r\nabla_b r,
+\]
+其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，边缘球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故边缘条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
+
+事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个闭合类空 2-曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^a,n^a$，并归一化为 $\ell\cdot n=-1$。其诱导度规与两支类光膨胀为
+\begin{equation}\label{eq:null-expansions}
+    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
+    \qquad
+    \theta_{(\ell)}=q^{ab}\nabla_a\ell_b,
+    \qquad
+    \theta_{(n)}=q^{ab}\nabla_an_b.
+\end{equation}
+若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连“外发”光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{边缘外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}。
+
+表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
+
+\subsection{紧致}
+
+\subsection{类光聚焦引理}
+
+%%引用第一章
+
+类光测地线汇与 Raychaudhuri 方程
+
+视界面积的演化由类光测地线汇控制。设 $k^a$ 是仿射参数为 $\lambda$ 的类光测地矢量，即 $k^b\nabla_bk^a=0$。另取辅助类光矢量 $n^a$，使 $k\cdot n=-1$，则垂直于二者的二维屏空间度规为 $q_{ab}=g_{ab}+k_an_b+n_ak_b$。将 $\nabla_bk_a$ 投影到屏空间，得到
+\begin{equation}\label{eq:null-congruence-decomposition}
+    B_{ab}=q_a{}^cq_b{}^d\nabla_dk_c
+      =\frac12\theta q_{ab}+\sigma_{ab}+\omega_{ab},
+\end{equation}
+其中 $\theta=q^{ab}B_{ab}$ 是膨胀，$\sigma_{ab}=B_{(ab)}-\theta q_{ab}/2$ 是剪切，$\omega_{ab}=B_{[ab]}$ 是旋量。若 $\d A$ 是随线汇搬运的微小截面积元，则 $\dv{\ln\d A}{\lambda}=\theta$；所以 $\theta$ 直接量度光束截面积的相对变化率。四维时空中的类光 Raychaudhuri 方程为
+\begin{equation}\label{eq:null-raychaudhuri}
+    \dv{\theta}{\lambda}
+    =-\frac12\theta^2-\sigma_{ab}\sigma^{ab}
+      +\omega_{ab}\omega^{ab}-R_{ab}k^ak^b .
+\end{equation}
+
+若线汇无旋且物质满足\textbf{类光能量条件} $T_{ab}k^ak^b\geqslant0$，Einstein 方程与式 \eqref{eq:null-raychaudhuri} 给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。因此一旦 $\theta(\lambda_0)<0$，不迟于 $\lambda-\lambda_0=2/|\theta(\lambda_0)|$，$\theta$ 就趋于负无穷并形成焦散或共轭点。这一\textbf{聚焦结论}是面积定理与奇性定理的共同局域基础。
+
+类光超曲面上的 Raychaudhuri 方程
+
+设 $\mathcal N$ 是局部由 $u=\mathrm{const.}$ 定义的类光超曲面。它的类光法协矢可写为 $\ell_a=f\nabla_a u$；升指标后 $\ell^a$ 又切于 $\mathcal N$，其积分曲线正是超曲面的生成元。取横截面上的另一未来类光法矢 $n^a$ 并令 $\ell\cdot n=-1$，则
+\[
+    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
+    \qquad
+    \Theta^{(\ell)}_{ab}=q_a{}^cq_b{}^d\nabla_c\ell_d
+       =\frac12\theta_{(\ell)}q_{ab}+\sigma^{(\ell)}_{ab}.
+\]
+由于 $\ell_a$ 与某族超曲面正交，Frobenius 定理保证其旋量恒为零。一般的法矢参数并非仿射参数，而满足 $\ell^b\nabla_b\ell^a=\kappa_{(\ell)}\ell^a$；于是类光超曲面上的 Raychaudhuri 方程为
+\begin{equation}\label{eq:null-raychaudhuri-nonaffine}
+    \mathcal L_\ell\theta_{(\ell)}
+    =\kappa_{(\ell)}\theta_{(\ell)}
+      -\frac12\theta_{(\ell)}^2
+      -\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
+      -8\pi T_{ab}\ell^a\ell^b,
+\end{equation}
+其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^a\ell_a=0$ 不作贡献。在重标度 $\ell^a\mapsto f\ell^a$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{ab}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为边缘陷获面”不变。
+
+\subsection{Penrose 奇性定理}
+
+迅捷性这套语言把 Penrose 定理的局域机制变得直接：边界生成元就是最早到达的光线，故不能已经越过焦点；另一方面，若这些法测地线都能延伸得足够远，陷获面与类光收敛条件便由 Raychaudhuri 方程迫使它们在有限仿射参数内形成焦点。迅捷性把“形成焦点”翻译成“离开因果未来边界”，余下只需结合整体双曲性与非紧 Cauchy 面导出矛盾。
+
+其一个代表性版本是：若时空具有非紧 Cauchy 面并包含闭合未来陷获面，且所有类光矢量都满足
+\[
+    R_{\mu\nu}k^\mu k^\nu\geqslant0,
+\]
+则时空中至少存在一条未来不完备的类光测地线。由 Einstein 方程，这个\textbf{类光收敛条件}(null convergence condition)对应于物质的类光能量条件 $T_{\mu\nu}k^\mu k^\nu\geqslant0$。Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
+
+这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。
+
+尘埃模型中的 $a=0$ 奇性可能令人怀疑是均匀、无压等理想化假设造成的。Penrose 奇性定理说明结论远为稳健。
+Schwarzschild 坍缩给出曲率发散且隐藏在视界后的例子，但更一般的结局需要附加假设。
+
+\endinput
 
 \section{修改理论}
 
@@ -2914,7 +3088,7 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 
 本节提供物理上最小可用的数学附录，保证直观且简洁。
 
-\subsection{流形}
+\subsection{流形}\label{sec:manifold}
 
 坐标系给背景集合的点连续指定唯一且不重复的若干实数，也就是同胚 $\psi:M\to\R^n$，同胚所需的连续性由 $M$ 的拓扑性质给出。把这个 $n$ 就称为维度 $\dim M$。$x^\mu(p)$ 是 $\psi(p)=(x^1(p),\cdots,x^n(p))$ 的第 $\mu$ 个数字，故 $x^\mu$ 的确可看做 $M$ 上函数。考虑多个坐标系无非是为了方便，但也有关键好处：一个坐标系可能不够覆盖 $M$，考虑多个 $\psi_i:O_i\to\R^n$ 就可使 $\bigcup_i O_i = M$，$O_i$ 称\textbf{坐标域}。这些 $O$ 可以任意小，也就是邻域，因而也可称\textbf{局域坐标系}。坐标变换就是在交叉地带 $O_i\cap O_j$ 上，考虑 $n$ 个 $n$ 元函数 $\psi_i\circ\psi_j^{-1}$。只考虑光滑可逆坐标变换，也就是微分同胚 $\psi_i\circ\psi_j^{-1}$，这些条件就构成了\textbf{光滑流形}或\textbf{微分流形}，但仍记 $M$。
 

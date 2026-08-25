@@ -654,20 +654,7 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 \]
 显然发生在 $\eta=\pi$ 的奇性之前。Oppenheimer--Snyder 模型忽略了压强、密度梯度、自转和辐射，却清楚展示了一个关键事实：正则初始数据可以在有限固有时内演化出视界和奇性，外部则始终保持 Schwarzschild 形式。
 
-\subsection{陷获面与视界的形成}
-
-考虑球对称时空中的一个对称 2-球，其面积为 $A=4\pi r^2$。沿两支未来指向类光法向量 $k_+^\mu,k_-^\mu$ 发出的光线束，其面积膨胀率为
-\[
-    \theta_\pm=\frac{1}{A}\dv{A}{\lambda_\pm}
-    =\frac{2}{r}k_\pm^a\nabla_a r.
-\]
-在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{边缘外陷获面}(marginally outer trapped surface)。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}(apparent horizon)。
-
-球对称情形可用 Misner--Sharp 质量 $m$ 将这个条件写得更直观：
-\[
-    1-\frac{2m}{r}=g^{ab}\nabla_a r\nabla_b r,
-\]
-其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，边缘球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故边缘条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
+\subsection{视界的形成}
 
 表观视界是准局域概念，可以由某一时刻的几何求出，但其位置依赖空间切片。事件视界则由整个时空定义：
 \[
@@ -727,19 +714,7 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 
 图 \ref{fig:collapse-penrose} 与永恒 Schwarzschild 图的差别是物理性的：这里没有白洞区、第二外部区域或分叉球面。事件视界形成以前，中心是普通的正则时间轴；事件视界形成以后，边缘外陷获面才在更晚的切片上出现，两者之间可以存在尚未陷获的黑洞区。图上的事件视界不是物质表面，穿越它的自由下落观者也不会遇到局域奇性；真正的曲率奇性位于其未来。
 
-\subsection{类光聚焦引理}
 
-%%引用第一章
-
-\subsection{Penrose 奇性定理}
-
-尘埃模型中的 $a=0$ 奇性可能令人怀疑是均匀、无压等理想化假设造成的。Penrose 奇性定理说明结论远为稳健。其一个代表性版本是：若时空具有非紧 Cauchy 面并包含闭合未来陷获面，且所有类光矢量都满足
-\[
-    R_{\mu\nu}k^\mu k^\nu\geqslant0,
-\]
-则时空中至少存在一条未来不完备的类光测地线。由 Einstein 方程，这个\textbf{类光收敛条件}(null convergence condition)对应于物质的类光能量条件 $T_{\mu\nu}k^\mu k^\nu\geqslant0$。Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
-
-这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。Schwarzschild 坍缩给出曲率发散且隐藏在视界后的例子，但更一般的结局需要附加假设。
 
 \subsection{宇宙监督}
 
@@ -780,7 +755,7 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
     \Sigma=r^2+a^2\cos^2\theta,\qquad
     \Delta=r^2-2Mr+a^2+Q^2,
 \end{equation}
-则 Kerr--Newman 度规为
+则 Kerr--Newman 度规为（证明从略）
 \begin{equation}\label{eq:kn-metric}
 \begin{split}
     \d s^2={}&-\frac{\Delta}{\Sigma}
@@ -996,40 +971,7 @@ $\alpha$ 是 Boyer--Lindquist 时间切片的时移。远处 $\omega\sim2J/r^3$�
 
 在 Einstein--Maxwell 理论并满足适当能量条件时，稳态 Killing 视界上的 $\kappa$ 为常数，这就是黑洞力学的\textbf{第零定律}。其证明本质上利用 Killing 恒等式、场方程以及视界生成元无膨胀、无剪切的性质；它与平衡态温度在整个系统中均匀的热力学第零定律相对应。
 
-\subsection{类光测地线汇与 Raychaudhuri 方程}
 
-视界面积的演化由类光测地线汇控制。设 $k^a$ 是仿射参数为 $\lambda$ 的类光测地矢量，即 $k^b\nabla_bk^a=0$。另取辅助类光矢量 $n^a$，使 $k\cdot n=-1$，则垂直于二者的二维屏空间度规为 $q_{ab}=g_{ab}+k_an_b+n_ak_b$。将 $\nabla_bk_a$ 投影到屏空间，得到
-\begin{equation}\label{eq:null-congruence-decomposition}
-    B_{ab}=q_a{}^cq_b{}^d\nabla_dk_c
-      =\frac12\theta q_{ab}+\sigma_{ab}+\omega_{ab},
-\end{equation}
-其中 $\theta=q^{ab}B_{ab}$ 是膨胀，$\sigma_{ab}=B_{(ab)}-\theta q_{ab}/2$ 是剪切，$\omega_{ab}=B_{[ab]}$ 是旋量。若 $\d A$ 是随线汇搬运的微小截面积元，则 $\dv{\ln\d A}{\lambda}=\theta$；所以 $\theta$ 直接量度光束截面积的相对变化率。四维时空中的类光 Raychaudhuri 方程为
-\begin{equation}\label{eq:null-raychaudhuri}
-    \dv{\theta}{\lambda}
-    =-\frac12\theta^2-\sigma_{ab}\sigma^{ab}
-      +\omega_{ab}\omega^{ab}-R_{ab}k^ak^b .
-\end{equation}
-
-若线汇无旋且物质满足\textbf{类光能量条件} $T_{ab}k^ak^b\geqslant0$，Einstein 方程与式 \eqref{eq:null-raychaudhuri} 给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。因此一旦 $\theta(\lambda_0)<0$，不迟于 $\lambda-\lambda_0=2/|\theta(\lambda_0)|$，$\theta$ 就趋于负无穷并形成焦散或共轭点。这一\textbf{聚焦结论}是面积定理与奇性定理的共同局域基础。
-
-\subsection{类光超曲面上的 Raychaudhuri 方程}
-
-设 $\mathcal N$ 是局部由 $u=\mathrm{const.}$ 定义的类光超曲面。它的类光法协矢可写为 $\ell_a=f\nabla_a u$；升指标后 $\ell^a$ 又切于 $\mathcal N$，其积分曲线正是超曲面的生成元。取横截面上的另一未来类光法矢 $n^a$ 并令 $\ell\cdot n=-1$，则
-\[
-    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
-    \qquad
-    \Theta^{(\ell)}_{ab}=q_a{}^cq_b{}^d\nabla_c\ell_d
-       =\frac12\theta_{(\ell)}q_{ab}+\sigma^{(\ell)}_{ab}.
-\]
-由于 $\ell_a$ 与某族超曲面正交，Frobenius 定理保证其旋量恒为零。一般的法矢参数并非仿射参数，而满足 $\ell^b\nabla_b\ell^a=\kappa_{(\ell)}\ell^a$；于是类光超曲面上的 Raychaudhuri 方程为
-\begin{equation}\label{eq:null-raychaudhuri-nonaffine}
-    \mathcal L_\ell\theta_{(\ell)}
-    =\kappa_{(\ell)}\theta_{(\ell)}
-      -\frac12\theta_{(\ell)}^2
-      -\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
-      -8\pi T_{ab}\ell^a\ell^b,
-\end{equation}
-其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^a\ell_a=0$ 不作贡献。在重标度 $\ell^a\mapsto f\ell^a$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{ab}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为边缘陷获面”不变。
 
 事件视界是无未来端点的非时序边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\mathcal L_\ell\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
 \begin{equation}\label{eq:hawking-area-theorem}
@@ -1085,20 +1027,6 @@ $\Omega_H$ 和 $\Phi_H$ 分别是角动量与电荷的化学势。该式既可�
 其中 $S_{\rm out}$ 是视界外量子场的熵。\textbf{广义第二定律}断言在适用的半经典过程中 $\Delta S_{\rm gen}\geqslant0$。物质落入时 $S_{\rm out}$ 可减小，但面积项增加；Hawking 蒸发时面积项减小，辐射熵则增加。二者共同取代单独的经典面积定理。
 
 $S_{\rm out}$ 的纠缠熵在视界附近含紫外发散，面积项所用的 Newton 常数也随重整化尺度变化；两部分分别依赖正则化方案，而适当重整化后的 $S_{\rm gen}$ 才具有物理意义。半经典展开还允许对面积律加入对数项等量子修正，但在 $A_H\gg\hbar$ 时，式 \eqref{eq:bek-hawking-entropy} 是主导项。
-
-\subsection{陷获面与表观视界}
-
-事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个闭合类空 2-曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^a,n^a$，并归一化为 $\ell\cdot n=-1$。其诱导度规与两支类光膨胀为
-\begin{equation}\label{eq:null-expansions}
-    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
-    \qquad
-    \theta_{(\ell)}=q^{ab}\nabla_a\ell_b,
-    \qquad
-    \theta_{(n)}=q^{ab}\nabla_an_b.
-\end{equation}
-若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连“外发”光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{边缘外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}。
-
-表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
 
 \subsection{非膨胀、弱孤立与孤立视界}
 
