@@ -2588,7 +2588,7 @@ $M$ 的拓扑性质给出任意指向未来因果线至多有一个未来端点�
 无未来端点的指向未来因果线称为\textbf{未来不可延因果线}。同理有过去不可延因果线。
 原则上，落入奇点的因果线的未来端点就是奇点，但奇点不在时空上，因此仍然未来不可延。
 
-若一条非恒值曲线首尾相接，便称为\textbf{闭合线}。闭合类时线使观者能够回到自身过去，闭合因果线还包括闭合类光线。为逐级排除这类反常，规定如下。
+首尾相接的非恒值曲线称\textbf{闭合线}。\textbf{闭合类时线}(closed timelike curve, CTC)使观者能够回到自身过去，闭合因果线还包括闭合类光线。为逐级排除这类反常，规定如下。
 \begin{enumerate}
     \item 若不存在闭合类时线，则称时空满足\textbf{编时条件}(chronology condition)。等价地，任意 $p\in M$ 都有 $p\notin I^+(p)$。
     \item 若不存在非恒值闭合因果线，则称时空满足\textbf{因果条件}(causality condition)。由于恒值因果线使 $p\in J^\pm(p)$，准确的等价写法是 $J^+(p)\cap J^-(p)=\{p\}$。
@@ -2627,7 +2627,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 上文的 $D(\Sigma)$ 是在\textit{给定时空中}寻找受 $\Sigma$ 控制的区域。Cauchy 发展则反过来从抽象初始资料构造时空。Einstein 方程的双曲型与适定问题已在 \S\ref{sec:Einstein} 讨论，ADM 初值约束、演化方程及存在唯一性见 \S\ref{sec:Hamilton}，此处只说明其整体含义。
 
-设三维流形 $\Sigma$ 上给定一组满足约束的初始资料 $\mathcal D=(\Sigma,h_{ij},K_{ij};\text{物质资料})$。若时空 $(M,g)$ 满足 Einstein--物质场方程，且存在嵌入 $\iota:\Sigma\hookrightarrow M$，使 $\iota(\Sigma)$ 是 $M$ 的 Cauchy 面，并使其诱导度规、外曲率及物质资料恰为 $\mathcal D$，则称三元组 $(M,g,\iota)$ 是 $\mathcal D$ 的一个\textbf{Cauchy 发展}(Cauchy development)。因此 Cauchy 发展本身必整体双曲；只取 $\iota(\Sigma)$ 附近所得者称为\textbf{局部 Cauchy 发展}。
+设三维流形 $\Sigma$ 上给定一组满足约束的初始资料 $\mathcal D=(\Sigma,h_{ij},K_{ij};\text{物质资料})$。若时空 $(M,g)$ 满足 Einstein--物质场方程，且存在嵌入 $\iota:\Sigma\hookrightarrow M$，使 $\iota(\Sigma)$ 是 $M$ 的 Cauchy 面，并使其投影张量、外曲率及物质资料恰为 $\mathcal D$，则称三元组 $(M,g,\iota)$ 是 $\mathcal D$ 的一个\textbf{Cauchy 发展}(Cauchy development)。因此 Cauchy 发展本身必整体双曲；只取 $\iota(\Sigma)$ 附近所得者称为\textbf{局部 Cauchy 发展}。
 
 设 $(M,g,\iota)$ 与 $(M',g',\iota')$ 是同一初始资料的两个 Cauchy 发展。若存在保时间定向的等距嵌入 $\phi:M\hookrightarrow M'$，满足 $\phi\circ\iota=\iota'$，则称后者延拓前者。不能再作真延拓的 Cauchy 发展称为\textbf{最大 Cauchy 发展}(maximal Cauchy development)。这里“最大”只相对于仍以 $\Sigma$ 为 Cauchy 面的发展；它仍可能嵌入更大的时空，但在这种延拓中 $\Sigma$ 不再是 Cauchy 面，越过 Cauchy 视界后的区域也不再由 $\mathcal D$ 唯一决定。
 
@@ -2666,7 +2666,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 \subsection{Hawking 定理}\label{sec:Hawking}
 
-\noindent \textbf{类时奇性定理}(Hawking, 1966)：设 $(M,g)$ 是四维 Lorentz 时空。若：
+\noindent \textbf{类时奇性定理}(Hawking, 1966)：若四维 Lorentz 时空满足
 \begin{enumerate}
     \item 整体双曲，从而存在光滑类空 Cauchy 面 $\Sigma$；
     \item 对任意类时 $U^\mu$ 有\textbf{强汇聚条件}或\textbf{类时收敛条件} $R_{\mu\nu}U^\mu U^\nu \geqslant 0$，说明引力是吸引的；Einstein 方程成立时对应于强能量条件；
@@ -2698,9 +2698,9 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 类时线可用固有时比较，极大者是测地线；但任意类光线的固有时都是零，故不存在相同的极值判据。Witten 为此提出\textbf{迅捷性}(promptness)，以因果先后而非数值长度表示“最早到达”。以下默认因果线指向未来，时间反演结论同理。设因果线 $\ell$ 从 $q$ 到 $p$。若不存在另一条从 $q$ 出发的因果线到达某个 $p'\in I^-(p)$，则称 $\ell$ \textbf{迅捷}。换言之，已知 $p\in J^+(q)$ 时，$\ell:q\to p\text{ 迅捷}\iff J^+(q)\cap I^-(p)=\mt\iff p\in\partial J^+(q)$。
 这里“更早”并不依赖坐标时：$p'\in I^-(p)$ 表示从 $p'$ 可沿类时线到达 $p$，故任何观者都会同意 $p'$ 先于 $p$。若能先到 $p'$，再稍向未来延伸便可到达任意靠近 $p$、但仍在其过去的点。
 
-上述边界判据十分直观。若存在 $p'\in J^+(q)\cap I^-(p)$，推开性质给出 $p\in I^+(q)$，故 $p$ 位于 $J^+(q)$ 内部；反之，若 $p$ 是内点，则在其充分小的局部闵氏邻域中，总有一个稍早于 $p$ 的点仍属于 $J^+(q)$。所以边界上的信号正是从 $q$ 能够最早到达的信号。
+上述边界判据十分直观。若存在 $p'\in J^+(q)\cap I^-(p)$，推开性质给出 $p\in I^+(q)$，故 $p$ 位于 $J^+(q)$ 内部；反之，若 $p$ 是内点，则在其充分小的凸法邻域中，总有一个稍早于 $p$ 的点仍属于 $J^+(q)$。所以边界上的信号正是从 $q$ 能够最早到达的信号。
 
-迅捷路径必为类光测地线。若其某段类时，或含有不共线的类光折角，则可在局部闵氏邻域内圆滑折角并推入类时锥，从而得到更早到达的因果线。进一步，一段类光测地线迅捷，当且仅当其像集非编时：若线上两点可由类时线连接，替换其间线段再作推开即可提前到达；若原线非迅捷，则从较早终点继续以类时线到达 $p$，推开后又说明 $q,p$ 可由类时线连接。因此迅捷性正是类光版的“最优路径”。
+迅捷路径必为类光测地线。若其某段类时，或含有不共线的类光折角，则可在凸法邻域内圆滑折角并推入类时锥，从而得到更早到达的因果线。进一步，一段类光测地线迅捷，当且仅当其像集非编时：若线上两点可由类时线连接，替换其间线段再作推开即可提前到达；若原线非迅捷，则从较早终点继续以类时线到达 $p$，推开后又说明 $q,p$ 可由类时线连接。因此迅捷性正是类光版的“最优路径”。
 
 在强因果时空中，每条类光测地线都有充分短的迅捷初段。事实上，可先取一个凸法邻域保证域内两点间只有相应的类光测地线，再由强因果性缩小邻域，使连接其中两点的因果线不能离开后重入；若存在闭合类时线，该结论则可失败。迅捷部分总是初段：一旦存在一条较早到达的竞争路线，把它与原测地线一同向未来延伸，原线以后便始终非迅捷。引力透镜所成的多个像正可如此理解，只有最早到达的像可能迅捷。
 
@@ -2716,86 +2716,92 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 相应地，若一族从 $W$ 正交射出的类光测地线存在非零 Jacobi 场，其初值切于 $W$、保持正交条件并在 $q'$ 消失，则称 $q'$ 为 $W$ 的\textbf{焦点}。将这条测地线延伸过焦点后，同样可由变分、折角圆滑化和推开构造更早到达的因果线，故它不再迅捷。这是点共轭概念的子流形版本；焦点不存在仍只是迅捷的必要条件。
 
-现在便可准确理解传统说法。按前文允许恒值因果线的约定，$W\subset J^+(W)$。若上述 $W$ 还紧致且时空整体双曲，则 $J^+(W)$ 闭合。事实上，对任意 $p_i\in J^+(W)$ 且 $p_i\to p$，可选 $q_i\in W$ 及从 $q_i$ 到 $p_i$ 的因果线；$W$ 的紧致性给出 $q_i$ 的收敛子列，整体双曲性再给出连接其极限与 $p$ 的极限因果线，故 $p\in J^+(W)$。因此每个 $p\in\partial J^+(W)$ 都可由 $W$ 上某点沿因果线到达，而这条线必然迅捷。
+现在便可准确理解传统说法。按前文允许恒值因果线的约定，$W\subset J^+(W)$。\textbf{曲面闭合}是指紧致且无边界。若上述 $W$ 还紧致且时空整体双曲，则 $J^+(W)$ 闭合。事实上，对任意 $p_i\in J^+(W)$ 且 $p_i\to p$，可选 $q_i\in W$ 及从 $q_i$ 到 $p_i$ 的因果线；$W$ 的紧致性给出 $q_i$ 的收敛子列，整体双曲性再给出连接其极限与 $p$ 的极限因果线，故 $p\in J^+(W)$。因此每个 $p\in\partial J^+(W)$ 都可由 $W$ 上某点沿因果线到达，而这条线必然迅捷。
 所以 $\partial J^+(W)$ 由从 $W$ 正交射出的迅捷类光测地线段生成，生成元可以到达焦点或类光截点，但一旦越过便失去迅捷性，离开边界而进入 $J^+(W)$ 内部。边界本身非编时，因为若其两点可由类时线连接，较晚一点就应是 $J^+(W)$ 的内点。若边界两点由因果线相连，该线则必须是完全留在边界中的类光测地线；任何类时段或折角都能经推开使较晚端点变为内点。
 
-\subsection{陷获面与表观视界}
+\subsection{陷获面}
+
+设 $k^\mu$ 是仿射参数为 $\lambda$ 的类光测地线汇切矢。
+类光 $k^\mu$ 本身也属于“投影”，所以仅靠 $k^\mu$ 无法像单位类时矢量那样定义正交投影。必须另取辅助类光矢量 $n^\mu$ 使 $k\cdot n=-1$。垂直于二者的余二维子空间 $\mathcal S_p=\{X:X\cdot k=X\cdot n=0\}$ 称为\textbf{屏空间}。考虑四维时空，则维数为二。
+任意矢量投影到屏空间后为 $X^\mu+k^\mu(n\cdot X)+n^\mu(k\cdot X)$，即投影算符为 $q^\mu{}_\nu=\delta^\mu{}_\nu+k^\mu n_\nu+n^\mu k_\nu$，即
+\[q_{\mu\nu}=g_{\mu\nu}+k_\mu n_\nu+n_\mu k_\nu.\]
+可直接验证 $q_{\mu\nu}k^\nu=q_{\mu\nu}n^\nu=0$；而对任意屏空间矢量 $X,Y$，有 $q_{\mu\nu}X^\mu X^\nu=g_{\mu\nu}X^\mu X^\nu$。
+时空度规分解为 $g_{\mu\nu}=q_{\mu\nu}-(k_\mu n_\nu+n_\mu k_\nu)$，其中后一项正是类光法平面上的 Lorentz 度规。加号来自归一化 $k\cdot n=-1$；若 $k\cdot n=-C$，则应写成 $q_{\mu\nu}=g_{\mu\nu}+(k_\mu n_\nu+n_\mu k_\nu)/C$。
+例如在闵氏时空取 $k=(\partial_t+\partial_z)/\sqrt2$、$n=(\partial_t-\partial_z)/\sqrt2$，便有 $q_{\mu\nu}\d x^\mu\d x^\nu=\d x^2+\d y^2$，正是垂直于光传播方向的屏空间。
+将 $\cd_\nu k_\mu $ 投影到屏空间，得到
+\begin{equation}\label{eq:null-congruence-decomposition}
+    B_{\mu\nu}=q_\mu{}^\gamma q_\nu{}^\kappa\cd_\kappa k_\gamma
+      =\frac12\theta q_{\mu\nu}+\sigma_{\mu\nu}+\omega_{\mu\nu},
+\end{equation}
+其中 $\theta=q^{\mu\nu}B_{\mu\nu}$ 是膨胀，$\sigma_{\mu\nu}=B_{(\mu\nu)}-\theta q_{\mu\nu}/2$ 是剪切，$\omega_{\mu\nu}=B_{[\mu\nu]}$ 是扭转。若 $\d A$ 是随线汇搬运的微小截面积元，则 $\dv*{\ln\d A}{\lambda}=\theta$；所以 $\theta$ 直接量度光束截面积的相对变化率。求沿线协变导数可知类光 Raychaudhuri 方程为
+\begin{equation}\label{eq:null-raychaudhuri}
+    \dv{\theta}{\lambda}
+    =-\frac12\theta^2-\sigma_{\mu\nu}\sigma^{\mu\nu}
+      +\omega_{\mu\nu}\omega^{\mu\nu}-R_{\mu\nu}k^\mu k^\nu .
+\end{equation}
+若线汇无旋，且 $R_{\mu\nu}k^\mu k^\nu\geqslant 0$，上式给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。因此一旦 $\theta(\lambda_0)<0$，不迟于 $\lambda-\lambda_0=2/|\theta(\lambda_0)|$，$\theta$ 就趋于负无穷并形成焦散或共轭点。此称\textbf{类光聚焦引理}。
+
+设 $\mathcal N$ 是局部由 $u=\mathrm{const.}$ 定义的类光超曲面。它的类光法余矢可写为 $\ell_\mu=f\cd_\mu u$；升指标后 $\ell^\mu$ 又切于 $\mathcal N$，其积分曲线正是超曲面的生成元。取横截面上的另一未来类光法矢 $n^\mu$ 并令 $\ell\cdot n=-1$，则
+\[
+    q_{\mu\nu}=g_{\mu\nu}+\ell_\mu n_\nu+n_\mu\ell_\nu,
+    \qquad
+    \Theta^{(\ell)}_{\mu\nu}=q_\mu{}^\gamma q_\nu{}^\kappa\cd_\gamma\ell_\kappa
+       =\frac12\theta_{(\ell)}q_{\mu\nu}+\sigma^{(\ell)}_{\mu\nu}.
+\]
+由于 $\ell_\mu$ 与某族超曲面正交，Frobenius 定理保证其扭转恒为零。一般的法矢参数并非仿射参数，而满足 $\ell^\nu\cd_\nu\ell^\mu=\kappa_{(\ell)}\ell^\mu$；于是类光超曲面上的 Raychaudhuri 方程为
+\begin{equation}
+    \ell^\nu\cd_\nu\theta_{(\ell)}
+    =\kappa_{(\ell)}\theta_{(\ell)}
+      -\frac12\theta_{(\ell)}^2
+      -\sigma^{(\ell)}_{\mu\nu}\sigma_{(\ell)}^{\mu\nu}
+      -8\pi T_{\mu\nu}\ell^\mu\ell^\nu,
+\end{equation}
+其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^\mu\ell_\mu=0$ 不作贡献。
+
+事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个类空余二维曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^\mu,n^\mu$，并归一化为 $\ell\cdot n=-1$。两支类光膨胀为
+\begin{equation}\label{eq:null-expansions}
+    \theta_{(\ell)}=q^{\mu\nu}\cd_\mu\ell_\nu,
+    \qquad
+    \theta_{(n)}=q^{\mu\nu}\nabla_\mu n_\nu.
+\end{equation}
+若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连外向光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{临界外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}(apparent horizon)。
+
+因此它消去了 $k,n$ 张成的二维法平面，只保留与陷获面相切的两个空间方向。
+
+在重标度 $\ell^\mu\mapsto f\ell^\mu$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{\mu\nu}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为临界陷获面”不变。
 
 考虑球对称时空中的一个对称 2-球，其面积为 $A=4\pi r^2$。沿两支未来指向类光法向量 $k_+^\mu,k_-^\mu$ 发出的光线束，其面积膨胀率为
 \[
     \theta_\pm=\frac{1}{A}\dv{A}{\lambda_\pm}
-    =\frac{2}{r}k_\pm^a\nabla_a r.
+    =\frac{2}{r}k_\pm^a\cd_\mu r.
 \]
-在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{边缘外陷获面}(marginally outer trapped surface)。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}(apparent horizon)。
+在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{临界外陷获面}。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}。
 
 球对称情形可用 Misner--Sharp 质量 $m$ 将这个条件写得更直观：
 \[
-    1-\frac{2m}{r}=g^{ab}\nabla_a r\nabla_b r,
+    1-\frac{2m}{r}=g^{\mu\nu}\cd_\mu r\cd_\nu r,
 \]
-其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，边缘球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故边缘条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
-
-事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个闭合类空 2-曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^a,n^a$，并归一化为 $\ell\cdot n=-1$。其诱导度规与两支类光膨胀为
-\begin{equation}\label{eq:null-expansions}
-    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
-    \qquad
-    \theta_{(\ell)}=q^{ab}\nabla_a\ell_b,
-    \qquad
-    \theta_{(n)}=q^{ab}\nabla_an_b.
-\end{equation}
-若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连“外发”光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{边缘外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}。
+其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，临界球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故临界条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
 
 表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
 
-\subsection{紧致}
-
-\subsection{类光聚焦引理}
-
-%%引用第一章
-
-类光测地线汇与 Raychaudhuri 方程
-
-视界面积的演化由类光测地线汇控制。设 $k^a$ 是仿射参数为 $\lambda$ 的类光测地矢量，即 $k^b\nabla_bk^a=0$。另取辅助类光矢量 $n^a$，使 $k\cdot n=-1$，则垂直于二者的二维屏空间度规为 $q_{ab}=g_{ab}+k_an_b+n_ak_b$。将 $\nabla_bk_a$ 投影到屏空间，得到
-\begin{equation}\label{eq:null-congruence-decomposition}
-    B_{ab}=q_a{}^cq_b{}^d\nabla_dk_c
-      =\frac12\theta q_{ab}+\sigma_{ab}+\omega_{ab},
-\end{equation}
-其中 $\theta=q^{ab}B_{ab}$ 是膨胀，$\sigma_{ab}=B_{(ab)}-\theta q_{ab}/2$ 是剪切，$\omega_{ab}=B_{[ab]}$ 是旋量。若 $\d A$ 是随线汇搬运的微小截面积元，则 $\dv{\ln\d A}{\lambda}=\theta$；所以 $\theta$ 直接量度光束截面积的相对变化率。四维时空中的类光 Raychaudhuri 方程为
-\begin{equation}\label{eq:null-raychaudhuri}
-    \dv{\theta}{\lambda}
-    =-\frac12\theta^2-\sigma_{ab}\sigma^{ab}
-      +\omega_{ab}\omega^{ab}-R_{ab}k^ak^b .
-\end{equation}
-
-若线汇无旋且物质满足\textbf{类光能量条件} $T_{ab}k^ak^b\geqslant0$，Einstein 方程与式 \eqref{eq:null-raychaudhuri} 给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。因此一旦 $\theta(\lambda_0)<0$，不迟于 $\lambda-\lambda_0=2/|\theta(\lambda_0)|$，$\theta$ 就趋于负无穷并形成焦散或共轭点。这一\textbf{聚焦结论}是面积定理与奇性定理的共同局域基础。
-
-类光超曲面上的 Raychaudhuri 方程
-
-设 $\mathcal N$ 是局部由 $u=\mathrm{const.}$ 定义的类光超曲面。它的类光法协矢可写为 $\ell_a=f\nabla_a u$；升指标后 $\ell^a$ 又切于 $\mathcal N$，其积分曲线正是超曲面的生成元。取横截面上的另一未来类光法矢 $n^a$ 并令 $\ell\cdot n=-1$，则
-\[
-    q_{ab}=g_{ab}+\ell_an_b+n_a\ell_b,
-    \qquad
-    \Theta^{(\ell)}_{ab}=q_a{}^cq_b{}^d\nabla_c\ell_d
-       =\frac12\theta_{(\ell)}q_{ab}+\sigma^{(\ell)}_{ab}.
-\]
-由于 $\ell_a$ 与某族超曲面正交，Frobenius 定理保证其旋量恒为零。一般的法矢参数并非仿射参数，而满足 $\ell^b\nabla_b\ell^a=\kappa_{(\ell)}\ell^a$；于是类光超曲面上的 Raychaudhuri 方程为
-\begin{equation}\label{eq:null-raychaudhuri-nonaffine}
-    \mathcal L_\ell\theta_{(\ell)}
-    =\kappa_{(\ell)}\theta_{(\ell)}
-      -\frac12\theta_{(\ell)}^2
-      -\sigma^{(\ell)}_{ab}\sigma_{(\ell)}^{ab}
-      -8\pi T_{ab}\ell^a\ell^b,
-\end{equation}
-其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^a\ell_a=0$ 不作贡献。在重标度 $\ell^a\mapsto f\ell^a$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{ab}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为边缘陷获面”不变。
+%紧致
 
 \subsection{Penrose 奇性定理}
 
+\noindent \textbf{类光奇性定理}(Penrose, 1965)：若四维 Lorentz 时空满足
+\begin{enumerate}
+    \item 整体双曲，且存在非紧 Cauchy 面 $\Sigma$；
+    \item 对任意类光 $k^\mu$ 有\textbf{类光收敛条件}(null convergence condition) $R_{\mu\nu}k^\mu k^\nu\geqslant0$；Einstein 方程成立时对应于类光能量条件；
+    \item 存在闭合未来陷获面 $S$。
+\end{enumerate}
+则时空中至少存在一条未来不完备的类光测地线。
+
 迅捷性这套语言把 Penrose 定理的局域机制变得直接：边界生成元就是最早到达的光线，故不能已经越过焦点；另一方面，若这些法测地线都能延伸得足够远，陷获面与类光收敛条件便由 Raychaudhuri 方程迫使它们在有限仿射参数内形成焦点。迅捷性把“形成焦点”翻译成“离开因果未来边界”，余下只需结合整体双曲性与非紧 Cauchy 面导出矛盾。
 
-其一个代表性版本是：若时空具有非紧 Cauchy 面并包含闭合未来陷获面，且所有类光矢量都满足
-\[
-    R_{\mu\nu}k^\mu k^\nu\geqslant0,
-\]
-则时空中至少存在一条未来不完备的类光测地线。由 Einstein 方程，这个\textbf{类光收敛条件}(null convergence condition)对应于物质的类光能量条件 $T_{\mu\nu}k^\mu k^\nu\geqslant0$。Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
+
+
+Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
 
 这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。
 
@@ -2890,7 +2896,7 @@ $\phi$ 的平均值 $\langle\phi\rangle$ 象征 $1/G$。
 广义相对论相当于 $f(R)=R$ 或 $R-2\Lambda$。
 
 下证在适当条件下，$f(R)$ 的作用实际上相当于引入额外标量场。
-引入辅助场 \(\chi\)，考虑
+引入辅助场 $\chi$，考虑
 \[
 S_G
 =
@@ -2899,7 +2905,7 @@ S_G
 ,
 \]
 其中 $f_\chi(\chi):=\dv*{f(\chi)}{\chi}.$
-先对 \(\chi\) 变分：
+先对 $\chi$ 变分：
 \begin{align*}
     \delta S
 &=
@@ -2908,20 +2914,20 @@ S_G
 &=\frac1{2\kappa}\int \d[4]x\sqrt{-g}\,
 f_{\chi\chi}(\chi)(R-\chi)\,\delta\chi.
 \end{align*}
-故 \(\chi\) 的方程为 $f_{\chi\chi}(\chi)(R-\chi)=0$。
+故 $\chi$ 的方程为 $f_{\chi\chi}(\chi)(R-\chi)=0$。
 若 $f_{\chi\chi}(\chi)\neq 0,$
 则必有 $\chi=R$。
-代回 \(S_G\)，立即恢复原来的 \(f(R)\) 作用：
+代回 $S_G$，立即恢复原来的 $f(R)$ 作用：
 \[
 S_G\big|_{\chi=R}
 =
 \frac1{2\kappa}\int \d[4]x\sqrt{-g}\,f(R).
 \]
-因此 \(S_G\) 与原 \(f(R)\) 作用动力学等价。
+因此 $S_G$ 与原 $f(R)$ 作用动力学等价。
 
 
 现在定义新标量场 $\phi:=f_\chi(\chi).$
-若 \(f_{\chi\chi}\neq 0\)，则此关系局部可逆，可写作 $\chi=\chi(\phi)$。
+若 $f_{\chi\chi}\neq 0$，则此关系局部可逆，可写作 $\chi=\chi(\phi)$。
 于是定义势能 $V(\phi):=\phi\,\chi(\phi)-f(\chi(\phi))$。
 则原辅助场作用可改写为
 \[
@@ -2931,7 +2937,7 @@ S_G
 .
 \]
 首先检查标量场方程。
-对 \(\phi\) 变分，
+对 $\phi$ 变分，
 \[
 \delta S
 =
@@ -2958,10 +2964,10 @@ V'(\phi)
 $
 R=\chi(\phi)
 $，
-这正与前面的辅助场方程 \(\chi=R\) 一致。
+这正与前面的辅助场方程 $\chi=R$ 一致。
 
 其次是度规场方程。
-对 \(g^{\mu\nu}\) 变分，得到
+对 $g^{\mu\nu}$ 变分，得到
 \[
 \phi R_{\mu\nu}
 -\frac12 g_{\mu\nu}(\phi R-V)
@@ -2988,7 +2994,7 @@ S_{\mathrm{BD}}
 \phi R-\frac{\omega(\phi)}{\phi}\cd_\mu\phi\cd^\mu\phi-V(\phi)
 \right].
 \]
-而这里由 \(f(R)\) 得到的作用是
+而这里由 $f(R)$ 得到的作用是
 \[
 S_G
 =
@@ -2998,24 +3004,24 @@ S_G
 $
 \omega(\phi)=0
 $
-的 Brans--Dicke 型理论，但由于 \(\phi\) 与 \(g_{\mu\nu}\) 的非最小耦合，\(\phi\) 仍然是传播的额外自由度。
+的 Brans--Dicke 型理论，但由于 $\phi$ 与 $g_{\mu\nu}$ 的非最小耦合，$\phi$ 仍然是传播的额外自由度。
 
 考虑迹方程与标量自由度。
 对度规方程取迹，得
 \[
 \phi R-2V+3\Box\phi=\kappa T.
 \]
-再利用标量方程 \(R=V'(\phi)\)，得到
+再利用标量方程 $R=V'(\phi)$，得到
 \[
 3\Box\phi+\phi V'(\phi)-2V(\phi)=\kappa T.
 \]
-这显然是一个二阶微分方程，说明 \(\phi\) 不是代数约束，而是一个真正的额外标量自由度。
+这显然是一个二阶微分方程，说明 $\phi$ 不是代数约束，而是一个真正的额外标量自由度。
 
-综上，在 \(f_{RR}\neq 0\) 的非退化情形下，度规型 \(f(R)\) 引力与一个含有额外标量场 \(\phi=f_R\) 的标量-张量理论等价。该标量场的势能为
+综上，在 $f_{RR}\neq 0$ 的非退化情形下，度规型 $f(R)$ 引力与一个含有额外标量场 $\phi=f_R$ 的标量-张量理论等价。该标量场的势能为
 \[
 V(\phi)=\phi R(\phi)-f\bigl(R(\phi)\bigr),
 \]
-故 \(f(R)\) 理论实际上包含了除通常自旋 \(2\) 引力子之外的一个额外自旋 \(0\) 标量自由度。
+故 $f(R)$ 理论实际上包含了除通常自旋 $2$ 引力子之外的一个额外自旋 $0$ 标量自由度。
 
 \subsection{Kaluza-Klein 理论}
 
@@ -3026,7 +3032,7 @@ Kaluza 最先注意到电磁张量看起来像截断克氏符：引入第五（�
 }
 其中 $\mu,\nu$ 只取 $0,1,2,3$。假设五维“度规”形如
 \eq{
-    \d\hat s^2=\hat g_{ab}\d x^a\d x^b=g_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2,
+    \d\hat s^2=\hat g_{\mu\nu}\d x^a\d x^b=g_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2,
 }
 其中 $a,b$ 取 $0,1,2,3,4$。
 也即
@@ -3051,7 +3057,7 @@ Gauss 几何制下取 $\hat G=2\pi L,\lambda=2$ 即得真空 Einstein-Maxwell �
 若用荷质比来确定守恒量，则这正是 Lorentz 力定律 $\dot x^4+A_\nu\dot x^\nu=q/m$。从而经典电磁力、经典引力得到统一。
 带电粒子与中性粒子具有不同运动，这并不违反等效原理，而只是因为它们在 $x^4$ 上有不同初速度。
 
-这一理论当然差强人意。$\hat R_{ab}=0$ 的真正结果为
+这一理论当然差强人意。$\hat R_{\mu\nu}=0$ 的真正结果为
 \eq{
     F_{\mu\nu}F^{\mu\nu}=0,\quad \cd_\mu F^{\mu\nu}=0,\quad R_{\mu\nu}=2 F_{\mu\sigma}F_{\nu}{}^{\sigma},
 }
@@ -3059,7 +3065,7 @@ Gauss 几何制下取 $\hat G=2\pi L,\lambda=2$ 即得真空 Einstein-Maxwell �
 
 此外还必须解释为何从未发现第五维度。置五维闵氏时空上的复标量场 $\tilde\phi$。方便起见考虑无质量，Klein-Gordon 方程为
 \eq{
-    \hat\eta^{ab}\p_a\p_b\tilde\phi=0,\quad \tilde\phi=\sum_n\phi_n(x^\mu)\e^{\i n x^4/L},
+    \hat\eta^{\mu\nu}\p_a\p_b\tilde\phi=0,\quad \tilde\phi=\sum_n\phi_n(x^\mu)\e^{\i n x^4/L},
 }
 其中由周期性 $x^4\sim x^4+2\pi L$，可对 $\tilde\phi$ 作 Fourier 展开使其与 $x^4$ 的依赖关系更明确。代入展开式得到无穷多个解耦方程，即对 $\tilde\phi$ 的无穷多 Fourier 模 $\phi_n$ 均有
 \eq{
@@ -3070,7 +3076,7 @@ Gauss 几何制下取 $\hat G=2\pi L,\lambda=2$ 即得真空 Einstein-Maxwell �
 四维闵氏度规在五维上的拓展其实应为 $\d\hat s^2=\eta_{\mu\nu}\d x^\mu \d x^\nu+(\d x^4+\lambda A_\mu\d x^\mu)^2$，则 $\hat g=g=-1$。因此 $\hat g^{\mu\nu}=\eta^{\mu\nu},\hat g^{\mu 4}=-\lambda A^\mu,\hat g^{44}=1+\lambda^2 A^\mu A_\mu$。
 Klein-Gordon 方程变为
 \[
-    0=\square_{\hat g}\tilde\phi=\p_a\left(\hat g^{ab}\p_b \tilde\phi\right)=\eta^{\mu\nu}(\p_\mu-\lambda A_\mu\p_4)(\p_\nu-\lambda A_\nu\p_4)\tilde\phi+\p_4^2\tilde\phi,
+    0=\square_{\hat g}\tilde\phi=\p_a\left(\hat g^{\mu\nu}\p_b \tilde\phi\right)=\eta^{\mu\nu}(\p_\mu-\lambda A_\mu\p_4)(\p_\nu-\lambda A_\nu\p_4)\tilde\phi+\p_4^2\tilde\phi,
 \]
 将 Fourier 分解代入，则对任意 $\phi_n$ 有
 \[
@@ -3184,6 +3190,8 @@ $\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sig
 对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是\textbf{法余矢}，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
 取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，于是 $\d s^2= \hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu = (1/\hat g^{00})\d\hat t^2+\hat h_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$。
 如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，这称为\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
+
+严格说，$q_{\mu\nu}$ 在四维切空间上是秩为 $2$ 的退化投影张量；限制到屏空间或陷获面上后，才是正定的二维诱导度规。
 
 对作用量的变分涉及边界项。高维 Gauss 定理指出，散度的体积分可以转化为表面积分：
 \eq{
