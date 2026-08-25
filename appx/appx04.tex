@@ -128,7 +128,7 @@
 \end{definition}
 
 \begin{definition}
-    \textbf{$C^r$-同胚}是流形间双向 $C^r$ 的双射。$C^\infty$-同胚称为\textbf{微分同胚}(diffeomorphism)或\textbf{光滑同胚}。
+    \textbf{$C^r$-同胚}是流形间双向 $C^r$ 的双射。$C^\infty$-同胚称为\textbf{微分同胚}或\textbf{光滑同胚}。
 \end{definition}
 
 \begin{theorem}
@@ -482,6 +482,18 @@ A^i:=A(x^i),
 并且，
 Cartan 还注意到，这相当于给函数微分一个更严格的理解。标准分析学中常将 $\d f$ 定义为 $\Delta f$ 的线性主部，即 $\d f(x,\Delta x):=f'(x)\Delta x$。这里 $\Delta x$ 是从某点 $x$ 出发的位移，实际上任意大小，但物理上的理解是在 $\Delta x$ 很小时给出的微小增量。
 
+\begin{definition}
+    映射 $F:M\to N$ 的在 $p$ 处的切映射
+\end{definition}
+
+\begin{definition}\label{chdm:def_pushforward-vector}
+    定义\textbf{推前映射}，或称为\textbf{切映射}：
+    \begin{equation}
+        (\phi_{*}v)(g) \overset{def}{=} v(\phi^{*}(g)) = v (g \circ \phi), 
+        \qquad \forall g\in C^\infty_{\phi(x_0)}(N),\quad \forall v^a \in T_{x_0}M .
+    \end{equation}
+\end{definition}
+
 \begin{definition}函数的\textbf{微分}定义为
     \eq{
     \d f(p)(A):=A(f).
@@ -638,13 +650,7 @@ $M$和$N$的局部坐标分别为$(U;x^i)$和$(V;y^\alpha)$，则
 \index[physwords]{诱导映射!余切映射、拉回映射}
 
 
-\begin{definition}\label{chdm:def_pushforward-vector}
-    定义\textbf{推前映射}，或称为\textbf{切映射}：
-    \begin{equation}
-        (\phi_{*}v)(g) \overset{def}{=} v(\phi^{*}(g)) = v (g \circ \phi), 
-        \qquad \forall g\in C^\infty_{\phi(x_0)}(N),\quad \forall v^a \in T_{x_0}M .
-    \end{equation}
-\end{definition}
+
 
 同样注意，对于一般的光滑映射，我们不能定义切矢量的拉回；请读者
 仿照上面讨论，用非单一性给出（类似）解释。

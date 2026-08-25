@@ -377,7 +377,7 @@ $T^\mu$ 在度规 $g_{\mu\nu}$ 下的\textbf{对偶矢量}(dual vector) 为 $T_\
     \subfloat[\centering 3 维时空的光锥]{
      \begin{tikzpicture}[scale=1.5]
     \draw (-1,-1)--(1,1);
-    \draw (-1,1)--(1,-1) node[right]{$\scriptstyle C_N$};
+    \draw (-1,1)--(1,-1);
     \draw[->] (0,0)--(0.8,0.8) node[below right]{\scriptsize 类光矢量};
     \draw[->] (0,0)--(-0.9,-0.3) node[above left]{\scriptsize 类空矢量};
     \draw[dashed] (0,0)--(-0.175,0.175/0.2);
@@ -392,7 +392,7 @@ $T^\mu$ 在度规 $g_{\mu\nu}$ 下的\textbf{对偶矢量}(dual vector) 为 $T_\
     }
     \caption{光锥}
 \end{figure}
-取 $\eta_{\mu\nu}$，矢量按模方符号可类似地分为三类。类光矢量亦称\textbf{零模}(null)矢量，构成的集合 $C_N$ 称\textbf{光锥}(light cone)。
+取 $\eta_{\mu\nu}$，矢量按模方符号可类似地分为三类。类光矢量亦称\textbf{零模}(null)矢量，构成的集合称\textbf{光锥}(light cone)。
 若曲线上任意两点的间隔都类时，则称\textbf{类时线}，其余情形类似。分段 $C^1$ 时可直接观察切矢类别。
 类时线的线长为
 \[
@@ -403,7 +403,7 @@ $T^\mu$ 在度规 $g_{\mu\nu}$ 下的\textbf{对偶矢量}(dual vector) 为 $T_\
 设 $V^\mu$ 类时，$W^\nu$ 是类时或非零类光矢量，则 $0\leqslant|\bm V|<|V^0|,|\bm W|\leqslant|W^0|\ne 0$，即 $V^0W^0\ne 0$，$V^\mu,W^\nu$ 的\textbf{时间指向}要么相同，要么相反。故可将光锥及其内部 $W^\mu$ 分类。由 Cauchy 不等式知
 \[-V^0W^0-|V^0W^0|<-V^0W^0-|\bm V||\bm W|\leqslant V^\mu W_\mu\leqslant-V^0W^0+|\bm V||\bm W|<-V^0W^0+|V^0W^0|,\]
 则 $(V^{0} W^{0})(V^\mu W_\mu)<0$，因此还可通过 $V^\mu W_\mu$ 符号判断。
-约定某一惯性系，或给定未来朝向的类时 $V^\mu$ 并建系使 $V^0>0$，则 $W^0>0$ 的 $W^\mu$ 都\textbf{指向未来}(future directed)，$W^0<0$ 的 $W^\mu$ 都\textbf{指向过去}(past directed)。光锥被分为了\textbf{未来光锥}和\textbf{过去光锥}。
+约定某一惯性系，或给定未来朝向的类时 $V^\mu$ 并建系使 $V^0>0$，则 $W^0>0$ 的 $W^\mu$ 都\textbf{指向未来}(future directed)，$W^0<0$ 的 $W^\mu$ 都\textbf{指向过去}(past directed)。光锥被分为\textbf{未来光锥}和\textbf{过去光锥}。
 讨论时间反演时可考虑指向过去的惯性系。类空矢量无未来或过去之分。
 类时、类光性统称\textbf{因果性}(causality)。能用因果线连接的事件正是具有因果联系的事件。故因果现在可解释为信息以粒子为载体的传递。显然，粒子能依次经历的事件便存在着因果顺序。
 
@@ -606,8 +606,11 @@ $\p_t\Phi_i,\p_i\Phi$ 分别是时间导数以及相邻体元间的相互作用�
 经典力学原则上无定域性，因为 Newton 引力是典型的超距案例，这一定律现只作为近似。
 对不具备连续性的事件亦能定义速率，比如介质光速。谈论超光速现象时往往指这种含义，以因果为前提的速度自然默认亚光速。
 
+点变换和坐标变换可互相转换。前者为新旧点在同一坐标系下的表示 $x\to\tilde x$，称\textbf{主动观点}：点变（场、运动路径也一齐拖拽）、坐标系不变；后者为同一时空点在不同系的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}：点不变、坐标系变。双向连续的双射称为\textbf{同胚}、双向光滑的双射称\textbf{微分同胚}(diffeomorphism)。我们只考虑可逆光滑坐标变换，这就给出主动观点下流形之间的微分同胚。
+
 定域性使参数往往可随时空点可变：$\p_\mu\epsilon\ne 0$，这里一并考虑。
-对 $\Phi(x)$ 进行变换\footnote{可见时空点变换（或一般的位形空间）和坐标变换十分相似。前者为新旧点在同一坐标系下的表示 $x\to\tilde x$（即 $\xi^\mu(x)$），称\textbf{主动观点}：点变（场、运动路径也一齐拖拽）、坐标系不变；后者为同一时空点在不同系的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}：点不变、坐标系变。两种观点可以互相转换。} $\Phi(x)\to\tilde\Phi(\tilde x)$，$\bar\var\Phi=\epsilon(x) F,\delta x^\mu=\epsilon(x) \xi^\mu$。
+对 $\Phi(x)$ 进行变换 $\Phi(x)\to\tilde\Phi(\tilde x)$。
+$\bar\var\Phi=\epsilon(x) F,\delta x^\mu=\epsilon(x) \xi^\mu$。
 则 $\delta=\bar\var+\delta x^\nu\p_\nu$，作用于 $\Phi,\Phi_{,\nu},\Lag(x)$。
 并注意 $\bar\var\p =\p\bar\var$。$\d[4]\tilde x=J\d[4]x$ 中的 Jacobi 行列式为
 \[
@@ -1160,7 +1163,7 @@ $\pdv*{x^\mu}{x'^\nu}$（代替 $\Lambda$）这种绝对对象可变，就应吸
 $\pdv*{\xi^\alpha}$ 坐标分量变换为 $\pdv*{x'^\mu}{\xi^\alpha}=\pdv{x'^\mu}{x^\nu}\pdv*{x^\nu}{\xi^\alpha}$。
 注意 $\{x\}$ 的 $0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，变换到另一系 $\{x'\}$ 为 $\pdv*{x'^\mu}{t}$。$\delta^\mu_\nu,\pdv*{x'^\mu}{t}$ 都是张量但 $\delta^\mu_0$ 不是。
 取闵氏度规和惯性系 $\{y\}$，则惯性系 $\{x\}$ 坐标基的内积处处为$\eta_{\mu\nu}\pdv{y^\mu}{x^\alpha}\pdv{y^\nu}{x^\beta}=\eta_{\alpha\beta}$，可见 Poincaré 变换的正交性 $|\Lambda|=1$ 等价为惯性系 $\{x\}$ 的正交归一性。
-$\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵可逆性，$\pdv*{\xi^\beta}{x^\mu}$ 与 $\pdv*{x^\mu}{\xi^\alpha}$ 互逆，故 $\d\xi^\beta$ 可称\textbf{对偶坐标基}。Cartan 用多重映射定义张量，从而张量可用坐标基、对偶坐标基展开，等价为变换律语言。可见度规是\textit{指定好的}对称、分量矩阵可逆的 (0,2)-张量，$g_{\mu\nu}\d x^\mu\d x^\nu$ 实质是基底展开。
+$\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵可逆性，$\pdv*{\xi^\beta}{x^\mu}$ 与 $\pdv*{x^\mu}{\xi^\alpha}$ 互逆，故 $\d\xi^\beta$ 可称\textbf{对偶坐标基}。Cartan 用多重映射定义张量，从而张量可用坐标基、对偶坐标基展开，等价为变换律语言。可见度规是\textit{指定好的}对称、分量矩阵可逆的 (0,2)-张量，$g_{\mu\nu}\d x^\mu\d x^\nu$ 实质是坐标基展开。
 考虑任意的坐标变换，线元将保持二次型
 \eq{
     g_{\mu\nu}\d x^\mu\d x^\nu=g'_{\gamma\sigma}\d x'^\gamma\d x'^\sigma\iff
@@ -1241,7 +1244,7 @@ $g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu
 此称\textbf{线性近似}。我们能在 $\eta_{\mu\nu}$ 的惯性系下将引力近似解释为 $h_{\mu\nu}$。
 度规逆满足 $g^{\mu\nu}g_{\nu\lambda}=\delta^\mu_\lambda$，假设 $g^{\mu\nu} = \eta^{\mu\nu} + k^{\mu\nu}$。记 $h^{\mu\nu} := \eta^{\alpha\mu}\eta^{\beta\nu}h_{\alpha\beta}$，
 代入有 $k^{\mu\nu} = -h^{\mu\nu} + O(h^2)$，因此一阶上 $g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu}$。由于所考虑的物理量 $T^{\cdots}$ 几乎使用 $h_{\mu\nu}$ 构造，属于 $O(h)$，因此升降指标 $g_{\mu\nu} T^{\nu\cdots} = \eta_{\mu\nu} T^{\nu\cdots} + O(h^2)$，即相当于用 $\eta_{\mu\nu}$ 升降。这包括 $h_{\mu\nu}$ 自身的升降，当然例外也正是 $g^{\mu\nu} \ne \eta^{\alpha\mu}\eta^{\beta\nu}g_{\alpha\beta}$。
-考虑无穷小变换 $\delta x^\mu=x'^\mu-x^\mu=\epsilon^\mu(x)$（主动观点的单参微分同胚），则（以下均省略 $O(\epsilon^2)$）
+考虑无穷小变换（单参微分同胚） $\delta x^\mu=x'^\mu-x^\mu=\epsilon^\mu(x)$，则（以下均省略 $O(\epsilon^2)$）
 \[\delta g_{\mu\nu} = (\delta^\alpha_\mu - \p_\mu \epsilon^\alpha)(\delta^\beta_\nu - \p_\nu \epsilon^\beta) g_{\alpha\beta}(x) - g_{\mu\nu}(x) = - (g_{\alpha\nu} \p_\mu \epsilon^\alpha + g_{\mu\beta} \p_\nu \epsilon^\beta).\]
 另一方面 $\delta g_{\mu\nu} = \bar\var g_{\mu\nu} + \epsilon^\lambda\p_\lambda g_{\mu\nu}(x)$，因此
 \eq{
@@ -1713,9 +1716,9 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 }
 $\varepsilon$ 与 $p,U^\mu,n,\mathfrak s$ 等有关，变分时需要满足若干约束，称为\textbf{受限变分}(constrained variation)。理想流体约束如下：
 \begin{itemize}
-    \item 等熵 $U^\mu\nabla_\mu\mathfrak s = 0$，于是根据热力学第一定律有 $\left(\pdv*{\varepsilon}{n}\right)_{\mathfrak s} = (\varepsilon + p)/n$；
+    \item 等熵 $U^\mu\cd_\mu\mathfrak s = 0$，于是根据热力学第一定律有 $\left(\pdv*{\varepsilon}{n}\right)_{\mathfrak s} = (\varepsilon + p)/n$；
     \item 流场归一化 $g_{\mu\nu} U^\mu U^\nu=-1$；
-    \item 粒子数守恒 $\nabla_\nu(n U^\nu) = 0$，即 $\p_\nu(n U^\nu\sqrt{-g})=0$。
+    \item 粒子数守恒 $\cd_\nu(n U^\nu) = 0$，即 $\p_\nu(n U^\nu\sqrt{-g})=0$。
 \end{itemize}
 对于给定流线，守恒⽅程可通过流线上某点的初值唯⼀地确定 $n U^\nu\sqrt{-g}$ 在同⼀流线上的值，因此受限变分满足 $\var(n U^\nu\sqrt{-g})=0$。同理 $\var(U^\mu U_\mu)=0$，$\var U^\mu=\frac 12 U_\nu \var g^{\mu\nu}$，故
 \eq{
@@ -1724,15 +1727,15 @@ $\varepsilon$ 与 $p,U^\mu,n,\mathfrak s$ 等有关，变分时需要满足若�
 则 $\var\varepsilon = \frac{\varepsilon+p}{2}(g_{\mu\nu} + U_\mu U_\nu)\var g^{\mu\nu}$，故 $\var S = -\frac 12\int\d[4]{x}\sqrt{-g} (pg_{\mu\nu} + (\varepsilon+p)U_\mu U_\nu)\var g^{\mu\nu}$。
 另一方法是显式将约束项加入作用量，即 Lagrange 乘子法，就可自由变分。得\textbf{Ray–Brown 作用量}
 \begin{align*}
-    S &= \int\d[4]{x}\sqrt{-g}\,(-\varepsilon + \kappa_1 (U^\mu U_\mu+1) + \kappa_2 \nabla_\nu(n U^\nu) ) \\
-    &\simeq \int\d[4]{x}\sqrt{-g}\,(-\varepsilon + \kappa_1 (U^\mu U_\mu+1) - n U^\nu\nabla_\nu\kappa_2 ),
+    S &= \int\d[4]{x}\sqrt{-g}\,(-\varepsilon + \kappa_1 (U^\mu U_\mu+1) + \kappa_2 \cd_\nu(n U^\nu) ) \\
+    &\simeq \int\d[4]{x}\sqrt{-g}\,(-\varepsilon + \kappa_1 (U^\mu U_\mu+1) - n U^\nu\cd_\nu\kappa_2 ),
 \end{align*}
 记括号为 $\Lag$，求导为
 \[
-    \pdv{\Lag}{n} = -\pdv{\varepsilon}{n}-U^\nu\nabla_\nu\kappa_2,\quad \pdv{\Lag}{U^\mu} = 2\kappa_1 U_\mu-n\nabla_\mu\kappa_2,\quad \pdv{\Lag}{\nabla_\mu n} = \pdv{\Lag}{\nabla_\mu U^\nu} = 0. 
+    \pdv{\Lag}{n} = -\pdv{\varepsilon}{n}-U^\nu\cd_\nu\kappa_2,\quad \pdv{\Lag}{U^\mu} = 2\kappa_1 U_\mu-n\cd_\mu\kappa_2,\quad \pdv{\Lag}{\cd_\mu n} = \pdv{\Lag}{\cd_\mu U^\nu} = 0. 
 \]
-于是 E-L 方程为两条 $\pdv{\varepsilon}{n}=-U^\nu\nabla_\nu\kappa_2,2\kappa_1U_\mu=n\nabla_\mu\kappa_2$。
-得 $\kappa_1=\frac n2\pdv{\varepsilon}{n}=\frac{\varepsilon+p}{2},\nabla_\mu\kappa_2=\pdv{\varepsilon}{n}U_\mu=\frac{\varepsilon+p}{n}U_\mu$，代回 $\Lag$ 就有\textbf{Taub-Schutz 拉氏量} $\Lag_\text{在壳}=p$。
+于是 E-L 方程为两条 $\pdv{\varepsilon}{n}=-U^\nu\cd_\nu\kappa_2,2\kappa_1U_\mu=n\cd_\mu\kappa_2$。
+得 $\kappa_1=\frac n2\pdv{\varepsilon}{n}=\frac{\varepsilon+p}{2},\cd_\mu\kappa_2=\pdv{\varepsilon}{n}U_\mu=\frac{\varepsilon+p}{n}U_\mu$，代回 $\Lag$ 就有\textbf{Taub-Schutz 拉氏量} $\Lag_\text{在壳}=p$。
 度规求导为（注意 $\var g_{\alpha\beta}=-g_{\alpha\mu}g_{\nu\beta} \var g^{\mu\nu}$）
 \[
     \pdv{\Lag}{g^{\mu\nu}} = -\kappa_1 U_\mu U_\nu = -\frac{\varepsilon+p}2 U_\mu U_\nu,
@@ -1755,7 +1758,7 @@ $F_{\mu\nu}$ 的定义和无挠性自动给出 $F_{\mu\nu}=2\cd_{[\mu}A_{\nu]}=2
     T_{\mu\nu}=\frac{1}{4\pi}\left(F_{\mu\sigma}F_{\nu}{}^{\sigma}-\frac{1}{4}g_{\mu\nu} F_{\sigma\lambda}F^{\sigma\lambda}\right).
 }
 而耦合项 $\int\d{x^\mu_n} A_\mu$ 不含度规，变分结果为零。
-$g^{\mu\nu}$ 的运动方程为 $R_{\mu\nu}-\frac12 g_{\mu\nu} R=8\pi(T_{\mu\nu} + \hat T_{\mu\nu})$。守恒性为 $\nabla_\mu\hat T^{\mu\nu}=F^\mu{}_{\lambda}J^\lambda=-\nabla_\mu T^{\mu\nu}$。
+$g^{\mu\nu}$ 的运动方程为 $R_{\mu\nu}-\frac12 g_{\mu\nu} R=8\pi(T_{\mu\nu} + \hat T_{\mu\nu})$。守恒性为 $\cd_\mu\hat T^{\mu\nu}=F^\mu{}_{\lambda}J^\lambda=-\cd_\mu T^{\mu\nu}$。
 电荷质量呈 $\delta$ 分布，则电磁场 $T_{\mu\nu}$ 占主导，称为\textbf{Einstein-Maxwell 方程}。
 Lorenz 规范从局域惯性系出发变换为 $\cd^\mu A_\mu =0$，则引力耦合的 d'Alembert 方程为
 \begin{align}
@@ -1861,42 +1864,52 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 从而 $\tilde R^\sigma{}_{0 \sigma 0}=\tilde R^i{}_{0 i 0} \approx \tilde\p_i\tilde\p^i{\phi}$。
 这就给出了定义 $R_{\mu\nu}={R^\sigma}_{\mu\sigma\nu}$ 的物理动机，并再次出现 $\tilde R_{00} = \nabla^2\phi$。
 
-%% 二阶变分
-
 现在将 $S=\int\sqrt{-g_{\mu\nu}\d x^\mu\d x^\nu}$ 的变分，看成\textit{任取}类时单参族 $x^\mu(\tau,s)$ 并考察 $s=0$ 处导数。
 仍固定端点 $\tau=p,q$，则 $S^\mu|_p=S^\mu|_q=0$，因此参数 $\tau$ 不能成为单参族中所有线的固有时，只约定是测地解 $x^\mu(\tau,0)$ 的固有时。
 记线元密度 $\ell:=\sqrt{-Z^\mu Z_\mu}$，只在求导后代入 $s=0$，此时 $\ell=1$。
-再简记 $\nabla_Z:=Z^\mu\nabla_\mu,\nabla_S:=S^\mu\nabla_\mu$。Levi-Civita 联络下 $\nabla_SZ=\nabla_ZS$ 则 $\pdv*{\ell}{s}=\nabla_S\ell=-Z_\mu\nabla_ZS^\mu/\ell$，于是
+再简记 $\cd_Z:=Z^\mu\cd_\mu,\cd_S:=S^\mu\cd_\mu$。Levi-Civita 联络下 $\cd_SZ=\cd_ZS$ 则 $\pdv*{\ell}{s}=\cd_S\ell=-Z_\mu\cd_ZS^\mu/\ell$，于是
 \begin{align*}
-    \eval{\pdv{\ell}{s}}_{s=0}&=-Z_\mu\nabla_ZS^\mu,\quad
+    \eval{\pdv{\ell}{s}}_{s=0}&=-Z_\mu\cd_ZS^\mu,\quad
     \eval{\pdv[2]{\ell}{s}}_{s=0}
-    =-(\nabla_ZS^\mu)(\nabla_ZS_\mu)-(Z_\mu\nabla_ZS^\mu)^2-Z_\mu\nabla_S\nabla_SZ^\mu;\\
-    \eval{\dv{S}{s}}_{s=0} &= \int_p^q\d{\tau}\eval{\pdv{\ell}{s}}_{s=0} = -\eval{S_\mu Z^\mu}_p^q+\int_p^q\d\tau\,S_\mu \nabla_Z Z^\mu=\int_p^q\d\tau\,S_\mu \nabla_Z Z^\mu.
+    =-(\cd_ZS^\mu)(\cd_ZS_\mu)-(Z_\mu\cd_ZS^\mu)^2-Z_\mu\cd_S\cd_SZ^\mu;\\
+    \eval{\dv{S}{s}}_{s=0} &= \int_p^q\d{\tau}\eval{\pdv{\ell}{s}}_{s=0} = -\eval{S_\mu Z^\mu}_p^q+\int_p^q\d\tau\,S_\mu \cd_Z Z^\mu=\int_p^q\d\tau\,S_\mu \cd_Z Z^\mu.
 \end{align*}
-它对任意 $S^\mu$ 为零，当且仅当 $\nabla_Z Z=0$。极值情况尚须考察二阶导数。
-置 $B^\mu:=\nabla_SS^\mu$。协变导数换序及 Riemann 张量的对称性给出
+它对任意 $S^\mu$ 为零，当且仅当 $\cd_Z Z=0$。极值情况尚须考察二阶导数。
+置 $B^\mu:=\cd_SS^\mu$。协变导数换序及 Riemann 张量的对称性给出
 \eq{
-    Z_\mu\nabla_S\nabla_SZ^\mu
-    =Z_\mu\nabla_ZB^\mu+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa.
+    Z_\mu\cd_S\cd_SZ^\mu
+    =Z_\mu\cd_ZB^\mu+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa.
 }
-固定端点使 $B^\mu|_p=B^\mu|_q=0$，而基准线满足 $\nabla_ZZ=0$，故 $Z_\mu\nabla_ZB^\mu$ 的积分是为零的边界项。于是
+固定端点使 $B^\mu|_p=B^\mu|_q=0$，而基准线满足 $\cd_ZZ=0$，故 $Z_\mu\cd_ZB^\mu$ 的积分是为零的边界项。于是
 \eq{
-    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\nabla_ZS^\mu)(\nabla_ZS_\mu)
-    +(Z_\mu\nabla_ZS^\mu)^2+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa\right].
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\cd_ZS^\mu)(\cd_ZS_\mu)
+    +(Z_\mu\cd_ZS^\mu)^2+S_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu S^\kappa\right].
 }
-做 3+1 分解 $S^\mu=\eta^\mu+fZ^\mu$，其中 $f=-S^\mu Z_\mu$。沿测地线有 $\nabla_ZS^\mu=\nabla_Z\eta^\mu+\p_\tau f Z^\mu$ 和 $Z_\mu\nabla_ZS^\mu=-\p_\tau f$，故前两项中的 $(\p_\tau f)^2$ 正好抵消；曲率项中的类时部分则由 Riemann 张量的反称性消失。综上，二阶结果只依赖横向变分，并可写成\textbf{指标型}(index form)
+做 3+1 分解 $S^\mu=\eta^\mu+fZ^\mu$，其中 $f=-S^\mu Z_\mu$。沿测地线有 $\cd_ZS^\mu=\cd_Z\eta^\mu+\p_\tau f Z^\mu$ 和 $Z_\mu\cd_ZS^\mu=-\p_\tau f$，故前两项中的 $(\p_\tau f)^2$ 正好抵消；曲率项中的类时部分则由 Riemann 张量的反称性消失。综上，二阶结果只依赖横向变分，并可写成\textbf{指标型}(index form)
 \eq{
 \tcbhighmath{
-    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\nabla_Z\eta^\mu)(\nabla_Z\eta_\mu)
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\left[(\cd_Z\eta^\mu)(\cd_Z\eta_\mu)
     +\eta_\lambda R^\lambda{}_{\mu\nu\kappa}Z^\mu Z^\nu\eta^\kappa\right].
 }
 }
 空间度规正定，故充分短的测地线段上，导数项压过有限的曲率项，于是上式小于零，类时测地线局域地使固有时极大。
 但对充分长的线段则要具体讨论。分部积分并利用端点处 $\eta^\mu=0$，可得
 \eq{
-    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\,\eta_\mu\left(-\nabla_Z \nabla_Z \eta^\mu+R^\mu{}_{\alpha\nu\beta}Z^\alpha Z^\nu\eta^\beta\right).
+    \eval{\dv[2]{S}{s}}_{s=0}=-\int_p^q\d\tau\,\eta_\mu\left(-\cd_Z \cd_Z \eta^\mu+R^\mu{}_{\alpha\nu\beta}Z^\alpha Z^\nu\eta^\beta\right).
 }
-括号为零正是测地偏离方程。因此，若存在非零 Jacobi 场在 $p$ 与 $r$ 同时为零，则称 $r$ 是 $p$ 沿 $\gamma$ 的\textbf{共轭点}(conjugate point)。共轭点尚未出现时，积分正定，$\gamma$ 在邻近类时线中严格极大（重参数化除外）；若终点恰为首个共轭点，则存在上式为零的方向，二阶变分不能判定严格极值；若共轭点已落在 $p,q$ 之间，则可构造上式大于零的变分，$\gamma$ 不再使固有时极大。可见潮汐造成的测地线聚焦，正是类时测地线失去极大性的机制。
+括号为零正是测地偏离方程。因此，若存在\textit{非零} Jacobi 场在 $p$ 与 $r$ 同时为零，则称 $r$ 是 $p$ 沿 $\gamma$ 的\textbf{共轭点}(conjugate point)。共轭点尚未出现时，积分正定，$\gamma$ 在邻近类时线中严格极大（重参数化除外）；若终点恰为首个共轭点，则存在上式为零的方向，二阶变分不能判定严格极值；若共轭点已落在 $p,q$ 之间，则可构造上式大于零的变分，$\gamma$ 不再使固有时极大。可见潮汐造成的测地线聚焦，正是类时测地线失去极大性的机制。
+
+\begin{wrapfigure}{l}{.3\textwidth}
+    \centering
+    \includegraphics[width=.3\textwidth]{fig/chpt01/sphere.pdf}
+    \caption{共轭点}
+\end{wrapfigure}
+
+一个经典的例子是地球南北极。南北极 $\mathbf N,\mathbf S$ 间存在无数等长测地线，这直接着影响着测地解的极值情况。从 $\mathbf S$ 出发到 $D$ 的测地线可以是 $\mathbf S A \mathbf N D$，其长度并非极小，因为可构造一条长度更小的邻近线段。
+取 $\mathbf S A\mathbf N$ 的邻近经线。新经线加上 $\mathbf N D$ 仍等长于 $\mathbf S A \mathbf N D$ 但在 $\mathbf N$ 不 $C^1$，出现了一个拐角(kink)。在 $\mathbf N$ 附近做\textbf{圆滑化}(round out)操作，也就是用一段微小曲线 $ab$ 来圆滑地连接，组成 $C^1$ 曲线 $\mathbf SabD$。在技术上，$ab$ 可任意地小，故 $\mathbf SabD$ 仍是 $\mathbf S,D$ 间测地解 $\mathbf S A \mathbf N D$ 的邻近曲线，$\mathbf SabD$ 线长任意逼近 $\mathbf S A \mathbf N D$，但始终严格地有 $ab < a\mathbf N + \mathbf N b$，即 $\mathbf SabD<\mathbf S A \mathbf N D$。
+但注意，共轭点和“存在多条测地线”严格上无关，球面只是特例。考虑圆柱面，母线上不同两点 $a,b$ 间存在无数条测地线，即 $a$ 出发绕任意圈数再回到 $b$ 的测地线，直线是绕了零次圈的情况。但圆柱面 Riemann 曲率为零，Jacobi 场的端点为零一定导致恒为零，因而没有共轭点。这一现象纯粹来自整体拓扑。反之，考虑抛物面 $z=x^2+y^2$，对任意非顶点 $p$，不妨设 $(a,0,a^2)$，沿顶点方向测地线（经线），计算知存在唯一共轭点 $q=(c,0,c^2)$，$a\ne c$ 满足 $f(a)=f(c)$，这里 $f(x)=2\operatorname{arsinh}(2x) -{\sqrt{1+4x^2}}/x$。这个函数是奇函数，并且 $x<0,x>0$ 各自单调递增，值域 $\R$，因此任意 $a\ne 0$ 有相应解 $c$，且 $ac<0$。但 $p$ 出发的邻近测地线并没到达 $q$，而是与经线交于更后的点（$q$ 的上方）。当然，交点随测地线趋于经线而趋于 $q$。共轭性只代表存在固定端点 $p,q$ 的邻近曲线，与测地解在二阶意义上线长相同。
+
+回到时空来。
 
 \subsection{黑洞}\label{sec:bh}
 
@@ -2292,7 +2305,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
     \mathcal F_{\mu\nu}=2\p_{[\mu}\mathcal A_{\nu]}+[\mathcal A_\mu,\mathcal A_\nu]
     =T^I{}_{\mu\nu}P_I+\frac12 R^{IJ}{}_{\mu\nu}J_{IJ}.
 }
-故在\textbf{Poincaré 规范理论}中，挠率是平移场强，曲率是 Lorentz 场强。严格地说，局域平移与主动微分同胚之间存在重叠，不能简单理解为 $x^I\to x^I+a^I(x)$ 的坐标平移。但这种说法抓住了关键物理图像：度规理论只保留了无挠的 Levi-Civita 特例，而更一般的引力规范理论允许 $e^I{}_\mu,\omega_\mu{}^{IJ}$ 独立，从而允许挠率。
+故在\textbf{Poincaré 规范理论}中，挠率是平移场强，曲率是 Lorentz 场强。严格地说，局域平移与微分同胚之间存在重叠，不能简单理解为 $x^I\to x^I+a^I(x)$ 的坐标平移。但这种说法抓住了关键物理图像：度规理论只保留了无挠的 Levi-Civita 特例，而更一般的引力规范理论允许 $e^I{}_\mu,\omega_\mu{}^{IJ}$ 独立，从而允许挠率。
 
 最小的有挠推广就是\textbf{Einstein-Cartan 理论}。其基本变量取为 $e^I{}_\mu$ 和 $\omega_\mu{}^{IJ}$，作用量仍选用对曲率线性的 Einstein-Hilbert 型：
 \eq{
@@ -2441,7 +2454,8 @@ Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清�
 
 \subsection{自转}
 
-本节讨论矢量沿线的转动。因而讨论观者的\textbf{自转}时，其实是指沿观者世界线 $x^\mu(\tau)$ 处处建立瞬时观者，也即补全完整的 $e_0^\mu=Z^\mu$ 的正交归一标架 $\{e_I(\tau)\}$，然后讨论空间标架的转动。因此原则上参考系不止是类时线汇（4-速场），还要包括连续指定的空间标架，组成 4 维标架场。虽然所有坐标系都能对应标架场（取坐标基即可），但不一定能对应观者标架场（因为 $e_0^\mu$ 不一定类时）；反之，不是所有标架场都能对应坐标系。
+讨论单一观者的\textbf{自转}时，瞬时观者场不能简写成 $Z^\mu$，必须补全完整的 $e_0^\mu=Z^\mu$ 的正交归一标架 $\{e_I(\tau)\}$，然后讨论空间标架沿线的转动。空间标架应按右手排列。
+因此原则上参考系不止是类时线汇（4-速场），还要包括连续指定的空间标架，组成 4 维标架场。
 
 \begin{wrapfigure}{l}{.35\textwidth}
     \includegraphics[width=.3\textwidth]{fig/chpt01/frame.pdf}
@@ -2484,30 +2498,24 @@ $\tilde\Omega$ 给出的是沿线的瞬时生成元，有限区间上的累积�
 %时间定向；
 %\(I^\pm,J^\pm\) 与因果菱形；
 %Cauchy 发展与整体双曲性；
-%共轭点的几何直观；
 %能量条件和奇性定理提纲。
 
-以度规为未知量的 Einstein 方程作为局域微分方程，并不能决定时空的整体拓扑性质。这个观点花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。经典广义相对论预设 4 维流形 $M$ 和其上的 Lorentz 度规 $g_{\mu\nu}$，合称\textbf{Lorentz 流形} $(M,g)$，可简记 $M$，作为时空的数学模型。闵氏时空记作 $(\R^4,\eta)=:\R^{1,3}$。
+以度规为未知量的 Einstein 方程作为局域微分方程，并不能决定时空的整体拓扑性质。这个观点花了很长时间才理清，因为整体微分几何的流形语言是在场方程之后才发展完整的。经典广义相对论预设 4 维流形和其上的 Lorentz 度规，合称\textbf{Lorentz 流形} $(M,g)$，作为时空的数学模型。闵氏时空记作 $(\R^4,\eta)=:\R^{1,3}$。
 这里就看出微妙之处：平直性只要求 Riemann 曲率为零，即度规为闵氏，但背景不一定 $\R^4$。圆柱面的内禀曲率就可为零，故甚至可建立圆柱面时空上的狭义相对论。
-
-\subsection{奇性}
 
 在其他理论中，物理量的发散只是其自身的奇性。但在广义相对论中，度规兼具着物理场和背景时空场的双重身份。时空模型如果选用 Lorentz 流形，按定义本来就应该配好度规，因此奇点 $O\subset M$ 虽然在 $M$ 上，但是否应归纳给“时空”就成了微妙的问题。坚持这个模型，只能将时空定义为 $(M\backslash O,g)$，那奇点当然不在时空中。
 所以我们看到，奇性至少说明存在被删去的区域 $O$，戏称窟窿或洞，但这又要如何判断？
 
-Misner, Hawking, Penrose 等人提出如下办法。
-时空上的曲线是世界线。曲线是参数化的连续映射 $\gamma:I\to M$，取值范围 $I\subset\R$ 称为参数区间。对测地线 $\gamma$，方程 $T^\mu\nabla_\mu T^\nu=0$ 给出仿射参数 $\lambda$，故总可默认测地线做了仿射参数化 $\gamma(\lambda)$。
-一条类时测地线段，只经历有限的固有时，也就是它的区间 $I\ne \R$ 有限，这只是因为还没进行延伸。许多时候，区间有限的测地线总可进行延伸，技术上只需按测地线方程继续朝两头演化即可。对于一条测地线 $\gamma:I\to M$，如果不存在更长 $I'\supsetneq I$ 的测地线 $\gamma'$ 使 $\forall \lambda\in I$ 有 $\gamma'(\lambda)=\gamma(\lambda)$，则说明 $\gamma$ 已不可无限制延伸，称\textbf{不可延}(inextendible)或\textbf{最大}(maximal)测地线。尽可能延伸后，区间仍不能成为 $\R$，这才说明的确可能存在奇性。
+Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延伸。由于曲线参数可任意选取，因此必须考察能代表“线长”的参数来判断延伸性。因果测地线可统一用 $\nabla_Z Z = 0$ 方程给出仿射参数，对类时情形也就是固有时 $\tau$ 或缩放 $a\tau + b$。
+一条类时测地线段，只经历有限的固有时区间 $I\ne \R$，这只是因为还没进行延伸。许多时候，区间有限的测地线总可进行延伸，技术上只需按测地线方程继续朝两头演化即可。对于一条测地线，如果不存在更长的测地线能覆盖它，则说明 $\gamma$ 已不可无限制延伸，称\textbf{不可延}(inextendible)或\textbf{最大}(maximal)测地线。
+尽可能延伸后，区间仍不能成为 $\R$，这才说明的确可能存在奇性。
 仿射参数区间不是 $\R$ 的最大测地线称\textbf{不完备}(incomplete)测地线。存在不完备测地线，时空便\textbf{测地不完备}，否则称\textbf{测地完备}。
 我们已看到，黑洞的内向测地线可以穿过 $r=2M$，但会在有限仿射参数内到达 $r=0$ 而消失，这条线即使延伸，仿射参数仍不可取遍 $\R$。
 然而，可人为制造不完备性，比如挖去原点 $M=\R^4\backslash\{0\}$，那 $(M,\eta)$ 当然测地不完备，却不愿意称之“奇异”，因为 $M$ 只要稍微扩展一下就可以补成 $\R^4$，$(\R^4,g)$ 是无奇性的闵氏时空。
 
-因此我们要加上一个限制，也就是时空本身也不能扩展。设流形 $(M,g),(N,h)$，$\dim M=m,\dim N=n$。映射 $\phi:M\to N$，可取各自坐标系写作 $y^\mu=\phi^\mu(x)$。Jacobi 矩阵 $J=(\pdv*{\phi^\alpha}{x^\mu})$ 是 $n\times m$ 矩阵，因而秩 $\rank J\leqslant\min(n,m)$。若处处 $\rank J=m$，可确保不会有降维压扁，称 $\phi$ 为\textbf{浸入}(immersion)，这也使 $m\leqslant n$。若浸入 $\phi$ 诱导出的 $\phi:M\to\phi[M]$ 是双向连续的双射（即同胚），可确保不发生奇怪粘连，则称\textbf{嵌入}(embedding)，记 $M\hookrightarrow N$。若进一步有
-\eq{
-    g_{\mu\nu}(x) = h_{\alpha\beta}(\phi(x)) \pdv{\phi^\alpha}{x^\mu}\pdv{\phi^\beta}{x^\nu} \iff h_{\alpha\beta}(y)\d y^\alpha\d y^\beta = g_{\mu\nu}(x)\d x^\mu\d x^\nu,
-}
-则称\textbf{等距嵌入}，这样能保持 $M,\phi[M]$ 几何结构一致。
-若时空 $(M,g)$ 可按 $\phi$ 等距嵌入于 $(\widetilde{M},\tilde g)$，且 $\phi[M]\subsetneq\widetilde{M}$，就称后者是前者的\textbf{延拓}(extension)。
+因此我们要加上一个限制，也就是时空本身也不能扩展。
+如果 $(M,g)$ 能够保持维数地同胚于 $(\widetilde{M},\tilde g)$ 的一个真子集，$g$ 也等度规地变为子集上的 $\tilde g$，就称后者是前者的\textbf{延拓}(extension)。
+等度规保持子集部分的度规一致，同胚性确保不发生奇怪粘连。
 不存在延拓的时空称\textbf{不可延拓}或\textbf{最大延拓}。由于类空线不是任何粒子的世界线，因而就算存在不完备类空测地线，时空仍然谈不上奇异。如此，
 \begin{center}
     \tcbox{
@@ -2527,25 +2535,23 @@ Misner, Hawking, Penrose 等人提出如下办法。
 
 \subsection{时间定向}
 
-逆变矢量也称切矢，事件 $p\in M$ 处全体切矢构成该点\textbf{切空间}(tangent space) $T_p M$。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}(covector)。\textbf{余切空间}可记 $T_p^* M$。
-某点的光锥是指类光矢量之集 $C_p \subset T_p M$。我们曾说过，类时和非零类光矢量分为两类，一类指向未来，一类指向过去。指向未来矢量之集称\textbf{指向未来部分} $\tilde F_p\subset T_p M$，指向过去矢量之集 $\tilde P_p$ 称\textbf{指向过去部分}。未来光锥是表面 $C_p^+=\p\tilde F_p$，过去光锥则是 $C_p^-=\p\tilde P_p$。
-孤立讨论 $T_p M$ 固然可任意指定 $C_p^+$（或 $\tilde F_p$），但在讨论全时空时，物理上期望这种指定在从一个时空点到另一时空点的过渡中连续，这叫做\textbf{时间定向}(time orient)。但并非所有流形都能做到这一点：
-考虑圆柱面 $S^1\times\R$，设度规这样给定：沿着任意 $S^1$ 一圈，其上光锥将均匀地旋转 $180^\circ$。这样便无法连续指定 $\tilde F$，因为若尝试按此指定，则一定存在某母线 $\R$ 上的 $\tilde F$ 有 $180^\circ$ 的突变。
+点 $p$ 的\textbf{因果锥}是指类时、类光矢量之集 $C_p$。指向未来矢量之集称\textbf{未来因果锥} $C_p^+$，指向过去矢量之集 $C_p^-$ 称\textbf{过去因果锥}。未来光锥是表面 $\p C_p^+$，过去光锥则是 $\p C_p^-$。如此有 $C_p=C_p^+\cup C_p^-\cup\{0\}$。当然，零矢量属于 $C_p^\pm$ 与否只是习惯问题，无伤大雅。\textbf{类时锥}是内部 $C_p^\circ$。
+孤立讨论点 $p$ 矢量固然可任意指定 $C_p^+$，但在讨论全时空时，物理上期望这种指定在从一个时空点到另一时空点的过渡中连续，这叫做\textbf{时间定向}(time orient)。但并非所有流形都能做到这一点：
+考虑圆柱面 $S^1\times\R$，给定度规使得沿着任意 $S^1$ 一圈，其上光锥将均匀地旋转 $180^\circ$。这样便无法连续指定 $C^+$，因为若尝试按此指定，则一定存在某母线 $\R$ 上的 $C^+$ 有 $180^\circ$ 的突变。
 这样的流形就没有时空的物理意义。
-如果流形存在连续类时矢量场，就可把其在每点的值所在部分指定为 $\tilde F$，进而使得指定是连续的；反之也可证，\textbf{时间可定向}(time orientable)流形必存在连续类时矢量场，但证明从略。于是，“存在连续类时矢量场”等价于时间可定向性。
+如果流形存在连续类时矢量场，就可把其在每点的值所在部分指定为 $C^+$，进而使得指定是连续的；反之 Penrose 也证明，\textbf{时间可定向}(time orientable)流形必存在连续类时矢量场。于是，“存在连续类时矢量场”等价于时间可定向性。
 谈及时空其实总默认是时间可定向 Lorentz 流形，并认为是\textbf{已作时间定向的}(time oriented)。
 时空的未来光锥场构成\textbf{时空因果结构}。等价地，可研究类光测地线族。
-可以看到，此前称呼的观者、类时线总是默认 4-速归一且指向未来，但准确称呼是指向未来类时线。
+
+可以看到，此前称呼的观者、类时线总是默认 4-速连续（$C^1$ 曲线）、归一且指向未来，但准确称呼是指向未来类时线。
 指向未来因果线中可以存在零矢量。
 因此参考系要求时空至少在某一开域的时间定向性。
-
 时空点 $p$ 的\textbf{时序未来}(time-ordered future)或\textbf{编时未来}(chronological future)定义为
 \eq{
     I^+(p) := \{q\in M:\text{存在从$p$ 到 $q$ 的指向未来类时线}\}.
 }
 \textbf{因果未来} $J^+(p)$ 只需改成因果线。相应的过去集合符号将 $+$ 改为 $-$。
 从 $p$ 到 $q$ 的\textbf{因果菱形}(causal diamond)或\textbf{因果核}是指 $D_p^q:=J^+(p)\cap J^-(q)$。
-
 \begin{figure}[h!]\centering
     \begin{tikzpicture}[scale=1.5]
     \draw (0,1)node[above]{$q$}--(1,0)--(0,-1)node[below]{$p$}--(-1,0)--cycle;
@@ -2554,20 +2560,22 @@ Misner, Hawking, Penrose 等人提出如下办法。
     \end{tikzpicture}
     \caption{闵氏时空的因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
 \end{figure}
+任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不可能完全仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\partial D_p^q$ 的折角点无法扫到。
+$\partial D_p^q$ 是分段测地线，即由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。
+Penrose 证明了，若用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，$C^1$ 曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
 
-任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但想完全仅用可导曲线扫出 $D_p^q$ 是不可能的，很明显 $\partial D_p^q$ 就不可导。
-分段测地线是由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。可以证明，如果用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的\footnote{早期证明由 Penrose 给出，一旦在补充少量知识后，证明将非常通俗。}。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，可导曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
+$p\in M$ 的\textit{开邻域} $N$ 称\textbf{法邻域}(normal neighborhood)，若 $N$ 内任点都存在 $N$ 内唯一测地线段与 $p$ 相连，且沿线不出现 $p$ 的共轭点。从而可建立以 $p$ 为原点的\textbf{法坐标系}使得过 $p$ 的测地线表为过原点直线，故 $p$ 处克氏符为零。
+$N$ 内任两点间都存在 $N$ 内唯一测地线，此称\textbf{凸邻域}(convex neighborhood)。连通集是指任意两点存在内含连线，而不要求唯一测地（如欧氏直线），凹凸性是更进一步的性质。如果存在两点，其唯一测地线的一部分在集合外，这只能是凹集。
+凸邻域、法邻域之间不互推。Whitehead 证明了总存在\textbf{凸法邻域}，故二者性质都可用到：开邻域内任两点，都有域内唯一测地线，且无共轭点。显然，凸法邻域对域内任点都是凸法邻域。
+可见对于 Lorentz 流形，凸法邻域内的因果结构与闵氏空间中的邻域一样，故也称\textbf{局部闵氏邻域}。
+
+\begin{itemize}
+    \item $r\in I^+(q), q\in I^+(p) \Rightarrow r\in I^+(p)$；
+    \item $r\in J^+(q), q\in I^+(p) \Rightarrow r\in I^+(p)$；
+    \item $r\in I^+(q), q\in J^+(p) \Rightarrow r\in I^+(p)$。
+\end{itemize}
 
 
-\begin{wrapfigure}{l}{.3\textwidth}
-    \centering
-    \includegraphics[width=.3\textwidth]{fig/chpt01/sphere.pdf}
-    \caption{共轭点}
-\end{wrapfigure}
-
-两点之间的测地线可能有无数条，这影响着线长是否极大或极小。
-如图，球面置球面度规，南北极 $\mathbf N,\mathbf S$ 间存在无数等长测地线。从 $\mathbf S$ 出发到 $D$ 的测地线可以是 $\mathbf S A \mathbf N D$，其长度并非极小，因为可构造一条长度更小的邻近线段。
-取 $\mathbf S A\mathbf N$ 的邻近测地线 $\mathbf S a\mathbf N$，
 
 \textbf{不可延因果线}
 
@@ -2906,6 +2914,91 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 
 本节提供物理上最小可用的数学附录，保证直观且简洁。
 
+\subsection{流形}
+
+坐标系给背景集合的点连续指定唯一且不重复的若干实数，也就是同胚 $\psi:M\to\R^n$，同胚所需的连续性由 $M$ 的拓扑性质给出。把这个 $n$ 就称为维度 $\dim M$。$x^\mu(p)$ 是 $\psi(p)=(x^1(p),\cdots,x^n(p))$ 的第 $\mu$ 个数字，故 $x^\mu$ 的确可看做 $M$ 上函数。考虑多个坐标系无非是为了方便，但也有关键好处：一个坐标系可能不够覆盖 $M$，考虑多个 $\psi_i:O_i\to\R^n$ 就可使 $\bigcup_i O_i = M$，$O_i$ 称\textbf{坐标域}。这些 $O$ 可以任意小，也就是邻域，因而也可称\textbf{局域坐标系}。坐标变换就是在交叉地带 $O_i\cap O_j$ 上，考虑 $n$ 个 $n$ 元函数 $\psi_i\circ\psi_j^{-1}$。只考虑光滑可逆坐标变换，也就是微分同胚 $\psi_i\circ\psi_j^{-1}$，这些条件就构成了\textbf{光滑流形}或\textbf{微分流形}，但仍记 $M$。
+
+时空上的曲线是世界线。曲线是参数化的连续映射 $\gamma:I\to M$，取值范围 $I\subset\R$ 称为参数区间。对测地线 $\gamma$，方程 $\nabla_T T=0$ 给出仿射参数 $\lambda$，故总可默认测地线做了仿射参数化 $\gamma(\lambda)$。
+对测地线 $\gamma:I\to M$，如果不存在 $\tilde I\supsetneq I$ 的测地线 $\tilde \gamma$ 使 $\forall \lambda\in I$ 有 $\tilde \gamma(\lambda)=\gamma(\lambda)$，就是最大测地线。
+逆变矢量就是曲线产生的切矢，$p\in M$ 处全体切矢构成该点\textbf{切空间}(tangent space) $T_p M$。协变矢量就是\textbf{余切矢}(cotangent vector)，简称\textbf{余矢}(covector)。\textbf{余切空间}可记 $T_p^* M$。
+
+设流形 $(M,g),(N,h)$，$\dim M=m,\dim N=n$。映射 $\phi:M\to N$，可取各自坐标系写作 $y^\mu=\phi^\mu(x)$。Jacobi 矩阵 $J=(\pdv*{\phi^\alpha}{x^\mu})$ 是 $n\times m$ 矩阵，故秩 $\rank J\leqslant\min(n,m)$。若处处 $\rank J=m$，称 $\phi$ 为\textbf{浸入}(immersion)，这也使 $m\leqslant n$。若浸入 $\phi$ 诱导出的 $\phi:M\to\phi[M]$ 是同胚，则称\textbf{嵌入}(embedding)，记 $M\hookrightarrow N$。要求 $\tilde g$ 是 $C^n$ 的就称 $C^n$ 嵌入。若进一步
+\eq{
+    g_{\mu\nu}(x) = h_{\alpha\beta}(\phi(x)) \pdv{\phi^\alpha}{x^\mu}\pdv{\phi^\beta}{x^\nu} \iff h_{\alpha\beta}(y)\d y^\alpha\d y^\beta = g_{\mu\nu}(x)\d x^\mu\d x^\nu,
+}
+则称\textbf{等距嵌入}。
+若时空 $(M,g)$ 可按 $\phi$ 等距嵌入于 $(\widetilde{M},\tilde g)$，且 $\phi[M]\subsetneq\widetilde{M}$，后者就是延拓。
+
+为研究邻域性质，把 $v\in T_p M$ 映射成长度 $|v|$ 的测地线，而 $\gamma_v(\lambda) : \cd_v v = 0$ 上从 $p=\gamma_v(0)$ 到 $\gamma_v(\sigma)$ 的线长为 $\int_0^\sigma\d\lambda|v| = |v|\int_0^\sigma\d\lambda = \sigma|v|$，故 $\sigma=1$。
+记 $\exp_p v := \gamma_v(1)$，称\textbf{指数映射}。
+任意缩放 $t$ 倍有 $\gamma_v(t\lambda) = \gamma_{t v}(\lambda)$，因而 $\exp_p(t v) = \gamma_v(t)$，即指数映射将过原点的直线 $\{t v\}\subset T_p M$ 映射为仿射参数测地线。
+任选坐标系 $\{x\}$，给出坐标基 $\{\p_\mu\}\subset T_p M$，于是这个 $v^\mu$ 也可作为 $v$ 的坐标从而把 $T_p M$ 看成流形，形象上就是一张切平面。记参数式 $x^\alpha_v(\lambda):=x^\alpha(\gamma_v(\lambda))$。由于 $x^\alpha_v(0)=x^\alpha(p),\dot x^\alpha_v(0)=v^\alpha$ 以及 $\ddot x^\alpha_v = -\Gamma^\alpha_{\mu\nu}\dot x^\mu_v\dot x^\nu_v$，因此 $p$ 处展开式为
+\[
+    x^\alpha_v(\lambda) = x^\alpha(p) + v^\alpha\lambda - \frac{\lambda^2}{2} \Gamma^\alpha_{\mu\nu}(p)v^\mu v^\nu + O(\lambda^3),\quad \pdv{x^\alpha_v(1)}{v^\mu} = \delta^\alpha_\mu - \Gamma^\alpha_{\mu\nu}v^\nu + O(v^2).
+\]
+后者就是 $\exp_p$ 在 $v$ 处的 Jacobi 矩阵，可记 $J^\alpha{}_\mu(v)$。设初速度沿任意 $w$ 变成 $v+s w$，则沿测地线的坐标变化率为
+\[
+    S^\alpha(\lambda) = \eval{\pdv{x^\alpha_{v+sw}(\lambda)}{s}}_{s=0} = w^\mu\pdv{x^\alpha_v(\lambda)}{v^\mu} = \lambda J^\alpha{}_\mu(\lambda v)w^\mu,
+\]
+这正是偏离 Jacobi 场。有 $S^\alpha(0) = 0,{\dv{S^\alpha}{\lambda}}(0) = w^\alpha$。根据定义，$\exists S^\alpha\ne 0,\lambda_0\ne 0$ 使 $S^\alpha(\lambda_0)=0$，则 $q=\exp_p(\lambda_0 v) = \gamma_v(\lambda_0)$ 称共轭点。即存在 $w^\mu\ne 0$ 使 $w^\mu J^\alpha{}_\mu(\lambda_0 v) = 0$，这意味着 $\det(J^\alpha{}_\mu(\lambda_0 v)) = 0$。即在 $\lambda_0 v$ 处 Jacobi 矩阵退化。而“多条测地线”代表的是非单射：存在 $a\ne b\in T_p M$ 使 $\exp_p a=\exp_p b$。非单射性、退化性不可互推。\S\ref{sec:tidal} 也曾用反例指出共轭性和“多条测地线”严格上无关。
+尽管 $\exp_p v$ 可能被人为挖去而无像，亦或非单射，但由于 $p$ 处$\rank(J^\alpha{}_\mu(0))=\rank(\delta^\alpha_\mu)=\dim M$，根据逆函数定理，总存在 $0\in T_p M$ 的\textit{开邻域} $O$ 和 $p$ 的开邻域 $N$，使 $\exp_p:O\to N$ 是微分同胚。这样的 $N$ 称为法邻域。
+微分同胚使 Jacobi 矩阵非退化。
+
+
+虽然所有坐标系都能对应标架场（取坐标基即可），但因为 $e_0^\mu$ 不一定类时，故不一定能对应参考系（观者标架场）；反之，不是所有标架场都能对应坐标系。
+
+任意坐标系可给出坐标基场，任选基底场却不一定有相应坐标系。
+但我们可只任选 $p$ 处基底 $\{e_\mu\}\subset T_p M$，然后通过测地线分配坐标：$p$ 法邻域 $N$ 内任点 $q$ 的坐标设置为 $x^\mu(q):=(\exp_p^{-1}q)^\mu$，便建立了法坐标系。如此，过 $p$ 的测地线在法坐标系中就表为过原点直线。对 $p$ 而言，虽然它与远处的点不一定有唯一测地线，但一定存在法邻域 $N\ni p$，$\exp_p$ 的单射性导致 $p$ 与 $\forall q\in N$ 都有 $N$ 内唯一测地线相连。在平面 $T_p M$ 上，这无非说明 $p,q$ 直线唯一。
+凸邻域则说 $\forall q,r\in N$ 都有 $N$ 内唯一测地线相连。
+
+\subsection{一般仿射联络}\label{sec:connection}
+
+仿射联络满足如下自然的需求：
+\begin{itemize}
+    \item 能保持广义张量性；
+    \item 规定 $\cd_\nu f = \p_\nu f$。
+    \item 它应当具有 Leibniz 规则和线性性；
+    \item 显然希望“先缩并再求导”、“先求导再缩并”结果一致。
+\end{itemize}
+设 $\{\xi\}$ 中它表为 $\tilde\cd_\mu$，保持张量性就是对任意 $(k,l)$-张量有
+\[T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\tilde\cd_\kappa\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l},\]
+代入以
+\[
+\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}},
+\]
+其中注意 $T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}$ 的指标是固定的，不带有 $\xi$ 系的指标，是张量在坐标系下的具体分量，因此对 $\tilde\cd_\kappa $ 而言是普通的标量函数：
+\[\tilde\cd_\kappa T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} = \pdv{\xi^\kappa} T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}.\]
+定义联络系数为
+\eq{
+    \Gamma^\lambda_{\mu\nu} := \pdv{x^\lambda}{\xi^\alpha}\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu} \iff\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu}=\Gamma^\lambda_{\mu\nu}\pdv{\xi^\alpha}{x^\lambda},
+}
+从而
+\eq{\label{eq:cov-tens}
+    T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
+}
+联络系数是赝张量：
+\begin{align*}
+\Gamma_{\mu \nu}^{\prime \lambda} &= \pdv{x^{\prime \lambda}}{\xi^\alpha} \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{\xi^\alpha}{x^{\prime \nu}}\right) = \left(\pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha}\right) \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{x^\sigma}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma}\right) \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left[ \left(\pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}}\right) \pdv{\xi^\alpha}{x^\sigma} + \pdv{x^\sigma}{x^{\prime \nu}} \left(\pdv{x^\tau}{x^{\prime \mu}} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma}\right) \right] \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left( \pdv{x^\sigma}{x^{\prime \mu}}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma} \right) + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \left( \pdv{x^\rho}{\xi^\alpha} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma} \right) \\
+&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{x^{\prime \mu}}{x^{\prime \nu}} + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \Gamma_{\tau \sigma}^\rho.
+\end{align*}
+其中注意 $\pdv*{x^\sigma}{x^{\prime \nu}}$ 是 $x,x'$ 的关系，无关于 $\xi$，因此
+$\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sigma}{x^{\prime \nu}}$。
+
+
+\begin{figure}[ht]\centering
+\includegraphics[width=.6\textwidth]{fig/chpt01/covar-deri.pdf}
+    \caption{图中 $\Delta\tau$ 等差值均夸大}
+\end{figure}
+考察其直观图像将有所裨益。如图设某曲线 $x^\nu(\tau)$ 上 $p$ 为参数零点，而邻近点 $q$ 的参数记作 $\Delta\tau$（可正可负）。若矢量场 $ V$ 至少在 $p,q$ 线段上有定义，便可讨论 $p$ 处沿线导数算符。设矢量场在 $p,q$ 分别取值 $ V|_p, V|_q$，则
+\[\eval{\dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}\]
+是直接比较 $V|_q,V|_p$，但二者隶属不同切空间，差值 $\d V$ 意义不明。这是 $\d V^\mu/\d\tau$ 不协变的直观理解。欲画出 $\d V$，需将矢量照搬至同一点作差。不妨考虑 $q$ 点。图中 $q$ 点的 $V|_p$ 为照搬结果，故 $\d V$ 标注如图。另一方面，
+\[\eval{\Dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}+\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \lim_{\Delta\tau\to 0} \frac{\Delta x^\lambda}{\Delta\tau}=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_{p\to q}}{\Delta\tau},\]
+其中 $V^\mu|_{p\to q}=V^\mu|_p-\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \Delta x^\lambda$。
+可见 $\Dv*{V^\mu}{\tau}$ 是求 $V|_q$ 与 $q$ 处新矢量 $V|_{p\to q}$ 之差。这样 $\D V$ 表为如图。$\delta V$ 为 $V|_{p\to q}, V|_p$ 之差。由上式或图示知 $\delta V^\mu = \d V^\mu-\D V^\mu=-\Gamma^\mu_{\sigma\nu}V^\sigma\d x^\nu$，这便是克氏符项所给出的修正。$V|_{p\to q}$ 其实就是平移移动的结果。为看出这一点，只需令 $V$ 自己就处处按这种方式移动，则 $\Dv*{V^\mu}{\tau}=0$。
+切矢场是给各时空点赋予其相应的切矢，一个切矢是绑定于一点的，故任意两点 $p,q$ 处各自的切矢本无关联。然而给定某 $p,q$ 间之曲线，可通过矢量的平行移动，将两个切空间联系起来。所以 $\cd_\nu$ 称为联络。
+
 \subsection{Gauss 定理}\label{sec:Gauss}
 
 背景的嵌入子集中的长度总用背景度规衡量。
@@ -3067,54 +3160,6 @@ $\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda 
 %% 最大对称
 
 %% Hamiltonian
-
-\subsection{一般仿射联络}\label{sec:connection}
-
-仿射联络满足如下自然的需求：
-\begin{itemize}
-    \item 能保持广义张量性；
-    \item 规定 $\cd_\nu f = \p_\nu f$。
-    \item 它应当具有 Leibniz 规则和线性性；
-    \item 显然希望“先缩并再求导”、“先求导再缩并”结果一致。
-\end{itemize}
-设 $\{\xi\}$ 中它表为 $\tilde\cd_\mu$，保持张量性就是对任意 $(k,l)$-张量有
-\[T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=\pdv{x^{\mu_1}}{\xi^{\alpha_1}}\cdots\pdv{x^{\mu_k}}{\xi^{\alpha_k}}\pdv{\xi^{\beta_1}}{x^{\nu_1}}\cdots\pdv{\xi^{\beta_l}}{x^{\nu_l}}\pdv{\xi^\kappa}{x^\lambda}\tilde\cd_\kappa\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l},\]
-代入以
-\[
-\tilde T^{\alpha_1\cdots\alpha_k}{}_{\beta_1\cdots\beta_l}=T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}\pdv{\xi^{\alpha_1}}{x^{\rho_1}}\cdots\pdv{\xi^{\alpha_k}}{x^{\rho_k}}\pdv{x^{\sigma_1}}{\xi^{\beta_1}}\cdots\pdv{x^{\sigma_l}}{\xi^{\beta_l}},
-\]
-其中注意 $T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}$ 的指标是固定的，不带有 $\xi$ 系的指标，是张量在坐标系下的具体分量，因此对 $\tilde\cd_\kappa $ 而言是普通的标量函数：
-\[\tilde\cd_\kappa T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l} = \pdv{\xi^\kappa} T^{\rho_1\cdots\rho_k}{}_{\sigma_1\cdots\sigma_l}.\]
-定义联络系数为
-\eq{
-    \Gamma^\lambda_{\mu\nu} := \pdv{x^\lambda}{\xi^\alpha}\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu} \iff\pdv{\xi^\kappa}{x^\mu}\tilde\cd_\kappa\pdv{\xi^\alpha}{x^\nu}=\Gamma^\lambda_{\mu\nu}\pdv{\xi^\alpha}{x^\lambda},
-}
-从而
-\eq{\label{eq:cov-tens}
-    T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l;\lambda}=T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\nu_l,\lambda}+\sum_{i=1}^k \Gamma^{\mu_i}_{\lambda \sigma} T^{\mu_1\cdots\sigma\cdots\mu_k}{}_{\nu_1\cdots\nu_l}-\sum_{j=1}^l\Gamma^{\sigma}_{\lambda \nu_j} T^{\mu_1\cdots\mu_k}{}_{\nu_1\cdots\sigma\cdots\nu_l}.
-}
-联络系数是赝张量：
-\begin{align*}
-\Gamma_{\mu \nu}^{\prime \lambda} &= \pdv{x^{\prime \lambda}}{\xi^\alpha} \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{\xi^\alpha}{x^{\prime \nu}}\right) = \left(\pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha}\right) \pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \left(\pdv{x^\sigma}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma}\right) \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left[ \left(\pdv{\xi^\kappa}{x^{\prime \mu}} \tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}}\right) \pdv{\xi^\alpha}{x^\sigma} + \pdv{x^\sigma}{x^{\prime \nu}} \left(\pdv{x^\tau}{x^{\prime \mu}} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma}\right) \right] \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{\xi^\alpha} \left( \pdv{x^\sigma}{x^{\prime \mu}}{x^{\prime \nu}} \pdv{\xi^\alpha}{x^\sigma} \right) + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \left( \pdv{x^\rho}{\xi^\alpha} \pdv{\xi^\kappa}{x^\tau} \tilde{\cd}_\kappa \pdv{\xi^\alpha}{x^\sigma} \right) \\
-&= \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{x^{\prime \mu}}{x^{\prime \nu}} + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \Gamma_{\tau \sigma}^\rho.
-\end{align*}
-其中注意 $\pdv*{x^\sigma}{x^{\prime \nu}}$ 是 $x,x'$ 的关系，无关于 $\xi$，因此
-$\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sigma}{x^{\prime \nu}}$。
-
-
-\begin{figure}[ht]\centering
-\includegraphics[width=.6\textwidth]{fig/chpt01/covar-deri.pdf}
-    \caption{图中 $\Delta\tau$ 等差值均夸大}
-\end{figure}
-考察其直观图像将有所裨益。如图设某曲线 $x^\nu(\tau)$ 上 $p$ 为参数零点，而邻近点 $q$ 的参数记作 $\Delta\tau$（可正可负）。若矢量场 $ V$ 至少在 $p,q$ 线段上有定义，便可讨论 $p$ 处沿线导数算符。设矢量场在 $p,q$ 分别取值 $ V|_p, V|_q$，则
-\[\eval{\dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}\]
-是直接比较 $V|_q,V|_p$，但二者隶属不同切空间，差值 $\d V$ 意义不明。这是 $\d V^\mu/\d\tau$ 不协变的直观理解。欲画出 $\d V$，需将矢量照搬至同一点作差。不妨考虑 $q$ 点。图中 $q$ 点的 $V|_p$ 为照搬结果，故 $\d V$ 标注如图。另一方面，
-\[\eval{\Dv{V^\mu}{\tau}}_p=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_p}{\Delta\tau}+\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \lim_{\Delta\tau\to 0} \frac{\Delta x^\lambda}{\Delta\tau}=\lim_{\Delta\tau\to 0}\frac{V^\mu|_q-V^\mu|_{p\to q}}{\Delta\tau},\]
-其中 $V^\mu|_{p\to q}=V^\mu|_p-\Gamma^\mu_{\lambda\nu}|_p  V^\nu|_p \Delta x^\lambda$。
-可见 $\Dv*{V^\mu}{\tau}$ 是求 $V|_q$ 与 $q$ 处新矢量 $V|_{p\to q}$ 之差。这样 $\D V$ 表为如图。$\delta V$ 为 $V|_{p\to q}, V|_p$ 之差。由上式或图示知 $\delta V^\mu = \d V^\mu-\D V^\mu=-\Gamma^\mu_{\sigma\nu}V^\sigma\d x^\nu$，这便是克氏符项所给出的修正。$V|_{p\to q}$ 其实就是平移移动的结果。为看出这一点，只需令 $V$ 自己就处处按这种方式移动，则 $\Dv*{V^\mu}{\tau}=0$。
-切矢场是给各时空点赋予其相应的切矢，一个切矢是绑定于一点的，故任意两点 $p,q$ 处各自的切矢本无关联。然而给定某 $p,q$ 间之曲线，可通过矢量的平行移动，将两个切空间联系起来。所以 $\cd_\nu$ 称为联络。
 
 \subsection{Lorentz 变换推导}\label{sec:PoincareLorentz}
 
