@@ -494,46 +494,11 @@ Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐
     \mathcal X=\frac{\hat V-\hat U}{2},
 \]
 则 $\hat U,\hat V\in(-\pi/2,\pi/2)$，原来无界的 $U,V$ 被压入有限区间。径向度规变为某个正函数乘以 $-\d\hat V\,\d\hat U=-\d\mathcal T^2+\d\mathcal X^2$，故略去该共形因子后，径向类光线仍处处与坐标轴成 $45^\circ$。
-
 由式 \eqref{eq:kruskal-r}，物理区域满足 $UV<1$。在 B 区的奇性 $UV=1$ 上，$\arctan U+\arctan V=\pi/2$，故 $\mathcal T=\pi/4$；W 区同理给出 $\mathcal T=-\pi/4$。于是两支 $r=0$ 奇性成为水平类空边界，而 $U=0$、$V=0$ 两支视界仍为对角线。无穷远则被压到外侧四条类光边和六个端点。
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[scale=1.45]
-        % conformal infinities
-        \draw[thick] (-1,1)--(-2,0)--(-1,-1);
-        \draw[thick] (1,1)--(2,0)--(1,-1);
-        % horizons
-        \draw[blue!65!black,thick] (-1,-1)--(0,0)--(1,1);
-        \draw[blue!65!black,thick] (1,-1)--(0,0)--(-1,1);
-        % singularities
-        \draw[red!75!black,thick,decorate,decoration={zigzag,amplitude=1.2pt,segment length=5pt}] (-1,1)--(1,1);
-        \draw[red!75!black,thick,decorate,decoration={zigzag,amplitude=1.2pt,segment length=5pt}] (-1,-1)--(1,-1);
-        % regions
-        \node at (1.15,0) {$\mathrm A$};
-        \node at (-1.15,0) {$\mathrm A'$};
-        \node at (0,.53) {$\mathrm B$};
-        \node at (0,-.53) {$\mathrm W$};
-        % infinities
-        \node[rotate=-45] at (1.56,.56) {$\mathscr I^+$};
-        \node[rotate=45] at (1.56,-.56) {$\mathscr I^-$};
-        \node[rotate=45] at (-1.56,.56) {$\mathscr I^+$};
-        \node[rotate=-45] at (-1.56,-.56) {$\mathscr I^-$};
-        \node[right] at (2.02,0) {$i^0$};
-        \node[left] at (-2.02,0) {$i^0$};
-        \node[above right] at (1,1) {$i^+$};
-        \node[above left] at (-1,1) {$i^+$};
-        \node[below right] at (1,-1) {$i^-$};
-        \node[below left] at (-1,-1) {$i^-$};
-        % horizons and singularities
-        \node[blue!65!black,rotate=45,below] at (.47,.47) {$\mathcal H^+$};
-        \node[blue!65!black,rotate=-45,above] at (.47,-.47) {$\mathcal H^-$};
-        \node[red!75!black,above] at (0,1.03) {$r=0$};
-        \node[red!75!black,below] at (0,-1.03) {$r=0$};
-        \fill (0,0) circle(1pt);
-        \node[below right] at (0,0) {$r=2M$};
-        \draw[->] (2.35,-.35)--(2.35,.35) node[above] {未来};
-    \end{tikzpicture}
+    \includegraphics[width=.75\textwidth]{fig/chpt02/penrose.pdf}
     \caption{最大延拓 Schwarzschild 时空的 Penrose 图。蓝线是视界，红色波线是曲率奇性。}
     \label{fig:sch-penrose}
 \end{figure}
