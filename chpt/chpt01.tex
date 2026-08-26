@@ -2771,7 +2771,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
     \theta_{(n)}=q^{AB}e_A{}^\mu e_B{}^\nu\cd_\mu n_\nu
     =q^{\mu\nu}\cd_\mu n_\nu.
 \end{equation}
-若两支膨胀都小于零，则连外向光线也在会聚，$S$ 称为\textbf{未来陷获面}(future trapped surface)。既已指定 $\ell^\mu$ 外向，$\theta_{(\ell)}=0,\theta_{(n)}<0$ 的曲面称为\textbf{临界外陷获面}(marginally outer trapped surface, MOTS)。
+若两支膨胀都小于零，则连外向光线也在会聚，$S$ 称为\textbf{未来陷获面}(future trapped surface)；若只要求 $\theta_{(\ell)}<0$，则称为\textbf{外陷获面}(outer trapped surface)。既已指定 $\ell^\mu$ 外向，$\theta_{(\ell)}=0$ 的曲面称为\textbf{临界外陷获面}(marginally outer trapped surface, MOTS)；在黑洞坍缩的未来型情形中通常还要求 $\theta_{(n)}<0$，下文亦默认此条件。
 在保持 $\ell\cdot n=-1$ 的正重标度 $\ell^\mu\mapsto f\ell^\mu,n^\mu\mapsto f^{-1}n^\mu$ 下，两支膨胀分别乘以 $f,f^{-1}$，故它们的符号、零点及陷获性均不变。
 
 为理解定义的动机，考虑局部写成
@@ -2843,17 +2843,40 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 \subsection{黑洞面积定理}
 
-事件视界的类光生成元在 $M$ 内没有未来端点，也不能向未来离开这条非编时边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\ell^\nu\cd_\nu\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
+下面采用面积定理的标准经典假设：渐近平直端具有正则、未来完整的 $\mathscr I^+$，其外部区域满足\textbf{强渐近可预言性}(strong asymptotic predictability)\footnote{一种标准表述是：存在开集 $\widetilde U\subset\widetilde M$，使 $(\widetilde U,\widetilde g)$ 整体双曲，且 $\overline{J^-_{\widetilde M}(\mathscr I^+)\cap M}\subset\widetilde U$。“强”修饰渐近可预言性，并非强宇宙监督；无穷远类光线具有无界物理仿射参数则来自 $\mathscr I^+$ 的未来完整性。}，并且 Einstein 方程和类光能量条件成立。为作下述微分证明，先假设相关视界段分片 $C^2$、截面紧致；低正则情形最后说明。若类空 Cauchy 面 $\Sigma_2$ 位于 $\Sigma_1$ 的未来，记 $W_a:=\Sigma_a\cap\mathcal H^+$、$A_a:=\operatorname{Area}(W_a)$，则 Hawking \textbf{面积定理}(area theorem)断言
 \begin{equation}\label{eq:hawking-area-theorem}
     A_2\geqslant A_1
 \end{equation}
-对任意前后两个事件视界截面成立。
+对任意这样的前后截面成立。
 
-\subsection{表观视界}
+这一生成结构可由迅捷线的极限看出。任取 $q\in\mathcal H^+$，并取 $q_i\in\mathcal V^+$ 趋于 $q$。在渐近平直区取一条未来无穷的远方类时观者线，从各 $q_i$ 到该线上可达的最早事件选取因果线 $\ell_i$；由 \S\ref{sec:promptness}，它们是迅捷类光测地线。在上述整体条件下，极限曲线定理给出经过 $q$ 的未来类光极限线 $\ell$。$\ell_i$ 的接收时刻必趋于无穷，否则取极限后再沿观者线稍向未来延伸，便会得到 $q\in\mathcal V^+$。又因 $J^+(\mathcal B)\subset\mathcal B$，$\ell$ 不能离开 $\mathcal B$；而每条 $\ell_i$ 均在 $\mathcal V^+$ 中，其极限也不能进入 $\mathcal B$ 的内部。因此 $\ell\subset\partial\mathcal B=\mathcal H^+$，称为\textbf{视界生成线}(horizon generator)，即前文的生成元。
 
-在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}(apparent horizon)。表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。
+更重要的是，每个从光滑截面出发的有限生成线段都相对该截面迅捷。设 $W=\Sigma\cap\mathcal H^+$ 是光滑截面，$p$ 是从 $W$ 出发的一条生成线上的未来点。若该段相对 $W$ 不迅捷，则存在 $w\in W$ 及从 $w$ 到某个 $r\in I^-(p)$ 的因果线；推开性质随即给出 $w\ll p$，与 $w,p\in\mathcal H^+$ 及视界的非编时性矛盾。故该段从 $W$ 正交射出。若生成线出现 $W$-焦点，把它稍向焦点之后延伸便会失去迅捷性；但生成线不能在 $M$ 内终止或向未来离开视界，故视界内不存在这样的焦点。这里“在 $M$ 内没有未来端点”并不等于仿射未来完备：生成线仍可能在有限仿射参数处趋向不属于 $M$ 的奇异端。
 
-在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
+现在证明生成线的膨胀非负。先额外假设生成线未来仿射完备，并以仿射切矢 $k^\mu$ 参数化。视界线汇无旋，类光能量条件与 \eqref{eq:null-raychaudhuri} 给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。若某处 $\theta_0<0$，则不迟于仿射距离 $2/|\theta_0|$ 后出现相对于该截面的焦点，与生成线的迅捷性矛盾。因此 $\theta\geqslant0$。
+
+Witten 的外移论证可以去掉生成线本身未来完备的额外假设。反设某个光滑截面 $W$ 上一点有 $\theta<0$。先取光滑未来类时场 $T^\mu$，以 $-k\cdot T=1$ 统一归一化 $W$ 邻域的外向类光法矢；由连续性，可取小片 $U\subset W$ 和 $\varepsilon>0$，使 $U$ 上 $\theta\leqslant-2\varepsilon$。仅在 $U$ 内把 $W$ 沿 $\Sigma$ 稍向黑洞外侧移动，得到 $W'$，并以同一条件归一化其类光法矢；移动足够小时，$W'\backslash\mathcal B$ 非空，且其上外向类光膨胀仍满足 $\theta_{W'}\leqslant-\varepsilon$。在渐近平直端把远方观者线取到任意大的半径，并选取从 $W'$ 到该观者线的最早信号。它不能从 $W'\cap\mathcal B$ 出发，故起点必落在上述负膨胀部分；迅捷性又要求它是从 $W'$ 正交射出的外向类光测地线。在这一归一化下，Raychaudhuri 方程迫使它在距离至多 $2/\varepsilon$ 内形成 $W'$-焦点；外部区域的未来正则性和 $\mathscr I^+$ 的未来完整性却允许把观者取到这一距离之外，于是迅捷线必须越过焦点，矛盾。故 $\mathcal H^+$ 的每个光滑点都有 $\theta\geqslant0$。
+
+最后比较面积。沿已有生成线从 $W_1$ 到 $W_2$ 的流映射记为 $\Phi$。由 $\dv*{\ln\d A}{\lambda}=\theta$，其面积 Jacobian 为 $\Phi^*(\d A_2)=\exp(\int_{\lambda_1}^{\lambda_2}\theta\,\d\lambda)\d A_1\geqslant\d A_1$。
+若两条旧生成线以不同切向相遇，交点就是类光截点，越过后便不再迅捷；若以相同切向相遇，则由测地线唯一性知它们原为同一条。生成线又不能向未来离开视界，故 $\Phi$ 在正则部分单射，这部分在 $W_2$ 的面积至少为 $A_1$。两截面之间还可能有生成线从过去端点加入视界；它们只给 $W_2$ 增加额外面积，遂得 \eqref{eq:hawking-area-theorem}。特别地，多个黑洞并合后，视界面积不小于并合前各分支面积之和。
+
+真实事件视界在生成线加入的\textbf{折痕集}(crease set)上通常只有 $C^0$。上述微分证明适用于其分片 $C^2$ 的正则部分；严格的低正则定理以几乎处处的广义膨胀和面积公式处理折痕集，新加入的生成线仍不会造成面积减少。若两截面间没有新生成线且面积相等，则正则部分上 $\theta=0$；Raychaudhuri 方程进一步给出 $\sigma_{\mu\nu}=0$ 和 $T_{\mu\nu}k^\mu k^\nu=0$。
+
+\subsection{表观视界}\label{sec:apparent-horizon}
+
+固定通向所选渐近平直端的类空切片 $\Sigma$。设 $u^\mu$ 是 $\Sigma$ 的未来单位法矢，$s^\mu$ 是闭曲面 $S\subset\Sigma$ 中指向该端的外单位法矢，取 $\ell^\mu=u^\mu+s^\mu$、$n^\mu=(u^\mu-s^\mu)/2$，则 $\ell\cdot n=-1$。由 $q^{\mu\nu}=h^{\mu\nu}-s^\mu s^\nu$，按本文 $K_{ij}=h_i{}^\mu h_j{}^\nu\cd_\mu u_\nu$ 的约定，外向膨胀为 $\theta_{(\ell)}=D_is^i+K-K_{ij}s^is^j$，其中 $D_i$ 表示 \S\ref{sec:Hamilton} 的空间协变导数。因此在给定初值资料 $(h_{ij},K_{ij})$ 后，MOTS 可由切片内的几何求出，不必先知道时空的完整未来。
+
+若紧致区域 $Z\subset\Sigma$ 的光滑边界 $S=\partial_\Sigma Z$ 将 $Z$ 与所选端分开，并满足 $\theta_{(\ell)}<0$，则称 $Z$ 为\textbf{严格外陷获集}。记所有这类 $Z$ 的并为 $\mathcal T_\Sigma$，称为该切片的\textbf{外陷获区}；其朝向所选端的边界 $\mathcal A_\Sigma:=\partial_\Sigma\mathcal T_\Sigma$ 称为\textbf{表观视界}(apparent horizon)。在通常的内外屏障与正则性条件下，非空的 $\mathcal A_\Sigma$ 是光滑、稳定的最外层 MOTS；因此物理文献也常直接把最外层 MOTS 称为表观视界。任意内层或不稳定的 MOTS 则不应如此称呼。
+
+下面说明它与事件视界的相对位置。沿用上一小节的渐近平直、正则且未来完整的 $\mathscr I^+$ 与强渐近可预言性假设，作为此处所需的弱宇宙监督型条件；并假定类光收敛条件成立，在 Einstein 方程下这就是类光能量条件。先证每个严格外陷获集 $Z$ 都包含在黑洞区域 $\mathcal B$ 中。反设 $Z$ 能向 $\mathscr I^+$ 发出信号；在渐近平直区取充分遥远的类时观者，并选取从紧集 $Z$ 到该观者的最早信号。由 \S\ref{sec:promptness}，它必是一条没有 $Z$-焦点的迅捷类光测地线。它不能从 $Z$ 的内部出发，因为迅捷性会要求它正交于余维一的类空 $Z$，而这样的法矢是类时的；故它从 $S=\partial_\Sigma Z$ 正交射出。能最先离开 $Z$ 的只能是外向支 $\ell^\mu$，内向支可由 $Z$ 中稍靠内的点抢先。
+
+按上述 $-\ell\cdot u=1$ 统一归一化外向法矢。由于 $S$ 紧致且 $\theta_{(\ell)}<0$，存在 $\varepsilon>0$ 使 $\theta_{(\ell)}\leqslant-\varepsilon$。正交线汇无旋，类光 Raychaudhuri 方程遂使这条候选迅捷线在仿射距离至多 $2/\varepsilon$ 内出现 $S$-焦点；迅捷线却不能越过焦点。$\mathscr I^+$ 的未来完整性允许把观者取到所有这些有界初段之外，矛盾。因此 $Z\subset\mathcal B$。
+
+于是 $\mathcal T_\Sigma\subset\mathcal B\cap\Sigma$。又因 $\mathcal V^+=I^-(\mathscr I^+)\cap M$ 是开集，$\mathcal B=M\backslash\mathcal V^+$ 闭合，故 $\mathcal A_\Sigma\subset\overline{\mathcal T_\Sigma}\subset\mathcal B\cap\Sigma$。若 $\Sigma$ 横截事件视界，则 $\mathcal H^+\cap\Sigma=\partial_\Sigma(\mathcal B\cap\Sigma)$；所以表观视界的点只能落在黑洞区域内部或事件视界上，不会位于事件视界的可见一侧。这就是“在事件视界之内或与其重合”的严格含义；反向包含一般不成立。
+
+这里从严格负膨胀出发是必要的。对任意 MOTS，Raychaudhuri 方程在初始处只给出 $\dv*{\theta_{(\ell)}}{\lambda}=-\sigma_{\mu\nu}^{(\ell)}\sigma_{(\ell)}^{\mu\nu}-8\pi T_{\mu\nu}\ell^\mu\ell^\nu\leqslant0$，右端可能恒为零，不能据此直接推出有限距离内的焦点。表观视界作为严格外陷获区的边界，其位置由上述闭包论证保证；若一个 MOTS 还具有严格稳定性，能向陷获侧作任意小变形得到 $\theta_{(\ell)}<0$，同一极限论证也适用。退化情形中剪切与类光能流均可为零，$\theta_{(\ell)}$ 便能保持为零，这正容许非膨胀事件视界的截面本身成为 MOTS。
+
+因此，在渐近平直定常黑洞中，若切片与定常对称相容，且事件视界外侧没有另一 MOTS，则非膨胀的事件视界截面本身就是表观视界，二者重合。吸积或并合时，事件视界可已有正膨胀而不再是 MOTS；在通常的光滑、嵌套情形中，表观视界遂严格位于其黑洞一侧。切片改变还可使最外层 MOTS 跳跃，甚至使已有黑洞的切片上完全没有表观视界；这种缺失在深入 Schwarzschild 黑洞的某些 Cauchy 切片上也会发生。半经典蒸发会违反上述类光能量条件，故经典包含结论不能未经修改地沿用。逐片表观视界若能光滑连成三维超曲面，所得\textbf{临界外陷获管}(marginally outer trapped tube, MOTT) 仍是准局域对象，不应与全局定义的事件视界混同。
 
 \endinput
 
