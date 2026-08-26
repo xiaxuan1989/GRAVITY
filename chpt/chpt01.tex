@@ -2819,7 +2819,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 上述“无穷远”借共形几何精确定义如下。若 $\omega\in C^\infty(M)$ 处处为正，以 $\widehat g_{\mu\nu}=\omega^2g_{\mu\nu}$ 替换 $g_{\mu\nu}$，称为\textbf{Weyl 变换}(Weyl transformation)或\textbf{共形变换}。正因子不改变切矢的因果类型，故光锥、因果关系以及类光测地线去掉参数后的轨迹均不变；但长度、曲率和仿射参数一般改变，测地完备性因而不是共形不变量。
 
 若物理时空 $(M,g)$ 可视为带边界流形 $\widetilde M$ 的内部，并存在 $\Omega\in C^\infty(\widetilde M)$，使 $\widetilde g=\Omega^2g$ 在 $M$ 上成立、$\Omega>0$，而 $\widetilde g$ 光滑且非退化地延伸到所添边界 $\mathscr I$，其上 $\Omega=0$、$\d\Omega\ne0$，则称 $(\widetilde M,\widetilde g,\Omega)$ 是 $(M,g)$ 的\textbf{Penrose 共形完备化}(conformal completion)。在 $\mathscr I$ 上缩放已不可逆；正则延伸的是非物理度规 $\widetilde g$，新增边界也不属于物理时空。若 $\widetilde M$ 可取为紧致流形，这一构造也称\textbf{共形紧化}(conformal compactification)。
-在渐近平直时空的正则共形完备化中，逃向所选渐近平直端的未来类光测地线，其理想未来端点组成\textbf{未来类光无穷远}(future null infinity) $\mathscr I^+$。它满足 $\widetilde g^{\mu\nu}\p_\mu\Omega\p_\nu\Omega=0$，故是 $\widetilde M$ 的类光边界，而非 $M$ 中的有限远处。$\mathscr I^+$ 接收出射光线与辐射，不应同未来类时无穷远 $i^+$ 混同，后者代表无限延伸类时世界线的理想终点。
+在渐近平直时空的正则共形完备化中，逃向所选渐近平直端的未来类光测地线，其理想未来端点组成\textbf{未来类光无穷远}(future null infinity) $\mathscr I^+$。它满足 $\widetilde g^{\mu\nu}\p_\mu\Omega\p_\nu\Omega=0$，故是 $\widetilde M$ 的类光边界，而非 $M$ 中的有限远处。$\mathscr I^+$ 接收出射光线与辐射，不应同未来类时无穷远 $i^+$ 混同，后者代表无限延伸类时世界线的理想终点。图示可见 \S\ref{sec:penrose-diagram}。
 
 相对于选定的 $\mathscr I^+$，记可向该无穷远发送信号的区域为\footnote{对通常正则、未来完整的 $\mathscr I^+$，也可用 $J^-_{\widetilde M}(\mathscr I^+)\cap M$；许多文献遂简写为 $J^-(\mathscr I^+)$。} $\mathcal V^+:=I^-_{\widetilde M}(\mathscr I^+)\cap M$，则\textbf{黑洞区域}(black-hole region)及其\textbf{未来黑洞视界}，也就是\textbf{未来事件视界}(future event horizon)，定义为 $\mathcal B:=M\backslash\mathcal V^+$ 和 $\mathcal H^+:=\partial_M\mathcal B=\partial_M\mathcal V^+$。这里因果过去在共形完备化中计算，边界却在物理时空中取。于是 $p\in\mathcal B$ 意味着从 $p$ 发出的任何未来因果信号都不能抵达所选 $\mathscr I^+$，并且 $J^+(\mathcal B)\subset\mathcal B$。
 形象地说，$\mathscr I^+$ 代表远方观者，它看不到的区域就是黑洞区域，故弱宇宙监督就是限制奇点在视界内而外部观者看不见。
@@ -2843,17 +2843,19 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 \subsection{黑洞面积定理}
 
-事件视界的类光生成元在 $M$ 内没有未来端点，也不能向未来离开这条非编时边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\mathcal L_\ell\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
+事件视界的类光生成元在 $M$ 内没有未来端点，也不能向未来离开这条非编时边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\ell^\nu\cd_\nu\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
 \begin{equation}\label{eq:hawking-area-theorem}
     A_2\geqslant A_1
 \end{equation}
-对任意前后两个事件视界截面成立。这是经典结论，依赖能量条件和整体因果假设；Hawking 辐射中的负能流会破坏其经典前提，使蒸发黑洞的面积可以减小。
+对任意前后两个事件视界截面成立。
 
 \subsection{表观视界}
 
 在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}(apparent horizon)。表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。
 
 在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
+
+\endinput
 
 \section{修改理论}
 
