@@ -1942,7 +1942,7 @@ Schwarzschild 度规显然静态，取 $\xi = \pdv*{t}$ 即可。
     \includegraphics[width=.6\textwidth]{fig/chpt01/blackhole.jpg}
     \caption{\small 电影 \textit{Interstellar} 中黑洞 Gargantua 设定为一颗古老的巨型旋转黑洞，周围绕有的星尘称为\textbf{吸积盘}(accretion disk)。受引力作用，其间有高温物化反应，大量射线放出，包括可见光。观众看来，视界遮挡了部分光源，但光线仍可绕过视界，故视觉上吸积盘仿佛包裹了视界。}
 \end{figure}
-Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。视界所包围的时空区域称为\textbf{黑洞区域}，视界又可称黑洞表面。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
+Wheeler 将视界半径超过其自身半径的星体称为\textbf{黑洞}(black hole)。目前已观测到这种星体。若星体斥力不能与引力抗衡，则质量将无限坍缩至 $r=0$，因而视界内极为空旷。
 计算得 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda} = {48 M^2}/{r^6}$，在 $r=2M$ 有意义，在 $r=0$ 发散，故两奇点有区别。
 既然曲率在 $r=2M$ 处并不奇异，就有可能找到坐标系使度规分量不发散。这种奇点称为\textbf{坐标奇点}或\textbf{假奇点}，可尝试消除。
 $r=0$ 的奇点称\textbf{时空奇点}或\textbf{真奇点}，因为曲率发散与坐标系无关。
@@ -2461,7 +2461,8 @@ Einstein 最初使用尺缩效应解释，但这里容易混淆，需要捋清�
 讨论单一观者的\textbf{自转}时，瞬时观者场不能简写成 $Z^\mu$，必须补全完整的 $e_0^\mu=Z^\mu$ 的正交归一标架 $\{e_I(\tau)\}$，然后讨论空间标架沿线的转动。空间标架应按右手排列。
 因此原则上参考系不止是类时线汇（4-速场），还要包括连续指定的空间标架，组成 4 维标架场。
 
-\begin{wrapfigure}{l}{.35\textwidth}
+\begin{wrapfigure}{r}{.35\textwidth}
+    \centering
     \includegraphics[width=.3\textwidth]{fig/chpt01/frame.pdf}
     \caption{右手标架}
 \end{wrapfigure}
@@ -2551,19 +2552,21 @@ Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延�
 }
 \textbf{因果未来} $J^+(p),J^+(S)$ 只需改成因果线。相应的过去集合符号将 $+$ 改为 $-$。
 从 $p$ 到 $q$ 的\textbf{因果菱形}(causal diamond)或\textbf{因果核}是指 $D_p^q:=J^+(p)\cap J^-(q)$。
-\begin{figure}[h!]\centering
+
+\begin{wrapfigure}{r}{.35\textwidth}
+    \centering
     \begin{tikzpicture}[scale=1.5]
     \draw (0,1)node[above]{$q$}--(1,0)--(0,-1)node[below]{$p$}--(-1,0)--cycle;
     \draw[dashed] (1,0) arc [start angle=0, end angle=180, x radius=1, y radius=0.13];
     \draw (1,0) arc [start angle=0, end angle=-180, x radius=1, y radius=0.13];
     \end{tikzpicture}
     \caption{闵氏时空的因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
-\end{figure}
+\end{wrapfigure}
 任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不可能完全仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\partial D_p^q$ 的折角点无法扫到。
 $\partial D_p^q$ 是分段测地线，即由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。
 Penrose 证明了，若用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，$C^1$ 曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
 
-$p\in M$ 的\textit{开邻域} $N$ 称\textbf{法邻域}(normal neighborhood)，若 $N$ 内任点都存在 $N$ 内唯一测地线段与 $p$ 相连，且沿线不出现 $p$ 的共轭点。从而可建立以 $p$ 为原点的\textbf{法坐标系}使得过 $p$ 的测地线表为过原点直线，故 $p$ 处克氏符为零。
+$p\in M$ 的\textit{开邻域} $N$ 称\textbf{法邻域}(normal neighborhood)，若 $N$ 内任点都存在 $N$ 内唯一测地线段与 $p$ 相连，且沿线不出现 $p$ 的共轭点\footnote{法邻域的另一定义见 \S\ref{sec:manifold}，且可清晰讨论共轭性和多条测地线的区别。}。从而可建立以 $p$ 为原点的\textbf{法坐标系}使得过 $p$ 的测地线表为过原点直线，故 $p$ 处克氏符为零。
 $N$ 内任两点间都存在 $N$ 内唯一测地线，此称\textbf{凸邻域}(convex neighborhood)。连通集是指任意两点存在内含连线，而不要求唯一测地（如欧氏直线），凹凸性是更进一步的性质。如果存在两点，其唯一测地线的一部分在集合外，这只能是凹集。
 凸邻域、法邻域之间不互推。Whitehead 证明了总存在\textbf{凸法邻域}，故二者性质都可用到：开邻域内任两点，都有域内唯一测地线，且无共轭点。显然，凸法邻域对域内任点都是凸法邻域。
 可见对于 Lorentz 流形，凸法邻域内的因果结构与闵氏空间中的邻域一样，故也称\textbf{局部闵氏邻域}。
@@ -2673,11 +2676,10 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
     \item 取 $\Sigma$ 的未来指向单位法矢 $n^\mu$，外曲率的迹（平均曲率）即正交线汇的膨胀 $K:=h^{\mu\nu}\nabla_\mu n_\nu=\nabla_\mu n^\mu$，并存在常数 $K_0>0$，使 $\Sigma$ 上处处有 $K\geqslant K_0$。
     \item 膨胀：进一步要求平均曲率满足 $K \geqslant K_0 > 0$。
 \end{enumerate}
-则任意从 $\Sigma$ 向过去延伸的类时线，其固有时长度不超过有限上界 $3/K_0$，故时空\textbf{过去类时测地不完备}。
-
+则时空\textbf{过去类时测地不完备}：任意从 $\Sigma$ 向过去延伸的类时线，其固有时长度不超过有限上界 $3/K_0$。
 这里的 $3$ 是空间维数，一般 $(n+1)$ 维时空中的上界为 $n/K_0$。若 $\Sigma$ 紧致，则只需要求 $K>0$，其连续性便自动给出某个一致下界 $K_0$。
 时间反演同样成立：若未来法矢满足 $K\leqslant-K_0<0$，即 $\Sigma$ 向未来一致收缩，则时空未来类时测地不完备。故定理并不预设均匀各向同性，只要求某张完整初值面具有一致膨胀或收缩，并以强能量条件保证引力聚焦。
-“奇性”的严格结论仍只是存在有限固有时的不可延类时测地线；定理既不把奇点加入 $M$，也不保证曲率标量发散。
+注意，奇性定理中的“奇性”严格指测地不完备性，没有讨论奇点是否应该加入时空的问题，也不保证某个曲率标量发散，更不说明不完备边界是否能被远方观者看见。
 
 下面证明之。由 $\Sigma$ 向过去发出单位法测地线汇，取指向过去的切矢 $Z^\mu=-n^\mu$，并令固有时参数 $\tau$ 向过去递增。该线汇与 $\Sigma$ 正交，故涡量为零；其初始膨胀为 $\theta_0=-K\leqslant-K_0$。类时收敛条件和空间剪切的正定性代入 \S\ref{sec:timelike} 的 Raychaudhuri 方程得
 \eq{
@@ -2712,7 +2714,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 还可把起点推广为任意集合 $W\subset M$：从 $W$ 到 $p$ 的因果线称为迅捷，若不存在从 $W$ 到 $I^-(p)$ 的因果线，亦即 $J^+(W)\cap I^-(p)=\mt$。若 $W$ 是类空子流形，迅捷线除须为非编时类光测地线外，还必须从 $W$ 正交射出；否则略微移动起点便能取得“抢跑”优势。类光线与类空子流形正交要求 $W$ 的余维至少为二；余维为二时，每点恰有两支未来类光法方向。若 $W$ 还是具有内外之分的闭曲面，它们才相应称为内向、外向。
 
-迅捷性依赖于所选的初始集。若余维二的闭类空子流形 $W$ 是类空超曲面片 $Z$ 的边界，则从 $Z$ 到 $p\notin Z$ 的迅捷线必从 $W$ 出发：若从 $Z$ 内部出发，迅捷性将要求它与余维一的 $Z$ 正交，但类空超曲面不存在类光法向量。反之，一条线相对 $W$ 迅捷，未必相对 $Z$ 迅捷，因为竞争路线还可从 $Z$ 的其他点出发。
+迅捷性依赖于所选的初始集。若余维二的闭类空子流形 $W$ 是类空超曲面片 $Z$ 的边界，则从 $Z$ 到 $p\notin Z$ 的迅捷线必从 $W$ 出发：若从 $Z$ 内部出发，迅捷性将要求它与余维一的 $Z$ 正交，但类空超曲面不存在类光法矢。反之，一条线相对 $W$ 迅捷，未必相对 $Z$ 迅捷，因为竞争路线还可从 $Z$ 的其他点出发。
 
 相应地，若一族从 $W$ 正交射出的类光测地线存在非零 Jacobi 场，其初值切于 $W$、保持正交条件并在 $q'$ 消失，则称 $q'$ 为 $W$ 的\textbf{焦点}。将这条测地线延伸过焦点后，同样可由变分、折角圆滑化和推开构造更早到达的因果线，故它不再迅捷。这是点共轭概念的子流形版本；焦点不存在仍只是迅捷的必要条件。
 
@@ -2721,11 +2723,14 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 \subsection{陷获面}
 
+本节约定 $\mu,\nu,\ldots$ 为四维时空指标，$A,B,\ldots$ 为屏空间或陷获面的两个切向指标；只在球对称情形中，以 $a,b,\ldots$ 表示径向二维商空间的指标。投影后的张量若仍写成时空张量，则保留希腊指标。
+
 设 $k^\mu$ 是仿射参数为 $\lambda$ 的类光测地线汇切矢。
-类光 $k^\mu$ 本身也属于“投影”，所以仅靠 $k^\mu$ 无法像单位类时矢量那样定义正交投影。必须另取辅助类光矢量 $n^\mu$ 使 $k\cdot n=-1$。垂直于二者的余二维子空间 $\mathcal S_p=\{X:X\cdot k=X\cdot n=0\}$ 称为\textbf{屏空间}。考虑四维时空，则维数为二。
+由于 $k\cdot k=0$，$k^\mu$ 本身也属于它的正交补，故仅靠 $k^\mu$ 无法像单位类时矢量那样选出正交投影。必须另取辅助类光矢量 $n^\mu$ 使 $k\cdot n=-1$。垂直于二者的余二维子空间 $\mathcal S_p=\{X:X\cdot k=X\cdot n=0\}$ 称为\textbf{屏空间}；四维时空中它是二维的。
 任意矢量投影到屏空间后为 $X^\mu+k^\mu(n\cdot X)+n^\mu(k\cdot X)$，即投影算符为 $q^\mu{}_\nu=\delta^\mu{}_\nu+k^\mu n_\nu+n^\mu k_\nu$，即
 \[q_{\mu\nu}=g_{\mu\nu}+k_\mu n_\nu+n_\mu k_\nu.\]
-可直接验证 $q_{\mu\nu}k^\nu=q_{\mu\nu}n^\nu=0$；而对任意屏空间矢量 $X,Y$，有 $q_{\mu\nu}X^\mu X^\nu=g_{\mu\nu}X^\mu X^\nu$。
+可直接验证 $q_{\mu\nu}k^\nu=q_{\mu\nu}n^\nu=0$；而对任意屏空间矢量 $X,Y$，有 $q_{\mu\nu}X^\mu Y^\nu=g_{\mu\nu}X^\mu Y^\nu$。
+因此它消去了 $k,n$ 张成的法平面。
 时空度规分解为 $g_{\mu\nu}=q_{\mu\nu}-(k_\mu n_\nu+n_\mu k_\nu)$，其中后一项正是类光法平面上的 Lorentz 度规。加号来自归一化 $k\cdot n=-1$；若 $k\cdot n=-C$，则应写成 $q_{\mu\nu}=g_{\mu\nu}+(k_\mu n_\nu+n_\mu k_\nu)/C$。
 例如在闵氏时空取 $k=(\partial_t+\partial_z)/\sqrt2$、$n=(\partial_t-\partial_z)/\sqrt2$，便有 $q_{\mu\nu}\d x^\mu\d x^\nu=\d x^2+\d y^2$，正是垂直于光传播方向的屏空间。
 将 $\cd_\nu k_\mu $ 投影到屏空间，得到
@@ -2758,57 +2763,97 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 \end{equation}
 其中已用 Einstein 方程消去 Ricci 张量；宇宙学常数项因 $\ell^\mu\ell_\mu=0$ 不作贡献。
 
-事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个类空余二维曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^\mu,n^\mu$，并归一化为 $\ell\cdot n=-1$。两支类光膨胀为
+事件视界的定义要知道时空的完整未来，在数值演化和局域物理中并不方便。为此取一个类空余二维曲面 $S$，选择未来指向的外向、内向类光法矢 $\ell^\mu,n^\mu$，并归一化为 $\ell\cdot n=-1$。取 $S$ 的局部切基 $e_A{}^\mu$，则 $q_{AB}:=g_{\mu\nu}e_A{}^\mu e_B{}^\nu$ 是 $S$ 的内禀度规，$q^{\mu\nu}:=q^{AB}e_A{}^\mu e_B{}^\nu$ 是其时空投影形式。两支未来类光法膨胀为
 \begin{equation}\label{eq:null-expansions}
-    \theta_{(\ell)}=q^{\mu\nu}\cd_\mu\ell_\nu,
+    \theta_{(\ell)}=q^{AB}e_A{}^\mu e_B{}^\nu\cd_\mu\ell_\nu
+    =q^{\mu\nu}\cd_\mu\ell_\nu,
     \qquad
-    \theta_{(n)}=q^{\mu\nu}\nabla_\mu n_\nu.
+    \theta_{(n)}=q^{AB}e_A{}^\mu e_B{}^\nu\cd_\mu n_\nu
+    =q^{\mu\nu}\cd_\mu n_\nu.
 \end{equation}
-若 $\theta_{(\ell)}<0$ 且 $\theta_{(n)}<0$，则连外向光线的截面积也在减小，$S$ 称为\textbf{未来陷获面}(future trapped surface)。满足 $\theta_{(\ell)}=0$、$\theta_{(n)}<0$ 的曲面称为\textbf{临界外陷获面}(marginally outer trapped surface, MOTS)。在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}(apparent horizon)。
+若两支膨胀都小于零，则连外向光线也在会聚，$S$ 称为\textbf{未来陷获面}(future trapped surface)。既已指定 $\ell^\mu$ 外向，$\theta_{(\ell)}=0,\theta_{(n)}<0$ 的曲面称为\textbf{临界外陷获面}(marginally outer trapped surface, MOTS)。
+在保持 $\ell\cdot n=-1$ 的正重标度 $\ell^\mu\mapsto f\ell^\mu,n^\mu\mapsto f^{-1}n^\mu$ 下，两支膨胀分别乘以 $f,f^{-1}$，故它们的符号、零点及陷获性均不变。
 
-因此它消去了 $k,n$ 张成的二维法平面，只保留与陷获面相切的两个空间方向。
-
-在重标度 $\ell^\mu\mapsto f\ell^\mu$ 下，$\theta_{(\ell)}$、$\sigma^{(\ell)}_{\mu\nu}$ 与 $\kappa_{(\ell)}$ 都会相应改变，但膨胀的零点及“是否为临界陷获面”不变。
-
-考虑球对称时空中的一个对称 2-球，其面积为 $A=4\pi r^2$。沿两支未来指向类光法向量 $k_+^\mu,k_-^\mu$ 发出的光线束，其面积膨胀率为
-\[
-    \theta_\pm=\frac{1}{A}\dv{A}{\lambda_\pm}
-    =\frac{2}{r}k_\pm^a\cd_\mu r.
-\]
-在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。若两者都小于零，连“向外”发出的光也在会聚，该 2-球称为\textbf{未来陷获面}。满足 $\theta_+=0$、$\theta_-<0$ 的球面称为\textbf{临界外陷获面}。一张空间切片上最外侧的这类球面通常称为\textbf{表观视界}。
-
-球对称情形可用 Misner--Sharp 质量 $m$ 将这个条件写得更直观：
-\[
-    1-\frac{2m}{r}=g^{\mu\nu}\cd_\mu r\cd_\nu r,
-\]
-其中 $a,b$ 只取径向二维商空间的坐标。坍缩过程中，正常球面满足 $r>2m$，临界球面满足 $r=2m$，而 $r<2m$ 的未来 2-球被陷获。在尘埃球外部 $m=M$，故临界条件退化为熟悉的 $r=2M$；在物质内部，$m$ 则是该球面包围的质量。
-
-表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
+为理解定义的动机，考虑局部写成
+\[\d s^2=h_{ab}(x)\d x^a\d x^b+r^2(x)\Omega_{AB}\d y^A\d y^B\]
+的球对称时空。其中 $h_{ab}$ 是径向二维商空间 $\mathcal Q$ 上的 Lorentz 度规，$\Omega_{AB}$ 是单位二球度规。固定 $x^a$ 的对称二球具有内禀度规 $q_{AB}=r^2\Omega_{AB}$ 和面积 $\mathcal A=4\pi r^2$；因此 $r$ 是面积半径，并非必须预先选作坐标。
+记两支未来类光法矢在 $\mathcal Q$ 上的分量为 $k_+^a,k_-^a$，并取 $h_{ab}k_+^ak_-^b=-1$。沿其发出的光束满足 $\theta_\pm=\mathcal A^{-1}\dv*{\mathcal A}{\lambda_\pm}=2k_\pm^a\p_ar/r$。在正常区域，出射光束膨胀而入射光束收缩，即 $\theta_+>0$、$\theta_-<0$。由二维类光标架的完备性，$h^{ab}=-(k_+^ak_-^b+k_-^ak_+^b)$，从而 $h^{ab}\p_ar\p_br=-2(k_+^a\p_ar)(k_-^b\p_br)=-r^2\theta_+\theta_-/2$。
+球对称时空的\textbf{Misner-Sharp 质量} $m$ 定义为 $1-2m/r:=h^{ab}\p_ar\p_br$，故 $1-2m/r=-r^2\theta_+\theta_-/2$，这就把面积膨胀与包含质量直接联系起来。在坍缩区域中 $\theta_-<0$，故正常球面、临界球面和未来陷获球面分别满足 $r>2m$、$r=2m$ 和 $r<2m$。但单凭 $r<2m$ 不能区分未来与过去陷获面；若两支膨胀都为正，则对应过去陷获面。在尘埃球外部 $m=M$，临界条件即熟悉的 $r=2M$；在物质内部，$m$ 是该球面包围的 Misner-Sharp 准局域质量。
 
 %紧致
 
-\subsection{Penrose 奇性定理}
+\subsection{Penrose 奇性定理}\label{sec:Penrose}
 
 \noindent \textbf{类光奇性定理}(Penrose, 1965)：若四维 Lorentz 时空满足
 \begin{enumerate}
     \item 整体双曲，且存在非紧 Cauchy 面 $\Sigma$；
-    \item 对任意类光 $k^\mu$ 有\textbf{类光收敛条件}(null convergence condition) $R_{\mu\nu}k^\mu k^\nu\geqslant0$；Einstein 方程成立时对应于类光能量条件；
-    \item 存在闭合未来陷获面 $S$。
+    \item 对任意类光 $k^\mu$ 有\textbf{类光收敛条件}(null convergence condition) $R_{\mu\nu}k^\mu k^\nu\geqslant0$；Einstein 方程成立时对应于类光能量条件 $T_{\mu\nu}k^\mu k^\nu\geqslant0$，宇宙学常数不影响这一缩并；
+    \item 存在闭合（紧致且无边界）类空余二维未来陷获面 $S$。
 \end{enumerate}
-则时空中至少存在一条未来不完备的类光测地线。
+则时空\textbf{未来类光测地不完备}：至少存在一条未来不可延类光测地线，其仿射参数具有有限的未来上端点。
+时间反演同样成立：若存在闭合过去陷获面，则结论改为过去类光测地不完备。
+与 \S\ref{sec:Hawking} 的 Hawking 定理相比，这里以局部的陷获面代替整张 Cauchy 面的一致膨胀条件，而结论是类光而非类时测地不完备。
 
-迅捷性这套语言把 Penrose 定理的局域机制变得直接：边界生成元就是最早到达的光线，故不能已经越过焦点；另一方面，若这些法测地线都能延伸得足够远，陷获面与类光收敛条件便由 Raychaudhuri 方程迫使它们在有限仿射参数内形成焦点。迅捷性把“形成焦点”翻译成“离开因果未来边界”，余下只需结合整体双曲性与非紧 Cauchy 面导出矛盾。
+人们曾怀疑黑洞奇性可能是球对称、理想流体等偏离现实的精确假设造成的。Penrose 想要一个不依赖于理想假设的奇性的稳健判据，这是他引入陷获面的原始动机。当然，代价是这个奇性依旧是测地不完备性，不一定保证曲率发散且隐藏在视界内。
 
+下面证明之。
+取光滑未来类时矢量场 $T^\mu$，并以 $-k\cdot T=1$ 归一化 $S$ 的未来类光法矢。所得归一化未来类光法丛 $\mathscr N^+(S)$ 的每条纤维含两点，是紧致 $S$ 上的二重覆盖，故亦紧致。对每个 $(q,k)\in\mathscr N^+(S)$，令相应法测地线的仿射参数在 $q$ 处取 $\lambda=0$，并令 $\dot\gamma(0)=k$。陷获条件说明初始膨胀 $\theta_0(q,k)$ 在 $\mathscr N^+(S)$ 上连续为负，因而存在常数 $w>0$ 使 $\theta_0\leqslant-w$。在首个 $S$-焦点以前，正交类光线汇无旋，故类光收敛条件与上文的类光 Raychaudhuri 方程给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。由类光聚焦引理，任一法测地线若能延伸到 $\lambda=2/w$，必在不迟于此处出现 $S$-焦点。
 
+反设所有从 $S$ 正交射出的未来类光测地线都能延伸过 $2/w$。记未来因果边界为 $E^+(S):=J^+(S)\backslash I^+(S)=\partial J^+(S)=\partial I^+(S)$。由整体双曲性、$S$ 的紧致性以及 \S\ref{sec:promptness}，每个 $p\in E^+(S)$ 都可由 $S$ 沿一条迅捷因果线到达；该线必是从 $S$ 正交射出的类光测地线，且不能已经越过 $S$-焦点。因此所有边界生成元都只需取 $0\leqslant\lambda\leqslant2/w$；若由全局竞争路线更早失去迅捷性，其边界段只会更短。
+换言之，每个 $p\in E^+(S)$ 都由三元组 $(q,k,\lambda)$ 决定，其中 $(q,k)\in\mathscr N^+(S)$，而 $\lambda\in[0,2/w]$。测地线终点连续依赖这些数据，故全部此类终点构成紧集\footnote{严格地说，这些有限初段的并集，是紧集 $\mathscr N^+(S)\times[0,2/w]$ 在受限测地指数映射 $F(q,k,\lambda)=\exp_q(\lambda k)\in M$ 下的连续像；反设保证 $F$ 处处有定义。紧集的连续像也紧。指数映射见 \S\ref{sec:manifold}。}。$E^+(S)$ 是该紧集的闭子集，因而亦紧致。
+这里迅捷性所做的正是把“有限仿射参数内出现焦点”转化为“因果边界只由有限初段生成”。
 
-Raychaudhuri 方程使陷获面发出的类光测地线在有限仿射参数内聚焦，而整体因果结构又不允许这些焦散以完备、正则的方式排布，最终迫使测地线不完备。
+然而 $E^+(S)$ 不可能紧致。首先它非空：任取 Cauchy 时间函数 $t$，$t|_S$ 在紧致 $S$ 上的最小点 $q$ 属于 $J^+(S)$，却不可能属于 $I^+(S)$，否则必有 $S$ 上另一点的 $t$ 值更小。其次，$E^+(S)=\partial I^+(S)$ 是无边缘的非编时 $C^0$ 超曲面。利用整体双曲分裂 $M\simeq\R\times\Sigma$，沿其不可延类时流线将 $E^+(S)$ 投影到非紧 Cauchy 面 $\Sigma$，记该映射为 $\pi$。非编时性保证每条流线与 $E^+(S)$ 至多相交一次，因而 $\pi$ 单射；无边缘性保证 $E^+(S)$ 局部是相对 $\Sigma$ 的连续图像，因而 $\pi(E^+(S))$ 是开集。若 $E^+(S)$ 紧致，其像也紧致，从而在 $\Sigma$ 中闭。时空按通常约定连通，故 $\Sigma$ 连通；于是非空的既开又闭集 $\pi(E^+(S))$ 只能等于 $\Sigma$，这将迫使 $\Sigma$ 紧致，矛盾。
+故矛盾，反设不成立：至少有一条从 $S$ 正交射出的未来类光测地线无法延伸过有限仿射参数 $2/w$，故时空未来类光测地不完备。
 
-这里“奇性”的严格含义是测地线不能延伸到任意大的仿射参数，并非把某个奇异点加入流形。定理本身也不保证某个曲率标量必定发散，更不说明不完备边界是否能被远方观者看见。
+\subsection{宇宙监督}\label{sec:cosmic-censorship}
 
-尘埃模型中的 $a=0$ 奇性可能令人怀疑是均匀、无压等理想化假设造成的。Penrose 奇性定理说明结论远为稳健。
-Schwarzschild 坍缩给出曲率发散且隐藏在视界后的例子，但更一般的结局需要附加假设。
+奇性定理启发了两个重要猜想(conjecture)或假设(hypothesis)。
+\begin{itemize}
+    \item \textbf{弱宇宙监督}(weak cosmic censorship)：由适当物质和一般的正则、渐近平直初始数据产生的奇性，不会暴露给未来类光无穷远，因而远方观者看不到\textbf{裸奇性}(naked singularity)。
+    \item \textbf{强宇宙监督}(strong cosmic censorship)：要求一般初始数据的最大 Cauchy 发展在适当正则性类别中不可再延拓，使初始数据保持对物理时空的决定性。换言之，解的奇性与其延拓遇到局部阻碍有关。这一假设希望动力学问题的唯一解必定是初始数据产生的经典时空，即\textbf{经典决定性原理}(classical determinism)。
+\end{itemize}
+弱形式保护远方观者，强形式保护全局决定论。
+这些猜想尚不是对所有物质模型都成立的普适定理，其准确陈述还依赖“一般性”、渐近条件以及允许延拓的可微阶数。某些高度对称或精细调节的初始数据确实能产生裸奇性，但这未必反驳强调一般初始数据的版本。
 
-\endinput
+上述“无穷远”借共形几何精确定义如下。若 $\omega\in C^\infty(M)$ 处处为正，以 $\widehat g_{\mu\nu}=\omega^2g_{\mu\nu}$ 替换 $g_{\mu\nu}$，称为\textbf{Weyl 变换}(Weyl transformation)或\textbf{共形变换}。正因子不改变切矢的因果类型，故光锥、因果关系以及类光测地线去掉参数后的轨迹均不变；但长度、曲率和仿射参数一般改变，测地完备性因而不是共形不变量。
+
+若物理时空 $(M,g)$ 可视为带边界流形 $\widetilde M$ 的内部，并存在 $\Omega\in C^\infty(\widetilde M)$，使 $\widetilde g=\Omega^2g$ 在 $M$ 上成立、$\Omega>0$，而 $\widetilde g$ 光滑且非退化地延伸到所添边界 $\mathscr I$，其上 $\Omega=0$、$\d\Omega\ne0$，则称 $(\widetilde M,\widetilde g,\Omega)$ 是 $(M,g)$ 的\textbf{Penrose 共形完备化}(conformal completion)。在 $\mathscr I$ 上缩放已不可逆；正则延伸的是非物理度规 $\widetilde g$，新增边界也不属于物理时空。若 $\widetilde M$ 可取为紧致流形，这一构造也称\textbf{共形紧化}(conformal compactification)。
+在渐近平直时空的正则共形完备化中，逃向所选渐近平直端的未来类光测地线，其理想未来端点组成\textbf{未来类光无穷远}(future null infinity) $\mathscr I^+$。它满足 $\widetilde g^{\mu\nu}\p_\mu\Omega\p_\nu\Omega=0$，故是 $\widetilde M$ 的类光边界，而非 $M$ 中的有限远处。$\mathscr I^+$ 接收出射光线与辐射，不应同未来类时无穷远 $i^+$ 混同，后者代表无限延伸类时世界线的理想终点。
+
+相对于选定的 $\mathscr I^+$，记可向该无穷远发送信号的区域为\footnote{对通常正则、未来完整的 $\mathscr I^+$，也可用 $J^-_{\widetilde M}(\mathscr I^+)\cap M$；许多文献遂简写为 $J^-(\mathscr I^+)$。} $\mathcal V^+:=I^-_{\widetilde M}(\mathscr I^+)\cap M$，则\textbf{黑洞区域}(black-hole region)及其\textbf{未来黑洞视界}，也就是\textbf{未来事件视界}(future event horizon)，定义为 $\mathcal B:=M\backslash\mathcal V^+$ 和 $\mathcal H^+:=\partial_M\mathcal B=\partial_M\mathcal V^+$。这里因果过去在共形完备化中计算，边界却在物理时空中取。于是 $p\in\mathcal B$ 意味着从 $p$ 发出的任何未来因果信号都不能抵达所选 $\mathscr I^+$，并且 $J^+(\mathcal B)\subset\mathcal B$。
+形象地说，$\mathscr I^+$ 代表远方观者，它看不到的区域就是黑洞区域，故弱宇宙监督就是限制奇点在视界内而外部观者看不见。
+
+作为因果过去的边界，$\mathcal H^+$ 是无边缘的非编时 $C^0$ 超曲面；在可微处它是由类光测地线生成的类光超曲面。生成元可以有过去端点并由此加入视界，却不能向未来离开视界。事件视界的定义依赖时空的完整未来，不能由局部曲率或单张空间切片确定，因而具有遥感性；若存在多个渐近平直端，$\mathcal B$ 与 $\mathcal H^+$ 还依赖所选的 $\mathscr I^+$。
+
+严格说，奇性本身不是 $M$ 中的点，故“奇性位于黑洞区域外”只是一种简写。所谓裸奇性，是指任意接近某个不完备端点的正则事件仍能向 $\mathscr I^+$ 发出信号。Christodoulou 在球对称 Einstein-标量场中构造的精细调节裸奇性解，正说明宇宙监督陈述中的“一般性”不可省略。
+
+\subsection{正能量定理}
+
+\textbf{正能量定理}(positive energy theorem)，也称\textbf{正质量定理}(positive mass theorem)，排除了从物理初值产生负总质量的可能。考虑四维、$\Lambda=0$ 的情形，并取 \S\ref{sec:Hamilton} 中满足约束方程的初始资料 $(\Sigma,h_{ij},K_{ij})$。设 $(\Sigma,h)$ 完备、无边界且渐近平直；在任一渐近平直端的渐近 Cartesian 坐标中，例如有 $h_{ij}=\delta_{ij}+O(r^{-1})$、$\p_kh_{ij}=O(r^{-2})$ 及 $K_{ij}=O(r^{-2})$，并有足够的进一步衰减使下述极限存在。记 $\rho:=T_{\mu\nu}n^\mu n^\nu$、$j_i:=-T_{\mu\nu}n^\mu V_i^\nu$，并要求 $\rho,j_i$ 可积且满足初值形式的主能量条件 $\rho\geqslant\sqrt{h^{ij}j_i j_j}$。
+
+取 $G=1$。若 $S_r$ 是该端的大坐标球，$s^i$、$\d S_0$ 分别是相对于渐近背景 $\delta_{ij}$ 的外单位法矢和面积元，则 ADM 能量与动量为\footnote{第二式的号数适配本文 $K_{ij}=h_i{}^\mu h_j{}^\nu\nabla_\mu n_\nu$ 的约定；若反号定义外曲率，其被积式也整体反号。}
+\begin{align*}
+    E_{\rm ADM}&:=\frac{1}{16\pi}\lim_{r\to\infty}\int_{S_r}(\p_jh_{ij}-\p_ih_{jj})s^i\d S_0,\\
+    P_i^{\rm ADM}&:=\frac{1}{8\pi}\lim_{r\to\infty}\int_{S_r}(Kh_{ij}-K_{ij})s^j\d S_0,\qquad K:=h^{ij}K_{ij}.
+\end{align*}
+正能量定理断言每个渐近平直端的 ADM 四动量 $P^\mu_{\rm ADM}=(E_{\rm ADM},P^i_{\rm ADM})$ 必为未来因果矢，亦即 $E_{\rm ADM}\geqslant\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}\geqslant0$。因此不变 ADM 质量 $m_{\rm ADM}:=\sqrt{E_{\rm ADM}^2-\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$ 非负。刚性部分进一步说明，若 $E_{\rm ADM}=\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$，则二者均为零，初值来自 Minkowski 时空中的类空超曲面。特别地，时间对称资料 $K_{ij}=0$ 时，这就化为 Riemannian 正质量定理。Schoen--Yau 的证明以极小曲面和 Jang 方程为核心，Witten 的证明则使用旋量恒等式。
+
+这一定理是整体结论：ADM 能量由无穷远的边界项给出，并非局域物质能量密度的简单积分。负质量 Schwarzschild 度规仍然渐近平直，且其 ADM 能量确为参数 $M<0$；它不与定理矛盾，因为裸露的 $r=0$ 类时奇性使相应空间切片不完备，也不存在满足上述条件的正则 Cauchy 初值面。故它不能由满足主能量条件的完整、正则渐近平直初始资料演化而来。
+
+\subsection{黑洞面积定理}
+
+事件视界的类光生成元在 $M$ 内没有未来端点，也不能向未来离开这条非编时边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\mathcal L_\ell\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
+\begin{equation}\label{eq:hawking-area-theorem}
+    A_2\geqslant A_1
+\end{equation}
+对任意前后两个事件视界截面成立。这是经典结论，依赖能量条件和整体因果假设；Hawking 辐射中的负能流会破坏其经典前提，使蒸发黑洞的面积可以减小。
+
+\subsection{表观视界}
+
+在给定空间切片上，最外层 MOTS 常称为\textbf{表观视界}(apparent horizon)。表观视界依赖时间切片，甚至在某些切片上可以不存在；事件视界则是切片无关但具有遥感性的全局边界。
+
+在满足适当能量条件和宇宙监督时，表观视界通常位于事件视界之内或与其重合。二者在严格稳态极限重合，在剧烈吸积、并合或蒸发过程中却不应混同。
 
 \section{修改理论}
 

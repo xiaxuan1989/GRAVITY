@@ -151,6 +151,12 @@ Schwarzschild 解的静态写法还有很多。\textbf{各向同性坐标系}就
 若 $r_r>r_e$，则 $z>0$，光将红移，否则蓝移。但这并非因为光爬出引力势阱而消耗能量，只是因为引力钟慢效应。被高处静止观测者测得的频率更低。
 弱场近似时 $\phi=-M/r$，取 $\Delta\phi=\phi_r-\phi_e$，有 $z=(1+2\phi_r)^{1/2}(1+2\phi_e)^{-1/2}-1\approx\Delta\phi$，考察近地表处相隔 $\Delta h$ 的观者，则 $z=g\Delta h$。这一形式也可用等效原理得到：将引力场中的稳态观者近似为平直时空中的加速观者，在平直时空的惯性系下，设从静止向上加速 $g$ 高为 $\Delta h$ 的电梯，起初底部发射光并测得频率 $\omega_e$，光经 $\Delta t=\Delta h + 1/2 g\Delta t^2\approx \Delta h$ 时间到达顶部，顶部这时的速度为 $u=g\Delta t\approx g\Delta h$，则根据 D\"oppler 效应 $\omega_r/\omega_e = \gamma(1-u)$，考虑到 $u\ll 1$，即 $\gamma\approx 1$，因此 $z = \gamma(1+u) - 1 \approx u = g\Delta h$。
 
+在渐近平直平稳时空中，取无穷远归一化的平稳 Killing 矢量 $\xi^a=(\partial_t)^a$。由沿 $\xi^a$ 静止的光源发出、无穷远静止观者接收的光，若其红移在某曲面处趋于无穷，则该曲面称为\textbf{无限红移面}(infinite-redshift surface)。
+
+光子的守恒能量为 $\mathcal E=-k_a\xi^a$，静止观者测得的频率为 $\omega=\mathcal E/\sqrt{-\xi^2}$，故 $1+z=\omega_{\rm em}/\omega_\infty=1/\sqrt{-\xi^2_{\rm em}}$。因此无限红移面满足 $\xi^a\xi_a=0$；在适应平稳对称性的坐标中即 $g_{tt}=0$。
+
+它表示平稳 Killing 矢量由类时变为类光，静止观者在此达到光速极限，故也称\textbf{静止极限面}(stationary-limit surface)。静态时空中它常与事件视界重合，如 Schwarzschild 时空的 $r=2M$；旋转时空中一般不重合，例如 Kerr 时空的无限红移面是能层的外边界，而事件视界位于其内侧。
+
 \subsection{水星进动}
 
 \begin{wrapfigure}{r}{2.9cm}\centering
@@ -477,9 +483,9 @@ B 区中所有指向未来的类时、类光曲线最终都到达 $r=0$；W 区�
 
 上述白洞、第二外部区域及 Einstein--Rosen 桥属于永恒真空 Schwarzschild 解的整体结构。由恒星坍缩形成的实际黑洞一般只包含一个外部区域与未来黑洞区域，并不产生完整的白洞和第二外部区域。
 
-\subsection{Penrose 图}
+\subsection{Penrose 图}\label{sec:penrose-diagram}
 
-Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐标处。若只关心因果结构，可再作共形变换，将整个时空压缩到有限图形中。具体说，在物理时空 $(M,g)$ 上取正函数 $\Omega$，令 $\tilde g=\Omega^2g$；由于 $\tilde g_{\mu\nu}k^\mu k^\nu=\Omega^2g_{\mu\nu}k^\mu k^\nu$，类光方向及光锥均不改变。若 $\Omega$ 在扩大的流形边界上趋于零，而 $\tilde g$ 可光滑延伸至该边界，就称所得构造为\textbf{共形紧化}(conformal compactification)，其有限图示称为\textbf{Penrose 图}。
+Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐标处。若只关心因果结构，可再作共形变换，将整个时空压缩到有限图形中。根据 \S\ref{sec:cosmic-censorship}，在物理时空 $(M,g)$ 上取正函数 $\Omega$，令 $\tilde g=\Omega^2g$；由于 $\tilde g_{\mu\nu}k^\mu k^\nu=\Omega^2g_{\mu\nu}k^\mu k^\nu$，类光方向及光锥均不改变。若 $\Omega$ 在扩大的流形边界上趋于零，而 $\tilde g$ 可光滑延伸至该边界，所得构造就是共形紧化，其有限图示称为\textbf{Penrose 图}。
 
 球对称时空的 Penrose 图只画 $(t,r)$ 所张成的径向二维商空间，每个内部点实际代表一个对称 2-球。对 Kruskal 类光坐标作
 \[
@@ -532,7 +538,7 @@ Kruskal 坐标消除了视界的坐标奇性，却仍让无穷远位于无限坐
     \label{fig:sch-penrose}
 \end{figure}
 
-图 \ref{fig:sch-penrose} 中，$\mathscr I^+$、$\mathscr I^-$ 分别称为\textbf{未来、过去类光无穷远}(future/past null infinity)，是出射、入射类光线的理想端点；$i^+$、$i^-$ 是类时世界线的未来、过去端点，称为\textbf{类时无穷远}；$i^0$ 是类空曲线趋向的\textbf{类空无穷远}。A 与 A$'$ 各有一套这样的渐近边界，反映两个渐近平直外部区域。
+图 \ref{fig:sch-penrose} 中，$\mathscr I^\pm$ 就是 \S\ref{sec:cosmic-censorship} 提过的类光无穷远，是出射、入射类光线的理想端点；$i^\pm$ 是类时世界线的未来或过去端点，称为\textbf{类时无穷远}；$i^0$ 是类空曲线趋向的\textbf{类空无穷远}。A 与 A$'$ 各有一套这样的渐近边界，反映两个渐近平直外部区域。
 
 这些无穷远点是共形延拓所附加的理想边界，并不属于物理时空。$r=0$ 也不属于时空，但原因不同：它是曲率发散的真实奇性，不能作为光滑共形边界补入。视界 $\mathcal H^\pm$ 则是时空内部的正则类光超曲面，只是在图上恰好构成不同区域的分界。
 
@@ -720,11 +726,7 @@ $\chi=\chi_b$ 是星体表面，面积半径为 $R(\tau)=a(\tau)\sin\chi_b$。�
 
 
 
-\subsection{宇宙监督}
 
-\textbf{弱宇宙监督}(weak cosmic censorship)猜想大意是：由适当物质和一般的正则、渐近平直初始数据产生的奇性不会暴露给未来类光无穷远，因而远方观者看不到\textbf{裸奇性}(naked singularity)。\textbf{强宇宙监督}(strong cosmic censorship)则要求一般初始数据的最大 Cauchy 发展在适当正则性类别中不可再延拓，使初始数据保持对物理时空的决定性。二者关注的问题不同：弱形式保护远方观者，强形式保护全局决定论。
-
-这些猜想尚不是对所有物质模型都成立的普适定理，其准确陈述还依赖“一般性”、渐近条件以及允许延拓的可微阶数。某些高度对称或精细调节的初始数据确实能产生裸奇性，但这未必反驳强调一般初始数据的版本。负质量 Schwarzschild 解也不是由满足通常正能量条件的正则恒星初始数据坍缩得到，故不能直接当作宇宙监督的反例。
 
 真实坍缩还伴随压强、激波、磁场、自转、物质抛射和引力辐射。若坍缩后形成孤立的旋转黑洞，外部扰动通常向无穷远辐射或落入视界，几何趋向由质量和角动量描述的 Kerr 黑洞。尽管内部结构远比尘埃模型复杂，陷获面的形成、事件视界的整体定义以及测地线不完备，仍构成理解黑洞产生的基本框架。
 
@@ -975,11 +977,7 @@ $\alpha$ 是 Boyer--Lindquist 时间切片的时移。远处 $\omega\sim2J/r^3$�
 
 
 
-事件视界是无未来端点的非时序边界；在类光能量条件、弱宇宙监督及适当整体正则条件下，其生成元不能向未来形成共轭点，故必须有 $\theta_{(\ell)}\geqslant0$。又因截面面积元满足 $\mathcal L_\ell\d A=\theta_{(\ell)}\d A$，得到 Hawking \textbf{面积定理}
-\begin{equation}\label{eq:hawking-area-theorem}
-    A_2\geqslant A_1
-\end{equation}
-对任意前后两个事件视界截面成立。这是经典结论，依赖能量条件和整体因果假设；Hawking 辐射中的负能流会破坏其经典前提，使蒸发黑洞的面积可以减小。
+
 
 \subsection{黑洞力学四定律}
 
