@@ -2086,9 +2086,9 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面�
 \subsection{正则表述}\label{sec:Hamilton}
 
 Wheeler 的几何动力学主要是指广义相对论的\textbf{哈氏正则表述}。首先需要进行时空整体 3+1 分解，也称\textbf{Arnowitt-Deser-Misner(ADM) 分解}，
-需要假设时空有良好因果性质，使得能定义一张类空超曲面 $X^{\mu}=X^{\mu}(t,\bm x)$。对超曲面任一点 $(t,\bm x)$ 赋予类时单位法矢 $n^{\mu}$ 和单位切矢
+需要假设时空有良好因果性质，使得能定义一张类空超曲面 $X^{\mu}=X^{\mu}(t,\bm x)$。对超曲面任一点 $(t,\bm x)$ 赋予类时单位法矢 $n^{\mu}$ 和坐标切矢
 \[ V_{i}^{\mu} := \pdv*{X^{\mu}}{x^{i}} = {X^{\mu}}_{,i}, \]
-$(n^{\mu},V_{i}^{\mu})$ 构成时空正交的标架场，满足 $g_{\mu\nu}n^{\mu}V_{i}^{\nu}=0$。
+$(n^{\mu},V_{i}^{\mu})$ 构成适配超曲面的标架场，满足 $g_{\mu\nu}n^{\mu}V_{i}^{\nu}=0$。
 投影张量\footnote{注意此 $h_{\mu\nu}$ 不是线性扰动。超曲面度规与投影映射的关系见 \S\ref{sec:Gauss}。}为 $h_{\mu\nu}=g_{\mu\nu}+n_{\mu}n_{\nu}$，则时空度规在切向标架的投影为 $\tilde h_{ij} = g_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu} = h_{\mu\nu}V_{i}^{\mu}V_{j}^{\nu}$。
 也就是 $h_{\mu\nu}$ 在坐标系 $\{X\}$ 的空间值。
 设超曲面在时空中作连续变形。定义\textbf{变形矢量}为
@@ -2111,7 +2111,7 @@ $(n^{\mu},V_{i}^{\mu})$ 构成时空正交的标架场，满足 $g_{\mu\nu}n^{\m
 \[ n^{\mu} = \left(\frac{1}{N}, -\frac{N^{i}}{N}\right),\quad h^{\mu0} = 0. \]
 由此全时空被一系列类空超曲面分层。
 
-外曲率的定义为 $K_{\mu\nu} = n_{(\mu;\nu)}$，于是
+外曲率定义为 $K_{\mu\nu}:=h_\mu{}^\rho h_\nu{}^\sigma\nabla_\rho n_\sigma$；对超曲面法矢它是对称的，于是
 \begin{align*}
 K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)} = g_{\lambda(i}{n^{\lambda}}_{,j)} + g_{\lambda(i}\Gamma_{j)\kappa}^{\lambda}n^{\kappa} = g_{0(i}{n^{0}}_{,j)} + g_{k(i}{n^{k}}_{,j)} + \frac{1}{2}\pdv{g_{ij}}{x^{\kappa}}n^{\kappa} \\
 &= -\frac{1}{N}N_{(i,j)} + h_{k(i,j)}\frac{N^{k}}{N} + \frac{1}{2N}\pdv{h_{ij}}{t} - \frac{1}{2}\pdv{h_{ij}}{x^{k}}\frac{N^{k}}{N} = \frac{1}{N}\left(\frac{1}{2}\pdv{h_{ij}}{t} - N_{(i|j)}\right),
@@ -2119,49 +2119,49 @@ K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)} = g_{\lambda(i}{n^{\lambda}}_{,j)} + 
 其中下标竖线“|”代表在超曲面内的协变导数，即\textbf{空间协变导数}，而空间联络系数为
 \[ ^{(3)}\Gamma_{ij}^{l} = \frac{1}{2}h^{kl}(h_{ki,j}+h_{kj,i}-h_{ij,k}). \]
 外曲率的迹为
-\[ K = g^{\mu\nu}n_{(\nu;\mu)} = (h^{\mu\nu}-n^{\mu}n^{\nu})n_{(\nu;\mu)} = h^{\mu\nu}n_{(\nu;\mu)} = h^{ij}n_{(i;j)} = h^{ij}K_{ij}, \]
-其中第三个等号用到 $n^{\mu}n_{\mu;\nu}=0$，第四个等号用到 $h^{\mu 0}=0$。
+\[ K=h^{\mu\nu}\nabla_\mu n_\nu=\nabla_\mu n^\mu=h^{ij}K_{ij}, \]
+其中用到 $n^{\mu}n_{\mu;\nu}=0$ 和 $h^{\mu0}=0$。
 由微分几何中的 \textbf{Gauss-Codazzi 关系}可推得
 \[ R = {}^{(3)}R + K^{ij}K_{ij} - K^{2} + \text{全微分项}, \]
 其中 $^{(3)}R$ 是3维超曲面内禀曲率的 Ricci 标量，内禀曲率由空间联络系数按投影法计算。
 因此，引力作用量改写为
-\[ S_G \simeq -\frac{1}{16\pi }\int \d[4]{x}Nh^{1/2} [K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda]. \]
+\[ S_G \simeq \frac{1}{16\pi }\int \d[4]{x}Nh^{1/2} [K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda]. \]
 宗量是 $h_{ij},N,N^{i}$，正则动量的系数约定是
 \[ \Pi_{N} = 16\pi \fdv{S_G}{\dot{N}} = 16\pi \pdv{\Lag_G}{\dot{N}},\quad\Pi_{N^{i}} = 16\pi \pdv{\Lag_G}{\dot{N}^{i}},\quad\Pi^{ij} = 16\pi \pdv{\Lag_G}{\dot{h}_{ij}}. \]
 由于作用量被积函数中不显含 $\dot{N}$ 和 $\dot{N}^{i}$ ，所以 $\Pi_{N}=0=\Pi_{N^{i}}$，这表明引力系统存在4个初级约束。
-\[ \Pi^{ij} = -h^{1/2}N\left(2K^{ij}\pdv{K_{ij}}{\dot{h}_{ij}} - 2K\pdv{K}{\dot{h}_{ij}}\right) = -h^{1/2}(K^{ij}-h^{ij}K), \]
+\[ \Pi^{ij} = h^{1/2}N\left(2K^{ij}\pdv{K_{ij}}{\dot{h}_{ij}} - 2K\pdv{K}{\dot{h}_{ij}}\right) = h^{1/2}(K^{ij}-h^{ij}K), \]
 其迹为
-\[ \Pi = h_{ij}\Pi^{ij} = 2h^{1/2}K \im K = \frac{1}{2}h^{-1/2}\Pi, \]
-反解出 $K^{ij}$，得 $K^{ij} = -h^{-1/2}\left(\Pi^{ij}-\frac{1}{2}h^{ij}\Pi\right)$，所以
+\[ \Pi = h_{ij}\Pi^{ij} = -2h^{1/2}K \im K = -\frac{1}{2}h^{-1/2}\Pi, \]
+反解出 $K^{ij}$，得 $K^{ij} = h^{-1/2}\left(\Pi^{ij}-\frac{1}{2}h^{ij}\Pi\right)$，所以
 \begin{align}
     \label{eq:KK-K^2}
     K^{ij}K_{ij}-K^{2} &= \frac{1}{h}\left(\Pi^{ij}-\frac{1}{2}h^{ij}\Pi\right)\left(\Pi_{ij}-\frac{1}{2}h_{ij}\Pi\right) - \frac{1}{4h}\Pi^{2} = \frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right),\\
-    \Pi^{ij}K_{ij} &= -h^{-1/2}\Pi^{ij}\left(\Pi_{ij}-\frac{1}{2}h_{ij}\Pi\right) = -h^{-1/2}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right).
+    \Pi^{ij}K_{ij} &= h^{-1/2}\Pi^{ij}\left(\Pi_{ij}-\frac{1}{2}h_{ij}\Pi\right) = h^{-1/2}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right).
 \end{align}
 得哈氏密度
 \begin{align*}
 \Ham_G &= \Pi_{N}\dot{N}+\Pi_{N^{i}}\dot{N}^{i}+\Pi^{ij}\dot{h}_{ij}-16\pi \Lag_G \\
-&= \Pi^{ij}\dot{h}_{ij}+h^{1/2}N(K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda) \\
-&= -h^{-1/2}N\left[\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}-h({}^{(3)}R-2\Lambda)\right]+2\Pi^{ij}N_{(i|j)} \\
-&= h^{1/2}\left\{-N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]+2h^{-1/2}\Pi^{ij}N_{(i|j)}\right\} \\
-&\simeq h^{1/2}\left\{-N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]-2N_{(i}(h^{-1/2}\Pi^{ij})_{|j)}\right\}.
+&= \Pi^{ij}\dot{h}_{ij}-h^{1/2}N(K^{ij}K_{ij}-K^{2}+{}^{(3)}R-2\Lambda) \\
+&= h^{-1/2}N\left[\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}-h({}^{(3)}R-2\Lambda)\right]+2\Pi^{ij}N_{(i|j)} \\
+&= h^{1/2}\left\{N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]+2h^{-1/2}\Pi^{ij}N_{(i|j)}\right\} \\
+&\simeq h^{1/2}\left\{N\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)-{}^{(3)}R+2\Lambda\right]-2N_i(h^{-1/2}\Pi^{ij})_{|j}\right\}.
 \end{align*}
-第四个等号提出了 $h^{1/2}$ 因子，因为哈氏量是3维空间上的标量\footnote{关于张量密度的讨论见 \S\ref{sec:tensor-density}}。初级约束 $\Pi_{N}=0=\Pi_{N^{i}}$ 需在任何时刻都成立，为此，需有
-\[ 0 = \dot{\Pi}_{N} = [\Pi_{N},\Ham_G] = -\pdv{\Ham_G}{N} = h^{1/2}\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)- {}^{(3)}R+2\Lambda\right] = H_G, \]
-\[ 0 = \dot{\Pi}_{N^{i}} = [\Pi_{N^{i}},\Ham_G] = -\pdv{\Ham_G}{N^{i}} = 2(h^{-1/2}\Pi^{ij})_{|j} =: H_{i}. \]
+第四个等号提出了 $h^{1/2}$ 因子，将哈氏密度写成它与3维标量的乘积\footnote{关于张量密度的讨论见 \S\ref{sec:tensor-density}}。相应的正则 Hamiltonian 为 $H_{\mathrm{can}}:=\int_{\Sigma_t}\d[3]{x}\,\Ham_G$。初级约束 $\Pi_{N}=0=\Pi_{N^{i}}$ 需在任何时刻都成立，为此，需有
+\[ 0 = \dot{\Pi}_{N} = [\Pi_{N},H_{\mathrm{can}}] = -\fdv{H_{\mathrm{can}}}{N} = -h^{1/2}\left[\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right)- {}^{(3)}R+2\Lambda\right] =: H_G, \]
+\[ 0 = \dot{\Pi}_{N^{i}} = [\Pi_{N^{i}},H_{\mathrm{can}}] = -\fdv{H_{\mathrm{can}}}{N^{i}} = 2h^{1/2}(h^{-1/2}\Pi_i{}^j)_{|j} =: H_{i}. \]
 这4个约束是次级约束，分别称为\textbf{能量约束}和\textbf{动量约束}(或微分同胚约束)，其中 $[A, B]$ 是 $A$ 与 $B$ 的 Poisson 括号。能量约束和动量约束还可从作用量对 $N$ 和 $N^{i}$ 变分后再利用 \eqref{eq:KK-K^2} 直接得
 \[ 16\pi \fdv{S_G}{N} = H_G = 0, \quad 16\pi \fdv{S_G}{N^{i}} = H_{i} = 0. \]
-在时间演化中，次级约束也应该总保持，故需有
-\[ 0 = \dot{H}_G = [H_G,\Ham_G], \quad 0 = \dot{H}_{i} = [H_{i},\Ham_G]. \]
-可证上式是4个恒等式，不会给出任何新的约束。引力场的动力学方程由此为
-\[ \dot{h}_{ij} = [h_{ij},\Ham_G] = \pdv{\Ham_G}{\Pi^{ij}}, \quad \dot{\Pi}^{ij} = [\Pi^{ij},\Ham_G] = -\pdv{\Ham_G}{h_{ij}}. \]
+在时间演化中，次级约束也应保持，故需有
+\[ 0 = \dot{H}_G = [H_G,H_{\mathrm{can}}], \quad 0 = \dot{H}_{i} = [H_{i},H_{\mathrm{can}}]. \]
+可证这些 Poisson 括号闭合为已有约束的线性组合，因而在约束面上为零，不会产生新的约束。引力场的动力学方程由此为
+\[ \dot{h}_{ij} = [h_{ij},H_{\mathrm{can}}] = \fdv{H_{\mathrm{can}}}{\Pi^{ij}}, \quad \dot{\Pi}^{ij} = [\Pi^{ij},H_{\mathrm{can}}] = -\fdv{H_{\mathrm{can}}}{h_{ij}}. \]
 引力场量 $h_{ij}$ 张成一个空间，称为\textbf{超空间}(superspace)，这是无穷维空间，在这个超空间中可引入超度规(又称\textbf{de Witt 度规})：
 \[ G_{ijkl} = \frac{1}{2}h^{-1/2}(h_{ik}h_{jl}+h_{il}h_{jk}-h_{ij}h_{kl}), \]
 于是，能量约束可写成
 \[ G_{ijkl}\Pi^{ij}\Pi^{kl} - h^{1/2}(^{(3)}R-2\Lambda) = 0. \]
 
 引力与物质耦合系统的总作用量为
-\[ S = -\frac{1}{16\pi }\int \d[4]{x}h^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R(h)-2\Lambda] + S_{M}, \]
+\[ S \simeq \frac{1}{16\pi }\int \d[4]{x}h^{1/2}N[K^{ij}K_{ij}-K^{2}+{}^{(3)}R(h)-2\Lambda] + S_{M}, \]
 其中 $\psi$ 表示物质场位形变量的集合。 初级约束同样满足，它们在时间演化中一直得以保持要求系统还需满足4个次级约束
 \[ 16\pi \fdv{S}{N} = 16\pi \left(\fdv{S_G}{N} + \fdv{S_{M}}{N}\right) = H = 0 \]
 \[ 16\pi \fdv{S}{N^{i}} = 16\pi \left(\fdv{S_G}{N^{i}} + \fdv{S_{M}}{N^{i}}\right) = H_{i} = 0, \]
@@ -2173,7 +2173,7 @@ K_{ij} &= g_{\lambda(i}{n^{\lambda}}_{;j)} = g_{\lambda(i}{n^{\lambda}}_{,j)} + 
     &= Nh^{1/2}(T^{tt}N_{i}+T^{tj}h_{ji}) = Nh^{1/2}(T^{tt}g_{ti}+T^{tj}g_{ji}) = Nh^{1/2}T_{i}^{t}, 
 \end{align*}
 $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力场与物质场耦合时的能量约束和动量约束分别为
-\[ h^{1/2}\left\{\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right) - {}^{(3)}R + 2\Lambda - 16\pi T_{nn}\right\} = 0,\quad (h^{-1/2}\Pi_{i}^{j})_{|j} + 8\pi T_{i}^{n} = 0. \]
+\[ h^{1/2}\left\{\frac{1}{h}\left(\Pi^{ij}\Pi_{ij}-\frac{1}{2}\Pi^{2}\right) - {}^{(3)}R + 2\Lambda + 16\pi T_{nn}\right\} = 0,\quad (h^{-1/2}\Pi_{i}^{j})_{|j} - 8\pi T_{i}^{n} = 0. \]
 第二个式子用到
 \begin{align*}
     T_{j}^{n} &:= g_{\mu\nu}n^{\mu}T_{j}^{\nu} = g_{00}n^{0}T_{j}^{0} + g_{i0}n^{i}T_{j}^{0} + g_{0i}n^{0}T_{j}^{i} + g_{ki}n^{k}T_{j}^{i} \\
@@ -2184,9 +2184,9 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
 
 \textbf{初值问题}就是反过来问：在某个类空超曲面 $\Sigma$ 上给定怎样的初始数据，才能唯一地确定一个四维时空的发展？
 初始数据不能任意指定。纯引力场的一组初始数据可取为 $(\Sigma,h_{ij},\Pi^{ij})$。若有物质场，还需同时给出物质场 $\psi$ 及其正则共轭量。它们必须满足能量约束和动量约束。
-若改用外曲率表示初始数据，由 $\Pi^{ij}=-h^{1/2}(K^{ij}-h^{ij}K)$，可把约束等价写作
+若改用外曲率表示初始数据，由 $\Pi^{ij}=h^{1/2}(K^{ij}-h^{ij}K)$，可把约束等价写作
 \[
-    {}^{(3)}R-K^{ij}K_{ij}+K^2-2\Lambda+16\pi T_{nn}=0,\quad (K_i{}^j-\delta_i{}^jK)_{|j}-8\pi T_i^n=0.
+    {}^{(3)}R-K^{ij}K_{ij}+K^2-2\Lambda-16\pi T_{nn}=0,\quad (K_i{}^j-\delta_i{}^jK)_{|j}-8\pi T_i^n=0.
 \]
 关键要先在 $\Sigma$ 上解这四个约束方程。
 在真空且 $\Lambda=0$ 时，约束变为
@@ -2205,7 +2205,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
 \]
 于是约束成为
 \[
-    {}^{(3)}R-A^{ij}A_{ij}+\frac{2}{3}K^2-2\Lambda+16\pi T_{nn}=0,\quad (A_i{}^j)_{|j}-\frac{2}{3}K_{|i}-8\pi T_i^n=0.
+    {}^{(3)}R-A^{ij}A_{ij}+\frac{2}{3}K^2-2\Lambda-16\pi T_{nn}=0,\quad (A_i{}^j)_{|j}-\frac{2}{3}K_{|i}-8\pi T_i^n=0.
 \]
 若进一步选取常平均曲率切片 $K=\text{常数}$，且物质动量密度为零，动量约束只要求 $A_{ij}$ 横向无迹。再配合共形分解
 \[
@@ -2665,7 +2665,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
     \mathrm{DEC}:\ \rho\geqslant\abs{p}.
 \]
 
-%能量条件和奇性定理提纲。
+%% 能量条件补充
 
 \subsection{Hawking 定理}\label{sec:Hawking}
 
