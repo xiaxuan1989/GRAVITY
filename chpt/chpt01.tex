@@ -2063,10 +2063,7 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 
 \subsection{引力子}
 
-迄今为止，尚无任何完备而自洽的量子引力理论。
-不过，我们能领略一下量子引力理论应当至少是怎样的。
-我们把平面波 $k^\mu$ 解释成由引力子组成。
-引力子的 4-矢为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu = 0$，它同光子一样是无质量粒子。
+迄今尚无经实验证实的完整紫外量子引力理论，不过弱引力场可以作为低能有效场论作量子化。以下只借线性引力领略这种理论至少应有的结构。把波矢为 $k^\mu$ 的平面波解释成引力子组成的相干态，则单个引力子的 4-动量为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu=0$，它同光子一样是无质量粒子。
 
 相比电磁波的偏振矢，二阶偏振张量在绕传播方向旋转角 $\varphi$ 时按 $2\varphi$ 变化，按照量子场论 Wigner 分类法，这是自旋 2 无质量粒子，这两种偏振态对应于\textbf{螺旋度}(helicity)为 $+2$ 和 $-2$ 的量子态。其自旋在运动方向上的分量为 $\pm 2\hbar$。
 由前文，自旋 1 光子 $A^\mu$ 可发生偶极辐射，而自旋 2 引力子 $h_{\mu\nu}$ 没有偶极辐射，只能从四极辐射开始。
@@ -2075,10 +2072,100 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 \[
     T^{\mu\nu} = \frac{p^\mu p^\nu}{\hbar\omega} \mathscr N,
 \]
-$\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。把上式与引力平面波的结果比较，从而平面波中螺旋度为 $\pm 2$ 的引力子数密度为
+$\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。为显示量子与引力耦合的量纲，本小节暂保留 $G,\hbar$，仍取 $c=1$，只在需要时恢复 $c$。令 $e_{\pm2}:=(H_+\mp\i H_\times)/\sqrt2$ 为两支圆偏振，即螺旋度本征振幅，并把复振幅归一化为
+\[
+    \left\langle t^{\mu\nu}\right\rangle
+    =\frac{k^\mu k^\nu}{16\pi G}
+      \left(\abs{e_{+2}}^2+\abs{e_{-2}}^2\right).
+\]
+与粒子表达式比较，立即得到
+\eq{
+    \mathscr N_{\pm2}=\frac{\omega}{16\pi\hbar G}\abs{e_{\pm2}}^2,
+    \qquad \mathscr N=\mathscr N_{+2}+\mathscr N_{-2}.
+}
+若以一般谐和规范下的复偏振张量 $e_{\mu\nu}$ 表示，同一总数密度可写成 $\mathscr N=\frac{\omega}{16\pi\hbar G}(e^{\mu\nu *}e_{\mu\nu}-\frac12\abs{e^\mu{}_\mu}^2)$；在 TT 规范中迹项消失。这里把经典波的能量除以单个量子的能量 $\hbar\omega$，正是由波强度过渡到引力子数目的最简单办法。
 
-%%
+同理，经典辐射功率除以 $\hbar\omega$ 就给出引力子的发射率。设 $\widetilde T^{\mu\nu}(k,\omega)$ 是源能动张量在类光动量 $k^\mu=(\omega,\bm k)$、$\abs{\bm k}=\omega$ 处的 Fourier 分量，则向立体角 $\d\Omega$ 发射一个引力子的速率为
+\begin{equation}\label{eq:graviton-emission-rate}
+    \d\Gamma=\frac{G\omega\,\d\Omega}{\pi\hbar}
+    \left[\widetilde T^{\mu\nu *}\widetilde T_{\mu\nu}
+    -\frac12\abs{\widetilde T^\mu{}_\mu}^2\right].
+\end{equation}
+经典源中 $\widetilde T^{\mu\nu}$ 是普通 Fourier 振幅；量子跃迁中则必须替换为 $\langle b|\widehat T^{\mu\nu}|a\rangle$。以非相对论原子为例，若 $\omega=(E_a-E_b)/\hbar>0$，定义质量四极矩矩阵元
+\[
+    D_{ij}(a\to b):=m_e\int\d[3]{x}\,\psi_b^*(\bm x)x_i x_j\psi_a(\bm x).
+\]
+角积分后得到
+\[
+    \Gamma(a\to b)=\frac{2G\omega^5}{5\hbar}
+    \left[D_{ij}^*D_{ij}-\frac13\abs{D_i{}^i}^2\right].
+\]
+例如氢原子 $3d(m=2)\to1s$ 的单引力子衰变率为
+\[
+    \Gamma(3d\to1s)
+    =\frac{2^{23}Gm_e^3c}{3^7 5^{15}(137)^6\hbar^2}
+    \simeq2.5\times10^{-44}\ \mathrm{s}^{-1}.
+\]
+其寿命远超宇宙年龄，说明单个微观系统的引力子自发辐射实际上不可观测。
 
+还可考虑本来就会发生的粒子碰撞，并询问额外发射软引力子的概率。设 $p_N^\mu$ 是所有初、末态粒子的 4-动量，初态取 $\eta_N=-1$，末态取 $\eta_N=+1$，$\mathcal P_c$ 是不分辨引力辐射时碰撞发生的概率。软频极限给出
+\begin{equation}\label{eq:soft-graviton-emission}
+    \d\mathcal P=\frac{G\omega\,\d\omega\d\Omega}{2\pi^2\hbar}\mathcal P_c
+    \sum_{N,M}\frac{\eta_N\eta_M}{(p_N\cdot k)(p_M\cdot k)}
+    \left[(p_N\cdot p_M)^2-\frac12m_N^2m_M^2\right].
+\end{equation}
+因 $p_N\cdot k\propto\omega$，故 $\d\mathcal P\propto\d\omega/\omega$。若把瞬时碰撞近似误用到任意高频，$\omega\to\infty$ 会产生对数紫外发散；实际碰撞历时 $\Delta t$ 给出截止 $\omega\lesssim1/\Delta t$。在 $\omega\to0$ 处则出现红外发散，表示无限多个任意软的引力子不能逐个分辨。虚引力子的发射与再吸收使“严格零辐射”概率带有相反发散；把实验分辨率以下的所有实软引力子一并求和后，可观测的含并概率有限。可见即使只接受最初等的引力子解释，也已不可避免地同时需要实引力子与虚引力子。
+
+量子解释还把吸收、自发发射和受激发射联系起来。设一个足够大且对引力波不透明的温度为 $T$ 的空腔达到热平衡。引力子有两个螺旋度，故单位体积内角频率介于 $\omega$ 与 $\omega+\d\omega$ 的数目满足与光子相同的 Planck 分布
+\eq{
+    n(\omega)\d\omega=\frac{\omega^2\d\omega}{\pi^2}
+    \left[\exp\left(\frac{\hbar\omega}{k_{\mathrm B}T}\right)-1\right]^{-1}.
+}
+若 $A(\omega)$ 是腔壁吸收单个引力子的速率，$E(\omega)\d\omega$ 是单位体积在该频段的总发射率，细致平衡要求 $A(\omega)n(\omega)=E(\omega)$。将总发射分为自发项 $S$ 与受激项 $I$，可写为
+\[
+    E(\omega)=S(\omega)+I(\omega),\qquad
+    S(\omega)=\frac{\omega^2}{\pi^2}\e^{-\hbar\omega/(k_{\mathrm B}T)}A(\omega),\qquad
+    I(\omega)=n(\omega)\e^{-\hbar\omega/(k_{\mathrm B}T)}A(\omega).
+\]
+$\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对于下能级的 Boltzmann 权重，而 $I\propto n$ 体现引力子的 Bose 统计。这些关系只要求物质本身处于热平衡，并不要求外来引力辐射服从 Planck 分布。
+
+例如对非相对论高温气体，在 $\omega_c\ll\omega\ll k_{\mathrm B}T/\hbar$ 内，由碰撞制动辐射反推的单引力子吸收率为
+\[
+    A(\omega)=\frac{8\pi G}{5\hbar\omega^3}
+    \sum_{(a,b)}\mu_{ab}^2n_an_b
+    \left\langle v_{ab}^5\int\d\Omega\,dv{\sigma_{ab}}{\Omega}\sin^2\theta\right\rangle,
+\]
+其中 $\mu_{ab},n_a,v_{ab}$ 分别是粒子对的约化质量、数密度和相对速度。低频处 $A\propto\omega^{-3}$ 虽可很大，受激发射却把净吸收再乘以 $1-\exp[-\hbar\omega/(k_{\mathrm B}T)]\simeq\hbar\omega/(k_{\mathrm B}T)$。在现今宇宙已知环境中，引力辐射的物质吸收仍无显著作用。
+
+上述讨论只量子化自由弱场，并以经典辐射公式估算跃迁率。真正的微扰量子引力还须允许引力子的产生、湮灭及相互作用。取一种常用归一化，TT 自由场算符可展开为
+\begin{align*}
+    \widehat h_{\mu\nu}(x)=\sqrt{32\pi G\hbar}
+    \sum_{\lambda=\pm2}\int\frac{\d[3]{k}}{(2\pi)^3\sqrt{2\omega_{\bm k}}}
+    \big[&a(\bm k,\lambda)e_{\mu\nu}(\bm k,\lambda)\e^{\i kx}\notag\\
+    &+a^\dagger(\bm k,\lambda)e_{\mu\nu}^*(\bm k,\lambda)\e^{-\i kx}\big],
+\end{align*}
+其中 $a^\dagger,a$ 分别产生、湮灭一个动量为 $\hbar\bm k$、螺旋度为 $\lambda$ 的引力子，并满足
+\[
+    [a(\bm k,\lambda),a^\dagger(\bm k',\lambda')]
+       =(2\pi)^3\delta^3(\bm k-\bm k')\delta_{\lambda\lambda'},\quad
+    [a,a]=[a^\dagger,a^\dagger]=0.
+\]
+把这一场与 $T^{\mu\nu}$ 耦合，并加入 Einstein--Hilbert 作用量展开所得的自耦合顶角，就可逐阶计算跃迁振幅。
+
+这里首先遇到 Lorentz 协变性与物理自由度之间的张力。若场展开只保留 $\lambda=\pm2$，便等于选定了辐射规范；该规范并不被一般 Lorentz 变换保持。因此变换后除张量变换外还要补作一次规范变换，形如
+\[
+    h_{\mu\nu}\longmapsto
+    \Lambda_\mu{}^\rho\Lambda_\nu{}^\sigma h_{\rho\sigma}
+    +\p_\mu\epsilon_\nu+\p_\nu\epsilon_\mu.
+\]
+这并不表示物理的 Lorentz 对称性破坏，而是说只含两个物理螺旋度的势不能同时保持简单的张量变换律与固定规范。正则量子化可以接受这种非显式协变性；协变量子化则保留 $h_{\mu\nu}$ 的冗余分量，再以规范固定、Faddeev--Popov 鬼场或等价的 BRST 条件保证物理态和散射振幅中只剩 $\pm2$。两条路线在可比较的微扰阶给出相同物理结果。
+
+更深的困难来自紫外区。取 $\hbar=c=1$ 时，$[G]=\mathrm{mass}^{-2}$，引力耦合具有负质量维数；量纲计数表明 $G^n$ 阶振幅会出现形如 $G^n\int p^{2n-1}\d p$ 的高动量发散。它们不能只靠有限个质量或耦合常数吸收，而需依次加入 $R^2,R_{\mu\nu}R^{\mu\nu}$ 及更高曲率反项，故纯 Einstein 引力作为基本微扰理论不可重整化。但这不妨碍把它当作低能有效场论：当特征能量 $E\ll M_{\mathrm{Pl}}\sim G^{-1/2}$ 时，高阶曲率项按 $E/M_{\mathrm{Pl}}$ 受控压低，有限阶仍有确定的预言；缺少的是紫外完备理论。
+
+最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein--Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
+
+
+\endinput
 \subsection{渐近平直时空}
 %共性变换
 %引力能量非定域性
@@ -2560,9 +2647,9 @@ Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延�
     \draw[dashed] (1,0) arc [start angle=0, end angle=180, x radius=1, y radius=0.13];
     \draw (1,0) arc [start angle=0, end angle=-180, x radius=1, y radius=0.13];
     \end{tikzpicture}
-    \caption{闵氏时空的因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
+    \caption{\small 闵氏时空因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
 \end{wrapfigure}
-任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不可能完全仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\partial D_p^q$ 的折角点无法扫到。
+任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不能仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\partial D_p^q$ 的折角点或\textbf{折痕集}(crease set)扫不到。
 $\partial D_p^q$ 是分段测地线，即由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。
 Penrose 证明了，若用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，$C^1$ 曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
 
@@ -2859,7 +2946,7 @@ Witten 的外移论证可以去掉生成线本身未来完备的额外假设。�
 最后比较面积。沿已有生成线从 $W_1$ 到 $W_2$ 的流映射记为 $\Phi$。由 $\dv*{\ln\d A}{\lambda}=\theta$，其面积 Jacobian 为 $\Phi^*(\d A_2)=\exp(\int_{\lambda_1}^{\lambda_2}\theta\,\d\lambda)\d A_1\geqslant\d A_1$。
 若两条旧生成线以不同切向相遇，交点就是类光截点，越过后便不再迅捷；若以相同切向相遇，则由测地线唯一性知它们原为同一条。生成线又不能向未来离开视界，故 $\Phi$ 在正则部分单射，这部分在 $W_2$ 的面积至少为 $A_1$。两截面之间还可能有生成线从过去端点加入视界；它们只给 $W_2$ 增加额外面积，遂得 \eqref{eq:hawking-area-theorem}。特别地，多个黑洞并合后，视界面积不小于并合前各分支面积之和。
 
-真实事件视界在生成线加入的\textbf{折痕集}(crease set)上通常只有 $C^0$。上述微分证明适用于其分片 $C^2$ 的正则部分；严格的低正则定理以几乎处处的广义膨胀和面积公式处理折痕集，新加入的生成线仍不会造成面积减少。若两截面间没有新生成线且面积相等，则正则部分上 $\theta=0$；Raychaudhuri 方程进一步给出 $\sigma_{\mu\nu}=0$ 和 $T_{\mu\nu}k^\mu k^\nu=0$。
+真实事件视界在生成线加入的折痕集上通常只有 $C^0$。上述微分证明适用于其分片 $C^2$ 的正则部分；严格的低正则定理以几乎处处的广义膨胀和面积公式处理折痕集，新加入的生成线仍不会造成面积减少。若两截面间没有新生成线且面积相等，则正则部分上 $\theta=0$；Raychaudhuri 方程进一步给出 $\sigma_{\mu\nu}=0$ 和 $T_{\mu\nu}k^\mu k^\nu=0$。
 
 \subsection{表观视界}\label{sec:apparent-horizon}
 
