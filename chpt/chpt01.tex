@@ -820,9 +820,7 @@ $N^{\lambda\mu\nu}=N^{\lambda[\mu\nu]}$ 的求导为 $\p_\lambda N^{\lambda\mu\n
 $N^\mu$ 沿 $U^\mu$ 分解为 $N^\mu=n U^\mu + \bm N^\mu$，$n=-N^\nu U_\nu$ 是\textbf{共动数密度}，$\bm N^\mu=h^\mu{}_\nu N^\nu$ 称扩散流。
 同理任意对称张量分解为
 \eq{
-\tcbhighmath{
 T^{\mu\nu}=\varepsilon U^\mu U^\nu+2U^{(\mu}q^{\nu)}+ph^{\mu\nu}+\Pi^{\mu\nu},
-}
 }
 其中 $\varepsilon= (-U_\alpha)(-U_\beta)T^{\alpha\beta} = T^{\mu\nu}U_\mu U_\nu$ 就是\textbf{共动能量密度}；$q^\nu=-U_\alpha h^\nu{}_{\beta}T^{\alpha\beta}$ 就是固有能流密度或热流；剩下 $P^{\mu\nu}=h^\mu{}_{\alpha}h^\nu{}_{\beta}T^{\alpha\beta}$ 是空间张量（任意指标与 $U^\mu$ 缩并为零），而三维对称张量总可迹分解 $ph^{\mu\nu}+\Pi^{\mu\nu}$，后者是无迹部分 $\pi^\mu{}_\mu=0$。由$h^{\mu\nu}=\eta^{\nu\lambda}h^\mu{}_\lambda=\eta^{\mu\nu}+U^\mu U^\nu$ 得 $h_{\mu\nu}T^{\mu\nu}=h_{\mu\nu}P^{\mu\nu}=P^\mu{}_\mu=3p$，故 $p=\frac13h_{\mu\nu}T^{\mu\nu}$。
 共动系中 $U^\mu=\delta^\mu_0$，则 $N^0=n$， $q^0=h^{0\mu}=\Pi^{0\mu}=0$，$T^{00}=\varepsilon,T^{0i}=q^i,T^{ij}=p\delta^{ij}+\Pi^{ij}$，$p=T^i{}_i/3$。
@@ -849,9 +847,7 @@ $\varepsilon,p$ 的关系称\textbf{物态方程}，具体情况需要研究微�
 类似于同时面，离散自由度涉及的密度场积分可借助 $\delta$ 函数。
 先推广任意维：
 \eq{
-\tcbhighmath{
     \int\d[\cate{N}]{x} f(x)\delta^\cate{N}(x-x_0)=f(x_0) \iff \delta^\cate{N}(x)=\prod_{\mu=0}^{\cate{N}-1}\delta(x^\mu).
-}
 }
 $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$，故 $\delta^4(x)$ 是 Lorentz 标量。
 点粒子的密度表述需用到 $\delta$ 函数。
@@ -1403,11 +1399,11 @@ R_{\lambda\mu\nu\kappa} = 2g_{[\lambda|[\kappa,\nu]|\mu]} +g_{\sigma\rho}\left(\
 其中 $(A^{*\mu\nu})$ 是 $(A_{\mu\nu})$ 之伴随，具有性质 $A\delta_\sigma^\mu=A_{\sigma\gamma}A^{*\gamma\mu}$ 和 $A^{*\mu\nu}=AA^{\mu\nu}$；伴随（转置）矩阵元是相应代数余子式，当然有 $\pdv*{A^{*\gamma\mu}}{A_{\sigma\nu}}=0$。
 由 $g_{\mu\nu}=g_{\nu\mu}$ 知 $\p_\lambda g=g g^{\mu \nu} g_{\mu \nu,\lambda}$。
 注意 $\delta^{\mu}_{\nu}=g^{\mu\lambda}g_{\lambda\nu}$ 可得 $0=g^{\mu\lambda}\var g_{\lambda\nu}+g_{\lambda\nu}\var g^{\mu\lambda}$，故
-\[\var g=gg^{\mu\nu}\var g_{\mu\nu}=-g g_{\mu\nu}\var g^{\mu\nu},\quad \delta \sqrt{-g}=-\frac12\sqrt{-g}g_{\mu\nu}\var g^{\mu\nu}.\]
-\eq{
-\tcbhighmath{\var\int\d[4]x\sqrt{-g}\,\Lag = \int\d[4]x\sqrt{-g}\left(\fdv{\Lag}{g^{\mu\nu}} - \frac12 g_{\mu\nu}\Lag\right)\var g^{\mu\nu}.}
-}
-经硬算或利用下节方法知边界项 $\sqrt{-g} g^{\mu\nu}\var R_{\mu\nu}=2\p_\lambda(\sqrt{-g} g^{\mu [\nu} \delta \{_{\mu \nu}^{\lambda]}\})$，消除，则 $\var R\simeq R_{\mu\nu}\var g^{\mu\nu}$，则
+\begin{align*}
+    \var g=gg^{\mu\nu}\var g_{\mu\nu}&=-g g_{\mu\nu}\var g^{\mu\nu},\quad \delta \sqrt{-g}=-\frac12\sqrt{-g}g_{\mu\nu}\var g^{\mu\nu}.\\
+    \var\int\d[4]x\sqrt{-g}\,\Lag &= \int\d[4]x\sqrt{-g}\left(\fdv{\Lag}{g^{\mu\nu}} - \frac12 g_{\mu\nu}\Lag\right)\var g^{\mu\nu}.
+\end{align*}
+经硬算或利用下节方法知边界项 $\sqrt{-g} g^{\mu\nu}\var R_{\mu\nu}=2\p_\lambda(\sqrt{-g} g^{\mu [\nu} \delta \{_{\mu \nu}^{\lambda]}\})$，消除，则
 \eq{\tcbhighmath{\var\int\d[4]x\sqrt{-g}\, R 
 \simeq\int \d[4]x\sqrt{-g}\, \left(R_{\mu\nu}-\frac 12 g_{\mu\nu} R\right) \var g^{\mu\nu}.}}
 称 $G_{\mu\nu}=R_{\mu\nu}-\frac 12 g_{\mu\nu} R$ \textbf{Einstein 张量}。还可有 $G:=g^{\mu\nu}G_{\mu\nu}=R-\frac{1}{2}\delta^\mu_\mu R=-R\Rightarrow R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G$。这里没有引入物质场，因此自由引力场在最小耦合意义上满足 $G_{\mu\nu}=0$ 即 $R_{\mu\nu}=0$，称\textbf{真空方程}(vacuum equation)。闵氏度规显然是一个解。
@@ -1441,8 +1437,7 @@ R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\m
 \eq{
     \{^\rho_{\mu\nu}\}^{(1)} = \frac{1}{2} \eta^{\rho\lambda} (\p_\mu h_{\nu\lambda} + \p_\nu h_{\mu\lambda} - \p_\lambda h_{\mu\nu}) = O(h).
 }
-故曲率中克氏符乘积项为 $O(h^2)$，只剩下偏导部分
-\[R^{(1)}_{\mu\nu\rho\sigma} = 2h_{[\mu|[\sigma,\rho]|\nu]}.\]
+故曲率中克氏符乘积项为 $O(h^2)$，只剩下偏导部分 $R^{(1)}_{\mu\nu\rho\sigma} = 2h_{[\mu|[\sigma,\rho]|\nu]}$。
 做规范变换 $h_{\mu\nu} \to h_{\mu\nu} + \p_\mu \xi_\nu + \p_\nu \xi_\mu$ 下，容易发现 $\xi$ 项全部消失，故具有规范不变性，说明曲率在地位上完全等价于电磁学的 $F_{\mu\nu}$。
 取坐标系使 $U^\mu$ 与时轴相切，取坐标基 $t^\mu=\pdv*{x^\mu}{t}$，由归一性知
 \eq{
@@ -1456,10 +1451,7 @@ R_{\mu\nu}=G_{\mu\nu}-\frac 12 g_{\mu\nu} G=\kappa\left(T_{\mu\nu}-\frac12 g_{\m
 其中规定 $h_{\mu\nu},\phi$ 在无穷远处均衰减至零。
 Newton 极限下流体微观随机速度也远小于光速，因此 $p\ll \varepsilon$，$\varepsilon$ 退化为 $\varrho$。
 由 $h_{00}=-2\phi$ 和 $R^{(1)}_{\mu\nu}$ 得 $R_{00}=-\frac 12 \nabla^2 h_{00}=\nabla^2\phi$。
-于是低速共动观者为 $U^\mu=\delta^\mu_0$，得 $T_{00}=\varepsilon=\varrho$。由前文知 $R=-G=-\kappa T=\kappa\varrho$。取 $R_{00}-\frac{1}{2}\eta_{00} R = \kappa T_{00}$（$h_{00} R$ 是 $O(h^2)$），得 $\nabla^2\phi-\frac 12 (-1)\kappa \varrho=\kappa\varrho$，于是
-\eq{
-    \nabla^2\phi = \frac{\kappa}{2}\varrho,
-}
+于是低速共动观者为 $U^\mu=\delta^\mu_0$，得 $T_{00}=\varepsilon=\varrho$。由前文知 $R=-G=-\kappa T=\kappa\varrho$。取 $R_{00}-\frac{1}{2}\eta_{00} R = \kappa T_{00}$（$h_{00} R$ 是 $O(h^2)$），得 $\nabla^2\phi-\frac 12 (-1)\kappa \varrho=\kappa\varrho$，于是 $\nabla^2\phi = \frac{\kappa}{2}\varrho$，
 这正是 Newton 引力的 Poisson 方程，其实验确定出 $\kappa=8\pi$，则
 \eq{
 \tcbhighmath{
@@ -2081,9 +2073,9 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。为显示量子与引力�
 与粒子表达式比较，立即得到
 \eq{
     \mathscr N_{\pm2}=\frac{\omega}{16\pi\hbar G}\abs{e_{\pm2}}^2,
-    \qquad \mathscr N=\mathscr N_{+2}+\mathscr N_{-2}.
+    \quad \mathscr N=\mathscr N_{+2}+\mathscr N_{-2}=\frac{\omega}{16\pi\hbar G}(e^{\mu\nu *}e_{\mu\nu}-\frac12\abs{e^\mu{}_\mu}^2).
 }
-若以一般谐和规范下的复偏振张量 $e_{\mu\nu}$ 表示，同一总数密度可写成 $\mathscr N=\frac{\omega}{16\pi\hbar G}(e^{\mu\nu *}e_{\mu\nu}-\frac12\abs{e^\mu{}_\mu}^2)$；在 TT 规范中迹项消失。这里把经典波的能量除以单个量子的能量 $\hbar\omega$，正是由波强度过渡到引力子数目的最简单办法。
+后者是以一般谐和规范下的复偏振张量 $e_{\mu\nu}$ 表示的总数密度；在 TT 规范中迹项消失。这里把经典波的能量除以单个量子的能量 $\hbar\omega$，正是由波强度过渡到引力子数目的最简单办法。
 
 同理，经典辐射功率除以 $\hbar\omega$ 就给出引力子的发射率。设 $\widetilde T^{\mu\nu}(k,\omega)$ 是源能动张量在类光动量 $k^\mu=(\omega,\bm k)$、$\abs{\bm k}=\omega$ 处的 Fourier 分量，则向立体角 $\d\Omega$ 发射一个引力子的速率为
 \begin{equation}\label{eq:graviton-emission-rate}
@@ -2138,12 +2130,11 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
 其中 $\mu_{ab},n_a,v_{ab}$ 分别是粒子对的约化质量、数密度和相对速度。低频处 $A\propto\omega^{-3}$ 虽可很大，受激发射却把净吸收再乘以 $1-\exp[-\hbar\omega/(k_{\mathrm B}T)]\simeq\hbar\omega/(k_{\mathrm B}T)$。在现今宇宙已知环境中，引力辐射的物质吸收仍无显著作用。
 
 上述讨论只量子化自由弱场，并以经典辐射公式估算跃迁率。真正的微扰量子引力还须允许引力子的产生、湮灭及相互作用。取一种常用归一化，TT 自由场算符可展开为
-\begin{align*}
+\[
     \widehat h_{\mu\nu}(x)=\sqrt{32\pi G\hbar}
     \sum_{\lambda=\pm2}\int\frac{\d[3]{k}}{(2\pi)^3\sqrt{2\omega_{\bm k}}}
-    \big[&a(\bm k,\lambda)e_{\mu\nu}(\bm k,\lambda)\e^{\i kx}\notag\\
-    &+a^\dagger(\bm k,\lambda)e_{\mu\nu}^*(\bm k,\lambda)\e^{-\i kx}\big],
-\end{align*}
+    \big(a(\bm k,\lambda)e_{\mu\nu}(\bm k,\lambda)\e^{\i kx}+a^\dagger(\bm k,\lambda)e_{\mu\nu}^*(\bm k,\lambda)\e^{-\i kx}\big),
+\]
 其中 $a^\dagger,a$ 分别产生、湮灭一个动量为 $\hbar\bm k$、螺旋度为 $\lambda$ 的引力子，并满足
 \[
     [a(\bm k,\lambda),a^\dagger(\bm k',\lambda')]

@@ -1,4 +1,9 @@
-\subsection{流体引力耦合}
+\chapter{自引力作用}
+这里实际上涉及到微妙之处。为了方便，考察单一测试质点 $p$。固有质量密度为 $\rho=\frac{m}{\gamma\sqrt{-g}}\delta(\bm x-\bm x_p)$，能动张量为 $T^{\mu\nu}=\rho U^\mu U^\nu$，但对 $g_{\mu\nu}$ 不影响，$g_{\mu\nu}$ 满足真空方程。
+可作对 $\bm x$ 的体积分，由挑选性知 $\bm x_p$ 世界线上 $m A^\nu=0$，$m$ 非零导致 $A^\nu=0$，说明守恒流将是 $g_{\mu\nu}$ 下的测地线。
+然而如果质点不是测试质点，产生微扰贡献 $H_{\mu\nu}=\cate{g}_{\mu\nu}- g_{\mu\nu}$，则这种自引力作用就会使质点偏离测地线。
+
+\section{流体引力耦合}
 
 现在定义 $\{x\}$ 所测\textbf{宏观 Lorentz 因子} $\gamma(x) = U^0(x)$，这不是标量场。
 
@@ -7,17 +12,5 @@
     \sum_n\ev{\frac{m_n}{\gamma_n}\delta_n} \ne \sum_n\ev{m_n\delta_n}.
 \]
 
-
-\subsection{自引力作用}
-这里实际上涉及到微妙之处。为了方便，考察单一测试质点 $p$。固有质量密度为 $\rho=\frac{m}{\gamma\sqrt{-g}}\delta(\bm x-\bm x_p)$，能动张量为 $T^{\mu\nu}=\rho U^\mu U^\nu$，但对 $g_{\mu\nu}$ 不影响，$g_{\mu\nu}$ 满足真空方程。
-可作对 $\bm x$ 的体积分，由挑选性知 $\bm x_p$ 世界线上 $m A^\nu=0$，$m$ 非零导致 $A^\nu=0$，说明守恒流将是 $g_{\mu\nu}$ 下的测地线。
-然而如果质点不是测试质点，产生微扰贡献 $H_{\mu\nu}=\cate{g}_{\mu\nu}- g_{\mu\nu}$，则这种自引力作用就会使质点偏离测地线。
-
-\subsection{相对论动理学}
-
-在 Jüttner 分布下\textit{在共动系表为}：
-\eq{
-    \frac{1}{\sum_n\ev{\delta(\bm x-\bm x_n(t))}}\sum_n\ev{\frac{\bm p_n^2}{E_n}\delta(\bm x-\bm x_n(t))}=3k_BT(x),
-}
 
 
