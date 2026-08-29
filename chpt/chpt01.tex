@@ -156,9 +156,9 @@ $Q$ 称为\textbf{Noether 荷}。
 一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的线汇。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $\xi^i$ 编号，且用固有时 $\xi^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{\xi\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
 
 这些概念看起来都很显然，但事实远非如此：时空结构很可能极其怪异。
-我们有野心将时空流形施以整个宇宙，但宇宙的拓扑形状迄今未知，也许在大尺度上无法用 $\R^4$ 覆盖；在 $10^{-15}$\,m 或 $10^{-25}$\,m 的小尺度上，不可能建立起足够刚性的参考系。目前我们认为这是因为微观量子性质，但也或许存在更深刻的物理。Wheeler 认为在 $10^{-35}$\,m 的亚核子尺度，量子引力的涨落极其剧烈，产生量子泡沫，戳破时空连续统。
+我们有野心将时空流形施以整个宇宙，但宇宙的拓扑形状迄今未知，也许在大尺度上无法用 $\R^4$ 覆盖；在 $10^{-15}$\,m 或 $10^{-25}$\,m 的小尺度上，不可能建立起足够刚性的参考系。目前我们认为这是因为微观量子性质，但也或许存在更深刻的物理。Wheeler 认为在 $10^{-35}$\,m 的亚核子尺度，引力量子涨落极其剧烈，产生量子泡沫，戳破时空连续统。
 即便如此，人类仍只能间接地探测变态性质，即假设时空能用连续坐标描述。若基于这一假设成功描述了涨落，就有理由相信，至少日常生活中的时空结构良好，因为 Planck 长度确实太小。
-对于复杂的拓扑，仍然希望邻域上能连续地标记坐标，用 $\R^4$ 去近似。这正是流形的定义。拓扑背景不提供物理量的计算能力。
+对于复杂的拓扑，仍然希望邻域上能连续地标记坐标，用 $\R^4$ 去近似。这正是流形的定义。拓扑背景不提供物理量的计算能力。我们以后在 \S\ref{sec:causal} 还会强调这一点。
 
 确定坐标系的方法如下。如今人们放弃直接用物体来规定长度单位，而是借助时间单位和某种基准速率。
 我们必须约定如下二条测量原理：
@@ -437,7 +437,7 @@ $\dot{\bm x}$ 几乎处处为常数时取等。
     }
 \end{center}
 实际上可要求 Poincaré 不变性，但习惯上更愿意将时空平移群单独地讨论。
-标量可以包括与物质状态无关的量，比如常数 $c,\pi/2,\hbar$。
+标量可以包括与物质状态无关的量，比如常数 $c,\pi/2,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。
 修改 Lorentz 不变性可得新理论，用于实验检验，结果显示相差不大。
 相对论、量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可 Lorentz 不变，直至存在实验明显证否。
 
@@ -537,27 +537,18 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
     \item 张量\textbf{缩并}仍是张量，因为变换式只是消去一对矩阵元；
     \item 张量的\textbf{线性组合}仍是张量；
     \item \textbf{指标升降}约定用度规及其逆，构成\textbf{度规对偶}；
-    \item \textbf{坐标偏导} $T_{\cdots,\mu}=\p_\mu T_{\cdots}=\pdv*{T_{\cdots}}{x^\mu}$ 保持 Lorentz 协变。
+    \item \textbf{坐标偏导} $T_{\cdots,\mu}=\p_\mu T_{\cdots}=\pdv*{T_{\cdots}}{x^\mu}$ 保持 Lorentz 协变；故 $A^\mu=U^\nu\p_\nu U^\mu$ 是 Lorentz 张量。
 \end{enumerate}
-偏导保持 Lorentz 协变，故 $A^\mu=U^\nu\p_\nu U^\mu$ 是 Lorentz 张量。
-$\eta_{\mu\nu},\eta^{\mu\nu},\delta_{\mu\nu},\delta^\mu_\nu$ 等在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至是 Lorentz 不变的，与物质状态无关。
-
+$\eta_{\mu\nu},\eta^{\mu\nu},\delta_{\mu\nu},\delta^\mu_\nu$ 等在此处比较特殊，不仅满足 $\eta_{\mu\nu}\Lambda^{\mu}{}_{\sigma}{\Lambda^{\nu}}_{\lambda}=\eta_{\sigma\lambda}'$，而实际上 $\eta_{\mu\nu}'=\eta_{\mu\nu}$，从而甚至 Lorentz 不变，与物质状态无关。
 称 $T_{\cdots}$ 是张量，准确是称分量等价类 $[T_{\cdots}]=\{T_{\cdots},T'_{\cdots},\cdots\}$ 是张量。
 这在物理计算上没问题，但似乎还是缺了些什么。
 我们期望如果有分量 $A^I$，就应有某种数学对象 $A=A^I e_I$，使分量是在不同 $\{e_I\}$ 下的表示。
-Cartan 率先注意到，逆变矢量场总相切于一族曲线，反之也可用曲线族产生切矢（从而二者一一对应）：设曲线、曲面等的参数方程 $x^\mu(\sigma,\mu,\cdots)$，沿参数 $\sigma$ 切矢为 $T^\mu=\pdv*{x^\mu}{\sigma}$，当其它参数确定时，得到曲线族 $x^\mu(\sigma,C,\cdots)$ 只有一个参数 $\sigma$，则 $\pdv*{x^\mu}{\sigma}=\dv*{x^\mu}{\sigma}$，因此 $T^\mu$ 的确与曲线相切。
-对任意坐标分量 $\pdv*{x^\mu}{\sigma},\pdv*{x'^\mu}{\sigma}\in [T^\mu]$，它们的共同点是都有“$\pdv*{\sigma}$”，因此我们就用“$\pdv*{\sigma}$”作为定义（有时写作 $\p_\sigma$），即切矢就是对时空上的标量场（作用于坐标 $x$ 就给出分量）的求导映射，即一个具有求导性质的泛函。张量可以定义为与这些矢量缩并可得到标量的多重映射。
-这构成线性代数、现代微分几何的基石，称为\textbf{映射语言}，详见 \S\ref{appx:manifold}。
-很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于“无需借助坐标”，即 Cartan 关于矢量的定义是“几何”的、“坐标无关”的。这一论断当然过分夸张。
-这种所谓“坐标无关”，我们给出准确陈述：\textbf{坐标独立性}(coordinate independence)或\textbf{坐标选择无关}，从而支撑了物理上的坐标冗余性。
-最重要地，计算时还存在一类高维矩阵不满足任何协变性，常称\textbf{赝张量}。
-对于赝张量，映射语言需要将其强行定义为“坐标系依赖的张量”，非常累赘，分量语言反成聪明的选择。唯遇到歧义或能简化推导时，才讨论映射语言。
-
+Cartan 率先给出定义 $\{e_I\}$ 的准确办法，从而可不借坐标地操作张量，我们会在 \S\ref{sec:inertial} 稍微一瞥。然而，计算时还存在一类高维矩阵不满足任何协变性，常称\textbf{赝张量}。这时 Cartan 方法会显得麻烦。
 今后会经常遇到某些指标具有对称、反称性，这往往是物理量的具体定义导致的，且可以简化大量运算。对赝张量和张量都可定义
-\begin{align}
-    T_{\cdots(\mu_1\cdots\mu_k)\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},\\
-    T_{\cdots[\mu_1\cdots\mu_k]\cdots}&:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},
-\end{align}
+\[
+    T_{\cdots(\mu_1\cdots\mu_k)\cdots}:=\frac{1}{k!}\sum_{\sigma\in S_k} T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},\quad
+    T_{\cdots[\mu_1\cdots\mu_k]\cdots}:=\frac{1}{k!}\sum_{\sigma\in S_k} \sgn\sigma\,T_{\cdots\mu_{\sigma(1)}\cdots\mu_{\sigma(k)}\cdots},
+\]
 其中 $S_k$ 是全体 $(1\cdots k)$ 排列之集；$\sigma\in S_k$ 为偶排列时 $\sgn\sigma=1$，否则为 $-1$；$\sigma(k)$ 为 $\sigma$ 的第 $k$ 项。上式分别称为 $T_{\cdots}$ 的\textbf{对称部分}(symmetric part)和\textbf{反称部分}(alternating part)。除序 $1/k!$ 是为与原张量平均。对上标定义同理。对两个指标，在代数学中就学过矩阵的对称、反称分解。上下标之间的对称、反称性要用度规升降后再讨论。有时会横跨地标注，如 $V^{[\mu}W^{\nu]},F_{(\mu|\sigma\lambda|\nu)}$ 都标记在了 $\mu,\nu$ 指标。运算性质如下：
 \begin{enumerate}
     \item \textit{缩并时两种括号都有传递性}，读者自证不难：
@@ -656,7 +647,7 @@ $\p_\mu\epsilon$ 的系数一定是欲求的正路整体对称流。
 
 $J^0,\bm J$ 为\textit{惯性系 $\{x\}$ 所测}\textbf{荷密度}、\textbf{流密度}。理由如下。
 约定 $\bm J=o(1/\bm r^2)$，则 $\p_\mu J^\mu=0$ 给出守恒荷 $Q=\int\d[3]{x} J^0$，因为 $\dot Q=\int\d[3]{x}\p_t J^0=-\int\d[3]{x}\div\bm J=0$。
-但这其实易混淆符号：若把积分域显式写为同时面 $\Sigma_t:x^0=t$，则易认为积分域随 $t$ 可变，从而不能放心将 $\dv*{t}$ 移进积分成 $\pdv*{t}$；但 $\Sigma_t$ 对任意 $t$ 都是 $\R^3$，它其实又“没变”。这再次涉及主被动观点的辨析，见 \S\ref{appx:form}。
+但这其实易混淆：若把积分域显式写为同时面 $\Sigma_t:x^0=t$，易认为积分域随 $t$ 可变，从而不能放心将 $\dv*{t}$ 移进积分成 $\pdv*{t}$；但 $\Sigma_t$ 对任意 $t$ 都是 $\R^3$，它其实又“没变”。这再次涉及主被动观点的辨析，见 \S\ref{appx:form}。
 考虑以下办法。
 注意同时面是时空的超曲面，因此三维积分可通过如下挑选法转写为四维积分。而全时空怎般变化都是 $\R^4$，规避混淆。
 引入\textbf{Dirac $\delta$ 函数}\footnote{严格来说它不是函数（仅在 $x=0$ 处发散说明无穷积分只能是 0），但我们只会借它进行形式上的积分计算，故实际上是当泛函 $\delta_{x_0}(f)=f(x_0)$ 使用，这在数学上称为\textbf{分布}(distribution)。}：
@@ -681,7 +672,6 @@ $J^0,\bm J$ 为\textit{惯性系 $\{x\}$ 所测}\textbf{荷密度}、\textbf{流
 纯时空变换 $\delta x^\mu=\epsilon \xi^\mu$（标量场必有 $\var\phi=0$，但一般 $\delta\Phi\ne 0$）对应\textbf{时空对称性}或\textbf{外部对称性}，纯场变换 $\delta x^\mu=0$（必有 $\bar\var=\delta$）对应\textbf{内部对称性}。
 置 $\{x\}$ 为惯性系。
 时空平移（$\xi^\mu$ 为\textit{任意}常矢量）是 $\Lambda^\mu{}_\nu=\delta^\mu_\nu$ 的 Poincaré 变换，故任意张量 $\Phi$ 都有 $\tilde\Phi(\tilde x)=\Phi(x)$，即保持 $\delta\Phi=0$。平移保持 $\delta(\d[4] x)=0$，$\delta S=0$ 给出 $\delta\Lag = \pdv{\Lag}{x^\mu}\var x^\mu = 0$，与粒子拉氏理论类似。则有\textbf{时空平移对称} $\pdv*{\Lag}{x^\mu}=0$。
-
 局域化方法应最终得到 $\p_\mu\var x_\nu=\xi_\nu\p_\mu \epsilon$ 项，即
 \[\delta S=-\int\d[4]{x} J^\mu\p_\mu \epsilon=\int\d[4]{x} S^{\mu\nu}\xi_\nu\p_\mu \epsilon, \quad S^{\mu\nu}\xi_\nu:=-J^\mu.\]
 对 $\Lag(\Phi,\p\Phi)$ 情形，代入 $\delta\Phi=0$ 有
@@ -1015,7 +1005,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 \eq{
     E_i=F_{i0},\quad B_i=\frac 12 \varepsilon_{ijk}F^{jk}\iff F^{i0}=E^i,\quad F^{ij}=\varepsilon^{ijk}B_k.
 }
-可使用矩阵表为
+可用矩阵表为
 \[\left(F_{\mu\nu}\right)=\left[\begin{array}{cccc}0& -E^{1} & -E^{2} & -E^{3}\\E^{1} & 0 & B^{3} & -B^{2} \\E^{2} & -B^{3} & 0 & B^{1} \\E^{3} & B^{2} & -B^{1} & 0 \end{array}\right].\]
 从定义立即得到微分恒等式
 \eq{
@@ -1114,7 +1104,7 @@ Einstein 于 1907 年察觉到，若 $A,B$ 共同自由落体，二者相对加�
 若非要符合 Mach 原理，即认为惯性起源于背景宇宙的相互作用，由于局域惯性系是由外引力场决定的，因此间接地，惯性由水、引力场、宇宙共同造就，见 \S\ref{sec:scalar}。
 当代观点认为，Mach 原理至少在现有实验条件下是错误的。相反，等效原理受到支持的验证就多得多。
 
-最后，简短讨论可多大程度上建立局域惯性系。对于两相距足够远的空间点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。这就是\textbf{潮汐效应}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见理想情况，局域惯性系只建立在单个自由落体质点（的世界线）上。但在实验环境下，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
+最后简短讨论多大程度上可建立局域惯性系。对于相距足够远的两空间点，引力加速度一般不同。一水球各部分受力不均，从而出现形变。此即\textbf{潮汐}。邻近质元间相对力也称\textbf{潮汐力}(tidal force)，相对加速度称\textbf{潮汐加速度}。可见理想情况，局域惯性系只建立在单个自由落体质点（的世界线）上。但在实验环境下，只要在设备精度内未观测到潮汐，就可认为是实验意义的局域惯性系。若物质集团的尺度较大，密度较稀疏，则外部引力较弱，潮汐现象不明显，因此能近似为局域惯性系的区域很大。比如，地球、太阳系、银河系能作为局域惯性系的范围应依次增大。现在，理想惯性系只视作局域惯性系在无引力时延伸的极限。综上，实验意义的局域惯性系的范围由外部引力强弱决定。
 
 引力场强正是试验质点加速度，加速度又恰是运动学概念，仅涉及时空坐标；另一方面，由于涉及运动坐标系，局域惯性系必将完整涉及 4 个坐标。因此，我们必须使用四维时空描述引力。
 \begin{center}
@@ -1152,9 +1142,15 @@ $\pdv*{x^\mu}{x'^\nu}$（代替 $\Lambda$）这种绝对对象可变，就应吸
 }
 今后简称张量。张量一定是 Lorentz 张量，反之不然。
 
+Cartan 注意到，逆变矢量场总相切于一族曲线，反之也可用曲线族产生切矢（从而二者一一对应）：设曲线、曲面等的参数方程 $x^\mu(\sigma,\mu,\cdots)$，沿参数 $\sigma$ 切矢为 $T^\mu=\pdv*{x^\mu}{\sigma}$，当其它参数确定时，得到曲线族 $x^\mu(\sigma,C,\cdots)$ 只有一个参数 $\sigma$，则 $\pdv*{x^\mu}{\sigma}=\dv*{x^\mu}{\sigma}$，因此 $T^\mu$ 的确与曲线相切。
+对任意坐标分量 $\pdv*{x^\mu}{\sigma},\pdv*{x'^\mu}{\sigma}\in [T^\mu]$，它们的共同点是都有“$\pdv*{\sigma}$”，因此我们就用“$\pdv*{\sigma}$”作为定义（有时写作 $\p_\sigma$），即切矢就是对时空上的标量场（作用于坐标 $x$ 就给出分量）的求导映射，即一个具有求导性质的泛函。张量可以定义为与这些矢量缩并可得到标量的多重映射。
+这构成线性代数、现代微分几何的基石，称为\textbf{映射语言}，详见 \S\ref{sec:manifold} 或 \S\ref{appx:manifold}。
+很多人因其语言之优雅，成了 Cartan 及其后世之信徒，常声称其优势在于无需借助坐标，即 Cartan 关于矢量的定义是几何的、坐标无关的。这一论断当然过分夸张。
+这种所谓“坐标无关”，我们给出准确陈述：\textbf{坐标独立性}(coordinate independence)或\textbf{坐标选择无关}，从而支撑了物理上的坐标冗余性。
+但对于赝张量，映射语言需要将其强行定义为“坐标系依赖的张量”，非常累赘，分量语言反成聪明的选择。唯遇到歧义或能简化推导时，才讨论映射语言。
 坐标变换的链式法则和全微分为
 \[\pdv{\xi^\alpha}=\pdv{x^\mu}{\xi^\alpha}\pdv{x^\mu},\quad \d\xi^\beta = \pdv{\xi^\beta}{x^\mu} \d x^\mu.\]
-这可看做矢量的展开关系。按照 Cartan 语言，$\p_\alpha:=\pdv*{\xi^\alpha}$ 是切矢，称为系 $\{\xi\}$ 的第 $\alpha$ 个\textbf{坐标基矢}。它在系 $\{x\}$ 的 $\mu$ 分量为 $\p_\alpha^\mu:=\pdv*{x^\mu}{\xi^\alpha}$，对应的曲线族参数 $x^\mu(\xi)$ 就是坐标变换。
+这可看做矢量的展开关系。按照映射语言，$\p_\alpha:=\pdv*{\xi^\alpha}$ 是切矢，称为系 $\{\xi\}$ 的第 $\alpha$ 个\textbf{坐标基矢}。它在系 $\{x\}$ 的 $\mu$ 分量为 $\p_\alpha^\mu:=\pdv*{x^\mu}{\xi^\alpha}$，对应的曲线族参数 $x^\mu(\xi)$ 就是坐标变换。
 在自身系里表为 $\pdv*{\xi^\mu}{\xi^\nu}=\delta^\mu_\nu$。$\{\pdv*{\xi^\alpha}\}_{\alpha=0}^3$ 称\textbf{坐标基}。
 $\pdv*{\xi^\alpha}$ 坐标分量变换为 $\pdv*{x'^\mu}{\xi^\alpha}=\pdv{x'^\mu}{x^\nu}\pdv*{x^\nu}{\xi^\alpha}$。
 注意 $\{x\}$ 的 $0$ 坐标基在 $\{x\}$ 下表为 $\delta^\mu_0$，变换到另一系 $\{x'\}$ 为 $\pdv*{x'^\mu}{t}$。$\delta^\mu_\nu,\pdv*{x'^\mu}{t}$ 都是张量但 $\delta^\mu_0$ 不是。
@@ -1297,14 +1293,15 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 因此克氏符是赝张量：
 \[\{^\lambda_{\mu\nu}\}' = \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \{_{\tau \sigma}^\rho\} + \pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\rho}{x^{\prime \mu}}{x^{\prime \nu}}=\pdv{x^{\prime \lambda}}{x^\rho} \pdv{x^\tau}{x^{\prime \mu}} \pdv{x^\sigma}{x^{\prime \nu}} \{_{\tau \sigma}^\rho\} - \pdv{x^\tau}{{x^{\prime \mu}}} \pdv{x^\rho}{x^{\prime \nu}}  \pdv{x^{\prime \lambda}}{x^\tau}{x^\rho} .\]
 所以上下 $\lambda,\mu$ 指标没错开书写，且考虑到一般不会混淆。
-自由粒子运动为直线，说明无引力。可见即使克氏符是赝张量，其实也能体现绝对的引力现象，因为度规非闵等价于\textit{不存在}坐标系使克氏符\textit{处处}为零。只保证存在局域惯性系使克氏符严格在自由落体线上全零。
+自由粒子运动为直线，说明无
+\begin{wrapfigure}{l}{.4\textwidth}
+    \centering
+\includegraphics[width=.35\textwidth]{fig/chpt01/geodesic.pdf}
+    \caption{ $\R^2$ 任意坐标系及直线}
+\end{wrapfigure}
+引力。可见即使克氏符是赝张量，其实也能体现绝对的引力现象，因为度规非闵等价于\textit{不存在}坐标系使克氏符\textit{处处}为零。只保证存在局域惯性系使克氏符严格在自由落体线上全零。
 克氏符是坐标系自身信息。
 比如，平面上惯性运动是直线，但克氏符仍可非零，只要选择非惯性坐标系即可。
-\begin{figure}[ht]
-    \centering
-\includegraphics[width=.4\textwidth]{fig/chpt01/geodesic.pdf}
-    \caption{ $\R^2$ 任意坐标系及直线}
-\end{figure}
 可见 $\{^\lambda_{\mu\nu}\}$ 具有引力场强的意义，进而 $g_{\mu\nu}$ 具有引力势的意义。实际上的确可直接寻找度规同引力势的关系，见 \eqref{eq:h-g-phi}。
 
 考虑自由引力场部分 $\Lag_G$。
@@ -1324,11 +1321,7 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 +
 \pdv{\xi^\alpha}{x^\mu}{x^\kappa} \p_\nu \pdv{x^\lambda}{\xi^\alpha}
 + \pdv{x^\lambda}{\xi^\alpha} \p_\nu\p_\mu\p_\kappa \xi^\alpha.\]
-考虑局域惯性系间的变换 $\{\xi\}\to\{x\}$，即
-\[
-    \pdv{\xi^\alpha}{x^\mu}{x^\kappa} = 0 \iff \pdv{x^\lambda}{\xi^\beta}{\xi^\alpha} = 0.
-\]
-因此
+考虑局域惯性系间的变换 $\{\xi\}\to\{x\}$，即 $\pdv*{\xi^\alpha}{x^\mu}{x^\kappa} = 0 \Leftrightarrow \pdv*{x^\lambda}{\xi^\beta}{\xi^\alpha} = 0$，故
 \begin{align*}
     \p_\nu\{^\lambda_{\mu\kappa}\}
 &=\pdv{x^\lambda}{\xi^\alpha}
@@ -1373,7 +1366,7 @@ R^\lambda{}_{\mu\nu\kappa}=2\p_{[\nu}\{^\lambda_{\kappa]\mu}\}+2\{^\lambda_{\sig
 现可给出实验操作意义的局域惯性系的定量标准。
 数学上固然要求局域惯性系严格建立在测地线上：假若在邻域 $U$ 内 $\widetilde{\{^\alpha_{\beta\delta}\}}=0$，则在线上 $\tilde R^\alpha{}_{\beta\gamma\delta}=0$，矛盾。只要邻域足够大，曲率便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于曲率半径（分析量纲可知在 $\mathcal K^{-1/4}$ 量级），同时也远小于其测量精度时，即使时空范围未严格至测地线，但曲率也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量曲率，见 \S\ref{sec:eq-prin}。
 
-最小耦合指出自由引力项可取 $R\sqrt{-g}=\sqrt{-g}g^{\mu\nu} R_{\mu\nu}$。故为简便，通常关于 $g^{\mu\nu}$ 而非 $g_{\mu\nu}$ 变分。
+最小耦合指出自由引力作用量可取 $S=\int\d[4]{x}R\sqrt{-g}=\int\d[4]{x}\sqrt{-g}g^{\mu\nu} R_{\mu\nu}$。故为简便，通常关于 $g^{\mu\nu}$ 而非 $g_{\mu\nu}$ 变分。
 必须澄清，即使 $R$ 包含 $g_{\mu\nu,\lambda\kappa}$，但实际上 $g_{\mu\nu,\lambda\kappa}$ 只以 $\p\{^\lambda_{\mu\nu}\}$ 形式出现在全导数项中：
 对二阶导部分代入克氏符有
 \eq{
@@ -1484,7 +1477,6 @@ R_{\mu\nu}^{(2)} = -\frac{1}{2} g^{\alpha\beta} g_{\mu\nu,\alpha\beta} + g^{\alp
     g^{\alpha\beta} \p_\alpha \p_\beta g_{\mu\nu} = N_{\mu\nu}(g, \p g) + 2\kappa\left(T_{\mu\nu}-\frac12 g_{\mu\nu}T\right),\quad N_{\mu\nu} := 2Q_{\mu\nu}.
 }
 偏微分方程常见类型有椭圆型方程（如 Poisson 方程）、抛物型方程（如热传导方程）和双曲型方程（如波动方程）。考虑到度规号差，上述方程组则属于\textbf{拟线性}(quasilinear)\textbf{波动方程}。
-
 双曲性带来两个重要话题。第一是适定问题，也即 Cauchy 动力学。\textbf{适定性}是指给定适当的\textbf{初值条件}（某 $\Sigma_t$ 上的 $g_{\mu\nu},g_{\mu\nu,0}$），必存在唯一的解。换言之，给定初值后，研究场方程能否确定时空度规的未来演化。首先由无散性 \eqref{eq:Bianchi} 得
 \[\p_0 G^{\mu 0} =-\p_i G^{\mu i} - \{^\mu_{\lambda\nu}\} G^{\lambda\nu} - \{^\nu_{\lambda\nu}\} G^{\mu\lambda},\]
 这不含度规的三阶及更高阶时间偏导，故 $G^{\mu 0}$ 至多只含 $g_{\mu\nu,0}$，即 $G^{\mu 0} =\kappa T^{\mu 0}$ 只能用以约束初值条件，从而动力学方程只剩 $G^{ij} =\kappa T^{ij}$，以确定 $g_{ij,00}$。剩下 $g_{0\mu,00}$ 由坐标条件确定即可，从而可代数或数值地求解方程。详见 \S\ref{sec:Hamilton}。
@@ -1552,8 +1544,6 @@ $t_{\mu\nu}$ 称为\textbf{引力场能动赝张量}。
 当然，若系统不断产生引力波，尤其是充满全空间时，$h_{\mu\nu}$ 的振荡使一阶导、二阶导都与 $h$ 同级，从而产生无限总能量，甚至 $h_{\mu\nu}$ 的行为也不再是 $r^{-1}$。
 总之，引力与电磁作用的重大区别就是荷。电磁作用涉及电荷，电磁场本身不带电荷，故 $A^\mu$ 的源只含 $J^\mu$ 而不包括 $A^\mu$ 自身；引力的荷是能动量，然而电磁场、引力场都携带，$h_{\mu\nu}$ 的源必须包含 $h_{\mu\nu}$ 自身的影响才能守恒。其根源是只有引力有等效原理，催生时空几何。
 
-
-%% 宇宙学
 除了 $R$，还可注意 $\sqrt{-g}\d[4]{x}$ 本身已广义不变，故可考虑
 \eq{
     \Lag=\frac{1}{2\kappa}\left(R-2\Lambda\right)+\Lag_M\im
@@ -1568,24 +1558,10 @@ $\Lambda$ 称为\textbf{宇宙学常数}(cosmological constant)。
 当然，在假设静态的情况下也能强行计算其值。但现代观点自 Hubble 开始普遍认为宇宙是\textbf{膨胀的}(expanding)。在膨胀模型下可不引入 $\Lambda$，故 Einstein 认为添加 $\Lambda$ 是其\textit{一生中所犯的最大错误}。然而，1990 年代的理论及观测显示，只有将 $\Lambda$ 重新写进来才能解释宇宙的\textbf{加速膨胀}，其结果为 $\Lambda=1.1056\times 10^{-52}$\,m$^{-2}$。对通常的分析，这个数值太小，远不及 $\frac12 g_{\mu\nu} R$ 项的贡献，故会被忽略掉。
 目前这一项被解释为\textbf{暗能量}(dark energy)的贡献。在量子场论中，能具备这一性质的概念只有真空能，然而两套理论给出的 $\Lambda$ 数值相差数量级很大。
 
-
-
-$R$ 只是有效的取法，还可考虑 $R_{\mu\nu} R^{\mu\nu},R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}$ 等，称为\textbf{Gauss-Bonnet 项}：
-\eq{
-    \Lag_G=\frac{1}{2\kappa}R+\alpha R_{\mu\nu} R^{\mu\nu}+\beta R^2+\gamma R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}+\cdots,
-}
-甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
-
-%% 有效性
-
-低能指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
-人们逐渐意识到，目前的理论都是某种尚未发掘的基本规律的低能情形。
-现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
-
-广义相对论有诸多自身缺陷，比如 \S\ref{sec:bh}、\S\ref{sec:Hawking} 所示，故必然需要修改。经典的修改方案称为\textbf{修改理论}。
-而物质的量子理论如此成功，其余相互作用都得以描述，我们更多希望借鉴量子理论，称为\textbf{量子修正引力理论}，简称\textbf{量子引力}。
-这一努力是艰难的。首先，引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。另一方面，一个量子引力理论，当然要包含常数 $c,G,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。简单分析可构造出具有长度量纲的 Planck 长度 $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着时空涨落的特征尺度在 Planck 长度的量级。不必说，以当代实验技术难以观测。
-这意味着我们失去了部分准绳，那么各种量子引力理论层出不穷便也正常。目前多用极端天体、早期宇宙学观测所获数据来筛选理论。
+广义相对论主要考虑 $R$ 模型，至多包括 $\Lambda$ 项。然而这一最简单的取法，使广义相对论有诸多自身缺陷，比如 \S\ref{sec:bh}、\S\ref{sec:Hawking} 所示的奇异性问题，故必然需要修改。经典的修改方案，比如考虑更复杂的作用量，称为\textbf{修改理论}。
+而物质的量子理论如此成功，其余相互作用都得以描述，我们更多希望借鉴量子理论，称为\textbf{量子修正引力理论}，简称\textbf{量子引力}(quantum gravity)。
+这一努力是艰难的。首先，引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。另一方面，一个量子引力理论，当然要包含常数 $c,G,\hbar$。简单分析可构造出具有长度量纲的 Planck 长度 $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着时空涨落的特征尺度在 Planck 长度的量级。不必说，以当代实验技术难以观测。
+这意味着我们失去了部分准绳，那么各种量子引力理论层出不穷便也正常。目前多用极端天体、早期宇宙学观测所获数据来筛选理论。我们在 \S\ref{sec:quantum-gravity} 还会更详细讨论。
 
 \subsection{协变导数}
 
@@ -1922,13 +1898,12 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 故等价说法是存在\textbf{超曲面正交}类时 Killing 矢量场。
 Schwarzschild 度规显然静态，取 $\xi = \pdv*{t}$ 即可。
 
-此解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散，即行列式 $g$ 为零。奇性发生的时空区域称为\textbf{奇异处}，俗称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。更详细的定义在 \S\ref{sec:causal} 讨论。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
-
+此解一经提出，人们立即发现其\textbf{奇异性}或\textbf{奇性}(singularity)。奇性通常指一些数值的发散，比如度规分量，包括度规逆分量的发散，即行列式 $g$ 为零。奇性发生的时空区域称为\textbf{奇异处}，俗称\textbf{奇点}\footnote{英文亦是 singularity。为表述性质和地点两种概念，中文语境里可区分使用。但注意奇点不一定仅位于空间点。}。详细定义在 \S\ref{sec:causal} 讨论。该度规显然在 $r=0,2M$ 都存在奇性，我们依次研究。
 观测结果建议自由落体\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
 假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(-g_{00}|_{r_0})^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
-或者，它也可视作等 $r$ 面 $r=r_0$ 的其中一条母线，法余矢为 $n_\mu=\p_\mu r=\delta^1_\mu$。模方为 $n^\mu n_\mu=g^{11}=1-2M/r_0$，可见 $r_0>2M$ 时 $n^\mu$ 类空，$r=r_0$ 类时。但 $r=2M$ 类光。
+或者，它也可视作等 $r$ 面 $r=r_0$ 的其中一条母线，法余矢\footnote{超曲面总有法矢场。类空超曲面的法矢类时，类时超曲面的法矢类空。对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是\textbf{法余矢}，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。}为 $n_\mu=\p_\mu r=\delta^1_\mu$。模方为 $n^\mu n_\mu=g^{11}=1-2M/r_0$，可见 $r_0>2M$ 时 $n^\mu$ 类空，$r=r_0$ 类时。但 $r=2M$ 类光。
 这说明光只能在 $r>2M$ 区域自由穿梭，一旦进入 $r<2M$ 便不能逃脱。光至多只能沿 $r=2M$ 传播。观者只可静止于 $r>2M$。
-综上 $r=2M$ 称为\textbf{静界}(static surface)、\textbf{事件视界}(event horizon)或简称\textbf{视界}。
+综上 $r=2M$ 称为\textbf{静界}(static surface)。也称\textbf{事件视界}(event horizon)或简称\textbf{视界}，详细定义见 \S\ref{sec:causal}。
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt01/blackhole.jpg}
@@ -2053,7 +2028,7 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 
 %%
 
-\subsection{引力子}
+\subsection{引力的量子理论}\label{sec:quantum-gravity}
 
 迄今尚无经实验证实的完整紫外量子引力理论，不过弱引力场可以作为低能有效场论作量子化。以下只借线性引力领略这种理论至少应有的结构。把波矢为 $k^\mu$ 的平面波解释成引力子组成的相干态，则单个引力子的 4-动量为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu=0$，它同光子一样是无质量粒子。
 
@@ -2111,23 +2086,23 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。为显示量子与引力�
 量子解释还把吸收、自发发射和受激发射联系起来。设一个足够大且对引力波不透明的温度为 $T$ 的空腔达到热平衡。引力子有两个螺旋度，故单位体积内角频率介于 $\omega$ 与 $\omega+\d\omega$ 的数目满足与光子相同的 Planck 分布
 \eq{
     n(\omega)\d\omega=\frac{\omega^2\d\omega}{\pi^2}
-    \left[\exp\left(\frac{\hbar\omega}{k_{\mathrm B}T}\right)-1\right]^{-1}.
+    \left[\exp\left(\frac{\hbar\omega}{k_BT}\right)-1\right]^{-1}.
 }
 若 $A(\omega)$ 是腔壁吸收单个引力子的速率，$E(\omega)\d\omega$ 是单位体积在该频段的总发射率，细致平衡要求 $A(\omega)n(\omega)=E(\omega)$。将总发射分为自发项 $S$ 与受激项 $I$，可写为
 \[
     E(\omega)=S(\omega)+I(\omega),\qquad
-    S(\omega)=\frac{\omega^2}{\pi^2}\e^{-\hbar\omega/(k_{\mathrm B}T)}A(\omega),\qquad
-    I(\omega)=n(\omega)\e^{-\hbar\omega/(k_{\mathrm B}T)}A(\omega).
+    S(\omega)=\frac{\omega^2}{\pi^2}\e^{-\hbar\omega/k_BT}A(\omega),\qquad
+    I(\omega)=n(\omega)\e^{-\hbar\omega/k_BT}A(\omega).
 \]
 $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对于下能级的 Boltzmann 权重，而 $I\propto n$ 体现引力子的 Bose 统计。这些关系只要求物质本身处于热平衡，并不要求外来引力辐射服从 Planck 分布。
 
-例如对非相对论高温气体，在 $\omega_c\ll\omega\ll k_{\mathrm B}T/\hbar$ 内，由碰撞制动辐射反推的单引力子吸收率为
+例如对非相对论高温气体，在 $\omega_c\ll\omega\ll k_BT/\hbar$ 内，由碰撞制动辐射反推的单引力子吸收率为
 \[
     A(\omega)=\frac{8\pi G}{5\hbar\omega^3}
     \sum_{(a,b)}\mu_{ab}^2n_an_b
     \left\langle v_{ab}^5\int\d\Omega\,dv{\sigma_{ab}}{\Omega}\sin^2\theta\right\rangle,
 \]
-其中 $\mu_{ab},n_a,v_{ab}$ 分别是粒子对的约化质量、数密度和相对速度。低频处 $A\propto\omega^{-3}$ 虽可很大，受激发射却把净吸收再乘以 $1-\exp[-\hbar\omega/(k_{\mathrm B}T)]\simeq\hbar\omega/(k_{\mathrm B}T)$。在现今宇宙已知环境中，引力辐射的物质吸收仍无显著作用。
+其中 $\mu_{ab},n_a,v_{ab}$ 分别是粒子对的约化质量、数密度和相对速度。低频处 $A\propto\omega^{-3}$ 虽可很大，受激发射却把净吸收再乘以 $1-\exp[-\hbar\omega/k_BT]\simeq\hbar\omega/k_BT$。在现今宇宙已知环境中，引力辐射的物质吸收仍无显著作用。
 
 上述讨论只量子化自由弱场，并以经典辐射公式估算跃迁率。真正的微扰量子引力还须允许引力子的产生、湮灭及相互作用。取一种常用归一化，TT 自由场算符可展开为
 \[
@@ -2154,6 +2129,18 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
 更深的困难来自紫外区。取 $\hbar=c=1$ 时，$[G]=\mathrm{mass}^{-2}$，引力耦合具有负质量维数；量纲计数表明 $G^n$ 阶振幅会出现形如 $G^n\int p^{2n-1}\d p$ 的高动量发散。它们不能只靠有限个质量或耦合常数吸收，而需依次加入 $R^2,R_{\mu\nu}R^{\mu\nu}$ 及更高曲率反项，故纯 Einstein 引力作为基本微扰理论不可重整化。但这不妨碍把它当作低能有效场论：当特征能量 $E\ll M_{\mathrm{Pl}}\sim G^{-1/2}$ 时，高阶曲率项按 $E/M_{\mathrm{Pl}}$ 受控压低，有限阶仍有确定的预言；缺少的是紫外完备理论。
 
 最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein--Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
+
+有效的取法，还可考虑 $R_{\mu\nu} R^{\mu\nu},R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}$ 等，称为\textbf{Gauss-Bonnet 项}：
+\eq{
+    \Lag_G=\frac{1}{2\kappa}R+\alpha R_{\mu\nu} R^{\mu\nu}+\beta R^2+\gamma R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}+\cdots,
+}
+甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
+
+低能指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
+人们逐渐意识到，目前的理论都是某种尚未发掘的基本规律的低能情形。
+现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
+
+%% 有效性
 
 
 \endinput
@@ -3330,9 +3317,8 @@ $\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sig
 考虑超曲面 $\Sigma:f(t,\bm x)=C$，总可取系 $\{\hat x\}$ 使 $\hat t=f=C$ 坐标面即为超曲面。度规变换为 $\d s^2=g_{\mu\nu}\d x^\mu\d x^\nu=\hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$，令 $\hat t=C$（使 $\d\hat t=0$）后剩下的度规 $\d s^2_\Sigma= \hat g_{ij}(C)\d\hat x^i\d\hat x^j$ 称\textbf{诱导度规}(induced metric)。
 比如欧氏度规 $\d\ell^2=\d r^2+r^2\d\Omega^2$ 诱导出球面度规 $\d\ell^2_S=R^2\d\Omega^2$。
 诱导度规本质上是将 $g_{\mu\nu}$ 的作用对象限制(restrict)于 $\Sigma$ 的结果，即对任意 $\Sigma$ 的切矢场 $w_1,w_2$ 均有 $\bar g_{\mu\nu}w_1^\mu w_2^\nu=g_{\mu\nu}w_1^\mu w_2^\nu$，若约定 $\bar g_{\mu\nu}$ 只对 $\Sigma$ 作用，那它就是诱导度规。然而，给定一个限制，其延拓无穷多。换言之，若 $\bar g_{\mu\nu}$ 仍然看作背景度规，则满足上式的 $\bar g_{\mu\nu}$ 的形式当然无穷多。
-可找到最方便的延拓。超曲面总有法矢场。
-类空超曲面的法矢类时，类时超曲面的法矢类空。类光超曲面的法矢类光，暂不讨论。取单位法矢 $n^\mu n_\mu = \pm 1$，按推导 \eqref{eq:projection} 的办法可知投影映射为 $h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu$，则 $h_{\mu\nu} = g_{\mu\nu} \mp n_\mu n_\nu$。满足 $\bar g_{\alpha\beta}n^\alpha = 0$ 这一漂亮性质的解只有 $\bar g_{\mu\nu} = h_{\mu\nu}$，故称为诱导度规的\textbf{标准延拓}。
-对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是\textbf{法余矢}，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。
+可找到最方便的延拓。
+类光超曲面的法矢类光，暂不讨论。取单位的类时或类空法矢 $n^\mu n_\mu = \pm 1$，按推导 \eqref{eq:projection} 的办法可知投影映射为 $h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu$，则 $h_{\mu\nu} = g_{\mu\nu} \mp n_\mu n_\nu$。满足 $\bar g_{\alpha\beta}n^\alpha = 0$ 这一漂亮性质的解只有 $\bar g_{\mu\nu} = h_{\mu\nu}$，故称为诱导度规的\textbf{标准延拓}。
 取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，于是 $\d s^2= \hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu = (1/\hat g^{00})\d\hat t^2+\hat h_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$。
 如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，这称为\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
 
