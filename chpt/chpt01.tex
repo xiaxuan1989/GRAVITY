@@ -188,7 +188,7 @@ $Q$ 称为\textbf{Noether 荷}。
     \label{fig:clock_syn}
 \end{figure}
 
-随后想到双程信号。先讨论惯性参考系，\S\ref{sec:time-cong}再讨论哪种参考系才能对钟。规定惯性观者走匀速直线。
+随后想到双程信号。先讨论惯性参考系，\S\ref{sec:sync-clock} 再讨论哪种参考系才能对钟。规定惯性观者走匀速直线。
 无论技术发展如何，双程光速的测量原理至今仍和\textbf{Fizeau 程序}一致：从坐标原点发射球面光波，然后由放置在某处（尽量邻近）距离已知的镜子反射，随后记录光回到原点的时间，这样可计算光速。按现在的约定，不需要再测量光速，故以上步骤更倾向于测距。
 任取某条惯性观者线 $G$，规定为坐标原点。设相对静止的另一惯性观者 $G'$；实验上若任意时刻测距均相同，就认为二者相对静止。二者可同属一个惯性参考系。
 经过事件：($A$) $G$ 发出光，($B$) 到达 $G'$ 反射，($C$) $G$ 接受该光。取 $A,C$ 中间事件 $D$，实验上由标准钟测量。只需约定 $B,D$ 同时。
@@ -1902,8 +1902,8 @@ Schwarzschild 度规显然静态，取 $\xi = \pdv*{t}$ 即可。
 观测结果建议自由落体\textbf{内向}(incoming)而非\textbf{外向}(outgoing)。
 假设某观者能静止于 $r=r_0$。其 4-速为 $U^\mu=(-g_{00}|_{r_0})^{-1/2}\delta^\mu_0=(1-2M/r_0)^{-1/2}\delta^\mu_0$，类时条件是 $r_0>2 M$。
 或者，它也可视作等 $r$ 面 $r=r_0$ 的其中一条母线，法余矢\footnote{超曲面总有法矢场。类空超曲面的法矢类时，类时超曲面的法矢类空。对于 $\Sigma:\hat t=C$，对偶坐标基 $\d\hat t$ 就是\textbf{法余矢}，因为其坐标表达为梯度 $\p_\mu \hat t = \pdv*{\hat t}{x^\mu}$，任意切矢 $w^\mu$ 总可在 $\Sigma$ 上找到 $x^\mu(\lambda)$ 使 $w^\mu=\dv*{x^\mu}{\lambda}$，进而 $w^\mu\p_\mu\hat t=\dv*{\hat t}{\lambda}=0$。}为 $n_\mu=\p_\mu r=\delta^1_\mu$。模方为 $n^\mu n_\mu=g^{11}=1-2M/r_0$，可见 $r_0>2M$ 时 $n^\mu$ 类空，$r=r_0$ 类时。但 $r=2M$ 类光。
-这说明光只能在 $r>2M$ 区域自由穿梭，一旦进入 $r<2M$ 便不能逃脱。光至多只能沿 $r=2M$ 传播。观者只可静止于 $r>2M$。
-综上 $r=2M$ 称为\textbf{静界}(static surface)。也称\textbf{事件视界}(event horizon)或简称\textbf{视界}，详细定义见 \S\ref{sec:causal}。
+说明光只能在 $r>2M$ 自由穿梭，一旦进入 $r<2M$ 便不能逃脱。光至多只能沿 $r=2M$ 传播。观者只可静止于 $r>2M$。这种曲面称\textbf{静界}(static surface)或\textbf{静止极限面}(stationary-limit surface)。
+$r=2M$ 也是\textbf{事件视界}(event horizon)或简称\textbf{视界}，详细定义见 \S\ref{sec:causal}。
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.6\textwidth]{fig/chpt01/blackhole.jpg}
@@ -2143,7 +2143,7 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
 %% 有效性
 
 
-\endinput
+
 \subsection{渐近平直时空}
 %共性变换
 %引力能量非定域性
@@ -2474,7 +2474,7 @@ h_{\mu\alpha} h_{\nu\beta}
  Z^\kappa \cd_\kappa \omega_{\alpha\beta} = -\frac{2}{3}\theta \omega_{\mu\nu} - 2 \sigma_{\alpha[\nu} \omega_{\mu]}{}^{\alpha}.
 }
 
-\subsection{对钟条件}\label{sec:time-cong}
+\subsection{对钟条件}\label{sec:sync-clock}
 
 参考系\textbf{可全局对钟}即存在同时面族 $\d t = 0$ 与 $Z^\mu$ 正交，且观者只与同时面相交至多一次。换言之，$\exists h> 0, \phi$ 使 $Z_\mu = -h\p_\mu \phi$，从而\footnote{ \S\ref{sec:Frobenius} 的\textbf{Frobenius 定理}指出 $Z_{[\sigma}\cd_{\nu} Z_{\mu]} = 0$ 等价于超曲面正交。这是自然的，可对钟前提是的确能存在正交同时面族，无论具体实操如何。}
 \[\cd_{[\nu} Z_{\mu]} = -\p_{[\nu} h \p_{\mu]}\phi -h \cd_{[\nu} \cd_{\mu]}\phi = -\p_{[\nu} h \p_{\mu]}\phi\im Z_{[\sigma}\cd_{\nu} Z_{\mu]} = h\p_{[\nu} h \p_{(\sigma}\phi \p_{\mu)]}\phi = 0,\]
