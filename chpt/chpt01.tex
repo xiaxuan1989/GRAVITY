@@ -980,12 +980,10 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 }
 这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\p_t \bm B$。%% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
 使用 $F_{\mu\nu}$ 的最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。
-把电磁场加上，比如对标量场而言：$\Lag=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu} + \Lag_1$。
-耦合强度由实验测定并取 Gauss 几何制($4\pi\epsilon_0 = 1$)。
-以 $\bar\delta$ 表示前文 $\Phi$ 和 $A_\mu$ 都变的 U(1) 变换，$\delta$ 表示单独 $A_\mu$ 变分。
-可不加电荷项 $\Lag_0$ 单纯是因为 $\fdv*{\Lag_0}{A_\mu}=0$。
-局域对称性给出 $\bar\delta\Lag = 0$ 和 $\bar\delta\Lag_0 = -J_0^\mu\p_\mu\alpha$，以及 $\bar\delta\Lag - \delta\Lag = -J^\mu\p_\mu\alpha$。
-得 $\delta\Lag_1=\delta\Lag=J^\mu\delta A_\mu$，无论 $J^\mu$ 是否含 $A_\mu$。
+考虑 $\Lag= \Lag_0 + \Lag_1 + \Lag_2$，这里 $\Lag_2 = -\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}$ 的耦合强度由实验测定并取 Gauss 几何制($4\pi\epsilon_0 = 1$)。
+以 $\bar\delta$ 表示前文 $\Phi,A_\mu$ 都变的 U(1) 变换，$\delta$ 表示单独 $A_\mu$ 任意变分，则 $\delta\Lag_0=0$。
+对称性给出 $\bar\delta(\Lag_0+\Lag_1) = 0$ 和 $\bar\delta\Lag_0 = -J_0^\mu\p_\mu\alpha$，以及 $\bar\delta(\Lag_0+\Lag_1) - \delta(\Lag_0+\Lag_1) = -J^\mu\p_\mu\alpha$。
+得 $\delta\Lag_1=\delta(\Lag_0+\Lag_1)=J^\mu\delta A_\mu$，无论 $J^\mu$ 是否含 $A_\mu$。
 进而
 \eq{\var(F^{\mu\nu} F_{\mu\nu})=4  F^{\mu\nu} \delta (\p_\mu A_\nu) \simeq -4  \p_\mu F^{\mu\nu} \delta A_\nu \im \p_\mu F^{\mu\nu}=-4\pi J^\nu.}
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\p_t \bm E=4\pi \bm j$。
@@ -994,15 +992,16 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
     -4\pi J_\nu=\p^\mu\p_\mu A_\nu-\p_\nu \p^\mu A_\mu = \p^\mu\p_\mu A_\nu =\square A_\nu.
 }
 
-经典场论考虑如下点电荷系统的电流密度\footnote{若非要从量子场论模型得来，取标量场特解 $\phi = B\e^{\i kx}$，$J^\mu_0 = 2 q B^2 k^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。}
-\eq{
-    J^\mu = \sum_n q_n \dot x^\mu_n \delta_n = \sum_n q_n \int\d{\tau_n} u^\mu_n\delta^4_n.
-}
-系综平均形如 $\rho U^\mu$。考虑总作用量
+经典场论考虑如下点电荷系统总作用量
 \begin{align}
-    S &= \int\d[4]{x} \left(-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}+A_\mu J^\mu\right) - \sum_n\int\d{\tau_n} m_n\notag\\
-    &= -\frac{1}{16\pi}\int\d[4]{x}F^{\mu\nu} F_{\mu\nu} -\sum_n\int\d{\tau_n} m_n+ \sum_n q_n \int\d{x^\mu_n} A_\mu,
+    S &= -\frac{1}{16\pi}\int\d[4]{x}F^{\mu\nu} F_{\mu\nu} -\sum_n\int\d{\tau_n} m_n+ \sum_n q_n \int\d{x^\mu_n} A_\mu\\
+    &= \int\d[4]{x} \left(-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu}+A_\mu J^\mu\right) - \sum_n\int\d{\tau_n} m_n\notag,
 \end{align}
+其中注意由 $\delta\Lag_1=J^\mu\delta A_\mu$ 可知电流密度\footnote{若非要从量子场论理解，取标量场特解 $\phi = B\e^{\i kx}$，$J^\mu_0 = 2 q B^2 k^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。}
+\eq{
+    J^\mu := \sum_n q_n \dot x^\mu_n \delta_n = \sum_n q_n \int\d{\tau_n} u^\mu_n\delta^4_n.
+}
+系综平均形如 $\rho U^\mu$。
 对 $A_\mu$ 变分得 Maxwell 方程，对 $x^\mu_n$ 变分就是运动方程。
 耦合项变分为 $\delta \int\d x^\mu A_\mu=\int\left(\p_\nu A_{\mu} \delta x^\nu \d x^\mu+A_\mu \d(\delta x^\mu)\right) \simeq \int\d x^\nu F_{\mu \nu} \delta x^\mu$，
 可以看到 $F_{\mu\nu}$ \textit{自然作为场强而出现}。
