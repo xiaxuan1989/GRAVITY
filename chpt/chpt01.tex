@@ -533,7 +533,7 @@ $(k+l)$ 叫作\textbf{阶}(rank)。$(0,0)$-张量就是不变标量。$(n,0),(0,
 给每个时空点赋予一个张量就构成了\textbf{张量场}(tensor field)，它可以视作从时空点到张量的映射。以后谈及张量实际上都在讨论时空上的张量场。
 基本运算性质如下：
 \begin{enumerate}
-    \item 张量分量相乘称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\psi\rangle\langle\phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自变换相乘；
+    \item 张量分量相乘称\textbf{张量积}\footnote{电动力学、量子力学中的\textbf{并矢}(dyadic)就是张量积，如 $\bm A\bm B,|\Psi\rangle\langle\Phi|$ 等。}，结果仍为张量，比如将 $T^\mu,S_{\lambda\sigma}$ 拼成 $T^\mu S_{\lambda\sigma}$，变换式无非将各自变换相乘；
     \item 张量\textbf{缩并}仍是张量，因为变换式只是消去一对矩阵元；
     \item 张量的\textbf{线性组合}仍是张量；
     \item \textbf{指标升降}约定用度规及其逆，构成\textbf{度规对偶}；
@@ -619,8 +619,8 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
     \fdv{\Lag}{\Phi^A}&=\pdv{\Lag}{\Phi^A}-\p_\mu\pdv{\Lag}{\Phi^A_{,\mu}}+\cdots.
 \end{align*}
 细心的读者可能发现一个看上去奇怪的等式：
-\[\p_\mu\mathcal L = \pdv{\Lag}{\Phi}\p_\mu\Phi + \pdv{\Lag}{\Phi_{,\nu}}\p_\mu\p_\nu\Phi + \cdots + \pdv{\Lag}{x^\mu}.\]
-因为左边 $\mathcal L=\mathcal L(x)$ 是复合函数简写，右边 $\mathcal L=\mathcal L(x,\Phi,\p\Phi,\cdots)$ 是定义式简写。简写时习惯用 $\p_\mu,\pdv*{x^\mu}$ 区分，前者表示复合函数（时空场）的坐标偏导，后者表示泛函型显式偏导。对 $\mathcal L$ 之外的事物不用区分 $\p_\mu,\pdv*{x^\mu}$。
+\[\p_\mu\Lag = \pdv{\Lag}{\Phi}\p_\mu\Phi + \pdv{\Lag}{\Phi_{,\nu}}\p_\mu\p_\nu\Phi + \cdots + \pdv{\Lag}{x^\mu}.\]
+因为左边 $\Lag=\Lag(x)$ 是复合函数简写，右边 $\Lag=\Lag(x,\Phi,\p\Phi,\cdots)$ 是定义式简写。简写时习惯用 $\p_\mu,\pdv*{x^\mu}$ 区分，前者表示复合函数（时空场）的坐标偏导，后者表示泛函型显式偏导。对 $\Lag$ 之外的事物不用区分 $\p_\mu,\pdv*{x^\mu}$。
 
 取 Fréchet 变分 $\var=\bar\var$。
 单元微积分下，边界项即函数作差；在多元情形中这是高维 Gauss 定理 \eqref{eq:Gauss} 式，证明见 \S\ref{appx:form}。故为消除边界项可有三类 Fréchet 假设：
@@ -634,11 +634,11 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
 为规避这些麻烦，直接具体问题具体分析，按相似程序计算变分即可。
 
 甚至有的 $\Lag$ 形式上不包含 $\Phi$，那么就连上述 Noether 变分法也将变得困难。
-下述技巧称为\textbf{局域化}、\textbf{规范化}(gauging)或\textbf{Gell-Mann–Lévy 法}：整体变换下 $\delta S = 0$，做任意局域化  $\epsilon\to\epsilon(x)$，$S$ 整体但不局域对称，局域变换将使 $\delta S\ne 0$。具体地，考虑 $\Lag(x,\Phi,\partial\Phi)$，其必定形如
+下述技巧称为\textbf{局域化}、\textbf{规范化}(gauging)或\textbf{Gell-Mann–Lévy 法}：整体变换下 $\delta S = 0$，做任意局域化  $\epsilon\to\epsilon(x)$，$S$ 整体但不局域对称，局域变换将使 $\delta S\ne 0$。具体地，考虑 $\Lag(x,\Phi,\p\Phi)$，其必定形如
 \[
     \delta S = -\int\d[4]{x} J^\mu \p_\mu\epsilon.
 \]
-因为恢复为整体变换时 $\delta S$ 必须为零，故不能依赖于 $\epsilon$，只能出现 $\p_\mu\epsilon$ 项。至多含 $\partial\Phi$ 导致参数更高阶导不会出现，正比关系是因为求导乘法法则。
+因为恢复为整体变换时 $\delta S$ 必须为零，故不能依赖于 $\epsilon$，只能出现 $\p_\mu\epsilon$ 项。至多含 $\p\Phi$ 导致参数更高阶导不会出现，正比关系是因为求导乘法法则。
 $\p_\mu\epsilon$ 的系数一定是欲求的正路整体对称流。
 因为正路意味着对 Fréchet 变分有 $\delta S=0$，也就是取 $\epsilon(x)=o(1/r^3)$ 进而 $0=\delta S\simeq\int\d[4]{x} \p_\mu J^\mu \epsilon$，等价为 $\p_\mu J^\mu=0$。
 再考虑用变分严格理解上述过程。先确定整体变换 $\delta S=0$，无论是否正路，则 $\fdv{\Lag}{\Phi}F-\p_\mu J^\mu = 0$。一旦局域化，$\fdv{\Lag}{\Phi}F-\p_\mu J^\mu$ 仍为零，故多出 $\delta S=-\int\d[4]{x} J^\mu \p_\mu\epsilon$。考虑 $\epsilon(x)=o(1/r^3)$，则 $\delta S\simeq\int\d[4]{x} \p_\mu J^\mu \epsilon=\int\d[4]{x}\fdv{\Lag}{\Phi}\epsilon F \xlongequal{\text{正路}} 0$。
@@ -931,54 +931,21 @@ $(\varepsilon+p)$ 称为\textbf{惯性系数}，恢复 $c$ 为 $\frac{\varepsilo
 
 狭义相对论缘起于经典电动力学，其研究经典电磁场、电荷构成的系统。
 曾从电荷守恒假设、若干实验定律推测出 Maxwell 方程，其优美的对称性启发我们寻找这些假设的根源。
-考虑最简单的实标量场 $\phi$。置闵氏时空惯性系。场是粒子系统连续化，动能项显然用 $\p_\mu\phi$ 构造。
-最简单的选择是 $\p^\mu\phi\p_\mu\phi$。
-为了保证 $\dot\phi^2$ 系数为正，+2 号差下 $\p^\mu\phi\p_\mu\phi$ 系数应为负，可取
-\[\Lag= -\frac 12\p^\mu\phi\p_\mu\phi-U(\phi)\im \square\phi = \dv{U}{\phi},\]
-这里 $\square=\p^\mu\p_\mu = -\p_t^2 + \nabla^2$ 为 d'Alembert 算子，$\nabla^2$ 为 Laplace 算子。
-$U(\phi)$ 可展为 $\phi$ 的多项式。一次项可通过平移收进新定义的 $\phi$ 中，从 E-L 方程也可看出 $\phi$ 一次项无实质贡献。
-若规定\textbf{$Z_2$ 变换} $\phi'=-\phi$ 下不变，这属于内部对称性，则 $U(\phi)$ 是偶函数，奇数次项也不会出现，故有时也写成 $U(\phi^2)$。这属于分立对称性。
-最简单取法是 $U(\phi)=\frac 12 m^2\phi^2$（$\hbar = 1$），得\textbf{Klein-Gordon 方程} $(\square-m^2)\phi=0$。
-从而 $\Ham = \frac 12 (\dot\phi^2 + (\grad\phi)^2 + m^2\phi^2) \geqslant 0$ 有下界。
-量子力学的成功启发我们考虑一个复标量场 $\phi$。复标量场相当于两个实标量场的组合 $\phi=\frac{1}{\sqrt{2}}(\phi_1+\i \phi_2)$。$\phi,\phi^*$ 线性独立，代表两个相互独立的自由度。
-共轭复数的乘积 $\phi^*\phi$ 为非负实数。故考虑构造：
-\[\Lag_\text{free}=-\p^\mu\phi^*\p_\mu\phi-m^2\phi^*\phi = -\frac 12\p^\mu\phi_1\p_\mu\phi_1 - \frac 12 m^2\phi_1^2 -\frac 12\p^\mu\phi_2\p_\mu\phi_2 - \frac 12 m^2\phi_2^2.\]
-二者各自的运动方程为 $(\square-m^2)\phi=(\square-m^2)\phi^*=0$。
-上式不仅 $Z_2$、Lorentz 不变，且在\textbf{U(1) 整体相位变换} $\phi' =\e^{\i \theta} \phi$（从而 $(\phi^*)' = \e^{-\i \theta} \phi^*$）下不变。称为\textbf{U(1) 整体对称性}。$\phi'= \e^{\i q \alpha} \phi$ 的一阶改变为 $\bar\var\phi=\var\phi =\e^{\i q\alpha} \phi-\phi=\i q\alpha \phi,\delta \phi^* =-\i q\alpha \phi^*$。因此 Noether 流为
-\[J^\mu_\text{free} := \frac{1}{\alpha}\left((-\p^\mu\phi^*)\var\phi + (-\p^\mu\phi)\var\phi^*\right) = \i q(\phi^* \p^\mu \phi - \phi\p^\mu \phi^*) =: \i q \phi^*\overleftrightarrow{\p^\mu}\phi.\]
-利用其它量构造 U(1) 作用量可得不同 Noether 流。比如，旋量在 Lorentz 变换下的变换规律为
-\[\psi'(x') = \exp(\frac12 \omega_{\mu\nu} \Sigma^{\mu\nu}) \psi(x),\quad \Sigma^{\mu\nu} = \frac14 [\gamma^\mu,\gamma^\nu], \quad[\gamma^\mu,\gamma^\nu]:=\gamma^\mu\gamma^\nu-\gamma^\nu\gamma^\mu.\]
-$\gamma^\mu$ 称为\textbf{Dirac 矩阵}，满足 $\{\gamma^\mu,\gamma^\nu\}:=\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2\eta^{\mu\nu}I$，$I$ 为 4 阶单位阵。
-量子场论的写法为 $D(\Lambda)=\exp(-\frac\i 2 \omega_{\mu\nu} \Sigma^{\mu\nu}), \Sigma^{\mu\nu}=\frac\i 4 [\gamma^\mu,\gamma^\nu]$。旋量构造的 U(1) 作用量为
-\[\Lag_\text{free}=\bar\psi(\i\gamma^\mu\p_\mu - m)\psi \im (\i\gamma^\mu\p_\mu - m)\psi = 0,\quad J^\mu_\text{free}= q \bar\psi \gamma^\mu \psi.\]
-上述运动方程称\textbf{Dirac 方程}。
-研究表明，实标量场可描述 $\pi^0$ 介子，复标量场及其共轭可描述 $\pi^+,\pi^-$ 介子，电子由 Dirac 旋量场描述。
+置闵氏时空惯性系。
+量子力学具有相位对称性，比如波函数 $\Psi(t,\bm x)$ 在\textbf{U(1) 整体相位变换} $\Psi\to \e^{\i\theta}\Psi$ 下，一切可观测量都不变，其中 $\theta$ 是常数。在场论里，复标量场、旋量场的作用量也具有这种 U(1) 对称性。变换为 $\Phi'(x) = \e^{\i q \alpha} \Phi(x)$，局域上 $\bar\delta\Phi = \delta\Phi = \i q \alpha \Phi$。
+如此，一阶导也具有这种变换 $\delta(\p_\mu\Phi)=\i q \alpha \p_\mu\Phi$。
+不同量构造 U(1) 作用量可得不同 Noether 流。
 无论具体对象如何，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。
-耦合强度 $q=eQ$ 是电量，耦合常数 $e$ 是元电荷，$Q$ 称\textbf{无量纲电荷数}，电子取 $Q=-1$。
-换言之，$\pi$ 介子、电子等都带有电荷，参与电磁相互作用。故将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
-
+研究表明，电子由 Dirac 旋量场描述，实标量场可描述 $\pi^0$ 介子，复标量场及其共轭可描述 $\pi^\pm$ 介子。
+故 $\pi^\pm$ 介子、电子等都带有电荷，参与电磁相互作用。故将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
 依据相互作用的对称性、实验特征、量纲，所考虑耦合项的最简单形式，称为\textbf{最小耦合}(minimal coupling)\footnote{如 George Box 所说，“\textit{所有理论都是错的，但一些是有用的}”。只要意识到理论总是近似，就可给人类科学提供台阶。总是追求尽可能简单的理论，当然不意味着自然规律（若存在且能被人理解）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。}。
-考虑规范化 $\alpha\to \alpha(x)$。
-尝试加项使总作用量 $S$ 满足局域对称性：$\delta S = \delta S_\text{free} - \int\d[4]{x}  J^\mu_\text{free} \p_\mu\alpha = 0$。
-耦合项必须涉及矢量 $A_\mu$ 使 $J^\mu_\text{free}\delta A_\mu= - J^\mu_\text{free} \p_\mu\alpha$。
-若 $J^\mu_\text{free}$ 不含 $A_\mu$，则 $J^\mu_\text{free}\delta A_\mu = \delta(J^\mu_\text{free} A_\mu)$，故 $J^\mu_\text{free} A_\mu$ 已经可充当最小耦合。
-旋量场满足这一点，记新 Noether 流 $J^\mu = J^\mu_\text{free}$，则
+考虑规范化 $\alpha\to \alpha(x)$，作用量中的一阶导有 $\delta(\p_\mu\Phi)=\i q \alpha \p_\mu\Phi + \i q \p_\mu\alpha \Phi$，$\p_\mu\alpha$ 项破坏原对称性。
+尝试加项使总作用量 $S$ 局域对称：$\delta S = \delta S_0 + \delta S_1 = 0$，即耦合项 $\Lag_1:=\Lag-\Lag_0$ 必引入矢量 $A_\mu$ 使 $\delta\Lag_1 = J^\mu_0 \p_\mu\alpha = J^\mu_0\delta A_\mu$。也就是
 \eq{
-    \Lag=\Lag_\text{free} + J^\mu A_\mu=\bar\psi(\i\gamma^\mu \D_\mu - m)\psi \Rightarrow (\i\gamma^\mu \D_\mu - m)\psi = 0,\enspace \D_\mu := \p_\mu + \i q A_\mu.
+    A_\mu'(x) = A_\mu(x) + \p_\mu \alpha(x) \im \delta(\D_\mu\Phi) = \i q\alpha \D_\mu\Phi,\quad\D_\mu := \p_\mu - \i q A_\mu.
 }
-可见新作用量相当于将 $\p$ 替换为\textbf{规范协变导数} $\D$。
-考虑替换法来直接构造出（注意 $(\D_\mu \phi)^* = \p_\mu \phi^* - \i q A_\mu \phi^*$）
-\begin{align*}
-    \quad \Lag&=-\D^\mu\phi (\D_\mu \phi)^* - m^2\phi^*\phi = \Lag_\text{free} + \i q \phi^*\overleftrightarrow{\p^\mu}\phi A_\mu - q^2 A^\mu A_\mu \phi^*\phi,\\
-    J^\mu&= \i q \phi^*\overleftrightarrow{\D^\mu}\phi = \i q \phi^*\overleftrightarrow{\p^\mu}\phi - 2 q^2 A^\mu \phi^*\phi.
-\end{align*}
-可以预料作用量并非 $\Lag_\text{free} + J^\mu A_\mu$ 形式，因为 $J^\mu$ 含有 $A_\mu$。但仍然有 $\delta\Lag = J^\mu\delta A_\mu$，作用量可满足局域对称性。
-直观上，因为标量场涉及 $\D^\mu$ 的二次方，因此展开必多出 $A^\mu A_\mu$ 项。旋量场作用量则只含一次方。
-做 $\phi'(x) = \e^{\i q \alpha(x)} \phi(x)$ 变换，为满足局域对称，$\D_\mu\phi$ 须与 $\phi$ 变换一致：$(\D_\mu\phi)' = \e^{\i q\alpha(x)}\D_\mu\phi$，因此
-\eq{
-    A_\mu'(x) = A_\mu(x) - \p_\mu \alpha(x).
-}
-即内部对称导致 $A^\mu$ 存在冗余 $A_\mu+\p_\mu f$。此称\textbf{规范自由性}(gauge freedom)。$A_\mu$ 称为\textbf{规范场}。
+因此，恢复局域对称的一个简单办法\footnote{如果 $\delta J_0^\mu = 0$ 也就是已经局域对称，则 $\Lag_1 = J_0^\mu A_\mu$ 已经可充当最小耦合，仍满足 $\delta\Lag_1 =J_0^\mu\delta A_\mu$，则总 Noether 流就是自由流 $J^\mu = J^\mu_0$。可构造简单的复标量场自由作用量 $\Lag_0=-\p^\mu\phi^*\p_\mu\phi-m^2\phi^*\phi$，Noether 流 $J_0^\mu = \i q(\phi^* \p^\mu \phi - \phi\p^\mu \phi^*)$ 包含一阶导，$\delta J_0^\mu \ne 0$，可预料导数替换后虽仍有 $\delta\Lag_1 = J^\mu_0\delta A_\mu$，但 $J^\mu\ne J^\mu_0$ 含有 $A_\mu$， $\Lag_1\ne J_0^\mu A_\mu$ 甚至 $\Lag_1\ne J^\mu A_\mu$（具体表达式留给读者）。旋量场则是 $\Lag_0=\bar\psi(\i\gamma^\mu\p_\mu - m)\psi$，得 $J_0^\mu = q\bar\psi\gamma^\mu\psi$，满足$\delta J_0^\mu = 0$，读者可证 $\Lag=\bar\psi(\i\gamma^\mu \D_\mu - m)\psi$ 确实有 $J^\mu=J_0^\mu$，且 $\Lag_1=J^\mu A_\mu$。故只是旋量场满足，标量场不满足。}是将 $\p$ 替换为\textbf{规范协变导数} $\D$。
+这一内部对称性导致 $A^\mu$ 存在冗余 $A_\mu+\p_\mu f$。此称\textbf{规范自由性}(gauge freedom)。$A_\mu$ 称为\textbf{规范场}。
 $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\textbf{4-势}，规范自由性导致 $\varphi+C,\bm A+\grad f$ 的选取自由。整体对称性催生守恒电流，规范化催生电磁场。
 另一例子是 $\pi$ 介子场的\textbf{手征对称性}，对称荷为色荷，局域化得到强相互作用色场。实际上，引力也是规范场。
 
@@ -987,7 +954,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 \eq{
     \p_\mu A^\mu =0.
 }
-这种 $A^\mu$ 总是存在的，因为对任意 $\p^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \p_\mu f$ 且 $\square f=\p^\mu\p_\mu f=-\p^\mu A_\mu $，即可有 $\p^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
+这种 $A^\mu$ 总是存在的，因为对任意 $\p^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \p_\mu f$ 且 $\square f=\p^\mu\p_\mu f=-\p^\mu A_\mu $（这里 $\square=\p^\mu\p_\mu = -\p_t^2 + \nabla^2$ 为 d'Alembert 算子，$\nabla^2$ 为 Laplace 算子），即可有 $\p^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
 若选择 $\p_\mu A^\mu=0$，由于这是 Lorentz 标量，那 $A^\mu$ 当然是 Lorentz 矢量。然而也可采取\textbf{Coulomb 规范} $\div\bm A=\p_iA^i=0$，为使新系中 $\p'_iA'^i=0$，变换必形如 $A'^\mu(x') = \Lambda^\mu{}_\nu A^\nu(x) + \p'^\mu\Omega(x')$，伴随着规范补偿项(compensation)。
 因此 $A^\mu$ 并非时空中的普通 Lorentz 矢量，其本质目的是保持协变导数。在数学上，这称为内部对称性空间上的\textbf{规范联络}。
 
@@ -1013,10 +980,12 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 }
 这已给出 $\div\bm B=0$ 和 $\curl\bm E=-\p_t \bm B$。%% 也可从 $A^\mu U_\mu = 0$ 出发，由 $F_{\mu\nu} U^\mu U^\nu=0$ 通过分配律理解其反称性。
 使用 $F_{\mu\nu}$ 的最简单构造是 $F_{\mu\nu} F^{\mu\nu}=2(\bm B^2-\bm E^2)$。
-把电磁场加上，比如对标量场而言：$\Lag=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu} + \Lag_\text{耦合}$，
-其中 $\Lag_\text{耦合}$ 是电荷与电磁场的耦合项。
+把电磁场加上，比如对标量场而言：$\Lag=-\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu} + \Lag_1$。
 耦合强度由实验测定并取 Gauss 几何制($4\pi\epsilon_0 = 1$)。
-此处可不加电荷项单纯是因为 $\fdv*{\Lag_\text{free}}{A_\mu}=0$。$J^\mu$ 不含 $A_\mu$ 时可写 $\Lag_\text{耦合}=J^\mu A_\mu$，但无论是否含 $A_\mu$ 均有 $\delta\Lag_\text{耦合} = J^\mu\delta A_\mu$。
+以 $\bar\delta$ 表示前文 $\Phi$ 和 $A_\mu$ 都变的 U(1) 变换，$\delta$ 表示单独 $A_\mu$ 变分。
+可不加电荷项 $\Lag_0$ 单纯是因为 $\fdv*{\Lag_0}{A_\mu}=0$。
+局域对称性给出 $\bar\delta\Lag = 0$ 和 $\bar\delta\Lag_0 = -J_0^\mu\p_\mu\alpha$，以及 $\bar\delta\Lag - \delta\Lag = -J^\mu\p_\mu\alpha$。
+得 $\delta\Lag_1=\delta\Lag=J^\mu\delta A_\mu$，无论 $J^\mu$ 是否含 $A_\mu$。
 进而
 \eq{\var(F^{\mu\nu} F_{\mu\nu})=4  F^{\mu\nu} \delta (\p_\mu A_\nu) \simeq -4  \p_\mu F^{\mu\nu} \delta A_\nu \im \p_\mu F^{\mu\nu}=-4\pi J^\nu.}
 这给出了 $\div\bm E=4\pi \rho$ 和 $\curl\bm B-\p_t \bm E=4\pi \bm j$。
@@ -1025,7 +994,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
     -4\pi J_\nu=\p^\mu\p_\mu A_\nu-\p_\nu \p^\mu A_\mu = \p^\mu\p_\mu A_\nu =\square A_\nu.
 }
 
-取特解 $\phi = B\e^{\i kx}$，$J^\mu_\text{free} = \i q \phi^*\overleftrightarrow{\p^\mu}\phi = 2 q B^2 k^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。所以一般经典场论不考虑与 $A_\mu$ 有关的 $J^\mu$，比如点电荷系统的电流密度为
+经典场论考虑如下点电荷系统的电流密度\footnote{若非要从量子场论模型得来，取标量场特解 $\phi = B\e^{\i kx}$，$J^\mu_0 = 2 q B^2 k^\mu$。振幅平方代表粒子出现的空间概率密度，退化为数密度。}
 \eq{
     J^\mu = \sum_n q_n \dot x^\mu_n \delta_n = \sum_n q_n \int\d{\tau_n} u^\mu_n\delta^4_n.
 }
@@ -1307,7 +1276,7 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 考虑自由引力场部分 $\Lag_G$。
 注意，局域惯性系影响的是 $\sqrt{-g}$，标量 $\Lag_G$ 广义不变，故它只能是引力规范不变张量的缩并。最简单的是自缩并，形如 $T^\mu{}_\mu = g^{\mu\nu} T_{\mu\nu}$。
 这种张量场应当\textit{在一点}就能直接表征引力场强弱，无需借助邻域。
-它不能是 $g_{\mu\nu}$ 级的，因为可取局域惯性系使 $\tilde g_{\alpha\beta}=\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为可取局域惯性系消为 $\widetilde{\{^\gamma_{\alpha\beta}\}}=0$，从而按 \eqref{eq:metric-christ} 一阶导为零。这意味着至少要考虑二阶导。为简单，先考虑至多二阶、且关于二阶线性的张量。
+它不能是 $g_{\mu\nu}$ 级的，因为可取局域惯性系使 $\tilde g_{\alpha\beta}=\eta_{\alpha\beta}$；也不能是 $g_{\mu\nu,\lambda}$ 级的，因为可取局域惯性系消为 $\widetilde{\{^\gamma_{\alpha\beta}\}}=0$，从而按 \eqref{eq:metric-christ} 一阶导为零。意味着至少要考虑二阶导。为简单，先考虑至多二阶、且关于二阶线性的张量。
 物理图像上，相比于单条测地运动，潮汐现象必须在足够大邻域内，等效原理不再适用。潮汐涉及相对加速度，故可预料，包含度规二阶导的张量也代表着潮汐现象或引力场的强弱。
 
 在局域惯性系 $\{\xi\}$ 下，这一张量只能是 $g_{\mu\nu,\lambda\kappa}$ 的线性组合。一阶导和克氏符按 \eqref{eq:metric-christ} 相互表出，因此等价为 $\p_\kappa\{^\lambda_{\mu\nu}\}$ 的线性组合。
@@ -1558,10 +1527,10 @@ $\Lambda$ 称为\textbf{宇宙学常数}(cosmological constant)。
 当然，在假设静态的情况下也能强行计算其值。但现代观点自 Hubble 开始普遍认为宇宙是\textbf{膨胀的}(expanding)。在膨胀模型下可不引入 $\Lambda$，故 Einstein 认为添加 $\Lambda$ 是其\textit{一生中所犯的最大错误}。然而，1990 年代的理论及观测显示，只有将 $\Lambda$ 重新写进来才能解释宇宙的\textbf{加速膨胀}，其结果为 $\Lambda=1.1056\times 10^{-52}$\,m$^{-2}$。对通常的分析，这个数值太小，远不及 $\frac12 g_{\mu\nu} R$ 项的贡献，故会被忽略掉。
 目前这一项被解释为\textbf{暗能量}(dark energy)的贡献。在量子场论中，能具备这一性质的概念只有真空能，然而两套理论给出的 $\Lambda$ 数值相差数量级很大。
 
-广义相对论主要考虑 $R$ 模型，至多包括 $\Lambda$ 项。然而这一最简单的取法，使广义相对论有诸多自身缺陷，比如 \S\ref{sec:bh}、\S\ref{sec:Hawking} 所示的奇异性问题，故必然需要修改。经典的修改方案，比如考虑更复杂的作用量，称为\textbf{修改理论}。
+然而，$R$ 模型（至多包括 $\Lambda$ 项）这一最简单的取法，将导致如 \S\ref{sec:bh}、\S\ref{sec:Hawking} 的诸多问题，故乃广义相对论既有缺陷，必然需要修改。经典的修改方案，如考虑更复杂的作用量，称\textbf{修改理论}。
 而物质的量子理论如此成功，其余相互作用都得以描述，我们更多希望借鉴量子理论，称为\textbf{量子修正引力理论}，简称\textbf{量子引力}(quantum gravity)。
-这一努力是艰难的。首先，引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。另一方面，一个量子引力理论，当然要包含常数 $c,G,\hbar$。简单分析可构造出具有长度量纲的 Planck 长度 $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，这意味着时空涨落的特征尺度在 Planck 长度的量级。不必说，以当代实验技术难以观测。
-这意味着我们失去了部分准绳，那么各种量子引力理论层出不穷便也正常。目前多用极端天体、早期宇宙学观测所获数据来筛选理论。我们在 \S\ref{sec:quantum-gravity} 还会更详细讨论。
+这一努力十分艰难。首先，引力是目前已知相互作用中最弱的。两个质子之间的静电斥力比它们之间的引力大 $1.2 \times 10^{36}$ 倍。另一方面，一个量子引力理论，当然要包含常数 $c,G,\hbar$。简单分析可构造出具有长度量纲的 Planck 长度 $\sqrt{\hbar G/c^3}\approx 1.6\times10^{-35}$\,m，时空涨落的特征尺度在 Planck 长度的量级。不必说，以当代实验技术难以观测。
+我们失去了部分准绳，各种量子引力理论层出不穷便也正常。目前多用极端天体、早期宇宙学观测所获数据来筛选理论。我们在 \S\ref{sec:quantum-gravity} 还会更详细讨论。
 
 \subsection{协变导数}
 
@@ -1875,7 +1844,7 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 
 一个经典的例子是地球南北极。南北极 $\mathbf N,\mathbf S$ 间存在无数等长测地线，这直接着影响着测地解的极值情况。从 $\mathbf S$ 出发到 $D$ 的测地线可以是 $\mathbf S A \mathbf N D$，其长度并非极小，因为可构造一条长度更小的邻近线段。
 取 $\mathbf S A\mathbf N$ 的邻近经线。新经线加上 $\mathbf N D$ 仍等长于 $\mathbf S A \mathbf N D$ 但在 $\mathbf N$ 不 $C^1$，出现了一个拐角(kink)。在 $\mathbf N$ 附近做\textbf{圆滑化}(round out)操作，也就是用一段微小曲线 $ab$ 来圆滑地连接，组成 $C^1$ 曲线 $\mathbf SabD$。在技术上，$ab$ 可任意地小，故 $\mathbf SabD$ 仍是 $\mathbf S,D$ 间测地解 $\mathbf S A \mathbf N D$ 的邻近曲线，$\mathbf SabD$ 线长任意逼近 $\mathbf S A \mathbf N D$，但始终严格地有 $ab < a\mathbf N + \mathbf N b$，即 $\mathbf SabD<\mathbf S A \mathbf N D$。
-但注意，共轭点和“存在多条测地线”严格上无关，球面只是特例。考虑圆柱面，母线上不同两点 $a,b$ 间存在无数条测地线，即 $a$ 出发绕任意圈数再回到 $b$ 的测地线，直线是绕了零次圈的情况。但圆柱面 Riemann 曲率为零，Jacobi 场的端点为零一定导致恒为零，因而没有共轭点。这一现象纯粹来自整体拓扑。反之，考虑抛物面 $z=x^2+y^2$，对任意非顶点 $p$，不妨设 $(a,0,a^2)$，沿顶点方向测地线（经线），计算知存在唯一共轭点 $q=(c,0,c^2)$，$a\ne c$ 满足 $f(a)=f(c)$，这里 $f(x)=2\operatorname{arsinh}(2x) -{\sqrt{1+4x^2}}/x$。这个函数是奇函数，并且 $x<0,x>0$ 各自单调递增，值域 $\R$，因此任意 $a\ne 0$ 有相应解 $c$，且 $ac<0$。但 $p$ 出发的邻近测地线并没到达 $q$，而是与经线交于更后的点（$q$ 的上方）。当然，交点随测地线趋于经线而趋于 $q$。共轭性只代表存在固定端点 $p,q$ 的邻近曲线，与测地解在二阶意义上线长相同。
+但注意，共轭点和“存在多条测地线”严格上无关，球面只是特例。考虑圆柱面，母线上不同两点 $a,b$ 间存在无数条测地线，即 $a$ 出发绕任意圈数再回到 $b$ 的测地线，直线是绕了零次圈的情况。但圆柱面 Riemann 曲率为零，Jacobi 场的端点为零一定导致恒为零，因而没有共轭点。这一现象纯粹来自整体拓扑。反之，考虑抛物面 $z=x^2+y^2$，对任意非顶点 $p$，不妨设 $(a,0,a^2)$，沿顶点方向测地线（经线），计算知存在唯一共轭点 $q=(c,0,c^2)$，$a\ne c$ 满足 $f(a)=f(c)$，这里 $f(x)=2\operatorname{arsinh} 2x -{\sqrt{1+4x^2}}/x$。这个函数是奇函数，并且 $x<0,x>0$ 各自单调递增，值域 $\R$，因此任意 $a\ne 0$ 有相应解 $c$，且 $ac<0$。但 $p$ 出发的邻近测地线并没到达 $q$，而是与经线交于更后的点（$q$ 的上方）。当然，交点随测地线趋于经线而趋于 $q$。共轭性只代表存在固定端点 $p,q$ 的邻近曲线，与测地解在二阶意义上线长相同。
 
 回到时空来。
 
@@ -1965,7 +1934,7 @@ $\d s^2=0$ 即 $t=\pm\left(r+2M\ln|r-2M|\right)+C$。
 回忆一下。
 由 Lorenz 规范，$\p_\mu (C^\mu\e^{\i\theta}) = \i C^\mu\e^{\i\theta} k_\mu = 0$，则 $C^\mu,k^\mu$ 正交。这称为\textbf{横向性条件}。$C^\mu$ 本有 4 个独立自由度，约束 $k_\mu C^\mu = 0$ 消耗了一个自由度，剩下 3 个。
 考虑规范变换 $A_\mu \to A_\mu + \p_\mu \Lambda$，总可选取 $\Lambda = -\frac{C^\mu k_\mu}{k^2}\e^{\i\theta}$ 来消去 $C^\mu$ 中与 $k^\mu$ 平行的分量（注意 $k^2=0$，但 $\frac{C^\mu k_\mu}{k^2}$ 是有限的）。
-这也称为\textbf{Coulomb 规范}。
+此即\textbf{Coulomb 规范}，来进一步消除剩余自由性。
 依然保持 $F_{\mu\nu}$ 不变。
 从而 $A^\mu$ 的 4 个分量消去 2 个纵向自由度，最终只剩下 2 个横向偏振态。
 以后均默认 $C_\mu$ 为空间矢量。
@@ -2010,12 +1979,53 @@ $H_+$ 和 $H_\times$ 分别称\textbf{加偏振}(plus polarization)和\textbf{�
 辐射规范下的物理效应可由测地偏离直接看出。设一组近似静止的自由质点构成探测器，取中心质点的局域惯性系，则相邻质点的空间分离 $\xi^i$ 满足 $\ddot\xi^i=-R^i{}_{0j0}\xi^j=\frac12\ddot h^{\mathrm{TT}}_{ij}\xi^j$。
 因此加偏振使 $x,y$ 两方向交替伸缩，叉偏振则相当于把伸缩轴旋转 $\pi/4$，构成对角线。这类相对形变就是干涉仪探测引力波的基本对象。
 
+引力波携带的能量动量，其逐点表达依赖坐标和规范，但在波区对若干波长作平均后，二阶引力场能动赝张量给出规范不变的领头结果。在 TT 规范中有
+\begin{equation}\label{eq:gw-effective-stress}
+    \left\langle t_{\mu\nu}^{\mathrm{GW}}\right\rangle
+    =\frac{1}{32\pi}
+      \left\langle\p_\mu h_{ij}^{\mathrm{TT}}\p_\nu h_{\mathrm{TT}}^{ij}\right\rangle .
+\end{equation}
+沿用前文 $h_{ij}^{\mathrm{TT}}=\Re\{H_{ij}\e^{\i kx}\}$ 的约定，周期平均满足 $\langle\p^\mu h_{ij}^{\mathrm{TT}}\p^\nu h_{\mathrm{TT}}^{ij}\rangle=k^\mu k^\nu H_{ij}^*H^{ij}/2$，而 $H_{ij}^*H^{ij}=2(\abs{H_+}^2+\abs{H_\times}^2)$。若把正频部分写成 $h_{\mu\nu}=e_{\mu\nu}\e^{\i kx}+e_{\mu\nu}^*\e^{-\i kx}$，则 $e_{\mu\nu}=H_{\mu\nu}/2$；取单位归一的圆偏振张量后，其螺旋度振幅为 $e_{\pm2}=(H_+\mp\i H_\times)/2$。故平面波的平均能动张量为
+\begin{equation}\label{eq:gw-plane-wave-stress}
+    \left\langle t^{\mu\nu}_{\mathrm{GW}}\right\rangle
+    =\frac{k^\mu k^\nu}{32\pi}
+       (\abs{H_+}^2+\abs{H_\times}^2)
+    =\frac{k^\mu k^\nu}{16\pi}
+       (\abs{e_{+2}}^2+\abs{e_{-2}}^2).
+\end{equation}
+它与无压类光粒子束的能动张量同形；特别地，$\langle t^{00}_{\mathrm{GW}}\rangle$ 是平均能量密度，$\langle t^{0i}_{\mathrm{GW}}\rangle$ 是沿 $\bm k$ 的平均能流。
+
 最后简述辐射的发射。谐和规范下有源方程 $\square\bar h_{\mu\nu}=-16\pi T_{\mu\nu}$ 具有\textbf{推迟势}解，在远区近似为
 \eq{
     \bar h_{\mu\nu}(t,\bm x)=4\int\d[3]{x'} \frac{T_{\mu\nu}(t-|\bm x-\bm x'|,\bm x')}{|\bm x-\bm x'|}.
 }
 $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 按照物质守恒律，对于限制在有限体积内的源 $T_{\mu\nu}$，上式自动满足谐和坐标条件。我们可把齐次方程（真空方程、谐和规范）的任何解，加到推迟势上。把推迟势解释为源产生的辐射，而齐次解附加项代表来自无穷远处的辐射。
+
+为处理任意局域过程，固定 Fourier 约定
+\[
+    T^{\mu\nu}(\bm k,\omega):=\frac{1}{2\pi}
+    \int\d[4]{x}\e^{\i(\omega t-\bm k\cdot\bm x)}T^{\mu\nu}(t,\bm x),
+    \qquad \abs{\bm k}=\omega>0.
+\]
+守恒律给出 $k_\mu T^{\mu\nu}=0$。将推迟势投影到两个 TT 偏振，并以 \eqref{eq:gw-effective-stress} 计算穿过远方球面的能流，得到单位频率、单位立体角的辐射能量
+\begin{equation}\label{eq:arbitrary-source-radiated-energy}
+    \d E=2\omega^2\d\omega\d\Omega
+    \left[T^{\mu\nu *}(\bm k,\omega)T_{\mu\nu}(\bm k,\omega)
+    -\frac12\abs{T^\mu{}_\mu(\bm k,\omega)}^2\right].
+\end{equation}
+方括号正是两个物理偏振的振幅平方和，故非负。对角频率为 $\omega$ 的单色源，可写
+\[
+    T^{\mu\nu}(\bm k,\omega')
+    =\delta(\omega'-\omega)\widetilde T^{\mu\nu}(\bm k,\omega).
+\]
+在观测时长 $\mathcal T$ 内用 $\delta(0)=\mathcal T/(2\pi)$，上式化为任意单色源的辐射功率
+\begin{equation}\label{eq:arbitrary-source-radiated-power}
+    \d P=\frac{\omega^2\d\Omega}{\pi}
+    \left[\widetilde T^{\mu\nu *}\widetilde T_{\mu\nu}
+    -\frac12\abs{\widetilde T^\mu{}_\mu}^2\right].
+\end{equation}
+
 对慢速、局域源做多极展开。质量单极矩 $M=\int\d[3]{x} T^{00}$ 是总质量能量，孤立系统中守恒，故不辐射。偶极矩(dipole) $D^i=\int\d[3]{x} T^{00}x^i$ 等于总质量乘以质心位置，其一阶导是总动量，二阶导在孤立系统中为零，也不产生真正的偶极辐射。角动量守恒同样排除最低阶的流偶极辐射。而引力场本身的自耦合又使强场情形必须回到非线性的 Einstein 方程。故引力波的最低非零辐射通常来自\textbf{四极矩}(quadrupole)
 \eq{
     I^{ij}:=\int\d[3]{x} T^{00}x^i x^j,\quad
@@ -2025,12 +2035,27 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 \eq{
     h_{ij}^{\mathrm{TT}}(t,\bm x)\simeq \frac{2}{r}\,\ddot Q_{ij}^{\mathrm{TT}}(t-r).
 }
+代回 \eqref{eq:gw-effective-stress} 并对方向积分，得到熟悉的四极辐射功率 $P=\frac{1}{5}\langle\dddot Q_{ij}\dddot Q^{ij}\rangle$。
+
+另一极限是若干粒子在一个很短的区域内散射，而其入射、出射段近似匀速直线。记各粒子的 4-动量为 $p_N^\mu$，初态取 $\eta_N=-1$、末态取 $\eta_N=+1$。将各半无限世界线的点粒子能动张量作上述 Fourier 变换，在软频极限得到
+\[
+    T^{\mu\nu}(\bm k,\omega)\simeq-\frac{\i}{2\pi}
+    \sum_N\eta_N\frac{p_N^\mu p_N^\nu}{p_N\cdot k}.
+\]
+动量守恒 $\sum_N\eta_Np_N^\mu=0$ 保证 $k_\mu T^{\mu\nu}=0$。代入 \eqref{eq:arbitrary-source-radiated-energy}，并用 $p_N^2=-m_N^2$，即得碰撞发射的软引力波能量
+\begin{equation}\label{eq:soft-graviton-radiated-energy}
+    \d E=\frac{\omega^2\d\omega\d\Omega}{2\pi^2}
+    \sum_{N,M}\frac{\eta_N\eta_M}{(p_N\cdot k)(p_M\cdot k)}
+    \left[(p_N\cdot p_M)^2-\frac12m_N^2m_M^2\right].
+\end{equation}
+这只依赖外线动量而不依赖碰撞区细节，是经典软引力辐射的普适部分。
 
 %%
 
 \subsection{引力的量子理论}\label{sec:quantum-gravity}
 
 迄今尚无经实验证实的完整紫外量子引力理论，不过弱引力场可以作为低能有效场论作量子化。以下只借线性引力领略这种理论至少应有的结构。把波矢为 $k^\mu$ 的平面波解释成引力子组成的相干态，则单个引力子的 4-动量为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu=0$，它同光子一样是无质量粒子。
+为显示耦合量纲，本小节暂保留 $G,\hbar$，仍取 $c=1$，只在需要时恢复 $c$。
 
 相比电磁波的偏振矢，二阶偏振张量在绕传播方向旋转角 $\varphi$ 时按 $2\varphi$ 变化，按照量子场论 Wigner 分类法，这是自旋 2 无质量粒子，这两种偏振态对应于\textbf{螺旋度}(helicity)为 $+2$ 和 $-2$ 的量子态。其自旋在运动方向上的分量为 $\pm 2\hbar$。
 由前文，自旋 1 光子 $A^\mu$ 可发生偶极辐射，而自旋 2 引力子 $h_{\mu\nu}$ 没有偶极辐射，只能从四极辐射开始。
@@ -2039,20 +2064,14 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 \[
     T^{\mu\nu} = \frac{p^\mu p^\nu}{\hbar\omega} \mathscr N,
 \]
-$\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。为显示量子与引力耦合的量纲，本小节暂保留 $G,\hbar$，仍取 $c=1$，只在需要时恢复 $c$。令 $e_{\pm2}:=(H_+\mp\i H_\times)/\sqrt2$ 为两支圆偏振，即螺旋度本征振幅，并把复振幅归一化为
-\[
-    \left\langle t^{\mu\nu}\right\rangle
-    =\frac{k^\mu k^\nu}{16\pi G}
-      \left(\abs{e_{+2}}^2+\abs{e_{-2}}^2\right).
-\]
-与粒子表达式比较，立即得到
+$\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。将它与 \eqref{eq:gw-plane-wave-stress} 比较，立即得到
 \eq{
     \mathscr N_{\pm2}=\frac{\omega}{16\pi\hbar G}\abs{e_{\pm2}}^2,
     \quad \mathscr N=\mathscr N_{+2}+\mathscr N_{-2}=\frac{\omega}{16\pi\hbar G}(e^{\mu\nu *}e_{\mu\nu}-\frac12\abs{e^\mu{}_\mu}^2).
 }
 后者是以一般谐和规范下的复偏振张量 $e_{\mu\nu}$ 表示的总数密度；在 TT 规范中迹项消失。这里把经典波的能量除以单个量子的能量 $\hbar\omega$，正是由波强度过渡到引力子数目的最简单办法。
 
-同理，经典辐射功率除以 $\hbar\omega$ 就给出引力子的发射率。设 $\widetilde T^{\mu\nu}(k,\omega)$ 是源能动张量在类光动量 $k^\mu=(\omega,\bm k)$、$\abs{\bm k}=\omega$ 处的 Fourier 分量，则向立体角 $\d\Omega$ 发射一个引力子的速率为
+同理，将 \eqref{eq:arbitrary-source-radiated-power} 除以单个引力子的能量 $\hbar\omega$，便得到向立体角 $\d\Omega$ 发射引力子的速率
 \begin{equation}\label{eq:graviton-emission-rate}
     \d\Gamma=\frac{G\omega\,\d\Omega}{\pi\hbar}
     \left[\widetilde T^{\mu\nu *}\widetilde T_{\mu\nu}
@@ -2075,7 +2094,7 @@ $\mathscr N$ 就是惯性系 $\{x\}$ 所测数密度。为显示量子与引力�
 \]
 其寿命远超宇宙年龄，说明单个微观系统的引力子自发辐射实际上不可观测。
 
-还可考虑本来就会发生的粒子碰撞，并询问额外发射软引力子的概率。设 $p_N^\mu$ 是所有初、末态粒子的 4-动量，初态取 $\eta_N=-1$，末态取 $\eta_N=+1$，$\mathcal P_c$ 是不分辨引力辐射时碰撞发生的概率。软频极限给出
+还可考虑本来就会发生的粒子碰撞，并询问额外发射软引力子的概率。设 $\mathcal P_c$ 是不分辨引力辐射时碰撞发生的概率；把 \eqref{eq:soft-graviton-radiated-energy} 乘以 $\mathcal P_c$，再除以 $\hbar\omega$，便有
 \begin{equation}\label{eq:soft-graviton-emission}
     \d\mathcal P=\frac{G\omega\,\d\omega\d\Omega}{2\pi^2\hbar}\mathcal P_c
     \sum_{N,M}\frac{\eta_N\eta_M}{(p_N\cdot k)(p_M\cdot k)}
@@ -2142,7 +2161,7 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
 
 %% 有效性
 
-
+\endinput
 
 \subsection{渐近平直时空}
 %共性变换
@@ -2627,8 +2646,8 @@ Misner, Hawking, Penrose 等人提出只需观察观者或光是否能无限延�
     \end{tikzpicture}
     \caption{\small 闵氏时空因果菱形。其形似钻石，截面又呈菱形（或平行四边形），英语皆为 diamond。}
 \end{wrapfigure}
-任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不能仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\partial D_p^q$ 的折角点或\textbf{折痕集}(crease set)扫不到。
-$\partial D_p^q$ 是分段测地线，即由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。
+任意从 $p$ 到 $q$ 的指向未来因果线 $\gamma$ 必落在 $D_p^q$ 中，因为 $\forall b\in\gamma$，$b\in J^+(p)$ 且 $b\in J^-(q)$，因此 $\gamma\subset D_p^q$。因而全体 $\gamma$ 扫出的时空区域含于 $D_p^q$。但不能仅用 $C^1$ 曲线扫出 $D_p^q$，很明显 $\p D_p^q$ 的折角点或\textbf{折痕集}(crease set)扫不到。
+$\p D_p^q$ 是分段测地线，即由有限段的测地线连接的连续曲线，连接处允许不 $C^1$。Penrose 把分段的指向未来类时测地线称为\textbf{旅程}(trip)，改为因果线则称\textbf{因果旅程}。
 Penrose 证明了，若用旅程替代原来的类时线，给出的 $I^+(p),J^+(p)$ 等概念仍是等价的。此后要想讨论一般的指向未来类时/因果线，就可直接替代为旅程/因果旅程，这将大大地简化各类话题的数学细节。总之，$C^1$ 曲线只能扫出 $D_p^q$ 的内部开集，替换为旅程概念后，$D_p^q$ 就可完全扫出。
 
 $p\in M$ 的\textit{开邻域} $N$ 称\textbf{法邻域}(normal neighborhood)，若 $N$ 内任点都存在 $N$ 内唯一测地线段与 $p$ 相连，且沿线不出现 $p$ 的共轭点\footnote{法邻域的另一定义见 \S\ref{sec:manifold}，且可清晰讨论共轭性和多条测地线的区别。}。从而可建立以 $p$ 为原点的\textbf{法坐标系}使得过 $p$ 的测地线表为过原点直线，故 $p$ 处克氏符为零。
@@ -2761,7 +2780,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 \subsection{迅捷性}\label{sec:promptness}
 
-类时线可用固有时比较，极大者是测地线；但任意类光线的固有时都是零，故不存在相同的极值判据。Witten 为此提出\textbf{迅捷性}(promptness)，以因果先后而非数值长度表示“最早到达”。以下默认因果线指向未来，时间反演结论同理。设因果线 $\ell$ 从 $q$ 到 $p$。若不存在另一条从 $q$ 出发的因果线到达某个 $p'\in I^-(p)$，则称 $\ell$ \textbf{迅捷}。换言之，已知 $p\in J^+(q)$ 时，$\ell:q\to p\text{ 迅捷}\iff J^+(q)\cap I^-(p)=\mt\iff p\in\partial J^+(q)$。
+类时线可用固有时比较，极大者是测地线；但任意类光线的固有时都是零，故不存在相同的极值判据。Witten 为此提出\textbf{迅捷性}(promptness)，以因果先后而非数值长度表示“最早到达”。以下默认因果线指向未来，时间反演结论同理。设因果线 $\ell$ 从 $q$ 到 $p$。若不存在另一条从 $q$ 出发的因果线到达某个 $p'\in I^-(p)$，则称 $\ell$ \textbf{迅捷}。换言之，已知 $p\in J^+(q)$ 时，$\ell:q\to p\text{ 迅捷}\iff J^+(q)\cap I^-(p)=\mt\iff p\in\p J^+(q)$。
 这里“更早”并不依赖坐标时：$p'\in I^-(p)$ 表示从 $p'$ 可沿类时线到达 $p$，故任何观者都会同意 $p'$ 先于 $p$。若能先到 $p'$，再稍向未来延伸便可到达任意靠近 $p$、但仍在其过去的点。
 
 上述边界判据十分直观。若存在 $p'\in J^+(q)\cap I^-(p)$，推开性质给出 $p\in I^+(q)$，故 $p$ 位于 $J^+(q)$ 内部；反之，若 $p$ 是内点，则在其充分小的凸法邻域中，总有一个稍早于 $p$ 的点仍属于 $J^+(q)$。所以边界上的信号正是从 $q$ 能够最早到达的信号。
@@ -2782,8 +2801,8 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 相应地，若一族从 $W$ 正交射出的类光测地线存在非零 Jacobi 场，其初值切于 $W$、保持正交条件并在 $q'$ 消失，则称 $q'$ 为 $W$ 的\textbf{焦点}。将这条测地线延伸过焦点后，同样可由变分、折角圆滑化和推开构造更早到达的因果线，故它不再迅捷。这是点共轭概念的子流形版本；焦点不存在仍只是迅捷的必要条件。
 
-现在便可准确理解传统说法。按前文允许恒值因果线的约定，$W\subset J^+(W)$。\textbf{曲面闭合}是指紧致且无边界。若上述 $W$ 还紧致且时空整体双曲，则 $J^+(W)$ 闭合。事实上，对任意 $p_i\in J^+(W)$ 且 $p_i\to p$，可选 $q_i\in W$ 及从 $q_i$ 到 $p_i$ 的因果线；$W$ 的紧致性给出 $q_i$ 的收敛子列，整体双曲性再给出连接其极限与 $p$ 的极限因果线，故 $p\in J^+(W)$。因此每个 $p\in\partial J^+(W)$ 都可由 $W$ 上某点沿因果线到达，而这条线必然迅捷。
-所以 $\partial J^+(W)$ 由从 $W$ 正交射出的迅捷类光测地线段生成，生成元可以到达焦点或类光截点，但一旦越过便失去迅捷性，离开边界而进入 $J^+(W)$ 内部。边界本身非编时，因为若其两点可由类时线连接，较晚一点就应是 $J^+(W)$ 的内点。若边界两点由因果线相连，该线则必须是完全留在边界中的类光测地线；任何类时段或折角都能经推开使较晚端点变为内点。
+现在便可准确理解传统说法。按前文允许恒值因果线的约定，$W\subset J^+(W)$。\textbf{曲面闭合}是指紧致且无边界。若上述 $W$ 还紧致且时空整体双曲，则 $J^+(W)$ 闭合。事实上，对任意 $p_i\in J^+(W)$ 且 $p_i\to p$，可选 $q_i\in W$ 及从 $q_i$ 到 $p_i$ 的因果线；$W$ 的紧致性给出 $q_i$ 的收敛子列，整体双曲性再给出连接其极限与 $p$ 的极限因果线，故 $p\in J^+(W)$。因此每个 $p\in\p J^+(W)$ 都可由 $W$ 上某点沿因果线到达，而这条线必然迅捷。
+所以 $\p J^+(W)$ 由从 $W$ 正交射出的迅捷类光测地线段生成，生成元可以到达焦点或类光截点，但一旦越过便失去迅捷性，离开边界而进入 $J^+(W)$ 内部。边界本身非编时，因为若其两点可由类时线连接，较晚一点就应是 $J^+(W)$ 的内点。若边界两点由因果线相连，该线则必须是完全留在边界中的类光测地线；任何类时段或折角都能经推开使较晚端点变为内点。
 
 \subsection{陷获面}
 
@@ -2796,7 +2815,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 可直接验证 $q_{\mu\nu}k^\nu=q_{\mu\nu}n^\nu=0$；而对任意屏空间矢量 $X,Y$，有 $q_{\mu\nu}X^\mu Y^\nu=g_{\mu\nu}X^\mu Y^\nu$。
 因此它消去了 $k,n$ 张成的法平面。
 时空度规分解为 $g_{\mu\nu}=q_{\mu\nu}-(k_\mu n_\nu+n_\mu k_\nu)$，其中后一项正是类光法平面上的 Lorentz 度规。加号来自归一化 $k\cdot n=-1$；若 $k\cdot n=-C$，则应写成 $q_{\mu\nu}=g_{\mu\nu}+(k_\mu n_\nu+n_\mu k_\nu)/C$。
-例如在闵氏时空取 $k=(\partial_t+\partial_z)/\sqrt2$、$n=(\partial_t-\partial_z)/\sqrt2$，便有 $q_{\mu\nu}\d x^\mu\d x^\nu=\d x^2+\d y^2$，正是垂直于光传播方向的屏空间。
+例如在闵氏时空取 $k=(\p_t+\p_z)/\sqrt2$、$n=(\p_t-\p_z)/\sqrt2$，便有 $q_{\mu\nu}\d x^\mu\d x^\nu=\d x^2+\d y^2$，正是垂直于光传播方向的屏空间。
 将 $\cd_\nu k_\mu $ 投影到屏空间，得到
 \begin{equation}\label{eq:null-congruence-decomposition}
     B_{\mu\nu}=q_\mu{}^\gamma q_\nu{}^\kappa\cd_\kappa k_\gamma
@@ -2863,11 +2882,11 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 下面证明之。
 取光滑未来类时矢量场 $T^\mu$，并以 $-k\cdot T=1$ 归一化 $S$ 的未来类光法矢。所得归一化未来类光法丛 $\mathscr N^+(S)$ 的每条纤维含两点，是紧致 $S$ 上的二重覆盖，故亦紧致。对每个 $(q,k)\in\mathscr N^+(S)$，令相应法测地线的仿射参数在 $q$ 处取 $\lambda=0$，并令 $\dot\gamma(0)=k$。陷获条件说明初始膨胀 $\theta_0(q,k)$ 在 $\mathscr N^+(S)$ 上连续为负，因而存在常数 $w>0$ 使 $\theta_0\leqslant-w$。在首个 $S$-焦点以前，正交类光线汇无旋，故类光收敛条件与上文的类光 Raychaudhuri 方程给出 $\dv*{\theta}{\lambda}\leqslant-\theta^2/2$。由类光聚焦引理，任一法测地线若能延伸到 $\lambda=2/w$，必在不迟于此处出现 $S$-焦点。
 
-反设所有从 $S$ 正交射出的未来类光测地线都能延伸过 $2/w$。记未来因果边界为 $E^+(S):=J^+(S)\backslash I^+(S)=\partial J^+(S)=\partial I^+(S)$。由整体双曲性、$S$ 的紧致性以及 \S\ref{sec:promptness}，每个 $p\in E^+(S)$ 都可由 $S$ 沿一条迅捷因果线到达；该线必是从 $S$ 正交射出的类光测地线，且不能已经越过 $S$-焦点。因此所有边界生成元都只需取 $0\leqslant\lambda\leqslant2/w$；若由全局竞争路线更早失去迅捷性，其边界段只会更短。
+反设所有从 $S$ 正交射出的未来类光测地线都能延伸过 $2/w$。记未来因果边界为 $E^+(S):=J^+(S)\backslash I^+(S)=\p J^+(S)=\p I^+(S)$。由整体双曲性、$S$ 的紧致性以及 \S\ref{sec:promptness}，每个 $p\in E^+(S)$ 都可由 $S$ 沿一条迅捷因果线到达；该线必是从 $S$ 正交射出的类光测地线，且不能已经越过 $S$-焦点。因此所有边界生成元都只需取 $0\leqslant\lambda\leqslant2/w$；若由全局竞争路线更早失去迅捷性，其边界段只会更短。
 换言之，每个 $p\in E^+(S)$ 都由三元组 $(q,k,\lambda)$ 决定，其中 $(q,k)\in\mathscr N^+(S)$，而 $\lambda\in[0,2/w]$。测地线终点连续依赖这些数据，故全部此类终点构成紧集\footnote{严格地说，这些有限初段的并集，是紧集 $\mathscr N^+(S)\times[0,2/w]$ 在受限测地指数映射 $F(q,k,\lambda)=\exp_q(\lambda k)\in M$ 下的连续像；反设保证 $F$ 处处有定义。紧集的连续像也紧。指数映射见 \S\ref{sec:manifold}。}。$E^+(S)$ 是该紧集的闭子集，因而亦紧致。
 这里迅捷性所做的正是把“有限仿射参数内出现焦点”转化为“因果边界只由有限初段生成”。
 
-然而 $E^+(S)$ 不可能紧致。首先它非空：任取 Cauchy 时间函数 $t$，$t|_S$ 在紧致 $S$ 上的最小点 $q$ 属于 $J^+(S)$，却不可能属于 $I^+(S)$，否则必有 $S$ 上另一点的 $t$ 值更小。其次，$E^+(S)=\partial I^+(S)$ 是无边缘的非编时 $C^0$ 超曲面。利用整体双曲分裂 $M\simeq\R\times\Sigma$，沿其不可延类时流线将 $E^+(S)$ 投影到非紧 Cauchy 面 $\Sigma$，记该映射为 $\pi$。非编时性保证每条流线与 $E^+(S)$ 至多相交一次，因而 $\pi$ 单射；无边缘性保证 $E^+(S)$ 局部是相对 $\Sigma$ 的连续图像，因而 $\pi(E^+(S))$ 是开集。若 $E^+(S)$ 紧致，其像也紧致，从而在 $\Sigma$ 中闭。时空按通常约定连通，故 $\Sigma$ 连通；于是非空的既开又闭集 $\pi(E^+(S))$ 只能等于 $\Sigma$，这将迫使 $\Sigma$ 紧致，矛盾。
+然而 $E^+(S)$ 不可能紧致。首先它非空：任取 Cauchy 时间函数 $t$，$t|_S$ 在紧致 $S$ 上的最小点 $q$ 属于 $J^+(S)$，却不可能属于 $I^+(S)$，否则必有 $S$ 上另一点的 $t$ 值更小。其次，$E^+(S)=\p I^+(S)$ 是无边缘的非编时 $C^0$ 超曲面。利用整体双曲分裂 $M\simeq\R\times\Sigma$，沿其不可延类时流线将 $E^+(S)$ 投影到非紧 Cauchy 面 $\Sigma$，记该映射为 $\pi$。非编时性保证每条流线与 $E^+(S)$ 至多相交一次，因而 $\pi$ 单射；无边缘性保证 $E^+(S)$ 局部是相对 $\Sigma$ 的连续图像，因而 $\pi(E^+(S))$ 是开集。若 $E^+(S)$ 紧致，其像也紧致，从而在 $\Sigma$ 中闭。时空按通常约定连通，故 $\Sigma$ 连通；于是非空的既开又闭集 $\pi(E^+(S))$ 只能等于 $\Sigma$，这将迫使 $\Sigma$ 紧致，矛盾。
 故矛盾，反设不成立：至少有一条从 $S$ 正交射出的未来类光测地线无法延伸过有限仿射参数 $2/w$，故时空未来类光测地不完备。
 
 \subsection{宇宙监督}\label{sec:cosmic-censorship}
@@ -2885,7 +2904,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 若物理时空 $(M,g)$ 可视为带边界流形 $\widetilde M$ 的内部，并存在 $\Omega\in C^\infty(\widetilde M)$，使 $\widetilde g=\Omega^2g$ 在 $M$ 上成立、$\Omega>0$，而 $\widetilde g$ 光滑且非退化地延伸到所添边界 $\mathscr I$，其上 $\Omega=0$、$\d\Omega\ne0$，则称 $(\widetilde M,\widetilde g,\Omega)$ 是 $(M,g)$ 的\textbf{Penrose 共形完备化}(conformal completion)。在 $\mathscr I$ 上缩放已不可逆；正则延伸的是非物理度规 $\widetilde g$，新增边界也不属于物理时空。若 $\widetilde M$ 可取为紧致流形，这一构造也称\textbf{共形紧化}(conformal compactification)。
 在渐近平直时空的正则共形完备化中，逃向所选渐近平直端的未来类光测地线，其理想未来端点组成\textbf{未来类光无穷远}(future null infinity) $\mathscr I^+$。它满足 $\widetilde g^{\mu\nu}\p_\mu\Omega\p_\nu\Omega=0$，故是 $\widetilde M$ 的类光边界，而非 $M$ 中的有限远处。$\mathscr I^+$ 接收出射光线与辐射，不应同未来类时无穷远 $i^+$ 混同，后者代表无限延伸类时世界线的理想终点。图示可见 \S\ref{sec:penrose-diagram}。
 
-相对于选定的 $\mathscr I^+$，记可向该无穷远发送信号的区域为\footnote{对通常正则、未来完整的 $\mathscr I^+$，也可用 $J^-_{\widetilde M}(\mathscr I^+)\cap M$；许多文献遂简写为 $J^-(\mathscr I^+)$。} $\mathcal V^+:=I^-_{\widetilde M}(\mathscr I^+)\cap M$，则\textbf{黑洞区域}(black-hole region)及其\textbf{未来黑洞视界}，也就是\textbf{未来事件视界}(future event horizon)，定义为 $\mathcal B:=M\backslash\mathcal V^+$ 和 $\mathcal H^+:=\partial_M\mathcal B=\partial_M\mathcal V^+$。这里因果过去在共形完备化中计算，边界却在物理时空中取。于是 $p\in\mathcal B$ 意味着从 $p$ 发出的任何未来因果信号都不能抵达所选 $\mathscr I^+$，并且 $J^+(\mathcal B)\subset\mathcal B$。
+相对于选定的 $\mathscr I^+$，记可向该无穷远发送信号的区域为\footnote{对通常正则、未来完整的 $\mathscr I^+$，也可用 $J^-_{\widetilde M}(\mathscr I^+)\cap M$；许多文献遂简写为 $J^-(\mathscr I^+)$。} $\mathcal V^+:=I^-_{\widetilde M}(\mathscr I^+)\cap M$，则\textbf{黑洞区域}(black-hole region)及其\textbf{未来黑洞视界}，也就是\textbf{未来事件视界}(future event horizon)，定义为 $\mathcal B:=M\backslash\mathcal V^+$ 和 $\mathcal H^+:=\p_M\mathcal B=\p_M\mathcal V^+$。这里因果过去在共形完备化中计算，边界却在物理时空中取。于是 $p\in\mathcal B$ 意味着从 $p$ 发出的任何未来因果信号都不能抵达所选 $\mathscr I^+$，并且 $J^+(\mathcal B)\subset\mathcal B$。
 形象地说，$\mathscr I^+$ 代表远方观者，它看不到的区域就是黑洞区域，故弱宇宙监督就是限制奇点在视界内而外部观者看不见。
 
 作为因果过去的边界，$\mathcal H^+$ 是无边缘的非编时 $C^0$ 超曲面；在可微处它是由类光测地线生成的类光超曲面。生成元可以有过去端点并由此加入视界，却不能向未来离开视界。事件视界的定义依赖时空的完整未来，不能由局部曲率或单张空间切片确定，因而具有遥感性；若存在多个渐近平直端，$\mathcal B$ 与 $\mathcal H^+$ 还依赖所选的 $\mathscr I^+$。
@@ -2913,7 +2932,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 \end{equation}
 对任意这样的前后截面成立。
 
-这一生成结构可由迅捷线的极限看出。任取 $q\in\mathcal H^+$，并取 $q_i\in\mathcal V^+$ 趋于 $q$。在渐近平直区取一条未来无穷的远方类时观者线，从各 $q_i$ 到该线上可达的最早事件选取因果线 $\ell_i$；由 \S\ref{sec:promptness}，它们是迅捷类光测地线。在上述整体条件下，极限曲线定理给出经过 $q$ 的未来类光极限线 $\ell$。$\ell_i$ 的接收时刻必趋于无穷，否则取极限后再沿观者线稍向未来延伸，便会得到 $q\in\mathcal V^+$。又因 $J^+(\mathcal B)\subset\mathcal B$，$\ell$ 不能离开 $\mathcal B$；而每条 $\ell_i$ 均在 $\mathcal V^+$ 中，其极限也不能进入 $\mathcal B$ 的内部。因此 $\ell\subset\partial\mathcal B=\mathcal H^+$，称为\textbf{视界生成线}(horizon generator)，即前文的生成元。
+这一生成结构可由迅捷线的极限看出。任取 $q\in\mathcal H^+$，并取 $q_i\in\mathcal V^+$ 趋于 $q$。在渐近平直区取一条未来无穷的远方类时观者线，从各 $q_i$ 到该线上可达的最早事件选取因果线 $\ell_i$；由 \S\ref{sec:promptness}，它们是迅捷类光测地线。在上述整体条件下，极限曲线定理给出经过 $q$ 的未来类光极限线 $\ell$。$\ell_i$ 的接收时刻必趋于无穷，否则取极限后再沿观者线稍向未来延伸，便会得到 $q\in\mathcal V^+$。又因 $J^+(\mathcal B)\subset\mathcal B$，$\ell$ 不能离开 $\mathcal B$；而每条 $\ell_i$ 均在 $\mathcal V^+$ 中，其极限也不能进入 $\mathcal B$ 的内部。因此 $\ell\subset\p\mathcal B=\mathcal H^+$，称为\textbf{视界生成线}(horizon generator)，即前文的生成元。
 
 更重要的是，每个从光滑截面出发的有限生成线段都相对该截面迅捷。设 $W=\Sigma\cap\mathcal H^+$ 是光滑截面，$p$ 是从 $W$ 出发的一条生成线上的未来点。若该段相对 $W$ 不迅捷，则存在 $w\in W$ 及从 $w$ 到某个 $r\in I^-(p)$ 的因果线；推开性质随即给出 $w\ll p$，与 $w,p\in\mathcal H^+$ 及视界的非编时性矛盾。故该段从 $W$ 正交射出。若生成线出现 $W$-焦点，把它稍向焦点之后延伸便会失去迅捷性；但生成线不能在 $M$ 内终止或向未来离开视界，故视界内不存在这样的焦点。这里“在 $M$ 内没有未来端点”并不等于仿射未来完备：生成线仍可能在有限仿射参数处趋向不属于 $M$ 的奇异端。
 
@@ -2930,13 +2949,13 @@ Witten 的外移论证可以去掉生成线本身未来完备的额外假设。�
 
 固定通向所选渐近平直端的类空切片 $\Sigma$。设 $u^\mu$ 是 $\Sigma$ 的未来单位法矢，$s^\mu$ 是闭曲面 $S\subset\Sigma$ 中指向该端的外单位法矢，取 $\ell^\mu=u^\mu+s^\mu$、$n^\mu=(u^\mu-s^\mu)/2$，则 $\ell\cdot n=-1$。由 $q^{\mu\nu}=h^{\mu\nu}-s^\mu s^\nu$，按本文 $K_{ij}=h_i{}^\mu h_j{}^\nu\cd_\mu u_\nu$ 的约定，外向膨胀为 $\theta_{(\ell)}=D_is^i+K-K_{ij}s^is^j$，其中 $D_i$ 表示 \S\ref{sec:Hamilton} 的空间协变导数。因此在给定初值资料 $(h_{ij},K_{ij})$ 后，MOTS 可由切片内的几何求出，不必先知道时空的完整未来。
 
-若紧致区域 $Z\subset\Sigma$ 的光滑边界 $S=\partial_\Sigma Z$ 将 $Z$ 与所选端分开，并满足 $\theta_{(\ell)}<0$，则称 $Z$ 为\textbf{严格外陷获集}。记所有这类 $Z$ 的并为 $\mathcal T_\Sigma$，称为该切片的\textbf{外陷获区}；其朝向所选端的边界 $\mathcal A_\Sigma:=\partial_\Sigma\mathcal T_\Sigma$ 称为\textbf{表观视界}(apparent horizon)。在通常的内外屏障与正则性条件下，非空的 $\mathcal A_\Sigma$ 是光滑、稳定的最外层 MOTS；因此物理文献也常直接把最外层 MOTS 称为表观视界。任意内层或不稳定的 MOTS 则不应如此称呼。
+若紧致区域 $Z\subset\Sigma$ 的光滑边界 $S=\p_\Sigma Z$ 将 $Z$ 与所选端分开，并满足 $\theta_{(\ell)}<0$，则称 $Z$ 为\textbf{严格外陷获集}。记所有这类 $Z$ 的并为 $\mathcal T_\Sigma$，称为该切片的\textbf{外陷获区}；其朝向所选端的边界 $\mathcal A_\Sigma:=\p_\Sigma\mathcal T_\Sigma$ 称为\textbf{表观视界}(apparent horizon)。在通常的内外屏障与正则性条件下，非空的 $\mathcal A_\Sigma$ 是光滑、稳定的最外层 MOTS；因此物理文献也常直接把最外层 MOTS 称为表观视界。任意内层或不稳定的 MOTS 则不应如此称呼。
 
-下面说明它与事件视界的相对位置。沿用上一小节的渐近平直、正则且未来完整的 $\mathscr I^+$ 与强渐近可预言性假设，作为此处所需的弱宇宙监督型条件；并假定类光收敛条件成立，在 Einstein 方程下这就是类光能量条件。先证每个严格外陷获集 $Z$ 都包含在黑洞区域 $\mathcal B$ 中。反设 $Z$ 能向 $\mathscr I^+$ 发出信号；在渐近平直区取充分遥远的类时观者，并选取从紧集 $Z$ 到该观者的最早信号。由 \S\ref{sec:promptness}，它必是一条没有 $Z$-焦点的迅捷类光测地线。它不能从 $Z$ 的内部出发，因为迅捷性会要求它正交于余维一的类空 $Z$，而这样的法矢是类时的；故它从 $S=\partial_\Sigma Z$ 正交射出。能最先离开 $Z$ 的只能是外向支 $\ell^\mu$，内向支可由 $Z$ 中稍靠内的点抢先。
+下面说明它与事件视界的相对位置。沿用上一小节的渐近平直、正则且未来完整的 $\mathscr I^+$ 与强渐近可预言性假设，作为此处所需的弱宇宙监督型条件；并假定类光收敛条件成立，在 Einstein 方程下这就是类光能量条件。先证每个严格外陷获集 $Z$ 都包含在黑洞区域 $\mathcal B$ 中。反设 $Z$ 能向 $\mathscr I^+$ 发出信号；在渐近平直区取充分遥远的类时观者，并选取从紧集 $Z$ 到该观者的最早信号。由 \S\ref{sec:promptness}，它必是一条没有 $Z$-焦点的迅捷类光测地线。它不能从 $Z$ 的内部出发，因为迅捷性会要求它正交于余维一的类空 $Z$，而这样的法矢是类时的；故它从 $S=\p_\Sigma Z$ 正交射出。能最先离开 $Z$ 的只能是外向支 $\ell^\mu$，内向支可由 $Z$ 中稍靠内的点抢先。
 
 按上述 $-\ell\cdot u=1$ 统一归一化外向法矢。由于 $S$ 紧致且 $\theta_{(\ell)}<0$，存在 $\varepsilon>0$ 使 $\theta_{(\ell)}\leqslant-\varepsilon$。正交线汇无旋，类光 Raychaudhuri 方程遂使这条候选迅捷线在仿射距离至多 $2/\varepsilon$ 内出现 $S$-焦点；迅捷线却不能越过焦点。$\mathscr I^+$ 的未来完整性允许把观者取到所有这些有界初段之外，矛盾。因此 $Z\subset\mathcal B$。
 
-于是 $\mathcal T_\Sigma\subset\mathcal B\cap\Sigma$。又因 $\mathcal V^+=I^-(\mathscr I^+)\cap M$ 是开集，$\mathcal B=M\backslash\mathcal V^+$ 闭合，故 $\mathcal A_\Sigma\subset\overline{\mathcal T_\Sigma}\subset\mathcal B\cap\Sigma$。若 $\Sigma$ 横截事件视界，则 $\mathcal H^+\cap\Sigma=\partial_\Sigma(\mathcal B\cap\Sigma)$；所以表观视界的点只能落在黑洞区域内部或事件视界上，不会位于事件视界的可见一侧。这就是“在事件视界之内或与其重合”的严格含义；反向包含一般不成立。
+于是 $\mathcal T_\Sigma\subset\mathcal B\cap\Sigma$。又因 $\mathcal V^+=I^-(\mathscr I^+)\cap M$ 是开集，$\mathcal B=M\backslash\mathcal V^+$ 闭合，故 $\mathcal A_\Sigma\subset\overline{\mathcal T_\Sigma}\subset\mathcal B\cap\Sigma$。若 $\Sigma$ 横截事件视界，则 $\mathcal H^+\cap\Sigma=\p_\Sigma(\mathcal B\cap\Sigma)$；所以表观视界的点只能落在黑洞区域内部或事件视界上，不会位于事件视界的可见一侧。这就是“在事件视界之内或与其重合”的严格含义；反向包含一般不成立。
 
 这里从严格负膨胀出发是必要的。对任意 MOTS，Raychaudhuri 方程在初始处只给出 $\dv*{\theta_{(\ell)}}{\lambda}=-\sigma_{\mu\nu}^{(\ell)}\sigma_{(\ell)}^{\mu\nu}-8\pi T_{\mu\nu}\ell^\mu\ell^\nu\leqslant0$，右端可能恒为零，不能据此直接推出有限距离内的焦点。表观视界作为严格外陷获区的边界，其位置由上述闭包论证保证；若一个 MOTS 还具有严格稳定性，能向陷获侧作任意小变形得到 $\theta_{(\ell)}<0$，同一极限论证也适用。退化情形中剪切与类光能流均可为零，$\theta_{(\ell)}$ 便能保持为零，这正容许非膨胀事件视界的截面本身成为 MOTS。
 
@@ -3175,7 +3194,7 @@ $\hat g_{\mu\nu}=g_{\mu\nu}+\lambda^2 A_{\mu}A_{\nu},\ \hat g_{\mu 4}=\lambda A_
 \eq{
     \hat R=R-\frac{\lambda^2}{4}F_{\mu\nu}F^{\mu\nu}.
 }
-这意味着五维几何 $\hat{\Lag}=\hat R$ 可在四维时空下分化出引力和电磁作用，称为\textbf{Kaluza 奇迹}。为求五维度规行列式，只需先对角化。考虑
+意味着五维几何 $\hat{\Lag}=\hat R$ 可在四维时空下分化出引力和电磁作用，称为\textbf{Kaluza 奇迹}。为求五维度规行列式，只需先对角化。考虑
 $H^\mu{}_{\nu}=\delta^\mu_\nu,\ H^4{}_{\nu}=-\lambda A_\nu,\ H^\mu{}_{4}=0,\ H^4{}_{4}=1$，
 则 $\hat g_{\mu a} H^a{}_{\nu}=g_{\mu\nu},\ \hat g_{\mu a} H^a{}_{4}=\lambda A_\mu,\ \hat g_{4 a} H^a{}_{\nu}=0,\ \hat g_{4 a} H^a{}_{4}=1$。因此 $\hat g=g$。
 但我们需要使对 $x^4$ 的积分收敛。注意 U(1) 变换中 $\theta$ 是周期等效的，因而第五维度对应于某个圆周。因而 U(1) 等效为了 SO(2)。这便是\textbf{紧化}(compactication)思想之源，最先由 Oskar Klein 引进。$g_{\mu\nu,4}=0$ 也称\textbf{圆柱条件}(cylindricity condition)。五维“时空”并非流形，在数学上是\textbf{纤维丛}(fiber bundle)，四维时空作为其\textbf{底流形}而第五维圆圈作为其\textbf{纤维}。假设半径 $L$，则
@@ -3252,8 +3271,8 @@ $\cd^\mu\phi\cd_\mu\phi$ 代替即可，因而算子 $\square$ 换为 $\square_g
 \[
     S^\alpha(\lambda) = \eval{\pdv{x^\alpha_{v+sw}(\lambda)}{s}}_{s=0} = w^\mu\pdv{x^\alpha_v(\lambda)}{v^\mu} = \lambda J^\alpha{}_\mu(\lambda v)w^\mu,
 \]
-这正是偏离 Jacobi 场。有 $S^\alpha(0) = 0,{\dv{S^\alpha}{\lambda}}(0) = w^\alpha$。根据定义，$\exists S^\alpha\ne 0,\lambda_0\ne 0$ 使 $S^\alpha(\lambda_0)=0$，则 $q=\exp_p(\lambda_0 v) = \gamma_v(\lambda_0)$ 称共轭点。即存在 $w^\mu\ne 0$ 使 $w^\mu J^\alpha{}_\mu(\lambda_0 v) = 0$，这意味着 $\det(J^\alpha{}_\mu(\lambda_0 v)) = 0$。即在 $\lambda_0 v$ 处 Jacobi 矩阵退化。而“多条测地线”代表的是非单射：存在 $a\ne b\in T_p M$ 使 $\exp_p a=\exp_p b$。非单射性、退化性不可互推。\S\ref{sec:tidal} 也曾用反例指出共轭性和“多条测地线”严格上无关。
-尽管 $\exp_p v$ 可能被人为挖去而无像，亦或非单射，但由于 $p$ 处$\rank(J^\alpha{}_\mu(0))=\rank(\delta^\alpha_\mu)=\dim M$，根据逆函数定理，总存在 $0\in T_p M$ 的\textit{开邻域} $O$ 和 $p$ 的开邻域 $N$，使 $\exp_p:O\to N$ 是微分同胚。这样的 $N$ 称为法邻域。
+这正是偏离 Jacobi 场。有 $S^\alpha(0) = 0,{\dv{S^\alpha}{\lambda}}(0) = w^\alpha$。根据定义，$\exists S^\alpha\ne 0,\lambda_0\ne 0$ 使 $S^\alpha(\lambda_0)=0$，则 $q=\exp_p(\lambda_0 v) = \gamma_v(\lambda_0)$ 称共轭点。即存在 $w^\mu\ne 0$ 使 $w^\mu J^\alpha{}_\mu(\lambda_0 v) = 0$，意味着 $\det(J^\alpha{}_\mu(\lambda_0 v)) = 0$。即在 $\lambda_0 v$ 处 Jacobi 矩阵退化。而“多条测地线”代表的是非单射：存在 $a\ne b\in T_p M$ 使 $\exp_p a=\exp_p b$。非单射性、退化性不可互推。\S\ref{sec:tidal} 也曾用反例指出共轭性和“多条测地线”严格上无关。
+尽管 $\exp_p v$ 可能被人为挖去而无像，抑或非单射，但由于 $p$ 处$\rank(J^\alpha{}_\mu(0))=\rank(\delta^\alpha_\mu)=\dim M$，根据逆函数定理，总存在 $0\in T_p M$ 的\textit{开邻域} $O$ 和 $p$ 的开邻域 $N$，使 $\exp_p:O\to N$ 是微分同胚。这样的 $N$ 称为法邻域。
 微分同胚使 Jacobi 矩阵非退化。
 
 
