@@ -615,7 +615,7 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
     \delta S &=\int \delta(\d[4]{x}\Lag)=\int \d[4]{x} (\bar\var\Lag+\p_\mu(\Lag\delta x^\mu))=\int\d[4]{x}\left(\fdv{\Lag}{\Phi^A}\bar\var\Phi^A - \p_\mu(\epsilon J^\mu)\right),\\
     J^\mu &:=-\frac{1}{\epsilon}\left(\pdv{\Lag}{\Phi^A_{,\mu}}\bar\var\Phi^A+\cdots+\Lag\delta x^\mu\right)=-\pdv{\Lag}{\Phi^A_{,\mu}} F^A+\cdots-\Lag \xi^\mu,\\
     \fdv{\Lag}{\Phi^A}&=\pdv{\Lag}{\Phi^A}-\p_\mu\pdv{\Lag}{\Phi^A_{,\mu}}+\cdots.
-\end{align*}
+\end{align*} 
 细心的读者可能发现一个看上去奇怪的等式：
 \[\p_\mu\Lag = \pdv{\Lag}{\Phi}\p_\mu\Phi + \pdv{\Lag}{\Phi_{,\nu}}\p_\mu\p_\nu\Phi + \cdots + \pdv{\Lag}{x^\mu}.\]
 因为左边 $\Lag=\Lag(x)$ 是复合函数简写，右边 $\Lag=\Lag(x,\Phi,\p\Phi,\cdots)$ 是定义式简写。简写时习惯用 $\p_\mu,\pdv*{x^\mu}$ 区分，前者表示复合函数（时空场）的坐标偏导，后者表示泛函型显式偏导。对 $\Lag$ 之外的事物不用区分 $\p_\mu,\pdv*{x^\mu}$。
@@ -1240,7 +1240,7 @@ $g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu
 代入有 $k^{\mu\nu} = -h^{\mu\nu} + O(h^2)$，因此一阶上 $g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu}$。由于所考虑的物理量 $T^{\cdots}$ 几乎使用 $h_{\mu\nu}$ 构造，属于 $O(h)$，因此升降指标 $g_{\mu\nu} T^{\nu\cdots} = \eta_{\mu\nu} T^{\nu\cdots} + O(h^2)$，即相当于用 $\eta_{\mu\nu}$ 升降。这包括 $h_{\mu\nu}$ 自身的升降，当然例外也正是 $g^{\mu\nu} \ne \eta^{\alpha\mu}\eta^{\beta\nu}g_{\alpha\beta}$。
 考虑无穷小变换（单参微分同胚） $\delta x^\mu=x'^\mu-x^\mu=\epsilon^\mu(x)$，则（以下均省略 $O(\epsilon^2)$）
 \[\delta g_{\mu\nu} = (\delta^\alpha_\mu - \p_\mu \epsilon^\alpha)(\delta^\beta_\nu - \p_\nu \epsilon^\beta) g_{\alpha\beta}(x) - g_{\mu\nu}(x) = - (g_{\alpha\nu} \p_\mu \epsilon^\alpha + g_{\mu\beta} \p_\nu \epsilon^\beta).\]
-另一方面 $\delta g_{\mu\nu} = \bar\var g_{\mu\nu} + \epsilon^\lambda\p_\lambda g_{\mu\nu}(x)$，因此
+另一方面 $\delta = \bar\var + \epsilon^\lambda\p_\lambda$，因此
 \eq{
     \bar\var g_{\mu\nu} = - (\epsilon^\lambda\p_\lambda g_{\mu\nu} + g_{\alpha\nu} \p_\mu \epsilon^\alpha + g_{\mu\beta} \p_\nu \epsilon^\beta) \im \bar\var h_{\mu\nu} = - (\p_\mu \epsilon_\nu + \p_\nu \epsilon_\mu).
 }
@@ -1582,8 +1582,6 @@ $\Lambda$ 称为\textbf{宇宙学常数}(cosmological constant)。
 故协变导数的确通过相加项来修改偏导。
 记忆技巧：先填上一个偏导，再对所有指标依次添加相应的克氏符修正项（正负取决于指标上下），并满足指标平衡。
 举例，标量：$\cd_\nu f = f_{;\nu} =f_{,\nu}$（梯度 $f_{,\nu}$ 已是张量）；逆变矢量：$V^\mu{}_{;\nu}=\cd_\nu V^\mu :={V^\mu}{}_{,\nu}+\{^\mu_{\sigma\nu}\}V^\sigma$。协变矢量：$\omega_{\mu;\nu}=\omega_{\mu,\nu}-\{^\sigma_{\mu\nu}\}\omega_\sigma$。
-
-
 给定曲线 $x^\mu(\tau)$，\textbf{沿线协变导数}为
 \eq{
     \Dv{\tau} := U^\nu \cd_\nu = U^\nu \left( \pdv{x^\nu} + \{^\lambda_{\nu\mu}\} \right) = \dv{\tau} + \{^\lambda_{\nu\mu}\} U^\nu.
@@ -1615,6 +1613,18 @@ $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 若还要涵盖局域 Poincaré 对称性，需要考虑有挠，但此时适配性反而将破坏等效原理。}。 
 适配性的另一个好处在于保持内积，比如 $A^\mu U_\mu=\frac 12\Dv{\tau} (g_{\mu\nu} U^\nu U^\mu)=0$；假设 $V^\mu,W^\nu$ 沿某条线平行移动，则内积沿线恒定 $\Dv{\tau}(V^\mu W_\mu)=0$，以及 $\Dv{\tau}(V^\mu V_\mu)=0$。
 除声明外，本章默认 $\Gamma^\lambda_{\mu\nu}=\{^\lambda_{\mu\nu}\}$ 且不区分。
+
+1,2 阶张量的\textbf{协变散度}为
+\begin{align}
+V^\mu{}_{;\mu}&= V^\mu{}_{,\mu}+\Gamma_{ \mu\nu}^\mu V^\nu=V^\mu{}_{,\mu}+V^\mu \p_\mu\ln\sqrt{-g} =\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} V^\mu\right),\\ 
+T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}+\Gamma_{\lambda \nu}^\nu T^{\mu \lambda}
+=\frac{1}{\sqrt{-g}} \p_\nu\left(\sqrt{-g} T^{\mu \nu}\right)+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}.
+\end{align}
+注意函数 $f$ 的 Laplace-Beltrami 算子
+\eq{
+    \square_g f=\cd_\mu\cd^\mu f=\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} g^{\mu\nu}\p_\nu f\right),
+}
+故 $g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$ 还可转写为 $\square_g x^\lambda=(-g)^{-1/2}\p_\mu(\sqrt{-g} g^{\mu\lambda})=-g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$，其中 $x^\mu$ 按函数处理，因而也称\textbf{谐和坐标}\footnote{数学上 $\square f = 0$ 的解称为谐和(harmonic)函数。}条件。
 
 给定度规，求解克氏符、测地线。直接用公式法是很麻烦的，因为对零分量的计算无法跳过。
 计算测地线总通过度规变分：$L\propto g_{\mu\nu} U^\mu U^\nu$ 计算 E-L 方程，
@@ -1654,25 +1664,73 @@ $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 \eq{
     \bar\var g_{\mu\nu} = - (\epsilon^\lambda\p_\lambda g_{\mu\nu} + g_{\alpha\nu} \p_\mu \epsilon^\alpha + g_{\mu\beta} \p_\nu \epsilon^\beta) = - (\cd_\mu \epsilon_\nu+\cd_\nu \epsilon_\mu).
 }
-类似地也有 $\bar\var g^{\mu\nu} = \cd^\mu \epsilon^\nu + \cd^\nu \epsilon^\mu$。
-$S_M$ 广义不变，则关于 $\Phi,g_{\mu\nu}$ 的 $\bar\var$ 变分为
+类似地 $\bar\var g^{\mu\nu} = \cd^\mu \epsilon^\nu + \cd^\nu \epsilon^\mu$。现以 $\Phi$ 指代物质场，设 $\mathcal L_M$ 不含高阶导，因此
+\eq{
+    \pdv{\Phi^A_{,\lambda}} = \pdv{\cd_\kappa\Phi^B}{\Phi^A_{,\lambda}} \pdv{\Phi^B_{;\lambda}} = \delta^\lambda_\kappa\delta^B_A \pdv{\Phi^B_{;\lambda}} = \pdv{\Phi^A_{;\lambda}}.
+}
+因而 $\pdv*{\Lag}{\Phi_{,\mu}}=\pdv*{\Lag}{\Phi_{;\mu}}$ 是张量，给出
+\[
+    \fdv{\Lag\sqrt{-g}}{\Phi}=\sqrt{-g}\pdv{\Lag}{\Phi}-\p_\mu\left(\sqrt{-g}\pdv{\Lag}{\Phi_{,\mu}}\right) = \sqrt{-g}\mathcal E,\quad \mathcal E:=\pdv{\Lag}{\Phi}-\cd_\mu\pdv{\Lag}{\Phi_{;\mu}}.
+\]
+易推广得形如 $\bar\var\Phi = -\frac12\Sigma^{\mu\nu}\Phi\p_\mu\epsilon_\nu - \epsilon^\lambda\p_\lambda \Phi = -\frac12\Sigma^{\mu\nu}\Phi\cd_\mu\epsilon_\nu - \epsilon^\lambda\cd_\lambda \Phi$，广义不变给出
+\begin{align*}
+    \delta S_M &=\int \d[4]{x} (\bar\var(\Lag_M\sqrt{-g})+\p_\mu(\Lag_M\sqrt{-g}\epsilon^\mu))=\int\d[4]{x}\bigg(\sqrt{-g}\mathcal E_M\bar\var\Phi + \frac12\sqrt{-g}T^{\mu\nu}\bar\var g_{\mu\nu} \\
+    &+ \p_\mu\left(\sqrt{-g}\pdv{\Lag_M}{\Phi_{,\mu}}\bar\var\Phi+\pdv{\Lag_M\sqrt{-g}}{g_{\alpha\beta,\mu}}\bar\var g_{\alpha\beta}+\Lag_M\sqrt{-g}\epsilon^\mu\right)\bigg),\\
+    &= \int\d[4]{x}\sqrt{-g}\left(\mathcal E_M\bar\var\Phi - T^{\mu\nu}\cd_\mu\epsilon_\nu + \cd_\mu (S^{\mu\nu}\epsilon_\nu - X^{\alpha\mu\beta}\cd_\alpha\epsilon_\beta )\right)\\
+    &= \int\d[4]{x}\sqrt{-g}\left(\mathcal E_M\bar\var\Phi - T^{\mu\nu}\cd_\mu\epsilon_\nu + \cd_\mu(B^{\mu\nu}\epsilon_\nu) \right),
+\end{align*}
+其中
+\begin{align*}
+    S^{\mu\nu} &:= - \pdv{\Lag_M}{\Phi_{;\mu}} \cd^\nu\Phi + \Lag_M g^{\mu\nu},\quad N^{\lambda\mu\nu} := - \pdv{\Lag_M}{\Phi_{;\lambda}} \Sigma^{\mu\nu}\Phi,\\ X^{\lambda\mu\nu} &:= \frac 12 (N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda}),\quad B^{\mu\nu} := S^{\mu\nu} + \cd_\alpha X^{\alpha\mu\nu}.
+\end{align*}
+其中关键是证明
+\eq{
+    \pdv{\Lag_M\sqrt{-g}}{g_{\alpha\beta,\mu}} = ?N^{\mu\alpha\beta}?
+}
+从而 $B^{\mu\nu}$
+Belinfante 张量
+
+\begin{align}
+    &\p_\lambda J^{\lambda\mu\nu}
+    =-2(\p_\lambda S^{\lambda[\mu})x^{\nu]}
+      +2S^{[\mu\nu]}
+      +\p_\lambda N^{\lambda\mu\nu}=2\fdv{\Lag}{\Phi} x^{[\mu}\p^{\nu]}\Phi
+      +2S^{[\mu\nu]}
+      +\p_\lambda N^{\lambda\mu\nu}\notag\\
+    &\im
+    \p_\lambda N^{\lambda\mu\nu}
+    =-2S^{[\mu\nu]}
+    +\fdv{\Lag}{\Phi}\Sigma^{\mu\nu}\Phi
+    \xlongequal{\text{在壳}}
+    -2S^{[\mu\nu]}.
+\end{align}
+置待求的对称能动张量 $S^{\mu\nu} + \p_\lambda X^{\lambda\mu\nu}$，其中 $X^{\sigma\mu\nu}=X^{[\sigma\mu]\nu}$。如果在壳，对称导致 $\p_\lambda X^{\lambda[\mu\nu]} = -S^{[\mu\nu]} = \frac 12\p_\lambda N^{\lambda\mu\nu}$。
+故最简单的取法为 $X^{\lambda[\mu\nu]} = \frac 12 N^{\lambda\mu\nu}$，
+\[
+    B^{[\mu\nu]}
+    =S^{[\mu\nu]}
+     +\frac12\p_\lambda N^{\lambda\mu\nu}
+    =\frac12\fdv{\Lag}{\Phi}
+      \Sigma^{\mu\nu}\Phi\xlongequal{\text{在壳}}0,\quad
+    \p_\mu B^{\mu\nu}
+    =\p_\mu S^{\mu\nu}
+    =\fdv{\Lag}{\Phi}\p^\nu\Phi
+    \xlongequal{\text{在壳}}0,
+\]
+故 Belinfante 张量在壳时才能对称且守恒。
+与 $J^\mu$ 的关系为
+\[
+    -B^{\mu\nu}\xi_\nu = -S^{\mu\nu}\xi_\nu + X^{\lambda\mu\nu}\p_\lambda\xi_\nu  - \p_\lambda(X^{\lambda\mu\nu}\xi_\nu) = J^\mu  - \p_\lambda(X^{\lambda\mu\nu}\xi_\nu).
+\]
+
+则
 \begin{align*}
     0&\simeq\int\d[4]x \left(\fdv{\Lag_M\sqrt{-g}}{\Phi} \bar\var \Phi-\sqrt{-g}\,T^{\mu\nu} \cd_\mu \epsilon_\nu \right)\\
     &\xlongequal{\text{在壳}} -\int\d[4]x \sqrt{-g}\,T^{\mu\nu} \cd_\mu \epsilon_\nu \simeq \int\d[4]x \sqrt{-g}\,(\cd_\mu T^{\mu\nu})\epsilon_\nu,
 \end{align*}
 其中第一步已由 $\epsilon^\mu$ 紧支撑略去边界项。
 故广义不变性带来在壳守恒性 $\cd_\mu T^{\mu\nu}=0$。其中注意 Fréchet 变分与 $\bar\var$ 性质相似，$\bar\var$ 的系数就是普通 Fréchet 变分所得结果。
-此称协变散度，对 1,2 阶张量有
-\begin{align}
-V^\mu{}_{;\mu}&= V^\mu{}_{,\mu}+\Gamma_{ \mu\nu}^\mu V^\nu=V^\mu{}_{,\mu}+V^\mu \p_\mu\ln\sqrt{-g} =\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} V^\mu\right),\\ 
-T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}+\Gamma_{\lambda \nu}^\nu T^{\mu \lambda}
-=\frac{1}{\sqrt{-g}} \p_\nu\left(\sqrt{-g} T^{\mu \nu}\right)+\Gamma_{\lambda \nu}^\mu T^{\lambda \nu}.
-\end{align}
-注意函数 $f$ 的 Laplace-Beltrami 算子
-\eq{
-    \square_g f=\cd_\mu\cd^\mu f=\frac{1}{\sqrt{-g}} \p_\mu\left(\sqrt{-g} g^{\mu\nu}\p_\nu f\right),
-}
-故 $g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$ 还可转写为 $\square_g x^\lambda=(-g)^{-1/2}\p_\mu(\sqrt{-g} g^{\mu\lambda})=-g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$，其中 $x^\mu$ 按函数处理，因而也称\textbf{谐和坐标}\footnote{数学上 $\square f = 0$ 的解称为谐和(harmonic)函数。}条件。
+
 
 由 \S\ref{sec:Lag-Noe} 知识，微分同胚不变性给出
 \[
