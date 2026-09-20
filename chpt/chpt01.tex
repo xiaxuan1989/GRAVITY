@@ -627,7 +627,7 @@ J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cd
     \item 仅在 $\delta \Phi=0$ 条件下，可通过修改 $\Lag$ 使其消除边界项；
     \item 考虑积分域 $U$时，规定边界上任意阶都有 $(\delta \Phi)_{,\cdots}=0$（比如认为 $U$ 外的旁路 $\Phi$ 恒定地与边界一致），这一更强的条件使 $\Lag$ 无论含多少阶导数都能消除边界项。
 \end{enumerate}
-总之，不与物理意义冲突时，默认舍去变分中的全微分项。有 E-L 方程 $\fdv*{\Lag}{\Phi^A}=0$。$\Phi$ 在壳时 $J^\mu$ 正是整体守恒流，也称\textbf{Noether 流}，满足连续性方程 $\p_\mu J^\mu=0$。
+总之，不与物理意义冲突时，默认舍去变分中的全微分项。有 E-L 方程 $\fdv*{\Lag}{\Phi}=0$。$\Phi$ 在壳时 $J^\mu$ 正是整体守恒流，也称\textbf{Noether 流}，满足连续性方程 $\p_\mu J^\mu=0$。
 在粒子情形我们通过决定性原理排除高阶导，而现在 $\p$ 还包含相互作用势的含义，高阶导数可能导致能量无下界，故一般不考虑高阶导。\S\ref{sec:Einstein} 还出现一类情况：高阶导只存在于边界项中，于是在变分时实质上消除掉了。若非要考虑高阶导，则公式法本身也并不方便。
 为规避这些麻烦，直接具体问题具体分析，按相似程序计算变分即可。
 
@@ -670,8 +670,7 @@ $J^0,\bm J$ 为\textit{惯性系 $\{x\}$ 所测}\textbf{荷密度}、\textbf{流
 纯时空变换 $\delta x^\mu=\epsilon \xi^\mu$（标量场必有 $\var\phi=0$，但一般 $\delta\Phi\ne 0$）对应\textbf{时空对称性}或\textbf{外部对称性}，纯场变换 $\delta x^\mu=0$（必有 $\bar\var=\delta$）对应\textbf{内部对称性}。
 置 $\{x\}$ 为惯性系。
 时空平移（$\xi^\mu$ 为\textit{任意}常矢量）是 $\Lambda^\mu{}_\nu=\delta^\mu_\nu$ 的 Poincaré 变换，故任意张量 $\Phi$ 都有 $\tilde\Phi(\tilde x)=\Phi(x)$，即保持 $\delta\Phi=0$。平移保持 $\delta(\d[4] x)=0$，$\delta S=0$ 给出 $\delta\Lag = \pdv{\Lag}{x^\mu}\var x^\mu = 0$，与粒子拉氏理论类似。则有\textbf{时空平移对称} $\pdv*{\Lag}{x^\mu}=0$。
-局域化方法应最终得到 $\p_\mu\var x_\nu=\xi_\nu\p_\mu \epsilon$ 项，即
-\[\delta S=-\int\d[4]{x} J^\mu\p_\mu \epsilon=\int\d[4]{x} S^{\mu\nu}\xi_\nu\p_\mu \epsilon, \quad S^{\mu\nu}\xi_\nu:=-J^\mu.\]
+局域化方法应最终得到 $\p_\mu\var x_\nu=\xi_\nu\p_\mu \epsilon$ 项，即 $\delta S=-\int\d[4]{x} J^\mu\p_\mu \epsilon=\int\d[4]{x} S^{\mu\nu}\xi_\nu\p_\mu \epsilon$。
 对 $\Lag(\Phi,\p\Phi)$ 情形，代入 $\delta\Phi=0$ 有
 \eq{
     S^{\mu\nu}:=-\pdv{\Lag}{\Phi_{,\mu}}\p^\nu\Phi+\Lag\eta^{\mu\nu},\quad J^\mu=\pdv{\Lag}{\Phi_{,\mu}}\xi^\nu\p_\nu\Phi-\Lag\xi^\mu.
@@ -799,7 +798,7 @@ $s^{\mu\nu}$ 为\textbf{自旋角动量}，来自于 $\Sigma^{\mu\nu}$。
     -2S^{[\mu\nu]}.
 \end{align}
 置待求的对称能动张量 $S^{\mu\nu} + \p_\lambda X^{\lambda\mu\nu}$，其中 $X^{\sigma\mu\nu}=X^{[\sigma\mu]\nu}$。如果在壳，对称导致 $\p_\lambda X^{\lambda[\mu\nu]} = -S^{[\mu\nu]} = \frac 12\p_\lambda N^{\lambda\mu\nu}$。
-故最简单的取法为 $X^{\lambda[\mu\nu]} := \frac 12 N^{\lambda\mu\nu}$，不难解出 $X^{\lambda\mu\nu} := \frac 12 (N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda})$。
+故最简单的取法为 $X^{\lambda[\mu\nu]} = \frac 12 N^{\lambda\mu\nu}$，不难解出 $X^{\lambda\mu\nu} := \frac 12 (N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda})$。
 有
 \eq{
     B^{\mu\nu} := S^{\mu\nu} + \p_\lambda X^{\lambda\mu\nu} = -\pdv{\Lag}{\Phi_{,\mu}}\p^\nu\Phi+\Lag\eta^{\mu\nu} + \frac 12 \p_\lambda(N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda}).
@@ -829,9 +828,9 @@ $s^{\mu\nu}$ 为\textbf{自旋角动量}，来自于 $\Sigma^{\mu\nu}$。
     &=\int\d[4]{x} B^{\lambda\nu} \p_\lambda\var x_\nu - \int\d[4]{x} \p_\sigma\left(X^{\sigma\lambda\nu}\xi_\nu\p_\lambda\epsilon\right).
 \end{align*}
 其中用到 $B^{\mu\nu}\omega_{\mu\nu}=0$（从而 $B^{\lambda\nu} \p_\lambda\var x_\nu=B^{\lambda\nu}\xi_\nu\p_\lambda\epsilon$），$X^{\sigma\lambda\nu}\xi_\nu\p_\sigma\p_\lambda\epsilon=0$。
-另一方面，根据 $\partial_\lambda N^{\lambda\mu\nu}=-2S^{[\mu\nu]}$ 和 $X^{\lambda\mu\nu}\omega_{\mu\nu}=\frac12 N^{\lambda\mu\nu}\omega_{\mu\nu}$，同一变分也可写为
+另一方面，在壳时 $\partial_\lambda N^{\lambda\mu\nu}=-2S^{[\mu\nu]}$，根据 $X^{\lambda\mu\nu}\omega_{\mu\nu}=\frac12 N^{\lambda\mu\nu}\omega_{\mu\nu}$，可有
 \[
-    \delta S=\int\d[4]{x} S^{\lambda\nu} \p_\lambda\var x_\nu - \frac12\int\d[4]{x} \p_\lambda\left( N^{\lambda\mu\nu}\omega_{\mu\nu}\epsilon\right).
+    \delta S\xlongequal{\text{在壳}}\int\d[4]{x} S^{\lambda\nu} \p_\lambda\var x_\nu - \frac12\int\d[4]{x} \p_\lambda\left( N^{\lambda\mu\nu}\omega_{\mu\nu}\epsilon\right).
 \]
 可见消除不同的边界项会读出不同能动张量。
 选择 $B^{\mu\nu}$ 对应于只要求 $\p_\mu\epsilon=o(1/r^3)$ 而不要求 $\epsilon=o(1/r^3)$。这说明这里所选的局域化 $\epsilon(x)$ 在无穷远渐近为整体 Lorentz 变换。
@@ -1406,13 +1405,13 @@ R_{\lambda\mu\nu\kappa} = 2g_{[\lambda|[\kappa,\nu]|\mu]} +g_{\sigma\rho}\left(\
 真空方程已能描述很多引力现象，因为场源往往限制在很小的区域内，而外部区域真空，可允许试验粒子运动。
 引入耦合常数 $\kappa$，总和记 $\Lag=\frac{1}{2\kappa}\Lag_G +\Lag_M$，则
 \[
-\var S\simeq\int\d[4]x\sqrt{-g} \left(\frac{1}{2\kappa}G_{\mu\nu}-\frac12 T_{\mu\nu}\right)\var g^{\mu\nu}=\frac{1}{2\kappa}\int\d[4]x\sqrt{-g} \left(G_{\mu\nu}-\kappa T_{\mu\nu}\right)\var g^{\mu\nu},
+\var S\simeq\frac{1}{2\kappa}\int\d[4]x\sqrt{-g} \left(G_{\mu\nu}-\kappa T_{\mu\nu}\right)\var g^{\mu\nu},
 \]
 其中\textbf{Hilbert 张量}
-\eq{T_{\mu \nu}:=-2\fdv{\Lag_M}{g^{\mu\nu}}+g_{\mu\nu}\Lag_M=-\frac{2}{\sqrt{-g}}\fdv{g^{\mu\nu}}(\Lag_M\sqrt{-g}).}
+\eq{T_{\mu \nu}:=-2\fdv{\Lag_M}{g^{\mu\nu}}+g_{\mu\nu}\Lag_M=-\frac{2}{\sqrt{-g}}\fdv{\Lag_M\sqrt{-g}}{g^{\mu\nu}}.}
 显然对称。同理，可取 $\delta S_M =\frac{1}{2} \int\d[4]x\sqrt{-g}\, T^{\mu \nu} \delta g_{\mu \nu}$ 而有
 \eq{
-T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{g_{\mu\nu}}(\Lag_M\sqrt{-g})=2\fdv{\Lag_M}{g_{\mu\nu}}+g^{\mu\nu}\Lag_M=g^{\mu\alpha}g^{\nu\beta} T_{\alpha\beta}.
+T^{\mu \nu}:=\frac{2}{\sqrt{-g}}\fdv{\Lag_M\sqrt{-g}}{g_{\mu\nu}}=2\fdv{\Lag_M}{g_{\mu\nu}}+g^{\mu\nu}\Lag_M=g^{\mu\alpha}g^{\nu\beta} T_{\alpha\beta}.
 }
 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 即引力场方程，但系数还未确定。还可有\textbf{反迹}(trace-reversed)表达
 \[ 
@@ -1658,9 +1657,10 @@ $\D$ 称为\textbf{绝对微分}或\textbf{协变微分}，日文译为\textbf{�
 类似地也有 $\bar\var g^{\mu\nu} = \cd^\mu \epsilon^\nu + \cd^\nu \epsilon^\mu$。
 $S_M$ 广义不变，则关于 $\Phi,g_{\mu\nu}$ 的 $\bar\var$ 变分为
 \begin{align*}
-    0&=\int\d[4]x \left(\fdv{\Phi}(\Lag_M\sqrt{-g}) \bar\var \Phi-\sqrt{-g}\,T^{\mu\nu} \cd_\mu \epsilon_\nu \right)\\
+    0&\simeq\int\d[4]x \left(\fdv{\Lag_M\sqrt{-g}}{\Phi} \bar\var \Phi-\sqrt{-g}\,T^{\mu\nu} \cd_\mu \epsilon_\nu \right)\\
     &\xlongequal{\text{在壳}} -\int\d[4]x \sqrt{-g}\,T^{\mu\nu} \cd_\mu \epsilon_\nu \simeq \int\d[4]x \sqrt{-g}\,(\cd_\mu T^{\mu\nu})\epsilon_\nu,
 \end{align*}
+其中第一步已由 $\epsilon^\mu$ 紧支撑略去边界项。
 故广义不变性带来在壳守恒性 $\cd_\mu T^{\mu\nu}=0$。其中注意 Fréchet 变分与 $\bar\var$ 性质相似，$\bar\var$ 的系数就是普通 Fréchet 变分所得结果。
 此称协变散度，对 1,2 阶张量有
 \begin{align}
@@ -1674,13 +1674,14 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 }
 故 $g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$ 还可转写为 $\square_g x^\lambda=(-g)^{-1/2}\p_\mu(\sqrt{-g} g^{\mu\lambda})=-g^{\mu\nu}\Gamma^\lambda_{\mu\nu}= 0$，其中 $x^\mu$ 按函数处理，因而也称\textbf{谐和坐标}\footnote{数学上 $\square f = 0$ 的解称为谐和(harmonic)函数。}条件。
 
-已知 Belinfante 张量的局域化方法结果形如 $\var S_M=\int\d[4]{x} B^{\mu\nu} \p_\mu \epsilon_\nu =\frac12\int\d[4]{x} B^{\mu\nu} (\p_\mu \epsilon_\nu+\p_\nu \epsilon_\mu)$，其最小引力耦合版本是
-\[\var S_M=\frac12\int\d[4]x\sqrt{-g}\,B^{\mu\nu} (\cd_\mu \epsilon_\nu+\cd_\nu \epsilon_\mu).\]
-
-上式意味着 $T^{\mu\nu}=B^{\mu\nu}$。
-
-
-
+由 \S\ref{sec:Lag-Noe} 知识，微分同胚不变性给出
+\[
+    \fdv{\Lag\sqrt{-g}}{\Phi}\bar\var\Phi+\frac12 \sqrt{-g} T^{\mu\nu}\bar\delta g_{\mu\nu} = \p_\mu(-S^{\mu\nu} \xi_\nu)
+\]
+其中正则能动张量定义为……
+引入Belinfante 张量……
+随后可给出两个恒等式……
+故在壳时 $T^{\mu\nu}=B^{\mu\nu}$。
 
 宏观经典流体\textbf{Fock-Dirac-Hawking 有效作用量}为
 \eq{
@@ -3509,6 +3510,21 @@ $\Lie_\xi T^{\mu\nu}=\xi^\lambda \p_\lambda T^{\mu\nu}-T^{\lambda\nu}\p_\lambda 
 \eq{
     \bar\var \Phi = \delta\Phi - \epsilon\xi^\lambda\p_\lambda\Phi = -\epsilon \Lie_\xi \Phi.
 }
+
+
+\[
+\begin{aligned}
+\delta T^{\alpha_1\cdots\alpha_r}{}_{\beta_1\cdots\beta_s}
+={}&
+\sum_{i=1}^r
+(\partial_\rho\epsilon^{\alpha_i})
+T^{\alpha_1\cdots\rho\cdots\alpha_r}{}_{\beta_1\cdots\beta_s}\\
+&-
+\sum_{j=1}^s
+(\partial_{\beta_j}\epsilon^\rho)
+T^{\alpha_1\cdots\alpha_r}{}_{\beta_1\cdots\rho\cdots\beta_s}.
+\end{aligned}
+\]
 
 显然 Killing 矢量场的常系数线性组合还是 Killing 矢量场，所以等度规群可对应于全体 Killing 矢量场所构成的线性空间。于是，我们只要找到一组基底即可，即最大的一组线性独立的 Killing 矢量场。
 
