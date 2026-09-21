@@ -676,7 +676,7 @@ $J^0,\bm J$ 为\textit{惯性系 $\{x\}$ 所测}\textbf{荷密度}、\textbf{流
     S^{\mu\nu}:=-\pdv{\Lag}{\Phi_{,\mu}}\p^\nu\Phi+\Lag\eta^{\mu\nu},\quad J^\mu=\pdv{\Lag}{\Phi_{,\mu}}\xi^\nu\p_\nu\Phi-\Lag\xi^\mu.
 }
 在壳时 $\p_\mu J^\mu=0$ 给出守恒标量 $\int\d[3]{x} J^0 = - \int\d[3]{x} S^{0\nu}\xi_\nu$，但注意 $\p_\mu\xi_\nu=0$，因此可提出积分，换言之应考虑 $-\p_\mu J^\mu = \xi_\nu\p_\mu S^{\mu\nu} = 0\Rightarrow \p_\mu S^{\mu\nu}=0$。
-也可不预先使用场方程，直接计算得
+也可不预先使用场方程，直接计算得散度
 \eq{
     \p_\mu S^{\mu\nu}
     =\fdv{\Lag}{\Phi}\p^\nu\Phi
@@ -935,8 +935,7 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
 \[
     \p_i\delta_n(x) = \eval{\pdv{\delta(\bm y)}{y^j}}_{\bm y = \bm Y} \p_i Y^j = \eval{\pdv{\delta(\bm y)}{y^i}}_{\bm y = \bm Y},\enskip\p_t\delta_n(x) = \eval{\pdv{\delta(\bm y)}{y^i}}_{\bm y = \bm Y} \p_t Y^i = -\dot{\bm x}_n(t)\cdot\grad\delta_n(x).
 \]
-质点气能动张量散度为
-\[\p_\mu \hat T^{\mu\nu} = \p_\mu \sum_n \dot x^\mu_n(t) p^\nu_n(t) \delta_n(x)= \sum_n \left(\p_t(p^\nu_n \delta_n) + \dot x^i_n p^\nu_n \p_i\delta_n\right) = \sum_n \dot p^\nu_n \delta_n.\]
+\[\im\p_\mu \hat T^{\mu\nu} = \p_\mu \sum_n \dot x^\mu_n(t) p^\nu_n(t) \delta_n(x)= \sum_n \left(\p_t(p^\nu_n \delta_n) + \dot x^i_n p^\nu_n \p_i\delta_n\right) = \sum_n \dot p^\nu_n \delta_n.\]
 式右称为\textbf{微观力密度}。
 仅当只考虑自由项时才能写 $\p_\mu \hat T^{\mu\nu}=0$，守恒量为 Lorentz 总 4-动量 $\int\d[3]{x} \hat T^{0\nu} = \sum_n p^\nu_n$。当然，变分也会得 $\dot p^\nu_n=0$ 而给出 $\p_\mu \hat T^{\mu\nu}=0$，自洽。
 考虑粒子间不可穿透，发生碰撞，这可来自于某种短程斥力的硬核极限。
@@ -1057,10 +1056,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 }
 称 $q F^{\mu}{}_{\nu}u^\nu$ 为\textbf{4-Lorentz 力}。 
 可见最小耦合迫使场强成为 4-速的线性变换。
-4-Lorentz 力密度为
-\[
-    \p_\mu\hat T^{\mu\nu} = \sum_n \dot p^\nu_n \delta_n = \sum_n q_n F^{\nu}{}_{\lambda}\dot x^\lambda_n \delta_n = F^{\mu}{}_{\lambda} J^\lambda.
-\]
+4-Lorentz 力密度为 $\p_\mu\hat T^{\mu\nu} = \sum_n \dot p^\nu_n \delta_n = \sum_n q_n F^{\nu}{}_{\lambda}\dot x^\lambda_n \delta_n = F^{\mu}{}_{\lambda} J^\lambda$。
 矢量场的正则能动张量一般不对称，且无规范不变性。考虑用 Belinfante 张量：
 \eq{
 \tcbhighmath{
@@ -1713,7 +1709,8 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
     0&\simeq \int \d[4]x\sqrt{-g} \big(-\mathcal E_M\nabla^\nu\Phi +\nabla_\mu T^{\mu\nu} - \nabla_\mu(\mathcal E_M J^{\mu\nu}\Phi) \big)\epsilon_\nu\\
     &\im \nabla_\mu T^{\mu\nu} = \mathcal E_M\nabla^\nu\Phi + \nabla_\mu(\mathcal E_M J^{\mu\nu}\Phi) \xlongequal{\text{在壳}} 0.
 \end{align*}
-但其实通常用更强的拉氏量不变来实现作用量不变： $\bar\var(\Lag_M\sqrt{-g})+\p_\mu(\Lag_M\sqrt{-g}\epsilon^\mu) = 0$ 对任意时空点成立。$\epsilon_\nu(x)$ 是任意的，有多任意呢？总可找到光滑 $\epsilon_\nu(x)$ 同时满足任意给定点 $p$ 处的任意 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 条件。有时也称二者可彼此独立任意指定。故对 $p$ 总可取 $\epsilon_\nu(x)$ 使要么 $\epsilon_\nu(p)=0$ 要么 $\cd_\mu\epsilon_\nu(p)=0$。则 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 的系数都在 $p$ 处为零，由于 $p$ 任意，则实际为恒等式：
+上式也称\textbf{Ward 恒等式}。
+通常用更强的拉氏量不变来实现作用量不变： $\bar\var(\Lag_M\sqrt{-g})+\p_\mu(\Lag_M\sqrt{-g}\epsilon^\mu) = 0$ 对任意时空点成立。$\epsilon_\nu(x)$ 是任意的，有多任意呢？总可找到光滑 $\epsilon_\nu(x)$ 同时满足任意给定点 $p$ 处的任意 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 条件。有时也称二者可彼此独立任意指定。故对 $p$ 总可取 $\epsilon_\nu(x)$ 使要么 $\epsilon_\nu(p)=0$ 要么 $\cd_\mu\epsilon_\nu(p)=0$。则 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 的系数都在 $p$ 处为零，由于 $p$ 任意，则实际为恒等式：
 \eq{
     \nabla_\mu B^{\mu\nu} =\mathcal E_M\nabla^\nu\Phi \xlongequal{\text{在壳}} 0,\quad T^{\mu\nu} = B^{\mu\nu} +\mathcal E_M J^{\mu\nu}\Phi  \xlongequal{\text{在壳}} B^{\mu\nu}.
 }
@@ -2219,21 +2216,17 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
 \]
 这并不表示物理的 Lorentz 对称性破坏，而是说只含两个物理螺旋度的势不能同时保持简单的张量变换律与固定规范。正则量子化可以接受这种非显式协变性；协变量子化则保留 $h_{\mu\nu}$ 的冗余分量，再以规范固定、Faddeev--Popov 鬼场或等价的 BRST 条件保证物理态和散射振幅中只剩 $\pm2$。两条路线在可比较的微扰阶给出相同物理结果。
 
-更深的困难来自紫外区。取 $\hbar=c=1$ 时，$[G]=\mathrm{mass}^{-2}$，引力耦合具有负质量维数；量纲计数表明 $G^n$ 阶振幅会出现形如 $G^n\int p^{2n-1}\d p$ 的高动量发散。它们不能只靠有限个质量或耦合常数吸收，而需依次加入 $R^2,R_{\mu\nu}R^{\mu\nu}$ 及更高曲率反项，故纯 Einstein 引力作为基本微扰理论不可重整化。但这不妨碍把它当作低能有效场论：当特征能量 $E\ll M_{\mathrm{Pl}}\sim G^{-1/2}$ 时，高阶曲率项按 $E/M_{\mathrm{Pl}}$ 受控压低，有限阶仍有确定的预言；缺少的是紫外完备理论。
-
-最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein--Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
-
-有效的取法，还可考虑 $R_{\mu\nu} R^{\mu\nu},R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}$ 等，称为\textbf{Gauss-Bonnet 项}：
+更深的困难来自紫外区。取 $\hbar=c=1$ 时，$[G]=\mathrm{mass}^{-2}$，引力耦合具有负质量维数；量纲计数表明 $G^n$ 阶振幅会出现形如 $G^n\int p^{2n-1}\d p$ 的高动量发散。它们不能只靠有限个质量或耦合常数吸收，而需依次加入 $R^2,R_{\mu\nu}R^{\mu\nu}$ 及更高曲率甚至高阶导数反项：
 \eq{
     \Lag_G=\frac{1}{2\kappa}R+\alpha R_{\mu\nu} R^{\mu\nu}+\beta R^2+\gamma R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}+\cdots,
 }
-甚至包括更高阶导数，其中耦合强度都是 $\hbar$ 量级的极小值。一般在日常尺度下可不考虑量子效应。
+这些耦合强度都是 $\hbar$ 量级的小值。这些项称为\textbf{Gauss-Bonnet 项}。
+故纯 Einstein 引力作为基本微扰理论不可重整化。
+但这并不致命，因为可以把它当作\textbf{低能}理论，就是所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
+当特征能量 $E\ll M_{\mathrm{Pl}}\sim G^{-1/2}$ 时，高阶曲率项按 $E/M_{\mathrm{Pl}}$ 受控压低，有限阶仍有确定的预言，这称为\textbf{有效}(effective)，自然允许不可重整。我们缺少的是紫外完备理论。
+目前的理论都是某种尚未发掘的完备理论的低能有效情形。故有效理论中，需要对无穷大进行截断是可接受的。
 
-低能指理论所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
-人们逐渐意识到，目前的理论都是某种尚未发掘的基本规律的低能情形。
-现有理论视为\textbf{有效的}(effective)。因而无穷大及其截断是可以接受的，因为这些无穷大究其本性是有效性导致的。
-
-%% 有效性
+最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein--Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
 
 \endinput
 
