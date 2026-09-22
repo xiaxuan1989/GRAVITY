@@ -1539,7 +1539,7 @@ $t_{\mu\nu}$ 称为\textbf{引力场能动赝张量}。
 \[
     G_{\mu\nu}^{(1)}(h^{(2)})=-G_{\mu\nu}^{(2)}(h^{(1)},h^{(1)})+\cdots,
 \]
-右侧一阶扰动二次项解释为 $h_{\mu\nu}^{(1)}$ 的能量动量（相应为 $t_{\mu\nu}$ 的最低二阶项），它作为二阶有效源进一步激发 $h_{\mu\nu}^{(2)}$。
+右侧一阶扰动二次项解释为 $h_{\mu\nu}^{(1)}$ 的能量动量（相应为 $t_{\mu\nu}$ 的最低二阶项），它作为二阶源进一步激发 $h_{\mu\nu}^{(2)}$。
 而这种引力场与自身的非线性相互作用，会进一步贡献能量动量，体现为 $t_{\mu\nu}$ 的三阶及以上项。
 完整 Einstein 方程没有线性叠加原理，故两列足够强的引力波相遇时会发生散射。
 
@@ -1716,7 +1716,7 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
 }
 后者即\textbf{Rosenfeld–Belinfante 在壳等价性定理}。这就解释了为何对（最小耦合）Hilbert 张量取 $g\to\eta$ 可得平直 Belinfante 能动张量。
 
-宏观经典流体\textbf{Fock-Dirac-Hawking 有效作用量}为
+宏观经典流体\textbf{Fock-Dirac-Hawking 作用量}为
 \eq{
     \tcbhighmath{
     S = -\int\d[4]{x}\sqrt{-g}\,\varepsilon,
@@ -2125,7 +2125,7 @@ $t-|\bm x-\bm x'|$ 的存在表明引力效应以光速传播。
 
 \subsection{引力的量子理论}\label{sec:quantum-gravity}
 
-迄今尚无经实验证实的完整紫外量子引力理论，不过弱引力场可以作为低能有效场论作量子化。以下只借线性引力领略这种理论至少应有的结构。把波矢为 $k^\mu$ 的平面波解释成引力子组成的相干态，则单个引力子的 4-动量为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu=0$，它同光子一样是无质量粒子。
+迄今尚无经实验证实的完整紫外量子引力理论，不过弱引力场可以作为量子化场论。以下只借线性引力领略这种理论至少应有的结构。把波矢为 $k^\mu$ 的平面波解释成引力子组成的相干态，则单个引力子的 4-动量为 $p^\mu=\hbar k^\mu$。因为 $k^\mu k_\mu=0$，它同光子一样是无质量粒子。
 为显示耦合量纲，本小节暂保留 $G,\hbar$，仍取 $c=1$，只在需要时恢复 $c$。
 
 相比电磁波的偏振矢，二阶偏振张量在绕传播方向旋转角 $\varphi$ 时按 $2\varphi$ 变化，按照量子场论 Wigner 分类法，这是自旋 2 无质量粒子，这两种偏振态对应于\textbf{螺旋度}(helicity)为 $+2$ 和 $-2$ 的量子态。其自旋在运动方向上的分量为 $\pm 2\hbar$。
@@ -2206,7 +2206,7 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
        =(2\pi)^3\delta^3(\bm k-\bm k')\delta_{\lambda\lambda'},\quad
     [a,a]=[a^\dagger,a^\dagger]=0.
 \]
-把这一场与 $T^{\mu\nu}$ 耦合，并加入 Einstein--Hilbert 作用量展开所得的自耦合顶角，就可逐阶计算跃迁振幅。
+把这一场与 $T^{\mu\nu}$ 耦合，并加入 Einstein-Hilbert 作用量展开所得的自耦合顶角，就可逐阶计算跃迁振幅。
 
 这里首先遇到 Lorentz 协变性与物理自由度之间的张力。若场展开只保留 $\lambda=\pm2$，便等于选定了辐射规范；该规范并不被一般 Lorentz 变换保持。因此变换后除张量变换外还要补作一次规范变换，形如
 \[
@@ -2214,19 +2214,68 @@ $\omega^2/\pi^2$ 是两种螺旋度的相空间因子，指数是上能级相对
     \Lambda_\mu{}^\rho\Lambda_\nu{}^\sigma h_{\rho\sigma}
     +\p_\mu\epsilon_\nu+\p_\nu\epsilon_\mu.
 \]
-这并不表示物理的 Lorentz 对称性破坏，而是说只含两个物理螺旋度的势不能同时保持简单的张量变换律与固定规范。正则量子化可以接受这种非显式协变性；协变量子化则保留 $h_{\mu\nu}$ 的冗余分量，再以规范固定、Faddeev--Popov 鬼场或等价的 BRST 条件保证物理态和散射振幅中只剩 $\pm2$。两条路线在可比较的微扰阶给出相同物理结果。
+这并不表示物理的 Lorentz 对称性破坏，而是说只含两个物理螺旋度的势不能同时保持简单的张量变换律与固定规范。正则量子化可以接受这种非显式协变性；协变量子化则保留 $h_{\mu\nu}$ 的冗余分量，再以规范固定、Faddeev-Popov 鬼场或等价的 BRST 条件保证物理态和散射振幅中只剩 $\pm2$。两条路线在可比较的微扰阶给出相同物理结果。
 
-更深的困难来自紫外区。取 $\hbar=c=1$ 时，$[G]=\mathrm{mass}^{-2}$，引力耦合具有负质量维数；量纲计数表明 $G^n$ 阶振幅会出现形如 $G^n\int p^{2n-1}\d p$ 的高动量发散。它们不能只靠有限个质量或耦合常数吸收，而需依次加入 $R^2,R_{\mu\nu}R^{\mu\nu}$ 及更高曲率甚至高阶导数反项：
+更深的困难来自紫外区。取 $\hbar=c=1$，并在此平直背景展开中令 $\Lambda=0$。四维作用量无量纲，而 $[\d^4x]=-4,[R]=2$，故 $[G]=-2$。前文的 $h_{\mu\nu}=g_{\mu\nu}-\eta_{\mu\nu}$ 是无量纲扰动；为使自由场具有标准归一化，现改记 $h_{\mu\nu}=\kappa_g\gamma_{\mu\nu}$，其中 $\kappa_g:=\sqrt{32\pi G}$。于是
+\[
+    g^{\mu\nu}=\eta^{\mu\nu}-\kappa_g\gamma^{\mu\nu}
+       +\kappa_g^2\gamma^\mu{}_\rho\gamma^{\rho\nu}+O(\kappa_g^3),
+    \quad
+    \sqrt{-g}=1+\frac{\kappa_g}{2}\tau
+       +\frac{\kappa_g^2}{8}\left(\tau^2-2\gamma_{\rho\sigma}\gamma^{\rho\sigma}\right)
+       +O(\kappa_g^3),
+\]
+其中 $\tau:=\eta^{\mu\nu}\gamma_{\mu\nu}$ 是迹。按照 \S\ref{sec:Einstein} 的弱场曲率展开，亦有 $R=\kappa_gR^{(1)}[\gamma]+\kappa_g^2R^{(2)}[\gamma,\gamma]+\kappa_g^3R^{(3)}[\gamma,\gamma,\gamma]+\cdots$。因此 Einstein-Hilbert 作用量被积函数逐阶成为
+\begin{align*}
+    \mathscr L_{\mathrm{EH}}:=\frac{2}{\kappa_g^2}\sqrt{-g}R
+    ={}&\frac{2}{\kappa_g}R^{(1)}
+    +2\left(R^{(2)}+\frac12\tau R^{(1)}\right)\\
+    &+2\kappa_g\left[R^{(3)}+\frac12\tau R^{(2)}
+      +\frac18\left(\tau^2-2\gamma_{\rho\sigma}\gamma^{\rho\sigma}\right)R^{(1)}\right]
+    +O(\kappa_g^2).
+\end{align*}
+由 $R^{(1)}=\p_\mu\p_\nu\gamma^{\mu\nu}-\square\tau$，第一项只是全微分。舍去边界项，第二项正是自由无质量自旋 $2$ 场的 Fierz-Pauli 拉氏量，也可由前文 $G_{\mu\nu}^{(1)}$ 写成 $\mathscr L_2\simeq-\gamma^{\mu\nu}G_{\mu\nu}^{(1)}(\gamma)$，即
+\[
+    \mathscr L_2=-\frac12\p_\lambda\gamma_{\mu\nu}\p^\lambda\gamma^{\mu\nu}
+      +\p_\mu\gamma^{\mu\nu}\p^\lambda\gamma_{\lambda\nu}
+      -\p_\mu\gamma^{\mu\nu}\p_\nu\tau
+      +\frac12\p_\lambda\tau\p^\lambda\tau.
+\]
+第三项给出完整的三引力子顶角；继续展开 $g^{\mu\nu}$ 与 $\sqrt{-g}$ 就依次得到四、五引力子顶角。略去指标缩并，它们的结构为
+\[
+    \mathscr L_{\mathrm{EH}}\simeq\mathscr L_2
+      +\kappa_g\,\gamma(\p\gamma)^2
+      +\kappa_g^2\gamma^2(\p\gamma)^2
+      +\kappa_g^3\gamma^3(\p\gamma)^2+\cdots,
+\]
+其中每一项代表所有允许的 Lorentz 缩并。标准动能项给出 $[\gamma]=1$，而 $[\kappa_g]=-1$，故 $m$ 点引力子顶角的耦合 $\kappa_g^{m-2}$ 具有质量维数 $2-m<0$。每个顶角始终只有两个导数，但每增加一条引力子腿就多一个负质量维数的 $\kappa_g$。因此真正控制微扰的无量纲参数不是 $G$，而是 $GE^2\sim(E/M_{\mathrm{Pl}})^2$，其中 $M_{\mathrm{Pl}}\sim G^{-1/2}$；能量愈高，展开反而愈差。若各圈发散都能由有限种场与耦合常数的重定义吸收，理论称为\textbf{微扰可重整}。负质量维数的耦合预示 Einstein 引力不满足这一条件，下面用圈图计数具体说明。
+
+现在直接数圈图的动量幂次。一个含 $L$ 个圈、$I$ 条内线和 $V$ 个顶角的图中，每个圈积分贡献四次动量，每条传播子贡献 $p^{-2}$，每个顶角贡献 $p^2$，故表面发散次数为
+\[
+    D=4L-2I+2V=2L+2,
+\]
+其中用了连通图关系 $L=I-V+1$。相应的 $L$ 圈反项示意为 $G^{L-1}\nabla^{2r}R^s$，其中 $r+s=L+1$，总共恰有 $2L+2$ 个导数。所以一圈需要曲率平方型的四导数反项，二圈需要曲率三次型的六导数反项，更高圈又依次要求更多导数。微分同胚不变性虽将反项限制为曲率及其协变导数的标量缩并，却不能把无穷多个导数阶化为有限组参数。
+
+一圈情形有一个四维特例。定义\textbf{Gauss--Bonnet 项}
+\[
+    E_4:=R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+    -4R_{\mu\nu}R^{\mu\nu}+R^2.
+\]
+对紧致无边界的四维流形，Gauss--Bonnet 定理给出 $\frac{1}{32\pi^2}\int\d^4x\sqrt{\lvert g\rvert}\,E_4=\chi(M)$；有边界时须再加入相应的边界项。因此在固定拓扑和适当边界条件下，$\int\sqrt{\lvert g\rvert}\,E_4$ 的度规变分没有体贡献。作用量积分中遂可写成
+$R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\simeq4R_{\mu\nu}R^{\mu\nu}-R^2$，
+其中 $\simeq$ 表示两边只相差拓扑项和边界项，并非逐点成立的张量恒等式。因此四维曲率平方反项只需取两个独立的局域组合。
+对于四维、$\Lambda=0$ 的纯引力，经典在壳条件又给出 $R_{\mu\nu}=0$，从而 $R=0$；曲率平方反项不是在壳消失，就是化为不影响局域动力学的 Gauss--Bonnet 项，故一圈在壳紫外发散不影响散射振幅。这只是特殊的低圈偶然：加入物质、取 $\Lambda\neq0$ 或考察离壳作用量时，结论通常不再成立。二圈已经出现不能如此消去的三次 Riemann 张量发散，所以一圈例外并不恢复可重整性。
+
+纯 Einstein 引力作为紫外基本微扰理论因而\textbf{不可重整}(nonrenormalizable)，但这不等于低能下不可计算。设 $M$ 是理论尚能适用的最高能标；当过程的外线能量 $E$ 和典型曲率能标 $\sqrt{\mathcal R}$ 均远小于 $M$，且 $E\ll M_{\mathrm{Pl}}$ 时，称为\textbf{低能}范围。在此范围内，实验只探测波长远大于某个短程尺度 $M^{-1}$，便无须显式分辨能量高于 $M$ 的自由度，只需把它们的作用吸收到局域耦合常数中。这样只描述给定能标以下自由度的理论称为\textbf{有效场论}(effective field theory, EFT)，$M$ 称为其\textbf{截止能标}(cutoff scale)。因此引力 EFT 从一开始就写出所有对称性允许的局域项：
 \eq{
-    \Lag_G=\frac{1}{2\kappa}R+\alpha R_{\mu\nu} R^{\mu\nu}+\beta R^2+\gamma R_{\mu\nu\sigma\kappa}R^{\mu\nu\sigma\kappa}+\cdots,
+    \Lag_{\mathrm{eff}}=\frac{1}{16\pi G}(R-2\Lambda)
+    +c_1R^2+c_2R_{\mu\nu}R^{\mu\nu}+\frac{1}{M^2}\left(d_1R^3+d_2R\square R+\cdots\right)+\cdots.
 }
-这些耦合强度都是 $\hbar$ 量级的小值。这些项称为\textbf{Gauss-Bonnet 项}。
-故纯 Einstein 引力作为基本微扰理论不可重整化。
-但这并不致命，因为可以把它当作\textbf{低能}理论，就是所涉及的\textbf{能标}(energy scale)远小于某个数量级很大的值。
-当特征能量 $E\ll M_{\mathrm{Pl}}\sim G^{-1/2}$ 时，高阶曲率项按 $E/M_{\mathrm{Pl}}$ 受控压低，有限阶仍有确定的预言，这称为\textbf{有效}(effective)，自然允许不可重整。我们缺少的是紫外完备理论。
-目前的理论都是某种尚未发掘的完备理论的低能有效情形。故有效理论中，需要对无穷大进行截断是可接受的。
+这里 $c_i,d_i,\ldots$ 称为 Wilson 系数。圈图发散带有相应的 $\hbar$ 次数，由它们的重定义逐阶吸收，其有限部分则记录未知短程物理。作用量虽含无穷多个算符，适当归一化后，高导数项却按 $E/M$ 的幂次受抑制，引力圈修正也按 $GE^2$ 的幂次受抑制。因此给定所需精度后，只有有限多个算符能够贡献，也只需测定有限多个 Wilson 系数，理论仍有确定的低能预言。Fermi 四费米理论同样具有负质量维数的耦合，却在远低于弱作用尺度时十分有效，正是这种逻辑的简单例子。
 
-最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein--Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
+计算时仍可引入动量截止或其它调节方法，但其作用只是暂时标记紫外敏感性；逐阶把调节参数依赖吸收到上述 Wilson 系数后，可观测量在该精度内应与调节方法无关。所谓有效，并非容许物理答案保留无穷大，而是承认理论只在 $E\ll M$ 的范围内使用，并以可控的 $E/M$ 展开估计遗漏项。到 $E\sim M$ 或 $M_{\mathrm{Pl}}$ 时，无穷塔不再受抑制，EFT 失效，才必须由新的自由度或某种紫外完备量子引力理论取代。
+
+最后有一项结构性结论。无质量螺旋度 $\pm2$ 的量子若要具有 Lorentz 不变的散射振幅，就必须带有规范冗余；它与物质的一致长程耦合又被迫普适地作用于守恒能动张量。引力子自身也携带能动量，反复加入这种自耦合便把线性规范对称性推广为微分同胚不变性，低能领头作用量正是 Einstein-Hilbert 项，另允许受抑制的高曲率修正。因此，等效原理与广义协变性并非和量子论无关的附加装饰，而可视为一致的 Lorentz 不变无质量自旋 2 理论在低能处必须呈现的结构。
 
 \endinput
 
@@ -2467,7 +2516,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
     S_{EC}[e,\omega,\Psi]=\frac{1}{2\kappa}\int\d[4]x\,|e|\,e_I{}^\mu e_J{}^\nu R_{\mu\nu}{}^{IJ}(\omega)+S_M[e,\omega,\Psi].
 }
 这里不预先令 $\omega=\omega(e)$。对 $e^I{}_\mu$ 变分得到 Einstein 型方程，对 $\omega_\mu{}^{IJ}$ 变分得到 Cartan 方程。若将物质对标架、自旋联络的变分系数分别记作能动量和自旋流，则后者的内容可概括为：$\textit{挠率的代数组合}=\kappa\times\textit{自旋流}$。
-关键在于它是代数方程，而非波动方程；也就是说，Einstein-Cartan 理论中的挠率通常不独立传播。若物质没有自旋流，例如经典标量场、电磁场或忽略自旋的尘埃，则 Cartan 方程给出 $T^I{}_{\mu\nu}=0$，理论退回广义相对论。若存在 Dirac 场，挠率只在自旋物质内部或接触处非零，并可等效为极短程的自旋--自旋接触相互作用。
+关键在于它是代数方程，而非波动方程；也就是说，Einstein-Cartan 理论中的挠率通常不独立传播。若物质没有自旋流，例如经典标量场、电磁场或忽略自旋的尘埃，则 Cartan 方程给出 $T^I{}_{\mu\nu}=0$，理论退回广义相对论。若存在 Dirac 场，挠率只在自旋物质内部或接触处非零，并可等效为极短程的自旋-自旋接触相互作用。
 
 这也说明了等效原理在此处的地位。若坚持前文采用的强表述，即所有足够局域的实验都可退回无引力的狭义相对论，则独立挠率会留下自旋耦合，因而不再属于纯粹的 Levi-Civita 几何。若把等效原理只视为无自旋试验质点的普适自由落体规律，则 Einstein-Cartan 理论仍与通常实验相容，并在低能、低自旋密度条件下几乎不可区分于广义相对论。
 
@@ -2781,7 +2830,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
 
 上文的 $D(\Sigma)$ 是在\textit{给定时空中}寻找受 $\Sigma$ 控制的区域。Cauchy 发展则反过来从抽象初始资料构造时空。Einstein 方程的双曲型与适定问题已在 \S\ref{sec:Einstein} 讨论，ADM 初值约束、演化方程及存在唯一性见 \S\ref{sec:Hamilton}，此处只说明其整体含义。
 
-设三维流形 $\Sigma$ 上给定一组满足约束的初始资料 $\mathcal D=(\Sigma,h_{ij},K_{ij};\text{物质资料})$。若时空 $(M,g)$ 满足 Einstein--物质场方程，且存在嵌入 $\iota:\Sigma\hookrightarrow M$，使 $\iota(\Sigma)$ 是 $M$ 的 Cauchy 面，并使其投影张量、外曲率及物质资料恰为 $\mathcal D$，则称三元组 $(M,g,\iota)$ 是 $\mathcal D$ 的一个\textbf{Cauchy 发展}(Cauchy development)。因此 Cauchy 发展本身必整体双曲；只取 $\iota(\Sigma)$ 附近所得者称为\textbf{局部 Cauchy 发展}。
+设三维流形 $\Sigma$ 上给定一组满足约束的初始资料 $\mathcal D=(\Sigma,h_{ij},K_{ij};\text{物质资料})$。若时空 $(M,g)$ 满足 Einstein 物质场方程，且存在嵌入 $\iota:\Sigma\hookrightarrow M$，使 $\iota(\Sigma)$ 是 $M$ 的 Cauchy 面，并使其投影张量、外曲率及物质资料恰为 $\mathcal D$，则称三元组 $(M,g,\iota)$ 是 $\mathcal D$ 的一个\textbf{Cauchy 发展}(Cauchy development)。因此 Cauchy 发展本身必整体双曲；只取 $\iota(\Sigma)$ 附近所得者称为\textbf{局部 Cauchy 发展}。
 
 设 $(M,g,\iota)$ 与 $(M',g',\iota')$ 是同一初始资料的两个 Cauchy 发展。若存在保时间定向的等距嵌入 $\phi:M\hookrightarrow M'$，满足 $\phi\circ\iota=\iota'$，则称后者延拓前者。不能再作真延拓的 Cauchy 发展称为\textbf{最大 Cauchy 发展}(maximal Cauchy development)。这里“最大”只相对于仍以 $\Sigma$ 为 Cauchy 面的发展；它仍可能嵌入更大的时空，但在这种延拓中 $\Sigma$ 不再是 Cauchy 面，越过 Cauchy 视界后的区域也不再由 $\mathcal D$ 唯一决定。
 
@@ -2987,7 +3036,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
     E_{\rm ADM}&:=\frac{1}{16\pi}\lim_{r\to\infty}\int_{S_r}(\p_jh_{ij}-\p_ih_{jj})s^i\d S_0,\\
     P_i^{\rm ADM}&:=\frac{1}{8\pi}\lim_{r\to\infty}\int_{S_r}(Kh_{ij}-K_{ij})s^j\d S_0,\qquad K:=h^{ij}K_{ij}.
 \end{align*}
-正能量定理断言每个渐近平直端的 ADM 四动量 $P^\mu_{\rm ADM}=(E_{\rm ADM},P^i_{\rm ADM})$ 必为未来因果矢，亦即 $E_{\rm ADM}\geqslant\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}\geqslant0$。因此不变 ADM 质量 $m_{\rm ADM}:=\sqrt{E_{\rm ADM}^2-\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$ 非负。刚性部分进一步说明，若 $E_{\rm ADM}=\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$，则二者均为零，初值来自 Minkowski 时空中的类空超曲面。特别地，时间对称资料 $K_{ij}=0$ 时，这就化为 Riemannian 正质量定理。Schoen--Yau 的证明以极小曲面和 Jang 方程为核心，Witten 的证明则使用旋量恒等式。
+正能量定理断言每个渐近平直端的 ADM 四动量 $P^\mu_{\rm ADM}=(E_{\rm ADM},P^i_{\rm ADM})$ 必为未来因果矢，亦即 $E_{\rm ADM}\geqslant\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}\geqslant0$。因此不变 ADM 质量 $m_{\rm ADM}:=\sqrt{E_{\rm ADM}^2-\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$ 非负。刚性部分进一步说明，若 $E_{\rm ADM}=\sqrt{\delta^{ij}P_i^{\rm ADM}P_j^{\rm ADM}}$，则二者均为零，初值来自 Minkowski 时空中的类空超曲面。特别地，时间对称资料 $K_{ij}=0$ 时，这就化为 Riemannian 正质量定理。Schoen-Yau 的证明以极小曲面和 Jang 方程为核心，Witten 的证明则使用旋量恒等式。
 
 这一定理是整体结论：ADM 能量由无穷远的边界项给出，并非局域物质能量密度的简单积分。负质量 Schwarzschild 度规仍然渐近平直，且其 ADM 能量确为参数 $M<0$；它不与定理矛盾，因为裸露的 $r=0$ 类时奇性使相应空间切片不完备，也不存在满足上述条件的正则 Cauchy 初值面。故它不能由满足主能量条件的完整、正则渐近平直初始资料演化而来。
 
@@ -3202,8 +3251,8 @@ $，
 \kappa T_{\mu\nu}.
 \]
 
-与 Brans--Dicke 理论比较以下。
-一般 Brans--Dicke 型作用写作
+与 Brans-Dicke 理论比较以下。
+一般 Brans-Dicke 型作用写作
 \[
 S_{\mathrm{BD}}
 =
@@ -3222,7 +3271,7 @@ S_G
 $
 \omega(\phi)=0
 $
-的 Brans--Dicke 型理论，但由于 $\phi$ 与 $g_{\mu\nu}$ 的非最小耦合，$\phi$ 仍然是传播的额外自由度。
+的 Brans-Dicke 型理论，但由于 $\phi$ 与 $g_{\mu\nu}$ 的非最小耦合，$\phi$ 仍然是传播的额外自由度。
 
 考虑迹方程与标量自由度。
 对度规方程取迹，得
