@@ -1,120 +1,6 @@
 \chapter{经典引力场论}\label{chpt:GR}
 
 \section{经典场论}
-\subsection{经典力学的启示}
-
-先回顾经典力学的一些结果。
-许多相互作用定律能靠着一种信念得到：\textit{实际规律总使系统作用量最小}，这称为\textbf{最小作用量原理}(principle of least action)。当然，最小只是美学说法，其实只要求导数为零，故严格称法为\textbf{稳恒}(stationary)\textbf{作用量原理}，仅在分析解的稳定性时再关注最优化问题。
-这一哲思由 Lagrange, Hamilton 等人于 18 世纪提出。取惯性系及绝对时间，给定粒子系统的初末位置 $\bm x_n(a),\bm x_n(b)$（$n=1,\cdots,N$），保守力可由势能 $V$ 的梯度给出，即 Newton 第二定律 $m_n\ddot{\bm x}_n(t)=-\grad V(\bm x_n)$。
-非保守力的实质是统计效应，不在纯粹的经典力学范围中。上式可使如下作用量 $S$ 取最小值：
-\[S(\bm x_n(t))=\int_{a}^{b}\d{t} L(\bm x_n,\dot{\bm x}_n),\quad L=T-V,\quad T=\frac{1}{2}\sum_{n=1}^N m_n \dot{\bm x}_n^2,\]
-其中 $L$ 称作\textbf{拉氏量}(Lagrangian)，$T$ 即总动能。通俗地说，这种函数的函数称为\textbf{泛函}(functional)\footnote{设函数 $f:A\to\R$。$A=\R^n$ 时说明自变量可由 $n$ 个独立实数描述，$f$ 为 $n$ 元函数，称 $n$ 为\textbf{自由度}。曲线的点无限多，因此泛函可视作函数在\textbf{无穷自由度}下的极限。泛函的自变量称\textbf{宗量}。}，通常表为积分形式，如曲线的线长。按 $L=T-V$ 设定的 $S(\bm x_n(t))$ 就给出关于 $\bm x_n(t)$ 的经典力学方程。因为仅考虑保守作用，则机械能 $T+V$ 等同总能。
-
-将此抽象到其它领域。我们无非要研究系统的可能分布状态及其随参数的演化。前者简称\textbf{位形}(configuration)，后者简称\textbf{路径}(path)。全体位形之集称\textbf{位形空间}，其维数为\textbf{系统自由度}。在 $s$ 维位形空间上任取坐标系，参数化后坐标式表为 $q^i(t)$。参数其实可任取，但建议具有某种时间的含义。
-对于经典力学的粒子系，位形空间是 $\R^{3N}$，参数为绝对时间，表为 $x^i(t)$，也即 $(x_1(t),y_1(t),z_1(t),\cdots,x_N(t),y_N(t),z_N(t))$。这样 $i\equiv 1\pmod 3$ 时的 $q^i$ 就是 $x$ 坐标。简单的写法是 $x_n=q^{3n-2},y_n=q^{3n-1},z_n=q^{3n}$。
-我们默认许多系统及其规律具备作用量表述，且固定端点 $A,B$ 并规定参数为 $a,b$ 后，总保为积分形式：
-\eq{S(q^i(t))=\int_{a}^{b}L(t,q,\dot q,\ddot q,\cdots)\d{t},\quad \dot q^i:=\dv{q^i}{t}.}
-修改泛函往往给出不同方程，可见拉氏量代表了一套理论。
-固定端点间的全体路径之集称\textbf{Fréchet 空间} $\Omega_a^b$，作用量是其上的函数。实际路径称\textbf{正路}或\textbf{在壳}(on shell)，其余路径称\textbf{旁路}或\textbf{离壳}(off shell)。未给出实际规律之前，Fréchet 空间中所有元素皆可考虑。
-
-尝试对泛函求导。
-多元函数求导总是化为单元求导，如方向导数、偏导。类似地，相对某个 $q(t)$，我们也任挑一个方向取邻近 $\tilde q(\tilde t)$，差值用单参 $\epsilon$ 表示为
-\eq{
-    \bar\var q^i(t)=\tilde q^i(t)-q^i(t)=\epsilon \xi^i(t,q^i,\dot{q}^i),\quad \delta t=\tilde t-t=\epsilon \eta(t, q^i, \dot{q}^i). 
-}
-$\bar\var$ 称为\textbf{等时变分}。
-之后将 $q^i(t)$ 简写为 $q^i$ 或 $q$。
-求导就是除以 $\epsilon$ 再令 $\epsilon\to 0$，因而 $o(\epsilon)/\epsilon\to 0$。故我们能在取极限前就甩掉 $o(\epsilon)$，近似到一阶线性主部，差值都称\textbf{无穷小的}。
-代入 $\tilde q=\bar\var q+q$ 可见总变化（线性主部）为 $\delta q=\tilde q(\tilde t)- q=\tilde q + \dot{\tilde{q}} \delta t - q=\bar\var q+\dot q \delta t$，$\delta$ 称\textbf{Noether 变分}，公式记作
-\eq{
-\delta=\bar\var+\delta t\dv{t}.
-}
-替换得 $\delta\dot q=\bar\var\dot q+ \ddot q\delta t$，也可直接计算 $\dv{\tilde t}(\tilde q(\tilde t))-\dot q$。同理 $\delta L=\bar\var L+\dot L\delta t$。注意 $\delta(\d t)=\d\tilde t-\d t=\dot{\tilde{t}}\d t-\d t=\dv{t}(\delta t)\d t$。泛函变分为增量线性主部
-\[\var S=\int_{\tilde a}^{\tilde b}\d{\tilde t} \tilde L - \int_a^b\d{t} L=\int_a^b\d t \left(\left(1+\dv{t}(\delta t)\right)(L+\delta L)-L\right)=\int_a^b\d t \left(\delta L+L\dv{t}(\delta t)\right),\]
-这相当于将 Noether 变分挪进积分并求 $\var(L\d t)$。
-以后常省略积分域，少数情况才讨论边界。
-考虑等时变分，则 $\bar\delta L=L(\tilde q(t),\cdots,t)-L(q,\cdots,t)$ 的线性主部为（对指标 $i$ 使用求和约定） $\bar\delta L = \pdv{L}{q^i}\bar\delta q^i+\pdv{L}{\dot q^i}\bar\delta \dot q^i + \cdots$，
-这里没有 $\pdv*{L}{t}$ 项（即使可以有 $\pdv*{L}{t}\ne 0$），因为做 $\bar\delta$ 时 $t$ 不变。
-可见变分代数性质与微分相似。
-一般而言 $\var,\dv{t}$ 不交换，但由于 $\bar\var$ 无关 $t$，所以 $\bar\var\dv{t} =\dv{t}\bar\var$。
-这里关键是对 $\dot q,\ddot q,\cdots$ 项做\textbf{分部积分}，收进全微分：
-\[\bar\delta L = \fdv{L}{q^i}\bar\delta q^i + \dv{t}(\pdv{L}{\dot q^i}\bar\delta q^i +\cdots ),\quad\fdv{L}{q^i} := \pdv{L}{q^i}-\dv{t}\pdv{L}{\dot q^i} + \cdots,\]
-这里 $\fdv*{L}{q^i}$ 是一种简记，称 $L(q,\dot q,\cdots,t)$ 的\textbf{变分导数}。
-进而
-\[\delta S=\int\d t\left(\bar\var L+\dot L\delta t+L\dv{t}(\delta t)\right)
-=\int\d t\left( \fdv{L}{q^i} \bar\var q^i+\dv{t}(\pdv{L}{\dot q^i}\bar\var q^i+\cdots+L\delta t) \right).\]
-全导数项的积分为边界项，结合某些条件可能会消去。
-
-考虑 $S$ 的正路，任取固定端点的邻近旁路，
-差值记作 $\delta q^i(t):=\tilde q^i(t)-q^i(t)$，满足
-$\delta q^i(a)=\delta q^i(b)=0$（$L$ 含更高阶导时，还要求高阶导在端点也为零，如 $\delta\dot q^i(a)=\delta\dot q^i(b)=0$）。
-这是固定端点的等时变分（$\delta t=0,\var=\bar\var$），称为\textbf{Fréchet 变分}\footnote{许多书一开始先介绍 Fréchet 变分，它与 $\dv{t}$、$\int\d t$ 交换便可计算 $\delta S=\int \d{t}\delta L$，最一般的 Noether 变分则放后。本书如此安排无非是强调代数统一性。}。
-最小作用量原理指出，正路应使 $\delta S=0$，意指 $S$ 在正路处，对任意 Fréchet 变分的增量都属于 $o(\epsilon)$，即线性主部为零，或者说沿任意方向求导 $\dv*{S}{\epsilon}|_{\epsilon=0}=0$。
-这时 $\delta t=0$，边界处 $\delta q^i=\delta\dot q^i=\cdots=0$，故
-\eq{0 = \delta S = \int\d{t} \fdv{S}{q^i} \delta q^i \simeq \int\d{t} \fdv{L}{q^i} \delta q^i,\enspace \forall \delta q^i \iff \tcbhighmath{0=\fdv{S}{q^i}\simeq\fdv{L}{q^i}.}}
-其中 $\fdv*{S}{q^i}$ 称为 $S(q(t))$ 的\textbf{泛函导数}。
-这里用“$\simeq$”强调舍去边界项\footnote{$\forall\eta(x)$ 成立 $\int\d{x} f(x)\eta(x)=0$。一旦存在 $f(x_0)\ne 0$，取 $\eta$ 在邻域 $(x_0-\delta,x_0+\delta)$ 不为零，则积分非零，矛盾，由 $x_0$ 任意性得 $f(x)=0$。这称为\textbf{变分法基本引理}或\textbf{du Bois-Reymond 定理}。}。
-$\fdv*{L}{q^i} = 0$ 称\textbf{Euler-Lagrange 方程}，简称\textbf{E-L 方程}。读者也可尝试从 $\dv*{S}{\epsilon}$ 方法证明之。
-取 Descartes 系 $q=\bm x$ 和 $L=\frac 12 \sum m_n\dot{\bm x}_n^2 - V$，E-L 方程为 $\grad L=\dv{t}\pdv{L}{\dot{\bm x}_n}$，即 $m_n\ddot{\bm x}_n=-\grad V$。
-需强调，形式简单的 $L$ 才考虑计算 E-L 方程，更多时候按以上标准流程直接变分。
-
-对称性是当代物理的重要概念。圆具有左右、旋转对称等，实质是圆在反射、旋转变换下长相没变。
-保持作用量形式不变的变换 $q(t)\to\tilde q(\tilde t)$ 称\textbf{对称变换}，称作用量具有这种对称性。
-当然也可让二者只相差边界项（称为\textbf{准不变}）或常系数（称为\textbf{标度对称}），因为它们给出相同正路。
-原则上，变换可有若干参数 $\{\alpha,\beta,\cdots\}$，但只需任取一个方向来研究\textbf{单参变换}，且可从某区间 $I\subset\R$ 任意取值，称\textbf{连续变换}，如平移、旋转按平移量、旋转角来描述。
-计算上，可将连续变换视作一系列参数为小量 $\alpha=\epsilon$ 的\textbf{无穷小变换}之累积，无穷小变换其实就是 Noether 变分。这时相较而言，连续变换又称为\textbf{有限变换}。
-故连续准不变性就是指相应 $\delta q$ 只引起 $\delta S=K_2-K_1$。
-等价于如下判据：
-\[\fdv{L}{q^i} \bar\var q^i+\dv{t}(\pdv{L}{\dot q^i}\bar\var q^i+\cdots+L\delta t) = \dv{K}{t}\]
-为全导数项，这就是\textbf{Noether 条件}。但注意上式第二项已是全导数，而 $\delta t$ 的贡献全部收了进去，可见 $\delta t$ 并不影响准不变，准不变实际上仅约束 $\bar\var q^i$ 的形式。更多时候还是直接要求严格对称性 $\delta S=0$，等价为上式 $\dv*{K}{t}=0$。
-参数与时间无关的变换称\textbf{整体变换}，否则称\textbf{局域变换}。
-\textbf{Noether 定理}指出，\textit{连续整体对称性导致在壳时具有相应的守恒量}。取 $q^i(t)$ 在壳，$\dv*{\epsilon}{t}=0$，则
-\eq{
-\tcbhighmath{
-    \dv{Q}{t}=0,\quad  Q:=\frac{1}{\epsilon}\left(\pdv{L}{\dot q^i}\bar\var q^i+\cdots+L \delta t\right)=\pdv{L}{\dot q^i} \xi^i+\cdots+L \eta.
-}
-}
-$Q$ 称为\textbf{Noether 荷}。
-可见，对称性不仅约束相互作用，还导致守恒量。
-但注意并非所有守恒量都来源于对称。
-除了连续变换外，参数还可只取有限个值，称\textbf{分立}或\textbf{离散}变换(英语均为 discrete)，比如反射变换只包含两种操作。
-全体变换构成群\footnote{集合上若存在一个满足结合律的二元封闭运算，且具有恒等元和逆元的存在性，则这种集合称为\textbf{群}(group)，其元素称为\textbf{群元}，该运算称为\textbf{群乘}。比如沿 $x$ 轴的任意平移变换表为 $\bar x=x+a$，记作 $\varphi_a$。为使 $\{\varphi_a:a\in\R\}$ 是群，只需规定群乘为 $\varphi_a\varphi_b:=\varphi_{a+b}$，这样 $\R$ 的加法和乘法自动给出 $\varphi_0$ 为恒等变换，$\varphi_{-a}$ 为 $\varphi_{a}$ 为逆元。单参变换构成\textbf{单参群}。连续变换按 $\varphi_a\varphi_b:=\varphi_{a+b}$ 定义群乘，由 $a+b$ 交换律，群乘可交换。}。
-
-能量、动量解释为时空\textbf{均匀}(homogeneous)、
-空间\textbf{各向同性}(isotropic)。前者指时空平移对称、后者指空间旋转对称。当然，通过坐标变换，一切单参连续对称性都可解释为平移。
-经典力学往往还承认\textbf{Newton 决定性原理}：\textit{初始位置、速度就可确定运动}，更高阶导不会出现。
-假设 $L(t,q,\dot q)$ 且空间均匀，相应地，时间不做变换 $\eta=0$，则守恒量为 $Q=p_i \xi^i$，其中
-\eq{
-    p_i:=\pdv*{L}{\dot q^i}
-}
-称为\textbf{正则动量}。
-从而在一般理论中定义动能 $T:=\frac12 p_i\dot q^i$ 和势能 $V:=T-L$，后者一般只是 $q$ 的函数。
-如此，E-L 方程可写成 Newton 第二定律的形式 $\dot p_i=\pdv{L}{q^i}=-\pdv{V}{q^i}$。实际上，整体空间平移 $\delta t=0$，$\delta S=0$ 给出 
-\[
-    0=\frac{1}{\epsilon}\delta L=\frac{1}{\epsilon}\bar\var L = \xi^i\pdv{L}{q^i} + \dot\xi^i\pdv{L}{\dot q^i} + \cdots = \xi^i\pdv{L}{q^i},
-\]
-则的确在壳导致 $\dot p_i \xi^i=0$。沿某坐标系 $x^1$ 方向的平移，则在该系下 $\xi^{3n-2}=1,\xi^{3n-1}=\xi^{3n}=0$，则上式为 $\dv{t}\sum p_{3n-2} = \sum \pdv*{L}{x^1_n}=0$，就是总正则动量的 $x^1$ 分量守恒。
-取自由系统 $L=\frac 12 \sum m_n\dot{\bm x}_n^2$，这沿任意 $\bm x$ 方向平移对称，得线动量 $\bm p_n=\pdv*{L}{\dot{\bm x}_n}=m_n\dot{\bm x}_n$。任取柱坐标改写为 $L=\frac 12 \sum m_n(\dot r_n^2+r^2_n\dot\theta^2_n+\dot z^2_n)$，可见还对 $x^1=\theta$ 平移对称，也即绕 $z$ 轴旋转对称，$p_{3n-2}=\pdv*{L}{\dot\theta_n}=m_n r_n^2\dot\theta_n$ 正是角动量 $z$ 分量。
-直观上，考虑单粒子 $m$ 体系。假设粒子在时间 $\Delta t$ 后运动了 $\bm v\Delta t$。为判断粒子之后如何运动，可将整个系统沿反方向 $-\bm v\Delta t$ 平移，注意体系（的作用量）具有空间平移对称性，因此新体系的 $m$、初始条件等同于旧体系，从而运动相同的 $\bm v\Delta t$，相当于旧体系将一直保持 $m\bm v$ 守恒。同理，设想一根杆子自由转动，由体系的旋转对称，因此它将保持角动量守恒。
-
-假设时间平移对称，相对变换是 $\eta=1$ 但保持 $\delta q^i=0$，则 $\xi^i=-\dot q^i\eta=-\dot q^i$，可得\textbf{哈氏量}(Hamiltonian)
-\eq{
-    H:=-Q=p_i\dot q^i-L.
-}
-上式也称\textbf{Legendre 变换}。
-从而在一般理论中定义系统总能量 $H=2T-L=T+V$。
-如此，在壳时有 $\dot H=-\pdv*{L}{t}$。
-实际上，整体时间平移 $\delta(\d t)=0$，$\delta S=0$ 给出 
-\[
-    0=\frac{1}{\epsilon}\delta L=\frac{1}{\epsilon}(\bar\var L + \dot L\delta t)= -\eta\dot q^i\pdv{L}{q^i} -\eta\ddot q^i\pdv{L}{\dot q^i} + \cdots + \dv{L}{t} \eta = \pdv{L}{t}\eta = \pdv{L}{t},
-\]
-即 $L$ 不\textbf{显含} $t$，故写成 $L(q,\dot q)$。的确给出能量守恒。
-当然，仅保持准不变地变换到一个新拉氏量，新的哈氏量就不一定等于通常意义的能量。若只从守恒角度考量，非要称任意哈氏量都能作为能量定义亦可。
-代入 $L=\frac 12 \sum m_n\dot{\bm x}_n^2 - V$ 可得 $H=\frac 12 \sum m_n\dot{\bm x}_n^2+V$。
-这提示我们，若 $L$ 不显含某个量（称\textbf{循环坐标}），则其变换可轻松使得 $\delta S=0$，从而导出守恒。若 $\pdv*{L}{q}=0$（即 $V$ 关于此坐标为常数），则对任意粒子都有其各自动量守恒，则当然总和守恒。
-似乎给定某个 $q(t)$，$L$ 就能用 $t$ 表示，似乎与“不随 $t$ 变”矛盾。这涉及符号混淆。给定 $q(t)$ 谈及的是复合函数 $L(q(t),\dot q(t),\cdots,t) =: L(t)$，通过 $q(t)$ \textbf{隐含} $t$，从而积分。$\dot L$ 实指 $\dv{t}L(t)$，$\pdv*{L}{t}$ 实指 $\pdv{t}L(q,\dot q,\cdots,t)$。$\dot L\ne 0$ 但仍可 $\pdv*{L}{t}=0$。
-
-
 \subsection{时空及对钟}
 
 物理学研究各类\textbf{事件}(event)。类似于记叙文，真实事件持续一段时间并占据一定体积，但理想上可抽象为时刻、空间点所构成的\textbf{时空点}。
@@ -126,14 +12,14 @@ $Q$ 称为\textbf{Noether 荷}。
 
 按某种方式选好空间坐标 $\{x^i\}$ 和\textbf{坐标时} $x^0$ 后，可得 4 维坐标系。一个事件在该系的坐标为 $(x^0,x^1,x^2,x^3)$。约定 $x^0$ 正方向为\textbf{未来}，反方向为\textbf{过去}。某个等 $x^0$ 面就构成了该系在这一时刻的\textbf{同时事件集}，此即比空间更严格的替代概念。
 事件沿坐标系连续分布，可延伸为一个\textbf{时空连续统}(spacetime continuum)，简称\textbf{时空}。
-换言之，全体事件之集应至少局部上可建立 4 维坐标系。这个概念称为 4 维\textbf{流形}(manifold)\footnote{流形是赋有光滑坐标系的拓扑空间，“拓扑”用于定义一般集合中的连续性。详见 \S\ref{appx:manifold}。光滑就是无穷阶可导。}。位形空间也是流形。
+换言之，全体事件之集应至少局部上可建立 4 维坐标系。这个概念称为 4 维\textbf{流形}(manifold)\footnote{流形是赋有光滑坐标系的拓扑空间，“拓扑”用于定义一般集合中的连续性。详见 \S\ref{appx:manifold}。光滑就是无穷阶可导。}。
 当然存在不同的坐标选择，即在同一个时空流形上切换坐标系。我们只考虑可逆且光滑的坐标变换 $x'^\mu=x'^\mu(x)$，这样可随意做微积分。
 考虑背景流形的\textbf{嵌入}(imbedded)子集，低一维嵌入称\textbf{超曲面}(hypersurface)。可见同时事件集又可形象地称为\textbf{同时面}(simultaneity surface)。
 同时面是截取时空的切片，一系列同时面连续堆叠为时空。
 比如，以某参考系为基准，可连续堆叠各时刻的同时事件集，即给空间补上时间轴就形成了时空。
 
 默认物体总在时空中连续地划过，从而确认某两事件的确属同一物体。粒子划过的连续曲线称\textbf{世界线}(worldline)。
-一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的线汇。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $\xi^i$ 编号，且用固有时 $\xi^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{\xi\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线，进而对应于流体力学的 Lagrange 表述。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。就一般的四维时空，固然画不出直观图像，但许多问题总能借助对称性，省略部分空间维度。
+一族世界线构成\textbf{世界管}(worldtube)或\textbf{线汇}(congruence) $\mathscr C$。参考系 $\mathscr R$ 就是其每条世界线 $\gamma$ 都有观者对应的线汇。无交叉线汇 $\mathscr C$ 所占时空范围内每一点，都 $\exists! \alpha\in\mathscr C$ 对应。各观者按 $\xi^i$ 编号，且用固有时 $\xi^0$ 参数化，便建立了所谓\textbf{固有坐标系} $\{\xi\}$。\textbf{共动坐标系}则不要求坐标时为观者固有时。将实际对象从粒子改为流体质元，则观者即流线。凡示意时空及世界线的图就是\textbf{时空图}(spacetime diagram)。一般四维时空固然画不出图像，但许多问题总能借助对称性，省略部分空间维度。
 
 \begin{wrapfigure}{r}{.45\textwidth}
     \centering
@@ -189,7 +75,7 @@ $Q$ 称为\textbf{Noether 荷}。
 由 $\gamma$ 系知 $2L=\Delta\tau$。
 关键在于 $G$ 系中，镜面间距仍为 $L$，因为间距与运动方向垂直。理由如下。测量长度即用量尺同时观察两端，涉及同时性。对任意沿垂线方向运动的尺 $A$，总可设置静止的尺 $B$ 使二者中垂线重合且静长相同。在 $B$ 看来，整个系统关于中垂线对称，故 $A$ 两端必同时到达 $B$ 所在直线，从而判断 $\sgn$($A$ 动长 $-$ $B$ 静长)，$\sgn$ 表示取符。这也等于 $\sgn$($A$ 静长 $-$ $B$ 动长)，因为在 $A$ 看来也有中垂线对称性，故这两个相遇事件在 $A$ 系也同时。但 $A$ 静长 = $B$ 静长，因此两个观者所处的情形是一致的，只是有反转或 $180^\circ$ 的对称。由相对性原理知 $\sgn$($A$ 动长 $-$ $B$ 静长) = $\sgn$($B$ 动长 $-$ $A$ 静长) = $-\sgn$($A$ 动长 $-$ $B$ 静长)，故 $A$ 动长 = $B$ 静长 = $A$ 静长。
 
-\begin{figure}[ht]
+\begin{figure}[t]
     \centering
     \subfloat[\centering $A,B$ 在 $S$ 中同时]{
     \includegraphics[width=.35\textwidth]{fig/chpt01/SIMULTANEITY.pdf}
@@ -209,18 +95,12 @@ $Q$ 称为\textbf{Noether 荷}。
 
 由光速不变知 $2\sqrt{L^2+\Delta\ell^2/4}=\Delta t$，则 $\Delta\tau^2=\Delta t^2-\Delta\ell^2$，或者 $\Delta t=\gamma\Delta\tau$，其中 $\gamma:=1/\sqrt{1-u^2}\geqslant 1$ 是\textbf{Lorentz 因子}。可见 $\Delta t\geqslant\Delta\tau$，在观者看来，运动的时钟走时慢，此称\textbf{钟慢效应}或\textbf{时间膨胀}。这种效应是对称的，每个观者都认为其它的相对运动的时钟走时慢。
 比如，宇宙射线含有介子，但其寿命非常短，即使以光速运动，穿透大气层所需时间也通常是寿命的几十倍。按理来说它不可能到达地面，但钟慢效应使其保持年轻，寿命“延长”，故仍可到达。
-定义事件的\textbf{间隔}为
+定义事件的\textbf{间隔}为（对指标 $\mu,\nu$ 使用求和约定）
 \eq{
     \Delta s^2:={\eta}_{\mu\nu}\Delta x^\mu\Delta x^\nu=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2.
 }
 其中 $({\eta}_{\mu\nu}):=\diag(-1,1,1,1)$。迹 $\tr(\eta_{\mu\nu})=2$ 称\textbf{号差}(signature)。
 按 $\Delta s^2$ 为正、负或零，可分别称\textbf{类空}(spacelike)、\textbf{类时}(timelike)或\textbf{类光}(lightlike)间隔。
-根据相对性原理，类时间隔在任二惯性系 $\{x\}\{x'\}$ 下保持不变：$\Delta s^2=-\Delta\tau^2=\Delta s'^2$。
-对类光间隔，注意光速不变与 $\Delta s^2=0=\Delta s'^2$ 等价，仍成立。
-考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
-外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。此称\textbf{尺缩效应}或\textbf{长度收缩}。
-进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$ 成立。
-
 \begin{figure}[ht]
     \centering
         \subfloat[\centering 双曲线校准]{
@@ -240,6 +120,11 @@ $Q$ 称为\textbf{Noether 荷}。
     \caption{\small 比较间隔的方法是用双曲线校准。令双曲线 $x^2-t^2=x_1^2$，其与 $x$ 轴交于 $\left(t,x\right)=(0,x_1)$。双曲线上的点 $(t,x)=(x_1\sinh\theta, x_1\cosh\theta)$ 与原点连线是类空间隔且恒定，可用来比较类空间隔，故称\textbf{类空校准线}。从 $(0,x_1)$ 至 $(t,x)$ 扫过角度 $\theta$，易得扫过面积为 $x_1^2\theta/2$，可类比欧氏几何的圆。同理推知\textbf{类时校准线}的结论。
     例如，两个观者都看到 $S$ 系原点上的时钟读数“0”，但直线 $t'=t_1$ 与该时钟世界线（$t$ 轴）在 $\left(t,x\right)=(t_1,0)$ 下方的 $(t_1/\gamma,0)$ 相交。故$S'$ 系的钟根据同时面 $t'=t_1,t'=0$ 认为 $S$ 的钟慢。}
 \end{figure}
+根据相对性原理，类时间隔在任二惯性系 $\{x\}\{x'\}$ 下保持不变：$\Delta s^2=-\Delta\tau^2=\Delta s'^2$。
+对类光间隔，注意光速不变与 $\Delta s^2=0=\Delta s'^2$ 等价，仍成立。
+考察类空间隔。再次利用光测距，设置相对静止的镜子惯性运动，表示待测间隔。入射光的固有用时 $\Delta s$，出射光亦是 $\Delta s$。
+外部观者看来，入射光用时 $\frac{L}{1-u}=\gamma\Delta s+\Delta t$，出射光用时 $\frac{L}{1+u}=\gamma\Delta s-\Delta t$。总共 $2\gamma\Delta s=\frac{L}{1-u}+\frac{L}{1+u}=2\gamma^2L$，则 $L=\Delta s/\gamma\leqslant\Delta s$。即运动方向上缩短 $1/\gamma$ 倍。此称\textbf{尺缩效应}或\textbf{长度收缩}。
+进而 $\Delta t=\gamma u\Delta s$。入射光总共走过 $\frac{L}{1-u}=\Delta\ell+\gamma u\Delta s$，则 $\Delta\ell = \gamma\Delta s$。故 $\Delta s^2=-\Delta t^2+\Delta\ell^2$ 成立。
 
 若间隔类光或类时，则（未来朝向一致的）各惯性系将一致认同两个事件的先后顺序。但对类空间隔，其坐标时差距可在不同惯性系下取任意实数。不同观者对其先后次序各抒己见，故称类空间隔的事件没有\textbf{因果联系}。可见并非所有事件都能涉及因果。
 
@@ -308,15 +193,17 @@ Einstein 最初用对钟、仿射性假设得到上式，时空线元则后来�
     }\label{fig:boost}
 \end{figure}
 
-线元在坐标变换下的不变是一种时空对称性，称 Poincaré 变换构成的集合 $P$ 为\textbf{Poincaré 群}。
+线元的不变是一种对称性，Poincaré 变换构成的集合 $P$ 称\textbf{Poincaré 群}\footnote{集合上规定满足结合律的二元封闭运算，且存在恒等元和逆元，则称\textbf{群}(group)，元素称\textbf{群元}，该运算称\textbf{群乘}。比如沿 $x$ 轴的任意平移变换表为 $\bar x=x+a$，记作 $\varphi_a$。
+原则上，变换可有若干参数 $\{\alpha,\beta,\cdots\}$，但只需任取一个方向来研究\textbf{单参变换}，且可从某区间 $I\subset\R$ 任意取值，称\textbf{连续变换}。
+单参连续变换 $\{\varphi_a:a\in\R\}$ 构成\textbf{单参群}，群乘可为 $\varphi_a\varphi_b:=\varphi_{a+b}$，这样 $\R$ 的加法和乘法自动给出 $\varphi_0$ 为恒等变换，$\varphi_{-a}$ 为 $\varphi_{a}$ 为逆元。加法交换律使群乘可交换。一个东西在某种变换下形式保持不变，称这个东西具有相应的\textbf{对称性}，群称对称群。除连续变换外，参数还可只取有限个值，称\textbf{分立}或\textbf{离散}变换(英语均为 discrete)，比如反射变换。}。
 若为齐次变换：$x^\mu_0=0$，则变换仅由线性变换的矩阵 $\Lambda$ 即可表示，群乘可对应矩阵乘法。
-$\Lambda$ 都满足类似于正交矩阵\footnote{回忆一下，正交矩阵 $R^i{}_j$ 满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\eqto (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
+$\Lambda$ 都满足类似于正交矩阵\footnote{正交矩阵满足保持单位阵不变的合同变换 $R^\mathrm{T} R = I\eqto (R^\mathrm{T})_k{}^i\delta_{ij} R^j{}_l=\delta_{ij}R^i{}_k R^j{}_l=\delta_{ij}$。
 其中注意矩阵转置满足 $(R^\mathrm{T})_k{}^i=R^i{}_k$；矩阵乘法顺序涉及指标的相靠。从右手系 $\{x\}$ 出发，只要坐标变换是\textbf{保定向}的，即 Jacobi 行列式 $\det(\pdv*{y^i}{x^k})>0$，则新系 $\{y\}$ 也右手。$R^\mathrm{T} R = I$ 取行列式有 $|R|^2=1$。当 $|R|=1$ 时它就是旋转变换，当 $|R|=-1$ 时就存在空间反射。右手 Descartes 系间相差保定向旋转变换、原点平移，它们都保持勾股定理 $\d\ell^2=\delta_{ij}\d x^i\d x^j$。}的 \eqref{eq:Lorentz} 式（$|\Lambda|^2=1$），但无非是比空间转动还多出了时空伪转动。全体 $\Lambda$ 构成\textbf{广义正交群}，号差 $+2$ 下记 O(1,3)，前者指度规负项个数，后者指正项个数。
 号差不改变实质也可体现：可证 O(1,3),O(3,1) 同构。
 只包含时空平移的群称\textbf{时空平移群}，$P$ 可视为 O(1,3) 和平移群所张成的，数学上称为二者的半直积。
 \eqref{eq:Lorentz} 取 $\sigma=\lambda=0$ 有
 $(\Lambda^0{}_0)^2=1+\delta_{ij}\Lambda^i{}_0\Lambda^j{}_0\geqslant 1$。
-因为 $\Lambda^0{}_0,|\Lambda|$ 不可能在区间 $(-1,1)$ 中，则不存在一系列变换能连续地改变它们的符号。故可将 O(1,3) 划为四个连通分支\footnote{通俗地说，拓扑空间称为\textbf{连通的}(connected)，是指空间是一整块的，其任意两点存在完全位于空间中的连续路径。两个分离球体之并不是连通的，但二者都是其连通的子集，这称为\textbf{连通支集}(component)或\textbf{连通分支}(branch)。}，如表 \ref{table:class}。
+因为 $\Lambda^0{}_0,|\Lambda|$ 不可能在区间 $(-1,1)$ 中，则不存在一系列变换能连续地改变它们的符号。故可将 O(1,3) 划为四个连通分支\footnote{通俗地说，拓扑空间称为\textbf{连通的}(connected)，是指空间是一整块的，其任意两点存在完全位于空间中的连续路径。两个分离球体之并不是连通的，但二者都是其连通的子集，此称\textbf{连通支集}(component)或\textbf{连通分支}(branch)。}，如表 \ref{table:class}。
 \begin{table}[ht]\centering
     \caption{四个分支}
     \label{table:class}
@@ -410,6 +297,50 @@ $\dot{\bm x}$ 几乎处处为常数时取等。
 直观上，考虑图 \ref{fig:twin} 的三角情形，显然斜线的固有时短于竖线。
 这导致著名的\textbf{孪生佯谬}(twin paradox)：设一对双胞胎从某时空点分离，并回合于另一时空点，则惯性运动者将年长于非惯性运动者，因为惯性观者经历更多固有时。也可理解为，折线的同时面会发生突变，因此惯性观者多出了图 \ref{fig:twin} 阴影部分的时间差。
 
+\subsection{相对论动力学}
+
+许多物理定律能靠着一种信念得到：\textit{实际定律总使系统作用量最小}，此称\textbf{最小作用量原理}(principle of least action)。当然，最小只是美学说法，其实只要求导数为零，故严格称法为\textbf{稳恒}(stationary)\textbf{作用量原理}，仅在分析解的稳定性时再关注最优化问题。
+这一哲思起源于 Fermat 原理：固定起点终点，光的实际路径应使传播时间取极值。故作用量通常像曲线线长、传播时间这样表为积分形式：
+\eq{S(q(t))=\int_{a}^{b}\d{t}L(t,q,\dot q,\ddot q,\cdots),\quad \dot q:=\dv{q}{t}.}
+其中 $L$ 称作\textbf{拉氏量}(Lagrangian)，塞进了所有可能的导数。通俗地说，这种函数的函数称为\textbf{泛函}(functional)\footnote{设函数 $f:A\to\R$。$A=\R^n$ 时说明自变量可由 $n$ 个独立实数描述，$f$ 为 $n$ 元函数，称 $n$ 为\textbf{自由度}。曲线的点无限多，因此泛函可视作函数在\textbf{无穷自由度}下的极限。泛函的自变量称\textbf{宗量}。}。
+$q$ 是系统的可能分布状态，称\textbf{位形}(configuration)；其随参数 $t$ 的演化 $q(t)$ 称\textbf{路径}(path)。全体位形之集称\textbf{位形空间}，其维数为\textbf{系统自由度}。在 $s$ 维位形空间上任取坐标系，参数化后坐标式表为 $q^i(t)$。参数可任取，但建议具有某种时间含义。
+实际路径称\textbf{正路}或\textbf{在壳}(on shell)路径，其余称\textbf{旁路}或\textbf{离壳}(off shell)路径。
+
+
+固定端点的全体路径构成的集合称\textbf{Fréchet 空间} $\Omega_a^b$，作用量是其上的函数。
+多元函数求导总是化为单元求导，如方向导数、偏导。
+类似地，相对某个 $q(t)$，我们也任挑一个方向取邻近 $\tilde q(t)$，差值用单参 $\epsilon$ 表示为
+\eq{
+    \var q^i(t)=\tilde q^i(t)-q^i(t)=\epsilon \xi^i(t,q^i,\dot{q}^i),\quad \delta q^i(a)=\delta q^i(b)=0. 
+}
+$L$ 含更高阶导时，还要求高阶导在端点也为零，即 $\delta q^i=\delta\dot q^i=\cdots=0$。
+此称\textbf{Fréchet 变分}。
+之后将 $q^i(t)$ 简写为 $q^i$ 或 $q$。
+求导就是除以 $\epsilon$ 再令 $\epsilon\to 0$，因而 $o(\epsilon)/\epsilon\to 0$。故我们能在取极限前就甩掉 $o(\epsilon)$，近似到一阶线性主部，差值都称无穷小的。
+泛函变分为增量线性主部
+\begin{align*}
+    \var S&=\int_{a}^{b}\d{t} L(\tilde q(t),\cdots,t) - \int_a^b\d{t} L=\int_a^b\d{t} \delta L=\int_a^b\d t \left(\pdv{L}{q^i}\delta q^i+\pdv{L}{\dot q^i}\delta \dot q^i + \cdots\right)\\
+    &=\int_a^b\d t \left(\fdv{L}{q^i}\bar\delta q^i + \dv{t}(\pdv{L}{\dot q^i}\bar\delta q^i +\cdots )\right) \simeq \int\d{t} \fdv{L}{q^i} \delta q^i,\quad \fdv{L}{q^i} := \pdv{L}{q^i}-\dv{t}\pdv{L}{\dot q^i} + \cdots,
+\end{align*}
+第三步代入了 $\delta L$ 的线性主部，并对指标 $i$ 使用求和约定。
+这里没有 $\pdv*{L}{t}$ 项（即使可以有 $\pdv*{L}{t}\ne 0$），因为此处变分 $t$ 不变。
+可见变分代数性质与微分相似。
+由于 $\var$ 无关 $t$，故 $\var\dv{t} =\dv{t}\var$。
+随后关键是\textbf{分部积分}把 $\delta\dot q,\delta\ddot q,\cdots$ 收进全微分，依约束消去。
+这里用“$\simeq$”强调舍去边界项。以后常省略积分域，少数情况才讨论边界。
+记号 $\fdv*{L}{q^i}$ 称 $L$ 的\textbf{变分导数}。
+最小作用量原理指出在壳条件 $\delta S=0$，意指 $S$ 在正路处，对任意 Fréchet 变分的增量都属于 $o(\epsilon)$，即线性主部为零，或者说沿任意方向求导 $\dv*{S}{\epsilon}|_{\epsilon=0}=0$。故
+\eq{0 = \delta S =: \int\d{t} \fdv{S}{q^i} \delta q^i ,\enspace \forall \delta q^i \iff \tcbhighmath{0=\fdv{S}{q^i}\simeq\fdv{L}{q^i}.}}
+$\fdv*{S}{q^i}$ 称 $S(q(t))$ 的\textbf{泛函导数}。
+$\fdv*{L}{q^i} = 0$ 称\textbf{Euler-Lagrange 方程}\footnote{$\forall\eta(x)$ 成立 $\int\d{x} f(x)\eta(x)=0$。一旦存在 $f(x_0)\ne 0$，取 $\eta$ 在邻域 $(x_0-\delta,x_0+\delta)$ 不为零，则积分非零，矛盾，由 $x_0$ 任意性得 $f(x)=0$。此称\textbf{变分法基本引理}或\textbf{du Bois-Reymond 定理}。}，简称\textbf{E-L 方程}。读者也可尝试从 $\dv*{S}{\epsilon}$ 方法证明之。
+需强调，形式简单的 $L$ 才考虑计算 E-L 方程，更多时候按以上标准流程直接变分。物理理论往往承认\textbf{Newton 决定性原理}：\textit{初始位置、速度就可确定运动}，更高阶导不会出现，即只考虑 $L(t,q,\dot q)$。
+$L$ 不显含的量称\textbf{循环坐标}，比如 $\pdv*{L}{s}=0$，则变换 $\tilde s=s+a$ 保持作用量对称。
+能量、动量守恒是时空平移对称 $\pdv*{L}{q^i},\pdv*{L}{t}=0$ 的结果，比如 $p_i:=\pdv*{L}{\dot q^i}$ 在壳满足 $\dot p_i=\pdv*{L}{q^i}=0$。
+任意系统都能按\textbf{Legendre 变换} $H:=p_i\dot q^i-L$ 定义\textbf{哈氏量}(Hamiltonian)作为总能量，在壳时 $\dot H=-\pdv*{L}{t}=0$。
+似乎给定某个 $q(t)$，$L$ 就能用 $t$ 表示，似乎与“不随 $t$ 变”矛盾。这涉及符号混淆。给定 $q(t)$ 谈及的是复合函数 $L(q(t),\dot q(t),\cdots,t) =: L(t)$，通过 $q(t)$ \textbf{隐含} $t$，从而积分。$\dot L$ 实指 $\dv{t}L(t)$，$\pdv*{L}{t}$ 实指 $\pdv{t}L(q,\dot q,\cdots,t)$。$\dot L\ne 0$ 但仍可 $\pdv*{L}{t}=0$。
+
+不同拉氏量给出不同理论。
+取 Descartes 系 $q=\bm x$ 和 $L=\frac 12 \sum m_n\dot{\bm x}_n^2 - V$，E-L 方程为 $\grad L=\dv{t}\pdv{L}{\dot{\bm x}_n}$，即保守力的 Newton 第二定律 $m_n\ddot{\bm x}_n=-\grad V$。
 相对论、闵氏几何源于光速不变、狭义相对性原理，但也实际上依赖于一些隐藏条件，如光走直线、不存在其它不变常数、时空均匀性等。
 为方便，我们严格地归纳为一种\textbf{不变性}(invariance)：
 \begin{center}
@@ -421,7 +352,6 @@ $\dot{\bm x}$ 几乎处处为常数时取等。
 标量可以包括与物质状态无关的量，比如常数 $c,\pi/2,\hbar$，其中 $\hbar=h/2\pi$ 是约化 Planck 常数。
 修改 Lorentz 不变性可得新理论，用于实验检验，结果显示相差不大。
 相对论、量子场论的许多结果，都在极高精度上获得验证。我们目前有充分理由认可 Lorentz 不变，直至存在实验明显证否。
-
 考虑自由质点。
 \textbf{质量}指其在相对静系中所测质量，是 Lorentz 不变的，但不一定守恒。记该质点质量 $m$。
 其位形空间就是时空，世界线是路径，参数可取坐标时或线长参数。
@@ -437,16 +367,16 @@ S=\int\d{t}L=-m\int\d{t}\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu} = -m\int\d\ta
 注意 $\sqrt{-\eta_{\mu\nu}\dot x^\mu \dot x^\nu}=1/\gamma$，对 $\dot x^\mu$ 偏导为 $-\gamma\eta_{\mu\nu}\dot x^\nu=-U_\mu$，这里 $U^\mu:=\dv*{x^\mu}{\tau}=\gamma\dot x^\mu$ 就是曲线的类时切矢，称\textbf{4-速}，且线长参数将导致它是单位切矢：$U^\mu U_\mu =-1$。
 $\dot x^\mu$ 的空间部分 $\dot{x}^i$ 称为\textbf{3-速}，对偶为 $\dot{x}_i=\eta_{ij}\dot{x}^j=\delta_{ij}\dot{x}^j$。
 由 $\dot x^0=1,\ddot x^0=0$ 得 $\dot{x}_\mu\ddot{x}^\mu=\dot{x}_i\ddot{x}^i$，则 $\dot U^\mu = \gamma\ddot x^\mu + \gamma^3\dot{x}_i\ddot{x}^i\dot x^\mu$。$\ddot{x}^i$ 称为\textbf{3-加速}。
-显然 $\pdv*{L}{x^\kappa}=0$，故 E-L 方程为
+E-L 方程为
 \eq{
-    \dot p_\mu = 0,\quad p_\mu =\pdv*{L}{\dot x^\mu}= m U_\mu \im \dv*{p^\mu}{\tau}=\gamma\dot p^\mu = 0.
+    \dot p_\mu = 0,\quad p_\mu := \pdv*{L}{\dot x^\mu}= m U_\mu \im \dv*{p^\mu}{\tau}=\gamma\dot p^\mu = 0.
 }
-$p^\mu=\eta^{\mu\nu}p_\nu=m U^\mu$ 称为\textbf{4-动量}。
+$p^\mu=\eta^{\mu\nu}p_\nu=m U^\mu$ 称为\textbf{4-动量}。上式即表示运动为直线，也表示 $p^\mu$ 守恒。
 乘以 $\gamma$ 相当于令 $\dot x^\mu \dot x_\mu=-1$，也即重参化\footnote{
     若取 $\tau$ 为参，即代入 $\dot x^\mu \dot x_\mu=-1$，则 $L=-m$ 似乎得不到任何结果。这是因为 Fréchet 变分前提是各路径参数的取值范围为同一区间，从而变分与参数无关。然而 $\tau$ 对每条路径都是固有时，则 $\var\tau\ne 0$。
     有的书会进行形式上 $\var\tau=0$ 的计算，这是因为 $\tau$ 在这里只是纯粹的参数，它仅对正路是固有时，即先有 $\dot x^\mu \dot x_\mu\ne-1$，变分后才能代入 $\dot x^\mu \dot x_\mu=-1$，不能提前代入。
     既然如此，直接变分 $\int\sqrt{-\eta_{\mu\nu}\d x^\mu \d x^\nu}$ 或用无关参数（如坐标时 $t$）计算 E-L 方程就可避免混淆。} $t\mapsto\tau$。
-但正则动量恒有 $p_\mu = m U_\mu$，不受参数影响。
+但恒有 $\pdv*{L}{\dot x^\mu} = m U_\mu$，不受参数影响。
 设 $\dv*{m}{\tau}=0=\dot m$，约去 $m$ 则的确有直线 $\dv*[2]{x^\mu}{\tau}=0$。也即 $\ddot x^\nu + \gamma^2\dot{x}_i\ddot{x}^i\dot x^\nu=0$，取 $\nu=0$ 可知 $\dot{x}_i\ddot{x}^i=0$，则等价于 $\ddot x^\mu=0$。称
 \eq{
     A^\mu:=\dv*{U^\mu}{\tau}=U^\nu\p_\nu U^\mu=\gamma^2\ddot x^\mu + \gamma^4\dot{x}_i\ddot{x}^i\dot x^\mu
@@ -464,7 +394,7 @@ $L$ 的 4-速设 $U^\mu$ 关于 $(o,Z)$ 的 \textbf{3+1 分解}为 $U^\mu = A Z^
 称为\textbf{投影映射}(projection map)。
 $h^\mu{}_\nu U^\nu$ 时间分量为零，空间分量为 $U^i=\gamma\dot x^i$，因此可把 $h^\mu{}_\nu U^\nu/(-U^\mu Z_\mu)$ 作为 $Z^\mu$ 所测 3-速。若 $U^\mu=Z^\mu$，则称 $(o,Z)$ 是 $L$ 在 $o$ 的\textbf{瞬时固有观者}。固有系就是处处设置瞬时固有观者。
 
-由时空对称性，$p_\mu=\pdv*{L}{\dot x^\mu}$ 的时空分量解释为能量、动量，则 $Z^\mu$ 所测\textbf{能量}、\textbf{3-动量}分别为
+由对称性，$p_\mu=\pdv*{L}{\dot x^\mu}$ 的分量解释为能量、动量。$Z^\mu$ 所测\textbf{能量}、\textbf{3-动量}分别为
 \[E=p^0=-p^\mu Z_\mu=p_i \dot{x}^i-L=\gamma m,\quad \bm p^\mu = p^\mu - E Z^\mu.\]
 4-动量可写作 $p^\mu=\gamma m \dot x^\mu=E\dot x^\mu$。
 $E=\gamma m$ 是著名的\textbf{质能方程}。
@@ -560,13 +490,13 @@ $\p_t\Phi_i,\p_i\Phi$ 分别是时间导数以及相邻体元间的相互作用�
 \]
 注意\textit{坐标系可任意}。
 一般情形为 $S(\Phi(x))=\int\d[4]{x}\Lag(x,\Phi,\p\Phi,\cdots)$。
-对若干个数或若干指标的场，可记 $\Phi^A$ 或省略指标。
+对若干个、若干指标的场，可记 $\Phi^A$ 或仍省略指标。
 简写 $\Lag(x):=\Lag(x,\Phi(x),\p\Phi(x),\cdots)$。
 只考虑惯性系时，取体元变换 $\d[4]x'=J\d[4]x$，其中 $J=\det(\pdv*{x'^\mu}{x^\nu})$。
 注意 Lorentz 变换的固有性 $J=\det\Lambda=1$ 或只关心积分绝对值（$|\det\Lambda|=1$），则 $\d[4]x$ 是 Lorentz 不变的。故若 $\Lag(x)=\Lag'(x')$ 是 Lorentz 标量，$S$ 也将 Lorentz 不变。
 
 被积函数 $\Lag(x)$ 只依赖同一点 $x$ 的场 $\Phi(x)$ 和有限阶导数，而不涉及多个点的直接耦合，如 $S=\int\d[4]{x}\d[4]{y}\Phi(x)K(x-y)\Phi(y)$ 形式。这叫做\textbf{动力学局域性}或\textbf{定域性}(locality)。场也可称\textbf{定域场}(localized field)。这进而也导致\textit{可观测量局域}：一个区域里的实验只能由这个区域附近的场描述。
-我们已经看到，Lorentz 不变性将使粒子不超光速，实际上，定域性配合 Lorentz 不变性，会导致相互作用也至多以光速影响邻域。粒子携带的信息，场的相互作用信息，都是传速有限的\footnote{光子的另一种表示是电磁波，这极大暗示粒子可由场解释。量子场论中，经典场提升为算符，满足对易关系，粒子是场算符的激发态。这样，粒子传播也可解释为场的相互作用传播。
+我们已经看到，Lorentz 不变性将使粒子不超光速，实际上，定域性配合 Lorentz 不变性，会导致相互作用也至多以光速影响邻域。粒子携带的信息，场的相互作用信息，都是传速有限的\footnote{光的经典表述是电磁波，这极大暗示粒子可由场解释。量子场论中，经典场提升为算符，满足对易关系，粒子是场算符的激发态。这样，粒子传播也可解释为场的相互作用传播。
 电子场的作用由电磁波包传递，粒子图像就是电子产生光子，再被另一电子吸收，在经典时表现为电磁力。
 在这里，源和被作用荷平权，即严格来说，电磁场一开始就存在，不依附于某个带电体，将总场分解为由各源所产生的部分是一种经典分析方法。
 自场也要作用自己，称为自相互作用，这会导致辐射阻尼、无穷大自能等悖论，但量子化后，可用\textbf{重整化}方法来消除无穷大。}。也就导致了\textbf{因果局域性}：两事件间通过局域相互作用涉及因果。
@@ -575,42 +505,58 @@ $\p_t\Phi_i,\p_i\Phi$ 分别是时间导数以及相邻体元间的相互作用�
 
 点变换和坐标变换可互相转换。前者为新旧点在同一坐标系下的表示 $x\to\tilde x$，称\textbf{主动观点}：点变（场、运动路径也一齐拖拽）、坐标系不变；后者为同一时空点在不同系的表示 $\{x\}\to\{x'\}$，称\textbf{被动观点}：点不变、坐标系变。双向连续的双射称为\textbf{同胚}、双向光滑的双射称\textbf{微分同胚}(diffeomorphism)。我们只考虑可逆光滑坐标变换，这就给出主动观点下流形之间的微分同胚。
 
-定域性使参数往往可随时空点可变：$\p_\mu\epsilon\ne 0$，这里一并考虑。
-对 $\Phi(x)$ 进行变换 $\Phi(x)\to\tilde\Phi(\tilde x)$。
-$\bar\var\Phi=\epsilon(x) F,\delta x^\mu=\epsilon(x) \xi^\mu$。
-则 $\delta=\bar\var+\delta x^\nu\p_\nu$，作用于 $\Phi,\Phi_{,\nu},\Lag(x)$。
-并注意 $\bar\var\p =\p\bar\var$。$\d[4]\tilde x=J\d[4]x$ 中的 Jacobi 行列式为
+计算上，可将连续变换视作一系列参数为小量 $\alpha=\epsilon$ 的\textbf{无穷小变换}之累积。相较而言，有限参数的连续变换又称为\textbf{有限变换}。
+进行无穷小变换 $\Phi(x)\to\tilde\Phi(\tilde x)$，带来变化
+\eq{
+    \bar\var\Phi=\tilde\Phi(x)-\Phi(x)=\epsilon(x) F,\quad \delta x^\mu=\tilde x^\mu - x^\mu = \epsilon(x) \xi^\mu.
+}
+$\bar\var$ 称为\textbf{等时变分}。定域性使参数往往可随时空点而变，这种变换称\textbf{局域变换}，否则称\textbf{整体变换}，这里用 $\p_\mu\epsilon\ne 0$ 一并考虑即可。
+代入 $\tilde\Phi=\bar\var\Phi+\Phi$ 可见总变化（线性主部）为 $\var \Phi=\tilde\Phi(\tilde x)- \Phi=\tilde\Phi + \var x^\nu\p_\nu\tilde{\Phi} - \Phi=\bar\var\Phi+\var x^\nu\p_\nu\Phi$，$\var$ 称\textbf{Noether 变分}，公式记作
+\eq{
+    \delta=\bar\var+\delta x^\nu\p_\nu.
+}
+替换得 $\delta\Phi_{,\mu}=\bar\var\Phi_{,\mu}+ \delta x^\nu\Phi_{,\mu\nu}$，也可直接计算 $\pdv{\tilde x^\mu}(\tilde \Phi(\tilde x))-\Phi_{,\mu}$。同理 $\delta\Lag=\bar\var\Lag+\delta x^\nu\p_\nu\Lag$。
+一般 $\var,\p$ 不交换，但 $\bar\var\p =\p\bar\var$。
+$\d[4]\tilde x=J\d[4]x$ 中的 Jacobi 行列式为
 \[
 J=\det(\pdv{\tilde x^\mu}{x^\nu})=\sum_{(\mu_0\cdots \mu_3)\in S_4}\sgn(\mu_0\cdots \mu_3)\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3}=\varepsilon_{\mu_0\cdots \mu_3}\pdv{\tilde x^{\mu_0}}{x^0}\cdots\pdv{\tilde x^{\mu_3}}{x^3},
 \]
 其中 $\varepsilon_{\pi}$ 称\textbf{Levi-Civita 符号}：若 $\pi\in S_n$，则 $\varepsilon_{\pi}=\sgn \pi$，否则为零。
 代入 $\delta x^\mu$ 有
 \eq{
-    \pdv{\tilde x^\mu}{x^\nu}=\delta_\nu^\mu+\p_\nu\delta x^\mu=\delta^\mu_\nu+\epsilon\p_\nu\xi^\mu+\xi^\mu\p_\nu\epsilon, \enspace \pdv{x^\alpha}{\tilde x^\mu} = \delta^\alpha_\mu - \p_\mu \var x^\alpha.
+    \pdv{\tilde x^\mu}{x^\nu}=\delta_\nu^\mu+\p_\nu\delta x^\mu, \quad \pdv{x^\alpha}{\tilde x^\mu} = \delta^\alpha_\mu - \p_\mu \var x^\alpha.
 }
-零阶项 $\varepsilon_{\mu_0\cdots \mu_3} \delta_0^{\mu_0}\cdots\delta_3^{\mu_3}=\varepsilon_{0\cdots 3}=1$。一阶项为 $\varepsilon_{\mu_0\cdots \mu_3}\delta_0^{\mu_0}\cdots\p_\nu\delta x^{\mu_\nu}\cdots\delta_3^{\mu_3}=\delta_{\mu_\nu}^{\nu}\p_\nu\delta x^{\mu_\nu}=\p_\nu\delta x^\nu$。所以 $J=1+\p_\mu\delta x^\mu$，也即 $\delta(\d[4]{x})=\p_\mu\delta x^\mu\d[4]{x}$。综上
+零阶项 $\varepsilon_{\mu_0\cdots \mu_3} \delta_0^{\mu_0}\cdots\delta_3^{\mu_3}=\varepsilon_{0\cdots 3}=1$。一阶项为 $\varepsilon_{\mu_0\cdots \mu_3}\delta_0^{\mu_0}\cdots\p_\nu\delta x^{\mu_\nu}\cdots\delta_3^{\mu_3}=\delta_{\mu_\nu}^{\nu}\p_\nu\delta x^{\mu_\nu}=\p_\nu\delta x^\nu$。所以 $J=1+\p_\mu\delta x^\mu$，也即 $\delta(\d[4]{x})=\p_\mu\delta x^\mu\d[4]{x}$。
+这相当于将 Noether 变分挪进积分并求 $\var(\d[4]{x}\Lag) = \d[4]{x}\var\Lag + \d[4]{x}\Lag\p_\mu\delta x^\mu$。
+综上
 \begin{align*}
     \delta S &=\int \delta(\d[4]{x}\Lag)=\int \d[4]{x} (\bar\var\Lag+\p_\mu(\Lag\delta x^\mu))=\int\d[4]{x}\left(\fdv{\Lag}{\Phi^A}\bar\var\Phi^A - \p_\mu(\epsilon J^\mu)\right),\\
     J^\mu &:=-\frac{1}{\epsilon}\left(\pdv{\Lag}{\Phi^A_{,\mu}}\bar\var\Phi^A+\cdots+\Lag\delta x^\mu\right)=-\pdv{\Lag}{\Phi^A_{,\mu}} F^A+\cdots-\Lag \xi^\mu,\\
     \fdv{\Lag}{\Phi^A}&=\pdv{\Lag}{\Phi^A}-\p_\mu\pdv{\Lag}{\Phi^A_{,\mu}}+\cdots.
 \end{align*} 
-细心的读者可能发现一个看上去奇怪的等式：
-\[\p_\mu\Lag = \pdv{\Lag}{\Phi}\p_\mu\Phi + \pdv{\Lag}{\Phi_{,\nu}}\p_\mu\p_\nu\Phi + \cdots + \pdv{\Lag}{x^\mu}.\]
+细心的读者可能发现全导数看上去很奇怪：$\p_\mu\Lag = \pdv{\Lag}{\Phi}\p_\mu\Phi + \pdv{\Lag}{\Phi_{,\nu}}\p_\mu\p_\nu\Phi + \cdots + \pdv{\Lag}{x^\mu}$，
 因为左边 $\Lag=\Lag(x)$ 是复合函数简写，右边 $\Lag=\Lag(x,\Phi,\p\Phi,\cdots)$ 是定义式简写。简写时习惯用 $\p_\mu,\pdv*{x^\mu}$ 区分，前者表示复合函数（时空场）的坐标偏导，后者表示泛函型显式偏导。对 $\Lag$ 之外的事物不用区分 $\p_\mu,\pdv*{x^\mu}$。
 
-取 Fréchet 变分 $\var=\bar\var$。
+
+Fréchet 变分相当于固定端点的等时变分（$\delta t=0,\var=\bar\var$），故与 $\p$、$\int$ 交换而计算 $\var S=\int \d[4]{x}\var L$。
 单元微积分下，边界项即函数作差；在多元情形中这是高维 Gauss 定理 \eqref{eq:Gauss} 式，证明见 \S\ref{appx:form}。故为消除边界项可有三类 Fréchet 假设：
 \begin{enumerate}
     \item 可取无穷积分，认为无穷远没有贡献或不存在边界，准确地说，表面积分的被积函数在无穷远时足够快趋于零，至少比 $1/r^{n-1}$ 快，即 $f(x)=o(1/|x|^{n-1})$，$n-1$ 为表面维度；
     \item 仅在 $\delta \Phi=0$ 条件下，可通过修改 $\Lag$ 使其消除边界项；
     \item 考虑积分域 $U$时，规定边界上任意阶都有 $(\delta \Phi)_{,\cdots}=0$（比如认为 $U$ 外的旁路 $\Phi$ 恒定地与边界一致），这一更强的条件使 $\Lag$ 无论含多少阶导数都能消除边界项。
 \end{enumerate}
-总之，不与物理意义冲突时，默认舍去变分中的全微分项。有 E-L 方程 $\fdv*{\Lag}{\Phi}=0$。$\Phi$ 在壳时 $J^\mu$ 正是整体守恒流，也称\textbf{Noether 流}，满足连续性方程 $\p_\mu J^\mu=0$。
+总之，不与物理意义冲突时，默认舍去变分中的全微分项。有 E-L 方程 $\fdv*{\Lag}{\Phi}=0$。
 在粒子情形我们通过决定性原理排除高阶导，而现在 $\p$ 还包含相互作用势的含义，高阶导数可能导致能量无下界，故一般不考虑高阶导。\S\ref{sec:Einstein} 还出现一类情况：高阶导只存在于边界项中，于是在变分时实质上消除掉了。若非要考虑高阶导，则公式法本身也并不方便。
 为规避这些麻烦，直接具体问题具体分析，按相似程序计算变分即可。
 
-甚至有的 $\Lag$ 形式上不包含 $\Phi$，那么就连上述 Noether 变分法也将变得困难。
-下述技巧称为\textbf{局域化}、\textbf{规范化}(gauging)或\textbf{Gell-Mann–Lévy 法}：整体变换下 $\delta S = 0$，做任意局域化  $\epsilon\to\epsilon(x)$，$S$ 整体但不局域对称，局域变换将使 $\delta S\ne 0$。具体地，考虑 $\Lag(x,\Phi,\p\Phi)$，其必定形如
+对称严格来说是指 $\delta S=0$。
+当然，也可让变换前后的 $S$ 只相差边界项（称为\textbf{准对称}）或常系数（称为\textbf{标度对称}），因为它们给出相同在壳 $\Phi$。
+连续准对称性就是指相应 $\delta\Phi$ 只引起 $\delta S=\int \d[4]{x} \p_\mu K^\mu$，等价于判据 $\fdv{L}{\Phi} \bar\var\Phi - \p_\mu(\epsilon J^\mu) = \p_\mu K^\mu$，此称\textbf{Noether 条件}。
+但注意 $\p_\mu(\epsilon J^\mu)$ 已是全散度项，而 $\delta x^\mu$ 的贡献全部收了进去，可见 $\delta x^\mu$ 并不影响准对称，准对称实际上仅约束 $\bar\var\Phi$ 的形式。更多时候还是直接要求 $\delta S=0$，等价为 $\p_\mu K^\mu=0$。
+\textbf{Noether 定理}指出，\textit{连续整体对称性导致在壳时具有相应的守恒量}：$\Phi$ 在壳时 $J^\mu$ 连续性方程 $\p_\mu J^\mu=0$，这就是整体守恒流\footnote{场论与离散系统的对应就是 $q(t)\leftrightarrow \Phi(x)$。离散系统中，相应结论就是：$\delta=\bar\var+\delta t\dv*{t}$ 作用于 $q,\dot q,L(t)$，以及 $\delta(\d t)=\d\tilde t-\d t=\dot{\tilde{t}}\d t-\d t=\dv{t}(\delta t)\d t$。Noether 荷是 $Q = (\pdv*{L}{\dot q}\bar\var q+\cdots+L \delta t)/\epsilon$，在壳守恒性为 $\dot Q = 0$。可见 $p_\mu = \pdv*{L}{\dot x^\mu}$ 的确是时空平移所致。}，也称\textbf{Noether 流}。
+可见对称性不仅约束相互作用，还导致守恒量，但注意并非所有守恒量都来源于对称。
+有的 $\Lag$ 形式上不包含 $\Phi$，则很难用 $J^\mu$ 公式法计算守恒流。
+下述技巧称为\textbf{局域化}、\textbf{规范化}(gauging)或\textbf{Gell-Mann–Lévy 法}：整体变换下 $\delta S = 0$，做任意局域化  $\epsilon\to\epsilon(x)$，$S$ 整体但不局域对称，局域变换将使 $\delta S\ne 0$。具体地，考虑 $\Lag(x,\Phi,\p\Phi)$，其必形如
 \[
     \delta S = -\int\d[4]{x} J^\mu \p_\mu\epsilon.
 \]
@@ -654,7 +600,7 @@ $J^0,\bm J$ 为\textit{惯性系 $\{x\}$ 所测}\textbf{荷密度}、\textbf{流
     S^{\mu\nu}:=-\pdv{\Lag}{\Phi_{,\mu}}\p^\nu\Phi+\Lag\eta^{\mu\nu},\quad J^\mu=\pdv{\Lag}{\Phi_{,\mu}}\xi^\nu\p_\nu\Phi-\Lag\xi^\mu.
 }
 在壳时 $\p_\mu J^\mu=0$ 给出守恒标量 $\int\d[3]{x} J^0 = - \int\d[3]{x} S^{0\nu}\xi_\nu$，但注意 $\p_\mu\xi_\nu=0$，因此可提出积分，换言之应考虑 $-\p_\mu J^\mu = \xi_\nu\p_\mu S^{\mu\nu} = 0\Rightarrow \p_\mu S^{\mu\nu}=0$。
-也可不预先使用场方程，直接计算得散度
+也可先直接计算再用在壳性
 \eq{
     \p_\mu S^{\mu\nu}
     =\fdv{\Lag}{\Phi}\p^\nu\Phi
@@ -703,14 +649,10 @@ $S^{\mu\nu}$ 称为\textbf{正则能动张量}(canonical energy-momentum tensor)
 有限变换给出 $D(\e^{tX}) = \exp(tX^\mu{}_\nu J^\nu{}_\mu)$。
 无穷小变换 $\Lambda^\mu{}_\nu = \delta^\mu_\nu + \epsilon\p_\nu\xi^\mu + o(\epsilon)$ 给出  $D(\Lambda) = \exp(\epsilon\p_\nu\xi^\mu J^\nu{}_\mu) + o(\epsilon)$。
 
-以下省略 $\Phi$ 的指标。
-考虑 Lorentz 对称性。
-将坐标变换转述为主动变换 $x\to\tilde x$，则 Lorentz 不变性转述为 Lorentz 对称性 $\Lag(x)=\tilde\Lag(\tilde x)$。原则上可模仿经典力学中的广义坐标，用双曲坐标系将伪转动变为平移，但为处理方便，这里直接用惯性系讨论\textbf{Lorentz 变换}。
-记有限变换 $\e^{t\omega}$。
-无穷小变换 $\Lambda^\mu{}_\nu = \delta^\mu_\nu + \epsilon\omega^\mu{}_\nu$ 给出
-\eq{
-    \xi^\mu = \omega^\mu{}_\nu x^\nu,\quad \p_\mu\xi_\nu = \omega_{\nu\mu}.
-}
+考虑 Lorentz 变换。
+将坐标变换转述为主动变换 $x\to\tilde x$，则 Lorentz 不变性转述为 Lorentz 对称性\footnote{原则上通过坐标变换，一切单参连续变换都可解释为平移。比如模仿极坐标系，用双曲坐标系将伪转动变为平移，但为处理方便，这里直接用惯性系讨论Lorentz 变换。} $\Lag(x)=\tilde\Lag(\tilde x)$。
+有限变换记 $\e^{t\omega}$。
+无穷小变换 $\Lambda^\mu{}_\nu = \delta^\mu_\nu + \epsilon\omega^\mu{}_\nu$ 给出 $\xi^\mu = \omega^\mu{}_\nu x^\nu,\p_\mu\xi_\nu = \omega_{\nu\mu}$。
 由 \eqref{eq:Lorentz} 知 ${\eta}_{\alpha\beta}=\eta_{\mu\nu}\Lambda^{\mu}{}_{\alpha}{\Lambda^{\nu}}_{\beta}\approx \eta_{\alpha\beta} + \epsilon(\omega_{\alpha\beta} + \omega_{\beta\alpha})$，则
 \eq{
     \omega_{\alpha\beta} =- \omega_{\beta\alpha},\quad \p_{(\mu}\xi_{\nu)}=0.
@@ -905,7 +847,7 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
 \]
 “几乎必然”是指反例的系综测度概率为零 $\mathrm{Pr}[\bm p_n\ne\bm 0]=0$。
 于是进一步 $\bm q=\bm 0$。所以对质点气，实际上无应力一定会导致无热流，于是直接成为尘埃。
-也可从另一视角看，$\bm p_n = \bm 0$ 等价于 $U^\mu(t,\bm x_n)=u_n^\mu(t)$，换言之局域流体元中 $u_n^\mu$ 几乎一致，$u_n^\mu$ 几乎能嵌入进整体流场 $U^\mu$。这称为\textbf{单流}(single-stream)情形。
+也可从另一视角看，$\bm p_n = \bm 0$ 等价于 $U^\mu(t,\bm x_n)=u_n^\mu(t)$，换言之局域流体元中 $u_n^\mu$ 几乎一致，$u_n^\mu$ 几乎能嵌入进整体流场 $U^\mu$。此称\textbf{单流}(single-stream)情形。
 故 $U^\mu(t,\bm x)\delta_n=u_n^\mu(t)\delta_n$ 几乎必然，说明随机量 $\hat T^{\mu\nu}=U^\mu U^\nu\sum_n m_n\delta_n/\gamma_n=-\hat T^\kappa{}_\kappa U^\mu U^\nu$ 几乎相等，等式两边的平均则完全相等，即 $T^{\mu\nu}=-T^\kappa{}_\kappa U^\mu U^\nu=\varepsilon U^\mu U^\nu$，这里注意 $U^\mu$ 已经是宏观量，无关于系综平均中的具体微观态，从而提出。可以看到，尘埃的能量密度还是有些不同，由于无压强，其微观机理直接是固有质量密度 $\sum_n m_n\delta_n/\gamma_n$。
 
 质点系的动量守恒其实是个微妙的话题。令 $\bm Y(x) = \bm x-\bm x_n(t)$，由链式法则
@@ -940,7 +882,7 @@ $\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$
 k_BT\d{\mathfrak s}=p\d(\frac{1}{n})+\d(\frac{\varepsilon}{n}) = \frac{1}{n^2}(n\d \varepsilon-(\varepsilon+p)\d n),
 }
 这里 $\mathfrak s$ 是\textbf{无量纲比熵}，$1/n$ 的物理意义就是每粒子体积。
-由此粒子数守恒导致比熵守恒 $\dv*{\mathfrak s}{\tau}=0$，这称为\textbf{绝热的}(adiabatic)。
+由此粒子数守恒导致比熵守恒 $\dv*{\mathfrak s}{\tau}=0$，此称\textbf{绝热的}(adiabatic)。
 空间部分 $h^{\lambda}{}_\nu \p_\mu T^{\mu\nu}$ 为\textbf{相对论性 Euler 方程}
 \eq{
 (\varepsilon+p)U^\mu\p_\mu U^\lambda + (\eta^{\lambda\mu} + U^\lambda U^\mu)\p_\mu p=0.
@@ -960,7 +902,7 @@ $(\varepsilon+p)$ 称为\textbf{惯性系数}，恢复 $c$ 为 $\frac{\varepsilo
 无论具体对象如何，只要有 U(1) 对称性，其动力学的结果都将是 Maxwell 方程。
 研究表明，电子由 Dirac 旋量场描述，实标量场可描述 $\pi^0$ 介子，复标量场及其共轭可描述 $\pi^\pm$ 介子。
 故 $\pi^\pm$ 介子、电子等都带有电荷，参与电磁相互作用。故将 U(1) 对称性的守恒流称为\textbf{4-电流密度}。
-依据相互作用的对称性、实验特征、量纲，所考虑耦合项的最简单形式，称为\textbf{最小耦合}(minimal coupling)\footnote{如 George Box 所说，“\textit{所有理论都是错的，但一些是有用的}”。只要意识到理论总是近似，就可给人类科学提供台阶。总是追求尽可能简单的理论，当然不意味着自然规律（若存在且能被人理解）从简。美学纯粹是出于人为便利，能迎合目前技术所能允许的实验即可。}。
+依据相互作用的对称性、实验特征、量纲，所考虑耦合项的最简单形式，称为\textbf{最小耦合}(minimal coupling)。
 考虑规范化 $\alpha\to \alpha(x)$，作用量中的一阶导有 $\delta(\p_\mu\Phi)=\i q \alpha \p_\mu\Phi + \i q \p_\mu\alpha \Phi$，$\p_\mu\alpha$ 项破坏原对称性。
 尝试加项使总作用量 $S$ 局域对称：$\delta S = \delta S_0 + \delta S_1 = 0$，即耦合项 $\Lag_1:=\Lag-\Lag_0$ 必引入矢量 $A_\mu$ 使 $\delta\Lag_1 = J^\mu_0 \p_\mu\alpha = J^\mu_0\delta A_\mu$。也就是
 \eq{
@@ -978,14 +920,14 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 }
 这种 $A^\mu$ 总是存在的，因为对任意 $\p^\mu A_\mu \ne 0$ 的 $A^\mu$，总可构造 $\tilde A_\mu = A_\mu + \p_\mu f$ 且 $\square f=\p^\mu\p_\mu f=-\p^\mu A_\mu $（这里 $\square=\p^\mu\p_\mu = -\p_t^2 + \nabla^2$ 为 d'Alembert 算子，$\nabla^2$ 为 Laplace 算子），即可有 $\p^\mu \tilde A_\mu =0$。“$\square f =$\,常数”的非零解存在且甚多。
 若选择 $\p_\mu A^\mu=0$，由于这是 Lorentz 标量，那 $A^\mu$ 当然是 Lorentz 矢量。然而也可采取\textbf{Coulomb 规范} $\div\bm A=\p_iA^i=0$，为使新系中 $\p'_iA'^i=0$，变换必形如 $A'^\mu(x') = \Lambda^\mu{}_\nu A^\nu(x) + \p'^\mu\Omega(x')$，伴随着规范补偿项(compensation)。
-因此 $A^\mu$ 并非时空中的普通 Lorentz 矢量，其本质目的是保持协变导数。在数学上，这称为内部对称性空间上的\textbf{规范联络}。
+因此 $A^\mu$ 并非时空中的普通 Lorentz 矢量，其本质目的是保持协变导数。在数学上，此称内部对称性空间上的\textbf{规范联络}。
 
 为研究 $A_\mu$ 的动力学，需构造自由电磁场作用量。它应是抵消规范冗余的物理可观测量。
 因为 $A_\mu$ 的运动方程应至少二阶，作用量需出现 $\p_\mu A_\nu$。
 最简单的选择是关于 $\p_\mu A_\nu$ 线性的张量。
 施加 Lorentz 变换并考虑规范补偿，则 $\p'_\mu A'_\nu = (\Lambda^{-1})^{\rho}{}_{\mu} (\Lambda^{-1})^{\lambda}{}_{\nu} \p_{\rho}A_{\lambda} + \p'_{\mu}\p'_{\nu}\Omega$,
 故 $\p_\mu A_\nu$ 线性组合的规范不变 Lorentz 张量，必须消除 $\p'_{\mu}\p'_{\nu}\Omega$ 项。这是完全任意的函数，唯一的限制是关于 $\mu,\nu$ 对称，故唯一的办法是施以反称化，即正比于 $\p_{[\mu} A_{\nu]}$。
-考虑 $F_{\mu\nu}=2\p_{[\mu} A_{\nu]}$。这称为\textbf{电磁张量}。
+考虑 $F_{\mu\nu}=2\p_{[\mu} A_{\nu]}$。此称\textbf{电磁张量}。
 它\textit{确有}场强意义：可将 $F_{i0}$ 解释为电场 $E_i$，再注意 $A_0=-\varphi$，则 $\bm E=-\grad\varphi-\p_t{\bm A}$。数值上 $F^{i0}=\eta^{i\mu}\eta^{0\nu}F_{\mu\nu}=-F_{i0}$，$E^i=\delta^{ij}E_j=E_i$，所以还可写成 $F^{i0}=E^i$。
 表达磁场需要引入叉乘。
 由行列式知叉乘 $\bm A\times \bm B$ 的分量写法为 $\varepsilon_{ijk} A^j B^k$。这样，给定 $F^{ij}=\varepsilon^{ijk}B_k$，
@@ -1027,7 +969,7 @@ $\varphi:=A^0$ 就解释为电标势，$A^i$ 就是磁矢势。$A_\mu$ 称为\te
 对 $A_\mu$ 变分得 Maxwell 方程，对 $x^\mu_n$ 变分就是运动方程。
 耦合项变分为 $\delta \int\d x^\mu A_\mu=\int\left(\p_\nu A_{\mu} \delta x^\nu \d x^\mu+A_\mu \d(\delta x^\mu)\right) \simeq \int\d x^\nu F_{\mu \nu} \delta x^\mu$，
 可以看到 $F_{\mu\nu}$ \textit{自然作为场强而出现}。
-变分结果为\footnote{取惯性坐标时 $t$ 可直接得 3 维表述，位形空间为 $\Sigma_t$，$L=\sum_n(-m_n\sqrt{1-\dot{\bm x}_n^2}-q_n\varphi+q_n\dot{\bm x}_n\cdot\bm A)$ 对 $\bm x(t)$ 变分即可。}
+变分结果为\footnote{取惯性坐标时 $t$ 可直接得 3 维空间 $\Sigma_t$ 表述，$L=\sum_n(-m_n\sqrt{1-\dot{\bm x}_n^2}-q_n\varphi+q_n\dot{\bm x}_n\cdot\bm A)$ 对 $\bm x(t)$ 变分即可。}
 \eq{
     \dv*{p^\mu_n}{\tau_n}=q_n F^{\mu}{}_{\nu}u^\nu_n \im \dot{\bm p}_n=q_n(\bm E+\dot{\bm x}_n\times\bm B).
 }
@@ -1055,7 +997,7 @@ Lorenz 规范下无源线性波动方程 $\square A_\mu = 0$。通解为平面�
 并且 $0=\p_\nu(k^\mu k_\mu) = 2k^\mu\p_\nu \p_\mu \theta =  2k^\mu\p_\mu \p_\nu \theta = 2k^\mu \p_\mu k_\nu$。
 因此 $k^\mu$ 走类光测地线，光是一种电磁波。
 常偏振、波矢的波称\textbf{单色平面波}。
-现实中的电磁波只能近似成为单色平面波。考虑 $A_\mu = \Re{C_\mu \e^{\i\theta}}$ 但 $\p_\mu C_\nu \ll \p_\mu\theta C_\nu$，也即 $C_\mu$ 缓变，$\theta$ 快变，则 $\square A_\mu \approx 0$ 仍然成立。这称为\textbf{准单色平面波}，可看做一大群光子的叠加，每个光子具有近似相同的 $k^\mu,C_\mu$。
+现实中的电磁波只能近似成为单色平面波。考虑 $A_\mu = \Re{C_\mu \e^{\i\theta}}$ 但 $\p_\mu C_\nu \ll \p_\mu\theta C_\nu$，也即 $C_\mu$ 缓变，$\theta$ 快变，则 $\square A_\mu \approx 0$ 仍然成立。此称\textbf{准单色平面波}，可看做一大群光子的叠加，每个光子具有近似相同的 $k^\mu,C_\mu$。
 光线虽不能定义固有时和质量，但由能动张量分析知，电磁波的 4-动量正比于 4-波矢。进一步，可借量子理论的 de Broglie 关系定义单个光子的 $p^\mu=\hbar k^\mu$。$\hbar = 1$ 单位制下 $p^\mu,k^\mu$ 不再区分。
 %% 
 
@@ -1074,10 +1016,10 @@ Newton 提出了所谓的\textbf{水桶实验}来确定“绝对空间”在哪�
 \end{figure}
 什么原因使液面凹陷？从经验中知道是水在相对于某个参考系旋转，进而产生了离心作用，但这个参考系是谁呢？起初水相对于环绕它的桶在旋转，随后水与桶一同旋转而相对静止的，但液面是凹陷的。故产生凹陷的旋转不是相对于水桶的旋转。Newton 认为这是相对于绝对空间的旋转。水面的凹陷是水的绝对运动的效果，通过凹陷程度可以测得其“绝对角速度”。Newton 认为如果水在其中旋转会凹陷，则这个参考系就是绝对空间。从当时的实验看，地面系是比较接近“绝对空间”的。
 
-19 世纪末，Mach 提出水并非相对于某种绝对介质旋转，而是相对于宇宙的全部物质组分，即星空背景。水凹陷是水的惯性效果，故 Mach 认为\textit{惯性需要在物质的相对运动中体现}，或者\textit{物体惯性受到周围物质分布的影响}。这称为\textbf{Mach 原理}，尽管是一条模糊的定性描述。准确地说，Mach 将桶参考系中所出现的惯性力理解为一种星空背景对水的作用，作用的强度体现为物体惯性，其大小与周围星空背景的质量及相对加速有关。比如，若周围物质很稀疏，就很难找到参照来判断一颗弹性球是否旋转，那么即使其旋转起来也不会形变。这似乎与引力很相似，但在实验上很难验证，因为反之需要加速周遭极大量的物质，绕着水桶旋转并验证水同样凹陷。
+19 世纪末，Mach 提出水并非相对于某种绝对介质旋转，而是相对于宇宙的全部物质组分，即星空背景。水凹陷是水的惯性效果，故 Mach 认为\textit{惯性需要在物质的相对运动中体现}，或者\textit{物体惯性受到周围物质分布的影响}。此称\textbf{Mach 原理}，尽管是一条模糊的定性描述。准确地说，Mach 将桶参考系中所出现的惯性力理解为一种星空背景对水的作用，作用的强度体现为物体惯性，其大小与周围星空背景的质量及相对加速有关。比如，若周围物质很稀疏，就很难找到参照来判断一颗弹性球是否旋转，那么即使其旋转起来也不会形变。这似乎与引力很相似，但在实验上很难验证，因为反之需要加速周遭极大量的物质，绕着水桶旋转并验证水同样凹陷。
 
 Einstein 受到这一原理的启发，而去寻找惯性和引力的关系，如此便可能同时解决“惯性系存在性”“相对论性引力”两个问题。
-物质间皆存在引力，且可在长程上传递，这称为引力的\textbf{万有性}，因此严格来说，理想的惯性系必须远离所有物质以孤立，按道理是不存在的。但在实验上，Newton 定律的确在很高精度都适用于地面系，因此即使完全理想的惯性系、“绝对空间”不存在，惯性系仍是有用概念。问题出在哪里？
+物质间皆存在引力，且可在长程上传递，此称引力的\textbf{万有性}，因此严格来说，理想的惯性系必须远离所有物质以孤立，按道理是不存在的。但在实验上，Newton 定律的确在很高精度都适用于地面系，因此即使完全理想的惯性系、“绝对空间”不存在，惯性系仍是有用概念。问题出在哪里？
 
 既然引力、惯性力存在类比，我们就重新审查惯性、质量的概念。而 Galileo 的确早已指出，在仅受引力作用时，任意试验质点在同一时空点所受加速度相同（由任意坐标系测量），与内部结构及组成无关。Newton 对此解释：$\bm f=m_I\ddot{\bm x}$ 定义的质量 $m_I$ 是\textbf{惯性质量}\footnote{Mach 提出了一种测量性定义：承认动量守恒并规定好某一物体的质量数值，使二者产生相互作用（如碰撞），根据加速度比值便可测得另一物体的质量。}，而 $\bm f=m_G\bm g $ 定义的质量 $m_G$ 是\textbf{引力质量}或\textbf{引力荷}。联立有 $\ddot{\bm x}=(m_G/m_I)\bm g $，说明 Galileo 性即指比例 $m_G/m_I$ 与物质本身无关，重新定义 $G,m_G$ 还可使此二概念不再区分：$m_I=m_G\Rightarrow\bm g =\ddot{\bm x}$。
 
@@ -1356,7 +1298,7 @@ R^\lambda{}_{\mu\nu\kappa}=2\p_{[\nu}\{^\lambda_{\kappa]\mu}\}+2\{^\lambda_{\sig
 数学上固然要求局域惯性系严格建立在测地线上：假若在邻域 $U$ 内 $\widetilde{\{^\alpha_{\beta\delta}\}}=0$，则在线上 $\tilde R^\alpha{}_{\beta\gamma\delta}=0$，矛盾。只要邻域足够大，曲率便可测量。但观者往往又需借助时空邻域进行实验，好在只要 $U$ 尺寸数量级远小于曲率半径（分析量纲可知在 $\mathcal K^{-1/4}$ 量级），同时也远小于其测量精度时，即使时空范围未严格至测地线，但曲率也在精度范围内为零。当然，若实验范围较大或仪器精度够高，还是可以测量曲率，见 \S\ref{sec:eq-prin}。
 
 最小耦合指出自由引力作用量可取 $S=\int\d[4]{x}R\sqrt{-g}=\int\d[4]{x}\sqrt{-g}g^{\mu\nu} R_{\mu\nu}$。故为简便，通常关于 $g^{\mu\nu}$ 而非 $g_{\mu\nu}$ 变分。
-必须澄清，即使 $R$ 包含 $g_{\mu\nu,\lambda\kappa}$，但实际上 $g_{\mu\nu,\lambda\kappa}$ 只以 $\p\{^\lambda_{\mu\nu}\}$ 形式出现在全导数项中：
+必须澄清，即使 $R$ 包含 $g_{\mu\nu,\lambda\kappa}$，但实际上 $g_{\mu\nu,\lambda\kappa}$ 只以 $\p\{^\lambda_{\mu\nu}\}$ 形式出现在全散度项中：
 对二阶导部分代入克氏符有
 \eq{
 R_{\lambda\mu\nu\kappa} = 2g_{[\lambda|[\kappa,\nu]|\mu]} +g_{\sigma\rho}\left(\{^\sigma_{\lambda\kappa}\}\{^\rho_{\mu\nu}\}-\{^\sigma_{\lambda\nu}\}\{^\rho_{\mu\kappa}\}\right).
@@ -1371,7 +1313,7 @@ R_{\lambda\mu\nu\kappa} = 2g_{[\lambda|[\kappa,\nu]|\mu]} +g_{\sigma\rho}\left(\
     R\sqrt{-g}
 &=2\p_\lambda (\sqrt{-g} g^{\mu [\nu} \{_{\mu \nu}^{\lambda]}\} )+2\sqrt{-g}g^{\mu\nu} \{^\lambda_{\mu[\sigma}\}\{^\sigma_{\nu]\lambda}\}.
 \end{align*}
-全导数中包含 $\sqrt{-g},g^{\mu\nu},\{^\lambda_{\mu\nu}\}$，变分只涉及 $\var g^{\mu\nu},\var\{_{\mu\nu}^\lambda\}$。
+全散度中包含 $\sqrt{-g},g^{\mu\nu},\{^\lambda_{\mu\nu}\}$，变分只涉及 $\var g^{\mu\nu},\var\{_{\mu\nu}^\lambda\}$。
 此边界项依据 $\var g=0,\p\var g=0$（等价为 $\var\{_{\mu\nu}^\lambda\}=0$）这两个条件，结合 Gauss 定理 \eqref{eq:Gauss} 而消除。
 换言之，相差边界项地有等效 $R_{\mu\nu} \simeq 2 \{^\lambda_{\mu[\sigma}\}\{^\sigma_{\nu]\lambda}\}$（只不过不是张量），
 故它其实仍可用 $\Lag(g,\p g)$ 的 E-L 方程 $\pdv*{\Lag}{g_{\mu\nu}}=\p_\lambda(\pdv*{\Lag}{g_{\mu\nu,\lambda}})$ 计算。
@@ -1866,7 +1808,7 @@ $h^\mu{}_\lambda Z^\nu\cd_\nu (h^\lambda{}_\sigma Z^\kappa\cd_\kappa \eta^\sigma
 现在将 $S=\int\sqrt{-g_{\mu\nu}\d x^\mu\d x^\nu}$ 的变分，看成\textit{任取}类时单参族 $x^\mu(\tau,s)$ 并考察 $s=0$ 处导数。
 仍固定端点 $\tau=p,q$，则 $S^\mu|_p=S^\mu|_q=0$，因此参数 $\tau$ 不能成为单参族中所有线的固有时，只约定是测地解 $x^\mu(\tau,0)$ 的固有时。
 记线元密度 $\ell:=\sqrt{-Z^\mu Z_\mu}$，只在求导后代入 $s=0$，此时 $\ell=1$。
-再简记 $\cd_Z:=Z^\mu\cd_\mu,\cd_S:=S^\mu\cd_\mu$。Levi-Civita 联络下 $\cd_SZ=\cd_ZS$ 则 $\pdv*{\ell}{s}=\cd_S\ell=-Z_\mu\cd_ZS^\mu/\ell$，于是
+简记 $\cd_Z:=Z^\mu\cd_\mu,\cd_S:=S^\mu\cd_\mu$。Levi-Civita 联络下 $\cd_SZ=\cd_ZS$ 则 $\pdv*{\ell}{s}=\cd_S\ell=-Z_\mu\cd_ZS^\mu/\ell$，于是
 \begin{align*}
     \eval{\pdv{\ell}{s}}_{s=0}&=-Z_\mu\cd_ZS^\mu,\quad
     \eval{\pdv[2]{\ell}{s}}_{s=0}
@@ -1991,10 +1933,10 @@ $\d s^2=0$ 即 $t=\pm\left(r+2M\ln|r-2M|\right)+C$。
 
 考虑线性引力。
 欲把任意 $\bar h'_{\mu\nu}$ 带到谐和规范，只需选 $\square\epsilon_\nu=\p^\mu\bar h_{\mu\nu}$ 便可使 $\p^\mu\bar h'_{\mu\nu} = 0$。
-但 $\epsilon_\nu$ 解不唯一，谐和规范并未完全固定规范：若已经满足 $\p^\mu\bar h_{\mu\nu}=0$，在此基础上只要 $\square\epsilon_\nu=0$，新的扰动仍满足同一规范条件。这称为\textbf{剩余}(residual)\textbf{规范自由性}。
+但 $\epsilon_\nu$ 解不唯一，谐和规范并未完全固定规范：若已经满足 $\p^\mu\bar h_{\mu\nu}=0$，在此基础上只要 $\square\epsilon_\nu=0$，新的扰动仍满足同一规范条件。此称\textbf{剩余}(residual)\textbf{规范自由性}。
 
 回忆一下。
-由 Lorenz 规范，$\p_\mu (C^\mu\e^{\i\theta}) = \i C^\mu\e^{\i\theta} k_\mu = 0$，则 $C^\mu,k^\mu$ 正交。这称为\textbf{横向性条件}。$C^\mu$ 本有 4 个独立自由度，约束 $k_\mu C^\mu = 0$ 消耗了一个自由度，剩下 3 个。
+由 Lorenz 规范，$\p_\mu (C^\mu\e^{\i\theta}) = \i C^\mu\e^{\i\theta} k_\mu = 0$，则 $C^\mu,k^\mu$ 正交。此称\textbf{横向性条件}。$C^\mu$ 本有 4 个独立自由度，约束 $k_\mu C^\mu = 0$ 消耗了一个自由度，剩下 3 个。
 考虑规范变换 $A_\mu \to A_\mu + \p_\mu \Lambda$，总可选取 $\Lambda = -\frac{C^\mu k_\mu}{k^2}\e^{\i\theta}$ 来消去 $C^\mu$ 中与 $k^\mu$ 平行的分量（注意 $k^2=0$，但 $\frac{C^\mu k_\mu}{k^2}$ 是有限的）。
 此即\textbf{Coulomb 规范}，来进一步消除剩余自由性。
 依然保持 $F_{\mu\nu}$ 不变。
@@ -2530,7 +2472,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
     &= Z^\nu\cd_\nu V^\mu + \left(h^\mu{}_\lambda (2 Z^{(\lambda} A^{\nu)}) -Z^\mu Z_\lambda (-2 Z^{(\lambda} A^{\nu)})\right)V_\nu\notag \\
     &= \tcbhighmath{Z^\nu\cd_\nu V^\mu + (A^\mu Z^\nu - Z^\mu A^\nu)V_\nu,}
 \end{align}
-我们看到它与协变导数相差了 $2 A^{[\mu} Z^{\nu]}$，因而有望成为一种联络。换言之，利用导数的线性性、Leibniz 法则、$\DFv{f}{\tau}=\dv{f}{\tau}$，通过缩并可将其推广到任意张量。这称为\textbf{Fermi-Walker 导数}。相应平行移动称\textbf{Fermi-Walker 移动}，简称费移。
+我们看到它与协变导数相差了 $2 A^{[\mu} Z^{\nu]}$，因而有望成为一种联络。换言之，利用导数的线性性、Leibniz 法则、$\DFv{f}{\tau}=\dv{f}{\tau}$，通过缩并可将其推广到任意张量。此称\textbf{Fermi-Walker 导数}。相应平行移动称\textbf{Fermi-Walker 移动}，简称费移。
 $Z^\mu$ 一定费移。若 $V^\mu$ 费移，则 $\dv{\tau}(Z^\mu V_\mu)=\DFv{\tau}(Z^\mu V_\mu)=0$ 且 $\dv
 {\tau}(V^\mu V_\mu)=\DFv{\tau}(V^\mu V_\mu)=0$，即 $V^\mu$ 模恒定且与 $Z^\mu$ 保持夹角。不仅如此，空间投影为零还意味着 $h^\lambda{}_\sigma V^\sigma$ 在空间上保持，没有旋转。线汇的相对 3-速、相对 3-加速其实就可用 Fermi-Walker 导数写作
 \eq{
@@ -2877,7 +2819,7 @@ $D^+(A)$ 只包含由 $A$ 上初值决定的未来区域，其可预言性的未
     \quad\im\quad
     \theta(\tau)\leqslant\frac{3\theta_0}{3+\theta_0\tau}.
 }
-因此不迟于 $\tau=-3/\theta_0\leqslant3/K_0$，$\theta$ 趋于负无穷。由于随线汇搬运的微小空间体积元 $\mathcal V$ 满足 $\dv*{\ln\mathcal V}{\tau}=\theta$，此时 $\mathcal V$ 缩为零，邻近法测地线聚焦。等价地，存在初值切于 $\Sigma$ 的非零 Jacobi 场在该点消失。相当于时空点时这称为共轭点，不过这里是相对于 $\Sigma$，可称\textbf{焦点}(focal point)。
+因此不迟于 $\tau=-3/\theta_0\leqslant3/K_0$，$\theta$ 趋于负无穷。由于随线汇搬运的微小空间体积元 $\mathcal V$ 满足 $\dv*{\ln\mathcal V}{\tau}=\theta$，此时 $\mathcal V$ 缩为零，邻近法测地线聚焦。等价地，存在初值切于 $\Sigma$ 的非零 Jacobi 场在该点消失。相当于时空点时此称共轭点，不过这里是相对于 $\Sigma$，可称\textbf{焦点}(focal point)。
 
 再证固有时上界。反设存在从 $\Sigma$ 向过去的类时线段到达 $p$，其长度大于 $3/K_0$。整体双曲性保证在 $p$ 与 $\Sigma$ 之间存在一条固有时最长的类时线 $\gamma$，且其长度不短于原线。初端可在 $\Sigma$ 上自由移动，一阶变分的边界项遂要求 $\gamma$ 正交于 $\Sigma$；内部一阶变分又要求它是测地线。因此 $\gamma$ 正是上述法测地线之一，并在到达 $p$ 前已经经过一个 $\Sigma$-焦点。
 
@@ -3446,7 +3388,7 @@ $\tilde{\cd}_\kappa \pdv{x^\sigma}{x^{\prime \nu}} = \pdv{\xi^\kappa}\pdv{x^\sig
 可找到最方便的延拓。
 类光超曲面的法矢类光，暂不讨论。取单位的类时或类空法矢 $n^\mu n_\mu = \pm 1$，按推导 \eqref{eq:projection} 的办法可知投影映射为 $h^\mu{}_\nu =\delta^\mu_\nu \mp n^\mu n_\nu$，则 $h_{\mu\nu} = g_{\mu\nu} \mp n_\mu n_\nu$。满足 $\bar g_{\alpha\beta}n^\alpha = 0$ 这一漂亮性质的解只有 $\bar g_{\mu\nu} = h_{\mu\nu}$，故称为诱导度规的\textbf{标准延拓}。
 取归一化 $n_\mu = \p_\mu\hat t/\sqrt{\pm \p_\mu\hat t \p^\mu\hat t}$，于是 $\d s^2= \hat g_{\mu\nu}\d\hat x^\mu\d\hat x^\nu = (1/\hat g^{00})\d\hat t^2+\hat h_{\mu\nu}\d\hat x^\mu\d\hat x^\nu$。
-如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，这称为\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
+如果 $\hat g_{0\nu} = \pm\delta_{0\nu}$（即的确有 $\p^\mu t\propto \pdv*{x^\mu}{t}$），则 $\hat g^{00}=\pm 1,\hat h_{0\nu} = 0,\hat g_{ij}=\hat h_{ij}$，度规就写成 $\d s^2=\pm\d\hat t^2+\hat h_{ij}\d\hat x^i\d\hat x^j$，此称\textbf{Gauss 法坐标系}，此系下 $g=\pm h,h=\det(h_{ij})$，于是标准延拓 $\d s^2\mp\d\hat t^2=\hat h_{ij}\d\hat x^i\d\hat x^j$ 彻底与 $\d\hat t$ 无关，取 $\hat t=C$ 就是诱导度规 $\d s^2_\Sigma$。球坐标系便是如此，所以可以看到 $g_{\mu\nu} - \p_\mu r \p_\nu r$ 并令 $r=R$ 自动截得诱导度规。
 
 严格说，$q_{\mu\nu}$ 在四维切空间上是秩为 $2$ 的退化投影张量；限制到屏空间或陷获面上后，才是正定的二维诱导度规。
 
@@ -3504,7 +3446,7 @@ $R_{\mu\nu}$ 是 ${R^\lambda}_{\mu\nu\kappa}$ 唯一非平凡缩并，另两种�
 \eq{
     C_{\alpha\mu\nu\beta} := R_{\alpha\mu\nu\beta} - \frac{2}{n-2}(g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac{2}{(n-1)(n-2)} R g_{\alpha[\nu} g_{\beta]\mu}.
 }
-这称为\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
+此称\textbf{Weyl 张量}。四维时空里 $C_{\alpha\mu\nu\beta} = R_{\alpha\mu\nu\beta} - (g_{\alpha[\nu} R_{\beta]\mu} - g_{\mu[\nu} R_{\beta]\alpha}) + \frac13 R g_{\alpha[\nu} g_{\beta]\mu}$。故 $R_{\mu\nu}=0$ 时 $C_{\alpha\mu\nu\beta}=R_{\alpha\mu\nu\beta}$。
 能从 $g_{\mu\nu},R^\lambda{}_{\mu\nu\kappa}$ 缩并出的非平凡标量非常之多，诸如 $R_{\mu\nu\sigma\lambda}R^{\mu\nu\sigma\lambda},C_{\mu\nu\sigma\lambda}C^{\mu\nu\sigma\lambda}$ 等，$R$ 是其中最简单的。
 
 %% 最大对称空间
