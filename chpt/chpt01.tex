@@ -628,268 +628,9 @@ $S^{\mu\nu}$ 称为\textbf{正则能动张量}(canonical energy-momentum tensor)
 原则上满足 $\p_\mu T^{\mu\nu}=0$ 并给出相同 $p^\nu=\int\d[3]{x}T^{0\nu}=\int\d[3]{x}S^{0\nu}$ 的 $T^{\mu\nu}$ 就已经可称能动张量，故定义不唯一。附加项为 $\bar T^{\mu\nu} = T^{\mu\nu} - S^{\mu\nu}$，这要求 $\int\d[3]{x}\bar T^{0\nu} = 0,\p_\mu \bar T^{\mu\nu} = 0$。即附加项使空间中能量、动量重新分布，但不改变总值。一个简单选择是令 $X^{\sigma\mu\nu}=X^{[\sigma\mu]\nu}=o(1/\bm r^2)$，附加项可取 $\p_\sigma X^{\sigma\mu\nu}$，因为 $\p_\mu\p_\sigma X^{\sigma\mu\nu} = 0$ 且 $\int\d[3]{x} \p_\sigma X^{\sigma 0 \nu} = 0$。
 必须人为施加额外约束才能确定能动张量。
 
-假设系统在整体变换 $\delta x^\mu=\epsilon\xi^\mu$ 下不变，
-则 $\Lambda^\mu{}_\nu:=\pdv*{\tilde x^\mu}{x^\nu}$ 构成对称群。
-记任意张量场变换为 $\tilde\Phi^A(\tilde x) = D(\Lambda)^A{}_B\Phi^B(x)$。
-有 $D(\Lambda_1\Lambda_2)=D(\Lambda_1)D(\Lambda_2)$。
-全体 $D(\Lambda)$ 构成\textbf{$\Lambda$ 群的 $\Phi$ 表示}\footnote{若群 $G$ 的乘法完全对应为某种 $m$ 阶方阵乘法，就可用方阵来描述 $G$。矩阵 $D(g)$ 称为 $g\in G$ 的\textbf{表示矩阵}。
-全体 $D(g)$ 构成 $D(G)$，称群 $G$ 的 $m$ 维\textbf{表示}(representation)。将变换作用的对象视作 $m$ 维列矢量，全体列矢量构
-成 $m$ 维线性空间，称为相应的\textbf{表示空间}。矩阵群自身就是一个表示。Lorentz 群表示为 $D$(SO(1,3))，由于 $V'=\Lambda V$，Lorentz 群的自身表示也是其矢量表示。}。
-记 $X:=\ln\Lambda$，则 $\Lambda=\e^X$。定义单参变换矩阵 $F(t):=D(\e^{tX})$，从而构成群：乘法 $F(a+b) = F(a) F(b)$ 可交换，单位元 $F(0) = I$。
-则
-\[
-    \dot F(t) = \lim_{\epsilon\to 0}\frac{F(t+\epsilon)-F(t)}{\epsilon} = F(t) \dot F(0) \im F(t) = \e^{t\dot F(0)} = I + t\dot F(0) + O(t^2).
-\]
-对比 $F(t) = D(I + t X + O(t^2)) = I + t X^\mu{}_\nu J^\nu{}_\mu + O(t^2)$，其中 $J^\nu{}_\mu:=\pdv*{D}{\Lambda^\mu{}_\nu}|_{\Lambda=I}$ 称\textbf{表示生成元}。显然不同 $\Phi$ 表示的生成元会不同。因此
-\eq{
-    D(\Lambda) = \e^{\dot F(0)} = \exp((\ln\Lambda)^\mu{}_\nu J^\nu{}_\mu) \im
-    \delta\Phi^A = (\ln\Lambda)^\mu{}_\nu  (J^\nu{}_\mu)^A{}_B \Phi^B.
-}
-这里的 $\delta$ 是指 $\Lambda$ 给出，不一定无穷小。
-有限变换给出 $D(\e^{tX}) = \exp(tX^\mu{}_\nu J^\nu{}_\mu)$。
-无穷小变换 $\Lambda^\mu{}_\nu = \delta^\mu_\nu + \epsilon\p_\nu\xi^\mu + o(\epsilon)$ 给出  $D(\Lambda) = \exp(\epsilon\p_\nu\xi^\mu J^\nu{}_\mu) + o(\epsilon)$。
 
-考虑 Lorentz 变换。
-将坐标变换转述为主动变换 $x\to\tilde x$，则 Lorentz 不变性转述为 Lorentz 对称性\footnote{原则上通过坐标变换，一切单参连续变换都可解释为平移。比如模仿极坐标系，用双曲坐标系将伪转动变为平移，但为处理方便，这里直接用惯性系讨论Lorentz 变换。} $\Lag(x)=\tilde\Lag(\tilde x)$。
-有限变换记 $\e^{t\omega}$。
-无穷小变换 $\Lambda^\mu{}_\nu = \delta^\mu_\nu + \epsilon\omega^\mu{}_\nu$ 给出 $\xi^\mu = \omega^\mu{}_\nu x^\nu,\p_\mu\xi_\nu = \omega_{\nu\mu}$。
-由 \eqref{eq:Lorentz} 知 ${\eta}_{\alpha\beta}=\eta_{\mu\nu}\Lambda^{\mu}{}_{\alpha}{\Lambda^{\nu}}_{\beta}\approx \eta_{\alpha\beta} + \epsilon(\omega_{\alpha\beta} + \omega_{\beta\alpha})$，则
-\eq{
-    \omega_{\alpha\beta} =- \omega_{\beta\alpha},\quad \p_{(\mu}\xi_{\nu)}=0.
-}
-反称矩阵对角线为零，上式只有 $\binom{4}{2} = 6$ 个独立分量，对应 3 个时空伪转动和 3 个空间旋转。
-举例，考虑 $t$-$x$ 伪转动 $\Lambda^0{}_0 = \Lambda^1{}_1 = \cosh\theta,\Lambda^0{}_1 = \Lambda^1{}_0 = -\sinh\theta$，Taylor 展开有非零分量 $\omega^{0}{}_{1}=\omega^{1}{}_{0}=-1$。
-有限变换给出
-\eq{
-    D(\e^{t\omega}) = \exp(\frac 12 t \omega_{\mu\nu} \Sigma^{\mu\nu}),\quad \Sigma^{\mu\nu} := -2 J^{[\mu\nu]}.
-}
-变分为 $\var\Phi = \frac \epsilon 2 \omega_{\mu\nu} \Sigma^{\mu\nu} \Phi$，有时无穷小参数可收进 $\omega_{\mu\nu}$。
-举些例子。
-标量场 $\phi$ 的变换严格为 $\tilde\phi(\tilde x)=\phi(x)$。
-矢量场 $A^\mu$ 的无穷小变换为 $\tilde A^\mu(\tilde x) = \Lambda^\mu{}_\nu A^\nu(x) = A^\mu(x) + \epsilon\omega^\mu{}_\nu A^\nu(x)$。所以要使 $\delta A^\mu = \frac \epsilon 2 \omega_{\mu\nu} (\Sigma^{\mu\nu})^\mu{}_\nu A^\nu$ 就是
-\eq{
-    \omega^\alpha{}_\beta = \eta^{\alpha\mu}\omega_{\mu\nu} \delta^\nu{}_\beta = \frac 12 \omega_{\mu\nu} (\Sigma^{\mu\nu})^\alpha{}_\beta ,\quad (\Sigma^{\mu\nu})^\alpha{}_\beta := 2\eta^{\alpha[\mu}\delta^{\nu]}{}_\beta,
-}
-考虑下指标 $(\Sigma_{\mu\nu})^\alpha{}_\beta
-=\eta_{\mu\rho}\eta_{\nu\sigma}(\Sigma^{\rho\sigma})^\alpha{}_\beta
-=\eta_{\nu\beta}\delta^\alpha{}_\mu-\eta_{\mu\beta}\delta^\alpha{}_\nu$。$\Sigma_{\mu\nu}$ 是 16 个 4 阶方阵，但具有 $\Sigma_{\mu\nu}=-\Sigma_{\nu\mu}$，因此独立矩阵为 6 个，非零分量为
-\[
-(\Sigma_{01})^0{}_1 = (\Sigma_{01})^1{}_0 = 1,
-\qquad
-(\Sigma_{02})^0{}_2 = (\Sigma_{02})^2{}_0 = 1,
-\qquad
-(\Sigma_{03})^0{}_3 = (\Sigma_{03})^3{}_0 = 1,
-\]
-\[
-(\Sigma_{12})^1{}_2 = -(\Sigma_{12})^2{}_1 = 1,
-\qquad
-(\Sigma_{13})^1{}_3 = -(\Sigma_{13})^3{}_1 = 1,
-\qquad
-(\Sigma_{23})^2{}_3 = -(\Sigma_{23})^3{}_2 = 1.
-\]
-$\bar\delta$ 的结果为
-\eq{
-    \bar\var = \delta - \epsilon \omega^\nu{}_\lambda x^\lambda \p_\nu = \frac \epsilon 2 \omega_{\mu\nu} (\Sigma^{\mu\nu} + 2 x^{[\mu}\p^{\nu]}),
-}
-考虑 $\Lag(\Phi,\p\Phi)$，Noether 流为
-\[
-    J^\lambda = -\pdv{\Lag}{\Phi_{,\lambda}} \frac{\bar\var\Phi}{\epsilon}-\Lag \xi^\lambda = \frac12 N^{\lambda\mu\nu}\omega_{\mu\nu}-S^{\lambda\nu} \xi_\nu =  \frac 12\omega_{\mu\nu} J^{\lambda\mu\nu},
-\]
-其中
-\eq{
-    J^{\lambda\mu\nu} = -2S^{\lambda[\mu}x^{\nu]} + N^{\lambda\mu\nu},\quad N^{\lambda\mu\nu} = - \pdv{\Lag}{\Phi_{,\lambda}} \Sigma^{\mu\nu}\Phi.
-}
-由 $\fdv{\Lag}{\Phi} F=\p_\lambda J^\lambda$ 及 $\omega_{\mu\nu}$ 任意性，有
-\eq{
-    \p_\lambda J^{\lambda\mu\nu}=
-    \fdv{\Lag}{\Phi}
-    \left(\Sigma^{\mu\nu}\Phi
-        +2x^{[\mu}\p^{\nu]}\Phi
-    \right) \xlongequal{\text{在壳}} 0.
-}
-相当于按 $\mu\nu$ 指标分配有 6 个独立守恒流 $(J^\lambda)_{\mu\nu}$。对应的荷为
-\[
-    Q^{\mu\nu} = \int\d[3]{x} J^{0\mu\nu} = l^{\mu\nu} + s^{\mu\nu},\quad l^{\mu\nu} := -2\int\d[3]{x}S^{0[\mu}x^{\nu]},\quad s^{\mu\nu} := -\int\d[3]{x}\Pi\Sigma^{\mu\nu}\Phi.
-\]
-Lorentz 群的空间部分是 SO(3)，故 $Q^{\mu\nu}$ 解释为\textbf{总角动量}。$l^{\mu\nu}$ 为\textbf{轨道角动量}，来自于 $x^{[\mu}\p^{\nu]}$，守恒条件是 $S^{\mu\nu}$ 对称。
-$s^{\mu\nu}$ 为\textbf{自旋角动量}，来自于 $\Sigma^{\mu\nu}$。
 
-另一方面，对 $J^{\lambda\mu\nu}$ 直接求导有
-\begin{align}
-    &\p_\lambda J^{\lambda\mu\nu}
-    =-2(\p_\lambda S^{\lambda[\mu})x^{\nu]}
-      +2S^{[\mu\nu]}
-      +\p_\lambda N^{\lambda\mu\nu}=2\fdv{\Lag}{\Phi} x^{[\mu}\p^{\nu]}\Phi
-      +2S^{[\mu\nu]}
-      +\p_\lambda N^{\lambda\mu\nu}\notag\\
-    &\im
-    \p_\lambda N^{\lambda\mu\nu}
-    =-2S^{[\mu\nu]}
-    +\fdv{\Lag}{\Phi}\Sigma^{\mu\nu}\Phi
-    \xlongequal{\text{在壳}}
-    -2S^{[\mu\nu]}.
-\end{align}
-置待求的对称能动张量 $S^{\mu\nu} + \p_\lambda X^{\lambda\mu\nu}$，其中 $X^{\sigma\mu\nu}=X^{[\sigma\mu]\nu}$。如果在壳，对称导致 $\p_\lambda X^{\lambda[\mu\nu]} = -S^{[\mu\nu]} = \frac 12\p_\lambda N^{\lambda\mu\nu}$。
-故最简单的取法为 $X^{\lambda[\mu\nu]} = \frac 12 N^{\lambda\mu\nu}$，不难解出 $X^{\lambda\mu\nu} := \frac 12 (N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda})$。
-有
-\eq{
-    B^{\mu\nu} := S^{\mu\nu} + \p_\lambda X^{\lambda\mu\nu} = -\pdv{\Lag}{\Phi_{,\mu}}\p^\nu\Phi+\Lag\eta^{\mu\nu} + \frac 12 \p_\lambda(N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda}).
-}
-此称\textbf{Belinfante 张量}。标量场 $\phi$ 有 $\var\phi=0$，知 $\Sigma^{\mu\nu}=0$，故 $S^{\mu\nu}=B^{\mu\nu}$ 已然对称。
-而一般
-\[
-    B^{[\mu\nu]}
-    =S^{[\mu\nu]}
-     +\frac12\p_\lambda N^{\lambda\mu\nu}
-    =\frac12\fdv{\Lag}{\Phi}
-      \Sigma^{\mu\nu}\Phi\xlongequal{\text{在壳}}0,\quad
-    \p_\mu B^{\mu\nu}
-    =\p_\mu S^{\mu\nu}
-    =\fdv{\Lag}{\Phi}\p^\nu\Phi
-    \xlongequal{\text{在壳}}0,
-\]
-故 Belinfante 张量在壳时才能对称且守恒。
-与 $J^\mu$ 的关系为
-\[
-    -B^{\mu\nu}\xi_\nu = -S^{\mu\nu}\xi_\nu + X^{\lambda\mu\nu}\p_\lambda\xi_\nu  - \p_\lambda(X^{\lambda\mu\nu}\xi_\nu) = J^\mu  - \p_\lambda(X^{\lambda\mu\nu}\xi_\nu).
-\]
-局域化方法应得到 $\p_\lambda\var x_\nu=\xi_\nu\p_\lambda\epsilon - \omega_{\lambda\nu}\epsilon$ 项：
-\begin{align*}
-    \delta S&=-\int\d[4]{x} J^\lambda\p_\lambda \epsilon=\int\d[4]{x} B^{\lambda\nu}\xi_\nu\p_\lambda\epsilon - \int\d[4]{x} \p_\sigma(X^{\sigma\lambda\nu}\xi_\nu) \p_\lambda\epsilon\\
-    &=\int\d[4]{x} B^{\lambda\nu} \p_\lambda\var x_\nu - \int\d[4]{x} \p_\sigma\left(X^{\sigma\lambda\nu}\xi_\nu\p_\lambda\epsilon\right).
-\end{align*}
-其中用到 $B^{\mu\nu}\omega_{\mu\nu}=0$（从而 $B^{\lambda\nu} \p_\lambda\var x_\nu=B^{\lambda\nu}\xi_\nu\p_\lambda\epsilon$），$X^{\sigma\lambda\nu}\xi_\nu\p_\sigma\p_\lambda\epsilon=0$。
-另一方面，在壳时 $\partial_\lambda N^{\lambda\mu\nu}=-2S^{[\mu\nu]}$，根据 $X^{\lambda\mu\nu}\omega_{\mu\nu}=\frac12 N^{\lambda\mu\nu}\omega_{\mu\nu}$，可有
-\[
-    \delta S\xlongequal{\text{在壳}}\int\d[4]{x} S^{\lambda\nu} \p_\lambda\var x_\nu - \frac12\int\d[4]{x} \p_\lambda\left( N^{\lambda\mu\nu}\omega_{\mu\nu}\epsilon\right).
-\]
-可见消除不同的边界项会读出不同能动张量。
-选择 $B^{\mu\nu}$ 对应于只要求 $\p_\mu\epsilon=o(1/r^3)$ 而不要求 $\epsilon=o(1/r^3)$。这说明这里所选的局域化 $\epsilon(x)$ 在无穷远渐近为整体 Lorentz 变换。
 
-%%
-
-\subsection{流体力学}
-
-连续介质模型包括如岩石的刚性(rigid)物质，即固体(solid)，亦包括如气体、液体的可流物质，即流体。考察任意微小界面，两侧的流体微元可互相挤压、拉伸，固体若欲保持坚硬，不能有沿界面方向的相对滑动。流体中，阻碍滑动的切应力远小于垂直于界面的正应力。相对论宇观下，正应力显著大到连固体也会流动，便难有固体与流体之别，都统一在流体描述下。
-流体描述是大量粒子离散系统的连续极限，对微观量进行系综平均或粗粒化，就得到宏观量。常用对称能动张量 $T^{\mu\nu}$、\textbf{粒子数流}(flux) $N^\mu$、Euler 4-速 $U^\mu$。先不具体定义，看作三种任意对象，仅要求 $T^{\mu\nu}$ 对称、$U^\mu$ 归一。
-$N^\mu$ 沿 $U^\mu$ 分解为 $N^\mu=n U^\mu + \bm N^\mu$，$n=-N^\nu U_\nu$ 是\textbf{共动数密度}，$\bm N^\mu=h^\mu{}_\nu N^\nu$ 称扩散流。
-同理任意对称张量分解为
-\eq{
-T^{\mu\nu}=\varepsilon U^\mu U^\nu+2U^{(\mu}q^{\nu)}+ph^{\mu\nu}+\Pi^{\mu\nu},
-}
-其中 $\varepsilon= (-U_\alpha)(-U_\beta)T^{\alpha\beta} = T^{\mu\nu}U_\mu U_\nu$ 就是\textbf{共动能量密度}；$q^\nu=-U_\alpha h^\nu{}_{\beta}T^{\alpha\beta}$ 就是固有能流密度或热流；剩下 $P^{\mu\nu}=h^\mu{}_{\alpha}h^\nu{}_{\beta}T^{\alpha\beta}$ 是空间张量（任意指标与 $U^\mu$ 缩并为零），而三维对称张量总可迹分解 $ph^{\mu\nu}+\Pi^{\mu\nu}$，后者是无迹部分 $\pi^\mu{}_\mu=0$。由$h^{\mu\nu}=\eta^{\nu\lambda}h^\mu{}_\lambda=\eta^{\mu\nu}+U^\mu U^\nu$ 得 $h_{\mu\nu}T^{\mu\nu}=h_{\mu\nu}P^{\mu\nu}=P^\mu{}_\mu=3p$，故 $p=\frac13h_{\mu\nu}T^{\mu\nu}$。
-共动系中 $U^\mu=\delta^\mu_0$，则 $N^0=n$， $q^0=h^{0\mu}=\Pi^{0\mu}=0$，$T^{00}=\varepsilon,T^{0i}=q^i,T^{ij}=p\delta^{ij}+\Pi^{ij}$，$p=T^i{}_i/3$。
-各向同性就是空间旋转对称，一个三维矩阵要满足各向同性，就等价为正比于单位阵，故 $p h^{\mu\nu}$（共动系表为 $p\delta^{ij}$）就称\textbf{各向同性应力}；各向异性项 $\Pi^{\mu\nu}$ 称\textbf{剪切应力}。
-之后会证明，局域平衡的经典稀薄气体，按照相对论性能量均分定理可得气体状态方程 $p=nk_B T$。
-式右称为\textbf{平衡热力学压强}，标量场 $T$ 是温度，$k_B$ 为 Boltzmann 常数。
-非平衡分布会带来体黏滞(bulk viscosity)，上式不再成立，$p$ 是平衡压强加上体黏滞项 $p=nk_B T+\Pi$。
-
-$U^\mu$ 有两种定义办法。一种是\textbf{Eckart 标架} $U^\mu = N^\mu/\sqrt{-N^\mu N_\mu}$，则 $\bm N^\mu=0$，理解成 $U^\mu$ 跟着整体平均运动走。另一种是 $T^{\mu\nu}$ 的类时本征矢 $T^{\mu\nu}U_\nu=-\varepsilon U^\mu$，此称\textbf{Landau 标架}，则 $q^\mu=0$，理解成 $U^\mu$ 跟着能量整体平均运动走。
-在 Laudau 共动系中 $T^{0i}=q^i=0$。
-若流体满足 $q^\mu=0$ 和（共动系）各向同性 $\Pi^{\mu\nu}=0$，则可表为
-\eq{
-    T^{\mu\nu} = \varepsilon U^\mu U^\nu + p h^{\mu\nu} =  \tcbhighmath{(\varepsilon+p)U^\mu U^\nu + p\eta^{\mu\nu}.}
-}
-原则上总可取 Laudau 标架使 $q^\mu=0$，故比较微妙。
-将下述情况称为“无热流”：若流体的确能定义 $N^\mu$，则不仅 $q^\mu=0$，还要求 $\bm N^\mu=0$，于是两种标架等价；若不能定义，比如光子气，仅要求取 Laudau 标架使 $q^\mu=0$ 即可。
-无热流、无体黏滞的各向同性流体称为\textbf{理想流体}(perfect fluid)。
-只要满足这三个条件就是理想流体，能动张量就会形如上式，与其具体微观实现无关。
-无应力、无热流流体（即无压强理想流体）称为\textbf{尘埃}(dust)，能动张量表为 $T^{\mu\nu}=\varepsilon U^\mu U^\nu$。
-
-$\varepsilon,p$ 的关系称\textbf{物态方程}，具体情况需要研究微观动理。
-考虑最简单的\textbf{质点气}，即流体由大量微观有质粒子组成。
-粒子的作用量是 $\int\d t$ 形式，改写为 $\int \d[4]x$ 后才能读出能动张量。
-类似于同时面，离散自由度涉及的密度场积分可借助 $\delta$ 函数。
-先推广任意维：
-\eq{
-    \int\d[\cate{N}]{x} f(x)\delta^\cate{N}(x-x_0)=f(x_0) \iff \delta^\cate{N}(x)=\prod_{\mu=0}^{\cate{N}-1}\delta(x^\mu).
-}
-$\int\d[4]{x}\delta^4(x)=1=\int\d[4]{x'}\delta^4(x')$，因 $\d[4]{x}=\d[4]{x'}$，故 $\delta^4(x)$ 是 Lorentz 标量。
-点粒子的密度表述需用到 $\delta$ 函数。
-第 $n$ 条粒子世界线记作 $x_n^\mu(\lambda)$，固有时满足 $\d\tau_n^2=-\eta_{\mu\nu}\d x^\mu_n\d x^\nu_n$，4-速为 $u_n^\mu=\dv*{x_n^\mu}{\tau_n}$。
-惯性系 $\{x\}$ 测量粒子 $n$ 的 Lorentz 因子为 $\gamma_n=u_n^0=(-\eta_{\mu\nu}\dot x^\mu_n\dot x^\nu_n)^{-1/2}$，其中点表示对坐标时间 $t=x^0$ 求导。自由质点作用量可写为\footnote{由于自变量加粗已表示三维，$\delta$ 函数省略上标 3。$m_n$ 可强调地称\textbf{固有质量}。
-注意本节要区分“固有”“共动”二字，前者代表微观数据，后者代表宏观 $U^\mu$。
-}
-\eq{
-\tcbhighmath{
-    S = -\int\d{t}\sum_n \frac{m_n}{\gamma_n} = \int\d[4]{x} \Lag,\quad \Lag = -\sum_n \frac{m_n}{\gamma_n(t)} \delta_n(x).
-}
-}
-其中 $\delta_n(x):=\delta(\bm x-\bm x_n(t))$ 的 $t$ 仅通过 $\bm x_n$ 依赖，仍是时空场，但不是标量。
-尝试施加时空平移。上述 $\Lag$ 形式上不包含任何场宗量，不便使用公式法，考虑局域化方法。
-考虑时空平移 $\delta x^\mu=\epsilon\xi^\mu$ 及其局域化 $\epsilon\to\epsilon(x)$。
-暂时换曲线参数以避免混淆，读出\textbf{微观能动张量}：
-\begin{align}
-    \delta S &= -\int\d{\lambda}\sum_n m_n \var(\Big(-\eta_{\mu\nu}\dv{x^\mu_n}{\lambda}\dv{x^\nu_n}{\lambda}\Big)^{1/2}) = \int\d{\lambda}\sum_n m_n \eta_{\mu\nu}u^\mu_n\var(\dv{x^\nu_n}{\lambda}) \notag\\
-    &= \int\d{t}\sum_n \eta_{\mu\nu}p^\mu_n\dv{\var x^\nu_n}{t} = \int\d{t}\sum_n p^\mu_n \xi_\mu\dot\epsilon = \int\d{t}\sum_n p^\mu_n \dot x^\nu_n \xi_\mu\p_\nu\epsilon \notag\\
-    &= \int\d[4]x\sum_n \hat T^{\mu\nu} \xi_\nu\p_\mu\epsilon,\enskip \hat T^{\mu\nu} := \sum_n \frac{p^\mu_n p^\nu_n}{E_n} \delta_n = \sum_n\int\d{\tau_n} p^\mu_n u^\nu_n\delta^4_n.
-\end{align}
-显然对称，其中 $p^\mu_n=m_n u^\mu_n, E_n=\gamma_n m_n, \delta^4_n = \delta^4(x-x_n)$。
-上式积分写法可看出 $\hat T^{\mu\nu},\Lag = \hat T^\mu{}_\mu$ 的确是 Lorentz 张量；从 $S,\d[4]x,m_n$ 不变性也可看出；或者注意 $\int\d t/\gamma_n$ 不变，则 $\delta'_n/\gamma'_n = \int\d{t'}\delta'^4_n/\gamma'_n = \int\d {t}\delta^4_n/\gamma_n=\delta_n/\gamma_n$。
-\textbf{微观粒子数流}为 Lorentz 矢量
-\eq{
-    \hat N^\mu := \sum_n \frac{p_n^\mu}{E_n} \delta_n = \sum_n\int\d{\tau_n} u^\mu_n\delta^4_n.
-}
-时间分量 $\hat N^0=\sum_n \delta_n$ 是 $\{x\}$ 系所测\textbf{微观数密度}；微观扩散流为 $\hat{\bm N}=\sum_n \delta_n\dot{\bm x}_n$。
-用 $\ev{}$ 表示系综平均\footnote{满足线性性，于是求和与 $\ev{}$ 可交换。若求和来自于缩并，由于 $\eta_{\mu\nu}$ 不是随机变量，所以仍可交换。}，得到宏观 Lorentz 张量 $T^{\mu\nu} = \ev{\hat T^{\mu\nu}}, N^\mu = \ev{\hat N^\mu}$。
-说明\textit{在共动系中}（注意共动系只是 $U^\mu$，仍然 $\gamma_n\ne 1$）
-\[
-    \varepsilon = \sum_n\ev{E_n\delta_n},\quad\bm q=\sum_n \ev{\bm p_n\delta_n},\quad p = \frac13\sum_n\ev{E_n\dot{\bm x}_n^2\delta_n},\quad n = \sum_n\ev{\delta_n},
-\]
-可见相对共动系的动量随机分布一阶矩构成 $\bm q$，二阶矩构成 $p$。
-说明随机运动已经可以产生热流和应力，并不要求存在粒子间相互作用。有没有碰撞，都存在压强，由上述随机运动模型描述。若还存在其它相互作用，才会贡献额外的势能性压强。
-非相对论流体满足 $E_n\simeq m_n+\bm p_n^2/2m_n$，宏观动能密度为 $\sum_n\big\langle\frac{\bm p_n^2}{2m_n}\delta_n\big\rangle\simeq 3p/2 = \frac{3}{2} nk_B T$，此即熟知的经典能量均分关系，则 $\varepsilon\simeq 3p/2+\varrho$，其中 $\varrho = \sum_n\ev{m_n\delta_n}$ 是惯性系 $\{x\}$ 所测的微观质量密度的平均。
-光子气原则上不用粒子表述，而是电磁波，但形式上的确可用 $E_n=|\bm p_n|$ 得 $p=\frac13\varepsilon$，故 $T^\kappa{}_\kappa = 3p - \varepsilon = 0$。
-
-若质点气没有宏观应力 $P^{\mu\nu}$，也就是说共动系中
-\[
-    \sum_n\ev{\frac{p_n^i p_n^j}{E_n}\delta_n} = 0 \im \sum_n\ev{\frac{\bm p_n^2}{E_n}\delta_n} = 0 \im \text{$\bm p_n = \bm 0$ 几乎必然}.
-\]
-“几乎必然”是指反例的系综测度概率为零 $\mathrm{Pr}[\bm p_n\ne\bm 0]=0$。
-于是进一步 $\bm q=\bm 0$。所以对质点气，实际上无应力一定会导致无热流，于是直接成为尘埃。
-也可从另一视角看，$\bm p_n = \bm 0$ 等价于 $U^\mu(t,\bm x_n)=u_n^\mu(t)$，换言之局域流体元中 $u_n^\mu$ 几乎一致，$u_n^\mu$ 几乎能嵌入进整体流场 $U^\mu$。此称\textbf{单流}(single-stream)情形。
-故 $U^\mu(t,\bm x)\delta_n=u_n^\mu(t)\delta_n$ 几乎必然，说明随机量 $\hat T^{\mu\nu}=U^\mu U^\nu\sum_n m_n\delta_n/\gamma_n=-\hat T^\kappa{}_\kappa U^\mu U^\nu$ 几乎相等，等式两边的平均则完全相等，即 $T^{\mu\nu}=-T^\kappa{}_\kappa U^\mu U^\nu=\varepsilon U^\mu U^\nu$，这里注意 $U^\mu$ 已经是宏观量，无关于系综平均中的具体微观态，从而提出。可以看到，尘埃的能量密度还是有些不同，由于无压强，其微观机理直接是固有质量密度 $\sum_n m_n\delta_n/\gamma_n$。
-
-质点系的动量守恒其实是个微妙的话题。令 $\bm Y(x) = \bm x-\bm x_n(t)$，由链式法则
-\[
-    \p_i\delta_n(x) = \eval{\pdv{\delta(\bm y)}{y^j}}_{\bm y = \bm Y} \p_i Y^j = \eval{\pdv{\delta(\bm y)}{y^i}}_{\bm y = \bm Y},\enskip\p_t\delta_n(x) = \eval{\pdv{\delta(\bm y)}{y^i}}_{\bm y = \bm Y} \p_t Y^i = -\dot{\bm x}_n(t)\cdot\grad\delta_n(x).
-\]
-\[\im\p_\mu \hat T^{\mu\nu} = \p_\mu \sum_n \dot x^\mu_n(t) p^\nu_n(t) \delta_n(x)= \sum_n \left(\p_t(p^\nu_n \delta_n) + \dot x^i_n p^\nu_n \p_i\delta_n\right) = \sum_n \dot p^\nu_n \delta_n.\]
-式右称为\textbf{微观力密度}。
-仅当只考虑自由项时才能写 $\p_\mu \hat T^{\mu\nu}=0$，守恒量为 Lorentz 总 4-动量 $\int\d[3]{x} \hat T^{0\nu} = \sum_n p^\nu_n$。当然，变分也会得 $\dot p^\nu_n=0$ 而给出 $\p_\mu \hat T^{\mu\nu}=0$，自洽。
-考虑粒子间不可穿透，发生碰撞，这可来自于某种短程斥力的硬核极限。
-碰撞事件\textit{彼此独立}，一个粒子同时至多只参与一个碰撞。
-考虑瞬时局域碰撞，每个事件记作 $(t_c,\bm x_c)$，粒子 $n$ 动量变化为 $\dot p^\nu_n(t) = \sum_{c\ni n}\Delta p_{n,c}^\nu \delta(t-t_c)$，其中 $\Delta p_{n,c}^\nu=p_n^\nu(t_c^+) - p_n^\nu(t_c^-)$，$c\ni n$ 表示粒子 $n$ 依次参与的碰撞。对参与碰撞 $c$ 的粒子 $n\in c$，均有 $\bm x_n(t_c)=\bm x_c$，并要求动量守恒 $\sum_{n\in c} \Delta p_{n,c}^\nu = \int_{I_c}\d t \sum_{n\in c}\dot p^\nu_n = 0$。故
-\[
-    \p_\mu \hat T^{\mu\nu} = \sum_n\sum_{c\ni n} \Delta p_{n,c}^\nu \delta(t-t_c)\delta_n = \sum_c \delta^4_c\sum_{n\in c} \Delta p_{n,c}^\nu = 0.
-\]
-其中注意 $\sum_n\sum_{c\ni n}=\sum_c\sum_{n\in c}$。
-注意 $n\in c$ 可多于二体，但就算只考虑二体也没关系，因为瞬时模型其实使三体碰撞在相空间中零测，瞬时碰撞\textit{几乎}是二体碰撞。
-总之，瞬时定域碰撞模型说明，虽然耦合项原则上不能退化为零，但贡献的能动张量散度为零，介质场没有储存动量。
-
-将宏观守恒 $\p_\mu T^{\mu\nu} = 0$ 施以理想流体，沿 $-U_\nu$ 缩并得到时间分量，称能量方程
-\eq{
-    -U_\nu\p_\mu( (\varepsilon+p) U^\mu U^\nu)-U^\nu\p_\nu p = (\varepsilon+p) \p_\mu U^\mu + U^\mu \p_\mu \varepsilon = 0.
-}
-若额外要求粒子数守恒
-\eq{
-    \p_\mu N^\mu = \p_\mu (n U^\mu) = U^\mu\p_\mu n + n\p_\mu U^\mu = 0,
-}
-于是能量方程转写为 $\dv*{\varepsilon}{\tau} = \frac{\varepsilon+p}{n}\dv*{n}{\tau}$。
-对于短程相互作用、局域平衡的理想流体（广延条件），无论粒子数是否守恒，
-热力学第一定律都给出\textbf{Gibbs 约束}
-\eq{
-k_BT\d{\mathfrak s}=p\d(\frac{1}{n})+\d(\frac{\varepsilon}{n}) = \frac{1}{n^2}(n\d \varepsilon-(\varepsilon+p)\d n),
-}
-这里 $\mathfrak s$ 是\textbf{无量纲比熵}，$1/n$ 的物理意义就是每粒子体积。
-由此粒子数守恒导致比熵守恒 $\dv*{\mathfrak s}{\tau}=0$，此称\textbf{绝热的}(adiabatic)。
-空间部分 $h^{\lambda}{}_\nu \p_\mu T^{\mu\nu}$ 为\textbf{相对论性 Euler 方程}
-\eq{
-(\varepsilon+p)U^\mu\p_\mu U^\lambda + (\eta^{\lambda\mu} + U^\lambda U^\mu)\p_\mu p=0.
-}
-\textbf{相对论性流体力学}(relativistic fluid dynamics)的基本框架就包括上述方程，以及流体模型的物态方程。
-上式对尘埃而言就是 $U^\mu\p_\mu U^\lambda = 0$，说明宏观运动的确化为单流直线。
-$(\varepsilon+p)$ 称为\textbf{惯性系数}，恢复 $c$ 为 $\frac{\varepsilon+p}{c^2}$，微观速度远小于 $c$ 时 $p \ll \varrho c^2$，故惯性系数退化为质量密度，便回到经典 Euler 方程 $\varrho\left(\pdv{t}+\bm u\cdot\grad\right)\bm u+\grad p=0$。能量方程回到质量守恒 $\div(\varrho\bm u)+ \pdv*{\varrho}{t} = 0$。
 
 \subsection{电动力学}\label{sec:ED}
 
@@ -1041,7 +782,11 @@ Einstein 于 1907 年察觉到，若 $A,B$ 共同自由落体，二者相对加�
         \textbf{等效原理} \quad 存在时空坐标系使作用量的形式犹如无引力的狭义相对论。
     }
 \end{center}
-我们希望将 Lorentz 变换局域化为任意坐标变换来得到新的对称性：
+Einstein 起初想寻找适用于一切参考系的所谓“广义相对性原理”，然而不同加速度的系之间无法等价（很显然同种实验的结果不同，可以区分），这一想法几乎迅速打消。
+但等效原理的想法是对的，惯性系问题和引力问题是一回事：无力惯性系、自由落体系局域难以区分。
+反之，一类加速度 $a$ 的系至多只能等价为引力场 $g=a$ 中的地面系。故即使找不到“广义相对性”，但仍可构造其它形式的“广义”表述。
+观者走类时线，用折线固有时逼近总线长，也即设置走微小惯性运动的瞬时固有观者。换言之，局域（固有）惯性系本就是对任意参考系的逼近。
+更进一步，描述参考系本就很麻烦，毕竟只有少数坐标系能作为参考系的对钟结果。然而物理规律本就不受坐标系影响，即坐标冗余性，\textit{尽可能排除人为因素}。何不直接考虑坐标系而非参考系的“广义”？换言之，之前只考虑 Lorentz 对称理论，现在应要求任意坐标变换下对称：
 \begin{center}
     \tcbox{
         \textbf{广义不变性} \quad 拉氏密度是在任意（正时固有）坐标变换下不变的标量。
@@ -1053,13 +798,12 @@ Einstein 于 1907 年察觉到，若 $A,B$ 共同自由落体，二者相对加�
 }
 若只要求作用量对称，拉氏密度不一定也对称，比如相差全微分项。反之若被积函数的变分为零，则积分的变分当然也为零。故才不仅要求作用量对称，还要要求拉氏密度也对称。
 
-严格上来讲，局域 Lorentz 不变性与广义不变性有区别，描述局域 Lorentz 不变性须用 \S\ref{sec:tetrad} 的知识。
+我们希望将 Lorentz 变换局域化为某种“局域 Lorentz 不变性”，
+
+严格上来讲，与广义不变性有区别，描述局域 Lorentz 不变性须用 \S\ref{sec:tetrad} 的知识。
 这里主要是做思维上的启发，并引出广义不变性的动机：
-\begin{itemize}
-    \item 惯性系问题和引力问题是一回事：等效原理已指出惯性系、非惯性系局域难以区分。故最好寻找某种意义上适用于一切参考系的广义相对性原理。
-    \item 参考系中观者走类时线，用折线固有时逼近总线长，也即设置走微小惯性运动的瞬时固有观者。换言之，局域（固有）惯性系本就是对任意参考系的逼近。
-    \item 只有少数坐标系能作为参考系的对钟结果，因此描述参考系其实有点麻烦。然而物理规律本就不受坐标系影响，即坐标冗余性，\textit{尽可能排除人为因素}。故考虑直接将“参考系”换为“坐标系”，即任意坐标变换下的协变性。
-\end{itemize}
+
+
 广义不变性使作用量、方程具有\textbf{广义协变性}；并且能出现的绝对对象，也将在更任意的坐标变换下不变。
 $c,G,\hbar$ 这种常数可以出现。
 $\pdv*{x^\mu}{x'^\nu}$（代替 $\Lambda$）这种绝对对象可变，就应吸收于物理量的变换律中。
@@ -1099,26 +843,34 @@ $\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵�
 \subsection{最小引力耦合}
 
 广义不变性、等效原理共同决定引力耦合方式。
-置单一自由落体质点。由等效原理，世界线在某局域惯性系 $\{\xi\}$ 中表为 $\xi^\alpha(\tau)$，则
+置单一自由落体质点。
+
+
+
+由等效原理，世界线上任点 $X^\mu$ 存在相应的局域惯性系 $\{\xi_X\}$ 使作用量表为狭义相对论：
 \eq{
 \tcbhighmath{
-    S=-m\int\d\tau=-m\int\sqrt{-\eta_{\alpha\beta}\d\xi^\alpha\d\xi^\beta}=-m\int\sqrt{-g_{\mu\nu}\d x^\mu \d x^\nu},
+    S=-m\int\d\tau=-m\int\sqrt{-\eta_{\alpha\beta}\d\xi_X^\alpha\d\xi_X^\beta}\big|_{x=X}=-m\int\sqrt{-g_{\mu\nu}\d x^\mu \d x^\nu},
 }
 }
-其中 $\{x\}$ 为任意坐标系，\textbf{时空度规}或\textbf{Lorentz 度规}为
+$\{x\}$ 为任意坐标系，\textbf{时空度规}或\textbf{Lorentz 度规}为
 \eq{\label{eq:metric}
-    g_{\mu\nu}:= \eta_{\alpha\beta}\pdv{\xi^\alpha}{x^\mu}\pdv{\xi^\beta}{x^\nu}.
+    g_{\mu\nu}:= \eta_{\alpha\beta}e^\alpha_\mu e^\beta_\nu,\quad e^\alpha_\mu(X) = \pdv{\xi_X^\alpha}{x^\mu}\Big|_{x=X}.
 }
+自由落体线是任给的，故 $X$ 实际遍历全时空，$e^\alpha_\mu(x)$ 就是这样遍历全时空 $x$ 的场，称\textbf{余标架场}。
 将质点系推广为流体表述就能将语言统一为场论。
-设无引力时的拉氏量 $\Lag$。等效原理指出局域惯性系 $\{\xi\}$ 下作用量为 $S=\int\d[4]{\xi} \Lag $。
+设无引力时的拉氏量 $\Lag$。等效原理指出 $\{\xi_X\}$ 下被积量为 $\d[4]{\xi_X} \Lag|_{x=X}$。
 为了满足不变性，尝试用度规吸收掉行列式。
 记度规在 $\{x\}$ 系的行列式是 $g:=\det(g_{\mu\nu})$。对上式取行列式有
-\[g=\det(\pdv{\xi^\alpha}{x^\mu})\det(\pdv{\xi^\beta}{x^\nu})\det(\eta_{\alpha\beta})=-\det(\pdv{\xi^\alpha}{x^\mu})^{2},\]
-可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差 $\pm 2$）。由坐标变换固有性（或只关心绝对值），
+\[g(X)=\det(\eta_{\alpha\beta})\det\big(e^\alpha_\mu(X)\big)\det(e^\beta_\nu(X))=-\det(e^\beta_\nu(X))^{2},\]
+可见 $g$ 虽与坐标选择有关，但在变换下一定保号，即引力度规的行列式总是负的（无关号差 $\pm 2$）。由坐标变换固有性（或只关心绝对值），$\d[4]{\xi_X}|_{x=X} = \d[4]{x} \det\big(e^\beta_\nu(X)\big) = \d[4]{x}\sqrt{-g(X)}$。
 \eq{
-    S=\int\d[4]{\xi} \Lag = \int\d[4]{x} \det(\pdv{\xi^\alpha}{x^\mu}) \Lag = \int\d[4]x\sqrt{-g}\,\Lag.
+    S=\int\d[4]{\xi_X} \Lag|_{x=X} = \int\d[4]x\sqrt{-g}\,\Lag.
 }
-规定\textbf{适配体元} $\D[4] x$ 只在局域惯性右手系 $\{\xi\}$ 中表为 $\d[4]\xi$，就有 $\D[4] x=\sqrt{-g}\d[4]{x}$，它是广义不变的。故为使作用量保持广义不变，$\Lag$ 必须是广义不变的标量场。
+
+
+
+规定\textbf{适配体元} $\D[4] x$ 只在局域惯性右手系 $\{\xi_X\}$ 中表为 $\d[4]\xi_X$，就有 $\D[4] x=\sqrt{-g}\d[4]{x}$，它是广义不变的。故为使作用量保持广义不变，$\Lag$ 必须是广义不变的标量场。
 随后改写粒子系统与引力场的耦合：
 \eq{
     S=-\int\d[4]x\sqrt{-g}\sum_n \frac{m_n}{\gamma_n\sqrt{-g}} \delta_n,\quad \gamma_n = (-g_{\mu\nu}\dot x_n^\mu \dot x_n^\nu)^{-1/2}.
@@ -1131,7 +883,7 @@ $\d\xi^\beta$ 的展开分量为 $\pdv*{\xi^\beta}{x^\mu}$，由 Jacobi 矩阵�
 \end{center}
 当今主流上称这套理论为\textbf{广义相对论}\footnote{最初 Einstein 认为“广义相对”一词来自广义相对性原理、广义协变性，但现在看来是来自等效原理、广义不变性。为避免歧义，Wheeler 很早就提议将该理论称为\textbf{几何动力学}(geometrodynamics)以强调其本质，并且尝试将所有的相互作用都归结为几何。}。
 
-$g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu}$ 在广义变换下可变（即数值上不是张量），也就是 $\eta_{\alpha\beta}\pdv{\xi^\alpha}{x^\mu}\pdv{\xi^\beta}{x^\nu}\ne\eta_{\mu\nu}$，故 $\eta_{\mu\nu}$ 不能出现，且必须直接定义 $g_{\mu\nu}$ 来吸收 Jacobi 矩阵。
+$g_{\mu\nu}\d x^\mu \d x^\nu$ 具有广义不变性。绝对对象 $\eta_{\mu\nu}$ 在广义变换下可变（即数值上不是张量），也就是 $\eta_{\alpha\beta}\pdv{\xi_X^\alpha}{x^\mu}\pdv{\xi_X^\beta}{x^\nu}\ne\eta_{\mu\nu}$，故 $\eta_{\mu\nu}$ 不能出现，且必须直接定义 $g_{\mu\nu}$ 来吸收 Jacobi 矩阵。
 引力作用现解释为度规非闵。因为倘若存在某系使得处处 $g_{\mu\nu}=\eta_{\mu\nu}$，该系就为全局的惯性系，$S$ 彻底地还原回狭义相对论，而非仅在局域惯性系中。
 可见，局域化 Lorentz 不变性、等效原理引入的规范场是 $h_{\mu\nu}=g_{\mu\nu}-\eta_{\mu\nu}$。
 引力场可由时空度规描述，前文提过度规决定一套几何学，故\textit{引力可表为时空几何效应}\footnote{Poincaré 和 Riemann 都尝试过仅用空间几何构建引力理论，但未能成功。引力几何理论的关键就在于补上时间这一维，时间对引力亦有贡献。}，即\textbf{Lorentz几何}。
@@ -1193,10 +945,10 @@ Kretschmann 借鉴 Leibniz 的相对关系主义，进一步提出\textbf{拓扑
 \eq{\label{eq:general-coordinate}
     \dv{U^\lambda}{\tau}+\frac 12g^{\kappa\lambda}\left(2g_{\kappa\nu,\mu}-g_{\mu\nu,\kappa}\right)U^\mu U^\nu=0.
 }
-另一个办法是利用 $\{\xi\}$。注意 $\pdv*{\eta_{\alpha\beta}}{\xi^\gamma} = 0$，因此 $\tilde A^\alpha=\dv*[2]{\xi^\alpha}{\tau}=0$，从而
-\[A^\lambda=\pdv{x^\lambda}{\xi^\alpha}\tilde A^\alpha=\pdv{x^\lambda}{\xi^\alpha}\dv{\tau}(\pdv{\xi^\alpha}{x^\mu}U^\mu)=\tcbhighmath{\dv{U^\lambda}{\tau}+\{^\lambda_{\mu\nu}\}U^\mu U^\nu=0,} \quad \{^\lambda_{\mu\nu}\}:=\pdv{x^\lambda}{\xi^\alpha}\pdv{\xi^\alpha}{x^\mu}{x^\nu}.\]
+另一个办法是利用 $\{\xi_X\}$。注意 $\pdv*{\eta_{\alpha\beta}}{\xi_X^\gamma} = 0$，因此 $\tilde A^\alpha=\dv*[2]{\xi_X^\alpha}{\tau}=0$，从而
+\[A^\lambda=\pdv{x^\lambda}{\xi_X^\alpha}\tilde A^\alpha=\pdv{x^\lambda}{\xi_X^\alpha}\dv{\tau}(\pdv{\xi_X^\alpha}{x^\mu}U^\mu)=\tcbhighmath{\dv{U^\lambda}{\tau}+\{^\lambda_{\mu\nu}\}U^\mu U^\nu=0,} \quad \{^\lambda_{\mu\nu}\}:=\pdv{x^\lambda}{\xi_X^\alpha}\pdv{\xi_X^\alpha}{x^\mu}{x^\nu}.\]
 其中 $\{^\lambda_{\mu\nu}\}$ 称\textbf{Christoffel 符号}，简称\textbf{克氏符}。微积分学的 Fubini 定理指出，任意坐标均有 $\p_{[\mu}\p_{\nu]}=0$，因此有 $\{^\lambda_{[\mu\nu]}\}=0$。
-将其展开为度规表达式。注意 $\pdv*{\eta_{\alpha\beta}}{x^\lambda} = \pdv{\xi^\gamma}{x^\lambda}\pdv{\eta_{\alpha\beta}}{\xi^\gamma} = 0$，对式 \eqref{eq:metric} 求坐标偏导得到
+将其展开为度规表达式。注意 $\pdv*{\eta_{\alpha\beta}}{x^\lambda} = \pdv{\xi_X^\gamma}{x^\lambda}\pdv{\eta_{\alpha\beta}}{\xi_X^\gamma} = 0$，对式 \eqref{eq:metric} 求坐标偏导得到
 \eq{\label{eq:metric-christ}
     g_{\mu\nu,\lambda}=\{^\rho_{\lambda\mu}\}g_{\rho\nu}+\{^\rho_{\lambda\nu}\}g_{\rho\mu}\iff
 \tcbhighmath{
@@ -1602,52 +1354,6 @@ T^{\mu \nu}{}_{;\nu}&=T^{\mu \nu}{}_{,\nu}+\Gamma_{\lambda \nu}^\mu T^{\lambda \
     g^{\mu [\nu} \delta \Gamma_{\mu \nu}^{\lambda]}=\frac12(g_{\mu\nu}\cd^\lambda \delta g^{\mu\nu} - \cd_\mu\delta g^{\mu\lambda})=g_{\mu\nu}\cd^{[\lambda} \delta g^{\nu]\mu}.
 }
 从而 $\p\delta g=0$ 的确与 $\var\Gamma_{\mu \nu}^\lambda$ 等价。
-
-由 \S\ref{sec:Lag-Noe} 的群表示 $D(\e^X) = \exp(X^\mu{}_\nu J^\nu{}_\mu)$，可知 $\bar\delta = \p_\nu\epsilon^\mu J^\nu{}_\mu - \epsilon^\lambda\p_\lambda$。
-另一方面，也可证 $\cd_\lambda = \p_\lambda +\Gamma^\mu_{\lambda\nu}J^\nu{}_\mu$。
-因而总有 $\bar\delta = \cd_\nu\epsilon^\mu J^\nu{}_\mu - \epsilon^\lambda\cd_\lambda$。
-故实际上，总可用协变导数改写前文提及的张量无穷小变换，比如 
-\eq{
-    \bar\var g_{\mu\nu} = - (\epsilon^\lambda\p_\lambda g_{\mu\nu} + g_{\alpha\nu} \p_\mu \epsilon^\alpha + g_{\mu\beta} \p_\nu \epsilon^\beta) = - (\cd_\mu \epsilon_\nu+\cd_\nu \epsilon_\mu).
-}
-类似地 $\bar\var g^{\mu\nu} = \cd^\mu \epsilon^\nu + \cd^\nu \epsilon^\mu$。现以 $\Phi$ 指代物质场，设 $\mathcal L_M$ 不含高阶导，因此
-\eq{
-    \pdv{\Phi^A_{,\lambda}} = \pdv{\cd_\kappa\Phi^B}{\Phi^A_{,\lambda}} \pdv{\Phi^B_{;\kappa}} = \delta^\lambda_\kappa\delta^B_A \pdv{\Phi^B_{;\kappa}} = \pdv{\Phi^A_{;\lambda}}.
-}
-因而 $\pdv*{\Lag}{\Phi_{,\mu}}=\pdv*{\Lag}{\Phi_{;\mu}}$ 是张量，给出
-\[
-    \fdv{\Lag\sqrt{-g}}{\Phi}=\sqrt{-g}\pdv{\Lag}{\Phi}-\p_\mu\left(\sqrt{-g}\pdv{\Lag}{\Phi_{,\mu}}\right) = \sqrt{-g}\mathcal E,\quad \mathcal E:=\pdv{\Lag}{\Phi}-\cd_\mu\pdv{\Lag}{\Phi_{;\mu}}.
-\]
-从而（注意 $\sqrt{-g}$ 不含度规导数）
-\begin{align*}
-    \delta S_M &=\int \d[4]{x} (\bar\var(\Lag_M\sqrt{-g})+\p_\mu(\Lag_M\sqrt{-g}\epsilon^\mu))=\int\d[4]{x}\bigg(\sqrt{-g}\mathcal E_M\bar\var\Phi + \frac12\sqrt{-g}T^{\mu\nu}\bar\var g_{\mu\nu} \\
-    &+ \p_\mu\left(\sqrt{-g}\pdv{\Lag_M}{\Phi_{,\mu}}\bar\var\Phi+\sqrt{-g}\pdv{\Lag_M}{g_{\alpha\beta,\mu}}\bar\var g_{\alpha\beta}+\Lag_M\sqrt{-g}\epsilon^\mu\right)\bigg),\\
-    &= \int\d[4]{x}\sqrt{-g}\left(\mathcal E_M\bar\var\Phi - T^{\mu\nu}\cd_\mu\epsilon_\nu + \cd_\mu (S^{\mu\nu}\epsilon_\nu - X^{\alpha\mu\beta}\cd_\alpha\epsilon_\beta )\right)\\
-    &= \int\d[4]{x}\sqrt{-g}\left(\mathcal E_M\bar\var\Phi - T^{\mu\nu}\cd_\mu\epsilon_\nu + \cd_\mu(B^{\mu\nu}\epsilon_\nu) \right)\\
-    &=\int \d[4]x\sqrt{-g}\left( \big(\nabla_\mu B^{\mu\nu} -\mathcal E_M\nabla^\nu\Phi\big)\epsilon_\nu  + \big( B^{\mu\nu}-T^{\mu\nu} +\mathcal E_M J^{\mu\nu}\Phi \big) \nabla_\mu\epsilon_\nu \right),
-\end{align*}
-其中
-\begin{align*}
-    S^{\mu\nu} &:= - \pdv{\Lag_M}{\Phi_{;\mu}} \cd^\nu\Phi + \Lag_M g^{\mu\nu} ,\quad H^{\lambda\mu\nu}:= \pdv{\Lag_M}{\Phi_{;\lambda}} J^{\mu\nu}\Phi,\quad N^{\lambda\mu\nu} := 2H^{\lambda[\mu\nu]}, \\ X^{\lambda\mu\nu} &:= \frac 12 (N^{\lambda\mu\nu} + N^{\mu\nu\lambda} + N^{\nu\mu\lambda}),\quad B^{\mu\nu} := S^{\mu\nu} + \cd_\alpha X^{\alpha\mu\nu}.
-\end{align*}
-并注意 $g_{\alpha\beta,\mu}$ 只通过协变导数进入 $\mathcal L_M$，则
-\begin{align*}
-    \pdv{\Lag_M}{g_{\alpha\beta,\mu}} &= \pdv{\Lag_M}{\Phi_{;\lambda}}\pdv{\Phi_{;\lambda}}{g_{\alpha\beta,\mu}} = \pdv{\Lag_M}{\Phi_{;\lambda}}J^\nu{}_\rho\Phi\pdv{\Gamma^\rho_{\lambda\nu}}{g_{\alpha\beta,\mu}}\\
-    &= H^{\lambda\nu}{}_\rho \frac12g^{\rho\sigma} \left( \delta^\mu_\nu\delta_\sigma^{(\alpha}\delta_\lambda^{\beta)} +\delta^\mu_\lambda\delta_\sigma^{(\alpha}\delta_\nu^{\beta)} -\delta^\mu_\sigma\delta_\lambda^{(\alpha}\delta_\nu^{\beta)} \right)= \frac{1}{2}(H^{\mu\alpha\beta} + X^{\alpha\mu\beta}).
-\end{align*}
-且由 $X^{\alpha\mu\nu}=X^{[\alpha\mu]\nu}$ 和Ricci 张量对称可知 $\nabla_\mu\nabla_\alpha
-(X^{\alpha\mu\nu}\epsilon_\nu)=0$。
-若认为广义不变性指 $\delta S_M=0$，则还需考虑紧支撑 $\epsilon^\mu$ 才有在壳守恒性
-\begin{align*}
-    0&\simeq \int \d[4]x\sqrt{-g} \big(-\mathcal E_M\nabla^\nu\Phi +\nabla_\mu T^{\mu\nu} - \nabla_\mu(\mathcal E_M J^{\mu\nu}\Phi) \big)\epsilon_\nu\\
-    &\im \nabla_\mu T^{\mu\nu} = \mathcal E_M\nabla^\nu\Phi + \nabla_\mu(\mathcal E_M J^{\mu\nu}\Phi) \xlongequal{\text{在壳}} 0.
-\end{align*}
-上式也称\textbf{Ward 恒等式}。
-通常用更强的拉氏量不变来实现作用量不变： $\bar\var(\Lag_M\sqrt{-g})+\p_\mu(\Lag_M\sqrt{-g}\epsilon^\mu) = 0$ 对任意时空点成立。$\epsilon_\nu(x)$ 是任意的，有多任意呢？总可找到光滑 $\epsilon_\nu(x)$ 同时满足任意给定点 $p$ 处的任意 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 条件。有时也称二者可彼此独立任意指定。故对 $p$ 总可取 $\epsilon_\nu(x)$ 使要么 $\epsilon_\nu(p)=0$ 要么 $\cd_\mu\epsilon_\nu(p)=0$。则 $\epsilon_\nu,\cd_\mu\epsilon_\nu$ 的系数都在 $p$ 处为零，由于 $p$ 任意，则实际为恒等式：
-\eq{
-    \nabla_\mu B^{\mu\nu} =\mathcal E_M\nabla^\nu\Phi \xlongequal{\text{在壳}} 0,\quad T^{\mu\nu} = B^{\mu\nu} +\mathcal E_M J^{\mu\nu}\Phi  \xlongequal{\text{在壳}} B^{\mu\nu}.
-}
-后者即\textbf{Rosenfeld–Belinfante 在壳等价性定理}。这就解释了为何对（最小耦合）Hilbert 张量取 $g\to\eta$ 可得平直 Belinfante 能动张量。
 
 宏观经典流体\textbf{Fock-Dirac-Hawking 作用量}为
 \eq{
@@ -2357,7 +2063,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
     e_I=e_I{}^\mu\pdv{x^\mu},\quad e^I=e^I{}_\mu\d x^\mu,\quad
     e_I{}^\mu e^J{}_\mu=\delta_I^J,\quad e_I{}^\mu e^I{}_\nu=\delta^\mu_\nu.
 }
-若这种选择随 $p$ 光滑变化，就称为\textbf{标架场}和\textbf{余标架场}。其正交归一性为
+若这种选择随 $p$ 光滑变化，就称为\textbf{标架场}和。其正交归一性为
 \eq{
 \tcbhighmath{
     g_{\mu\nu}e_I{}^\mu e_J{}^\nu=\eta_{IJ}\iff
@@ -2365,7 +2071,7 @@ $T_{nn}$ 是能动张量在超曲面的法线方向的分量。 于是，引力�
     g^{\mu\nu}=\eta^{IJ}e_I{}^\mu e_J{}^\nu.
 }
 }
-记 $|e|:=|\det(e^I{}_\mu)|$，则 $|e|=\sqrt{-g}$。可见标架给出度规，但度规不给出唯一标架：若 $\Lambda^I{}_J(x)\in\mathrm{SO}^+(1,3)$，则
+记 $|e|:=$，则 $|e|=\sqrt{-g}=|\det(e^I{}_\mu)|$。可见标架给出度规，但度规不给出唯一标架：若 $\Lambda^I{}_J(x)\in\mathrm{SO}^+(1,3)$，则
 \eq{
     \hat e^I{}_\mu=\Lambda^I{}_J(x)e^J{}_\mu,\quad
     \eta_{IJ}\hat e^I{}_\mu\hat e^J{}_\nu=\eta_{IJ}e^I{}_\mu e^J{}_\nu=g_{\mu\nu}.
